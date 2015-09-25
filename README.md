@@ -107,7 +107,7 @@ You can get support from DJI with the following methods:
 
 一旦你完成了注册，你将看到以下App Key的状态截图:
 
-![sdkDemoApp_Key](../Images/sdkDemoApp_Key_android.jpg)
+![sdkDemoApp_Key](./Images/sdkDemoApp_Key_android.jpg)
 
 请记下刚刚创建好的App Key，我们会在接下来的步骤中用到。
 
