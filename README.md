@@ -1,6 +1,6 @@
 # DJI Mobile SDK for Android
 
-[English](#what-is-this?) | [中文](#这是什么？)
+[English](#what-is-this) | [中文](#这是什么)
 
 ## What Is This?
 
