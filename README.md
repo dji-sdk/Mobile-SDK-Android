@@ -1,7 +1,49 @@
 # DJI Mobile SDK for Android
 
-## Getting Started
+## What Is This?
 
+The DJI Mobile SDK enables you to control how your Phantom’s camera, gimbal, and more behaves and interacts with mobile apps you create.Using the Mobile SDK, create a customized mobile app to unlock the full potential of your DJI aerial platform.
+
+## Running the SDK Sample Code
+
+This guide shows you how to setup APP Key and run our DJI Mobile SDK sample project, which you can download it from this **Github Page**.
+
+### Prerequisites
+
+- Android API Level 16 or higher
+- Eclipse 4.4.1 or higher
+- Android Studio 1.2 or higher
+
+### Registering a App Key
+
+Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/mobile-sdk/), select the "Mobile SDK" tab on the left, press the "Create App" button and select "Android" as your operating system. Then type in the info in the pop up dialog.
+
+>Note: Please type in "com.dji.sdkdemo" in the `Identification Code` field, because the application ID in the sample SDK project is "com.dji.sdkdemo".
+
+Once you complete it, you may see the following App Key status:
+
+![sdkDemoApp_Key](./Images/sdkDemoApp_Key_android.jpg)
+
+### Running the Sample Eclipse or Android Studio project
+
+Open the "AndroidManifest.xml" file in Eclipse or Android Studio, modify the **meta-data** element in the **application** element and replace the value of `android:value` with the app key we just created as shown below:
+
+~~~xml
+<application
+	android:allowBackup="true"
+	android:hardwareAccelerated="true"
+	android:icon="@drawable/ic_launcher"
+	android:label="@string/app_name"
+	android:theme="@style/AppTheme" >
+	
+	<meta-data
+		android:name="com.dji.sdk.API_KEY"
+		android:value="**********************" />
+
+</application>
+~~~
+
+Once you finish it, build and run the project and you can start to try different features in the sample project without any problems.'
 
 ## Concepts
 
