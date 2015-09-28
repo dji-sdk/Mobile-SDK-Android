@@ -1,0 +1,23 @@
+<resources>
+
+    <!--
+         Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels.
+    -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+    
+    <declare-styleable name="OnScreenJoystick">
+        <attr name="knob" format="reference" />
+    </declare-styleable>
+    
+    <declare-styleable name="SeekCircle">
+        <attr name="max" format="integer" value="100" />
+        <attr name="progress" format="integer" value="0" />
+    </declare-styleable>
+
+</resources>

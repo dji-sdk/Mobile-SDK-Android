@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_content_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true">
+    
+    <RelativeLayout
+        android:id="@+id/MediaSyncTitleRL"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@color/black_overlay" >
+
+        <ImageButton
+            android:id="@+id/ReturnBtnMediaSync"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:onClick="onReturn"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_button" />
+
+       
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/MediaSyncContentRL"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="40dp" >
+        
+      <ListView android:layout_width="fill_parent"   
+              android:layout_height="wrap_content"   
+              android:id="@+id/filelistView" 
+              />  
+    </RelativeLayout>
+</RelativeLayout>
+

@@ -1,0 +1,232 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.dji.sdkdemo"
+    android:id="@+id/my_content_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true"
+    android:background="@color/dark" >
+
+      <RelativeLayout
+      android:id="@+id/surfaceView_Rl_joysitck"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_marginBottom="0dp">
+      
+        <dji.sdk.widget.DjiGLSurfaceView
+          android:id="@+id/DjiSurfaceView_gs"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"/>
+
+      </RelativeLayout>
+      
+      <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@color/black_overlay">
+        
+        <ImageButton
+            android:id="@+id/ReturnBtnGs"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:onClick="onReturn"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_button" />
+
+        <TextView
+            android:id="@+id/ConnectStateGsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:text=""
+            android:textSize="21sp" />
+
+      </RelativeLayout>
+      
+      <ScrollView
+        android:id="@+id/scrollViewGimbal"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" 
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+        <Button
+        android:id="@+id/OpenGsButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_open_ground_station" />   
+
+        <Button
+        android:id="@+id/AddWaypointButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_add_waypoint" />   
+
+        <Button
+        android:id="@+id/UploadWaypointButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_upload_waypoint" />  
+        
+        <Button
+        android:id="@+id/TakeOffButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_take_off" />  
+
+      <Button
+        android:id="@+id/PauseButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_pasue" />  
+
+       <Button
+        android:id="@+id/ResumeButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_resume" />  
+        
+        <Button
+        android:id="@+id/GohomeButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_go_home" />  
+
+        <Button
+        android:id="@+id/CloseGsButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_close_ground_station" />  
+        
+        </LinearLayout>
+    </ScrollView>
+    
+
+
+    <com.salamientertainment.view.onscreenjoystick.OnScreenJoystick
+        android:id="@+id/directionJoystickRight"
+        android:layout_width="130dp"
+        android:layout_height="130dp" 
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/joystick_bg"/>
+    
+    <com.salamientertainment.view.onscreenjoystick.OnScreenJoystick
+        android:id="@+id/directionJoystickLeft"
+        android:layout_width="130dp"
+        android:layout_height="130dp" 
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="180dp"
+        android:background="@drawable/joystick_bg"/>
+    
+ 
+    <RelativeLayout
+      android:id="@+id/progress_circle_Rl"
+      android:layout_width="120dp"
+      android:layout_height="120dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="15dp"
+      android:layout_marginLeft="350dp"
+      android:visibility="gone">
+
+   		<com.seekcircle.SeekCircle
+        android:id="@+id/seekCircle"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:progress="1" />
+
+    	<TextView
+        android:id="@+id/textProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/default_progress"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    	
+      </RelativeLayout>
+		
+    
+      <Button
+        android:id="@+id/OneKeyFlyButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp" 
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_one_key_fly" />  
+      
+</RelativeLayout>

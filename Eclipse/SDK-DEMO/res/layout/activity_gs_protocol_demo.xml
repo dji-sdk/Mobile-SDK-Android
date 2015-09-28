@@ -1,0 +1,473 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_content_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true"
+    android:background="@color/dark" >
+
+      <RelativeLayout
+      android:id="@+id/surfaceView_Rl_gs"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_marginBottom="0dp">
+      
+        <dji.sdk.widget.DjiGLSurfaceView
+          android:id="@+id/DjiSurfaceView_gs"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"/>
+
+      </RelativeLayout>
+      
+      <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@color/black_overlay">
+        
+        <ImageButton
+            android:id="@+id/ReturnBtnGs"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:onClick="onReturn"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_button" />
+
+        <TextView
+            android:id="@+id/ConnectStateGsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:text=""
+            android:textSize="21sp" />
+
+      </RelativeLayout>
+      
+      <ScrollView
+        android:id="@+id/scrollViewGimbal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+        <Button
+        android:id="@+id/OpenGsButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_open_ground_station" />   
+
+        <Button
+        android:id="@+id/AddWaypointButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_add_waypoint" />  
+        
+        <Button
+        android:id="@+id/RemoveWaypointButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_remove_waypoint"
+            />
+        
+        <Button 
+        android:id="@+id/GsSetLoop"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+    	android:textSize="14sp"
+    	android:textColor="@color/white"
+    	android:text="@string/gs_set_loop"/>
+
+        <Button
+        android:id="@+id/UploadWaypointButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_upload_waypoint" />  
+        
+        <Button
+        android:id="@+id/TakeOffButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_take_off" />  
+
+      <Button
+        android:id="@+id/PauseButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_pasue" />  
+
+       <Button
+        android:id="@+id/ResumeButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_resume" />  
+        
+        <Button
+        android:id="@+id/GohomeButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_go_home" />  
+
+        <Button
+        android:id="@+id/CloseGsButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"  
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/gs_close_ground_station" />  
+        
+        </LinearLayout>
+    </ScrollView>
+    
+
+
+
+      <TextView
+          android:id="@+id/GsYawCenterFlagTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@android:color/white"
+          android:layout_marginBottom="120dp"
+          android:layout_marginLeft="180dp"
+          android:layout_alignParentBottom="true" 
+          android:text="@string/gimbal_yaw"
+          android:textSize="14sp"
+          />
+        
+       <Button
+          android:id="@+id/GsYawLeftButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsYawCenterFlagTextView"
+          android:layout_marginBottom="85dp"
+          android:layout_alignParentBottom="true" 
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gimbal_yaw_left" />  
+          
+        <Button
+          android:id="@+id/GsYawRightButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsYawCenterFlagTextView"
+          android:layout_marginBottom="45dp"
+          android:layout_alignParentBottom="true" 
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gimbal_yaw_right" />  
+
+      
+      <Button
+          android:id="@+id/GsYawStopButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsYawCenterFlagTextView"
+          android:layout_marginBottom="5dp"
+          android:layout_alignParentBottom="true"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gimbal_yaw_stop" />  
+          
+      
+        <Button
+          android:id="@+id/GroundStationDownloadResult"
+          android:layout_width="100dp"
+          android:layout_height="40dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="130dp"
+          android:layout_marginTop="50dp"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/down_result" />  
+          
+        <Button
+          android:id="@+id/GsYawRotateTakePhotoButton"
+          android:layout_width="100dp"
+          android:layout_height="40dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="20dp"
+          android:layout_marginTop="50dp"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gimbal_yaw_rotate_takephoto" /> 
+        
+        <TextView
+          android:id="@+id/GsPitchFlagTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@android:color/white"
+          android:layout_marginBottom="120dp"
+          android:layout_marginLeft="280dp"
+          android:layout_alignParentBottom="true" 
+          android:text="@string/gs_joystick_pitch"
+          android:textSize="14sp"
+          />
+        
+       <Button
+          android:id="@+id/GsPitchPlusButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsPitchFlagTextView"
+          android:layout_marginBottom="85dp"
+          android:layout_alignParentBottom="true" 
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gs_joystick_plus" />  
+          
+        <Button
+          android:id="@+id/GsPitchMinusButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsPitchFlagTextView"
+          android:layout_marginBottom="45dp"
+          android:layout_alignParentBottom="true" 
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gs_joystick_minus" />  
+
+      
+      <Button
+          android:id="@+id/GsPitchStopButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsPitchFlagTextView"
+          android:layout_marginBottom="5dp"
+          android:layout_alignParentBottom="true"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gs_joystick_stop" />  
+          
+      <TextView
+          android:id="@+id/GsRollFlagTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@android:color/white"
+          android:layout_marginBottom="120dp"
+          android:layout_marginLeft="380dp"
+          android:layout_alignParentBottom="true" 
+          android:text="@string/gs_joystick_roll"
+          android:textSize="14sp"
+          />
+        
+       <Button
+          android:id="@+id/GsRollPlusButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsRollFlagTextView"
+          android:layout_marginBottom="85dp"
+          android:layout_alignParentBottom="true" 
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gs_joystick_plus" />  
+          
+        <Button
+          android:id="@+id/GsRollMinusButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsRollFlagTextView"
+          android:layout_marginBottom="45dp"
+          android:layout_alignParentBottom="true" 
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gs_joystick_minus" />  
+
+      
+      <Button
+          android:id="@+id/GsRollStopButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsRollFlagTextView"
+          android:layout_marginBottom="5dp"
+          android:layout_alignParentBottom="true"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gs_joystick_stop" /> 
+          
+      <TextView
+          android:id="@+id/GsThrottleFlagTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@android:color/white"
+          android:layout_marginBottom="120dp"
+          android:layout_marginLeft="480dp"
+          android:layout_alignParentBottom="true" 
+          android:text="@string/gs_joystick_throttle"
+          android:textSize="14sp"
+          />
+        
+       <Button
+          android:id="@+id/GsThrottlePlusButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsThrottleFlagTextView"
+          android:layout_marginBottom="85dp"
+          android:layout_alignParentBottom="true" 
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gs_joystick_plus" />  
+          
+        <Button
+          android:id="@+id/GsThrottleMinusButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsThrottleFlagTextView"
+          android:layout_marginBottom="45dp"
+          android:layout_alignParentBottom="true" 
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gs_joystick_minus" />  
+
+      
+      <Button
+          android:id="@+id/GsThrottleStopButton"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:background="@drawable/selector_button"
+          android:layout_alignLeft="@id/GsThrottleFlagTextView"
+          android:layout_marginBottom="5dp"
+          android:layout_alignParentBottom="true"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/gs_joystick_stop" /> 
+      
+      <ScrollView 
+        android:id="@+id/GroundStationInfoScrollView"
+        android:layout_width="200dp"
+        android:layout_height="90dp"
+        android:scrollbars="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/selector_button" > 
+  
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" > 
+
+                  <TextView
+                    android:id="@+id/GroundStationInfoTV"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="GS State:"
+                    android:layout_centerInParent="true"
+                    android:textSize="14sp" 
+                    />   
+        </RelativeLayout> 
+      </ScrollView> 
+      
+      <ScrollView 
+        android:id="@+id/GroundStationInfoScrollView2"
+        android:layout_width="200dp"
+        android:layout_height="90dp"
+        android:scrollbars="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="220dp"
+        android:background="@drawable/selector_button" > 
+  
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" > 
+
+                  <TextView
+                    android:id="@+id/GroundStationInfoTV2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="GS State:"
+                    android:layout_centerInParent="true"
+                    android:textSize="14sp" 
+                    />   
+        </RelativeLayout> 
+      </ScrollView> 
+</RelativeLayout>

@@ -1,0 +1,266 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_content_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true"
+    android:background="@color/dark" >
+
+    <RelativeLayout
+      android:id="@+id/surfaceView_Rl_It"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_marginBottom="0dp">
+      
+        <dji.sdk.widget.DjiGLSurfaceView
+          android:id="@+id/DjiSurfaceView_It"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"/>
+
+      </RelativeLayout>
+      
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@color/black_overlay">
+        
+        <ImageButton
+            android:id="@+id/ReturnBtnImageTransmitter"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:onClick="onReturn"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_button" />
+
+        <TextView
+            android:id="@+id/ConnectStateItTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:text=""
+            android:textSize="21sp" />
+
+      </RelativeLayout>
+      
+    
+     <ScrollView 
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:scrollbars="vertical"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/selector_button" > 
+  
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" > 
+
+                  <TextView
+                    android:id="@+id/UplinkRadioSignalTV"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text=""
+                    android:layout_centerInParent="true"
+                    android:textSize="14sp" 
+                    />   
+        </RelativeLayout> 
+        </ScrollView> 
+        
+     <ScrollView 
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="110dp"
+        android:scrollbars="vertical"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/selector_button" > 
+  
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" > 
+
+                  <TextView
+                    android:id="@+id/DownlinkRadioSignalTV"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text=""
+                    android:layout_centerInParent="true"
+                    android:textSize="14sp" 
+                    />   
+        </RelativeLayout> 
+        </ScrollView> 
+        
+     <ScrollView 
+        android:layout_width="250dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="170dp"
+        android:scrollbars="vertical"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/selector_button" > 
+  
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" > 
+
+                  <TextView
+                    android:id="@+id/FrequencyPowerTV"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text=""
+                    android:layout_centerInParent="true"
+                    android:textSize="14sp" 
+                    />   
+        </RelativeLayout> 
+        </ScrollView>
+        
+     
+     <ScrollView
+        android:id="@+id/scrollView_It"
+        android:layout_width="150dp"
+        android:layout_height="fill_parent" 
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+        <Button
+          android:id="@+id/set_it_fq_update_btn"
+          android:layout_width="130dp"
+          android:layout_height="35dp"
+          android:paddingLeft="5dp"
+          android:paddingRight="5dp"        
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/selector_button"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/set_it_fq_need_update" />   
+          
+        
+       <Button
+          android:id="@+id/set_it_channel_btn"
+          android:layout_width="130dp"
+          android:layout_height="35dp"
+          android:paddingLeft="5dp"
+          android:paddingRight="5dp"        
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/selector_button"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/set_it_channel" />   
+
+        <Button
+          android:id="@+id/set_it_auto_channel_btn"
+          android:layout_width="130dp"
+          android:layout_height="35dp"
+          android:paddingLeft="5dp"
+          android:paddingRight="5dp"        
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/selector_button"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/set_it_auto_channel" />  
+          
+        <Button
+          android:id="@+id/get_it_channel_btn"
+          android:layout_width="130dp"
+          android:layout_height="35dp"
+          android:paddingLeft="5dp"
+          android:paddingRight="5dp"        
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/selector_button"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/get_it_channel" />   
+
+          <Button
+          android:id="@+id/set_it_bandwidth_btn"
+          android:layout_width="130dp"
+          android:layout_height="35dp"
+          android:paddingLeft="5dp"
+          android:paddingRight="5dp"        
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/selector_button"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/set_it_bandwidth" />   
+          
+         <Button
+          android:id="@+id/get_it_bandwidth_btn"
+          android:layout_width="130dp"
+          android:layout_height="35dp"
+          android:paddingLeft="5dp"
+          android:paddingRight="5dp"        
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/selector_button"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/get_it_bandwidth" />   
+          
+         <Button
+          android:id="@+id/set_it_doubleouput_btn"
+          android:layout_width="130dp"
+          android:layout_height="35dp"
+          android:paddingLeft="5dp"
+          android:paddingRight="5dp"        
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/selector_button"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/set_it_doubleouput" />   
+          
+         <Button
+          android:id="@+id/get_it_doubleouput_btn"
+          android:layout_width="130dp"
+          android:layout_height="35dp"
+          android:paddingLeft="5dp"
+          android:paddingRight="5dp"        
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/selector_button"
+          android:textSize="14sp"
+          android:textColor="@color/white"
+          android:text="@string/get_it_doubleouput" />  
+          
+         <Button
+            android:id="@+id/get_version_btn"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"  
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/selector_button"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:text="@string/get_version" />
+
+        </LinearLayout>
+    </ScrollView>
+        
+
+</RelativeLayout>
