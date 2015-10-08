@@ -80,7 +80,7 @@ For better reading experience of DJI Mobile SDK Tutorials, please check our [**G
 You can get support from DJI with the following methods:
 
 - [**DJI Forum**](http://forum.dev.dji.com/en)
-- [**Stackoverflow**](http://stackoverflow.com) 
+- Post questions in [**Stackoverflow**](http://stackoverflow.com) using [**dji-sdk**](http://stackoverflow.com/questions/tagged/dji-sdk) tag
 - dev@dji.com
 
 ---
@@ -166,5 +166,5 @@ You can get support from DJI with the following methods:
 你可以从以下方式获得DJI的技术支持：
 
 - [**DJI 论坛**](http://forum.dev.dji.com/cn)
-- [**Stackoverflow**](http://stackoverflow.com) 
+- 请在 [**Stackoverflow**](http://stackoverflow.com)上使用 [**dji-sdk**](http://stackoverflow.com/questions/tagged/dji-sdk) tag提问题
 - dev@dji.com
