@@ -56,7 +56,7 @@ This handbook provides a high level overview of the different components that ma
 
 - [**Creating a Camera Application**](https://github.com/DJI-Mobile-SDK/Android-FPVDemo): Our introductory tutorial, which guides you through connecting to your drone's camera to display a live video feed in your app, through which you can take photos and videos.
 
-- [**Importing DJI SDK Demo to Android Studio**](http://dji-dev.gitbooks.io/mobile-sdk-tutorials/content/en/Android/AndroidStudioMigration/Android_Studio_Migration_Tutorial_en.html): There are two methods we can use to import the DJI SDK Demo library into Android Studio. The first is to import the Android Studio version of the DJI SDK Demo Library to Android Studio; the second is to import the Eclipse version of the DJI SDK Demo into Android Studio.
+- [**Importing DJI SDK Demo to Android Studio**](https://github.com/DJI-Mobile-SDK/Android-AndroidStudioMigration): There are two methods we can use to import the DJI SDK Demo library into Android Studio. The first is to import the Android Studio version of the DJI SDK Demo Library to Android Studio; the second is to import the Eclipse version of the DJI SDK Demo into Android Studio.
 
 ## Sample Projects - Advanced
 
@@ -142,7 +142,7 @@ You can get support from DJI with the following methods:
 
 - [**创建航拍相机App**](https://github.com/DJI-Mobile-SDK/Android-FPVDemo): 这是我们的入门教程, 该教材会指导你如何连接飞行器的相机，在app上显示实时画面，以及如何进行拍摄和录像操作。
 
-- [**Android Studio工程导入教程**](http://dji-dev.gitbooks.io/mobile-sdk-tutorials/content/en/Android/AndroidStudioMigration/Android_Studio_Migration_Tutorial_en.html): 目前Google已经对使用Eclipse进行Android开发停止了技术支持，很多开发者倾向于使用Android Studio工具进行开发。在本教程中，你将学会如何快速将Eclipse工程导入到Android Studio中开发。
+- [**Android Studio工程导入教程**](https://github.com/DJI-Mobile-SDK/Android-AndroidStudioMigration): 目前Google已经对使用Eclipse进行Android开发停止了技术支持，很多开发者倾向于使用Android Studio工具进行开发。在本教程中，你将学会如何快速将Eclipse工程导入到Android Studio中开发。
 
 ## 示例教程 - 高级
 
