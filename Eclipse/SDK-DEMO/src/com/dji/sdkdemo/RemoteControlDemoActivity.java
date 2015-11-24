@@ -1,15 +1,16 @@
 package com.dji.sdkdemo;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import com.dji.sdkdemo.CameraProtocolDemoActivity.pickerValueChangeListener;
 import com.dji.sdkdemo.widget.PopupNumberPicker;
-
 import dji.sdk.api.DJIDrone;
 import dji.sdk.api.DJIError;
 import dji.sdk.api.Camera.DJICameraDecodeTypeDef.DecoderType;
+import dji.sdk.api.DJIDroneTypeDef.DJIDroneType;
 import dji.sdk.api.RemoteController.DJIRemoteControllerAttitude;
 import dji.sdk.api.RemoteController.DJIRemoteControllerChannelParams;
 import dji.sdk.api.RemoteController.DJIRemoteControllerCustomerPreference;
@@ -17,6 +18,7 @@ import dji.sdk.api.RemoteController.DJIRemoteControllerMasterInfo;
 import dji.sdk.api.RemoteController.DJIRemoteControllerPermission;
 import dji.sdk.api.RemoteController.DJIRemoteControllerSlaveControlMode;
 import dji.sdk.api.RemoteController.DJIRemoteControllerSlaveInfo;
+import dji.sdk.api.RemoteController.DJIRemoteControllerTypeDef.ControlModeFunction;
 import dji.sdk.api.RemoteController.DJIRemoteControllerTypeDef.DJIRemoteControllerCalibrationStatus;
 import dji.sdk.api.RemoteController.DJIRemoteControllerTypeDef.DJIRemoteControllerControlMode;
 import dji.sdk.api.RemoteController.DJIRemoteControllerTypeDef.DJIRemoteControllerType;
@@ -25,6 +27,7 @@ import dji.sdk.interfaces.DJIExecuteIntResultCallback;
 import dji.sdk.interfaces.DJIExecuteResultCallback;
 import dji.sdk.interfaces.DJIExecuteStringResultCallback;
 import dji.sdk.interfaces.DJIReceivedVideoDataCallBack;
+import dji.sdk.interfaces.DJIRemotControllerGimbalDirectionCallBack;
 import dji.sdk.interfaces.DJIRemoteControllerCalibrationStatusCallBack;
 import dji.sdk.interfaces.DJIRemoteControllerCustomerButtonFunctionCallBack;
 import dji.sdk.interfaces.DJIRemoteControllerGetChannelParamsCallBack;
@@ -95,6 +98,7 @@ public class RemoteControlDemoActivity extends DemoBaseActivity implements OnCli
     private Button mGetSlaveModeBtn;
     private Button mSetGimbalSpeedBtn;
     private Button mGetGimbalSpeedBtn;
+    private Button mGimbalDirection;
     private Button mSetCustomFunctionBtn;
     private Button mGetCustomFunctionBtn;
     private Button mSetFrequencyBtn;
@@ -196,6 +200,7 @@ public class RemoteControlDemoActivity extends DemoBaseActivity implements OnCli
         mGetSlaveModeBtn = (Button) findViewById(R.id.GetSlaveModeBtn);
         mSetGimbalSpeedBtn = (Button) findViewById(R.id.SetGimbalSpeedBtn);
         mGetGimbalSpeedBtn = (Button) findViewById(R.id.GetGimbalSpeedBtn);
+        mGimbalDirection = (Button) findViewById(R.id.GimbalDirectionButton);
         mSetCustomFunctionBtn = (Button) findViewById(R.id.SetCustomFunctionBtn);
         mGetCustomFunctionBtn = (Button) findViewById(R.id.GetCustomFunctionBtn);
         mSetFrequencyBtn = (Button) findViewById(R.id.SetFrequencyBtn);
@@ -242,6 +247,7 @@ public class RemoteControlDemoActivity extends DemoBaseActivity implements OnCli
         mGetSlaveModeBtn.setOnClickListener(this);
         mSetGimbalSpeedBtn.setOnClickListener(this);
         mGetGimbalSpeedBtn.setOnClickListener(this);
+        mGimbalDirection.setOnClickListener(this);
         mSetCustomFunctionBtn.setOnClickListener(this);
         mGetCustomFunctionBtn.setOnClickListener(this);
         mSetFrequencyBtn.setOnClickListener(this);
@@ -309,6 +315,10 @@ public class RemoteControlDemoActivity extends DemoBaseActivity implements OnCli
         m_context = this.getApplicationContext();
         
         attitude = new DJIRemoteControllerAttitude();
+        
+        if(DJIDrone.getDroneType() != DJIDroneType.DJIDrone_Inspire1){
+        	mGimbalDirection.setVisibility(View.GONE);
+    	}
     }
     
     @Override
@@ -945,6 +955,39 @@ public class RemoteControlDemoActivity extends DemoBaseActivity implements OnCli
                     
                 });
                 break;
+            }
+            case R.id.GimbalDirectionButton: {
+            	
+            	LinkedList<String> strList = new LinkedList<String>(){{ add("pitch"); add("roll"); add("yaw");}};
+            	mPopupNumberPicker = new PopupNumberPicker(m_context, strList, new pickerValueChangeListener() {
+                    
+                    @Override
+                    public void onValueChange(int pos1, int pos2) {
+                        mPopupNumberPicker.dismiss();
+                        mPopupNumberPicker = null;
+                        Log.d(TAG,"wheel gimbal direction set: "+ControlModeFunction.find(pos1+1));
+                        DJIDrone.getDjiRemoteController().setRCControlGimbalDirection(ControlModeFunction.find(pos1+1), new DJIExecuteResultCallback() {
+
+                            @Override
+                            public void onResult(DJIError mErr) {
+                                	DJIDrone.getDjiRemoteController().getRCControlGimbalDirection(new DJIRemotControllerGimbalDirectionCallBack() {
+
+										@Override
+										public void onResult(
+												ControlModeFunction direction) {
+											// TODO Auto-generated method stub
+					                        handler.sendMessage(handler.obtainMessage(SHOWTOAST, 
+					                        		"The control direction of the top left wheel is: " + direction.name()));
+										}
+
+  
+                                    });
+                            }
+                        });
+                    }
+                }, 250, 200, 0);
+                mPopupNumberPicker.showAtLocation(findViewById(R.id.my_content_view), Gravity.CENTER, 0, 0);
+            	break;
             }
             
             case R.id.SetCustomFunctionBtn : {

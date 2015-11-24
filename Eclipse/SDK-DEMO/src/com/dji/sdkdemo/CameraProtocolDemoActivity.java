@@ -9,7 +9,6 @@ import java.util.TimerTask;
 import com.dji.sdkdemo.widget.PopupNumberPickerDouble;
 import com.dji.sdkdemo.widget.PopupNumberPicker;
 import com.dji.sdkdemo.widget.PopupNumberPickerDoubleRecording;
-
 import dji.sdk.api.DJIDrone;
 import dji.sdk.api.DJIDroneTypeDef.DJIDroneType;
 import dji.sdk.api.DJIError;
@@ -121,6 +120,12 @@ public class CameraProtocolDemoActivity extends DemoBaseActivity implements OnCl
     private Button m_camera_single_preview_stop_video_btn;
     private Button m_camera_single_preview_seek_video_btn;
     
+    private Button m_setCameraVideoStandard_btn;
+    private Button m_getCameraVideoStandard_btn;
+    
+	private Button m_camera_set_resolutionandframerate_btn;
+	private Button m_camera_get_resolutionandframerate_btn;
+    
     private ScrollView mScrollView;
     private RelativeLayout mFunctionLayout;
     private TextView mCameraPlaybackStateTV;
@@ -151,6 +156,7 @@ public class CameraProtocolDemoActivity extends DemoBaseActivity implements OnCl
     private int mPlayBackCurrentSelectIndex = -1;
     private String mPlayBackStateString = "";
     private int mSdcardRemainSize = 0;
+    private int mSdcardRemainCaptureCnt;
     
     private DJICameraPlayBackStateCallBack mCameraPlayBackStateCallBack = null;
     
@@ -210,6 +216,7 @@ public class CameraProtocolDemoActivity extends DemoBaseActivity implements OnCl
             return false;
         }
     });
+
     
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -291,7 +298,9 @@ public class CameraProtocolDemoActivity extends DemoBaseActivity implements OnCl
                 sb.append("fileDeleteStatus=").append(mState.fileDeleteStatus.toString()).append("\n");
                 sb.append("isAllFilesInPageSelected=").append(mState.isAllFilesInPageSelected).append("\n");
                 sb.append("isSelectedFileValid=").append(mState.isSelectedFileValid).append("\n");
-                sb.append("isFileDownloaded=").append(mState.isFileDownloaded);
+                sb.append("isFileDownloaded=").append(mState.isFileDownloaded).append("\n");
+                sb.append("SDCard Remain Size=").append(mSdcardRemainSize).append("\n");
+                sb.append("SDCard Remain Capture Count=").append(mSdcardRemainCaptureCnt);
                 
                 mPlayBackStateString = sb.toString();
                 
@@ -314,16 +323,19 @@ public class CameraProtocolDemoActivity extends DemoBaseActivity implements OnCl
         
         DJIDrone.getDjiCamera().setDjiCameraSdcardInfoCallBack(new DJICameraSdCardInfoCallBack() {
             
-            @Override
+
+
+			@Override
             public void onResult(DJICameraSDCardInfo mInfo)
             {
                 // TODO Auto-generated method stub
                 if(mSdcardRemainSize != mInfo.remainSize){
-                    mSdcardRemainSize = mInfo.remainSize;
-                    
+
                     //String result = "sdcard remain size =" + mSdcardRemainSize ;
                     //handler.sendMessage(handler.obtainMessage(SHOWTOAST, result));
                 }
+                mSdcardRemainSize = mInfo.remainSize;
+                mSdcardRemainCaptureCnt = mInfo.remainCaptureCount;
             }
         });
         
@@ -395,6 +407,11 @@ public class CameraProtocolDemoActivity extends DemoBaseActivity implements OnCl
         m_camera_single_preview_play_video_btn = (Button)findViewById(R.id.camera_single_preview_play_video_btn);
         m_camera_single_preview_stop_video_btn = (Button)findViewById(R.id.camera_single_preview_stop_video_btn);
         m_camera_single_preview_seek_video_btn = (Button)findViewById(R.id.camera_single_preview_seek_video_btn);
+        m_setCameraVideoStandard_btn = (Button)findViewById(R.id.btn_setCameraVideoStandard);
+        m_getCameraVideoStandard_btn = (Button)findViewById(R.id.btn_getCameraVideoStandard);
+        
+        m_camera_get_resolutionandframerate_btn = (Button) findViewById(R.id.camera_get_resolutionandframerate_btn);
+        m_camera_set_resolutionandframerate_btn = (Button) findViewById(R.id.camera_set_resolutionandframerate_btn);
         
         mStartTakePhotoBtn.setOnClickListener(this);
         mStopTakePhotoBtn.setOnClickListener(this);
@@ -459,6 +476,11 @@ public class CameraProtocolDemoActivity extends DemoBaseActivity implements OnCl
         m_camera_single_preview_play_video_btn.setOnClickListener(this);
         m_camera_single_preview_stop_video_btn.setOnClickListener(this);
         m_camera_single_preview_seek_video_btn.setOnClickListener(this);
+        m_setCameraVideoStandard_btn.setOnClickListener(this);
+        m_getCameraVideoStandard_btn.setOnClickListener(this);
+        
+        m_camera_set_resolutionandframerate_btn.setOnClickListener(this);
+        m_camera_get_resolutionandframerate_btn.setOnClickListener(this);
 
 
         mConnectStateTextView = (TextView)findViewById(R.id.ConnectStateCameraTextView);
@@ -1585,6 +1607,85 @@ public class CameraProtocolDemoActivity extends DemoBaseActivity implements OnCl
                 
                 break;
                 
+            case R.id.camera_set_resolutionandframerate_btn:
+                if (mPopupNumberPickerDoubleRecording != null)
+                    mPopupNumberPickerDoubleRecording.dismiss();
+
+                strlist = new ArrayList<String>();                
+                TotalStringCnt = getResources().getStringArray(R.array.recordingResolutionValuesNew).length;
+                mSettingStrs = new String[TotalStringCnt];
+                mSettingStrs = getResources().getStringArray(R.array.recordingResolutionValuesNew);
+                
+                for (int i = 0; i < TotalStringCnt; i++) {
+                    strlist.add(mSettingStrs[i]);
+                }
+                    
+                strlist2 = new ArrayList<String>();
+                
+                TotalStringCnt = getResources().getStringArray(R.array.recordingFrameRate).length;
+                mSettingStrs = new String[TotalStringCnt];
+                mSettingStrs = getResources().getStringArray(R.array.recordingFrameRate);
+                
+                for (int i = 0; i < TotalStringCnt; i++) {
+                    strlist2.add(mSettingStrs[i]);
+                }
+                  
+                mPopupNumberPickerDoubleRecording = new PopupNumberPickerDoubleRecording(m_context,
+                        strlist,null,strlist2,null,                    
+                        new pickerValueChangeListener(){
+
+                            @Override
+                            public void onValueChange(int pos1, int pos2) 
+                            {
+                                //Log.d(TAG,"pos1 = "+pos1+",pos2 = "+pos2);                               
+                                mPopupNumberPickerDoubleRecording.dismiss();
+                                mPopupNumberPickerDoubleRecording = null;
+                                
+                                DJIDrone.getDjiCamera().setCameraVideoResolutionAndFrameRate(CameraVideoResolution.values()[pos1], CameraVideoFrameRate.values()[pos2],new DJIExecuteResultCallback(){
+
+                                    @Override
+                                    public void onResult(DJIError err)
+                                    {
+                                        // TODO Auto-generated method stub
+                                        Log.d(TAG, "setCameraRecordingParam errorCode = "+ err.errorCode);
+                                        Log.d(TAG, "setCameraRecordingParam errorDescription = "+ err.errorDescription);
+                                        String result = "errorCode =" + err.errorCode + "\n"+"errorDescription =" + DJIError.getErrorDescriptionByErrcode(err.errorCode)
+                                        		+" Please see the api doc for supported video resolution and frame rate.";
+                                        handler.sendMessage(handler.obtainMessage(SHOWTOAST, result));
+                                                               
+                                    }
+                                    
+                                });
+                                
+                            }}, 350,200, 0);
+                
+                mPopupNumberPickerDoubleRecording.showAtLocation(findViewById(R.id.my_content_view),
+                        Gravity.CENTER, 0, 0);
+                
+                
+                break;
+            case R.id.camera_get_resolutionandframerate_btn:
+                
+                DJIDrone.getDjiCamera().getCameraVideoResolutionAndFrameRate(new DJIExecuteResultCallback(){
+
+                    @Override
+                    public void onResult(DJIError mErr)
+                    {
+                        // TODO Auto-generated method stub
+                        Log.d(TAG, "getCameraRecordingParam errorCode = "+ mErr.errorCode);
+                        Log.d(TAG, "getCameraRecordingParam errorDescription = "+ mErr.errorDescription);
+                        String result = "errorCode =" + mErr.errorCode + "\n"+"errorDescription =" + DJIError.getErrorDescriptionByErrcode(mErr.errorCode);
+                        if(mErr.errorCode == DJIError.RESULT_OK ){
+                            result = result +"\n" + "value:"+ DJIDrone.getDjiCamera().getDjiCameraProperty().mVideoResolution.toString()+","+DJIDrone.getDjiCamera().getDjiCameraProperty().mVideoFrameRate.toString();
+                        }
+                        handler.sendMessage(handler.obtainMessage(SHOWTOAST, result));
+                                               
+                    }
+                    
+                });
+                
+                break;
+                
             case R.id.camera_set_continuousparam_btn:
                 
                 if (mPopupNumberPickerDouble != null)
@@ -1658,7 +1759,75 @@ public class CameraProtocolDemoActivity extends DemoBaseActivity implements OnCl
                     }
                     
                 });
-                break;        
+                break;
+                
+            case R.id.btn_setCameraVideoStandard:
+                if (mPopupNumberPicker != null)
+                    mPopupNumberPicker.dismiss();
+
+                strlist = new ArrayList<String>();                
+                TotalStringCnt = getResources().getStringArray(R.array.videoStandard).length;
+                mSettingStrs = new String[TotalStringCnt];
+                mSettingStrs = getResources().getStringArray(R.array.videoStandard);
+                
+                for (int i = 0; i < TotalStringCnt; i++) {
+                    strlist.add(mSettingStrs[i]);
+                }
+                
+                mPopupNumberPicker = new PopupNumberPicker(m_context,
+                        strlist,
+                        new pickerValueChangeListener(){
+
+                            @Override
+                            public void onValueChange(int pos1, int pos2) {
+                                //Log.d(TAG,"pos1 = "+ pos1 +", pos2 = "+pos2);
+                                mPopupNumberPicker.dismiss();
+                                mPopupNumberPicker = null;
+                                
+                                //Log.d(TAG,"CameraActionWhenBreak.values()[pos1].toString() = "+CameraActionWhenBreak.values()[pos1].toString());
+                                
+                                DJIDrone.getDjiCamera().setCameraVideoStandard(CameraVideoStandard.values()[pos1],new DJIExecuteResultCallback(){
+
+                                    @Override
+                                    public void onResult(DJIError mErr)
+                                    {
+                                        // TODO Auto-generated method stub
+                                        Log.d(TAG, "setCameraVideoStandard errorCode = "+ mErr.errorCode);
+                                        Log.d(TAG, "setCameraVideoStandard errorDescription = "+ mErr.errorDescription);
+                                        String result = "errorCode =" + mErr.errorCode + "\n"+"errorDescription =" + DJIError.getErrorDescriptionByErrcode(mErr.errorCode);
+                                        handler.sendMessage(handler.obtainMessage(SHOWTOAST, result));
+                                                               
+                                    }
+                                    
+                                });
+                                
+                                
+                            }}, 250,
+                        200, 0);
+                
+                mPopupNumberPicker.showAtLocation(findViewById(R.id.my_content_view),
+                        Gravity.CENTER, 0, 0);
+                break;
+                
+            case R.id.btn_getCameraVideoStandard:
+            	DJIDrone.getDjiCamera().getCameraVideoStandard(new DJIExecuteResultCallback(){
+
+                    @Override
+                    public void onResult(DJIError mErr)
+                    {
+                        // TODO Auto-generated method stub
+                        Log.d(TAG, "getCameraVideoStandard errorCode = "+ mErr.errorCode);
+                        Log.d(TAG, "getCameraVideoStandard errorDescription = "+ mErr.errorDescription);
+                        String result = "errorCode =" + mErr.errorCode + "\n"+"errorDescription =" + DJIError.getErrorDescriptionByErrcode(mErr.errorCode);
+                        if(mErr.errorCode == DJIError.RESULT_OK ){
+                            result = result +"\n" + "value:"+ DJIDrone.getDjiCamera().getDjiCameraProperty().mVideoStandard.toString();
+                        }
+                        handler.sendMessage(handler.obtainMessage(SHOWTOAST, result));
+                                               
+                    }
+                    
+                });
+                break;
             case R.id.camera_set_mode_btn:
                 if (mPopupNumberPicker != null)
                     mPopupNumberPicker.dismiss();

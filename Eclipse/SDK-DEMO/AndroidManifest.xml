@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dji.sdkdemo"
-    android:versionCode="10"
-    android:versionName="2.4.0" >
+    android:versionCode="11"
+    android:versionName="2.4.1" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -46,11 +46,20 @@
         android:theme="@style/AppTheme" >
         
         <uses-library android:name="com.android.future.usb.accessory" />
-
+         <!-- 
+          Level2 key
+         --> 
         <meta-data
             android:name="com.dji.sdk.API_KEY"
             android:value="" />
-
+        <!-- 
+            Level1 key
+         -->
+        <!-- 
+        <meta-data
+            android:name="com.dji.sdk.API_KEY"
+            android:value="" />
+        -->
         <activity
             android:name="com.dji.sdkdemo.DJIAoaActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|keyboard"

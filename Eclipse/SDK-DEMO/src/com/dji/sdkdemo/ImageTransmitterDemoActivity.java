@@ -509,19 +509,37 @@ public class ImageTransmitterDemoActivity extends DemoBaseActivity implements On
                 
                 break;
             case R.id.get_it_bandwidth_btn:
-                DJIDrone.getDjiImageTransmitter().getImageTransmitterBandwidth(new DJIImageTransmitterBandwidthCallback() {
+            	
+                DJIDrone.getDjiImageTransmitter().getImageTransmitterChannel(new DJIImageTransmitterChannelInfoCallback() {
                     
                     @Override
-                    public void onResult(DJIImageTransmitterBandwidth mBandwidth, DJIError mErr)
+                    public void onResult(DJIImageTransmitterChannelInfo mChannelInfo,
+                            DJIError mErr)
                     {
                         // TODO Auto-generated method stub
-                        Log.d(TAG, "getImageTransmitterBandwidth errorCode = "+ mErr.errorCode);
-                        Log.d(TAG, "getImageTransmitterBandwidth errorDescription = "+ mErr.errorDescription);
-                        String result = "getImageTransmitterBandwidth errorCode =" + mErr.errorCode + "\n"+"errorDescription =" + DJIError.getErrorDescriptionByErrcode(mErr.errorCode)+"\n"+
-                        "bandwidth = "+mBandwidth.toString();
-                        handler.sendMessage(handler.obtainMessage(SHOWTOAST, result));
+                        Log.d(TAG, "getImageTransmitterChannel errorCode = "+ mErr.errorCode);
+                        Log.d(TAG, "getImageTransmitterChannel errorDescription = "+ mErr.errorDescription);
+                        if(mChannelInfo.isAuto){
+	                        String result = "The channel is set to be automatical. The bandwidht changes dynamically";
+	                        handler.sendMessage(handler.obtainMessage(SHOWTOAST, result));
+                        }else {
+                            DJIDrone.getDjiImageTransmitter().getImageTransmitterBandwidth(new DJIImageTransmitterBandwidthCallback() {
+                                
+                                @Override
+                                public void onResult(DJIImageTransmitterBandwidth mBandwidth, DJIError mErr)
+                                {
+                                    // TODO Auto-generated method stub
+                                    Log.d(TAG, "getImageTransmitterBandwidth errorCode = "+ mErr.errorCode);
+                                    Log.d(TAG, "getImageTransmitterBandwidth errorDescription = "+ mErr.errorDescription);
+                                    String result = "getImageTransmitterBandwidth errorCode =" + mErr.errorCode + "\n"+"errorDescription =" + DJIError.getErrorDescriptionByErrcode(mErr.errorCode)+"\n"+
+                                    "bandwidth = "+mBandwidth.toString();
+                                    handler.sendMessage(handler.obtainMessage(SHOWTOAST, result));
+                                }
+                            });
+                        }
                     }
-                });
+                });              
+
                 break;
             case R.id.set_it_doubleouput_btn:
                 

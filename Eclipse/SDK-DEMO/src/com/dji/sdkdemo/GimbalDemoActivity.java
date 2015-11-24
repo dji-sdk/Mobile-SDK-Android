@@ -10,6 +10,7 @@ import dji.sdk.api.DJIError;
 import dji.sdk.api.Camera.DJICameraDecodeTypeDef.DecoderType;
 import dji.sdk.api.Camera.DJICameraSettingsTypeDef.CameraVisionType;
 import dji.sdk.api.Gimbal.DJIGimbalAttitude;
+import dji.sdk.api.Gimbal.DJIGimbalCapacity;
 import dji.sdk.api.Gimbal.DJIGimbalCustomerParamsCommand;
 import dji.sdk.api.Gimbal.DJIGimbalRotation;
 import dji.sdk.api.Gimbal.DJIGimbalTypeDef.CommandId;
@@ -56,6 +57,7 @@ public class GimbalDemoActivity extends DemoBaseActivity implements OnClickListe
     private Button mRollFinetuneUpBtn;
     private Button mRollFinetuneDownBtn;
     private Button mGetFirmwareVersion;
+    private Button mGetCapacity;
     
     private LinearLayout lineLayout;
     private RelativeLayout relativeLayout;
@@ -146,6 +148,7 @@ public class GimbalDemoActivity extends DemoBaseActivity implements OnClickListe
         mRollFinetuneUpBtn = (Button)findViewById(R.id.RollFinetunePlus);
         mRollFinetuneDownBtn = (Button)findViewById(R.id.RollFinetuneMinus);
         mGetFirmwareVersion = (Button)findViewById(R.id.get_version_btn);
+        mGetCapacity = (Button)findViewById(R.id.get_gimbal_capacity_btn);
         
         mPitchGoBtn.setOnClickListener(this);
         mPitchGoEditText.setHint(DJIDrone.getDjiGimbal().getGimbalPitchMinAngle() + " ~ " + DJIDrone.getDjiGimbal().getGimbalPitchMaxAngle());
@@ -154,6 +157,7 @@ public class GimbalDemoActivity extends DemoBaseActivity implements OnClickListe
         mAutoCalibrationBtn.setOnClickListener(this);
         mStartFPV.setOnClickListener(this);
         mGetFirmwareVersion.setOnClickListener(this);
+        mGetCapacity.setOnClickListener(this);
         
         Minus_Listener minuslisten = new Minus_Listener();
         Plus_Listener Pluslisten = new Plus_Listener();
@@ -447,6 +451,12 @@ public class GimbalDemoActivity extends DemoBaseActivity implements OnClickListe
                     }
                     
                 });
+                break;
+            }
+            
+            case R.id.get_gimbal_capacity_btn : {
+                DJIGimbalCapacity gimbalCapacity = DJIDrone.getDjiGimbal().getDJIGimbalCapacity();
+                handler.sendMessage(handler.obtainMessage(SHOWTOAST, gimbalCapacity.toString()));
                 break;
             }
      

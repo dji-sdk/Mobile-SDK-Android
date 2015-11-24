@@ -79,8 +79,12 @@
     <string name="camera_get_cameraaction">Get Camera Action</string>
     <string name="camera_set_photoformat">Set Photo Format</string>
     <string name="camera_get_photoformat">Get Photo Format</string>
+    <string name="setCameraVideoStandard">Set Video Standard</string>
+    <string name="getCameraVideoStandard">Get Video Standard</string>
     <string name="camera_set_recordingparam">Set Recording Param</string>
     <string name="camera_get_recordingparam">Get Recording Param</string>
+    <string name="camera_get_videoresolutionandframerate">Get Video Resolution fps</string>
+    <string name="camera_set_videoresolutionandframerate">Set Video Resolution fps</string>
     <string name="camera_set_continuousparam">Set Continuous Param</string>
     <string name="camera_get_continuousparam">Get Continuous Param</string>
     <string name="camera_set_mode">Set Camera Mode</string>
@@ -180,14 +184,33 @@
         <item>480P 30</item>
         <item>720P 30</item>
         <item>720P 60</item>
-        <item>960P 30</item>
         <item>1080P 30</item>
-        <item>1080I 60</item>
+        <item>1080P 60</item>
     </string-array>
     <string-array name="recordingFovValues">
         <item>FOV0</item>
         <item>FOV1</item>
         <item>FOV2</item>
+    </string-array>
+    <string-array name="videoStandard">
+    <item>PAL</item>
+    <item>NTSC</item>
+    </string-array>
+    
+    <string-array name="recordingResolutionValuesNew">
+        <item>1280x720p</item>
+        <item>1920x1080p</item>
+        <item>3840x2160p</item>
+        <item>4096x2160p</item>
+    </string-array>
+    
+    <string-array name="recordingFrameRate">
+        <item>24fps</item>
+        <item>25fps</item>
+        <item>30fps</item>
+        <item>48fps</item>
+        <item>50fps</item>
+        <item>60fps</item>      
     </string-array>
 
     <!-- Gimbal Demo Activity -->
@@ -204,7 +227,8 @@
     <string name="down_result">Download Result</string>
     <string name="gimbal_roll">ROLL</string>
     <string name="gimbal_switch">Switch</string>
-    <string name="gimbal_auto_calibration">AutoCalibration</string>
+    <string name="gimbal_auto_calibration">AutoCalibration</string>    
+    <string name="get_gimbal_capacity">Get Gimbal Capacity</string>
     <string name="gimbal_set_fpv">StartFPV</string>
     <string name="gimbal_roll_finetune">RollFinetune</string>
     <string name="gimbal_roll_finetune_minus">-</string>
@@ -225,6 +249,9 @@
     <!-- Gs Protocol Demo Activity -->
     <string name="title_activity_gs_protocol_demo">GsProtocolDemoActivity</string>
     <string name="gs_open_ground_station">1. Open Ground Station</string>
+    <string name="Rotate_60_degree">Rotate 60 degree to North</string>
+    <string name="Rotate_30_degree">Rotate 30 degree to North</string>
+    <string name="Rotate_120_degree">Rotate 120 degree to North</string>
     <string name="gs_add_waypoint">2. Add waypoint(10m)</string>
     <string name="gs_remove_waypoint">2-0. Remove waypoint</string>
     <string name="gs_set_loop">2-1. SetLoop</string>
@@ -367,6 +394,7 @@
     <string name="get_slave_mode">Get Slave Mode</string>
     <string name="set_gimbal_speed">Set Gimbal Speed</string>
     <string name="get_gimbal_speed">Get Gimbal Speed</string>
+    <string name="gimbal_direction">Gimbal Direction</string>
     <string name="set_custom_function">Set Custom Function</string>
     <string name="get_custom_function">Get Custom Function</string>
     <string name="set_Frequency">Set Frequency</string>

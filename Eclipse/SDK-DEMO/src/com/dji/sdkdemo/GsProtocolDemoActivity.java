@@ -22,6 +22,10 @@ import dji.sdk.api.GroundStation.DJIGroundStationTask;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJIGroundStationFinishAction;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJIGroundStationMovingMode;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJIGroundStationPathMode;
+import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJINavigationFlightControlCoordinateSystem;
+import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJINavigationFlightControlHorizontalControlMode;
+import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJINavigationFlightControlVerticalControlMode;
+import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJINavigationFlightControlYawControlMode;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.GroundStationFlightMode;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.GroundStationOnWayPointAction;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.GroundStationResult;
@@ -285,6 +289,7 @@ public class GsProtocolDemoActivity extends DemoBaseActivity implements OnClickL
         
         mDjiGLSurfaceView = (DjiGLSurfaceView)findViewById(R.id.DjiSurfaceView_gs);         
         mOpenGsButton = (Button)findViewById(R.id.OpenGsButton);
+
         mAddOneWaypointButton = (Button)findViewById(R.id.AddWaypointButton);
         mRemoveWaypointButton = (Button)findViewById(R.id.RemoveWaypointButton);
         mSetLoop = (Button)findViewById(R.id.GsSetLoop);
@@ -586,7 +591,6 @@ public class GsProtocolDemoActivity extends DemoBaseActivity implements OnClickL
                 }); 
                 
                 break;
-                
             case R.id.AddWaypointButton:
                 if(!checkGetHomePoint()) return;
                 

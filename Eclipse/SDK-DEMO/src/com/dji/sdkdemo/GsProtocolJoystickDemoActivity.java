@@ -16,6 +16,10 @@ import dji.sdk.api.GroundStation.DJIGroundStationTask;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJIGroundStationFinishAction;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJIGroundStationMovingMode;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJIGroundStationPathMode;
+import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJINavigationFlightControlCoordinateSystem;
+import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJINavigationFlightControlHorizontalControlMode;
+import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJINavigationFlightControlVerticalControlMode;
+import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJINavigationFlightControlYawControlMode;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.GroundStationFlightMode;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.GroundStationOnWayPointAction;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.GroundStationResult;
@@ -33,6 +37,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
@@ -60,6 +65,9 @@ public class GsProtocolJoystickDemoActivity extends DemoBaseActivity implements 
     private DJIMcuUpdateStateCallBack mMcuUpdateStateCallBack = null;
     
     private Button mOpenGsButton;
+    private Button mRotate60Button;
+    private Button mRotate120Button;
+    private Button mRotate30Button;
     private Button mAddOneWaypointButton;
     private Button mUploadWaypointButton;
     private Button mTakeOffButton;
@@ -228,8 +236,12 @@ public class GsProtocolJoystickDemoActivity extends DemoBaseActivity implements 
         
         DJIDrone.getDjiCamera().setDecodeType(DecoderType.Software);
         
-        mDjiGLSurfaceView = (DjiGLSurfaceView)findViewById(R.id.DjiSurfaceView_gs);         
+        mDjiGLSurfaceView = (DjiGLSurfaceView)findViewById(R.id.DjiSurfaceView_gs);
+        mRotate60Button = (Button)findViewById(R.id.Rotate60); 
+        mRotate120Button = (Button)findViewById(R.id.Rotate120);
+        mRotate30Button = (Button)findViewById(R.id.Rotate30);
         mOpenGsButton = (Button)findViewById(R.id.OpenGsButton);
+
         mAddOneWaypointButton = (Button)findViewById(R.id.AddWaypointButton);
         mUploadWaypointButton = (Button)findViewById(R.id.UploadWaypointButton);
         mTakeOffButton = (Button)findViewById(R.id.TakeOffButton);
@@ -243,6 +255,9 @@ public class GsProtocolJoystickDemoActivity extends DemoBaseActivity implements 
         mOneKeyFlyButton = (Button)findViewById(R.id.OneKeyFlyButton);
 
         mOpenGsButton.setOnClickListener(this);
+        mRotate60Button.setOnClickListener(this);
+        mRotate120Button.setOnClickListener(this);
+        mRotate30Button.setOnClickListener(this);
         mAddOneWaypointButton.setOnClickListener(this);
         mUploadWaypointButton.setOnClickListener(this);
         mTakeOffButton.setOnClickListener(this);
@@ -490,7 +505,74 @@ public class GsProtocolJoystickDemoActivity extends DemoBaseActivity implements 
                 }); 
 
                 break;
-                
+            case R.id.Rotate30:
+            	DJIDrone.getDjiGroundStation().setHorizontalControlCoordinateSystem(
+                        DJINavigationFlightControlCoordinateSystem.Navigation_Flight_Control_Coordinate_System_Ground);
+                 	DJIDrone.getDjiGroundStation().setVerticalControlMode(
+                        DJINavigationFlightControlVerticalControlMode.Navigation_Flight_Control_Vertical_Control_Velocity);
+                 	DJIDrone.getDjiGroundStation().setHorizontalControlMode(
+                        DJINavigationFlightControlHorizontalControlMode.Navigation_Flight_Control_Horizontal_Control_Velocity);
+                 	DJIDrone.getDjiGroundStation().setYawControlMode(
+                        DJINavigationFlightControlYawControlMode.Navigation_Flight_Control_Yaw_Control_Angle);
+                 	for (int i = 0; i < 100; i++) {
+	            		DJIDrone.getDjiGroundStation().sendFlightControlData(30f, 0, 0, 0,
+	
+	            				new DJIExecuteResultCallback() {
+	            			@Override
+	            			public void onResult(DJIError djiError) {
+
+	            			}
+	            		});
+	            		//命令协议发送接口为5Hz频率，因此暂停200MS
+	            		SystemClock.sleep(25);
+                 	}
+            		break;
+            case R.id.Rotate60:
+            	DJIDrone.getDjiGroundStation().setHorizontalControlCoordinateSystem(
+                        DJINavigationFlightControlCoordinateSystem.Navigation_Flight_Control_Coordinate_System_Ground);
+                 	DJIDrone.getDjiGroundStation().setVerticalControlMode(
+                        DJINavigationFlightControlVerticalControlMode.Navigation_Flight_Control_Vertical_Control_Velocity);
+                 	DJIDrone.getDjiGroundStation().setHorizontalControlMode(
+                        DJINavigationFlightControlHorizontalControlMode.Navigation_Flight_Control_Horizontal_Control_Velocity);
+                 	DJIDrone.getDjiGroundStation().setYawControlMode(
+                        DJINavigationFlightControlYawControlMode.Navigation_Flight_Control_Yaw_Control_Angle);
+                 	
+                 	for (int i = 0; i < 100; i++) {
+	            		DJIDrone.getDjiGroundStation().sendFlightControlData(60f, 0, 0, 0,
+	
+	            				new DJIExecuteResultCallback() {
+	            			@Override
+	            			public void onResult(DJIError djiError) {
+	
+	            			}
+	            		});
+	            		//命令协议发送接口为5Hz频率，因此暂停200MS
+	            		SystemClock.sleep(25);
+                 	}
+            		break;
+            case R.id.Rotate120:
+            	DJIDrone.getDjiGroundStation().setHorizontalControlCoordinateSystem(
+                        DJINavigationFlightControlCoordinateSystem.Navigation_Flight_Control_Coordinate_System_Ground);
+                 	DJIDrone.getDjiGroundStation().setVerticalControlMode(
+                        DJINavigationFlightControlVerticalControlMode.Navigation_Flight_Control_Vertical_Control_Velocity);
+                 	DJIDrone.getDjiGroundStation().setHorizontalControlMode(
+                        DJINavigationFlightControlHorizontalControlMode.Navigation_Flight_Control_Horizontal_Control_Velocity);
+                 	DJIDrone.getDjiGroundStation().setYawControlMode(
+                        DJINavigationFlightControlYawControlMode.Navigation_Flight_Control_Yaw_Control_Angle);
+                 	
+                 	for (int i = 0; i < 100; i++) {
+	            		DJIDrone.getDjiGroundStation().sendFlightControlData(120f, 0, 0, 0,
+	
+	            				new DJIExecuteResultCallback() {
+	            			@Override
+	            			public void onResult(DJIError djiError) {
+	            				
+	            			}
+	            		});
+	            		//命令协议发送接口为5Hz频率，因此暂停200MS
+	            		SystemClock.sleep(25);
+                 	}
+            		break;
             case R.id.AddWaypointButton:
                 if(!checkGetHomePoint()) return;
                 

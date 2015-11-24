@@ -554,6 +554,7 @@ public class GsProtocolFollowMeDemoActivity extends DemoBaseActivity implements 
                         sb.append("Follow me gps level : " + info.followMeGpsLevel).append("\n");
                         sb.append("Follow me distance : " + info.followMeDistance/100d).append("\n");
                         sb.append("Follow me reason : " + info.followMeReason).append("\n");
+                        startSuccessFlag = true;
                         break;
                     }
                     
@@ -563,8 +564,10 @@ public class GsProtocolFollowMeDemoActivity extends DemoBaseActivity implements 
                         break;
                     }
                     
-                    default :
+                    default :{
                         sb.append("Wrong Selection").append("\n");
+                        break;
+                    }
                 }
                 
                 FollowMeInfoString = sb.toString();

@@ -172,6 +172,7 @@ public class GsProtocolIocDemoActivity extends DemoBaseActivity implements OnCli
                 
                 if(homeLocationLatitude != -1 && homeLocationLongitude != -1 && homeLocationLatitude != 0 && homeLocationLongitude != 0){
                     getHomePointFlag = true;
+                    Log.e(TAG,"IOCState "+state.IOCState + " IOCType "+state.IOCType);
                 }
                 else{
                     getHomePointFlag = false;
