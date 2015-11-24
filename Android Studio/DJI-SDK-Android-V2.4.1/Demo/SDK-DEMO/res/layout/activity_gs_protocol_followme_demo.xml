@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_content_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true"
+    android:background="@color/dark" >
+    
+    <RelativeLayout 
+        android:id="@+id/surfaceView_Rl_gs_follow_me"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="0dp">
+        
+        <dji.sdk.widget.DjiGLSurfaceView
+            android:id="@+id/DjiSurfaceView_gs_follow_me"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />"
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@color/black_overlay">
+        
+        <ImageButton
+            android:id="@+id/ReturnBtnGs"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:onClick="onReturn"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_button" />
+
+        <TextView
+            android:id="@+id/ConnectStateGsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:text=""
+            android:textSize="21sp" />
+
+      </RelativeLayout>
+      
+    <ScrollView 
+        android:id="@+id/scrollView"
+        android:layout_width="170dp"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="40dp"
+        >"
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            
+            <Button 
+                android:id="@+id/OpenGsButton"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_button"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="@string/gs_open_ground_station"/>
+            
+            <Button 
+                android:id="@+id/StartFollowMeBtn"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_button"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="@string/follow_me_start_follow_me"/>
+            
+            <Button 
+                android:id="@+id/StartSendGPS"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_button"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="@string/follow_me_start_send_gps"
+                />
+            
+            <Button 
+                android:id="@+id/PauseFollowMe"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_button"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="@string/follow_me_pause_follow_me"
+                />
+            
+            <Button 
+                android:id="@+id/ResumeFollowMe"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_button"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="@string/follow_me_resume_follow_me"
+                />
+            
+            <Button 
+                android:id="@+id/CancelFollowMe"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_button"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="@string/follow_me_cancel_follow_me"
+                />
+            
+            <Button 
+                android:id="@+id/CloseGroundStation"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_button"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="@string/follow_me_close_ground_station"
+                />
+        </LinearLayout>
+        
+    </ScrollView>
+    
+    <ScrollView 
+        android:layout_width="200dp"
+        android:layout_height="90dp"
+        android:scrollbars="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/selector_button" > 
+  
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" > 
+
+                  <TextView
+                    android:id="@+id/FollowMeInfoTV"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="Mobile Gps State:"
+                    android:layout_centerInParent="true"
+                    android:textSize="14sp" 
+                    />   
+        </RelativeLayout> 
+      </ScrollView> 
+      
+    <ScrollView 
+        android:layout_width="200dp"
+        android:layout_height="90dp"
+        android:scrollbars="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/selector_button" > 
+  
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" > 
+
+                  <TextView
+                    android:id="@+id/FollowMeInfoTV2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="Follow Me State:"
+                    android:layout_centerInParent="true"
+                    android:textSize="14sp" 
+                    />   
+        </RelativeLayout> 
+      </ScrollView> 
+</RelativeLayout>

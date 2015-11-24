@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_content_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true"
+    android:background="@color/dark" >
+
+
+
+      <RelativeLayout
+      android:id="@+id/surfaceView_Rl"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_marginBottom="0dp">
+      
+        <dji.sdk.widget.DjiGLSurfaceView
+          android:id="@+id/DjiSurfaceView"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"/>
+
+      </RelativeLayout>
+
+      <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@color/black_overlay">
+        
+        <ImageButton
+            android:id="@+id/ReturnBtnPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:onClick="onReturn"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_button" />
+
+        <TextView
+            android:id="@+id/ConnectStatePreviewTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:text=""
+            android:textSize="21sp" />
+
+      </RelativeLayout>
+    
+      
+      <RadioGroup
+        android:id="@+id/ResolutionTypeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:orientation="vertical"
+        android:background="#50808080" >
+
+        <RadioButton
+            android:id="@+id/ResolutionTypeRadio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="320x240 15fps" 
+            android:textColor="@color/white"/>
+
+        <RadioButton
+            android:id="@+id/ResolutionTypeRadio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="320x240 30fps"
+            android:textColor="@color/white" />
+
+         <RadioButton
+            android:id="@+id/ResolutionTypeRadio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="640x480 15fps" 
+            android:textColor="@color/white"/>
+         
+         <RadioButton
+            android:id="@+id/ResolutionTypeRadio4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="640x480 30fps" 
+            android:textColor="@color/white"/>
+                 
+    </RadioGroup>
+
+</RelativeLayout>
