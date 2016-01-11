@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "19.1.0"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 17
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.google.code.gson:gson:2.1'
+    compile files('libs/bouncycastle.jar')
+    compile files('libs/dji-sdk.jar')
+    compile files('libs/eventbus.jar')
+    compile files('libs/pinyin4j-2.5.0.jar')
+}

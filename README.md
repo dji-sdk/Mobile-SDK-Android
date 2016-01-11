@@ -4,7 +4,7 @@
 
 ## What Is This?
 
-The DJI Mobile SDK enables you to control how your Phantom’s camera, gimbal, and more behaves and interacts with mobile apps you create.Using the Mobile SDK, create a customized mobile app to unlock the full potential of your DJI aerial platform.
+The DJI Mobile SDK enables you to control how your Phantom’s camera, gimbal, and more behaves and interacts with mobile apps you create. Using the Mobile SDK, create a customized mobile app to unlock the full potential of your DJI aerial platform.
 
 ## Running the SDK Sample Code
 
@@ -12,19 +12,19 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 
 ### Prerequisites
 
-- Android API Level 16 or higher
+- Android API Level 17 or higher
 - Eclipse 4.4.1 or higher
 - Android Studio 1.2 or higher
 
-### Registering a App Key
+### Registering an App Key
 
-Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/mobile-sdk/), select the "Mobile SDK" tab on the left, press the "Create App" button and select "Android" as your operating system. Then type in the info in the pop up dialog.
+Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/apps/), select the "Mobile SDK" tab on the left, press the "Create App" button and select "Android" as your operating system. Then type in the info in the pop up dialog.
 
->Note: Please type in "com.dji.sdkdemo" in the `Identification Code` field, because the application ID in the sample SDK project is "com.dji.sdkdemo".
+>Note: Please type in "com.dji.sdkdemo" in the `Identification Code` field, because the Android Application ID in the sample SDK project is "com.dji.sdkdemo".
 
 Once you complete it, you may see the following App Key status:
 
-![sdkDemoApp_Key](./Images/sdkDemoApp_Key_android.jpg)
+![sdkDemoApp_Key](./Images/createAppSuccessfully_android.png)
 
 ### Running the Sample Eclipse or Android Studio project
 
@@ -45,7 +45,7 @@ Open the "AndroidManifest.xml" file in Eclipse or Android Studio, modify the **m
 </application>
 ~~~
 
-Once you finish it, build and run the project and you can start to try different features in the sample project without any problems.'
+Once you finish it, build and run the project and you can start to try different features in the sample project without any problems.
 
 ## Concepts
 
@@ -56,20 +56,9 @@ This handbook provides a high level overview of the different components that ma
 
 - [**Creating a Camera Application**](https://github.com/DJI-Mobile-SDK/Android-FPVDemo): Our introductory tutorial, which guides you through connecting to your drone's camera to display a live video feed in your app, through which you can take photos and videos.
 
-- [**Importing DJI SDK Demo to Android Studio**](https://github.com/DJI-Mobile-SDK/Android-AndroidStudioMigration): There are two methods we can use to import the DJI SDK Demo library into Android Studio. The first is to import the Android Studio version of the DJI SDK Demo Library to Android Studio; the second is to import the Eclipse version of the DJI SDK Demo into Android Studio.
-
-## Sample Projects - Advanced
-
-- [**Creating a Photo and Video Playback Application**](https://github.com/DJI-Mobile-SDK/Android-PlaybackDemo): A follow up to the FPV tutorial, this tutorial teaches you how to construct an application to view media files onboard a DJI drone's SD card, specifically for **Phantom 3 Professional** and **Inspire 1**.
-
-- **Creating a MapView and Waypoint Application** ([**GoogleMap**](https://github.com/DJI-Mobile-SDK/Android-GSDemo-GoogleMap) | [**AutoNavi**](https://github.com/DJI-Mobile-SDK/Android-GSDemo-Gaode-Map)): Teaches you how to construct a Groundstation app, which allows you to plot a flight route for your drone by placing waypoints on a map.
-
-- [**Creating a Panorama Application**](https://github.com/DJI-Mobile-SDK/Android-PanoramaDemo):
-Learn how to build a cool panorama app. With the help of the powerful DJI SDK and OpenCV libraries, it is actually easy. you will use the Waypoint feature of Intelligent Navigation and Joystick to rotate the aircraft to take photos.
-
 ## Gitbook
 
-For better reading experience of DJI Mobile SDK Tutorials, please check our [**Gitbook**](https://dji-dev.gitbooks.io/mobile-sdk-tutorials/).
+For an improved reading experience of DJI Mobile SDK Tutorials, please check our [**Gitbook**](https://dji-dev.gitbooks.io/mobile-sdk-tutorials/).
 
 ## SDK Reference
 
@@ -101,13 +90,13 @@ You can get support from DJI with the following methods:
 
 ### 注册App Key
 
-首先, 请来到你的DJI 账号的[用户中心](http://developer.dji.com/en/user/mobile-sdk/), 选择左侧的 "Mobile SDK" 选项，然后点击“创建App”按钮，并且选择“Android”作为开发平台. 接着在弹出的对话框中输入信息.
+首先, 请来到你的DJI 账号的[用户中心](http://developer.dji.com/cn/user/apps/), 选择左侧的 "Mobile SDK" 选项，然后点击“创建App”按钮，并且选择“Android”作为开发平台. 接着在弹出的对话框中输入信息.
 
 >注意: 请在`标识码`栏中输入"com.dji.sdkdemo", 因为示例代码中的默认application ID就是 "com.dji.sdkdemo".
 
 一旦你完成了注册，你将看到以下App Key的状态截图:
 
-![sdkDemoApp_Key](./Images/sdkDemoApp_Key_android.jpg)
+![sdkDemoApp_Key](./Images/createAppSuccessful_android_cn.png)
 
 请记下刚刚创建好的App Key，我们会在接下来的步骤中用到。
 
@@ -141,17 +130,6 @@ You can get support from DJI with the following methods:
 ## 示例教程 - 基础
 
 - [**创建航拍相机App**](https://github.com/DJI-Mobile-SDK/Android-FPVDemo): 这是我们的入门教程, 该教材会指导你如何连接飞行器的相机，在app上显示实时画面，以及如何进行拍摄和录像操作。
-
-- [**Android Studio工程导入教程**](https://github.com/DJI-Mobile-SDK/Android-AndroidStudioMigration): 目前Google已经对使用Eclipse进行Android开发停止了技术支持，很多开发者倾向于使用Android Studio工具进行开发。在本教程中，你将学会如何快速将Eclipse工程导入到Android Studio中开发。
-
-## 示例教程 - 高级
-
-- [**创建照片和视频回放应用**](https://github.com/DJI-Mobile-SDK/Android-PlaybackDemo): 你将会学到如何使用DJI Mobile SDK去访问飞机相机上的SD卡媒体资源。当你完成本教程后，你将开发出一款app，具备预览照片，播放视频，下载或者删除文件等功能. 该教材目前只针对**Phantom 3 Professional** 和 **Inspire 1**.
-
-- **创建智能飞行预设航点功能App** ([**谷歌地图**](https://github.com/DJI-Mobile-SDK/Android-GSDemo-GoogleMap) | [**高德地图**](https://github.com/DJI-Mobile-SDK/Android-GSDemo-Gaode-Map)): 你将学到如何安装使用 DJI PC 模拟器, 如何升级你的 Inspire 1, Phantom 3 Professional 和 Phantom 3 Advanced的固件到Beta版本, 以及如何使用DJI PC 模拟器去测试地面站的API. 同时, 你将学到地面站预设航点功能的基本使用流程.
-
-- [**创建全景航拍App**](https://github.com/DJI-Mobile-SDK/Android-PanoramaDemo):
-在本教程中，你将开发一款很酷的全景app.使用DJI SDK 和 OpenCV库进行开发，会变得很容易.你将使用地面站的航点任务和飞行控制，去旋转飞行器机身和相机镜头进行拍照。
 
 ## Gitbook
 

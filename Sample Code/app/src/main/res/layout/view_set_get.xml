@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:orientation="vertical">
+
+    <com.dji.sdk.sample.common.BaseFpvView
+        style="@style/fpv"/>
+
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="290dp"
+        android:textAllCaps="false"
+        android:text="Set"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="210dp"
+        android:text="Get"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        />
+
+    <Button
+        android:id="@+id/btn_set"
+        android:layout_width="65dp"
+        android:layout_below="@+id/btn_get"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:text="Set"
+        style="@style/common_button"/>
+
+    <Button
+        android:id="@+id/btn_get"
+        android:layout_width="65dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="200dp"
+        android:text="Get"
+        style="@style/common_button"/>
+
+    <TextView
+        android:id="@+id/text_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="210dp"
+        android:text="Unknown"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"/>
+
+    <Spinner
+        android:id="@+id/spinner_set"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="280dp"
+        android:textSize="14sp"/>
+
+</RelativeLayout>
