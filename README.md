@@ -20,11 +20,11 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 
 Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/apps/), select the "Mobile SDK" tab on the left, press the "Create App" button and select "Android" as your operating system. Then type in the info in the pop up dialog.
 
->Note: Please type in "com.dji.sdkdemo" in the `Identification Code` field, because the Android Application ID in the sample SDK project is "com.dji.sdkdemo".
+>Note: Please type in "com.dji.sdk.sample" in the `Identification Code` field, because the Android Application ID in the sample SDK project is "com.dji.sdk.sample".
 
 Once you complete it, you may see the following App Key status:
 
-![sdkDemoApp_Key](./Images/createAppSuccessfully_android.png)
+![sdkDemoApp_Key](./Images/createAppSuccessful_android.png)
 
 ### Running the Sample Eclipse or Android Studio project
 
@@ -92,11 +92,11 @@ You can get support from DJI with the following methods:
 
 首先, 请来到你的DJI 账号的[用户中心](http://developer.dji.com/cn/user/apps/), 选择左侧的 "Mobile SDK" 选项，然后点击“创建App”按钮，并且选择“Android”作为开发平台. 接着在弹出的对话框中输入信息.
 
->注意: 请在`标识码`栏中输入"com.dji.sdkdemo", 因为示例代码中的默认application ID就是 "com.dji.sdkdemo".
+>注意: 请在`标识码`栏中输入"com.dji.sdk.sample", 因为示例代码中的默认application ID就是 "com.dji.sdk.sample".
 
 一旦你完成了注册，你将看到以下App Key的状态截图:
 
-![sdkDemoApp_Key](./Images/createAppSuccessful_android_cn.png)
+![sdkDemoApp_Key](./Images/createAppSuccessfully_android_cn.png)
 
 请记下刚刚创建好的App Key，我们会在接下来的步骤中用到。
 
