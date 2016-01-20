@@ -13,8 +13,7 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 ### Prerequisites
 
 - Android API Level 17 or higher
-- Eclipse 4.4.1 or higher
-- Android Studio 1.2 or higher
+- Android Studio 1.5
 
 ### Registering an App Key
 
@@ -26,9 +25,9 @@ Once you complete it, you may see the following App Key status:
 
 ![sdkDemoApp_Key](./Images/createAppSuccessful_android.png)
 
-### Running the Sample Eclipse or Android Studio project
+### Running the Sample Android Studio project
 
-Open the "AndroidManifest.xml" file in Eclipse or Android Studio, modify the **meta-data** element in the **application** element and replace the value of `android:value` with the app key we just created as shown below:
+Open the "AndroidManifest.xml" file in Android Studio, modify the **meta-data** element in the **application** element and replace the value of `android:value` with the app key we just created as shown below:
 
 ~~~xml
 <application
@@ -85,8 +84,7 @@ You can get support from DJI with the following methods:
 ### 开发工具版本要求
 
 - Android API Level 16 以上
-- Eclipse 4.4.1 以上
-- Android Studio 1.2 以上
+- Android Studio 1.5
 
 ### 注册App Key
 
@@ -100,9 +98,9 @@ You can get support from DJI with the following methods:
 
 请记下刚刚创建好的App Key，我们会在接下来的步骤中用到。
 
-### 运行Eclipse 或者 Android Studio示例代码
+### 运行Android Studio示例代码
 
-在Eclipse或者Android Studio中打开"AndroidManifest.xml"文件，修改**application**元素中的**meta-data**元素，替换`android:value`的值为你刚创建的app key，如下所示:
+在Android Studio中打开"AndroidManifest.xml"文件，修改**application**元素中的**meta-data**元素，替换`android:value`的值为你刚创建的app key，如下所示:
 
 ~~~xml
 <application
