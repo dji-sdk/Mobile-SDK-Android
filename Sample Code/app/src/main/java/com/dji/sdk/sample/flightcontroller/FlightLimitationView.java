@@ -68,6 +68,7 @@ public class FlightLimitationView extends BaseThreeBtnView {
                          new DJIBaseComponent.DJICompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {
+                                Utils.showDialogBasedOnError(getContext(), djiError);
                                 mRadiusLimitaionToggleFlag = mRadiusLimitaionToggleFlag ^ true;
                             }
                     });

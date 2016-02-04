@@ -8,6 +8,7 @@ import android.view.View;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.BaseThreeBtnView;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIDialog;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
@@ -23,6 +24,15 @@ public class RebootWiFiAirlinkView extends BaseThreeBtnView {
         super(context, attrs);
         mBtn1.setVisibility(View.INVISIBLE);
         mBtn3.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+
+        if (!DJIModuleVerificationUtil.isWiFiAirlinkAvailable()) {
+            Utils.setResultToToast(getContext(), "Not Support");
+        }
     }
 
     @Override

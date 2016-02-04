@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.BaseThreeBtnView;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import java.io.File;
@@ -72,6 +73,8 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
                             mPlaybackManager.enterMultipleEditMode();
                     }
                 });
+            } else {
+                Utils.setResultToToast(getContext(), "Not support");
             }
         }
     }

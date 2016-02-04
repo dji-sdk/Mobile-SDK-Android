@@ -94,6 +94,7 @@ public class RecordVideoView extends BaseThreeBtnView {
                         public void onResult(DJIError djiError) {
                             //success so, start recording
                             if (null == djiError) {
+                                Utils.setResultToToast(getContext(), "Start record");
                                 timer = new Timer();
                                 timer.schedule(new TimerTask() {
                                     @Override
@@ -121,6 +122,7 @@ public class RecordVideoView extends BaseThreeBtnView {
                     new DJIBaseComponent.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
+                            Utils.setResultToToast(getContext(), "StopRecord");
                             timer.cancel();
                             timeCounter = 0;
                         }

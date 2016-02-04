@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.BaseThreeBtnView;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import java.io.File;
@@ -124,7 +125,8 @@ public class FetchMediaView extends BaseThreeBtnView {
 
                 @Override
                 public void onSuccess(Bitmap bitmap) {
-
+                    Utils.setResultToToast(getContext(), "Success! The bitmap's bytecount is: "
+                            +bitmap.getByteCount());
                 }
 
                 @Override
@@ -158,7 +160,8 @@ public class FetchMediaView extends BaseThreeBtnView {
 
                 @Override
                 public void onSuccess(Bitmap bitmap) {
-
+                    Utils.setResultToToast(getContext(), "Success! The bitmap's bytecount is: "
+                            +bitmap.getByteCount());
                 }
 
                 @Override
@@ -197,7 +200,7 @@ public class FetchMediaView extends BaseThreeBtnView {
 
                 @Override
                 public void onSuccess(String s) {
-
+                    Utils.setResultToToast(getContext(), "The file has been store, its path is " + s);
                 }
 
                 @Override

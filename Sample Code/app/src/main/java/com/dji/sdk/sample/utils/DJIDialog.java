@@ -22,6 +22,18 @@ public class DJIDialog {
         builder.create().show();
     }
 
+    public static void showDialog(Context ctx, int strId) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ctx, R.style.set_dialog);
+        builder.setMessage(strId);
+        builder.setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+    }
+
     public static void showConfirmationDialog(Context ctx, int strId,
                                               DialogInterface.OnClickListener onClickListener) {
         AlertDialog.Builder builder = new AlertDialog.Builder(ctx, R.style.set_dialog);

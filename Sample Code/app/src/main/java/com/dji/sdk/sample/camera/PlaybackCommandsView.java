@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import dji.sdk.Camera.DJICamera;
@@ -86,6 +87,8 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
                         }
                     }
             );
+        } else {
+            Utils.setResultToToast(getContext(), "Not support");
         }
     }
 

@@ -10,6 +10,7 @@ import android.view.View;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.BaseThreeBtnView;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.utils.DJIDialog;
 
 import dji.sdk.Camera.DJICameraSettingsDef;
 import dji.sdk.base.DJIBaseComponent;
@@ -127,7 +128,11 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
                     new DJIBaseComponent.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
-                            mHandler.sendEmptyMessage(ENABLE_BTN2);
+                            if (null == djiError)
+                                DJIDialog.showDialog(getContext(), R.string.success);
+                            else
+                                DJIDialog.showDialog(getContext(), djiError.getDescription());
+                                mHandler.sendEmptyMessage(ENABLE_BTN2);
                         }
                     }
             );

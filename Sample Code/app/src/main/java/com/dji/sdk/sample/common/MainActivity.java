@@ -7,7 +7,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,10 +15,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.dji.sdk.sample.R;
+
 import java.util.Stack;
 
 import de.greenrobot.event.EventBus;
-import dji.sdk.SDKManager.DJISDKManager;
 import dji.sdk.base.DJIBaseProduct;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,18 +43,22 @@ public class MainActivity extends AppCompatActivity {
         /**
          * each time the USB from the RC is connected/disconnected,
          * the phone will prompt the user to select the app they want
-         * to connect
+         * to connect. If you want to launch main activity whenever you
+         * provide the permission to the application, please uncomment
+         * the coming codes. Please uncomment the code of main
+         * activity in AndroidManifest. Also, comment the codes of the
+         * DJIAoaControllerActivity in the AndroidManifest.
          */
-        Intent aoaIntent = getIntent();
-        if (aoaIntent!=null) {
-            String action = aoaIntent.getAction();
-            if (action== UsbManager.ACTION_USB_ACCESSORY_ATTACHED) {
-                Intent attachedIntent=new Intent();
-
-                attachedIntent.setAction(DJISDKManager.USB_ACCESSORY_ATTACHED);
-                sendBroadcast(attachedIntent);
-            }
-        }
+//        Intent aoaIntent = getIntent();
+//        if (aoaIntent!=null) {
+//            String action = aoaIntent.getAction();
+//            if (action== UsbManager.ACTION_USB_ACCESSORY_ATTACHED) {
+//                Intent attachedIntent=new Intent();
+//
+//                attachedIntent.setAction(DJISDKManager.USB_ACCESSORY_ATTACHED);
+//                sendBroadcast(attachedIntent);
+//            }
+//        }
 
         setContentView(R.layout.activity_main);
 

@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.BaseSetGetView;
 import com.dji.sdk.sample.common.DJISampleApplication;
-import com.dji.sdk.sample.utils.DJIDialog;
+import com.dji.sdk.sample.common.Utils;
 
 import dji.sdk.Camera.DJICameraSettingsDef;
 import dji.sdk.base.DJIBaseComponent;
@@ -112,11 +112,7 @@ public class SetGetISOView extends BaseSetGetView {
                 new DJIBaseComponent.DJICompletionCallback() {
                     @Override
                     public void onResult(DJIError djiError) {
-                        if (null == djiError) {
-                            DJIDialog.showDialog(getContext(), getResources().getString(R.string.success));
-                        } else {
-                            DJIDialog.showDialog(getContext(), djiError.getDescription());
-                        }
+                        Utils.showDialogBasedOnError(getContext(), djiError);
                     }
                 });
     }
@@ -151,10 +147,12 @@ public class SetGetISOView extends BaseSetGetView {
 
     private DJICameraSettingsDef.CameraISO[] removeUnknowntype() {
         DJICameraSettingsDef.CameraISO items[] = DJICameraSettingsDef.CameraISO.values();
-        DJICameraSettingsDef.CameraISO result[] = new DJICameraSettingsDef.CameraISO[items.length - 1];
+        DJICameraSettingsDef.CameraISO result[] = new DJICameraSettingsDef.CameraISO[items.length - 2];
+        int j = 0;
         for (int i=0; i<items.length; i++) {
-            if(items[i] != DJICameraSettingsDef.CameraISO.Unknown) {
-                result[i] = items[i];
+            if(items[i] != DJICameraSettingsDef.CameraISO.Unknown &&
+                    items[i] != DJICameraSettingsDef.CameraISO.Auto) {
+                result[j++] = items[i];
             }
         }
         return result;

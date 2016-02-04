@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.BaseSetGetView;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import java.util.ArrayList;
@@ -38,6 +39,8 @@ public class SetGetLBAirLinkChannelView extends BaseSetGetView {
                         }
                     }
             );
+        } else {
+            Utils.setResultToToast(getContext(), "Did not support.");
         }
     }
 
@@ -51,7 +54,7 @@ public class SetGetLBAirLinkChannelView extends BaseSetGetView {
                     new DJIBaseComponent.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
-
+                            Utils.showDialogBasedOnError(getContext(), djiError);
                         }
                     }
             );
@@ -60,7 +63,7 @@ public class SetGetLBAirLinkChannelView extends BaseSetGetView {
 
     @Override
     protected void setMethod() {
-        if (DJIModuleVerificationUtil.isWiFiAirlinkAvailable()) {
+        if (DJIModuleVerificationUtil.isLBAirlinkAvailable()) {
             DJISampleApplication.getProductInstance().getAirLink().getLBAirLink().setChannel(
                     mSpinnerSet.getSelectedItemPosition(),
                     new DJIBaseComponent.DJICompletionCallback() {

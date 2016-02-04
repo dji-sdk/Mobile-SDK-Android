@@ -6,6 +6,11 @@ import android.os.Looper;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dji.sdk.sample.R;
+import com.dji.sdk.sample.utils.DJIDialog;
+
+import dji.sdk.base.DJIError;
+
 /**
  * Created by dji on 15/12/18.
  */
@@ -25,6 +30,14 @@ public class Utils {
         lastClickTime = time;
         return false;
     }
+
+    public static void showDialogBasedOnError(Context ctx, DJIError djiError) {
+        if (null == djiError)
+            DJIDialog.showDialog(ctx, R.string.success);
+        else
+            DJIDialog.showDialog(ctx, djiError.getDescription());
+    }
+
 
     public static void setResultToToast(final Context context, final String string) {
         mUIHandler.post(new Runnable() {

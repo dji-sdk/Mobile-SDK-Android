@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 
 import com.dji.sdk.sample.common.BasePushDataView;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import dji.sdk.Camera.DJICameraSettingsDef;
@@ -49,6 +50,7 @@ public class PlaybackPushInfoView extends BasePushDataView {
             mStringBuffer.delete(0, mStringBuffer.length());
             mStringBuffer.append("This product does not support Playback function");
             mHandler.sendEmptyMessage(CHANGE_TEXT_VIEW);
+            Utils.setResultToToast(getContext(), "Not support");
         }
 
     }

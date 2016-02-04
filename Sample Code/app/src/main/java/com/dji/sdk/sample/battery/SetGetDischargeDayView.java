@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.BaseSetGetView;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.common.Utils;
 
 import java.util.ArrayList;
 
@@ -45,8 +46,13 @@ public class SetGetDischargeDayView extends BaseSetGetView {
     protected void setMethod() {
         try {
             DJISampleApplication.getProductInstance().getBattery().setSelfDischargeDay(
-                    (short) mSpinnerSet.getSelectedItemPosition(),
-                    null
+                    (short) (mSpinnerSet.getSelectedItemPosition() + 1),
+                    new DJIBaseComponent.DJICompletionCallback() {
+                        @Override
+                        public void onResult(DJIError djiError) {
+                            Utils.showDialogBasedOnError(getContext(), djiError);
+                        }
+                    }
             );
         } catch (Exception exception) {
 
@@ -82,7 +88,7 @@ public class SetGetDischargeDayView extends BaseSetGetView {
     @Override
     protected ArrayAdapter getArrayAdapter() {
         ArrayList<Integer> array = new ArrayList<Integer>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i < 10; i++) {
             array.add(new Integer(i));
         }
         ArrayAdapter arrayAdapter = new ArrayAdapter(this.getContext(), R.layout.simple_list_item, array);

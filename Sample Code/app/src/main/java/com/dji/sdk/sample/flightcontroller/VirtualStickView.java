@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 import com.dji.sdk.sample.utils.OnScreenJoystick;
 import com.dji.sdk.sample.utils.OnScreenJoystickListener;
@@ -160,7 +161,7 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                         new DJIBaseComponent.DJICompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {
-
+                                Utils.showDialogBasedOnError(getContext(), djiError);
                             }
                         }
                 );
@@ -172,7 +173,7 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                         new DJIBaseComponent.DJICompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {
-                                
+                                Utils.showDialogBasedOnError(getContext(), djiError);
                             }
                         }
                 );
@@ -191,6 +192,11 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                         );
                     mRollPitchControlModeFlag = true;
                 }
+                try {
+                    Utils.setResultToToast(getContext(), DJISampleApplication.
+                            getAircraftInstance().getFlightController().
+                            getRollPitchControlMode().name());
+                } catch(Exception ex) {};
                 break;
 
             case R.id.btn_yaw_control_mode:
@@ -207,6 +213,11 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                         );
                     mYawControlModeFlag = true;
                 }
+                try {
+                    Utils.setResultToToast(getContext(), DJISampleApplication.
+                            getAircraftInstance().getFlightController().
+                            getYawControlMode().name());
+                } catch(Exception ex) {};
                 break;
 
             case R.id.btn_vertical_control_mode:
@@ -223,6 +234,11 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                         );
                     mVerticalControlModeFlag = true;
                 }
+                try {
+                    Utils.setResultToToast(getContext(), DJISampleApplication.
+                            getAircraftInstance().getFlightController().
+                            getVerticalControlMode().name());
+                } catch(Exception ex) {};
                 break;
 
             case R.id.btn_horizontal_coordinate:
@@ -239,6 +255,11 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                         );
                     mHorizontalCoordinateFlag = true;
                 }
+                try {
+                    Utils.setResultToToast(getContext(), DJISampleApplication.
+                            getAircraftInstance().getFlightController().
+                            getRollPitchCoordinateSystem().name());
+                } catch(Exception ex) {};
                 break;
 
             default:

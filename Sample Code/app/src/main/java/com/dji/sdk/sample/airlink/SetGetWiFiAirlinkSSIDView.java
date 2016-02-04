@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.BaseSetGetView;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import java.util.ArrayList;
@@ -29,6 +30,13 @@ public class SetGetWiFiAirlinkSSIDView extends BaseSetGetView {
     }
 
     @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (!DJIModuleVerificationUtil.isWiFiAirlinkAvailable())
+            Utils.setResultToToast(getContext(), "Not Support");
+    }
+
+    @Override
     protected void setMethod() {
         if (DJIModuleVerificationUtil.isWiFiAirlinkAvailable()) {
             DJISampleApplication.getProductInstance().getAirLink().getWiFiLink().setWiFiSSID(
@@ -36,7 +44,7 @@ public class SetGetWiFiAirlinkSSIDView extends BaseSetGetView {
                     new DJIBaseComponent.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
-
+                            Utils.showDialogBasedOnError(getContext(), djiError);
                         }
                     }
             );
