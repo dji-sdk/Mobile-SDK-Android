@@ -89,7 +89,7 @@
 
 <div id="header">
     <div id="headerLeft">
-      <h2>DJI Android Mobile SDK Reference</h2>
+    
     </div>
     <div id="headerRight">
       
@@ -387,7 +387,7 @@ Summary:
 
 <h2>Class Overview</h2>
 <p>This class manages the execution cycle for a mission. 
-  To execute a mission, normally user need to first invoke prepareMission() to get the mission prepared. 
+  To execute a mission, normally user needs to first invoke prepareMission() to get the mission prepared. 
   Then a user can call startMissionExecution() to start the prepared mission. 
   User can also pause, resume or stop an executing mission if the mission supports the operation.
 
@@ -469,7 +469,11 @@ Summary:
           
           boolean</td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html#isMissionReadyToExecute">isMissionReadyToExecute</a></td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+      <em>
+  This field is deprecated.
+      This property will be deleted in the coming version.
+</em></td>
       </tr>
       
     
@@ -581,6 +585,24 @@ Summary:
     <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html#isConnected()">isConnected</a></span>()
+        
+        <div class="jd-descrdiv">TRUE if the mission manager is connected.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
             synchronized
             
             static
@@ -594,7 +616,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -612,7 +634,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -630,7 +652,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -648,7 +670,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -666,7 +688,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -684,7 +706,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -702,7 +724,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -804,22 +826,6 @@ From class
         
         <div class="jd-descrdiv">Sets the listener to listen for the DJI component.</div>
   
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
-            String
-        </td>
-        <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#toString()">toString</a></span>()
-        
   </td></tr>
 
 
@@ -1052,7 +1058,12 @@ From class
 
       </div>
     <div class="jd-details-descr">
-      
+      <p>
+  <p class="caution">
+      <strong>
+  This field is deprecated.</strong><br/> This property will be deleted in the coming version.
+
+  </p>
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     
@@ -1261,6 +1272,38 @@ From class
 </div>
 
 
+<a id="isConnected()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isConnected</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>TRUE if the mission manager is connected.
+</p></div>
+
+    </div>
+</div>
+
+
 <a id="onDestroy()"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1362,7 +1405,7 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Prepares the mission for execution. For the waypoint mission, data needs to be uploaded to the aircraft (product) and the
   DJIMissionProgressHandler can be used to monitor upload progress. The follow-me, panorama, hotpoint and custom missions
-  requires much shorter time for the preparation phase. PrepareMission should fail if a mission is currently executing.</p></div>
+  require much shorter time for the preparation phase. PrepareMission should fail if a mission is currently executing.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">

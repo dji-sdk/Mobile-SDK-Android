@@ -25,7 +25,7 @@ public class PushRemoteControllerDataView extends BasePushDataView{
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        if (DJIModuleVerificationUtil.isRemoteControllerValid()) {
+        if (DJIModuleVerificationUtil.isRemoteControllerAvailable()) {
             mRemoteController = ((DJIAircraft) DJISampleApplication.getProductInstance())
                     .getRemoteController();
 
@@ -52,7 +52,7 @@ public class PushRemoteControllerDataView extends BasePushDataView{
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if (DJIModuleVerificationUtil.isRemoteControllerValid()) {
+        if (DJIModuleVerificationUtil.isRemoteControllerAvailable()) {
             mRemoteController = ((DJIAircraft) DJISampleApplication.getProductInstance())
                     .getRemoteController();
 

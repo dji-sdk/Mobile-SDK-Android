@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import com.dji.sdk.sample.R;
 import java.util.Stack;
 
 import de.greenrobot.event.EventBus;
+import dji.sdk.SDKManager.DJISDKManager;
 import dji.sdk.base.DJIBaseProduct;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +40,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /**
+         * each time the USB from the RC is connected/disconnected,
+         * the phone will prompt the user to select the app they want
+         * to connect
+         */
+        Intent aoaIntent = getIntent();
+        if (aoaIntent!=null) {
+            String action = aoaIntent.getAction();
+            if (action== UsbManager.ACTION_USB_ACCESSORY_ATTACHED) {
+                Intent attachedIntent=new Intent();
+
+                attachedIntent.setAction(DJISDKManager.USB_ACCESSORY_ATTACHED);
+                sendBroadcast(attachedIntent);
+            }
+        }
+
         setContentView(R.layout.activity_main);
 
         setupActionBar();
@@ -131,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         } else if(mStack.size() == 1) {
             DJIBaseProduct product = DJISampleApplication.getProductInstance();
             if(product != null && product.getModel() != null) {
-                mTitleTextView.setText("" + product.getModel());
+                mTitleTextView.setText("" + product.getModel().getDisplayName());
             } else {
                 mTitleTextView.setText(R.string.app_name);
             }

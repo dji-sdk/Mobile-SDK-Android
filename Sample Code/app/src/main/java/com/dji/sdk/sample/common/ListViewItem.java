@@ -110,7 +110,7 @@ public class ListViewItem extends LinearLayout implements View.OnClickListener {
         params[1] = null;
 
         Class classType = Class.forName(PACKAGE_PREFIX + mComponentNameString + DOT + mViewNameString);
-        Log.v(TAG, PACKAGE_PREFIX + mComponentNameString + DOT + mViewNameString);
+        Log.v("TAG", PACKAGE_PREFIX + mComponentNameString + DOT + mViewNameString);
         Constructor<?>[] consts = classType.getConstructors();
         Constructor<?> constructor = null;
         for(int i = 0; i < consts.length; i++) {

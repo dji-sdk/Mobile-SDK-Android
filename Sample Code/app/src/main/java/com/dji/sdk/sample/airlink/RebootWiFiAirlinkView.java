@@ -1,12 +1,14 @@
 package com.dji.sdk.sample.airlink;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.util.AttributeSet;
 import android.view.View;
 
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.BaseThreeBtnView;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.utils.DJIDialog;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import dji.sdk.base.DJIBaseComponent;
@@ -37,16 +39,27 @@ public class RebootWiFiAirlinkView extends BaseThreeBtnView {
     @Override
     protected void getBtn2Method() {
         // Reboot Button
-        if (DJIModuleVerificationUtil.isWiFiAirlinkAvailable()) {
-            DJISampleApplication.getProductInstance().getAirLink().getWiFiLink().rebootWiFi(
-                    new DJIBaseComponent.DJICompletionCallback() {
-                        @Override
-                        public void onResult(DJIError djiError) {
-
-                        }
-                    }
-            );
-        }
+        DJIDialog.showConfirmationDialog(getContext(), R.string.reboot_wifi_airlink_hint, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (DJIModuleVerificationUtil.isWiFiAirlinkAvailable()) {
+                    DJISampleApplication.getProductInstance().getAirLink().getWiFiLink().rebootWiFi(
+                            new DJIBaseComponent.DJICompletionCallback() {
+                                @Override
+                                public void onResult(DJIError djiError) {
+                                    if (djiError == null) {
+                                        DJIDialog.showDialog(getContext(),
+                                                getResources().getString(R.string.success));
+                                    } else {
+                                        DJIDialog.showDialog(getContext(),
+                                                djiError.getDescription());
+                                    }
+                                }
+                            }
+                    );
+                }
+            }
+        });
     }
 
     @Override

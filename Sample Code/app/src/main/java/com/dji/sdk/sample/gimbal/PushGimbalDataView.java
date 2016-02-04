@@ -26,7 +26,7 @@ public class PushGimbalDataView extends BasePushDataView {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        if (DJIModuleVerificationUtil.isGimbalModuleValid()) {
+        if (DJIModuleVerificationUtil.isGimbalModuleAvailable()) {
             DJISampleApplication.getProductInstance().getGimbal().setGimbalStateUpdateCallback(
                     new DJIGimbal.GimbalStateUpdateCallback() {
                         @Override
@@ -52,7 +52,7 @@ public class PushGimbalDataView extends BasePushDataView {
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
 
-        if (DJIModuleVerificationUtil.isGimbalModuleValid()) {
+        if (DJIModuleVerificationUtil.isGimbalModuleAvailable()) {
             DJISampleApplication.getProductInstance().getGimbal().setGimbalStateUpdateCallback(null);
         }
     }

@@ -1,6 +1,5 @@
 package com.dji.sdk.sample.common;
 
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -119,7 +118,7 @@ public class MainContent extends RelativeLayout implements DJIBaseProduct.DJIVer
             updateVersion();
 
             if (null != mProduct.getModel()) {
-                mTextProduct.setText("" + mProduct.getModel());
+                mTextProduct.setText("" + mProduct.getModel().getDisplayName());
             } else {
                 mTextProduct.setText(R.string.product_information);
             }

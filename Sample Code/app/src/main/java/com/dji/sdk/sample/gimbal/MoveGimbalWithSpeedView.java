@@ -69,7 +69,7 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
             mTimer = null;
         }
 
-        if (DJIModuleVerificationUtil.isGimbalModuleValid()) {
+        if (DJIModuleVerificationUtil.isGimbalModuleAvailable()) {
             DJISampleApplication.getProductInstance().getGimbal().
                     rotateGimbalBySpeed(null, null, null,
                             new DJIBaseComponent.DJICompletionCallback() {
@@ -106,7 +106,7 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
         }
         @Override
         public void run() {
-            if (DJIModuleVerificationUtil.isGimbalModuleValid()) {
+            if (DJIModuleVerificationUtil.isGimbalModuleAvailable()) {
                 DJISampleApplication.getProductInstance().getGimbal().
                         rotateGimbalBySpeed(mPitch, mRoll, mYaw,
                                 new DJIBaseComponent.DJICompletionCallback() {

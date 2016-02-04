@@ -20,7 +20,6 @@ import dji.sdk.Camera.DJICameraSettingsDef;
 import dji.sdk.Camera.DJIMedia;
 import dji.sdk.Camera.DJIMediaManager;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJICameraError;
 import dji.sdk.base.DJIError;
 
 /**
@@ -43,8 +42,8 @@ public class FetchMediaView extends BaseThreeBtnView {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        if (DJIModuleVerificationUtil.isCameraModuleValid()) {
-            if (DJIModuleVerificationUtil.isMediaManagerValid()) {
+        if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
+            if (DJIModuleVerificationUtil.isMediaManagerAvailable()) {
                 DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                         DJICameraSettingsDef.CameraMode.MediaDownload,
                         new DJIBaseComponent.DJICompletionCallback() {
@@ -65,7 +64,7 @@ public class FetchMediaView extends BaseThreeBtnView {
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
 
-        if (DJIModuleVerificationUtil.isCameraModuleValid()) {
+        if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                     DJICameraSettingsDef.CameraMode.ShootPhoto,
                     new DJIBaseComponent.DJICompletionCallback() {
@@ -95,7 +94,7 @@ public class FetchMediaView extends BaseThreeBtnView {
 
     @Override
     protected int getInfoResourceId() {
-        if(!DJIModuleVerificationUtil.isMediaManagerValid()){
+        if(!DJIModuleVerificationUtil.isMediaManagerAvailable()){
             return R.string.not_support_mediadownload;
         }else {
             return R.string.support_mediadownload;
@@ -106,7 +105,7 @@ public class FetchMediaView extends BaseThreeBtnView {
     @Override
     protected void getBtn1Method() {
         // Fetch Thumbnail Button
-        if (DJIModuleVerificationUtil.isMediaManagerValid() && mMedia != null) {
+        if (DJIModuleVerificationUtil.isMediaManagerAvailable() && mMedia != null) {
             mMedia.fetchThumbnail(new DJIMediaManager.CameraDownloadListener<Bitmap>() {
                 @Override
                 public void onStart() {
@@ -129,9 +128,10 @@ public class FetchMediaView extends BaseThreeBtnView {
                 }
 
                 @Override
-                public void onFailure(DJICameraError djiCameraError) {
+                public void onFailure(DJIError djiError) {
 
                 }
+
             });
         }
     }
@@ -139,7 +139,7 @@ public class FetchMediaView extends BaseThreeBtnView {
     @Override
     protected void getBtn2Method() {
         // Fetch Preview Button
-        if (DJIModuleVerificationUtil.isMediaManagerValid() && mMedia != null) {
+        if (DJIModuleVerificationUtil.isMediaManagerAvailable() && mMedia != null) {
             mMedia.fetchPreviewImage(new DJIMediaManager.CameraDownloadListener<Bitmap>() {
                 @Override
                 public void onStart() {
@@ -162,7 +162,7 @@ public class FetchMediaView extends BaseThreeBtnView {
                 }
 
                 @Override
-                public void onFailure(DJICameraError djiCameraError) {
+                public void onFailure(DJIError djiError) {
 
                 }
             });
@@ -172,10 +172,10 @@ public class FetchMediaView extends BaseThreeBtnView {
     @Override
     protected void getBtn3Method() {
         // Fetch Media Data Button
-        if (DJIModuleVerificationUtil.isCameraModuleValid() && mMedia != null) {
+        if (DJIModuleVerificationUtil.isCameraModuleAvailable() && mMedia != null) {
             File destDir = new File(Environment.getExternalStorageDirectory().
                                     getPath() + "/Dji_Sdk_Test/");
-            mMedia.fetchMediaData(destDir, new DJIMediaManager.CameraDownloadListener<Boolean>() {
+            mMedia.fetchMediaData(destDir, "testName", new DJIMediaManager.CameraDownloadListener<String>(){
                 String str;
                 @Override
                 public void onStart() {
@@ -183,25 +183,25 @@ public class FetchMediaView extends BaseThreeBtnView {
                 }
 
                 @Override
-                public void onRateUpdate(long total, long current, long persize) {
+                public void onRateUpdate(long l, long l1, long l2) {
+
+                }
+
+                @Override
+                public void onProgress(long l, long l1) {
                     Message message = Message.obtain();
-                    str = "Downlaoding file 1 progress: ";
+                    str = "Downlaoding file 1 progress: " + l / l1;
                     message.obj = str;
                     messageHandler.sendMessage(message);
                 }
 
                 @Override
-                public void onProgress(long l, long l1) {
+                public void onSuccess(String s) {
 
                 }
 
                 @Override
-                public void onSuccess(Boolean aBoolean) {
-
-                }
-
-                @Override
-                public void onFailure(DJICameraError djiCameraError) {
+                public void onFailure(DJIError djiError) {
 
                 }
             });
@@ -210,7 +210,7 @@ public class FetchMediaView extends BaseThreeBtnView {
 
     // Initialize the view with getting a media file.
     private void fetchMediaList() {
-        if (DJIModuleVerificationUtil.isMediaManagerValid()) {
+        if (DJIModuleVerificationUtil.isMediaManagerAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().getMediaManager().fetchMediaList(
                     new DJIMediaManager.CameraDownloadListener<ArrayList<DJIMedia>>() {
                         String str;
@@ -254,9 +254,9 @@ public class FetchMediaView extends BaseThreeBtnView {
                         }
 
                         @Override
-                        public void onFailure(DJICameraError djiCameraError) {
+                        public void onFailure(DJIError djiError) {
                            Message message = Message.obtain();
-                            message.obj = djiCameraError.getDescription();
+                            message.obj = djiError.getDescription();
                             messageHandler.sendMessage(message);
                         }
                     }

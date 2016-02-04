@@ -34,7 +34,7 @@ public class PlaybackPushInfoView extends BasePushDataView {
         super.onAttachedToWindow();
 
         setPlaybackStateCallback();
-        if (DJIModuleVerificationUtil.isCameraModuleValid()) {
+        if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                     DJICameraSettingsDef.CameraMode.Playback,
                     new DJIBaseComponent.DJICompletionCallback() {
@@ -45,7 +45,7 @@ public class PlaybackPushInfoView extends BasePushDataView {
                     }
             );
         }
-        if (!DJIModuleVerificationUtil.isPlaybackValid()) {
+        if (!DJIModuleVerificationUtil.isPlaybackAvailable()) {
             mStringBuffer.delete(0, mStringBuffer.length());
             mStringBuffer.append("This product does not support Playback function");
             mHandler.sendEmptyMessage(CHANGE_TEXT_VIEW);
@@ -58,7 +58,7 @@ public class PlaybackPushInfoView extends BasePushDataView {
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
 
-        if (DJIModuleVerificationUtil.isPlaybackValid()) {
+        if (DJIModuleVerificationUtil.isPlaybackAvailable()) {
             DJISampleApplication.getProductInstance().getCamera()
                     .getPlayback().setDJICameraPlayBackStateCallBack(null);
 
@@ -75,7 +75,7 @@ public class PlaybackPushInfoView extends BasePushDataView {
     }
 
     private void setPlaybackStateCallback() {
-        if (DJIModuleVerificationUtil.isPlaybackValid()) {
+        if (DJIModuleVerificationUtil.isPlaybackAvailable()) {
             DJISampleApplication.getProductInstance().getCamera()
                     .getPlayback().setDJICameraPlayBackStateCallBack(
                     new DJIPlaybackManager.DJICameraPlayBackStateCallBack() {

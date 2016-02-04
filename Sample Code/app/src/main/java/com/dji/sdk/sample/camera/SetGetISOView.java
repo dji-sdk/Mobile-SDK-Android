@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.BaseSetGetView;
 import com.dji.sdk.sample.common.DJISampleApplication;
+import com.dji.sdk.sample.utils.DJIDialog;
 
 import dji.sdk.Camera.DJICameraSettingsDef;
 import dji.sdk.base.DJIBaseComponent;
@@ -55,7 +56,6 @@ public class SetGetISOView extends BaseSetGetView {
         @Override
         public void run() {
             setManualExposureMode();
-            mHandler.post(runSetCameraISO);
         }
     };
 
@@ -69,11 +69,7 @@ public class SetGetISOView extends BaseSetGetView {
             if (null != DJISampleApplication.getProductInstance().getCamera()) {
                 mHandler.post(runSetShootPhotoCameraMode);
 
-            } else {
-
             }
-        } else {
-
         }
     }
 
@@ -116,7 +112,11 @@ public class SetGetISOView extends BaseSetGetView {
                 new DJIBaseComponent.DJICompletionCallback() {
                     @Override
                     public void onResult(DJIError djiError) {
-
+                        if (null == djiError) {
+                            DJIDialog.showDialog(getContext(), getResources().getString(R.string.success));
+                        } else {
+                            DJIDialog.showDialog(getContext(), djiError.getDescription());
+                        }
                     }
                 });
     }

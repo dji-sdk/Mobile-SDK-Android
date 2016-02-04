@@ -9,7 +9,7 @@ import dji.sdk.Products.DJIHandHeld;
  * Created by dji on 16/1/6.
  */
 public class DJIModuleVerificationUtil {
-    public static boolean isProductModuleValid() {
+    public static boolean isProductModuleAvailable() {
         return (null != DJISampleApplication.getProductInstance());
     }
 
@@ -20,49 +20,49 @@ public class DJIModuleVerificationUtil {
     public static boolean isHandHeld() {
         return DJISampleApplication.getProductInstance() instanceof DJIHandHeld;
     }
-    public static boolean isCameraModuleValid() {
-        return isProductModuleValid() &&
+    public static boolean isCameraModuleAvailable() {
+        return isProductModuleAvailable() &&
                 (null != DJISampleApplication.getProductInstance().getCamera());
     }
 
-    public static boolean isPlaybackValid() {
-        return isCameraModuleValid() &&
+    public static boolean isPlaybackAvailable() {
+        return isCameraModuleAvailable() &&
                 (null != DJISampleApplication.getProductInstance().getCamera().getPlayback());
     }
 
-    public static boolean isMediaManagerValid() {
-        return isCameraModuleValid() &&
+    public static boolean isMediaManagerAvailable() {
+        return isCameraModuleAvailable() &&
                 (null != DJISampleApplication.getProductInstance().getCamera().getMediaManager());
     }
 
-    public static boolean isRemoteControllerValid() {
-        return isProductModuleValid() && isAircraft() &&
+    public static boolean isRemoteControllerAvailable() {
+        return isProductModuleAvailable() && isAircraft() &&
         (null != DJISampleApplication.getAircraftInstance().getRemoteController());
     }
 
-    public static boolean isFlightControllerValid() {
-        return isProductModuleValid() && isAircraft() &&
+    public static boolean isFlightControllerAvailable() {
+        return isProductModuleAvailable() && isAircraft() &&
         (null != DJISampleApplication.getAircraftInstance().getFlightController());
     }
 
-    public static boolean isCompassValid() {
-        return isFlightControllerValid() && isAircraft() &&
+    public static boolean isCompassAvailable() {
+        return isFlightControllerAvailable() && isAircraft() &&
         (null != DJISampleApplication.getAircraftInstance().getFlightController().getCompass());
     }
 
-    public static boolean isFlightLimitationValid() {
-        return isFlightControllerValid() && isAircraft() &&
+    public static boolean isFlightLimitationAvailable() {
+        return isFlightControllerAvailable() && isAircraft() &&
                 (null != DJISampleApplication.getAircraftInstance().
                         getFlightController().getFlightLimitation());
     }
 
-    public static boolean isGimbalModuleValid() {
-        return isProductModuleValid() &&
+    public static boolean isGimbalModuleAvailable() {
+        return isProductModuleAvailable() &&
                 (null != DJISampleApplication.getProductInstance().getGimbal());
     }
 
     public static boolean isAirlinkAvailable() {
-        return isProductModuleValid() &&
+        return isProductModuleAvailable() &&
                 (null != DJISampleApplication.getProductInstance().getAirLink());
     }
 

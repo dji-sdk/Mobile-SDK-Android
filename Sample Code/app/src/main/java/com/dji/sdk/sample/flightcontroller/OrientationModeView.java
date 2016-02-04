@@ -53,7 +53,7 @@ public class OrientationModeView extends BaseThreeBtnView{
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        if (DJIModuleVerificationUtil.isFlightControllerValid()) {
+        if (DJIModuleVerificationUtil.isFlightControllerAvailable()) {
             mFlightController = DJISampleApplication.getAircraftInstance().getFlightController();
 
             mFlightController.setUpdateSystemStateCallback(
@@ -90,7 +90,7 @@ public class OrientationModeView extends BaseThreeBtnView{
 
     @Override
     protected void getBtn1Method() {
-        if (DJIModuleVerificationUtil.isFlightControllerValid()) {
+        if (DJIModuleVerificationUtil.isFlightControllerAvailable()) {
             mFlightController = DJISampleApplication.getAircraftInstance().getFlightController();
 
             mFlightController.setFlightOrientationMode(
@@ -110,7 +110,7 @@ public class OrientationModeView extends BaseThreeBtnView{
 
     @Override
     protected void getBtn2Method() {
-        if (DJIModuleVerificationUtil.isFlightControllerValid()) {
+        if (DJIModuleVerificationUtil.isFlightControllerAvailable()) {
             mFlightController = DJISampleApplication.getAircraftInstance().getFlightController();
 
             mFlightController.setFlightOrientationMode(
@@ -130,7 +130,7 @@ public class OrientationModeView extends BaseThreeBtnView{
 
     @Override
     protected void getBtn3Method() {
-        if (DJIModuleVerificationUtil.isFlightControllerValid()) {
+        if (DJIModuleVerificationUtil.isFlightControllerAvailable()) {
             mFlightController = DJISampleApplication.getAircraftInstance().getFlightController();
 
             mFlightController.setFlightOrientationMode(

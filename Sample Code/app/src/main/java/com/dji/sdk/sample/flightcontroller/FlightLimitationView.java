@@ -44,7 +44,7 @@ public class FlightLimitationView extends BaseThreeBtnView {
 
     @Override
     protected void getBtn1Method() {
-        if (DJIModuleVerificationUtil.isFlightLimitationValid()) {
+        if (DJIModuleVerificationUtil.isFlightLimitationAvailable()) {
             DJISampleApplication.getAircraftInstance().getFlightController().
                 getFlightLimitation().setMaxFlightHeight(50,
                     new DJIBaseComponent.DJICompletionCallback() {
@@ -61,7 +61,7 @@ public class FlightLimitationView extends BaseThreeBtnView {
 
     @Override
     protected void getBtn2Method() {
-        if (DJIModuleVerificationUtil.isFlightLimitationValid()) {
+        if (DJIModuleVerificationUtil.isFlightLimitationAvailable()) {
             DJISampleApplication.getAircraftInstance().getFlightController()
                 .getFlightLimitation().
                     setMaxFlightRadiusLimitationEnabled(mRadiusLimitaionToggleFlag,
@@ -77,7 +77,7 @@ public class FlightLimitationView extends BaseThreeBtnView {
 
     @Override
     protected void getBtn3Method() {
-        if (DJIModuleVerificationUtil.isFlightLimitationValid()) {
+        if (DJIModuleVerificationUtil.isFlightLimitationAvailable()) {
             DJISampleApplication.getAircraftInstance().getFlightController().
                     getFlightLimitation().setMaxFlightRadius(40,
                         new DJIBaseComponent.DJICompletionCallback() {

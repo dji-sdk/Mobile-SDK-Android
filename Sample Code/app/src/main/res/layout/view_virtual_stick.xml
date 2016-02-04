@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/btn_disable_virtual_stick"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:text="Disable Virtual Stick"
+        style="@style/common_button"
+        />
+
+    <Button
+        android:id="@+id/btn_enable_virtual_stick"
+        android:layout_below="@id/tv_mission_info"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="180dp"
+        android:layout_toLeftOf="@id/btn_disable_virtual_stick"
+        android:text="Enable Virtual Stick"
+        style="@style/common_button"/>
+
+    <Button
+        android:id="@+id/btn_horizontal_coordinate"
+        android:layout_below="@id/tv_mission_info"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="180dp"
+        android:layout_toRightOf="@id/btn_disable_virtual_stick"
+        android:text="Honrizontal Coordinate"
+        style="@style/common_button"/>
+
+
+    <Button
+        android:id="@+id/btn_vertical_control_mode"
+        android:layout_alignLeft="@id/btn_disable_virtual_stick"
+        android:layout_below="@id/btn_disable_virtual_stick"
+        android:layout_marginTop="10dp"
+        android:text="Vertical Control Mode"
+        style="@style/common_button"/>
+
+    <Button
+        android:id="@+id/btn_yaw_control_mode"
+        android:layout_below="@id/btn_horizontal_coordinate"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@id/btn_vertical_control_mode"
+        android:text="Yaw Control Mode"
+        style="@style/common_button"/>
+
+    <Button
+        android:id="@+id/btn_roll_pitch_control_mode"
+        android:layout_below="@id/btn_horizontal_coordinate"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/btn_vertical_control_mode"
+        android:text="Pitch Roll Control Mode"
+        style="@style/common_button"/>
+
+    <com.dji.sdk.sample.utils.OnScreenJoystick
+        android:id="@+id/directionJoystickRight"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@mipmap/joystick_bg"/>
+
+    <com.dji.sdk.sample.utils.OnScreenJoystick
+        android:id="@+id/directionJoystickLeft"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/joystick_bg"/>
+</RelativeLayout>

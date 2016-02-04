@@ -38,9 +38,6 @@
         tools:replace="android:icon,android:theme"
         android:theme="@style/AppTheme"
         >
-
-        <uses-library android:name="com.android.future.usb.accessory" />
-
         <!--
             ADD API_KEY HERE and make sure you
             are connected to the Internet before
@@ -48,19 +45,7 @@
         -->
         <meta-data
             android:name="com.dji.sdk.API_KEY"
-            android:value="XXXXXXXXXXXXXXXXXXXXXX" />
-
-        <activity
-            android:name="dji.sdk.SDKManager.DJIAoaControllerActivity"
-            android:theme="@android:style/Theme.Translucent" >
-            <intent-filter>
-                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
-                android:resource="@xml/accessory_filter" />
-        </activity>
+            android:value="YOU_API_KEY_HERER" />
 
         <service android:name="dji.sdk.SDKManager.DJIGlobalService" >
         </service>
@@ -71,10 +56,15 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" >
             <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+                android:resource="@xml/accessory_filter" />
         </activity>
     </application>
 

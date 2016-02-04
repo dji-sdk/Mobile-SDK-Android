@@ -26,6 +26,9 @@ public class RecordVideoView extends BaseThreeBtnView {
     Timer timer = new Timer();
     private final Context context;
     private long timeCounter = 0;
+    private long hours = 0;
+    private long minutes = 0;
+    private long seconds = 0;
     String time = "";
     public RecordVideoView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -37,7 +40,7 @@ public class RecordVideoView extends BaseThreeBtnView {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        if (DJIModuleVerificationUtil.isCameraModuleValid()) {
+        if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                     DJICameraSettingsDef.CameraMode.RecordVideo,
                     new DJIBaseComponent.DJICompletionCallback() {
@@ -53,7 +56,7 @@ public class RecordVideoView extends BaseThreeBtnView {
     protected void onDetachedToWindow() {
         super.onDetachedFromWindow();
 
-        if (DJIModuleVerificationUtil.isCameraModuleValid()) {
+        if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                     DJICameraSettingsDef.CameraMode.ShootPhoto,
                     new DJIBaseComponent.DJICompletionCallback() {
@@ -84,7 +87,7 @@ public class RecordVideoView extends BaseThreeBtnView {
     @Override
     protected void getBtn1Method() {
         Utils.setResultToText(context, mTexInfo, "00:00:00");
-        if (DJIModuleVerificationUtil.isCameraModuleValid()) {
+        if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().startRecordVideo(
                     new DJIBaseComponent.DJICompletionCallback() {
                         @Override
@@ -96,9 +99,10 @@ public class RecordVideoView extends BaseThreeBtnView {
                                     @Override
                                     public void run() {
                                         timeCounter = timeCounter + 1;
-                                        time = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(timeCounter),
-                                                TimeUnit.MILLISECONDS.toMinutes(timeCounter),
-                                                TimeUnit.MILLISECONDS.toSeconds(timeCounter));
+                                        hours = TimeUnit.MILLISECONDS.toHours(timeCounter);
+                                        minutes = TimeUnit.MILLISECONDS.toMinutes(timeCounter) - (hours * 60);
+                                        seconds = TimeUnit.MILLISECONDS.toSeconds(timeCounter) - ((hours * 60 * 60) + (minutes * 60));
+                                        time = String.format("%02d:%02d:%02d", hours, minutes, seconds);
                                         Utils.setResultToText(context, mTexInfo, time);
                                     }
                                 }, 0, 1);
@@ -112,7 +116,7 @@ public class RecordVideoView extends BaseThreeBtnView {
 
     @Override
     protected void getBtn3Method() {
-        if (DJIModuleVerificationUtil.isCameraModuleValid()) {
+        if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().stopRecordVideo(
                     new DJIBaseComponent.DJICompletionCallback() {
                         @Override

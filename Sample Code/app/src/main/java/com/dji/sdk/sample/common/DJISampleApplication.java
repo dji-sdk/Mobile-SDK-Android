@@ -14,6 +14,7 @@ import dji.sdk.Products.DJIHandHeld;
 import dji.sdk.SDKManager.DJISDKManager;
 import dji.sdk.base.DJIBaseComponent;
 import dji.sdk.base.DJIBaseProduct;
+import dji.sdk.base.DJIError;
 import dji.sdk.base.DJISDKError;
 
 /**
@@ -74,7 +75,7 @@ public class DJISampleApplication extends Application {
     private DJISDKManager.DJISDKManagerCallback mDJISDKManagerCallback = new DJISDKManager.DJISDKManagerCallback() {
 
         @Override
-        public void onGetRegisteredResult(DJISDKError error) {
+        public void onGetRegisteredResult(DJIError error) {
             if(error == DJISDKError.REGISTRATION_SUCCESS) {
                 DJISDKManager.getInstance().startConnectionToProduct();
             } else {

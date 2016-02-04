@@ -43,7 +43,7 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        if (DJIModuleVerificationUtil.isCameraModuleValid()) {
+        if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             mCamera = DJISampleApplication.getAircraftInstance().getCamera();
 
             mCamera.setCameraMode(
@@ -55,7 +55,7 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
                         }
                     }
             );
-            if (DJIModuleVerificationUtil.isPlaybackValid()) {
+            if (DJIModuleVerificationUtil.isPlaybackAvailable()) {
                 mPlaybackManager = mCamera.getPlayback();
 
                 mPlaybackManager.setDJICameraPlayBackStateCallBack(
@@ -93,7 +93,7 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
 
     @Override
     protected int getInfoResourceId() {
-        if(!DJIModuleVerificationUtil.isPlaybackValid()){
+        if(!DJIModuleVerificationUtil.isPlaybackAvailable()){
             return R.string.not_support_playback;
         }else {
             return R.string.support_playback;
@@ -103,7 +103,7 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
 
     @Override
     protected void getBtn1Method() {
-        if (DJIModuleVerificationUtil.isPlaybackValid()) {
+        if (DJIModuleVerificationUtil.isPlaybackAvailable()) {
             mPlaybackManager = DJISampleApplication.getProductInstance().getCamera().getPlayback();
 
             mPlaybackManager.toggleFileSelectionAtIndex(0);
@@ -112,7 +112,7 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
 
     @Override
     protected void getBtn2Method() {
-        if (DJIModuleVerificationUtil.isPlaybackValid()) {
+        if (DJIModuleVerificationUtil.isPlaybackAvailable()) {
             mPlaybackManager = DJISampleApplication.getProductInstance().getCamera().getPlayback();
 
             mPlaybackManager.toggleFileSelectionAtIndex(1);
@@ -122,7 +122,7 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
     @Override
     protected void getBtn3Method() {
         // Download Button
-        if (DJIModuleVerificationUtil.isPlaybackValid()) {
+        if (DJIModuleVerificationUtil.isPlaybackAvailable()) {
             mPlaybackManager = DJISampleApplication.getProductInstance().getCamera().getPlayback();
 
             File destDir = new File(Environment.getExternalStorageDirectory().

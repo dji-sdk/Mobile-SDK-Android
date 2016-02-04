@@ -57,7 +57,7 @@ public class CompassCalibrationView extends BaseThreeBtnView {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        if (DJIModuleVerificationUtil.isFlightControllerValid()) {
+        if (DJIModuleVerificationUtil.isFlightControllerAvailable()) {
             mFlightController = ((DJIAircraft) DJISampleApplication.getProductInstance())
                     .getFlightController();
 
@@ -80,7 +80,7 @@ public class CompassCalibrationView extends BaseThreeBtnView {
                             }
                         }
                     });
-            if (DJIModuleVerificationUtil.isCompassValid()) {
+            if (DJIModuleVerificationUtil.isCompassAvailable()) {
                 mCompass = mFlightController.getCompass();
             }
         }
@@ -98,7 +98,7 @@ public class CompassCalibrationView extends BaseThreeBtnView {
 
     @Override
     protected void getBtn3Method() {
-        if (DJIModuleVerificationUtil.isCompassValid()) {
+        if (DJIModuleVerificationUtil.isCompassAvailable()) {
             mCompass = ((DJIAircraft) DJISampleApplication.getProductInstance())
                     .getFlightController().getCompass();
 
@@ -113,7 +113,7 @@ public class CompassCalibrationView extends BaseThreeBtnView {
 
     @Override
     protected void getBtn1Method() {
-        if (DJIModuleVerificationUtil.isCompassValid()) {
+        if (DJIModuleVerificationUtil.isCompassAvailable()) {
             mCompass = ((DJIAircraft) DJISampleApplication.getProductInstance())
                     .getFlightController().getCompass();
 

@@ -43,7 +43,7 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        if (DJIModuleVerificationUtil.isPlaybackValid()) {
+        if (DJIModuleVerificationUtil.isPlaybackAvailable()) {
 
             mCamera = DJISampleApplication.getAircraftInstance().getCamera();
 
@@ -93,7 +93,7 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
 
-        if (DJIModuleVerificationUtil.isCameraModuleValid()) {
+        if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                     DJICameraSettingsDef.CameraMode.ShootPhoto,
                     new DJIBaseComponent.DJICompletionCallback() {
@@ -104,7 +104,7 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
                     }
             );
 
-            if (DJIModuleVerificationUtil.isPlaybackValid()) {
+            if (DJIModuleVerificationUtil.isPlaybackAvailable()) {
                 DJISampleApplication.getProductInstance().
                         getCamera().getPlayback().setDJICameraPlayBackStateCallBack(null);
             }
@@ -131,7 +131,7 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        if (!DJIModuleVerificationUtil.isPlaybackValid())
+        if (!DJIModuleVerificationUtil.isPlaybackAvailable())
             return;
         switch (v.getId()) {
             case R.id.btn_previous :

@@ -89,7 +89,7 @@
 
 <div id="header">
     <div id="headerLeft">
-      <h2>DJI Android Mobile SDK Reference</h2>
+    
     </div>
     <div id="headerRight">
       
@@ -174,9 +174,13 @@
               
     <li><h2>Interfaces</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraGeneratedNewMediaFileCallback.html">DJICamera.CameraGeneratedNewMediaFileCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraGeneratedTimeLapsePreviewCallback.html">DJICamera.CameraGeneratedTimeLapsePreviewCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraReceivedVideoDataCallback.html">DJICamera.CameraReceivedVideoDataCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraUpdatedCurrentExposureValuesCallback.html">DJICamera.CameraUpdatedCurrentExposureValuesCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraUpdatedLensStateCallback.html">DJICamera.CameraUpdatedLensStateCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraUpdatedSDCardStateCallback.html">DJICamera.CameraUpdatedSDCardStateCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraUpdatedSSDStateCallback.html">DJICamera.CameraUpdatedSSDStateCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraUpdatedSystemStateCallback.html">DJICamera.CameraUpdatedSystemStateCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICameraParameters.DJICameraParametersListener.html">DJICameraParameters.DJICameraParametersListener</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJIMediaManager.CameraDownloadListener.html">DJIMediaManager.CameraDownloadListener</a>&lt;E&gt;</li>
@@ -187,10 +191,13 @@
               
     <li><h2>Classes</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Camera/CameraUtils.html">CameraUtils</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.html">DJICamera</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraLensState.html">DJICamera.CameraLensState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraSDCardState.html">DJICamera.CameraSDCardState</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraSSDState.html">DJICamera.CameraSSDState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraSystemState.html">DJICamera.CameraSystemState</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.DJICameraExposureParameters.html">DJICamera.DJICameraExposureParameters</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICameraParameters.html">DJICameraParameters</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICameraParameters.VideoResolutionFps.html">DJICameraParameters.VideoResolutionFps</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICameraSettingsDef.html">DJICameraSettingsDef</a></li>
@@ -200,12 +207,15 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJIMediaManager.html">DJIMediaManager</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJIPlaybackManager.html">DJIPlaybackManager</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJIPlaybackManager.DJICameraPlaybackState.html">DJIPlaybackManager.DJICameraPlaybackState</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Camera/X5RCamera.html">X5RCamera</a></li>
       </ul>
     </li>
               
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraSSDState.CameraSSDCapacity.html">DJICamera.CameraSSDState.CameraSSDCapacity</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICamera.CameraSSDState.CameraSSDOperationState.html">DJICamera.CameraSSDState.CameraSSDOperationState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICameraSettingsDef.CameraAntiFlicker.html">DJICameraSettingsDef.CameraAntiFlicker</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICameraSettingsDef.CameraAperture.html">DJICameraSettingsDef.CameraAperture</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Camera/DJICameraSettingsDef.CameraContrast.html">DJICameraSettingsDef.CameraContrast</a></li>
@@ -423,7 +433,7 @@ Summary:
   be set automatically or manually. Exposure compensation can be changed in all modes 
   except Manual mode where it is not settable.
 
-  X5:
+  X5 camera and X5R camera::
        Program Mode:       Shutter: Auto     Aperture: Auto     ISO: Manual or Auto
        Shutter Priority:   Shutter: Manual   Aperture: Auto     ISO: Manual or Auto
        Aperture Priority:  Shutter: Auto     Aperture: Manual   ISO: Manual or Auto
