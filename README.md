@@ -12,7 +12,7 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 
 ### Prerequisites
 
-- Android API Level 17 or higher
+- Android API Level 22 or higher
 - Android Studio 1.5
 
 ### Registering an App Key
@@ -86,7 +86,7 @@ You can get support from DJI with the following methods:
 
 ### 开发工具版本要求
 
-- Android API Level 16 以上
+- Android API Level 22 以上
 - Android Studio 1.5
 
 ### 注册App Key
