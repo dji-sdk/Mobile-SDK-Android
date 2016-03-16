@@ -181,6 +181,8 @@
               
     <li><h2>Classes</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.html">DJIActiveTrackMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus.html">DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.html">DJICustomMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.DJICustomMissionProgressStatus.html">DJICustomMission.DJICustomMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.html">DJIFollowMeMission</a></li>
@@ -192,6 +194,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html">DJIMissionManager</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.html">DJIPanoramaMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMissionStatus.html">DJIPanoramaMission.DJIPanoramaMissionStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.html">DJITapFlyMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html">DJITapFlyMission.DJITapFlyMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.html">DJIWaypoint</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointAction.html">DJIWaypoint.DJIWaypointAction</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html">DJIWaypointMission</a></li>
@@ -202,6 +206,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionExecutionState.html">DJIActiveTrackMission.DJIActiveTrackMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeHeading.html">DJIFollowMeMission.DJIFollowMeHeading</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeMissionExecutionState.html">DJIFollowMeMission.DJIFollowMeMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotPointHeading.html">DJIHotPointMission.DJIHotPointHeading</a></li>
@@ -210,6 +215,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionType.html">DJIMission.DJIMissionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIProgressType.html">DJIMission.DJIProgressType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMode.html">DJIPanoramaMission.DJIPanoramaMode</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointActionType.html">DJIWaypoint.DJIWaypointActionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointTurnMode.html">DJIWaypoint.DJIWaypointTurnMode</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionExecuteState.html">DJIWaypointMission.DJIWaypointMissionExecuteState</a></li>
@@ -533,7 +540,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionExecuteState.html#_equals(int)">_equals</a></span>(int b)
         
-        <div class="jd-descrdiv">Returns the boolean result which compare the input integer value with the real value of a enum constant.</div>
+        <div class="jd-descrdiv">Compares the specified integer value with the real value of an enum constant.</div>
   
   </td></tr>
 
@@ -551,7 +558,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionExecuteState.html#find(int)">find</a></span>(int value)
         
-        <div class="jd-descrdiv">Returns the enum constant of this type with the input integer value.</div>
+        <div class="jd-descrdiv">Returns the enum constant of this type with the specified integer value.</div>
   
   </td></tr>
 
@@ -1084,7 +1091,7 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Aircraft is currently moving. happens when the 'flightPathMode' is set as Curved.
+  <div class="jd-tagdata jd-tagdescr"><p>Aircraft is currently moving. This happens when the 'flightPathMode' is set to Curved.
 </p></div>
 
     
@@ -1115,7 +1122,7 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Aircraft is currently turning. happens when the 'flightPathMode' is set as Curved.
+  <div class="jd-tagdata jd-tagdescr"><p>Aircraft is currently turning. This happens when the 'flightPathMode' is set to Curved.
 </p></div>
 
     
@@ -1241,7 +1248,7 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Aircraft is currently moving toward the mission's next waypoint. happens when the 'flightPathMode' is set as Normal.
+  <div class="jd-tagdata jd-tagdescr"><p>Aircraft is currently moving toward the mission's next waypoint. This happens when the 'flightPathMode' is set to Normal.
 </p></div>
 
     
@@ -1272,7 +1279,7 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Aircraft is return to first waypoint. happens when the 'finishedAction' is set as GoFirstWaypoint
+  <div class="jd-tagdata jd-tagdescr"><p>Aircraft is return to first waypoint. This happens when the 'finishedAction' is set to GoFirstWaypoint.
 </p></div>
 
     
@@ -1329,19 +1336,19 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Returns the boolean result which compare the input integer value with the real value of a enum constant.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Compares the specified integer value with the real value of an enum constant.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>b</th>
-          <td>The input integer value </td>
+          <td>The input integer value.</td>
         </tr>
       </table>
   </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>boolean The compared result
+      <ul class="nolist"><li>boolean The comparison result.
 </li></ul>
   </div>
 
@@ -1374,19 +1381,19 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Returns the enum constant of this type with the input integer value.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the enum constant of this type with the specified integer value.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>value</th>
-          <td>The input integer value</td>
+          <td>The input value.</td>
         </tr>
       </table>
   </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>DJIWaypointMissionExecuteState The enum constant of this type 
+      <ul class="nolist"><li>The enum constant of this type.
 </li></ul>
   </div>
 

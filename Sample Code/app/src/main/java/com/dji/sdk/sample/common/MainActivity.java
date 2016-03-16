@@ -43,11 +43,7 @@ public class MainActivity extends AppCompatActivity {
         /**
          * each time the USB from the RC is connected/disconnected,
          * the phone will prompt the user to select the app they want
-         * to connect. If you want to launch main activity whenever you
-         * provide the permission to the application, please uncomment
-         * the coming codes. Please uncomment the code of main
-         * activity in AndroidManifest. Also, comment the codes of the
-         * DJIAoaControllerActivity in the AndroidManifest.
+         * to connect
          */
 //        Intent aoaIntent = getIntent();
 //        if (aoaIntent!=null) {

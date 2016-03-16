@@ -181,6 +181,8 @@
               
     <li><h2>Classes</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.html">DJIActiveTrackMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus.html">DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.html">DJICustomMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.DJICustomMissionProgressStatus.html">DJICustomMission.DJICustomMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.html">DJIFollowMeMission</a></li>
@@ -192,6 +194,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html">DJIMissionManager</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.html">DJIPanoramaMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMissionStatus.html">DJIPanoramaMission.DJIPanoramaMissionStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.html">DJITapFlyMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html">DJITapFlyMission.DJITapFlyMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.html">DJIWaypoint</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointAction.html">DJIWaypoint.DJIWaypointAction</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html">DJIWaypointMission</a></li>
@@ -202,6 +206,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionExecutionState.html">DJIActiveTrackMission.DJIActiveTrackMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeHeading.html">DJIFollowMeMission.DJIFollowMeHeading</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeMissionExecutionState.html">DJIFollowMeMission.DJIFollowMeMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotPointHeading.html">DJIHotPointMission.DJIHotPointHeading</a></li>
@@ -210,6 +215,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionType.html">DJIMission.DJIMissionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIProgressType.html">DJIMission.DJIProgressType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMode.html">DJIPanoramaMission.DJIPanoramaMode</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointActionType.html">DJIWaypoint.DJIWaypointActionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointTurnMode.html">DJIWaypoint.DJIWaypointTurnMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionExecuteState.html">DJIWaypointMission.DJIWaypointMissionExecuteState</a></li>
@@ -397,10 +404,11 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>The class represents a hotpoint mission, which can be executed by the mission manager. 
-  User can control the aircraft to fly around the hotpoint with specific radius and altitude. 
-  During the execution, user can also using the physical remote controller to modify its radius and speed.
-
+<p>The class represents a hotpoint mission, which can be executed by the mission manager. In a hot
+  point mission, the aircraft will repeatedly fly circles of a constant radius around a specified
+  point called a Hot Point. The user can control the aircraft to fly around the hotpoint with a
+  specific radius and altitude. During execution, the user can also use the physical remote
+  controller to modify its radius and speed.
 </p>
 
 
@@ -468,7 +476,7 @@ Summary:
         
         enum</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotPointStartPoint.html">DJIHotPointMission.DJIHotPointStartPoint</a></td>
-      <td class="jd-descrcol" width="100%">Aircraft start point relative to hot point.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">Aircraft start point relative to the hot point.&nbsp;</td>
     </tr>
     
     
@@ -571,7 +579,7 @@ Summary:
           
           boolean</td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.html#isClockwise">isClockwise</a></td>
-          <td class="jd-descrcol" width="100%">True if the aircraft is to travel around the hotpoint in the clockwise direction.</td>
+          <td class="jd-descrcol" width="100%"><code>true</code> if the aircraft is to travel around the hotpoint in a clockwise direction.</td>
       </tr>
       
     
@@ -789,7 +797,10 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIMission.html#getMissionType()">getMissionType</a></span>()
         
-        <div class="jd-descrdiv">Returns the mission type.</div>
+        <div class="jd-descrdiv">
+      <em>
+  This method is deprecated.
+      No replacement.</em></div>
   
   </td></tr>
 
@@ -807,7 +818,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIMission.html#isPausable()">isPausable</a></span>()
         
-        <div class="jd-descrdiv">Whether current mission can be paused.</div>
+        <div class="jd-descrdiv">Determines whether the current mission can be paused.</div>
   
   </td></tr>
 
@@ -1162,7 +1173,7 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets the angular velocity (in degrees/second) of the aircraft as it orbits the hot point.
-  The default value is 20 degrees/s.
+  The default value is 20 degrees/second.
   The angular velocity is relative to the orbit radius. You can use the maxAngularVelocityForRadius(double radius) method
   to get the maximum supported angular velocity for a given radius.
 </p></div>
@@ -1227,7 +1238,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>True if the aircraft is to travel around the hotpoint in the clockwise direction.
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the aircraft is to travel around the hotpoint in a clockwise direction.
 </p></div>
 
     
@@ -1485,7 +1496,7 @@ From class
   </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>Returns the supported maximum angular velocity for the given radius. Will return 0 if an unsupported radius is input.
+      <ul class="nolist"><li>Returns the supported maximum angular velocity for the given radius. Returns 0 if an unsupported radius is specified.
 </li></ul>
   </div>
 

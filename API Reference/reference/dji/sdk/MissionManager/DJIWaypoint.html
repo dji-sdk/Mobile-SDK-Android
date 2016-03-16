@@ -181,6 +181,8 @@
               
     <li><h2>Classes</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.html">DJIActiveTrackMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus.html">DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.html">DJICustomMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.DJICustomMissionProgressStatus.html">DJICustomMission.DJICustomMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.html">DJIFollowMeMission</a></li>
@@ -192,6 +194,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html">DJIMissionManager</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.html">DJIPanoramaMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMissionStatus.html">DJIPanoramaMission.DJIPanoramaMissionStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.html">DJITapFlyMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html">DJITapFlyMission.DJITapFlyMissionProgressStatus</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.html">DJIWaypoint</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointAction.html">DJIWaypoint.DJIWaypointAction</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html">DJIWaypointMission</a></li>
@@ -202,6 +206,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionExecutionState.html">DJIActiveTrackMission.DJIActiveTrackMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeHeading.html">DJIFollowMeMission.DJIFollowMeHeading</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeMissionExecutionState.html">DJIFollowMeMission.DJIFollowMeMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotPointHeading.html">DJIHotPointMission.DJIHotPointHeading</a></li>
@@ -210,6 +215,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionType.html">DJIMission.DJIMissionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIProgressType.html">DJIMission.DJIProgressType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMode.html">DJIPanoramaMission.DJIPanoramaMode</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointActionType.html">DJIWaypoint.DJIWaypointActionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointTurnMode.html">DJIWaypoint.DJIWaypointTurnMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionExecuteState.html">DJIWaypointMission.DJIWaypointMissionExecuteState</a></li>
@@ -374,7 +381,6 @@ Summary:
 <p>The class represents a target point in the waypoint mission. 
   For a waypoint mission, a flight route consists of multiple DJIWaypoint objects. 
   User can also define the actions to perform for each DJIWaypoint.
-
 </p>
 
 
@@ -599,7 +605,7 @@ Summary:
           
           <a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointTurnMode.html">DJIWaypoint.DJIWaypointTurnMode</a></td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.html#turnMode">turnMode</a></td>
-          <td class="jd-descrcol" width="100%">Determines whether the aircraft will turn clockwise or anitclockwise when changing it's heading.</td>
+          <td class="jd-descrcol" width="100%">Determines whether the aircraft will turn clockwise or anti-clockwise when changing its heading.</td>
       </tr>
       
     
@@ -1180,7 +1186,10 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Altitude of the aircraft in meters when it reaches waypoint. The altitude of the
-  aircraft is relative to the ground at the take-off location, has a range of [-200,500] and should not be larger than the aircraft's max limited altitude. If two adjacent waypoints have different alitutdes, then the alitude will gradually change as the aircraft flys between waypoints.
+  aircraft is relative to the ground at the take-off location, has a range of [-200,500]
+  and should not be larger than the aircraft's max limited altitude. If two adjacent
+  waypoints have different alitutdes, then the alitude will gradually change as the
+  aircraft flies between waypoints.
 </p></div>
 
     
@@ -1212,7 +1221,10 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Corner radius of the waypoint. When the flight path mode is DJIWaypointMissionFlightPathCurved
-  the flight path near a waypoint will be a curve (rounded corner) with radius [0.2,1000]. When there is a corner radius, the aircraft will never go through the waypoint. By default, the radius is 0.2 m.
+  the flight path near a waypoint will be a curve (rounded corner) with radius [0.2,1000].
+  When there is a corner radius, the aircraft will never go through the waypoint. By default,
+  the radius is 0.2 m.
+
   The radius should not be larger than the three dimensional distance between any two of
   the three waypoints which make the corner.
 </p></div>
@@ -1245,8 +1257,8 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Gimbal pitch angle when reached this waypoint. Property is used when DJIWaypointMission property 'rotateGimbalPitch' is YES. 
-  Value should in range [-90, 0] degree.
+  <div class="jd-tagdata jd-tagdescr"><p>Gimbal pitch angle when reached this waypoint. Property is used when <code>DJIWaypointMission.rotateGimbalPitch</code> is <code>true</code>.
+  Value should in range [-90, 0] degrees.
 </p></div>
 
     
@@ -1308,7 +1320,10 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Heading the aircraft will rotate to by the time it reaches the waypoint. The aircraft heading will gradually change between two waypoints with different headings if the waypoint mission's headingMode is set to DJIWaypointMissionHeadingUsingWaypointHeading. Heading has a range of [-180, 180] degrees, where 0 represents True North.
+  <div class="jd-tagdata jd-tagdescr"><p>Heading the aircraft will rotate to by the time it reaches the waypoint. The aircraft
+  heading will gradually change between two waypoints with different headings if the waypoint
+  mission's headingMode is set to DJIWaypointMissionHeadingUsingWaypointHeading. Heading has
+  a range of [-180, 180] degrees, where 0 represents True North.
 </p></div>
 
     
@@ -1401,7 +1416,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Determines whether the aircraft will turn clockwise or anitclockwise when changing it's heading.
+  <div class="jd-tagdata jd-tagdescr"><p>Determines whether the aircraft will turn clockwise or anti-clockwise when changing its heading.
 </p></div>
 
     
@@ -1557,7 +1572,7 @@ From class
   </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>True if the waypoint action has been added to the waypoint. False if the waypoint action
+      <ul class="nolist"><li><code>true</code> if the waypoint action has been added to the waypoint. <code>false</code> if the waypoint action
   count is too high, or if the waypoint action was incorrectly setup.
 </li></ul>
   </div>
@@ -1693,7 +1708,8 @@ From class
   </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>True if the waypoint action has been inserted. False if the waypoint action count is too high or index is invalid.
+      <ul class="nolist"><li><code>true</code> if the waypoint action has been inserted. <code>false</code>
+  if the waypoint action count is too high or index is invalid.
 </li></ul>
   </div>
 
@@ -1738,7 +1754,7 @@ From class
   </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>Whether or not the waypoint action has been removed from the waypoint.
+      <ul class="nolist"><li><code>true</code> if the waypoint action has been removed from the waypoint.
 </li></ul>
   </div>
 
@@ -1771,8 +1787,8 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Removes a waypoint action from the waypoint by index. After removal, all actions higher in index will 
-  be shifted down by one index.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Removes a waypoint action from the waypoint by index. After removal, all actions higher in the index will
+  be shifted down by one.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -1784,7 +1800,7 @@ From class
   </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>True if waypoint action has been removed from the waypoint.
+      <ul class="nolist"><li><code>true</code> if the waypoint action has been removed from the waypoint.
 </li></ul>
   </div>
 

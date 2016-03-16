@@ -387,8 +387,21 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>The class represents the remote controller of the aircraft. It provides mothods to change the settings of the physical remote controller. 
-  For some products (e.g. Inspire 1 and Matric 100), the class provides methods to manager the slave/master mode of the remote controllers.
+<p>This class represents the remote controller of the aircraft. It provides
+ methods to change the settings of the physical remote controller. For
+ some products (e.g. Inspire 1 and Matrice 100), the class provides methods
+ to manage the slave/master mode of the remote controllers.
+
+ A remote controller is a device that can have a GPS, battery, radio, buttons,
+ sticks, wheels, and output ports for video. The mobile device is connected to
+ the remote controller, which is always sending out information about what
+ everything is doing. The normal remote controller is called the master.
+
+ A slave wirelessly connects to the master remote controller at 5 GHz, and the
+ aircraft can also download information to the slave. The slave can send gimbal
+ control commands to the master. This configuration allows one person to fly the
+ aircraft while another person controls the gimbal.
+
  
 </p>
 
@@ -716,8 +729,8 @@ Summary:
       <td class="jd-linkcol"><a href="../../../dji/sdk/RemoteController/DJIRemoteController.DJIRCRemoteFocusState.html">DJIRemoteController.DJIRCRemoteFocusState</a></td>
       <td class="jd-descrcol" width="100%">Remote Controller's Remote Focus State
 
-  The focus product has one dial (focus control) that controls two separate parts
-  of the camera: focal length and aperture.&nbsp;</td>
+     The focus product has one dial (focus control) that controls two separate parts
+     of the camera: focal length and aperture.&nbsp;</td>
     </tr>
     
     
@@ -729,7 +742,7 @@ Summary:
         
         enum</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/RemoteController/DJIRemoteController.DJIRCRequestGimbalControlResult.html">DJIRemoteController.DJIRCRequestGimbalControlResult</a></td>
-      <td class="jd-descrcol" width="100%">Result when a slave request permission to control the gimbal.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">Result when a slave requests permission to control the gimbal.&nbsp;</td>
     </tr>
     
     
@@ -1401,7 +1414,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/RemoteController/DJIRemoteController.html#removeSlave(int, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">removeSlave</a></span>(int slaveId, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv">Removes a slave Remote Controller from the current master Remote Controller.</div>
+        <div class="jd-descrdiv">Returns the state of the master Remote Controller search.</div>
   
   </td></tr>
 
@@ -1784,7 +1797,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getSerialNumber(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.String>)">getSerialNumber</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
-        <div class="jd-descrdiv">Get serial number of the component.</div>
+        <div class="jd-descrdiv">Get the serial number of the component.</div>
   
   </td></tr>
 
@@ -1820,7 +1833,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#setDJIComponentListener(dji.sdk.base.DJIBaseComponent.DJIComponentListener)">setDJIComponentListener</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJIComponentListener.html">DJIBaseComponent.DJIComponentListener</a> listener)
         
-        <div class="jd-descrdiv">Sets the listener to listen for the DJI component.</div>
+        <div class="jd-descrdiv">Sets the listener for the DJI component.</div>
   
   </td></tr>
 
@@ -2115,7 +2128,7 @@ From class
         <tr>
           <th>callback</th>
           <td>The execution callback with the execution result returned. 
-  Please refer to DJIBaseComponent for more information about the callback
+  See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -2158,7 +2171,7 @@ From class
         <tr>
           <th>callback</th>
           <td>The execution callback with the execution result returned.
-   Please refer to DJIBaseComponent for more information about the callback
+   See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -2194,14 +2207,16 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Starts search by slave Remote Controller for nearby master Remote Controllers. To get the list of master Remote Controllers use getAvailableMastersWithCallbackBlock then call stopMasterRCSearch to end th search.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Starts search by slave Remote Controller for nearby master Remote Controllers. To get the
+  list of master Remote Controllers use getAvailableMastersWithCallbackBlock then call
+  stopMasterRCSearch to end th search.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The execution callback with the value(s) returned. The array of masters contains objects of
-  type DJIRCInfo.
+          <td>The execution callback with the value(s) returned. The array of
+                  masters contains objects of type DJIRCInfo.
 </td>
         </tr>
       </table>
@@ -2495,7 +2510,7 @@ From class
         <tr>
           <th>callback</th>
           <td>The execution callback with the value(s) returned. 
-  Please refer to DJIBaseComponent for more information about the callback
+  See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -2579,7 +2594,7 @@ From class
         <tr>
           <th>callback</th>
           <td>The execution callback with the value(s) returned. 
-  Please refer to DJIBaseComponent for more information about the callback
+  See DJIBaseComponent for more information about the callback
   and what is recommended to be done with it.
 </td>
         </tr>
@@ -2622,7 +2637,7 @@ From class
         <tr>
           <th>callback</th>
           <td>The execution callback with the value(s) returned. 
-  Please refer to DJIBaseComponent for more information about the callback
+  See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -2820,8 +2835,7 @@ From class
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The execution callback with the value(s) returned. 
-
+          <td>The execution callback with the value(s) returned.
 </td>
         </tr>
       </table>
@@ -3183,7 +3197,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>Remote execution result error callback. Please refer to DJIBaseComponent for more information about the callback
+          <td>Remote execution result error callback. See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -3219,17 +3233,16 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Removes a slave Remote Controller from the current master Remote Controller.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the state of the master Remote Controller search. The search is initiated by the
+  Mobile Device, but performed by the Remote Controller. Therefore, if the Mobile Device's
+  application crashes while a search is ongoing, this method can be used to let the new
+  instance of the application understand the Remote Controller state.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
-          <th>slaveId</th>
-          <td>Target slave to be remove.</td>
-        </tr>
-        <tr>
           <th>callback</th>
-          <td>Remote execution result error callback. Please refer to DJIBaseComponent for more information about the callback
+          <td>See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -3318,7 +3331,7 @@ From class
         </tr>
         <tr>
           <th>isAgree</th>
-          <td>True if the master Remote Controller agrees or disagrees to give the slave
+          <td><code>true</code> if the master Remote Controller agrees or disagrees to give the slave
   Remote Controller the right to control the gimbal.
 </td>
         </tr>
@@ -3495,7 +3508,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>Remote execution result error callback. Please refer to DJIBaseComponent for more information about the callback
+          <td>Remote execution result error callback. See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -3542,7 +3555,7 @@ From class
         <tr>
           <th>callback</th>
           <td>The execution callback with the execution result returned. 
-  Please refer to DJIBaseComponent for more information about the callback
+  See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -3594,7 +3607,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>Remote execution result error callback. Please refer to DJIBaseComponent for more information about the callback
+          <td>Remote execution result error callback. See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -3641,7 +3654,7 @@ From class
         <tr>
           <th>callback</th>
           <td>The execution callback with the execution result returned. 
-  Please refer to DJIBaseComponent for more information about the callback
+  See DJIBaseComponent for more information about the callback
   and what is recommended to be done with it.
 </td>
         </tr>
@@ -3688,7 +3701,7 @@ From class
         <tr>
           <th>callback</th>
           <td>The execution callback with the execution result returned. 
-  Please refer to DJIBaseComponent for more information about the callback
+  See DJIBaseComponent for more information about the callback
   and what is recommended to be done with it.
 </td>
         </tr>
@@ -3767,7 +3780,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>Remote execution result error callback. Please refer to DJIBaseComponent for more information about the callback
+          <td>Remote execution result error callback. See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -3803,7 +3816,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the Remote Controller's work mode. Please check the enum named DJIRCWorkMode
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the Remote Controller's work mode. See DJIRCWorkMode
   for all possible Remote Controller work modes.
   The master and slave modes are only supported for the Inspire 1.</p></div>
   <div class="jd-tagdata">
@@ -3815,7 +3828,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>Remote execution result error callback. Please refer to DJIBaseComponent for more information about the callback
+          <td>Remote execution result error callback. See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -3861,7 +3874,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>Remote execution result error callback. Please refer to DJIBaseComponent for more information about the callback
+          <td>Remote execution result error callback. See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -3908,7 +3921,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>Remote execution result error callback. Please refer to DJIBaseComponent for more information about the callback
+          <td>Remote execution result error callback. See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>
@@ -3944,14 +3957,16 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Returns all available master Remote Controllers nearby. Before this method can be used, the method startMasterRCSearch needs to be called to start the search for master Remote Controllers. Once the list of masters is received, call stopMasterRCSearch to end the search.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Returns all available master Remote Controllers nearby. Before this method can be used, the
+  method startMasterRCSearch needs to be called to start the search for master Remote
+  Controllers. Once the list of masters is received, call stopMasterRCSearch to end the search.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>Remote execution result error callback. Please refer to DJIBaseComponent for more information about the callback
-  and what is recommended be done with it.
+          <td>Remote execution result error callback. Please refer to DJIBaseComponent
+                  for more information about the callback and what is recommended be done with it.
 </td>
         </tr>
       </table>
@@ -3992,7 +4007,7 @@ From class
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>Remote execution result error callback. Please refer to DJIBaseComponent for more information about the callback
+          <td>Remote execution result error callback. See DJIBaseComponent for more information about the callback
   and what is recommended be done with it.
 </td>
         </tr>

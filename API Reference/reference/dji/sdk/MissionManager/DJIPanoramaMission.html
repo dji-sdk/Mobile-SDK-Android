@@ -181,6 +181,8 @@
               
     <li><h2>Classes</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.html">DJIActiveTrackMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus.html">DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.html">DJICustomMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.DJICustomMissionProgressStatus.html">DJICustomMission.DJICustomMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.html">DJIFollowMeMission</a></li>
@@ -192,6 +194,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html">DJIMissionManager</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.html">DJIPanoramaMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMissionStatus.html">DJIPanoramaMission.DJIPanoramaMissionStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.html">DJITapFlyMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html">DJITapFlyMission.DJITapFlyMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.html">DJIWaypoint</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointAction.html">DJIWaypoint.DJIWaypointAction</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html">DJIWaypointMission</a></li>
@@ -202,6 +206,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionExecutionState.html">DJIActiveTrackMission.DJIActiveTrackMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeHeading.html">DJIFollowMeMission.DJIFollowMeHeading</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeMissionExecutionState.html">DJIFollowMeMission.DJIFollowMeMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotPointHeading.html">DJIHotPointMission.DJIHotPointHeading</a></li>
@@ -210,6 +215,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionType.html">DJIMission.DJIMissionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIProgressType.html">DJIMission.DJIProgressType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMode.html">DJIPanoramaMission.DJIPanoramaMode</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointActionType.html">DJIWaypoint.DJIWaypointActionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointTurnMode.html">DJIWaypoint.DJIWaypointTurnMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionExecuteState.html">DJIWaypointMission.DJIWaypointMissionExecuteState</a></li>
@@ -394,10 +401,15 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p><b>Supported only by the Osmo camera</b><br>
- In this mission camera rotates 360 or 180 degrees and takes several photos. 
- Download the photos to render a panorama. Please note the photo stitching is not provided in the SDK. 
- In full circle mode, 8 photos are taken. In half circle mode, 5 photos.
+<p>During a Panorama Mission, the user can rotate the camera 360 or 180 degrees to take several
+  photos, and then download the photos to render a panorama.
+
+  In full circle mode, 8 photos are taken. In half circle mode, 5 photos are taken.
+  Commands cannot be sent to the camera until the mission is finished. The Panorama Mission does
+  not support the image stitching feature, so the images must be stitched manually. All the
+  images will be stored on the SD card.
+
+  Panorama Mission is only supported on OSMO.
 </p>
 
 
@@ -455,7 +467,7 @@ Summary:
         enum</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMode.html">DJIPanoramaMission.DJIPanoramaMode</a></td>
       <td class="jd-descrcol" width="100%"><b>Supported only by the Osmo camera</b><br>
- Defines options for different types of modes for panorama mission.&nbsp;</td>
+ Defines options for different types of modes for a panorama mission.&nbsp;</td>
     </tr>
     
     
@@ -618,7 +630,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.html#isPausable()">isPausable</a></span>()
         
-        <div class="jd-descrdiv">Whether current mission can be paused.</div>
+        <div class="jd-descrdiv">Determines whether the current mission can be paused.</div>
   
   </td></tr>
 
@@ -670,7 +682,10 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIMission.html#getMissionType()">getMissionType</a></span>()
         
-        <div class="jd-descrdiv">Returns the mission type.</div>
+        <div class="jd-descrdiv">
+      <em>
+  This method is deprecated.
+      No replacement.</em></div>
   
   </td></tr>
 
@@ -688,7 +703,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIMission.html#isPausable()">isPausable</a></span>()
         
-        <div class="jd-descrdiv">Whether current mission can be paused.</div>
+        <div class="jd-descrdiv">Determines whether the current mission can be paused.</div>
   
   </td></tr>
 
@@ -1016,7 +1031,8 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by the Osmo camera</b><br>
- Retrieves the DJIMedia object for the recently finished panorama mission. Use `fetchSubMediaFileList` method on the retrieved DJIMedia to retrieve the panorama photos.
+ Retrieves the DJIMedia object for the recently finished panorama mission. Use
+ <code>fetchSubMediaFileList</code> method on the retrieved DJIMedia to retrieve the panorama photos.
 </p></div>
 
     </div>
@@ -1048,10 +1064,10 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Whether current mission can be paused.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Determines whether the current mission can be paused.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>True if mission can be paused. False if mission can not be paused.
+      <ul class="nolist"><li><code>true</code> if mission can be paused, <code>false</code> otherwise.
 </li></ul>
   </div>
 

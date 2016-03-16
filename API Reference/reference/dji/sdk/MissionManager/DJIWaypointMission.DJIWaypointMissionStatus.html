@@ -181,6 +181,8 @@
               
     <li><h2>Classes</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.html">DJIActiveTrackMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus.html">DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.html">DJICustomMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.DJICustomMissionProgressStatus.html">DJICustomMission.DJICustomMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.html">DJIFollowMeMission</a></li>
@@ -192,6 +194,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html">DJIMissionManager</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.html">DJIPanoramaMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMissionStatus.html">DJIPanoramaMission.DJIPanoramaMissionStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.html">DJITapFlyMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html">DJITapFlyMission.DJITapFlyMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.html">DJIWaypoint</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointAction.html">DJIWaypoint.DJIWaypointAction</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html">DJIWaypointMission</a></li>
@@ -202,6 +206,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionExecutionState.html">DJIActiveTrackMission.DJIActiveTrackMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeHeading.html">DJIFollowMeMission.DJIFollowMeHeading</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeMissionExecutionState.html">DJIFollowMeMission.DJIFollowMeMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotPointHeading.html">DJIHotPointMission.DJIHotPointHeading</a></li>
@@ -210,6 +215,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionType.html">DJIMission.DJIMissionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIProgressType.html">DJIMission.DJIProgressType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMode.html">DJIPanoramaMission.DJIPanoramaMode</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointActionType.html">DJIWaypoint.DJIWaypointActionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointTurnMode.html">DJIWaypoint.DJIWaypointTurnMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionExecuteState.html">DJIWaypointMission.DJIWaypointMissionExecuteState</a></li>
@@ -515,7 +522,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionStatus.html#getTargetWaypointIndex()">getTargetWaypointIndex</a></span>()
         
-        <div class="jd-descrdiv">Index of the waypoint in the waypoint array for the mission that the aircraft will move to next.</div>
+        <div class="jd-descrdiv">Index of the waypoint in the waypoint array for the mission to which the aircraft will move next.</div>
   
   </td></tr>
 
@@ -533,7 +540,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionStatus.html#isWaypointReached()">isWaypointReached</a></span>()
         
-        <div class="jd-descrdiv">Whether or not the aircraft has reached a waypoint.</div>
+        <div class="jd-descrdiv">Determines whether aircraft has reached a waypoint.</div>
   
   </td></tr>
 
@@ -585,7 +592,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionProgressStatus.html#getError()">getError</a></span>()
         
-        <div class="jd-descrdiv">Error happens in mission execution.</div>
+        <div class="jd-descrdiv">An error occurred during mission execution.</div>
   
   </td></tr>
 
@@ -934,7 +941,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Index of the waypoint in the waypoint array for the mission that the aircraft will move to next.
+  <div class="jd-tagdata jd-tagdescr"><p>Index of the waypoint in the waypoint array for the mission to which the aircraft will move next.
 </p></div>
 
     </div>
@@ -966,8 +973,8 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Whether or not the aircraft has reached a waypoint. Will return
-  true if a waypoint has been reached.
+  <div class="jd-tagdata jd-tagdescr"><p>Determines whether aircraft has reached a waypoint. Returns
+  <code>true</code> if a waypoint has been reached.
 </p></div>
 
     </div>

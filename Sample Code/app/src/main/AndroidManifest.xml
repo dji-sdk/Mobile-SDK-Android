@@ -45,28 +45,22 @@
         -->
         <meta-data
             android:name="com.dji.sdk.API_KEY"
-            android:value="Please type in your API KEY" />
+            android:value="" />
+
+        <service android:name="dji.sdk.SDKManager.DJIGlobalService" >
+        </service>
 
         <activity
             android:name="dji.sdk.SDKManager.DJIAoaControllerActivity"
             android:theme="@android:style/Theme.Translucent" >
             <intent-filter>
-                <!-- IMPORTANT: For opening the AoA connection, this line of code should be added in
-                     the activity which you want to launch after you give the permission to this
-                     application.-->
                 <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
             </intent-filter>
 
-            <!-- IMPORTANT: For opening the AoA connection, this meta-data should be added in
-                     the activity which you want to launch after you give the permission to this
-                     application.-->
             <meta-data
                 android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
                 android:resource="@xml/accessory_filter" />
         </activity>
-
-        <service android:name="dji.sdk.SDKManager.DJIGlobalService" >
-        </service>
 
         <activity
             android:name="com.dji.sdk.sample.common.MainActivity"
@@ -74,18 +68,15 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" >
             <intent-filter>
-                <!-- Aoa needs -->
                 <!--<action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />-->
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- Aoa needs
-            <meta-data
-                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
-                android:resource="@xml/accessory_filter" />
-                -->
+            <!--<meta-data-->
+                <!--android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"-->
+                <!--android:resource="@xml/accessory_filter" />-->
         </activity>
     </application>
 

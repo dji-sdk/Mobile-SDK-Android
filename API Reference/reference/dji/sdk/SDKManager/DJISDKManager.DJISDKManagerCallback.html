@@ -283,7 +283,7 @@
 
 
 <h2>Class Overview</h2>
-<p>Callback interface for SDK manager
+<p>Callback interface for SDK manager.
 </p>
 
 
@@ -374,7 +374,7 @@
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/SDKManager/DJISDKManager.DJISDKManagerCallback.html#onProductChanged(dji.sdk.base.DJIBaseProduct, dji.sdk.base.DJIBaseProduct)">onProductChanged</a></span>(<a href="../../../dji/sdk/base/DJIBaseProduct.html">DJIBaseProduct</a> oldProduct, <a href="../../../dji/sdk/base/DJIBaseProduct.html">DJIBaseProduct</a> newProduct)
         
-        <div class="jd-descrdiv">This method will be called when the 'product' variable is changed.</div>
+        <div class="jd-descrdiv">Called when the product variable is changed.</div>
   
   </td></tr>
 
@@ -494,8 +494,9 @@
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>This method will be called when the 'product' variable is changed.
- If the product disconnects, the product value will be null
+  <div class="jd-tagdata jd-tagdescr"><p>Called when the product variable is changed.
+ oldProduct will be null if starting up.
+ newProduct will be null if the USB link or WiFi link between the product and phone is disconnected.
 </p></div>
 
     </div>

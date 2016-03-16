@@ -2,6 +2,7 @@ package com.dji.sdk.sample.camera;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 
 import com.dji.sdk.sample.common.BasePushDataView;
 import com.dji.sdk.sample.common.DJISampleApplication;
@@ -21,6 +22,7 @@ public class PushCameraDataView extends BasePushDataView {
         return "Test";
     }
 
+
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -35,15 +37,43 @@ public class PushCameraDataView extends BasePushDataView {
                         mStringBuffer.append("CameraMode: ").append(cameraSystemState.getCameraMode()).append("\n");
                         mStringBuffer.append("isRecord: ").append(cameraSystemState.isRecording()).append("\n");
                         mStringBuffer.append("isStoringPhoto: ").append(cameraSystemState.isStoringPhoto()).append("\n");
-                        mStringBuffer.append("isCameraOverHeated: ").append(cameraSystemState.isCameraOverHeated()).append("\n");
+                        mStringBuffer.append("isCameraOverHeated: ").append(cameraSystemState.isCameraOverHeated()).append("\n\n");
 
                         mHandler.sendEmptyMessage(CHANGE_TEXT_VIEW);
                     }
                 }
             });
         } catch (Exception exception) {
-
+            //do something
         }
+
+        //Get Thermal Camera Temperature
+        try {
+            if(DJISampleApplication.getProductInstance().getCamera().isThermalImagingCamera()) {
+                if (DJISampleApplication.getProductInstance().getCamera().getDisplayName()
+                        == DJICamera.DJICameraDisplayNameXT) {
+                    //display thermal temperature
+                    DJISampleApplication.getProductInstance().getCamera()
+                        .setDJIThermalCameraTemperatureDataCallback(
+                                new DJICamera.ThermalCameraUpdateTemperatureDataCallback() {
+                                    @Override
+                                    public void onResult(float temperature) {
+
+                                        mStringBuffer.append("Temperature: ")
+                                                .append(temperature).append("\n");
+                                        mHandler.sendEmptyMessage(CHANGE_TEXT_VIEW);
+                                    }
+
+                                });
+                }
+
+            }
+
+        } catch (Exception e) {
+            //do something
+        }
+
+
     }
 
     @Override
@@ -56,4 +86,5 @@ public class PushCameraDataView extends BasePushDataView {
 
         }
     }
+
 }

@@ -78,6 +78,7 @@ public class BaseFpvView extends RelativeLayout implements TextureView.SurfaceTe
 
             if (mProduct.getModel() != DJIBaseProduct.Model.UnknownAircraft) {
                 mProduct.getCamera().setDJICameraReceivedVideoDataCallback(mReceivedVideoDataCallback);
+
             } else {
                 mProduct.getAirLink().getLBAirLink().setDJIOnReceivedVideoCallback(mOnReceivedVideoCallback);
             }

@@ -308,7 +308,9 @@
 
 
 <h2>Class Overview</h2>
-<p>This protocol provides a callback interface to receive updated signal information of the remote controller link for the aircraft products that have WiFi video link. Eg. Phantom 3 Standard, 4K.
+<p>Callback method to receive updated signal information for wireless Auxiliary Control Link between 
+ remote controller and aircraft. The Phantom 3 Standard and Phantom 3 4K both have Auxiliary 
+ control links in addition to the WiFi link.
 </p>
 
 
@@ -381,7 +383,7 @@
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/AirLink/DJIAuxLink.DJIAuxLinkUpdatedRemoteControllerSignalInformationCallback.html#onResult(java.util.ArrayList<dji.sdk.AirLink.DJISignalInformation>)">onResult</a></span>(ArrayList&lt;<a href="../../../dji/sdk/AirLink/DJISignalInformation.html">DJISignalInformation</a>&gt; antennas)
         
-        <div class="jd-descrdiv">When the ground antenna signal updates, the implementation of the callback would be invoked.</div>
+        <div class="jd-descrdiv">When the remote controller (ground station) signal updates, the implementation of the callback is invoked.</div>
   
   </td></tr>
 
@@ -459,14 +461,15 @@
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>When the ground antenna signal updates, the implementation of the callback would be invoked.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>When the remote controller (ground station) signal updates, the implementation of the callback is invoked.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>antennas</th>
-          <td>DJISignalInformation object. The power property of DJISignalInformation is not used for DJIAuxLink, 
-                  so should be ignored
+          <td>DJISignalInformation object. The <code>power</code> property of <code>DJISignalInformation</code>
+ is not used for <code>DJIAuxLink</code> and should be ignored.
+
 </td>
         </tr>
       </table>

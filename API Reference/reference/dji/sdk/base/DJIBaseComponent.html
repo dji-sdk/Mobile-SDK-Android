@@ -387,8 +387,7 @@ Summary:
   <table class="jd-sumtable-expando">
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/AirLink/DJIAirLink.html">DJIAirLink</a></td>
-              <td class="jd-descrcol" width="100%">This class contains DJI WiFi and DJI Lightbridge components, you can check if the current device supports WiFi and
-  Lightbridge features by accessing the following two boolean values.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This class contains different wireless links between the product (aircraft, handheld), the remote controller (for aircraft products) and the mobile device.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/Battery/DJIBattery.html">DJIBattery</a></td>
@@ -396,12 +395,12 @@ Summary:
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/Camera/DJICamera.html">DJICamera</a></td>
-              <td class="jd-descrcol" width="100%">This class provides methods to change settings of the camera and perform 
-  actions of the camera.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This class provides methods to change camera settings and perform
+  camera actions.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/FlightController/DJIFlightController.html">DJIFlightController</a></td>
-              <td class="jd-descrcol" width="100%">This class contains components of the flight controller.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This class contains components of the flight controller and provides methods to send different commands to the flight controller.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html">DJIGimbal</a></td>
@@ -410,12 +409,11 @@ Summary:
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/HandheldController/DJIHandheldController.html">DJIHandheldController</a></td>
-              <td class="jd-descrcol" width="100%">This class contains interfaces to control handheld device, 
-  you can make handheld device enter sleep mode, awake from sleep mode or shut it down.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This class contains interfaces to control a handheld device.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/AirLink/DJILBAirLink.html">DJILBAirLink</a></td>
-              <td class="jd-descrcol" width="100%">This class contains methods to change settings of the Lightbridge Air Link.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This class contains methods to change the settings of the Lightbridge Air Link.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html">DJIMissionManager</a></td>
@@ -423,7 +421,7 @@ Summary:
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/RemoteController/DJIRemoteController.html">DJIRemoteController</a></td>
-              <td class="jd-descrcol" width="100%">The class represents the remote controller of the aircraft.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This class represents the remote controller of the aircraft.&nbsp;</td>
           </tr>
   </table>
       </div>
@@ -437,8 +435,8 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>Class for components in a DJI Product. A DJI product consists of several
- components such as camera, gimbal, remote controller, among others  
+<p>Class for components in a DJI Product. A component can be a camera, gimbal,
+ remote controller, etc. A DJI product consists of several components.
 </p>
 
 
@@ -520,7 +518,7 @@ Summary:
         
         interface</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWithThreeParam.html">DJIBaseComponent.DJICompletionCallbackWithThreeParam</a>&lt;X,&nbsp;Y,&nbsp;Z&gt;</td>
-      <td class="jd-descrcol" width="100%">DJI completion callback with parameter X, Y, Z, the X, Y, Z will be
+      <td class="jd-descrcol" width="100%">DJI completion callback with parameters X, Y, Z, which will be
  defined where it is called.&nbsp;</td>
     </tr>
     
@@ -533,7 +531,7 @@ Summary:
         
         interface</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWithTwoParam.html">DJIBaseComponent.DJICompletionCallbackWithTwoParam</a>&lt;X,&nbsp;Y&gt;</td>
-      <td class="jd-descrcol" width="100%">DJI completion callback with parameter X, Y, the X, Y will be defined
+      <td class="jd-descrcol" width="100%">DJI completion callback with parameters X, Y, which will be defined
  where it is called.&nbsp;</td>
     </tr>
     
@@ -546,7 +544,7 @@ Summary:
         
         interface</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/base/DJIBaseComponent.DJIComponentListener.html">DJIBaseComponent.DJIComponentListener</a></td>
-      <td class="jd-descrcol" width="100%">Gets notified of component connectivity changes.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">Receives notifications of component connectivity changes.&nbsp;</td>
     </tr>
     
     
@@ -621,7 +619,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getSerialNumber(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.String>)">getSerialNumber</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
-        <div class="jd-descrdiv">Get serial number of the component.</div>
+        <div class="jd-descrdiv">Get the serial number of the component.</div>
   
   </td></tr>
 
@@ -657,7 +655,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#setDJIComponentListener(dji.sdk.base.DJIBaseComponent.DJIComponentListener)">setDJIComponentListener</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJIComponentListener.html">DJIBaseComponent.DJIComponentListener</a> listener)
         
-        <div class="jd-descrdiv">Sets the listener to listen for the DJI component.</div>
+        <div class="jd-descrdiv">Sets the listener for the DJI component.</div>
   
   </td></tr>
 
@@ -951,15 +949,14 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Get serial number of the component. 
- Please note this serial number does not match with the serial number found in the physical component.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Get the serial number of the component.
+ Note that this serial number does not match with the serial number found on the physical component.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The execution callback with the value(s) returned. 
-
+          <td>The execution callback with the value(s) returned.
 </td>
         </tr>
       </table>
@@ -995,7 +992,6 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>This is the method for detecting whether the component is connected.
- 
 </p></div>
 
     </div>
@@ -1027,7 +1023,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the listener to listen for the DJI component.
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the listener for the DJI component.
 </p></div>
 
     </div>

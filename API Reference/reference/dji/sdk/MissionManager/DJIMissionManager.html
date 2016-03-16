@@ -181,6 +181,8 @@
               
     <li><h2>Classes</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.html">DJIActiveTrackMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus.html">DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.html">DJICustomMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.DJICustomMissionProgressStatus.html">DJICustomMission.DJICustomMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.html">DJIFollowMeMission</a></li>
@@ -192,6 +194,8 @@
           <li class="selected api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html">DJIMissionManager</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.html">DJIPanoramaMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMissionStatus.html">DJIPanoramaMission.DJIPanoramaMissionStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.html">DJITapFlyMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html">DJITapFlyMission.DJITapFlyMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.html">DJIWaypoint</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointAction.html">DJIWaypoint.DJIWaypointAction</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html">DJIWaypointMission</a></li>
@@ -202,6 +206,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionExecutionState.html">DJIActiveTrackMission.DJIActiveTrackMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeHeading.html">DJIFollowMeMission.DJIFollowMeHeading</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeMissionExecutionState.html">DJIFollowMeMission.DJIFollowMeMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotPointHeading.html">DJIHotPointMission.DJIHotPointHeading</a></li>
@@ -210,6 +215,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionType.html">DJIMission.DJIMissionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIProgressType.html">DJIMission.DJIProgressType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMode.html">DJIPanoramaMission.DJIPanoramaMode</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointActionType.html">DJIWaypoint.DJIWaypointActionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointTurnMode.html">DJIWaypoint.DJIWaypointTurnMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionExecuteState.html">DJIWaypointMission.DJIWaypointMissionExecuteState</a></li>
@@ -387,10 +394,9 @@ Summary:
 
 <h2>Class Overview</h2>
 <p>This class manages the execution cycle for a mission. 
-  To execute a mission, normally user needs to first invoke prepareMission() to get the mission prepared. 
-  Then a user can call startMissionExecution() to start the prepared mission. 
-  User can also pause, resume or stop an executing mission if the mission supports the operation.
-
+  To execute a mission, normally the user must first invoke prepareMission() to prepare the mission.
+  Then the user can call startMissionExecution() to start the prepared mission.
+  The user can also pause, resume, or stop an executing mission if the mission supports the operation.
 </p>
 
 
@@ -434,7 +440,7 @@ Summary:
         
         interface</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.MissionProgressStatusCallback.html">DJIMissionManager.MissionProgressStatusCallback</a></td>
-      <td class="jd-descrcol" width="100%">The interface provides the method to update mission progress status.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">This interface provides the method to update mission progress status.&nbsp;</td>
     </tr>
     
     
@@ -474,6 +480,17 @@ Summary:
   This field is deprecated.
       This property will be deleted in the coming version.
 </em></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol">
+          public
+          
+          
+          boolean</td>
+          <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html#mIsCustomMissionExecuting">mIsCustomMissionExecuting</a></td>
+          <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
@@ -594,7 +611,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html#isConnected()">isConnected</a></span>()
         
-        <div class="jd-descrdiv">TRUE if the mission manager is connected.</div>
+        <div class="jd-descrdiv"><code>true</code> if the mission manager is connected.</div>
   
   </td></tr>
 
@@ -628,7 +645,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html#pauseMissionExecution(dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">pauseMissionExecution</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv">Pauses the current mission being executed and the aircraft will hover in its current location.</div>
+        <div class="jd-descrdiv">Pauses the current mission being executed.</div>
   
   </td></tr>
 
@@ -788,7 +805,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getSerialNumber(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.String>)">getSerialNumber</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
-        <div class="jd-descrdiv">Get serial number of the component.</div>
+        <div class="jd-descrdiv">Get the serial number of the component.</div>
   
   </td></tr>
 
@@ -824,7 +841,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#setDJIComponentListener(dji.sdk.base.DJIBaseComponent.DJIComponentListener)">setDJIComponentListener</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJIComponentListener.html">DJIBaseComponent.DJIComponentListener</a> listener)
         
-        <div class="jd-descrdiv">Sets the listener to listen for the DJI component.</div>
+        <div class="jd-descrdiv">Sets the listener for the DJI component.</div>
   
   </td></tr>
 
@@ -1072,6 +1089,36 @@ From class
 
 
 
+<a id="mIsCustomMissionExecuting"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        boolean
+      </span>
+        mIsCustomMissionExecuting
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
 
 <!-- Public ctors -->
 
@@ -1151,11 +1198,11 @@ From class
       <table class="jd-tagtable">
         <tr>
           <th>downloadProgress</th>
-          <td>Progress handler callback method to monitor download progress</td>
+          <td>Progress handler callback method to monitor download progress.</td>
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -1297,7 +1344,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>TRUE if the mission manager is connected.
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the mission manager is connected.
 </p></div>
 
     </div>
@@ -1360,15 +1407,15 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Pauses the current mission being executed and the aircraft will hover in its current location. Current state 
-  will be saved until resumeMissionExecution is called.
+  <div class="jd-tagdata jd-tagdescr"><p>Pauses the current mission being executed. The aircraft will hover in its current location. The current state
+  will be saved until resumeMissionExecution() is called.
   Returns a system busy error if the MissionManager is uploading or downloading the mission.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -1403,7 +1450,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Prepares the mission for execution. For the waypoint mission, data needs to be uploaded to the aircraft (product) and the
+  <div class="jd-tagdata jd-tagdescr"><p>Prepares the mission for execution. For the waypoint mission, data must be uploaded to the aircraft (product) and the
   DJIMissionProgressHandler can be used to monitor upload progress. The follow-me, panorama, hotpoint and custom missions
   require much shorter time for the preparation phase. PrepareMission should fail if a mission is currently executing.</p></div>
   <div class="jd-tagdata">
@@ -1411,15 +1458,15 @@ From class
       <table class="jd-tagtable">
         <tr>
           <th>mission</th>
-          <td>Mission object</td>
+          <td>Mission object.</td>
         </tr>
         <tr>
           <th>progressHandler</th>
-          <td>Progress handler callback method to monitor preparation progress</td>
+          <td>Progress handler callback method to monitor preparation progress.</td>
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -1460,7 +1507,7 @@ From class
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -1559,14 +1606,14 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Starts mission execution. Should only be called after prepareMission is successfully called.
-  For waypoint mission if the aircraft isn't flying, it will automatically take off and execute the mission. For hot point  and follow me mission, the aircraft needs to be flying before the mission is started. For custom mission, the behaviour depends on the first mission step.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Starts mission execution. This should only be called after prepareMission is successfully called.
+  For a waypoint mission, if the aircraft isn't flying, it will automatically take off and execute the mission. For hot point and follow me mission, the aircraft needs to be flying before the mission is started. For a custom mission, the behaviour depends on the first mission step.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -1608,7 +1655,7 @@ From class
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>

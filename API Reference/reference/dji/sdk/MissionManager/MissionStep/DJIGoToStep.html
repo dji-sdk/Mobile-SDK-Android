@@ -454,6 +454,8 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../dji/sdk/MissionManager/MissionStep/DJIGoToStep.html#DJIGoToStep(double, double, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">DJIGoToStep</a></span>(double targetLatitude, double targetLongitude, <a href="../../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> completionCallback)
         
+        <div class="jd-descrdiv">Constructor</div>
+  
   </td></tr>
 
 
@@ -470,6 +472,8 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../dji/sdk/MissionManager/MissionStep/DJIGoToStep.html#DJIGoToStep(float, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">DJIGoToStep</a></span>(float targetAltitude, <a href="../../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> completionCallback)
         
+        <div class="jd-descrdiv">Constructor.</div>
+  
   </td></tr>
 
 
@@ -486,7 +490,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../dji/sdk/MissionManager/MissionStep/DJIGoToStep.html#DJIGoToStep(double, double, float, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">DJIGoToStep</a></span>(double targetLatitude, double targetLongitude, float targetAltitude, <a href="../../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> completionCallback)
         
-        <div class="jd-descrdiv">Go to location from current aircraft location.</div>
+        <div class="jd-descrdiv">Constructor.</div>
   
   </td></tr>
 
@@ -524,6 +528,22 @@ Summary:
 
 	 
     <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../dji/sdk/MissionManager/MissionStep/DJIGoToStep.html#run()">run</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -717,7 +737,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../dji/sdk/MissionManager/MissionStep/DJIMissionStep.html#getFailureReason()">getFailureReason</a></span>()
         
-        <div class="jd-descrdiv">Show failure reason for checking parameters of mission.</div>
+        <div class="jd-descrdiv">Show the failure reason for checking the mission parameters.</div>
   
   </td></tr>
 
@@ -735,7 +755,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../dji/sdk/MissionManager/MissionStep/DJIMissionStep.html#isValid()">isValid</a></span>()
         
-        <div class="jd-descrdiv">Whether or not the mission's parameters are valid for execution.</div>
+        <div class="jd-descrdiv">Determines whether the mission's parameters are valid for execution.</div>
   
   </td></tr>
 
@@ -1071,7 +1091,7 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Constructor</p></div>
 
     </div>
 </div>
@@ -1102,7 +1122,21 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Constructor. Go to the specified height from the current aircraft location.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>targetAltitude</th>
+          <td>Target altitude.</td>
+        </tr>
+        <tr>
+          <th>completionCallback</th>
+          <td>The execution callback with the execution result returned.
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
@@ -1133,8 +1167,30 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Go to location from current aircraft location. location's latitude, longitude and altitude([-200, 500]) should valid. TDL
-</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Constructor. Go to the specified location from current aircraft location. location's latitude,
+ longitude and altitude([-200, 500]) should valid.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>targetLatitude</th>
+          <td>Target latitude.</td>
+        </tr>
+        <tr>
+          <th>targetLongitude</th>
+          <td>Target longitude.</td>
+        </tr>
+        <tr>
+          <th>targetAltitude</th>
+          <td>Target altitude.</td>
+        </tr>
+        <tr>
+          <th>completionCallback</th>
+          <td>The execution callback with the execution result returned.
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
@@ -1187,6 +1243,37 @@ From interface
 </div>
 
 
+<a id="run()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">run</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 <a id="setFlightSpeed(float)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1212,7 +1299,7 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Set flight speed of aircraft when going to the target location. Default is 8 m/s
+  <div class="jd-tagdata jd-tagdescr"><p>Set flight speed of aircraft when going to the target location. Default is 8 m/s.
 </p></div>
 
     </div>

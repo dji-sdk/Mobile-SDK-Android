@@ -181,6 +181,8 @@
               
     <li><h2>Classes</h2>
       <ul>
+        <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.html">DJIActiveTrackMission</a></li>
+        <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus.html">DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.html">DJICustomMission</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.DJICustomMissionProgressStatus.html">DJICustomMission.DJICustomMissionProgressStatus</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.html">DJIFollowMeMission</a></li>
@@ -192,6 +194,8 @@
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html">DJIMissionManager</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.html">DJIPanoramaMission</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMissionStatus.html">DJIPanoramaMission.DJIPanoramaMissionStatus</a></li>
+        <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.html">DJITapFlyMission</a></li>
+        <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html">DJITapFlyMission.DJITapFlyMissionProgressStatus</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.html">DJIWaypoint</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointAction.html">DJIWaypoint.DJIWaypointAction</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html">DJIWaypointMission</a></li>
@@ -202,6 +206,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+        <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionExecutionState.html">DJIActiveTrackMission.DJIActiveTrackMissionExecutionState</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeHeading.html">DJIFollowMeMission.DJIFollowMeHeading</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeMissionExecutionState.html">DJIFollowMeMission.DJIFollowMeMissionExecutionState</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotPointHeading.html">DJIHotPointMission.DJIHotPointHeading</a></li>
@@ -210,6 +215,8 @@
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionType.html">DJIMission.DJIMissionType</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIProgressType.html">DJIMission.DJIProgressType</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMode.html">DJIPanoramaMission.DJIPanoramaMode</a></li>
+        <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a></li>
+        <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointActionType.html">DJIWaypoint.DJIWaypointActionType</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointTurnMode.html">DJIWaypoint.DJIWaypointTurnMode</a></li>
         <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionExecuteState.html">DJIWaypointMission.DJIWaypointMissionExecuteState</a></li>
@@ -286,12 +293,11 @@
   <table class="jd-sumtable-expando">
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionProgressHandler.html">DJIMission.DJIMissionProgressHandler</a></td>
-              <td class="jd-descrcol" width="100%">Returns the progress status from 0.0 to 1.0
-&nbsp;</td>
+              <td class="jd-descrcol" width="100%">Returns the progress status from 0.0 to 1.0.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.MissionProgressStatusCallback.html">DJIMissionManager.MissionProgressStatusCallback</a></td>
-              <td class="jd-descrcol" width="100%">The interface provides the method to update mission progress status.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This interface provides the method to update mission progress status.&nbsp;</td>
           </tr>
   </table>
     </div>
@@ -304,8 +310,17 @@
     
   <table class="jd-sumtable-expando">
         <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.html">DJIActiveTrackMission</a></td>
+              <td class="jd-descrcol" width="100%">ActiveTrack Mission allows an aircraft to track a moving subject using the vision system and without a GPS tracker on the subject.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus.html">DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus</a></td>
+              <td class="jd-descrcol" width="100%">This class provides the real-time status of an executing ActiveTrack Mission.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJICustomMission.html">DJICustomMission</a></td>
-              <td class="jd-descrcol" width="100%">The DJICustomMission class is a subclass of DJIMission.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">In a custom mission, you can create multiple kinds of mission steps to control the aircraft to
+  execute a series of complex tasks.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJICustomMission.DJICustomMissionProgressStatus.html">DJICustomMission.DJICustomMissionProgressStatus</a></td>
@@ -341,13 +356,21 @@
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.html">DJIPanoramaMission</a></td>
-              <td class="jd-descrcol" width="100%"><b>Supported only by the Osmo camera</b><br>
- In this mission camera rotates 360 or 180 degrees and takes several photos.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">During a Panorama Mission, the user can rotate the camera 360 or 180 degrees to take several
+  photos, and then download the photos to render a panorama.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMissionStatus.html">DJIPanoramaMission.DJIPanoramaMissionStatus</a></td>
               <td class="jd-descrcol" width="100%"><b>Supported only by the Osmo camera</b><br>
   This class provides the real-time status of an executing panorama mission.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.html">DJITapFlyMission</a></td>
+              <td class="jd-descrcol" width="100%">A TapFly Mission is initialized with a position target from the live video stream.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html">DJITapFlyMission.DJITapFlyMissionProgressStatus</a></td>
+              <td class="jd-descrcol" width="100%">This class provides the real-time status of an executing TapFly Mission.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.html">DJIWaypoint</a></td>
@@ -377,63 +400,80 @@
     
   <table class="jd-sumtable-expando">
         <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionExecutionState.html">DJIActiveTrackMission.DJIActiveTrackMissionExecutionState</a></td>
+              <td class="jd-descrcol" width="100%">Current ActiveTrack Mission execution state.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeHeading.html">DJIFollowMeMission.DJIFollowMeHeading</a></td>
               <td class="jd-descrcol" width="100%">Aircraft's heading during a follow me mission.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeMissionExecutionState.html">DJIFollowMeMission.DJIFollowMeMissionExecutionState</a></td>
               <td class="jd-descrcol" width="100%">All possible follow me mission execution states.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotPointHeading.html">DJIHotPointMission.DJIHotPointHeading</a></td>
               <td class="jd-descrcol" width="100%">Heading of the aircraft while orbiting the hot point.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotpointMissionExecutionState.html">DJIHotPointMission.DJIHotpointMissionExecutionState</a></td>
               <td class="jd-descrcol" width="100%">All possible hot point mission execution states.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotPointStartPoint.html">DJIHotPointMission.DJIHotPointStartPoint</a></td>
-              <td class="jd-descrcol" width="100%">Aircraft start point relative to hot point.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">Aircraft start point relative to the hot point.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionType.html">DJIMission.DJIMissionType</a></td>
+              <td class="jd-descrcol" width="100%">
+      <em>
+  This enum is deprecated.
+      An enum class representing the mission type.
+
+</em>&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionType.html">DJIMission.DJIMissionType</a></td>
-              <td class="jd-descrcol" width="100%">An enum class representing the mission type.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIProgressType.html">DJIMission.DJIProgressType</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMode.html">DJIPanoramaMission.DJIPanoramaMode</a></td>
               <td class="jd-descrcol" width="100%"><b>Supported only by the Osmo camera</b><br>
- Defines options for different types of modes for panorama mission.&nbsp;</td>
+ Defines options for different types of modes for a panorama mission.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a></td>
+              <td class="jd-descrcol" width="100%">Direction aircraft is moving around or bypassing and obstacle.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a></td>
+              <td class="jd-descrcol" width="100%">TapFly Mission execution state.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointActionType.html">DJIWaypoint.DJIWaypointActionType</a></td>
               <td class="jd-descrcol" width="100%">Waypoint action types.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointTurnMode.html">DJIWaypoint.DJIWaypointTurnMode</a></td>
               <td class="jd-descrcol" width="100%">How the aircraft will turn at a waypoint to transition between headings.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionExecuteState.html">DJIWaypointMission.DJIWaypointMissionExecuteState</a></td>
               <td class="jd-descrcol" width="100%">Current waypoint mission state.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionFinishedAction.html">DJIWaypointMission.DJIWaypointMissionFinishedAction</a></td>
               <td class="jd-descrcol" width="100%">Actions for when the waypoint mission has finished.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionFlightPathMode.html">DJIWaypointMission.DJIWaypointMissionFlightPathMode</a></td>
               <td class="jd-descrcol" width="100%">This enum reflects the path mode.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionGotoWaypointMode.html">DJIWaypointMission.DJIWaypointMissionGotoWaypointMode</a></td>
               <td class="jd-descrcol" width="100%">This enum will determine the goto point mode while the drone executes the flight.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionHeadingMode.html">DJIWaypointMission.DJIWaypointMissionHeadingMode</a></td>
               <td class="jd-descrcol" width="100%">This enum will determine the direction while the drone executes the flight.&nbsp;</td>
           </tr>

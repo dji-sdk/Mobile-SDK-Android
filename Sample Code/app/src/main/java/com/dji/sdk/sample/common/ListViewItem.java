@@ -57,7 +57,9 @@ public class ListViewItem extends LinearLayout implements View.OnClickListener {
             Log.v(TAG, "init");
 
             mViewNameString = getContext().getString(mViewNameId);
+            Log.v(TAG, "view name: " + mViewNameString);
             mComponentNameString = getContext().getString(mComponentNameId);
+            Log.v(TAG, "component name: " + mComponentNameString);
         }
 
         a.recycle();

@@ -365,26 +365,31 @@ Summary:
 <h2>Class Overview</h2>
 <p>Remote Controller's Remote Focus State
 
-  The focus product has one dial (focus control) that controls two separate parts
-  of the camera: focal length and aperture. However it can only control one of 
-  these at any one time and is an absolute dial, meaning that a specific rotational
-  position of the dial corresponds to a specific focal length or aperture.<br><br>
+     The focus product has one dial (focus control) that controls two separate parts
+     of the camera: focal length and aperture. However it can only control one of
+     these at any one time and is an aboslute dial, meaning that a specific rotational
+     position of the dial corresponds to a specific focal length or aperture.
 
-  This means, whenever the dial control mode is changed, the dial first has to be
-  reset to the new mode's previous dial position before the dial can be used to adjust 
-  the setting of the new mode.<br><br>
+     This means that whenever the dial control mode is changed, the dial first has to be
+     reset to the new mode's previous dial position before the dial can be used to adjust
+     the setting of the new mode.
 
-  An example workflow:<br><br>
-      - Use dial to set an Aperture of f2.2<br><br>
-            - Change dial control mode to focal length (set DJIRCRemoteFocusControlType)<br><br>
-            - Use the dial to change the focal length <br><br>
-            - Change dial control mode back to aperture<br><br>
-                - set DJIRCRemoteFocusControlType<br><br>
-                - isFocusControlWorks will now be NO<br><br>
-            - Adjust dial back to f2.2<br><br>
-                - DJIRCRemoteFocusControlDirection is the direction the dial should be rotated<br><br>
-                - isFocusControlWorks will become YES when set back to f2.2<br><br>
-            - Now the dial can be used to adjust the aperture.<br><br>
+     Example workflow:<br/><ol>
+     <li>Use dial to set an Aperture of f2.2</li>
+     <li>Change dial control mode to focal length (set <code>DJIRCRemoteFocusControlType</code>)</li>
+     <li>Use the dial to change the focal length</li>
+     <li>Change dial control mode back to aperture<ul>
+     <li>set <code>DJIRCRemoteFocusControlType</code></li>
+     <li><code>isFocusControlWorks</code> will now be NO</li>
+     </ul>
+     </li>
+     <li>Adjust dial back to f2.2<ul>
+     <li><code>DJIRCRemoteFocusControlDirection</code> is the direction the dial should be rotated</li>
+     <li><code>isFocusControlWorks</code> will become YES when set back to f2.2</li>
+     </ul>
+     </li>
+     <li>Now the dial can be used to adjust the aperture.
+     </ol>
 
 </p>
 
@@ -466,7 +471,7 @@ Summary:
           
           boolean</td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/RemoteController/DJIRemoteController.DJIRCRemoteFocusState.html#isFocusControlWorks">isFocusControlWorks</a></td>
-          <td class="jd-descrcol" width="100%">TRUE if the focus control works.</td>
+          <td class="jd-descrcol" width="100%"><code>true</code> if the focus control works.</td>
       </tr>
       
     
@@ -774,7 +779,7 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Remote Focus Control Direction, you need to use it with the isFocusControlWorks value. It
-  will give you the correct rotation direction when isFocusControlWorks is FALSE.
+  will give you the correct rotation direction when isFocusControlWorks is <code>false</code>.
 </p></div>
 
     
@@ -805,9 +810,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>TRUE if the focus control works. The control can be either changing the Aperture or
-  Focal Length. If it's FALSE, you need to follow the DJIRCRemoteFocusControlDirection to
-  rotate the Remote Focus Device until it turns to TRUE again.
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the focus control works. The control can be either changing the Aperture or
+  Focal Length. If it is <code>false</code>, follow the DJIRCRemoteFocusControlDirection to
+  rotate the Remote Focus Device until it turns to <code>true</code> again.
 </p></div>
 
     

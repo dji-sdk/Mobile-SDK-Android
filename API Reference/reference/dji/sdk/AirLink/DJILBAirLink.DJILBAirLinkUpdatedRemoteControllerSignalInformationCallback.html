@@ -308,7 +308,7 @@
 
 
 <h2>Class Overview</h2>
-<p>Signal quality and strength information for current uplink channel on each Remote Controller antenna.
+<p>Signal quality and strength information for the current uplink channel on each Remote Controller (or ground station) antenna.
 </p>
 
 
@@ -381,7 +381,7 @@
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/AirLink/DJILBAirLink.DJILBAirLinkUpdatedRemoteControllerSignalInformationCallback.html#onResult(java.util.ArrayList<dji.sdk.AirLink.DJISignalInformation>)">onResult</a></span>(ArrayList&lt;<a href="../../../dji/sdk/AirLink/DJISignalInformation.html">DJISignalInformation</a>&gt; antennas)
         
-        <div class="jd-descrdiv">When the ground antenna signal updates, the implementation of the callback would be invoked.</div>
+        <div class="jd-descrdiv">When the remote controller (or groundstation) uplink signal updates, the implementation of the callback is invoked.</div>
   
   </td></tr>
 
@@ -459,14 +459,15 @@
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>When the ground antenna signal updates, the implementation of the callback would be invoked.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>When the remote controller (or groundstation) uplink signal updates, the implementation of the callback is invoked.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>antennas</th>
-          <td>Antenna signals for the antenna on the ground side. The power property is valid only when the connecting product is Lightbridge 2.
-                     For other products, the value of power is always 0.
+          <td>Signal information for each antenna on the ground station side of the Lightbridge Link.
+ 				   The <code>power</code> property is valid only when the connecting product is Lightbridge 2.
+                 For other products, the value of <code>power</code> is always 0.
 </td>
         </tr>
       </table>

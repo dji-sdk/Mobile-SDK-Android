@@ -331,15 +331,15 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>The DJIBatteryWarningInformation is used to keep a record of the unusual status of the battery
-  for the past 30 days. For all the properties below, please continuously check these values to ensure the
-  battery's state is normal. If any of the properties below that indicate an issue with the battery, we
+<p>This class is used to keep a record of any unusual status for the battery
+  in the past 30 days. For all the properties below, monitor these values frequently to ensure the
+  battery's state is normal. If any of the properties below indicate there is an issue with the battery, we
   recommend notifying the user.
 
-  NOTE: No automatic action will be taken if any of the properties below return true,
-  which is why it becomes imperative the user is notified of the issue.
+  NOTE: No automatic action will be taken if any of the properties below return <code>true</code>,
+  which is why it is imperative the user is notified of the issue.
 
-  All states are not supported by Osmo.
+  These states are not supported by Osmo.
 </p>
 
 
@@ -473,7 +473,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryWarningInformation.html#isCustomDischargeEnabled()">isCustomDischargeEnabled</a></span>()
         
-        <div class="jd-descrdiv">TRUE if battery has been configured to be discharged over a specific
+        <div class="jd-descrdiv"><code>true</code> if the battery has been configured to be discharged over a specific
   number of days.</div>
   
   </td></tr>
@@ -492,7 +492,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryWarningInformation.html#isDischargeDueToCurrentOverload()">isDischargeDueToCurrentOverload</a></span>()
         
-        <div class="jd-descrdiv">TRUE if battery should be discharged due to a current overload.</div>
+        <div class="jd-descrdiv"><code>true</code> if the battery should be discharged due to a current overload.</div>
   
   </td></tr>
 
@@ -510,7 +510,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryWarningInformation.html#isDischargeDueToLowTemperature()">isDischargeDueToLowTemperature</a></span>()
         
-        <div class="jd-descrdiv">TRUE if battery should be discharged due to a low temperature.</div>
+        <div class="jd-descrdiv"><code>true</code> if the battery should be discharged due to a low temperature.</div>
   
   </td></tr>
 
@@ -528,7 +528,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryWarningInformation.html#isDischargeDueToOverHeating()">isDischargeDueToOverHeating</a></span>()
         
-        <div class="jd-descrdiv">TRUE if battery should be discharged due to being over heated.</div>
+        <div class="jd-descrdiv"><code>true</code> if the battery should be discharged due to being overheated.</div>
   
   </td></tr>
 
@@ -546,7 +546,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryWarningInformation.html#isDischargeDueToShortCircuit()">isDischargeDueToShortCircuit</a></span>()
         
-        <div class="jd-descrdiv">TRUE if battery should be discharged due to it being short circuited.</div>
+        <div class="jd-descrdiv"><code>true</code> if the battery should be discharged due to being short circuited.</div>
   
   </td></tr>
 
@@ -840,7 +840,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Returns the index at which one of the cells in the battery is damaged. The first cell has index 1.
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the index at which one of the cells in the battery is damaged. The first cell has an index of 1.
   The Phantom 3 Series have 4 cell batteries. The Inspire series and M100 have
   6 cell batteries.
 </p></div>
@@ -875,9 +875,9 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns the index at which one of the cells in the battery is below the normal voltage.
+  The first cell has an index of 1.
   The Phantom 3 Series have 4 cell batteries. The Inspire series and M100 have
   6 cell batteries.
-
 </p></div>
 
     </div>
@@ -909,7 +909,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>TRUE if battery has been configured to be discharged over a specific
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the battery has been configured to be discharged over a specific
   number of days. Once the battery is fully charged again, the battery will discharge
   over the number of days set here again. This process is cyclical.
 </p></div>
@@ -943,7 +943,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>TRUE if battery should be discharged due to a current overload.
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the battery should be discharged due to a current overload.
 </p></div>
 
     </div>
@@ -975,7 +975,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>TRUE if battery should be discharged due to a low temperature.
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the battery should be discharged due to a low temperature.
 </p></div>
 
     </div>
@@ -1007,7 +1007,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>TRUE if battery should be discharged due to being over heated.
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the battery should be discharged due to being overheated.
 </p></div>
 
     </div>
@@ -1039,7 +1039,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>TRUE if battery should be discharged due to it being short circuited.
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the battery should be discharged due to being short circuited.
 </p></div>
 
     </div>

@@ -357,8 +357,8 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>This class contains interfaces to control handheld device, 
-  you can make handheld device enter sleep mode, awake from sleep mode or shut it down.
+<p>This class contains interfaces to control a handheld device.
+ You can make a handheld device enter sleep mode, awake from sleep mode, or shut down.
 </p>
 
 
@@ -414,7 +414,7 @@ Summary:
         
         interface</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/HandheldController/DJIHandheldController.DJIHandheldPowerModeListener.html">DJIHandheldController.DJIHandheldPowerModeListener</a></td>
-      <td class="jd-descrcol" width="100%">Tells that a handheld controller's power mode is updated.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">Callback to receive the updated power mode of the handheld controller.&nbsp;</td>
     </tr>
     
     
@@ -460,8 +460,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/HandheldController/DJIHandheldController.html#DJIHandheldController()">DJIHandheldController</a></span>()
         
-        <div class="jd-descrdiv">Constructor for DJIHandheldController
-</div>
+        <div class="jd-descrdiv">Constructor.</div>
   
   </td></tr>
 
@@ -510,7 +509,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/HandheldController/DJIHandheldController.html#setDJIHandheldPowerModeListener(dji.sdk.HandheldController.DJIHandheldController.DJIHandheldPowerModeListener)">setDJIHandheldPowerModeListener</a></span>(<a href="../../../dji/sdk/HandheldController/DJIHandheldController.DJIHandheldPowerModeListener.html">DJIHandheldController.DJIHandheldPowerModeListener</a> listener)
         
-        <div class="jd-descrdiv">Set up the listener for listening to the power mode status</div>
+        <div class="jd-descrdiv">Set up the listener for the power mode status.</div>
   
   </td></tr>
 
@@ -528,7 +527,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/HandheldController/DJIHandheldController.html#setHandheldPowerMode(dji.sdk.HandheldController.DJIHandheldController.DJIHandheldPowerMode, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">setHandheldPowerMode</a></span>(<a href="../../../dji/sdk/HandheldController/DJIHandheldController.DJIHandheldPowerMode.html">DJIHandheldController.DJIHandheldPowerMode</a> mode, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv">Set up the power mode for handheld.</div>
+        <div class="jd-descrdiv">Set the power mode for handheld.</div>
   
   </td></tr>
 
@@ -580,7 +579,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getSerialNumber(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.String>)">getSerialNumber</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
-        <div class="jd-descrdiv">Get serial number of the component.</div>
+        <div class="jd-descrdiv">Get the serial number of the component.</div>
   
   </td></tr>
 
@@ -616,7 +615,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#setDJIComponentListener(dji.sdk.base.DJIBaseComponent.DJIComponentListener)">setDJIComponentListener</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJIComponentListener.html">DJIBaseComponent.DJIComponentListener</a> listener)
         
-        <div class="jd-descrdiv">Sets the listener to listen for the DJI component.</div>
+        <div class="jd-descrdiv">Sets the listener for the DJI component.</div>
   
   </td></tr>
 
@@ -856,7 +855,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Constructor for DJIHandheldController
+  <div class="jd-tagdata jd-tagdescr"><p>Constructor.
 </p></div>
 
     </div>
@@ -934,13 +933,13 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Set up the listener for listening to the power mode status</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Set up the listener for the power mode status.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>listener</th>
-          <td>the listener for the power mode status
+          <td>The listener for the power mode status.
 </td>
         </tr>
       </table>
@@ -975,7 +974,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Set up the power mode for handheld.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Set the power mode for handheld.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -983,8 +982,7 @@ From class
           <th>mode</th>
           <td>The power mode to set.
                   CAUTION: when the mode is DJIHandheldPowerModePowerOff, the handheld device will be shut down and
-                  the connection will be broken. User need to power on the device manually.
-                  the connection will be broken. User then needs to power on the device manually.</td>
+                  the connection will be broken. The user must then power on the device manually.</td>
         </tr>
         <tr>
           <th>callback</th>

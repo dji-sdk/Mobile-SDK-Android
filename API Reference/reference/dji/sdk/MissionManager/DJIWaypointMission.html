@@ -181,6 +181,8 @@
               
     <li><h2>Classes</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.html">DJIActiveTrackMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus.html">DJIActiveTrackMission.DJIActiveTrackMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.html">DJICustomMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJICustomMission.DJICustomMissionProgressStatus.html">DJICustomMission.DJICustomMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.html">DJIFollowMeMission</a></li>
@@ -192,6 +194,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMissionManager.html">DJIMissionManager</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.html">DJIPanoramaMission</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMissionStatus.html">DJIPanoramaMission.DJIPanoramaMissionStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.html">DJITapFlyMission</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html">DJITapFlyMission.DJITapFlyMissionProgressStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.html">DJIWaypoint</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointAction.html">DJIWaypoint.DJIWaypointAction</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html">DJIWaypointMission</a></li>
@@ -202,6 +206,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIActiveTrackMission.DJIActiveTrackMissionExecutionState.html">DJIActiveTrackMission.DJIActiveTrackMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeHeading.html">DJIFollowMeMission.DJIFollowMeHeading</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIFollowMeMission.DJIFollowMeMissionExecutionState.html">DJIFollowMeMission.DJIFollowMeMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIHotPointMission.DJIHotPointHeading.html">DJIHotPointMission.DJIHotPointHeading</a></li>
@@ -210,6 +215,8 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIMissionType.html">DJIMission.DJIMissionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIMission.DJIProgressType.html">DJIMission.DJIProgressType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIPanoramaMission.DJIPanoramaMode.html">DJIPanoramaMission.DJIPanoramaMode</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointActionType.html">DJIWaypoint.DJIWaypointActionType</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypoint.DJIWaypointTurnMode.html">DJIWaypoint.DJIWaypointTurnMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionExecuteState.html">DJIWaypointMission.DJIWaypointMissionExecuteState</a></li>
@@ -398,13 +405,18 @@ Summary:
 
 <h2>Class Overview</h2>
 <p>In the waypoint mission, the aircraft will travel between waypoints, execute actions at
-  waypoints, and adjust heading and altitude between waypoints.
+  waypoints, and adjust heading and altitude between waypoints. Waypoints are physical locations
+  to which the aircraft will fly. Creating a series of waypoints, in effect, will program a flight
+  route for the aircraft to follow. Actions can also be added to waypoints, which will be carried
+  out when the aircraft reaches the waypoint.
+
   The aircraft travels between waypoints automatically at a base speed. However, the user can change the speed by
   using the pitch joystick. If the stick is pushed up, the speed will increase. If the stick is pushed down, the speed
   will slow down. The stick can be pushed down to stop the aircraft and further pushed to start making the aircraft
-  travel back along the path it came. When the aircraft is travelling through waypoints in the reverse order, it will
+  travel back along the path it came. When the aircraft is traveling through waypoints in the reverse order, it will
   not execute waypoint actions at each waypoint. If the stick is released, the aircraft will again travel through the
   waypoints in the original order, and continue to execute waypoint actions (even if executed previously).
+
   If the aircraft is pulled back along the waypoint mission all the way to the first waypoint, then it will hover in place
   until the stick is released enough for it to again progress through the mission from start to finish.
 </p>
@@ -603,7 +615,7 @@ Summary:
           
           <a href="../../../dji/sdk/MissionManager/DJIWaypointMission.DJIWaypointMissionGotoWaypointMode.html">DJIWaypointMission.DJIWaypointMissionGotoWaypointMode</a></td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html#goFirstWaypointMode">goFirstWaypointMode</a></td>
-          <td class="jd-descrcol" width="100%">Determines the aricraft how to go to first waypoint frome current position.</td>
+          <td class="jd-descrcol" width="100%">Determines how the aircraft goes to the first waypoint from the current position.</td>
       </tr>
       
     
@@ -638,7 +650,7 @@ Summary:
           
           boolean</td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html#needExitMissionOnRCSignalLost">needExitMissionOnRCSignalLost</a></td>
-          <td class="jd-descrcol" width="100%">Determines whether exit mission when RC signal lost.</td>
+          <td class="jd-descrcol" width="100%">Determines whether to exit the mission when the RC signal is lost.</td>
       </tr>
       
     
@@ -649,7 +661,7 @@ Summary:
           
           boolean</td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html#needRotateGimbalPitch">needRotateGimbalPitch</a></td>
-          <td class="jd-descrcol" width="100%">Whether the aircraft can rotate gimbal pitch when execute waypoint mission.</td>
+          <td class="jd-descrcol" width="100%">Determines whether the aircraft can rotate the gimbal pitch when executing a waypoint mission.</td>
       </tr>
       
     
@@ -660,7 +672,7 @@ Summary:
           
           double</td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html#pointOfInterestLatitude">pointOfInterestLatitude</a></td>
-          <td class="jd-descrcol" width="100%">Property is used when 'headingMode' is 'DJIWaypointMissionHeadingMode.TowardPointOfInterest'.</td>
+          <td class="jd-descrcol" width="100%">Used when 'headingMode' is 'DJIWaypointMissionHeadingMode.TowardPointOfInterest'.</td>
       </tr>
       
     
@@ -873,8 +885,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html#isPausable()">isPausable</a></span>()
         
-        <div class="jd-descrdiv">Is mission pausable
-</div>
+        <div class="jd-descrdiv">Indicates whether the mission can be paused.</div>
   
   </td></tr>
 
@@ -946,7 +957,8 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIWaypointMission.html#setAutoFlightSpeed(float, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">setAutoFlightSpeed</a></span>(float speed, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv">Set the flight speed while the mission is executing automatically (without manual joystick speed input).</div>
+        <div class="jd-descrdiv">Set the flight speed while the mission is executing automatically (without manual joystick
+   speed input).</div>
   
   </td></tr>
 
@@ -998,7 +1010,10 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIMission.html#getMissionType()">getMissionType</a></span>()
         
-        <div class="jd-descrdiv">Returns the mission type.</div>
+        <div class="jd-descrdiv">
+      <em>
+  This method is deprecated.
+      No replacement.</em></div>
   
   </td></tr>
 
@@ -1016,7 +1031,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/MissionManager/DJIMission.html#isPausable()">isPausable</a></span>()
         
-        <div class="jd-descrdiv">Whether current mission can be paused.</div>
+        <div class="jd-descrdiv">Determines whether the current mission can be paused.</div>
   
   </td></tr>
 
@@ -1450,7 +1465,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Determines the aricraft how to go to first waypoint frome current position. Default is DJIWaypointMissionGotoWaypointSafely.
+  <div class="jd-tagdata jd-tagdescr"><p>Determines how the aircraft goes to the first waypoint from the current position. The default is DJIWaypointMissionGotoWaypointSafely.
 </p></div>
 
     
@@ -1555,7 +1570,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Determines whether exit mission when RC signal lost. Default is false.
+  <div class="jd-tagdata jd-tagdescr"><p>Determines whether to exit the mission when the RC signal is lost. Default is <code>false</code>.
 </p></div>
 
     
@@ -1586,7 +1601,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Whether the aircraft can rotate gimbal pitch when execute waypoint mission. If 'YES' then aircraft will control gimal pitch rotation between waypoints using 'gimbalPitch' of DJIWaypoint.
+  <div class="jd-tagdata jd-tagdescr"><p>Determines whether the aircraft can rotate the gimbal pitch when executing a waypoint mission.
+   If <code>true</code>, the aircraft will control the gimbal pitch rotation between
+   waypoints using 'gimbalPitch' of DJIWaypoint.
 </p></div>
 
     
@@ -1617,8 +1634,8 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Property is used when 'headingMode' is 'DJIWaypointMissionHeadingMode.TowardPointOfInterest'. Aircraft will always heading to
-  point while executing mission. Default is NaN.
+  <div class="jd-tagdata jd-tagdescr"><p>Used when 'headingMode' is 'DJIWaypointMissionHeadingMode.TowardPointOfInterest'. The aircraft will always head to a
+  point while executing mission. Default is <code>NaN</code>.
 </p></div>
 
     
@@ -1649,8 +1666,8 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Property is used when 'headingMode' is 'DJIWaypointMissionHeadingMode.TowardPointOfInterest'. Aircraft will always heading to
-  point while executing mission. Default is NaN.
+  <div class="jd-tagdata jd-tagdescr"><p>Property is used when 'headingMode' is 'DJIWaypointMissionHeadingMode.TowardPointOfInterest'. Aircraft will always head to a
+  point while executing mission. Default is <code>NaN</code>.
 </p></div>
 
     
@@ -1812,7 +1829,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Add a waypoint to the waypoint mission. The maximum number of waypoints should not larger than DJIWaypointMissionMaximumWaypointCount. A waypoint will only be valid if the distance (in three dimensions) between two adjacent waypoints is in range [2,2000] meters.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Add a waypoint to the waypoint mission. The maximum number of waypoints should not larger
+  than DJIWaypointMissionMaximumWaypointCount. A waypoint will only be valid if the distance
+  (in three dimensions) between two adjacent waypoints is in range [2,2000] meters.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -1972,11 +1991,11 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Is mission pausable
+  <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the mission can be paused.
 </p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>True if mission can be paused. False if mission can not be paused.
+      <ul class="nolist"><li><code>true</code> if mission can be paused, <code>false</code> otherwise.
 </li></ul>
   </div>
 
@@ -2124,13 +2143,18 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Set the flight speed while the mission is executing automatically (without manual joystick speed input). This is the only property or method in this class that can communicate with the aircraft during a mission. All other properties and methods are used offline to prepare the mission which is then uploaded to the aircraft.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Set the flight speed while the mission is executing automatically (without manual joystick
+   speed input). This is the only property or method in this class that can communicate with
+   the aircraft during a mission. All other properties and methods are used offline to prepare
+   the mission which is then uploaded to the aircraft.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>speed</th>
-          <td>Auto flight speed to be set. The absolute value of the auto flight speed should be less than or equal to the maxFlightSpeed. It's range is then [-maxFlightSpeed, maxFlightSpeed] m/s.</td>
+          <td>Auto flight speed to be set. The absolute value of the auto flight speed
+               should be less than or equal to the maxFlightSpeed. It's range is
+               then [-maxFlightSpeed, maxFlightSpeed] m/s.</td>
         </tr>
         <tr>
           <th>callback</th>

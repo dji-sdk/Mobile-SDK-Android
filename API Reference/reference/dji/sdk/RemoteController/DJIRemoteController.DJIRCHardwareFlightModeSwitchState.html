@@ -442,24 +442,28 @@ Summary:
     <tr class="alt-color api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/sdk/RemoteController/DJIRemoteController.DJIRCHardwareFlightModeSwitchState.html">DJIRemoteController.DJIRCHardwareFlightModeSwitchState</a>&nbsp;</td>
         <td class="jd-linkcol">A&nbsp;</td>
-        <td class="jd-descrcol" width="100%">The Remote Controller's flight mode switch is set to the 
-  A (Attitude) mode in the middle.&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The Remote Controller's flight mode switch is set to the F (Function) mode.&nbsp;</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/sdk/RemoteController/DJIRemoteController.DJIRCHardwareFlightModeSwitchState.html">DJIRemoteController.DJIRCHardwareFlightModeSwitchState</a>&nbsp;</td>
         <td class="jd-linkcol">F&nbsp;</td>
-        <td class="jd-descrcol" width="100%">The Remote Controller's flight mode switch is set to the 
-  F (Function) mode on the left.&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The Remote Controller's flight mode switch is set to the F (Function) mode.&nbsp;</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/sdk/RemoteController/DJIRemoteController.DJIRCHardwareFlightModeSwitchState.html">DJIRemoteController.DJIRCHardwareFlightModeSwitchState</a>&nbsp;</td>
         <td class="jd-linkcol">P&nbsp;</td>
-        <td class="jd-descrcol" width="100%">The Remote Controller's flight mode switch is set to the 
-  P (Positioning) mode on the right.&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../dji/sdk/RemoteController/DJIRemoteController.DJIRCHardwareFlightModeSwitchState.html">DJIRemoteController.DJIRCHardwareFlightModeSwitchState</a>&nbsp;</td>
+        <td class="jd-linkcol">S&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The Remote Controller's flight mode switch is set to the S (Sport) mode.&nbsp;</td>
     </tr>
     
     
@@ -536,7 +540,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/RemoteController/DJIRemoteController.DJIRCHardwareFlightModeSwitchState.html#value()">value</a></span>()
         
-        <div class="jd-descrdiv">Returns the real value of a enum constant.</div>
+        <div class="jd-descrdiv">Returns the real value of an enum constant.</div>
   
   </td></tr>
 
@@ -1019,11 +1023,15 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The Remote Controller's flight mode switch is set to the 
-  A (Attitude) mode in the middle. Attitude mode does not use 
-  GPS and the vision system for hovering or flying, but uses 
-  the barometer to maintain alititude. If the GPS signal is 
-  strong enough, the aircraft can still return to home in this mode.
+  <div class="jd-tagdata jd-tagdescr"><p>The Remote Controller's flight mode switch is set to the F (Function) mode. For the
+  Phantom 3, Inspire 1 and M100 the remote controller must be in Function mode to enable
+  Mission Manager functions from the Mobile Device. It is not supported by Phantom 4
+  (which must use P mode for the Mission Manager functions).
+  The Phantom 4 remote controller flight mode switch is labelled A, S, P from left to right.
+  The Phantom 3, Inspire 1 and M100 remote controller flight mode switch is labelled F, A,
+  P from left to right.
+  Independent of label, any remote controller (P3, P4, Inspire 1, M100) used with the Phantom
+  3, Inspire 1 or M100 will report F mode as selected if the switch is set to the left position.
 </p></div>
 
     
@@ -1054,10 +1062,13 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The Remote Controller's flight mode switch is set to the 
-  F (Function) mode on the left. Remote Controller must be 
-  in Function mode to enable Mission Manager functions
-  from the Mobile Device.
+  <div class="jd-tagdata jd-tagdescr"><p>The Remote Controller's flight mode switch is set to the F (Function) mode. For the Phantom 3,
+  Inspire 1 and M100 the remote controller must be in Function mode to enable Mission Manager
+  functions from the Mobile Device. It is not supported by Phantom 4 (which must use P mode for
+  the Mission Manager functions).
+  The Phantom 4 remote controller flight mode switch is labelled A, S, P from left to right.
+  The Phantom 3, Inspire 1 and M100 remote controller flight mode switch is labelled F, A, P from left to right.
+  Independent of label, any remote controller (P3, P4, Inspire 1, M100) used with the Phantom 3, Inspire 1 or M100 will report F mode as selected if the switch is set to the left position.
 </p></div>
 
     
@@ -1088,9 +1099,43 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The Remote Controller's flight mode switch is set to the 
-  P (Positioning) mode on the right. Positioning mode can use both
-  GPS and the vision system (when available) to fly and hover.
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="S"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../dji/sdk/RemoteController/DJIRemoteController.DJIRCHardwareFlightModeSwitchState.html">DJIRemoteController.DJIRCHardwareFlightModeSwitchState</a>
+      </span>
+        S
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The Remote Controller's flight mode switch is set to the S (Sport) mode. Sport mode can
+  use both GPS and the vision system (when available) to hover. Sport mode is only supported
+  when using the Phantom 4. The Phantom 4 remote controller flight mode switch is labelled
+  A, S, P from left to right. The Phantom 3, Inspire 1 and M100 remote controller flight
+  mode switch is labelled F, A, P from left to right. Independent of label, any remote
+  controller (P3, P4, Inspire 1, M100) used with the Phantom 4 will report S mode as
+  selected if the switch is set to the middle position.
 </p></div>
 
     
@@ -1211,7 +1256,7 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Returns the real value of a enum constant.
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the real value of an enum constant.
 </p></div>
 
     </div>

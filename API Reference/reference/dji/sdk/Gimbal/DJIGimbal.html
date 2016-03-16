@@ -376,9 +376,27 @@ Summary:
  could automatically stabilize the gimbal. <br>
  <br>
  You could use the DJIGimbal class to change the angle for detecting objects.
- However, in the PV2+, pitch of the gimbal is the only one direction which
+ However, except the Inspire 1 series, pitch of the gimbal is the only one direction which
  could be changed. Other directions, like roll and yaw, should be adjusted by
  turning the heading of the drone.
+
+ The gimbal has an acceleromoter and gyroscope that enable it to determine the orientation and
+ position of the camera at any moment, and it stabilizes the camera through rotation around
+ 3 axes. These rotational directions, known as pitch, yaw, and roll, completely describe where
+ the camera is pointing. Each axis has a motor. The Inertial Measurement Unit (IMU) on the gimbal
+ measures changes in rotation about all 3 axes, and compensates through the gimbal's motors. This
+ is how the camera remains completely stable. The motor on each axis has <i>stops</i> (limits of
+ movement), having a range of motion corresponding to a range of angular values, such as -180 to
+ 180 degrees. The gimbal also operates according to a time component, which determines how quickly
+ it moves through space to stabilize the camera.<br/><br/>
+
+ <b>Axes of Rotation</b><br/>
+ <i>Yaw</i> measures an object’s rotation about the vertical axis. Adjusting the yaw will keep the
+ aircraft horizontal, but change the direction it is facing.<br/>
+ <i>Pitch</i> measures an object’s rotation about the lateral axis. Adjusting the pitch will tilt
+ the aircraft forwards or backwards.<br/>
+ <i>Roll</i> measures an object’s rotation about the longitudinal axis. Adjusting the roll will
+ tilt the aircraft left or right.
 </p>
 
 
@@ -422,7 +440,7 @@ Summary:
         
         class</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalAngleRotation.html">DJIGimbal.DJIGimbalAngleRotation</a></td>
-      <td class="jd-descrcol" width="100%">This will be used to enable the gimbal rotation in pitch, roll and yaw direction.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">This is used to enable the gimbal rotation in pitch, roll and yaw direction.&nbsp;</td>
     </tr>
     
     
@@ -482,7 +500,7 @@ Summary:
         
         enum</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalRotateAngleMode.html">DJIGimbal.DJIGimbalRotateAngleMode</a></td>
-      <td class="jd-descrcol" width="100%">The rotation angle of gimbal can be defined as either Absolute (relative to heading), 
+      <td class="jd-descrcol" width="100%">The rotation angle of gimbal can be defined as either Absolute (relative to heading),
   or Relative (relative to it's current angle).&nbsp;</td>
     </tr>
     
@@ -519,7 +537,7 @@ Summary:
         
         class</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalSpeedRotation.html">DJIGimbal.DJIGimbalSpeedRotation</a></td>
-      <td class="jd-descrcol" width="100%">This will be used to set gimbal's speed rotation.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">This is used to set the gimbal's rotation speed (angular velocity).&nbsp;</td>
     </tr>
     
     
@@ -543,8 +561,8 @@ Summary:
         
         enum</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalUserConfigType.html">DJIGimbal.DJIGimbalUserConfigType</a></td>
-      <td class="jd-descrcol" width="100%"><b>Support only by Osmo</b><br>
- Gimbal User Config.&nbsp;</td>
+      <td class="jd-descrcol" width="100%"><b>Supported only by Osmo</b><br>
+ Gimbal User Configuration.&nbsp;</td>
     </tr>
     
     
@@ -674,7 +692,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#getAttitudeInDegrees()">getAttitudeInDegrees</a></span>()
         
-        <div class="jd-descrdiv">Returns the latest gimbal attitude data and null if none is available.</div>
+        <div class="jd-descrdiv">Returns the latest gimbal attitude data, or null if none is available.</div>
   
   </td></tr>
 
@@ -726,6 +744,22 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#getEnableGimbalPitchUp(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.Boolean>)">getEnableGimbalPitchUp</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#getFirmwareVersion(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.String>)">getFirmwareVersion</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
         <div class="jd-descrdiv">Sets the gimbal's work mode.</div>
@@ -734,7 +768,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -746,14 +780,14 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#getGimbalJoystickSmoothingOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalJoystickAxis, dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.Integer>)">getGimbalJoystickSmoothingOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalJoystickAxis.html">DJIGimbal.DJIGimbalJoystickAxis</a> axis, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer&gt; callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
  Gets joystick smoothing on an axis.</div>
   
   </td></tr>
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -765,14 +799,14 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#getGimbalJoystickSpeedOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalJoystickAxis, dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.Integer>)">getGimbalJoystickSpeedOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalJoystickAxis.html">DJIGimbal.DJIGimbalJoystickAxis</a> axis, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer&gt; callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
   Gets joystick speed on an axis.</div>
   
   </td></tr>
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -784,14 +818,14 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#getGimbalSmoothTrackAccelerationOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalSmoothTrackAxis, dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.Integer>)">getGimbalSmoothTrackAccelerationOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalSmoothTrackAxis.html">DJIGimbal.DJIGimbalSmoothTrackAxis</a> axis, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer&gt; callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
   Gets SmoothTrack acceleration on an axis.</div>
   
   </td></tr>
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -803,14 +837,14 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#getGimbalSmoothTrackAxisEnabledOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalSmoothTrackAxis, dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.Boolean>)">getGimbalSmoothTrackAxisEnabledOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalSmoothTrackAxis.html">DJIGimbal.DJIGimbalSmoothTrackAxis</a> axis, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
   Gets whether an axis has SmoothTrack enabled.</div>
   
   </td></tr>
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -822,14 +856,14 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#getGimbalSmoothTrackDeadbandOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalSmoothTrackAxis, dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.Integer>)">getGimbalSmoothTrackDeadbandOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalSmoothTrackAxis.html">DJIGimbal.DJIGimbalSmoothTrackAxis</a> axis, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer&gt; callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
   Gets SmoothTrack deadband on an axis.</div>
   
   </td></tr>
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -841,14 +875,14 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#getGimbalSmoothTrackSpeedOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalSmoothTrackAxis, dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.Integer>)">getGimbalSmoothTrackSpeedOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalSmoothTrackAxis.html">DJIGimbal.DJIGimbalSmoothTrackAxis</a> axis, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer&gt; callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
   Gets gimbal SmoothTrack speed on an axis.</div>
   
   </td></tr>
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -860,14 +894,14 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#getGimbalUserConfigType(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<dji.sdk.Gimbal.DJIGimbal.DJIGimbalUserConfigType>)">getGimbalUserConfigType</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalUserConfigType.html">DJIGimbal.DJIGimbalUserConfigType</a>&gt; callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
-  Gets gimbal user config type.</div>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
+  Gets gimbal user configuration type.</div>
   
   </td></tr>
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -879,13 +913,13 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#isConnected()">isConnected</a></span>()
         
-        <div class="jd-descrdiv">This method could provide the connection status for the developers to detect whether the gimbal is connected or not.</div>
+        <div class="jd-descrdiv">This method provides the connection status to detect whether the gimbal is connected.</div>
   
   </td></tr>
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -897,14 +931,14 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#isUserConfigAvailable()">isUserConfigAvailable</a></span>()
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
-   True if gimbal supports a user config.</div>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
+   <code>true</code> if the gimbal supports a user configuration.</div>
   
   </td></tr>
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -922,7 +956,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -940,7 +974,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -958,7 +992,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -972,6 +1006,22 @@ Summary:
         
         <div class="jd-descrdiv">Sets the completion time, in seconds, to complete an action to control the gimbal.</div>
   
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#setEnableGimbalPitchUp(boolean, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">setEnableGimbalPitchUp</a></span>(boolean enable, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
+        
   </td></tr>
 
 
@@ -1007,7 +1057,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#setGimbalJoystickSmoothingOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalJoystickAxis, int, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">setGimbalJoystickSmoothingOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalJoystickAxis.html">DJIGimbal.DJIGimbalJoystickAxis</a> axis, int smoothing, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
   Sets joystick smoothing on an axis.</div>
   
   </td></tr>
@@ -1026,7 +1076,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#setGimbalJoystickSpeedOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalJoystickAxis, int, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">setGimbalJoystickSpeedOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalJoystickAxis.html">DJIGimbal.DJIGimbalJoystickAxis</a> axis, int speed, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
   Sets joystick speed on an axis.</div>
   
   </td></tr>
@@ -1045,7 +1095,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#setGimbalSmoothTrackAccelerationOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalSmoothTrackAxis, int, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">setGimbalSmoothTrackAccelerationOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalSmoothTrackAxis.html">DJIGimbal.DJIGimbalSmoothTrackAxis</a> axis, int accelerate, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
   Sets SmoothTrack acceleration on an axis.</div>
   
   </td></tr>
@@ -1064,7 +1114,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#setGimbalSmoothTrackAxisEnabledOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalSmoothTrackAxis, boolean, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">setGimbalSmoothTrackAxisEnabledOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalSmoothTrackAxis.html">DJIGimbal.DJIGimbalSmoothTrackAxis</a> axis, boolean enabled, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
   Enables a gimbal SmoothTrack axis.</div>
   
   </td></tr>
@@ -1083,7 +1133,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#setGimbalSmoothTrackDeadbandOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalSmoothTrackAxis, int, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">setGimbalSmoothTrackDeadbandOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalSmoothTrackAxis.html">DJIGimbal.DJIGimbalSmoothTrackAxis</a> axis, int deadband, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
   Sets SmoothTrack deadband on an axis.</div>
   
   </td></tr>
@@ -1102,7 +1152,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#setGimbalSmoothTrackSpeedOnAxis(dji.sdk.Gimbal.DJIGimbal.DJIGimbalSmoothTrackAxis, int, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">setGimbalSmoothTrackSpeedOnAxis</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalSmoothTrackAxis.html">DJIGimbal.DJIGimbalSmoothTrackAxis</a> axis, int speed, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
   Sets gimbal SmoothTrack catch up speed on an axis.</div>
   
   </td></tr>
@@ -1139,8 +1189,8 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Gimbal/DJIGimbal.html#setGimbalUserConfigType(dji.sdk.Gimbal.DJIGimbal.DJIGimbalUserConfigType, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)">setGimbalUserConfigType</a></span>(<a href="../../../dji/sdk/Gimbal/DJIGimbal.DJIGimbalUserConfigType.html">DJIGimbal.DJIGimbalUserConfigType</a> userConfigType, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv"><b>Support only by Osmo</b><br>
-  Sets gimbal user config type.</div>
+        <div class="jd-descrdiv"><b>Supported only by Osmo</b><br>
+  Sets gimbal user configuration type.</div>
   
   </td></tr>
 
@@ -1228,7 +1278,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getSerialNumber(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.String>)">getSerialNumber</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
-        <div class="jd-descrdiv">Get serial number of the component.</div>
+        <div class="jd-descrdiv">Get the serial number of the component.</div>
   
   </td></tr>
 
@@ -1264,7 +1314,7 @@ From class
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#setDJIComponentListener(dji.sdk.base.DJIBaseComponent.DJIComponentListener)">setDJIComponentListener</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJIComponentListener.html">DJIBaseComponent.DJIComponentListener</a> listener)
         
-        <div class="jd-descrdiv">Sets the listener to listen for the DJI component.</div>
+        <div class="jd-descrdiv">Sets the listener for the DJI component.</div>
   
   </td></tr>
 
@@ -1562,7 +1612,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -1597,8 +1647,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Returns the latest gimbal attitude data and null if none is available.
- 
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the latest gimbal attitude data, or null if none is available.
 </p></div>
 
     </div>
@@ -1632,7 +1681,7 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets the completion time, in seconds, to complete an action to control the gimbal. If
  the method rotateGimbalWithAngleModePitchRollYaw() is used to control the gimbal's absolute
- angle，this property will be used to determine in what duration of time the gimbal should
+ angle，this property is used to determine in what duration of time the gimbal should
  rotate to its new position. For example, if the value of this property is set to 2.0
  seconds, the gimbal will rotate to its target position in 2.0 seconds.
  Range is [0.1,25.5] seconds.
@@ -1669,8 +1718,38 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Gets the gimbal's constraints including which axes are adjustable, and what the axis stops are.
  If the SDK and the aircraft have lost connection with each other, the method will return null.
- 
 </p></div>
+
+    </div>
+</div>
+
+
+<a id="getEnableGimbalPitchUp(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">getEnableGimbalPitchUp</span>
+      <span class="normal">(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>
@@ -1701,14 +1780,14 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the gimbal's work mode. Please find the four possible gimbal work modes in the enum
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the gimbal's work mode. See the four possible gimbal work modes in the enum
   named DJIGimbalWorkMode in DJIGimbal.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The execution callback with the value(s) returned. 
+          <td>The execution callback with the returned value(s).  
   Please refer to DJIBaseComponent for more information about the block
   and what is recommended be done with it.
 </td>
@@ -1745,7 +1824,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
  Gets joystick smoothing on an axis. Joystick smoothing controls the deceleration of the gimbal. 
  A small value will cause the gimbal to stop abruptly. Smoothing has a range of [0,30].</p></div>
   <div class="jd-tagdata">
@@ -1757,7 +1836,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the value(s) returned.
+          <td>The execution callback with the returned value(s). 
 </td>
         </tr>
       </table>
@@ -1792,7 +1871,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
   Gets joystick speed on an axis. Speed has a range of [0,100].</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
@@ -1803,7 +1882,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the value(s) returned.
+          <td>The execution callback with the returned value(s). 
 </td>
         </tr>
       </table>
@@ -1838,9 +1917,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
-  Gets SmoothTrack acceleration on an axis. 
-  Acceleration determines how closely the camera will follow the translated yaw handle movement 
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
+  Gets SmoothTrack acceleration on an axis.
+  Acceleration determines how closely the camera will follow the translated yaw handle movement
   and has a range of [0,30].</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
@@ -1851,7 +1930,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the value(s) returned.
+          <td>The execution callback with the returned value(s). 
 </td>
         </tr>
       </table>
@@ -1886,7 +1965,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
   Gets whether an axis has SmoothTrack enabled.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
@@ -1897,7 +1976,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -1932,7 +2011,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
   Gets SmoothTrack deadband on an axis. A larger deadband requires more handle movement to translate into gimbal motion. 
   Deadband has a range of [0,90] degrees.</p></div>
   <div class="jd-tagdata">
@@ -1944,7 +2023,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the value(s) returned.
+          <td>The execution callback with the returned value(s). 
 </td>
         </tr>
       </table>
@@ -1979,7 +2058,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
   Gets gimbal SmoothTrack speed on an axis. SmoothTrack speed determines how fast the gimbal will catch up with a large, 
   translated handle movement and will have a range [0,100].</p></div>
   <div class="jd-tagdata">
@@ -1991,7 +2070,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the value(s) returned.
+          <td>The execution callback with the returned value(s). 
 </td>
         </tr>
       </table>
@@ -2026,14 +2105,14 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
-  Gets gimbal user config type.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
+  Gets gimbal user configuration type.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The execution callback with the value(s) returned.
+          <td>The execution callback with the returned value(s). 
 </td>
         </tr>
       </table>
@@ -2068,7 +2147,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>This method could provide the connection status for the developers to detect whether the gimbal is connected or not.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>This method provides the connection status to detect whether the gimbal is connected.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
       <ul class="nolist"><li><code><a href="../../../dji/sdk/base/DJIBaseComponent.html#isConnected()">isConnected()</a></code></li>
@@ -2104,8 +2183,8 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
-   True if gimbal supports a user config.
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
+   <code>true</code> if the gimbal supports a user configuration.
 </p></div>
 
     </div>
@@ -2147,7 +2226,7 @@ From class
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -2208,7 +2287,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -2265,7 +2344,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -2302,7 +2381,7 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets the completion time, in seconds, to complete an action to control the gimbal. If
   the method rotateGimbalWithPitch:Roll:Yaw:rotateAngleMode:withCompletion: is used to control the gimbal's absolute
-  angle，this property will be used to determine in what duration of time the gimbal should
+  angle，this property is used to determine in what duration of time the gimbal should
   rotate to its new position. For example, if the value of this property is set to 2.0
   seconds, the gimbal will rotate to its target position in 2.0 seconds.
   Range is [0.1,25.5] seconds.</p></div>
@@ -2316,6 +2395,37 @@ From class
         </tr>
       </table>
   </div>
+
+    </div>
+</div>
+
+
+<a id="setEnableGimbalPitchUp(boolean, dji.sdk.base.DJIBaseComponent.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setEnableGimbalPitchUp</span>
+      <span class="normal">(boolean enable, <a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallback.html">DJIBaseComponent.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>
@@ -2379,7 +2489,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
   Sets joystick smoothing on an axis. Joystick smoothing controls the deceleration of the gimbal. 
   A small value will cause the gimbal to stop abruptly. Smoothing has a range of [0,30].</p></div>
   <div class="jd-tagdata">
@@ -2395,7 +2505,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -2430,7 +2540,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
   Sets joystick speed on an axis. Speed has a range of [0,100].</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
@@ -2445,7 +2555,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -2480,7 +2590,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
   Sets SmoothTrack acceleration on an axis. 
   Acceleration determines how closely the camera will follow the translated yaw handle movement 
   and has a range of [0,30].</p></div>
@@ -2497,7 +2607,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -2532,7 +2642,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
   Enables a gimbal SmoothTrack axis.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
@@ -2543,11 +2653,11 @@ From class
         </tr>
         <tr>
           <th>enabled</th>
-          <td>True if SmoothTrack is to be enabled on axis.</td>
+          <td><code>true</code> if SmoothTrack is to be enabled on axis.</td>
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -2582,7 +2692,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
   Sets SmoothTrack deadband on an axis. A larger deadband requires more handle movement to translate into gimbal motion. 
   Deadband has a range of [0,90] degrees.</p></div>
   <div class="jd-tagdata">
@@ -2598,7 +2708,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -2633,7 +2743,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
   Sets gimbal SmoothTrack catch up speed on an axis. 
   SmoothTrack speed determines how fast the gimbal will catch up with a large, translated handle movement and has a range [0,100].</p></div>
   <div class="jd-tagdata">
@@ -2649,7 +2759,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -2716,8 +2826,8 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><b>Support only by Osmo</b><br>
-  Sets gimbal user config type.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo</b><br>
+  Sets gimbal user configuration type.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -2727,8 +2837,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
-
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -2773,7 +2882,7 @@ From class
         </tr>
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.</td>
+          <td>The execution callback with the returned execution result.</td>
         </tr>
       </table>
   </div>
@@ -2818,7 +2927,7 @@ From class
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The execution callback with the execution result returned.
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
