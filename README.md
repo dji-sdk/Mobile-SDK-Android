@@ -13,38 +13,42 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 ### Prerequisites
 
 - Android API Level 22 or higher
-- Android Studio 1.5
+- Android Studio 1.5 or higher
 
 ### Registering an App Key
 
-Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/apps/), select the "Mobile SDK" tab on the left, press the "Create App" button and select "Android" as your operating system. Then type in the info in the pop up dialog.
+Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/apps/), select the "Apps" tab on the left, press the "Create App" button and select "Android" as your operating system. Then type in the info in the pop up dialog.
 
->Note: Please type in "com.dji.sdk.sample" in the `Identification Code` field, because the Android Application ID in the sample SDK project is "com.dji.sdk.sample".
+>Note: Please type in "com.dji.sdk.sample" in the `Package Name` field, because the Android Package Name in the sample SDK project is "com.dji.sdk.sample".
 
 Once you complete it, you may see the following App Key status:
 
-![sdkDemoApp_Key](./Images/createAppSuccessful_android.png)
+![sdkDemoApp_Key](./Images/createAppSuccessful_android_en.png)
 
-### Running the Sample Android Studio project
+### Running the SDK Sample Code in Android Studio
 
-Open the "AndroidManifest.xml" file in Android Studio, modify the **meta-data** element in the **application** element and replace the value of `android:value` with the app key we just created as shown below:
+Open the "AndroidManifest.xml" file of your project in Android Studio, modify the **meta-data** element of "com.dji.sdk.API_KEY" in the **application** element and replace the value of `android:value` with the app key we just created as shown below:
 
 ~~~xml
-<application
-	android:allowBackup="true"
-	android:hardwareAccelerated="true"
-	android:icon="@drawable/ic_launcher"
-	android:label="@string/app_name"
-	android:theme="@style/AppTheme" >
-	
-	<meta-data
-		android:name="com.dji.sdk.API_KEY"
-		android:value="**********************" />
-
-</application>
+<!--
+    ADD API_KEY HERE and make sure you
+    are connected to the Internet before
+    the app is launched
+-->
+<meta-data
+    android:name="com.dji.sdk.API_KEY"
+    android:value="" />
 ~~~
 
-Once you finish it, build and run the project and you can start to try different features in the sample project without any problems.
+Once you finish it, build and run the project on your Android Device. Then connect the Android device to the Remote Controller, turn on the Remote Controller and the aircraft or handheld device. You can start to try different features in the sample project now!
+
+> **Important:** Please make sure your DJI Remote Controller supports [AOA](https://source.android.com/devices/accessories/protocol.html) before you test the Sample app. You can upgrade your DJI Remote Controller to the latest firmware and check if there is a dialog pops up when you connect the app to it like this:
+> 
+> ![dialog](./Images/dialog.png)
+
+## Importing the SDK to Android Studio Project
+
+You can check this [tutorial](https://github.com/DJI-Mobile-SDK/Android-ImportSDKToAndroidStudio) to learn how to import DJI Android SDK to a newly created Android Studio Project from scratch.
 
 ## Concepts
 
@@ -90,40 +94,44 @@ You can get support from DJI with the following methods:
 ### 开发工具版本要求
 
 - Android API Level 22 以上
-- Android Studio 1.5
+- Android Studio 1.5 或以上
 
 ### 注册App Key
 
-首先, 请来到你的DJI 账号的[用户中心](http://developer.dji.com/cn/user/apps/), 选择左侧的 "Mobile SDK" 选项，然后点击“创建App”按钮，并且选择“Android”作为开发平台. 接着在弹出的对话框中输入信息.
+首先, 请来到你的DJI 账号的[用户中心](http://developer.dji.com/cn/user/apps/), 选择左侧的 "应用" 选项，然后点击“创建A应用”按钮，并且选择“Android”作为开发平台. 接着在弹出的对话框中输入信息.
 
->注意: 请在`标识码`栏中输入"com.dji.sdk.sample", 因为示例代码中的默认application ID就是 "com.dji.sdk.sample".
+>注意: 请在`Package Name`栏中输入"com.dji.sdk.sample", 因为示例代码中的默认Package Name就是 "com.dji.sdk.sample".
 
 一旦你完成了注册，你将看到以下App Key的状态截图:
 
-![sdkDemoApp_Key](./Images/createAppSuccessfully_android_cn.png)
+![sdkDemoApp_Key](./Images/createAppSuccessful_android_cn.png)
 
 请记下刚刚创建好的App Key，我们会在接下来的步骤中用到。
 
 ### 运行Android Studio示例代码
 
-在Android Studio中打开"AndroidManifest.xml"文件，修改**application**元素中的**meta-data**元素，替换`android:value`的值为你刚创建的app key，如下所示:
+在Android Studio中打开"AndroidManifest.xml"文件，修改**application**元素中的"com.dji.sdk.API_KEY" **meta-data**元素，替换`android:value`的值为你刚创建的app key，如下所示:
 
 ~~~xml
-<application
-	android:allowBackup="true"
-	android:hardwareAccelerated="true"
-	android:icon="@drawable/ic_launcher"
-	android:label="@string/app_name"
-	android:theme="@style/AppTheme" >
-	
-	<meta-data
-		android:name="com.dji.sdk.API_KEY"
-		android:value="**********************" />
-
-</application>
+<!--
+    ADD API_KEY HERE and make sure you
+    are connected to the Internet before
+    the app is launched
+-->
+<meta-data
+    android:name="com.dji.sdk.API_KEY"
+    android:value="" />
 ~~~
 
-最后编译运行该工程，你就可以开始流畅地体验实例代码中的不同功能了。
+最后编译运行该工程，安装到你的Android设备上。然后连接Android设备到遥控器，启动遥控器和飞机。你就可以开始流畅地体验实例代码中的不同功能了。
+
+> **注意:** 在你测试Sample App之前，请确保你的DJI遥控器支持[AOA](https://source.android.com/devices/accessories/protocol.html). 你可以将遥控器升级到最新的固件，然后连接app到遥控器上，观察是否弹出以下对话框来判断:
+> 
+> ![dialog](./Images/dialog.png)
+
+## 导入SDK到Android Studio工程项目中
+
+你可以查看这篇[教程](https://github.com/DJI-Mobile-SDK/Android-ImportSDKToAndroidStudio)来学习如何导入DJI Android SDK到新的Android Studio工程项目中。
 
 ## 基本概念
 
