@@ -42,13 +42,25 @@ Open the "AndroidManifest.xml" file of your project in Android Studio, modify th
 
 Once you finish it, build and run the project on your Android Device. Then connect the Android device to the Remote Controller, turn on the Remote Controller and the aircraft or handheld device. You can start to try different features in the sample project now!
 
-> **Important:** Please make sure your DJI Remote Controller supports [AOA](https://source.android.com/devices/accessories/protocol.html) before you test the Sample app. You can upgrade your DJI Remote Controller to the latest firmware and check if there is a dialog pops up when you connect the app to it like this:
+> **Note:** Please make sure your DJI Remote Controller supports [AOA](https://source.android.com/devices/accessories/protocol.html) before you test the Sample app. You can upgrade your DJI Remote Controller to the latest firmware and check if there is a dialog pops up when you connect the app to it like this:
 > 
 > ![dialog](./Images/dialog.png)
 
 ## Importing the SDK to Android Studio Project
 
 You can check this [tutorial](https://github.com/DJI-Mobile-SDK/Android-ImportSDKToAndroidStudio) to learn how to import DJI Android SDK to a newly created Android Studio Project from scratch.
+
+> **Note:** If you want to use the SDK in Android 6.0 Marshmallow, you must set the **targetSdkVersion** in "defaultConfig" of your project's build.gradle(Module: app) to **22** or lower. Here is an example:
+> 
+> ~~~xml
+> defaultConfig {
+        applicationId "com.dji.importSDKDemo"
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+> ~~~
 
 ## Concepts
 
@@ -132,6 +144,19 @@ You can get support from DJI with the following methods:
 ## 导入SDK到Android Studio工程项目中
 
 你可以查看这篇[教程](https://github.com/DJI-Mobile-SDK/Android-ImportSDKToAndroidStudio)来学习如何导入DJI Android SDK到新的Android Studio工程项目中。
+
+> **注意:** 如果你想在Android 6.0 Marshmallow上使用DJI SDK, 你必须将工程的build.gradle(Module: app)文件中的"defaultConfig" 里面的"targetSdkVersion" 参数设置成 **22** 或者更低. 如下所示：
+> 
+> ~~~xml
+> defaultConfig {
+        applicationId "com.dji.importSDKDemo"
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+> ~~~
+>
 
 ## 基本概念
 
