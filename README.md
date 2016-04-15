@@ -72,7 +72,13 @@ This guide provides functionality to turn your mobile device into an intelligent
 
 ## Sample Projects - Basic
 
+- [**Importing DJI SDK to Android Studio Project**](https://github.com/DJI-Mobile-SDK/Android-ImportSDKToAndroidStudio): This tutorial teaches you how to import the DJI SDK to your Android Studio project.
+
 - [**Creating a Camera Application**](https://github.com/DJI-Mobile-SDK/Android-FPVDemo): Our introductory tutorial, which guides you through connecting to your drone's camera to display a live video feed in your app, through which you can take photos and videos.
+
+## Sample Projects - Advanced
+
+- [**Creating a MapView and Waypoint Application**](https://github.com/DJI-Mobile-SDK/Android-GSDemo-GoogleMap): Teaches you how to construct a DJIWaypoint Mission app, which allows you to plot a flight route for your drone by placing waypoints on a map.
 
 - [**Creating a TapFly and ActiveTrack Missions Application**](https://github.com/DJI-Mobile-SDK/Android-Phantom4Missions):
 Learn how to use the TapFly and ActiveTrack Missions of DJI SDK 3.1 to create a cool application for Phantom 4. You will also get familiar with DJIMissionManager and using the Simulator of DJI Assistant 2 for testing.
@@ -170,7 +176,11 @@ You can get support from DJI with the following methods:
 
 ## 示例教程 - 基础
 
+- [**导入DJI SDK到Android Stutido工程**](https://github.com/DJI-Mobile-SDK/Android-ImportSDKToAndroidStudio): 通过该教程，你将学会如何导入DJI Android SDK到你的Android Studio工程中进行开发。 
+
 - [**创建航拍相机App**](https://github.com/DJI-Mobile-SDK/Android-FPVDemo): 这是我们的入门教程, 该教材会指导你如何连接飞行器的相机，在app上显示实时画面，以及如何进行拍摄和录像操作。
+
+## 示例教程 - 高级
 
 - [**创建指点飞行和视觉追踪任务App**](https://github.com/DJI-Mobile-SDK/Android-Phantom4Missions):
 学习如何使用DJI SDK 3.1的指点飞行和视觉追踪任务, 开发一款针对Phantom4的酷炫app。同时，你将熟悉DJIMissionManager的使用方法，以及如何使用DJI Assistant 2 的模拟器做功能测试。
