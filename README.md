@@ -27,7 +27,7 @@ Once you complete it, you may see the following App Key status:
 
 ### Running the SDK Sample Code in Android Studio
 
-Open the "AndroidManifest.xml" file of your project in Android Studio, modify the **meta-data** element of "com.dji.sdk.API_KEY" in the **application** element and replace the value of `android:value` with the app key we just created as shown below:
+Please download or clone the Github Project repository and navigate to **Sample Code** folder, open it in Android Studio and open the "AndroidManifest.xml" file, modify the **meta-data** element of "com.dji.sdk.API_KEY" in the **application** element and replace the value of `android:value` with the app key we just created as shown below:
 
 ~~~xml
 <!--
@@ -128,7 +128,7 @@ You can get support from DJI with the following methods:
 
 ### 运行Android Studio示例代码
 
-在Android Studio中打开"AndroidManifest.xml"文件，修改**application**元素中的"com.dji.sdk.API_KEY" **meta-data**元素，替换`android:value`的值为你刚创建的app key，如下所示:
+请把Github project下载或者clone到本地，然后来到**Sample Code** 文件夹，用Android Studio打开该Android项目工程，打开"AndroidManifest.xml"文件，修改**application**元素中的"com.dji.sdk.API_KEY" **meta-data**元素，替换`android:value`的值为你刚创建的app key，如下所示:
 
 ~~~xml
 <!--
