@@ -12,7 +12,7 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 
 ### Prerequisites
 
-- Android API Level 22 or higher
+- Android API Level 22 or lower
 - Android Studio 1.5 or higher
 
 ### Registering an App Key
@@ -50,7 +50,9 @@ Once you finish it, build and run the project on your Android Device. Then conne
 
 You can check this [tutorial](https://github.com/DJI-Mobile-SDK/Android-ImportSDKToAndroidStudio) to learn how to import DJI Android SDK to a newly created Android Studio Project from scratch.
 
-> **Note:** If you want to use the SDK in Android 6.0 Marshmallow, you must set the **targetSdkVersion** in "defaultConfig" of your project's build.gradle(Module: app) to **22** or lower. Here is an example:
+> **Note:** To run our SDK on a Marshmallow device (6.0 and API 23), we need to set the compile and target SDK version to 23 and since we are not able to get the SDK based app(s) to consistently work on API 23 device, let us stay with API 22 and lower. 
+> 
+> Please set the **targetSdkVersion** in "defaultConfig" of your project's build.gradle(Module: app) to **22** or lower. Here is an example:
 > 
 > ~~~xml
 > defaultConfig {
