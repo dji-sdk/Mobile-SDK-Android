@@ -42,13 +42,21 @@ Please download or clone the Github Project repository and navigate to **Sample 
 
 Once you finish it, build and run the project on your Android Device. Then connect the Android device to the Remote Controller, turn on the Remote Controller and the aircraft or handheld device. You can start to try different features in the sample project now!
 
-> **Note:** Please make sure your DJI Remote Controller supports [AOA](https://source.android.com/devices/accessories/protocol.html) before you test the Sample app. You can upgrade your DJI Remote Controller to the latest firmware and check if there is a dialog pops up when you connect the app to it like this:
+> **Note:** 
+> 
+> **1.** Please make sure your DJI Remote Controller supports [AOA](https://source.android.com/devices/accessories/protocol.html) before you test the Sample app. You can upgrade your DJI Remote Controller to the latest firmware and check if there is a dialog pops up when you connect the app to it like this:
 > 
 > ![dialog](./Images/dialog.png)
+> 
+> **2.** Please make sure you don't set other Android Apps(Like DJI Go app) as the default launch application. Otherwise, please modify this setting in your Android Device and try to run the Sample Code again.
+> 
 
-## Importing the SDK to Android Studio Project
+If you still cannot run the SDK Sample Code successfully, please check this step by step tutorial for details: [Running DJI SDK Sample Code in Android Studio](https://github.com/DJI-Mobile-SDK/Android-RunSDKSampleInAndroidStudio) 
 
-You can check this [tutorial](https://github.com/DJI-Mobile-SDK/Android-ImportSDKToAndroidStudio) to learn how to import DJI Android SDK to a newly created Android Studio Project from scratch.
+
+## Importing and Activating the SDK to Android Studio Project
+
+You can check this [tutorial](https://github.com/DJI-Mobile-SDK/Android-ImportAndActivateSDKInAndroidStudio) to learn how to import and activate DJI Android SDK to a newly created Android Studio Project from scratch.
 
 > **Note:** To run our SDK on a Marshmallow device (6.0 and API 23), we need to set the compile and target SDK version to 23 and since we are not able to get the SDK based app(s) to consistently work on API 23 device, let us stay with API 22 and lower. 
 > 
@@ -74,13 +82,15 @@ This guide provides functionality to turn your mobile device into an intelligent
 
 ## Sample Projects - Basic
 
-- [**Importing DJI SDK to Android Studio Project**](https://github.com/DJI-Mobile-SDK/Android-ImportSDKToAndroidStudio): This tutorial teaches you how to import the DJI SDK to your Android Studio project.
+- [**Running DJI SDK Sample Code in Android Studio**](https://github.com/DJI-Mobile-SDK/Android-RunSDKSampleInAndroidStudio): This tutorial will teach you how to run the Android SDK Sample Project in Android Studio. 
+
+- [**Importing and Activating DJI SDK in Android Studio Project**](https://github.com/DJI-Mobile-SDK/Android-ImportAndActivateSDKInAndroidStudio): This tutorial teaches you how to import and activate DJI SDK to your Android Studio project.
 
 - [**Creating a Camera Application**](https://github.com/DJI-Mobile-SDK/Android-FPVDemo): Our introductory tutorial, which guides you through connecting to your drone's camera to display a live video feed in your app, through which you can take photos and videos.
 
 ## Sample Projects - Advanced
 
-- [**Creating a MapView and Waypoint Application**](https://github.com/DJI-Mobile-SDK/Android-GSDemo-GoogleMap): Teaches you how to construct a DJIWaypoint Mission app, which allows you to plot a flight route for your drone by placing waypoints on a map.
+- [**Creating a MapView and Waypoint Application**](https://github.com/DJI-Mobile-SDK/Android-GSDemo-GoogleMap): Teaches you how to construct a DJIWaypoint Mission app, which allows you to plot a flight route for your drone by placing waypoints on a map. We use Google Map API in this tutorial.
 
 - [**Creating a TapFly and ActiveTrack Missions Application**](https://github.com/DJI-Mobile-SDK/Android-Phantom4Missions):
 Learn how to use the TapFly and ActiveTrack Missions of DJI SDK 3.1 to create a cool application for Phantom 4. You will also get familiar with DJIMissionManager and using the Simulator of DJI Assistant 2 for testing.
@@ -145,13 +155,20 @@ You can get support from DJI with the following methods:
 
 最后编译运行该工程，安装到你的Android设备上。然后连接Android设备到遥控器，启动遥控器和飞机。你就可以开始流畅地体验实例代码中的不同功能了。
 
-> **注意:** 在你测试Sample App之前，请确保你的DJI遥控器支持[AOA](https://source.android.com/devices/accessories/protocol.html). 你可以将遥控器升级到最新的固件，然后连接app到遥控器上，观察是否弹出以下对话框来判断:
+> **注意:** 
+> 
+> **1.** 在你测试Sample App之前，请确保你的DJI遥控器支持[AOA](https://source.android.com/devices/accessories/protocol.html). 你可以将遥控器升级到最新的固件，然后连接app到遥控器上，观察是否弹出以下对话框来判断:
 > 
 > ![dialog](./Images/dialog.png)
+> 
+> **2.** 请检查下有没有将其它Android App（如DJI Go app）设置为默认运行应用，如果有，请修改该设置再运行示例代码。
+> 
 
-## 导入SDK到Android Studio工程项目中
+如果你还无法成功运行SDK的示例代码，请参考这篇教程 :[在Android Studio 中运行DJI SDK示例代码](https://github.com/DJI-Mobile-SDK/Android-RunSDKSampleInAndroidStudio).
 
-你可以查看这篇[教程](https://github.com/DJI-Mobile-SDK/Android-ImportSDKToAndroidStudio)来学习如何导入DJI Android SDK到新的Android Studio工程项目中。
+## 在Android Studio工程项目中导入并激活SDK
+
+你可以查看这篇[教程](https://github.com/DJI-Mobile-SDK/Android-ImportAndActivateSDKInAndroidStudio)来学习如何在Android Studio工程项目中导入并激活SDK。
 
 > **注意:** 如果你想在Android 6.0 Marshmallow上使用DJI SDK, 你必须将工程的build.gradle(Module: app)文件中的"defaultConfig" 里面的"targetSdkVersion" 参数设置成 **22** 或者更低. 如下所示：
 > 
@@ -178,11 +195,15 @@ You can get support from DJI with the following methods:
 
 ## 示例教程 - 基础
 
-- [**导入DJI SDK到Android Stutido工程**](https://github.com/DJI-Mobile-SDK/Android-ImportSDKToAndroidStudio): 通过该教程，你将学会如何导入DJI Android SDK到你的Android Studio工程中进行开发。 
+- [**在Android Studio 中运行DJI SDK示例代码**](https://github.com/DJI-Mobile-SDK/Android-RunSDKSampleInAndroidStudio): 通过该教材，你将学会如何在Android Studio中运行Android SDK 示例代码。
+
+- [**在Android Studio工程项目中导入并激活 DJI SDK**](https://github.com/DJI-Mobile-SDK/Android-ImportAndActivateSDKInAndroidStudio): 通过该教程，你将学会如何在Android Studio工程项目中导入并激活SDK。
 
 - [**创建航拍相机App**](https://github.com/DJI-Mobile-SDK/Android-FPVDemo): 这是我们的入门教程, 该教材会指导你如何连接飞行器的相机，在app上显示实时画面，以及如何进行拍摄和录像操作。
 
 ## 示例教程 - 高级
+
+- [**创建智能飞行预设航点功能App**](https://github.com/DJI-Mobile-SDK/Android-GSDemo-Gaode-Map): 你将学到智能飞行预设航点功能的基本使用流程, 如何升级你的 Inspire 1, Phantom 3 Professional 和 Phantom 3 Advanced的固件到最新版本, 以及如何使用DJI PC 模拟器去测试智能飞行的功能. 该教材使用了高德地图API。
 
 - [**创建指点飞行和视觉追踪任务App**](https://github.com/DJI-Mobile-SDK/Android-Phantom4Missions):
 学习如何使用DJI SDK 3.1的指点飞行和视觉追踪任务, 开发一款针对Phantom4的酷炫app。同时，你将熟悉DJIMissionManager的使用方法，以及如何使用DJI Assistant 2 的模拟器做功能测试。
