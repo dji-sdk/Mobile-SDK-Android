@@ -151,6 +151,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/FlightController/package-summary.html">dji.sdk.FlightController</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/FlightController/Rtk/package-summary.html">dji.sdk.FlightController.Rtk</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/Gimbal/package-summary.html">dji.sdk.Gimbal</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/HandheldController/package-summary.html">dji.sdk.HandheldController</a></li>
@@ -166,6 +168,8 @@
   <a href="../../../dji/sdk/SDKManager/package-summary.html">dji.sdk.SDKManager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/base/package-summary.html">dji.sdk.base</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/util/package-summary.html">dji.sdk.util</a></li>
               </ul><br/>
             </div> <!-- end packages -->
           </div> <!-- end resize-packages -->
@@ -174,6 +178,7 @@
               
     <li><h2>Interfaces</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryAggregationStateUpdatedCallback.html">DJIBattery.DJIBatteryAggregationStateUpdatedCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryStateUpdateCallback.html">DJIBattery.DJIBatteryStateUpdateCallback</a></li>
       </ul>
     </li>
@@ -181,6 +186,8 @@
     <li><h2>Classes</h2>
       <ul>
           <li class="selected api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.html">DJIBattery</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryAggregationState.html">DJIBattery.DJIBatteryAggregationState</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryAggregationState.DJIBatteryOverview.html">DJIBattery.DJIBatteryAggregationState.DJIBatteryOverview</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryCell.html">DJIBattery.DJIBatteryCell</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryState.html">DJIBattery.DJIBatteryState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryWarningInformation.html">DJIBattery.DJIBatteryWarningInformation</a></li>
@@ -398,6 +405,30 @@ Summary:
          
         
         class</td>
+      <td class="jd-linkcol"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryAggregationState.html">DJIBattery.DJIBatteryAggregationState</a></td>
+      <td class="jd-descrcol" width="100%"><b>Only supported by M600.&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+      <td class="jd-typecol">
+        
+         
+         
+        
+        interface</td>
+      <td class="jd-linkcol"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryAggregationStateUpdatedCallback.html">DJIBattery.DJIBatteryAggregationStateUpdatedCallback</a></td>
+      <td class="jd-descrcol" width="100%">This protocol provides a delegate method for you to update the battery's current state.&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+      <td class="jd-typecol">
+        
+         
+         
+        
+        class</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryCell.html">DJIBattery.DJIBatteryCell</a></td>
       <td class="jd-descrcol" width="100%">Class that contains battery cell voltage data.&nbsp;</td>
     </tr>
@@ -562,6 +593,24 @@ Summary:
             int
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/Battery/DJIBattery.html#getIndex()">getIndex</a></span>()
+        
+        <div class="jd-descrdiv">Returns the index of the battery.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Battery/DJIBattery.html#getNumberOfCell()">getNumberOfCell</a></span>()
         
         <div class="jd-descrdiv">Returns the number of battery cells.</div>
@@ -570,7 +619,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -588,7 +637,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -606,9 +655,9 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
-            abstract
+            
             
             
             
@@ -618,13 +667,17 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/Battery/DJIBattery.html#getVersion(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.String>)">getVersion</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
-        <div class="jd-descrdiv">Gets the battery's firmware version.</div>
+        <div class="jd-descrdiv">
+      <em>
+  This method is deprecated.
+      Please refer to <code>getFirmwareVersion</code> in <code>DJIBaseComponent</code>
+</em></div>
   
   </td></tr>
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -642,7 +695,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -660,7 +713,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -673,6 +726,24 @@ Summary:
         <span class="sympad"><a href="../../../dji/sdk/Battery/DJIBattery.html#isSmartBattery()">isSmartBattery</a></span>()
         
         <div class="jd-descrdiv">Determines if the battery is a smart battery.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/Battery/DJIBattery.html#setBatteryAggregationStateUpdatedCallback(dji.sdk.Battery.DJIBattery.DJIBatteryAggregationStateUpdatedCallback)">setBatteryAggregationStateUpdatedCallback</a></span>(<a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryAggregationStateUpdatedCallback.html">DJIBattery.DJIBatteryAggregationStateUpdatedCallback</a> callback)
+        
+        <div class="jd-descrdiv">Sets the delegate to receive the battery aggregation information.</div>
   
   </td></tr>
 
@@ -758,6 +829,24 @@ From class
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getFirmwareVersion(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.String>)">getFirmwareVersion</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
+        
+        <div class="jd-descrdiv">Returns firmware version of the component.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getSerialNumber(dji.sdk.base.DJIBaseComponent.DJICompletionCallbackWith<java.lang.String>)">getSerialNumber</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
         <div class="jd-descrdiv">Get the serial number of the component.</div>
@@ -766,7 +855,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -784,7 +873,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1174,6 +1263,43 @@ From class
 </div>
 
 
+<a id="getIndex()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getIndex</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the index of the battery. It is useful when the aircraft has multiple batteries. Index starts from 0. For products with only one battery, the index is 0.
+ For Matrice 600, there are printed numbers on the battery boxes. DJIBattery instance with index 0 corresponds to battery compartment number 1.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>an Integer.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="getNumberOfCell()"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1300,7 +1426,7 @@ From class
         public 
          
          
-        abstract 
+         
          
         void
       </span>
@@ -1316,15 +1442,19 @@ From class
 
       </div>
     <div class="jd-details-descr">
-      
+      <p>
+  <p class="caution">
+      <strong>
+  This method is deprecated.</strong><br/> Please refer to <code>getFirmwareVersion</code> in <code>DJIBaseComponent</code>
+
+  </p>
   <div class="jd-tagdata jd-tagdescr"><p>Gets the battery's firmware version.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>Remote execution result callback.
-</td>
+          <td>Remote execution result callback.</td>
         </tr>
       </table>
   </div>
@@ -1444,6 +1574,39 @@ From class
       <ul class="nolist"><li><code>true</code> if battery is a smart battery, <code>false</code> otherwise.
 </li></ul>
   </div>
+
+    </div>
+</div>
+
+
+<a id="setBatteryAggregationStateUpdatedCallback(dji.sdk.Battery.DJIBattery.DJIBatteryAggregationStateUpdatedCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setBatteryAggregationStateUpdatedCallback</span>
+      <span class="normal">(<a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryAggregationStateUpdatedCallback.html">DJIBattery.DJIBatteryAggregationStateUpdatedCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the delegate to receive the battery aggregation information.
+ Only supported by Matrice 600.
+</p></div>
 
     </div>
 </div>

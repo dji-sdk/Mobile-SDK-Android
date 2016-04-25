@@ -15,7 +15,7 @@ import com.dji.sdk.sample.R;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-import de.greenrobot.event.EventBus;
+import dji.thirdparty.eventbus.EventBus;
 
 /**
  * Created by dji on 15/12/18.

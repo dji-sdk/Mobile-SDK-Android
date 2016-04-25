@@ -12,7 +12,7 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 
 ### Prerequisites
 
-- Android API Level 22 or lower
+- Android API Level 22 or higher
 - Android Studio 1.5 or higher
 
 ### Registering an App Key
@@ -57,20 +57,6 @@ If you still cannot run the SDK Sample Code successfully, please check this step
 ## Importing and Activating the SDK to Android Studio Project
 
 You can check this [tutorial](https://github.com/DJI-Mobile-SDK/Android-ImportAndActivateSDKInAndroidStudio) to learn how to import and activate DJI Android SDK to a newly created Android Studio Project from scratch.
-
-> **Note:** To run our SDK on a Marshmallow device (6.0 and API 23), we need to set the compile and target SDK version to 23 and since we are not able to get the SDK based app(s) to consistently work on API 23 device, let us stay with API 22 and lower. 
-> 
-> Please set the **targetSdkVersion** in "defaultConfig" of your project's build.gradle(Module: app) to **22** or lower. Here is an example:
-> 
-> ~~~xml
-> defaultConfig {
-        applicationId "com.dji.importSDKDemo"
-        minSdkVersion 19
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
-    }
-> ~~~
 
 ## Concepts
 
@@ -169,19 +155,6 @@ You can get support from DJI with the following methods:
 ## 在Android Studio工程项目中导入并激活SDK
 
 你可以查看这篇[教程](https://github.com/DJI-Mobile-SDK/Android-ImportAndActivateSDKInAndroidStudio)来学习如何在Android Studio工程项目中导入并激活SDK。
-
-> **注意:** 如果你想在Android 6.0 Marshmallow上使用DJI SDK, 你必须将工程的build.gradle(Module: app)文件中的"defaultConfig" 里面的"targetSdkVersion" 参数设置成 **22** 或者更低. 如下所示：
-> 
-> ~~~xml
-> defaultConfig {
-        applicationId "com.dji.importSDKDemo"
-        minSdkVersion 19
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
-    }
-> ~~~
->
 
 ## 基本概念
 

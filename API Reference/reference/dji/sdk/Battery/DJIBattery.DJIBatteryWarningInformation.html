@@ -151,6 +151,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/FlightController/package-summary.html">dji.sdk.FlightController</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/FlightController/Rtk/package-summary.html">dji.sdk.FlightController.Rtk</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/Gimbal/package-summary.html">dji.sdk.Gimbal</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/HandheldController/package-summary.html">dji.sdk.HandheldController</a></li>
@@ -166,6 +168,8 @@
   <a href="../../../dji/sdk/SDKManager/package-summary.html">dji.sdk.SDKManager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/base/package-summary.html">dji.sdk.base</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/util/package-summary.html">dji.sdk.util</a></li>
               </ul><br/>
             </div> <!-- end packages -->
           </div> <!-- end resize-packages -->
@@ -174,6 +178,7 @@
               
     <li><h2>Interfaces</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryAggregationStateUpdatedCallback.html">DJIBattery.DJIBatteryAggregationStateUpdatedCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryStateUpdateCallback.html">DJIBattery.DJIBatteryStateUpdateCallback</a></li>
       </ul>
     </li>
@@ -181,6 +186,8 @@
     <li><h2>Classes</h2>
       <ul>
           <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.html">DJIBattery</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryAggregationState.html">DJIBattery.DJIBatteryAggregationState</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryAggregationState.DJIBatteryOverview.html">DJIBattery.DJIBatteryAggregationState.DJIBatteryOverview</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryCell.html">DJIBattery.DJIBatteryCell</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryState.html">DJIBattery.DJIBatteryState</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/sdk/Battery/DJIBattery.DJIBatteryWarningInformation.html">DJIBattery.DJIBatteryWarningInformation</a></li>
@@ -841,6 +848,7 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns the index at which one of the cells in the battery is damaged. The first cell has an index of 1.
+  0 represents no damaged battery cells.
   The Phantom 3 Series have 4 cell batteries. The Inspire series and M100 have
   6 cell batteries.
 </p></div>
@@ -875,7 +883,7 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns the index at which one of the cells in the battery is below the normal voltage.
-  The first cell has an index of 1.
+  The first cell has an index of 1. 0 represents no battery cells under voltage.
   The Phantom 3 Series have 4 cell batteries. The Inspire series and M100 have
   6 cell batteries.
 </p></div>

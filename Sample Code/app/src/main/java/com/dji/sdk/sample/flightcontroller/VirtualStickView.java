@@ -2,12 +2,17 @@ package com.dji.sdk.sample.flightcontroller;
 
 import android.app.Service;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.DJISampleApplication;
@@ -20,6 +25,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import dji.sdk.FlightController.DJIFlightControllerDataType;
+import dji.sdk.FlightController.DJISimulator;
 import dji.sdk.base.DJIBaseComponent;
 import dji.sdk.base.DJIError;
 
@@ -32,6 +38,7 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
     private boolean mRollPitchControlModeFlag = true;
     private boolean mVerticalControlModeFlag = true;
     private boolean mHorizontalCoordinateFlag = true;
+    private boolean mStartSimulatorFlag = false;
 
     private Button mBtnEnableVirtualStick;
     private Button mBtnDisableVirtualStick;
@@ -39,6 +46,10 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
     private Button mBtnSetYawControlMode;
     private Button mBtnSetVerticalControlMode;
     private Button mBtnSetRollPitchControlMode;
+    private ToggleButton mBtnSimulator;
+    private Button mBtnTakeOff;
+
+    private TextView mTextView;
 
     private OnScreenJoystick mScreenJoystickRight;
     private OnScreenJoystick mScreenJoystickLeft;
@@ -82,6 +93,11 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
         mBtnSetYawControlMode = (Button) findViewById(R.id.btn_yaw_control_mode);
         mBtnSetVerticalControlMode = (Button) findViewById(R.id.btn_vertical_control_mode);
         mBtnSetRollPitchControlMode = (Button) findViewById(R.id.btn_roll_pitch_control_mode);
+        mBtnTakeOff = (Button) findViewById(R.id.btn_take_off);
+
+        mBtnSimulator = (ToggleButton) findViewById(R.id.btn_start_simulator);
+
+        mTextView = (TextView) findViewById(R.id.textview_simulator);
 
         mScreenJoystickRight = (OnScreenJoystick)findViewById(R.id.directionJoystickRight);
         mScreenJoystickLeft = (OnScreenJoystick)findViewById(R.id.directionJoystickLeft);
@@ -92,6 +108,57 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
         mBtnSetYawControlMode.setOnClickListener(this);
         mBtnSetVerticalControlMode.setOnClickListener(this);
         mBtnSetRollPitchControlMode.setOnClickListener(this);
+        mBtnTakeOff.setOnClickListener(this);
+
+        mBtnSimulator.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+
+                    mTextView.setVisibility(VISIBLE);
+
+                    DJISampleApplication.getAircraftInstance().getFlightController().getSimulator()
+                            .startSimulator(new DJISimulator.DJISimulatorInitializationData(
+                                    23, 113, 10, 10
+                            )
+                                    ,new DJIBaseComponent.DJICompletionCallback() {
+                                        @Override
+                                        public void onResult(DJIError djiError) {
+
+                                        }
+                                    });
+                } else {
+
+                    mTextView.setVisibility(INVISIBLE);
+
+                    DJISampleApplication.getAircraftInstance().getFlightController().getSimulator()
+                            .stopSimulator(
+                                    new DJIBaseComponent.DJICompletionCallback() {
+                                        @Override
+                                        public void onResult(DJIError djiError) {
+
+                                        }
+                                    }
+                            );
+                }
+            }
+        });
+
+        DJISampleApplication.getAircraftInstance().getFlightController().getSimulator()
+                .setUpdatedSimulatorStateDataCallback(new DJISimulator.UpdatedSimulatorStateDataCallback() {
+                    @Override
+                    public void onSimulatorDataUpdated(final DJISimulator.DJISimulatorStateData djiSimulatorStateData) {
+                        new Handler(Looper.getMainLooper()).post(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                mTextView.setText("Yaw : " + djiSimulatorStateData.getYaw() + "," + "X : " + djiSimulatorStateData.getPositionX() + "\n" +
+                                        "Y : " + djiSimulatorStateData.getPositionY() + "," +
+                                        "Z : " + djiSimulatorStateData.getPositionZ());
+                            }
+                        });
+                    }
+                });
 
         mScreenJoystickLeft.setJoystickListener(new OnScreenJoystickListener(){
 
@@ -106,7 +173,6 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                 }
                 float pitchJoyControlMaxSpeed = DJIFlightControllerDataType.DJIVirtualStickRollPitchControlMaxVelocity;
                 float rollJoyControlMaxSpeed = DJIFlightControllerDataType.DJIVirtualStickRollPitchControlMaxVelocity;
-
 
                 mPitch = (float)(pitchJoyControlMaxSpeed * pY);
 
@@ -260,6 +326,19 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                             getAircraftInstance().getFlightController().
                             getRollPitchCoordinateSystem().name());
                 } catch(Exception ex) {};
+                break;
+
+            case R.id.btn_take_off:
+
+                DJISampleApplication.getAircraftInstance().getFlightController().takeOff(
+                        new DJIBaseComponent.DJICompletionCallback() {
+                            @Override
+                            public void onResult(DJIError djiError) {
+                                Utils.showDialogBasedOnError(getContext(), djiError);
+                            }
+                        }
+                );
+
                 break;
 
             default:

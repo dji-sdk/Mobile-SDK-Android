@@ -80,17 +80,17 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
     }
 
     @Override
-    protected int getBtn1TextResourceId() {
+    protected int getMiddleBtnTextResourceId() {
         return R.string.playback_download_select_0;
     }
 
     @Override
-    protected int getBtn2TextResourceId() {
+    protected int getLeftBtnTextResourceId() {
         return R.string.playback_download_select_1;
     }
 
     @Override
-    protected int getBtn3TextResourceId() {
+    protected int getRightBtnTextResourceId() {
         return R.string.playback_download_download;
     }
 
@@ -105,7 +105,7 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn1Method() {
+    protected void getMiddleBtnMethod() {
         if (DJIModuleVerificationUtil.isPlaybackAvailable()) {
             mPlaybackManager = DJISampleApplication.getProductInstance().getCamera().getPlayback();
 
@@ -114,7 +114,7 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn2Method() {
+    protected void getLeftBtnMethod() {
         if (DJIModuleVerificationUtil.isPlaybackAvailable()) {
             mPlaybackManager = DJISampleApplication.getProductInstance().getCamera().getPlayback();
 
@@ -123,7 +123,7 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn3Method() {
+    protected void getRightBtnMethod() {
         // Download Button
         if (DJIModuleVerificationUtil.isPlaybackAvailable()) {
             mPlaybackManager = DJISampleApplication.getProductInstance().getCamera().getPlayback();

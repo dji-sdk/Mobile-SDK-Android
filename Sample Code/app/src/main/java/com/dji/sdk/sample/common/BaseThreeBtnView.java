@@ -18,9 +18,9 @@ import com.dji.sdk.sample.R;
 public abstract class BaseThreeBtnView extends RelativeLayout implements View.OnClickListener {
     protected TextView mTexInfo;
 
-    protected Button mBtn1;
-    protected Button mBtn2;
-    protected Button mBtn3;
+    protected Button middleBtn;
+    protected Button leftBtn;
+    protected Button rightBtn;
 
     public BaseThreeBtnView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -36,19 +36,19 @@ public abstract class BaseThreeBtnView extends RelativeLayout implements View.On
 
         mTexInfo = (TextView) findViewById(R.id.text_info);
 
-        mBtn1 = (Button) findViewById(R.id.btn_first);
-        mBtn2 = (Button) findViewById(R.id.btn_second);
-        mBtn3 = (Button) findViewById(R.id.btn_third);
+        middleBtn = (Button) findViewById(R.id.btn_middle);
+        leftBtn = (Button) findViewById(R.id.btn_left);
+        rightBtn = (Button) findViewById(R.id.btn_right);
 
         mTexInfo.setText(getString(getInfoResourceId()));
 
-        mBtn1.setText(getString(getBtn1TextResourceId()));
-        mBtn2.setText(getString(getBtn2TextResourceId()));
-        mBtn3.setText(getString(getBtn3TextResourceId()));
+        middleBtn.setText(getString(getMiddleBtnTextResourceId()));
+        leftBtn.setText(getString(getLeftBtnTextResourceId()));
+        rightBtn.setText(getString(getRightBtnTextResourceId()));
 
-        mBtn1.setOnClickListener(this);
-        mBtn2.setOnClickListener(this);
-        mBtn3.setOnClickListener(this);
+        middleBtn.setOnClickListener(this);
+        leftBtn.setOnClickListener(this);
+        rightBtn.setOnClickListener(this);
 
     }
 
@@ -59,28 +59,28 @@ public abstract class BaseThreeBtnView extends RelativeLayout implements View.On
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
-            case R.id.btn_first :
-                getBtn1Method();
+            case R.id.btn_middle :
+                getMiddleBtnMethod();
                 break;
 
-            case R.id.btn_second :
-                getBtn2Method();
+            case R.id.btn_left :
+                getLeftBtnMethod();
                 break;
 
-            case R.id.btn_third:
-                getBtn3Method();
+            case R.id.btn_right:
+                getRightBtnMethod();
                 break;
         }
     }
 
-    protected abstract int getBtn1TextResourceId();
-    protected abstract int getBtn2TextResourceId();
-    protected abstract int getBtn3TextResourceId();
+    protected abstract int getMiddleBtnTextResourceId();
+    protected abstract int getLeftBtnTextResourceId();
+    protected abstract int getRightBtnTextResourceId();
 
     protected abstract int getInfoResourceId();
 
-    protected abstract void getBtn1Method();
-    protected abstract void getBtn2Method();
-    protected abstract void getBtn3Method();
+    protected abstract void getMiddleBtnMethod();
+    protected abstract void getLeftBtnMethod();
+    protected abstract void getRightBtnMethod();
 
 }

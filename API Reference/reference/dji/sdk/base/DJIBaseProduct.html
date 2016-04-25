@@ -151,6 +151,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/FlightController/package-summary.html">dji.sdk.FlightController</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/FlightController/Rtk/package-summary.html">dji.sdk.FlightController.Rtk</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/Gimbal/package-summary.html">dji.sdk.Gimbal</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/HandheldController/package-summary.html">dji.sdk.HandheldController</a></li>
@@ -166,6 +168,8 @@
   <a href="../../../dji/sdk/SDKManager/package-summary.html">dji.sdk.SDKManager</a></li>
     <li class="selected api apilevel-">
   <a href="../../../dji/sdk/base/package-summary.html">dji.sdk.base</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/util/package-summary.html">dji.sdk.util</a></li>
               </ul><br/>
             </div> <!-- end packages -->
           </div> <!-- end resize-packages -->
@@ -182,6 +186,7 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIBaseComponent.DJIComponentListener.html">DJIBaseComponent.DJIComponentListener</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIBaseProduct.DJIBaseProductListener.html">DJIBaseProduct.DJIBaseProductListener</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIBaseProduct.DJIVersionCallback.html">DJIBaseProduct.DJIVersionCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIDiagnostics.UpdateDiagnosticsListCallback.html">DJIDiagnostics.UpdateDiagnosticsListCallback</a></li>
       </ul>
     </li>
               
@@ -192,6 +197,7 @@
           <li class="selected api apilevel-"><a href="../../../dji/sdk/base/DJIBaseProduct.html">DJIBaseProduct</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIBatteryError.html">DJIBatteryError</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/base/DJICameraError.html">DJICameraError</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIDiagnostics.html">DJIDiagnostics</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIError.html">DJIError</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIFlightControllerError.html">DJIFlightControllerError</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIGimbalError.html">DJIGimbalError</a></li>
@@ -204,6 +210,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIBaseProduct.DJIComponentGroupKey.html">DJIBaseProduct.DJIComponentGroupKey</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIBaseProduct.DJIComponentKey.html">DJIBaseProduct.DJIComponentKey</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/base/DJIBaseProduct.Model.html">DJIBaseProduct.Model</a></li>
       </ul>
@@ -458,12 +465,24 @@ Summary:
          
         
         enum</td>
-      <td class="jd-linkcol"><a href="../../../dji/sdk/base/DJIBaseProduct.DJIComponentKey.html">DJIBaseProduct.DJIComponentKey</a></td>
+      <td class="jd-linkcol"><a href="../../../dji/sdk/base/DJIBaseProduct.DJIComponentGroupKey.html">DJIBaseProduct.DJIComponentGroupKey</a></td>
       <td class="jd-descrcol" width="100%">Specifies all the components.&nbsp;</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
+      <td class="jd-typecol">
+        
+         
+         
+        
+        enum</td>
+      <td class="jd-linkcol"><a href="../../../dji/sdk/base/DJIBaseProduct.DJIComponentKey.html">DJIBaseProduct.DJIComponentKey</a></td>
+      <td class="jd-descrcol" width="100%">Specifies all the components.&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
       <td class="jd-typecol">
         
          
@@ -475,7 +494,7 @@ Summary:
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
       <td class="jd-typecol">
         
          
@@ -571,6 +590,24 @@ Summary:
             
             
             
+            ArrayList&lt;<a href="../../../dji/sdk/Battery/DJIBattery.html">DJIBattery</a>&gt;
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseProduct.html#getBatteries()">getBatteries</a></span>()
+        
+        <div class="jd-descrdiv">Returns an array of aircraft's batteries.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
             <a href="../../../dji/sdk/Battery/DJIBattery.html">DJIBattery</a>
         </td>
         <td class="jd-linkcol" width="100%">
@@ -582,7 +619,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -600,7 +637,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -618,7 +655,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -636,7 +673,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -654,7 +691,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -672,7 +709,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -690,7 +727,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -706,7 +743,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -724,7 +761,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -738,6 +775,22 @@ Summary:
         
         <div class="jd-descrdiv">Sets the callback for the DJI version.</div>
   
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseProduct.html#setUpdateDiagnosticsListCallback(dji.sdk.base.DJIDiagnostics.UpdateDiagnosticsListCallback)">setUpdateDiagnosticsListCallback</a></span>(<a href="../../../dji/sdk/base/DJIDiagnostics.UpdateDiagnosticsListCallback.html">DJIDiagnostics.UpdateDiagnosticsListCallback</a> callback)
+        
   </td></tr>
 
 
@@ -1101,6 +1154,43 @@ From interface
 </div>
 
 
+<a id="getBatteries()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        ArrayList&lt;<a href="../../../dji/sdk/Battery/DJIBattery.html">DJIBattery</a>&gt;
+      </span>
+      <span class="sympad">getBatteries</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns an array of aircraft's batteries.
+ It is used when the aircraft has multiple batteries, e.g. Matrice 600.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>An instance of the aircraft's smart battery.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="getBattery()"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1126,7 +1216,8 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Retrieves an instance of the aircraft's smart battery.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Retrieves an instance of the aircraft's smart battery.
+  M600 use this will only get one battery.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li>An instance of the aircraft's smart battery.
@@ -1435,6 +1526,37 @@ From interface
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets the callback for the DJI version.
 </p></div>
+
+    </div>
+</div>
+
+
+<a id="setUpdateDiagnosticsListCallback(dji.sdk.base.DJIDiagnostics.UpdateDiagnosticsListCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setUpdateDiagnosticsListCallback</span>
+      <span class="normal">(<a href="../../../dji/sdk/base/DJIDiagnostics.UpdateDiagnosticsListCallback.html">DJIDiagnostics.UpdateDiagnosticsListCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>

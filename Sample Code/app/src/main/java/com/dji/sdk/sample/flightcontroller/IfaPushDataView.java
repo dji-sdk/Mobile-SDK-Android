@@ -49,9 +49,9 @@ public class IfaPushDataView extends BaseThreeBtnView {
     public IfaPushDataView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        mBtn1.setVisibility(View.INVISIBLE);
-        mBtn2.setVisibility(View.INVISIBLE);
-        mBtn3.setVisibility(View.INVISIBLE);
+        middleBtn.setVisibility(View.INVISIBLE);
+        leftBtn.setVisibility(View.INVISIBLE);
+        rightBtn.setVisibility(View.INVISIBLE);
 
         mStringBuffer = new StringBuffer();
     }
@@ -117,32 +117,32 @@ public class IfaPushDataView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn3Method() {
+    protected void getRightBtnMethod() {
 
     }
 
     @Override
-    protected void getBtn1Method() {
+    protected void getMiddleBtnMethod() {
 
     }
 
     @Override
-    protected int getBtn1TextResourceId() {
+    protected int getMiddleBtnTextResourceId() {
         return R.string.compass_calibration_start_calibration;
     }
 
     @Override
-    protected int getBtn3TextResourceId() {
+    protected int getRightBtnTextResourceId() {
         return R.string.compass_calibration_stop_calibration;
     }
 
     @Override
-    protected int getBtn2TextResourceId() {
+    protected int getLeftBtnTextResourceId() {
         return R.string.compass_calibration_start_calibration;
     }
 
     @Override
-    protected void getBtn2Method() {
+    protected void getLeftBtnMethod() {
     }
 
 }

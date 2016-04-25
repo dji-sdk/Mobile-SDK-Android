@@ -69,17 +69,17 @@ public class OrientationModeView extends BaseThreeBtnView{
     }
 
     @Override
-    protected int getBtn1TextResourceId() {
+    protected int getMiddleBtnTextResourceId() {
         return R.string.orientation_mode_home_lock;
     }
 
     @Override
-    protected int getBtn2TextResourceId() {
+    protected int getLeftBtnTextResourceId() {
         return R.string.orientation_mode_course_lock;
     }
 
     @Override
-    protected int getBtn3TextResourceId() {
+    protected int getRightBtnTextResourceId() {
         return R.string.orientation_mode_aircraft_heading;
     }
 
@@ -89,7 +89,7 @@ public class OrientationModeView extends BaseThreeBtnView{
     }
 
     @Override
-    protected void getBtn1Method() {
+    protected void getMiddleBtnMethod() {
         if (DJIModuleVerificationUtil.isFlightControllerAvailable()) {
             mFlightController = DJISampleApplication.getAircraftInstance().getFlightController();
 
@@ -109,7 +109,7 @@ public class OrientationModeView extends BaseThreeBtnView{
     }
 
     @Override
-    protected void getBtn2Method() {
+    protected void getLeftBtnMethod() {
         if (DJIModuleVerificationUtil.isFlightControllerAvailable()) {
             mFlightController = DJISampleApplication.getAircraftInstance().getFlightController();
 
@@ -129,7 +129,7 @@ public class OrientationModeView extends BaseThreeBtnView{
     }
 
     @Override
-    protected void getBtn3Method() {
+    protected void getRightBtnMethod() {
         if (DJIModuleVerificationUtil.isFlightControllerAvailable()) {
             mFlightController = DJISampleApplication.getAircraftInstance().getFlightController();
 

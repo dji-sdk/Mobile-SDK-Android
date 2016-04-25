@@ -33,7 +33,7 @@ public class RecordVideoView extends BaseThreeBtnView {
     public RecordVideoView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
-        mBtn2.setVisibility(View.INVISIBLE);
+        middleBtn.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class RecordVideoView extends BaseThreeBtnView {
                     new DJIBaseComponent.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
-
+                            Utils.setResultToToast(getContext(), "SetCameraMode to recordVideo");
                         }
                     }
             );
@@ -62,7 +62,7 @@ public class RecordVideoView extends BaseThreeBtnView {
                     new DJIBaseComponent.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
-
+                            Utils.setResultToToast(getContext(), "SetCameraMode to shootPhoto");
                         }
                     }
             );
@@ -70,13 +70,18 @@ public class RecordVideoView extends BaseThreeBtnView {
     }
 
     @Override
-    protected int getBtn1TextResourceId() {
+    protected int getLeftBtnTextResourceId() {
         return R.string.record_video_start_record;
     }
 
     @Override
-    protected int getBtn3TextResourceId() {
+    protected int getRightBtnTextResourceId() {
         return R.string.record_video_stop_record;
+    }
+
+    @Override
+    protected int getMiddleBtnTextResourceId() {
+        return R.string.shoot_single_photo;
     }
 
     @Override
@@ -85,7 +90,8 @@ public class RecordVideoView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn1Method() {
+    protected void getLeftBtnMethod() {
+
         Utils.setResultToText(context, mTexInfo, "00:00:00");
         if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().startRecordVideo(
@@ -113,16 +119,19 @@ public class RecordVideoView extends BaseThreeBtnView {
                     }
             );
         }
+
     }
 
     @Override
-    protected void getBtn3Method() {
+    protected void getRightBtnMethod() {
+
         if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().stopRecordVideo(
                     new DJIBaseComponent.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             Utils.setResultToToast(getContext(), "StopRecord");
+                            Utils.setResultToText(context, mTexInfo, "00:00:00");
                             timer.cancel();
                             timeCounter = 0;
                         }
@@ -132,12 +141,7 @@ public class RecordVideoView extends BaseThreeBtnView {
     }
 
     @Override
-    protected int getBtn2TextResourceId() {
-        return R.string.record_video_stop_record;
-    }
-
-    @Override
-    protected void getBtn2Method() {
+    protected void getMiddleBtnMethod() {
 
     }
 }

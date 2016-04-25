@@ -151,6 +151,8 @@
     <li class="selected api apilevel-">
   <a href="../../../dji/sdk/FlightController/package-summary.html">dji.sdk.FlightController</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/FlightController/Rtk/package-summary.html">dji.sdk.FlightController.Rtk</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/Gimbal/package-summary.html">dji.sdk.Gimbal</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/HandheldController/package-summary.html">dji.sdk.HandheldController</a></li>
@@ -166,6 +168,8 @@
   <a href="../../../dji/sdk/SDKManager/package-summary.html">dji.sdk.SDKManager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/base/package-summary.html">dji.sdk.base</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/util/package-summary.html">dji.sdk.util</a></li>
               </ul><br/>
             </div> <!-- end packages -->
           </div> <!-- end resize-packages -->
@@ -180,6 +184,7 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback.html">DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIFlightControllerDelegate.ReceivedNoFlyZoneFromFlightControllerCallback.html">DJIFlightControllerDelegate.ReceivedNoFlyZoneFromFlightControllerCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJISimulator.UpdatedSimulatorStateDataCallback.html">DJISimulator.UpdatedSimulatorStateDataCallback</a></li>
       </ul>
     </li>
               
@@ -202,6 +207,9 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIIntelligentFlightAssistant.DJIVisionDetectionSector.html">DJIIntelligentFlightAssistant.DJIVisionDetectionSector</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIIntelligentFlightAssistant.DJIVisionDetectionState.html">DJIIntelligentFlightAssistant.DJIVisionDetectionState</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/sdk/FlightController/DJILandingGear.html">DJILandingGear</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJISimulator.html">DJISimulator</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJISimulator.DJISimulatorInitializationData.html">DJISimulator.DJISimulatorInitializationData</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJISimulator.DJISimulatorStateData.html">DJISimulator.DJISimulatorStateData</a></li>
       </ul>
     </li>
               
@@ -213,6 +221,7 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIFlightControllerDataType.DJIFlightControllerFlightMode.html">DJIFlightControllerDataType.DJIFlightControllerFlightMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIFlightControllerDataType.DJIFlightControllerNoFlyStatus.html">DJIFlightControllerDataType.DJIFlightControllerNoFlyStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIFlightControllerDataType.DJIFlightControlState.html">DJIFlightControllerDataType.DJIFlightControlState</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIFlightControllerDataType.DJIFlightFailsafeOperation.html">DJIFlightControllerDataType.DJIFlightFailsafeOperation</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIFlightControllerDataType.DJIFlightOrientationMode.html">DJIFlightControllerDataType.DJIFlightOrientationMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIFlightControllerDataType.DJIGoHomeStatus.html">DJIFlightControllerDataType.DJIGoHomeStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/FlightController/DJIFlightControllerDataType.DJIGPSSignalStatus.html">DJIFlightControllerDataType.DJIGPSSignalStatus</a></li>
@@ -375,6 +384,8 @@ Summary:
 
 <h2>Class Overview</h2>
 <p>This class contains the state of the landing gear. It also provides methods to control the landing gear.
+ Please check <code>DJIFlightController.isLandingGearMovable()</code> before
+ calling the methods in <code>DJILandingGear</code>.
 </p>
 
 
@@ -947,7 +958,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Deploys the landing gear. Should only be used when setLandingGearMode is Normal.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Deploys the landing gear. Should only be used when setLandingGearMode is Normal.
+  Only supported by Inspire 1.
+ For Matrice 600, the landing gear cannot be controlled through the SDK, only automatically by the aircraft or manually by the remote controller.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -1174,7 +1187,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Retracts the landing gear. Should only be used when setLandingGearMode is DJILandingGearModeNormal.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Retracts the landing gear. Should only be used when setLandingGearMode is DJILandingGearModeNormal.
+  Only supported by Inspire 1.
+  For Matrice 600, the landing gear cannot be controlled through the SDK, only automatically by the aircraft or manually by the remote controller.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">

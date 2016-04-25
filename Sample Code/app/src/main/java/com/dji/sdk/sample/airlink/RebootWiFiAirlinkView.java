@@ -22,8 +22,8 @@ import dji.sdk.base.DJIError;
 public class RebootWiFiAirlinkView extends BaseThreeBtnView {
     public RebootWiFiAirlinkView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mBtn1.setVisibility(View.INVISIBLE);
-        mBtn3.setVisibility(View.INVISIBLE);
+        middleBtn.setVisibility(View.INVISIBLE);
+        rightBtn.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class RebootWiFiAirlinkView extends BaseThreeBtnView {
     }
 
     @Override
-    protected int getBtn2TextResourceId() {
+    protected int getLeftBtnTextResourceId() {
         return R.string.reboot_wifi_airlink_reboot_wifi;
     }
 
@@ -47,7 +47,7 @@ public class RebootWiFiAirlinkView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn2Method() {
+    protected void getLeftBtnMethod() {
         // Reboot Button
         DJIDialog.showConfirmationDialog(getContext(), R.string.reboot_wifi_airlink_hint, new DialogInterface.OnClickListener() {
             @Override
@@ -73,14 +73,14 @@ public class RebootWiFiAirlinkView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn3Method() {}
+    protected void getRightBtnMethod() {}
 
     @Override
-    protected void getBtn1Method() {}
+    protected void getMiddleBtnMethod() {}
 
     @Override
-    protected int getBtn3TextResourceId() {return R.string.reboot_wifi_airlink_reboot_wifi;}
+    protected int getRightBtnTextResourceId() {return R.string.reboot_wifi_airlink_reboot_wifi;}
 
     @Override
-    protected int getBtn1TextResourceId() {return R.string.reboot_wifi_airlink_reboot_wifi;}
+    protected int getMiddleBtnTextResourceId() {return R.string.reboot_wifi_airlink_reboot_wifi;}
 }

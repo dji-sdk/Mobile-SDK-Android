@@ -2,13 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:clickable="true">
 
     <Button
         android:id="@+id/btn_next"
         android:text="Next"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="150dp"
         style="@style/common_button"
         />
 
@@ -16,7 +17,7 @@
         android:id="@+id/btn_previous"
         android:text="Previous"
         android:layout_toLeftOf="@id/btn_next"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="150dp"
         android:layout_marginRight="5dp"
         style="@style/common_button"
         />
@@ -25,7 +26,7 @@
         android:id="@+id/btn_multiple"
         android:text="Multiple"
         android:layout_toRightOf="@id/btn_next"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="150dp"
         android:layout_marginLeft="5dp"
         style="@style/common_button"
         />
@@ -39,6 +40,6 @@
 
     <com.dji.sdk.sample.common.BaseFpvView
         style="@style/fpv"
-        />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -29,17 +29,17 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
     }
 
     @Override
-    protected int getBtn1TextResourceId() {
+    protected int getMiddleBtnTextResourceId() {
         return R.string.move_gimbal_in_speed_up;
     }
 
     @Override
-    protected int getBtn2TextResourceId() {
+    protected int getLeftBtnTextResourceId() {
         return R.string.move_gimbal_in_speed_stop;
     }
 
     @Override
-    protected int getBtn3TextResourceId() {
+    protected int getRightBtnTextResourceId() {
         return R.string.move_gimbal_in_speed_down;
     }
 
@@ -49,7 +49,7 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn1Method() {
+    protected void getMiddleBtnMethod() {
         if (mTimer == null) {
             mTimer = new Timer();
             mPitchSpeedRotation = new DJIGimbal.DJIGimbalSpeedRotation(10,
@@ -60,7 +60,7 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn2Method() {
+    protected void getLeftBtnMethod() {
         if (mTimer != null) {
             mGimbalRotationTimerTask.cancel();
             mTimer.cancel();
@@ -83,7 +83,7 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn3Method() {
+    protected void getRightBtnMethod() {
         if (mTimer == null) {
             mTimer = new Timer();
             mPitchSpeedRotation = new DJIGimbal.DJIGimbalSpeedRotation(10,

@@ -79,17 +79,17 @@ public class FetchMediaView extends BaseThreeBtnView {
     }
 
     @Override
-    protected int getBtn1TextResourceId() {
+    protected int getMiddleBtnTextResourceId() {
         return R.string.fetch_media_view_fetch_thumbnail;
     }
 
     @Override
-    protected int getBtn2TextResourceId() {
+    protected int getLeftBtnTextResourceId() {
         return R.string.fetch_media_view_fetch_preview;
     }
 
     @Override
-    protected int getBtn3TextResourceId() {
+    protected int getRightBtnTextResourceId() {
         return R.string.fetch_media_view_fetch_media;
     }
 
@@ -104,7 +104,7 @@ public class FetchMediaView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn1Method() {
+    protected void getMiddleBtnMethod() {
         // Fetch Thumbnail Button
         if (DJIModuleVerificationUtil.isMediaManagerAvailable() && mMedia != null) {
             mMedia.fetchThumbnail(new DJIMediaManager.CameraDownloadListener<Bitmap>() {
@@ -139,7 +139,7 @@ public class FetchMediaView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn2Method() {
+    protected void getLeftBtnMethod() {
         // Fetch Preview Button
         if (DJIModuleVerificationUtil.isMediaManagerAvailable() && mMedia != null) {
             mMedia.fetchPreviewImage(new DJIMediaManager.CameraDownloadListener<Bitmap>() {
@@ -173,7 +173,7 @@ public class FetchMediaView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn3Method() {
+    protected void getRightBtnMethod() {
         // Fetch Media Data Button
         if (DJIModuleVerificationUtil.isCameraModuleAvailable() && mMedia != null) {
             File destDir = new File(Environment.getExternalStorageDirectory().

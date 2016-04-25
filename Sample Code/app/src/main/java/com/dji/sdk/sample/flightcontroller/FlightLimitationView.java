@@ -23,17 +23,17 @@ public class FlightLimitationView extends BaseThreeBtnView {
     }
 
     @Override
-    protected int getBtn1TextResourceId() {
+    protected int getMiddleBtnTextResourceId() {
         return R.string.flight_limitation_set_height_limitation;
     }
 
     @Override
-    protected int getBtn2TextResourceId() {
+    protected int getLeftBtnTextResourceId() {
         return R.string.flight_limitation_toggle_enable_radius_limitation;
     }
 
     @Override
-    protected int getBtn3TextResourceId() {
+    protected int getRightBtnTextResourceId() {
         return R.string.flight_limitation_set_radius_limitation;
     }
 
@@ -43,7 +43,7 @@ public class FlightLimitationView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn1Method() {
+    protected void getMiddleBtnMethod() {
         if (DJIModuleVerificationUtil.isFlightLimitationAvailable()) {
             DJISampleApplication.getAircraftInstance().getFlightController().
                 getFlightLimitation().setMaxFlightHeight(50,
@@ -60,7 +60,7 @@ public class FlightLimitationView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn2Method() {
+    protected void getLeftBtnMethod() {
         if (DJIModuleVerificationUtil.isFlightLimitationAvailable()) {
             DJISampleApplication.getAircraftInstance().getFlightController()
                 .getFlightLimitation().
@@ -77,7 +77,7 @@ public class FlightLimitationView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn3Method() {
+    protected void getRightBtnMethod() {
         if (DJIModuleVerificationUtil.isFlightLimitationAvailable()) {
             DJISampleApplication.getAircraftInstance().getFlightController().
                     getFlightLimitation().setMaxFlightRadius(40,

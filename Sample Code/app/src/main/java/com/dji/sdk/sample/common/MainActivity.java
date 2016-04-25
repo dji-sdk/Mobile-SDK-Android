@@ -17,9 +17,8 @@ import android.widget.TextView;
 import com.dji.sdk.sample.R;
 
 import java.util.Stack;
-
-import de.greenrobot.event.EventBus;
 import dji.sdk.base.DJIBaseProduct;
+import dji.thirdparty.eventbus.EventBus;
 
 public class MainActivity extends AppCompatActivity {
 

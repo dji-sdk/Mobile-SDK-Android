@@ -48,7 +48,7 @@ public class CompassCalibrationView extends BaseThreeBtnView {
 
     public CompassCalibrationView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mBtn2.setVisibility(View.INVISIBLE);
+        leftBtn.setVisibility(View.INVISIBLE);
 
         mStringBuffer = new StringBuffer();
     }
@@ -97,7 +97,7 @@ public class CompassCalibrationView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn3Method() {
+    protected void getRightBtnMethod() {
         if (DJIModuleVerificationUtil.isCompassAvailable()) {
             mCompass = ((DJIAircraft) DJISampleApplication.getProductInstance())
                     .getFlightController().getCompass();
@@ -112,7 +112,7 @@ public class CompassCalibrationView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn1Method() {
+    protected void getMiddleBtnMethod() {
         if (DJIModuleVerificationUtil.isCompassAvailable()) {
             mCompass = ((DJIAircraft) DJISampleApplication.getProductInstance())
                     .getFlightController().getCompass();
@@ -127,21 +127,21 @@ public class CompassCalibrationView extends BaseThreeBtnView {
     }
 
     @Override
-    protected int getBtn1TextResourceId() {
+    protected int getMiddleBtnTextResourceId() {
         return R.string.compass_calibration_start_calibration;
     }
 
     @Override
-    protected int getBtn3TextResourceId() {
+    protected int getRightBtnTextResourceId() {
         return R.string.compass_calibration_stop_calibration;
     }
 
     @Override
-    protected int getBtn2TextResourceId() {
+    protected int getLeftBtnTextResourceId() {
         return R.string.compass_calibration_start_calibration;
     }
 
     @Override
-    protected void getBtn2Method() {
+    protected void getLeftBtnMethod() {
     }
 }

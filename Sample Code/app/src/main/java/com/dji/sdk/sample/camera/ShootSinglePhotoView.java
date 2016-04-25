@@ -22,20 +22,20 @@ import dji.sdk.base.DJIError;
 public class ShootSinglePhotoView extends BaseThreeBtnView {
     private DJICameraSettingsDef.CameraMode mCameraMode;
 
-    private static final int ENABLE_BTN2 = 0;
-    private static final int DISABLE_BTN2 = 1;
+    private static final int ENABLE_LEFT_BTN = 0;
+    private static final int DISABLE_LEFT_BTN = 1;
 
     private Handler mHandler = new Handler(new Handler.Callback() {
 
         @Override
         public boolean handleMessage(Message msg) {
             switch (msg.what) {
-                case ENABLE_BTN2 :
-                    mBtn2.setEnabled(true);
+                case ENABLE_LEFT_BTN :
+                    leftBtn.setEnabled(true);
                     break;
 
-                case DISABLE_BTN2:
-                    mBtn2.setEnabled(false);
+                case DISABLE_LEFT_BTN:
+                    leftBtn.setEnabled(false);
                     break;
 
                 default:
@@ -48,8 +48,8 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
     public ShootSinglePhotoView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        mBtn1.setVisibility(View.GONE);
-        mBtn3.setVisibility(View.GONE);
+        middleBtn.setVisibility(View.GONE);
+        rightBtn.setVisibility(View.GONE);
     }
 
     /**
@@ -110,7 +110,7 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
     }
 
     @Override
-    protected int getBtn2TextResourceId() {
+    protected int getLeftBtnTextResourceId() {
         return R.string.shoot_single_photo;
     }
 
@@ -120,7 +120,7 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
     }
 
     @Override
-    protected void getBtn2Method() {
+    protected void getLeftBtnMethod() {
         //Shoot Photo Button
         if (isModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().startShootPhoto(
@@ -132,23 +132,23 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
                                 DJIDialog.showDialog(getContext(), R.string.success);
                             else
                                 DJIDialog.showDialog(getContext(), djiError.getDescription());
-                                mHandler.sendEmptyMessage(ENABLE_BTN2);
+                                mHandler.sendEmptyMessage(ENABLE_LEFT_BTN);
                         }
                     }
             );
-            mHandler.sendEmptyMessage(DISABLE_BTN2);
+            mHandler.sendEmptyMessage(DISABLE_LEFT_BTN);
         }
     }
 
     @Override
-    protected void getBtn1Method() {}
+    protected void getMiddleBtnMethod() {}
 
     @Override
-    protected void getBtn3Method() {}
+    protected void getRightBtnMethod() {}
 
     @Override
-    protected int getBtn3TextResourceId() {return R.string.shoot_single_photo;}
+    protected int getRightBtnTextResourceId() {return R.string.shoot_single_photo;}
 
     @Override
-    protected int getBtn1TextResourceId() {return R.string.shoot_single_photo;}
+    protected int getMiddleBtnTextResourceId() {return R.string.shoot_single_photo;}
 }
