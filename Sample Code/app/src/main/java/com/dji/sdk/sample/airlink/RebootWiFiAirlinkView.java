@@ -12,8 +12,8 @@ import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIDialog;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
-import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
 
 /**
  * Class for rebooting the WiFi airlink. If the users set the WiFi airlink with SSID, password and frequency
@@ -54,7 +54,7 @@ public class RebootWiFiAirlinkView extends BaseThreeBtnView {
             public void onClick(DialogInterface dialog, int which) {
                 if (DJIModuleVerificationUtil.isWiFiAirlinkAvailable()) {
                     DJISampleApplication.getProductInstance().getAirLink().getWiFiLink().rebootWiFi(
-                            new DJIBaseComponent.DJICompletionCallback() {
+                            new DJICommonCallbacks.DJICompletionCallback() {
                                 @Override
                                 public void onResult(DJIError djiError) {
                                     if (djiError == null) {

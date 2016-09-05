@@ -4,6 +4,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
+import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -12,9 +16,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dji.sdk.sample.R;
+import com.dji.sdk.sample.utils.DJIDialog;
 
-import dji.sdk.Products.DJIAircraft;
 import dji.sdk.base.DJIBaseProduct;
+import dji.sdk.products.DJIAircraft;
+import dji.sdk.sdkmanager.DJIBluetoothProductConnector;
 import dji.thirdparty.eventbus.EventBus;
 
 /**
@@ -32,6 +38,15 @@ public class MainContent extends RelativeLayout implements DJIBaseProduct.DJIVer
     private TextView mTextProduct;
     private TextView mTextModelAvailable;
     private Button mBtnOpen;
+    private Button mBtnBluetooth;
+    private static boolean connected = false;
+
+    private static DJIBluetoothProductConnector connector = null;
+
+    private Handler mHandler;
+    private Handler mHandlerUI;
+    private HandlerThread mHandlerThread = new HandlerThread("Bluetooth");
+
 
     private DJIBaseProduct mProduct;
 
@@ -48,6 +63,41 @@ public class MainContent extends RelativeLayout implements DJIBaseProduct.DJIVer
         mTextModelAvailable = (TextView) findViewById(R.id.text_model_available);
         mTextProduct = (TextView) findViewById(R.id.text_product_info);
         mBtnOpen = (Button) findViewById(R.id.btn_open);
+        mBtnBluetooth = (Button) findViewById(R.id.btn_bluetooth);
+        mBtnBluetooth.setEnabled(false);
+        mHandlerThread.start();
+        final long currentTime = System.currentTimeMillis();
+        mHandler = new Handler(mHandlerThread.getLooper()){
+            @Override
+            public void handleMessage(Message msg){
+                switch(msg.what){
+                    case 0:
+                        //connected = DJISampleApplication.getBluetoothConnectStatus();
+                    connector = DJISampleApplication.getBluetoothProductConnector();
+
+                    if(connector != null){
+                        mBtnBluetooth.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                mBtnBluetooth.setEnabled(true);
+                            }
+                        });
+                        return;
+                    }else if((System.currentTimeMillis()-currentTime)>=5000){
+                        DJIDialog.showDialog(getContext(),"Fetch Connector failed, reboot if you want to connect the Bluetooth");
+                        return;
+                    }else if(connector == null){
+                        sendEmptyMessageDelayed(0, 1000);
+                    }
+                    break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                }
+            }
+        };
+        mHandler.sendEmptyMessage(0);
 
 
         mBtnOpen.setOnClickListener(new OnClickListener() {
@@ -57,12 +107,18 @@ public class MainContent extends RelativeLayout implements DJIBaseProduct.DJIVer
                 EventBus.getDefault().post(new SetViewWrapper(R.layout.content_component_list, R.string.activity_component_list, getContext()));
             }
         });
+        mBtnBluetooth.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Utils.isFastDoubleClick()) return;
+                EventBus.getDefault().post(new SetViewWrapper(R.layout.content_bluetooth, R.string.component_listview_bluetooth,getContext()));
+
+            }
+        });
     }
 
     @Override
     protected void onAttachedToWindow() {
-        Log.v(TAG, "onAttachedToWindow");
-
         refreshSDKRelativeUI();
         IntentFilter filter = new IntentFilter();
         filter.addAction(DJISampleApplication.FLAG_CONNECTION_CHANGE);
@@ -109,7 +165,6 @@ public class MainContent extends RelativeLayout implements DJIBaseProduct.DJIVer
         mProduct = DJISampleApplication.getProductInstance();
 
         if (null != mProduct && mProduct.isConnected()) {
-            Log.v(TAG, "refreshSDK: True");
             mBtnOpen.setEnabled(true);
 
             String str = mProduct instanceof DJIAircraft ? "DJIAircraft" : "DJIHandHeld";
@@ -123,7 +178,6 @@ public class MainContent extends RelativeLayout implements DJIBaseProduct.DJIVer
                 mTextProduct.setText(R.string.product_information);
             }
         } else {
-            Log.v(TAG, "refreshSDK: False");
             mBtnOpen.setEnabled(false);
 
             mTextProduct.setText(R.string.product_information);

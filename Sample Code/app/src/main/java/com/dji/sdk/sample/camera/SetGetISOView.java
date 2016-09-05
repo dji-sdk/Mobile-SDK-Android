@@ -11,9 +11,10 @@ import com.dji.sdk.sample.common.BaseSetGetView;
 import com.dji.sdk.sample.common.DJISampleApplication;
 import com.dji.sdk.sample.common.Utils;
 
-import dji.sdk.Camera.DJICameraSettingsDef;
+import dji.common.camera.DJICameraSettingsDef;
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
 
 /**
  * Class for setting and getting ISO in camera.
@@ -76,7 +77,7 @@ public class SetGetISOView extends BaseSetGetView {
     private void setShootPhotoCameraMode() {
         DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                 DJICameraSettingsDef.CameraMode.ShootPhoto,
-                new DJIBaseComponent.DJICompletionCallback() {
+                new DJICommonCallbacks.DJICompletionCallback() {
                     @Override
                     public void onResult(DJIError djiError) {
                         if (null == djiError) {
@@ -91,7 +92,7 @@ public class SetGetISOView extends BaseSetGetView {
     private void setManualExposureMode() {
         DJISampleApplication.getProductInstance().getCamera().setExposureMode(
                 DJICameraSettingsDef.CameraExposureMode.Manual,
-                new DJIBaseComponent.DJICompletionCallback() {
+                new DJICommonCallbacks.DJICompletionCallback() {
                     @Override
                     public void onResult(DJIError djiError) {
                         if (null == djiError)
@@ -109,7 +110,7 @@ public class SetGetISOView extends BaseSetGetView {
         }
         DJISampleApplication.getProductInstance().getCamera().setISO(
                 cameraISO,
-                new DJIBaseComponent.DJICompletionCallback() {
+                new DJICommonCallbacks.DJICompletionCallback() {
                     @Override
                     public void onResult(DJIError djiError) {
                         Utils.showDialogBasedOnError(getContext(), djiError);
@@ -120,7 +121,7 @@ public class SetGetISOView extends BaseSetGetView {
     @Override
     protected void getMethod() {
         DJISampleApplication.getProductInstance().getCamera().getISO(
-                new DJIBaseComponent.DJICompletionCallbackWith<DJICameraSettingsDef.CameraISO>() {
+                new DJICommonCallbacks.DJICompletionCallbackWith<DJICameraSettingsDef.CameraISO>() {
                     @Override
                     public void onSuccess(DJICameraSettingsDef.CameraISO cameraISO) {
                         mHandler.sendMessage(mHandler.obtainMessage(SHOW_GET_RESULT, cameraISO.name()));

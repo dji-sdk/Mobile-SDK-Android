@@ -7,7 +7,8 @@ import com.dji.sdk.sample.common.BasePushDataView;
 import com.dji.sdk.sample.common.DJISampleApplication;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
-import dji.sdk.Gimbal.DJIGimbal;
+import dji.common.gimbal.DJIGimbalState;
+import dji.sdk.gimbal.DJIGimbal;
 
 /**
  * Class for getting gimbal information.
@@ -31,7 +32,7 @@ public class PushGimbalDataView extends BasePushDataView {
                     new DJIGimbal.GimbalStateUpdateCallback() {
                         @Override
                         public void onGimbalStateUpdate(DJIGimbal djiGimbal,
-                                                        DJIGimbal.DJIGimbalState djiGimbalState) {
+                                                        DJIGimbalState djiGimbalState) {
                             mStringBuffer.delete(0, mStringBuffer.length());
 
                             mStringBuffer.append("PitchInDegrees: ").

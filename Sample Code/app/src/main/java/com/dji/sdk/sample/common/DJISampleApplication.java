@@ -5,17 +5,20 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.dji.sdk.sample.R;
 
-import dji.sdk.Products.DJIAircraft;
-import dji.sdk.Products.DJIHandHeld;
-import dji.sdk.SDKManager.DJISDKManager;
+import dji.common.error.DJIError;
+import dji.common.error.DJISDKError;
 import dji.sdk.base.DJIBaseComponent;
 import dji.sdk.base.DJIBaseProduct;
-import dji.sdk.base.DJIError;
-import dji.sdk.base.DJISDKError;
+import dji.sdk.products.DJIAircraft;
+import dji.sdk.products.DJIHandHeld;
+import dji.sdk.sdkmanager.DJIBluetoothProductConnector;
+import dji.sdk.sdkmanager.DJISDKManager;
 
 /**
  * Created by dji on 15/12/28.
@@ -28,7 +31,11 @@ public class DJISampleApplication extends Application {
 
     private static DJIBaseProduct mProduct;
 
+    private static DJIBluetoothProductConnector bluetoothConnector = null;
+
     private Handler mHandler;
+
+    private static boolean connected = false;
 
     /**
      * Gets instance of the specific product connected after the
@@ -40,6 +47,13 @@ public class DJISampleApplication extends Application {
             mProduct = DJISDKManager.getInstance().getDJIProduct();
         }
         return mProduct;
+    }
+
+    public static synchronized DJIBluetoothProductConnector getBluetoothProductConnector(){
+        if(null == bluetoothConnector){
+            bluetoothConnector = DJISDKManager.getInstance().getDJIBluetoothProductConnector();
+        }
+        return bluetoothConnector;
     }
 
     public static boolean isAircraftConnected() {

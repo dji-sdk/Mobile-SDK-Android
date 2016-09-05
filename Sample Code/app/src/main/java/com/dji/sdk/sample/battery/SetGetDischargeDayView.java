@@ -13,8 +13,9 @@ import com.dji.sdk.sample.common.Utils;
 
 import java.util.ArrayList;
 
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
 
 /**
  * Class for setting and getting dischage day in battery.
@@ -47,7 +48,7 @@ public class SetGetDischargeDayView extends BaseSetGetView {
         try {
             DJISampleApplication.getProductInstance().getBattery().setSelfDischargeDay(
                     (short) (mSpinnerSet.getSelectedItemPosition() + 1),
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             Utils.showDialogBasedOnError(getContext(), djiError);
@@ -63,9 +64,9 @@ public class SetGetDischargeDayView extends BaseSetGetView {
     protected void getMethod() {
         try {
             DJISampleApplication.getProductInstance().getBattery().getSelfDischargeDay(
-                    new DJIBaseComponent.DJICompletionCallbackWith<Short>() {
+                    new DJICommonCallbacks.DJICompletionCallbackWith<Integer>() {
                         @Override
-                        public void onSuccess(Short aShort) {
+                        public void onSuccess(Integer aShort) {
                             mHandler.sendMessage(mHandler.obtainMessage(SHOW_GET_RESULT, aShort.toString()));
                         }
 

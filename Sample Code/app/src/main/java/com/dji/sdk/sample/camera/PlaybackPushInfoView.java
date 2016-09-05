@@ -8,10 +8,11 @@ import com.dji.sdk.sample.common.DJISampleApplication;
 import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
-import dji.sdk.Camera.DJICameraSettingsDef;
-import dji.sdk.Camera.DJIPlaybackManager;
+import dji.common.camera.DJICameraSettingsDef;
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
+import dji.sdk.camera.DJIPlaybackManager;
 
 /**
  * Class for getting
@@ -38,7 +39,7 @@ public class PlaybackPushInfoView extends BasePushDataView {
         if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                     DJICameraSettingsDef.CameraMode.Playback,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
 
@@ -66,7 +67,7 @@ public class PlaybackPushInfoView extends BasePushDataView {
 
             DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                     DJICameraSettingsDef.CameraMode.ShootPhoto,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
 

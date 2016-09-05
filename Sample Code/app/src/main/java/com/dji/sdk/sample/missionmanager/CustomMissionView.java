@@ -8,26 +8,30 @@ import com.dji.sdk.sample.common.Utils;
 import java.util.LinkedList;
 import java.util.List;
 
-import dji.sdk.Gimbal.DJIGimbal;
-import dji.sdk.MissionManager.DJICustomMission;
-import dji.sdk.MissionManager.DJIFollowMeMission;
-import dji.sdk.MissionManager.DJIHotPointMission;
-import dji.sdk.MissionManager.DJIMission;
-import dji.sdk.MissionManager.DJIPanoramaMission;
-import dji.sdk.MissionManager.DJIWaypoint;
-import dji.sdk.MissionManager.DJIWaypointMission;
-import dji.sdk.MissionManager.MissionStep.DJIGimbalAttitudeStep;
-import dji.sdk.MissionManager.MissionStep.DJIGoHomeStep;
-import dji.sdk.MissionManager.MissionStep.DJIGoToStep;
-import dji.sdk.MissionManager.MissionStep.DJIHotpointStep;
-import dji.sdk.MissionManager.MissionStep.DJIMissionStep;
-import dji.sdk.MissionManager.MissionStep.DJIShootPhotoStep;
-import dji.sdk.MissionManager.MissionStep.DJIStartRecordVideoStep;
-import dji.sdk.MissionManager.MissionStep.DJIStopRecordVideoStep;
-import dji.sdk.MissionManager.MissionStep.DJITakeoffStep;
-import dji.sdk.MissionManager.MissionStep.DJIWaypointStep;
+import dji.common.error.DJIError;
+import dji.common.gimbal.DJIGimbalAngleRotation;
+import dji.common.gimbal.DJIGimbalRotateAngleMode;
+import dji.common.gimbal.DJIGimbalRotateDirection;
+import dji.common.util.DJICommonCallbacks;
+import dji.sdk.gimbal.DJIGimbal;
+import dji.sdk.missionmanager.DJICustomMission;
+import dji.sdk.missionmanager.DJIFollowMeMission;
+import dji.sdk.missionmanager.DJIHotPointMission;
+import dji.sdk.missionmanager.DJIMission;
+import dji.sdk.missionmanager.DJIPanoramaMission;
+import dji.sdk.missionmanager.DJIWaypoint;
+import dji.sdk.missionmanager.DJIWaypointMission;
+import dji.sdk.missionmanager.missionstep.DJIGimbalAttitudeStep;
+import dji.sdk.missionmanager.missionstep.DJIGoHomeStep;
+import dji.sdk.missionmanager.missionstep.DJIGoToStep;
+import dji.sdk.missionmanager.missionstep.DJIHotpointStep;
+import dji.sdk.missionmanager.missionstep.DJIMissionStep;
+import dji.sdk.missionmanager.missionstep.DJIShootPhotoStep;
+import dji.sdk.missionmanager.missionstep.DJIStartRecordVideoStep;
+import dji.sdk.missionmanager.missionstep.DJIStopRecordVideoStep;
+import dji.sdk.missionmanager.missionstep.DJITakeoffStep;
+import dji.sdk.missionmanager.missionstep.DJIWaypointStep;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
 
 /**
  * Class for custom mission.
@@ -48,7 +52,7 @@ public class CustomMissionView extends MissionManagerBaseView {
         LinkedList<DJIMissionStep> steps = new LinkedList<DJIMissionStep>();
 
         //Step 1: takeoff from the ground
-        steps.add(new DJITakeoffStep(new DJIBaseComponent.DJICompletionCallback() {
+        steps.add(new DJITakeoffStep(new DJICommonCallbacks.DJICompletionCallback() {
 
             @Override
             public void onResult(DJIError error) {
@@ -58,11 +62,11 @@ public class CustomMissionView extends MissionManagerBaseView {
 
         //Step 2: reset the gimbal to horizontal angle
         steps.add(new DJIGimbalAttitudeStep(
-                DJIGimbal.DJIGimbalRotateAngleMode.AbsoluteAngle,
-                new DJIGimbal.DJIGimbalAngleRotation(true, 0f, DJIGimbal.DJIGimbalRotateDirection.Clockwise),
+                DJIGimbalRotateAngleMode.AbsoluteAngle,
+                new DJIGimbalAngleRotation(true, 0f, DJIGimbalRotateDirection.Clockwise),
                 null,
                 null,
-                new DJIBaseComponent.DJICompletionCallback() {
+                new DJICommonCallbacks.DJICompletionCallback() {
                     @Override
                     public void onResult(DJIError error) {
                         Utils.setResultToToast(mContext, "Set gimbal attitude step: " + (error == null ? "Success" : error.getDescription()));
@@ -71,7 +75,7 @@ public class CustomMissionView extends MissionManagerBaseView {
                 }));
 
         //Step 3: Go 10 meters from home point
-        steps.add(new DJIGoToStep(mHomeLatitude, mHomeLongitude, 10, new DJIBaseComponent.DJICompletionCallback() {
+        steps.add(new DJIGoToStep(mHomeLatitude, mHomeLongitude, 10, new DJICommonCallbacks.DJICompletionCallback() {
 
             @Override
             public void onResult(DJIError error) {
@@ -80,7 +84,7 @@ public class CustomMissionView extends MissionManagerBaseView {
         }));
 
         //Step 4: shoot 3 photos with 3 seconds interval between each
-        steps.add(new DJIShootPhotoStep(3, 3, new DJIBaseComponent.DJICompletionCallback() {
+        steps.add(new DJIShootPhotoStep(3, 3, new DJICommonCallbacks.DJICompletionCallback() {
             @Override
             public void onResult(DJIError error) {
                 Utils.setResultToToast(mContext, "Take continuous picture step: " + (error == null ? "Success" : error.getDescription()));
@@ -88,7 +92,7 @@ public class CustomMissionView extends MissionManagerBaseView {
         }));
 
         //Step 5: start recording video
-        steps.add(new DJIStartRecordVideoStep(new DJIBaseComponent.DJICompletionCallback() {
+        steps.add(new DJIStartRecordVideoStep(new DJICommonCallbacks.DJICompletionCallback() {
 
             @Override
             public void onResult(DJIError error) {
@@ -97,7 +101,7 @@ public class CustomMissionView extends MissionManagerBaseView {
         }));
 
         //Step 6: shoot a single photo (if the camera is recording video, then this step will be ignored)
-        steps.add(new DJIShootPhotoStep(new DJIBaseComponent.DJICompletionCallback() {
+        steps.add(new DJIShootPhotoStep(new DJICommonCallbacks.DJICompletionCallback() {
 
             @Override
             public void onResult(DJIError error) {
@@ -106,7 +110,7 @@ public class CustomMissionView extends MissionManagerBaseView {
         }));
 
         //Step 7: start a waypoint mission while the aircraft is still recording the video
-        steps.add(new DJIWaypointStep(initTestingWaypointMission(), new DJIBaseComponent.DJICompletionCallback() {
+        steps.add(new DJIWaypointStep(initTestingWaypointMission(), new DJICommonCallbacks.DJICompletionCallback() {
 
             @Override
             public void onResult(DJIError error) {
@@ -115,7 +119,7 @@ public class CustomMissionView extends MissionManagerBaseView {
         }));
 
         //Step 8: stop the recording when the waypoint mission is finished
-        steps.add(new DJIStopRecordVideoStep(new DJIBaseComponent.DJICompletionCallback() {
+        steps.add(new DJIStopRecordVideoStep(new DJICommonCallbacks.DJICompletionCallback() {
 
             @Override
             public void onResult(DJIError error) {
@@ -125,7 +129,7 @@ public class CustomMissionView extends MissionManagerBaseView {
         }));
 
         //Step 9: shoot a single photo
-        steps.add(new DJIShootPhotoStep(new DJIBaseComponent.DJICompletionCallback() {
+        steps.add(new DJIShootPhotoStep(new DJICommonCallbacks.DJICompletionCallback() {
 
             @Override
             public void onResult(DJIError error) {
@@ -136,7 +140,7 @@ public class CustomMissionView extends MissionManagerBaseView {
         //Step 10: start a hotpoint mission
         DJIHotPointMission hotpointMission = new DJIHotPointMission(mHomeLatitude, mHomeLongitude);
         hotpointMission.altitude = 40;
-        steps.add(new DJIHotpointStep(hotpointMission, 90f, new DJIBaseComponent.DJICompletionCallback() {
+        steps.add(new DJIHotpointStep(hotpointMission, 90f, new DJICommonCallbacks.DJICompletionCallback() {
 
             @Override
             public void onResult(DJIError error) {
@@ -145,7 +149,7 @@ public class CustomMissionView extends MissionManagerBaseView {
         }));
 
         //Step 11: go back home
-        steps.add(new DJIGoHomeStep(new DJIBaseComponent.DJICompletionCallback() {
+        steps.add(new DJIGoHomeStep(new DJICommonCallbacks.DJICompletionCallback() {
 
             @Override
             public void onResult(DJIError error) {

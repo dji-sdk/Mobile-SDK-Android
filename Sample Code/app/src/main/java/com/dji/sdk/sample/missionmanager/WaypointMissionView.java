@@ -8,15 +8,17 @@ import com.dji.sdk.sample.common.Utils;
 import java.util.LinkedList;
 import java.util.List;
 
-import dji.sdk.MissionManager.DJICustomMission;
-import dji.sdk.MissionManager.DJIFollowMeMission;
-import dji.sdk.MissionManager.DJIHotPointMission;
-import dji.sdk.MissionManager.DJIMission;
-import dji.sdk.MissionManager.DJIPanoramaMission;
-import dji.sdk.MissionManager.DJIWaypoint;
-import dji.sdk.MissionManager.DJIWaypointMission;
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
+import dji.sdk.missionmanager.DJICustomMission;
+import dji.sdk.missionmanager.DJIFollowMeMission;
+import dji.sdk.missionmanager.DJIHotPointMission;
+import dji.sdk.missionmanager.DJIMission;
+import dji.sdk.missionmanager.DJIPanoramaMission;
+import dji.sdk.missionmanager.DJIWaypoint;
+import dji.sdk.missionmanager.DJIWaypointMission;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
+import dji.sdk.missionmanager.DJIMission;
 
 /**
  * Class for waypoint mission.
@@ -75,12 +77,12 @@ public class WaypointMissionView extends MissionManagerBaseView {
 
             Utils.addLineToSB(pushSB, "Target waypoint index", ((DJIWaypointMission.DJIWaypointMissionStatus) progressStatus).getTargetWaypointIndex());
             Utils.addLineToSB(pushSB, "Is waypoint reached", ((DJIWaypointMission.DJIWaypointMissionStatus) progressStatus).isWaypointReached());
-            Utils.addLineToSB(pushSB, "Execute state", ((DJIWaypointMission.DJIWaypointMissionStatus) progressStatus).getExecState().name());
+            Utils.addLineToSB(pushSB, "Execute state", ((DJIWaypointMission.DJIWaypointMissionStatus) progressStatus).getExecutionState().name());
             DJIError err = progressStatus.getError();
             Utils.addLineToSB(pushSB, "Mission status", err == null ? "Normal" : err.getDescription());
 
             if (((DJIWaypointMission.DJIWaypointMissionStatus) progressStatus).getTargetWaypointIndex() == 2 && lastTargetWPIndex == 1) {
-                DJIWaypointMission.setAutoFlightSpeed(10, new DJIBaseComponent.DJICompletionCallback() {
+                DJIWaypointMission.setAutoFlightSpeed(10, new DJICommonCallbacks.DJICompletionCallback() {
 
                     @Override
                     public void onResult(DJIError error) {

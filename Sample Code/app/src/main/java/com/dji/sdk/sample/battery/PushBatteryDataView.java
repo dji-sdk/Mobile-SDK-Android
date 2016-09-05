@@ -6,7 +6,9 @@ import android.util.AttributeSet;
 import com.dji.sdk.sample.common.BasePushDataView;
 import com.dji.sdk.sample.common.DJISampleApplication;
 
-import dji.sdk.Battery.DJIBattery;
+import dji.common.battery.DJIBatteryState;
+import dji.sdk.battery.DJIBattery;
+
 
 /**
  * Class for getting the battery information.
@@ -29,7 +31,7 @@ public class PushBatteryDataView extends BasePushDataView {
             DJISampleApplication.getProductInstance().getBattery().setBatteryStateUpdateCallback(
                     new DJIBattery.DJIBatteryStateUpdateCallback() {
                         @Override
-                        public void onResult(DJIBattery.DJIBatteryState djiBatteryState) {
+                        public void onResult(DJIBatteryState djiBatteryState) {
                             mStringBuffer.delete(0, mStringBuffer.length());
 
                             mStringBuffer.append("BatteryEnergyRemainingPercent: ").

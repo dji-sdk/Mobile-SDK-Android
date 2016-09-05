@@ -17,11 +17,12 @@ import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 import java.io.File;
 import java.util.ArrayList;
 
-import dji.sdk.Camera.DJICameraSettingsDef;
-import dji.sdk.Camera.DJIMedia;
-import dji.sdk.Camera.DJIMediaManager;
+import dji.common.camera.DJICameraSettingsDef;
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
+import dji.sdk.camera.DJIMedia;
+import dji.sdk.camera.DJIMediaManager;
 
 /**
  * Class for featching the media.
@@ -47,7 +48,7 @@ public class FetchMediaView extends BaseThreeBtnView {
             if (DJIModuleVerificationUtil.isMediaManagerAvailable()) {
                 DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                         DJICameraSettingsDef.CameraMode.MediaDownload,
-                        new DJIBaseComponent.DJICompletionCallback() {
+                        new DJICommonCallbacks.DJICompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {
                                 if (null == djiError)
@@ -68,7 +69,7 @@ public class FetchMediaView extends BaseThreeBtnView {
         if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                     DJICameraSettingsDef.CameraMode.ShootPhoto,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
 

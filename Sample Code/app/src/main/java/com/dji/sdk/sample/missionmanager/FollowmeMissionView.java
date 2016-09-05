@@ -5,14 +5,15 @@ import android.util.AttributeSet;
 
 import com.dji.sdk.sample.common.Utils;
 
-import dji.sdk.MissionManager.DJICustomMission;
-import dji.sdk.MissionManager.DJIFollowMeMission;
-import dji.sdk.MissionManager.DJIHotPointMission;
-import dji.sdk.MissionManager.DJIMission;
-import dji.sdk.MissionManager.DJIPanoramaMission;
-import dji.sdk.MissionManager.DJIWaypointMission;
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
+import dji.sdk.missionmanager.DJICustomMission;
+import dji.sdk.missionmanager.DJIFollowMeMission;
+import dji.sdk.missionmanager.DJIHotPointMission;
+import dji.sdk.missionmanager.DJIMission;
+import dji.sdk.missionmanager.DJIPanoramaMission;
+import dji.sdk.missionmanager.DJIWaypointMission;
 
 /**
  * Class for follow me mission.
@@ -100,7 +101,7 @@ public class FollowmeMissionView extends MissionManagerBaseView {
                 tarPosLat = Utils.Radian(mHomeLatitude) + tgtPosX / radius;
                 tarPosLon = Utils.Radian(mHomeLongitude) + tgtPosY  / radius / Math.cos(Utils.Radian(mHomeLatitude));
                 DJIFollowMeMission.updateFollowMeCoordinate(
-                        Utils.Degree(tarPosLat), Utils.Degree(tarPosLon), new DJIBaseComponent.DJICompletionCallback() {
+                        Utils.Degree(tarPosLat), Utils.Degree(tarPosLon), new DJICommonCallbacks.DJICompletionCallback() {
 
                             @Override
                             public void onResult(DJIError error) {

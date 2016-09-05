@@ -11,11 +11,14 @@ import com.dji.sdk.sample.common.DJISampleApplication;
 import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
-import dji.sdk.FlightController.DJIFlightController;
-import dji.sdk.FlightController.DJIFlightControllerDataType;
-import dji.sdk.FlightController.DJIFlightControllerDelegate;
+import dji.common.error.DJIError;
+import dji.common.flightcontroller.DJIFlightControllerCurrentState;
+import dji.common.flightcontroller.DJIFlightControllerDataType;
+import dji.common.flightcontroller.DJIFlightOrientationMode;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
+import dji.sdk.flightcontroller.DJIFlightController;
+import dji.sdk.flightcontroller.DJIFlightControllerDelegate;
 
 /**
  * Class for Orientation mode.
@@ -59,7 +62,7 @@ public class OrientationModeView extends BaseThreeBtnView{
             mFlightController.setUpdateSystemStateCallback(
                     new DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback() {
                 @Override
-                public void onResult(DJIFlightControllerDataType.DJIFlightControllerCurrentState
+                public void onResult(DJIFlightControllerCurrentState
                                              djiFlightControllerCurrentState) {
                     orientationMode = djiFlightControllerCurrentState.getOrientaionMode().name();
                     mHandler.sendEmptyMessage(CHANGE_DESCRIPTION_TEXTVIEW);
@@ -94,8 +97,8 @@ public class OrientationModeView extends BaseThreeBtnView{
             mFlightController = DJISampleApplication.getAircraftInstance().getFlightController();
 
             mFlightController.setFlightOrientationMode(
-                    DJIFlightControllerDataType.DJIFlightOrientationMode.HomeLock,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    DJIFlightOrientationMode.HomeLock,
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             Utils.setResultToToast(
@@ -114,8 +117,8 @@ public class OrientationModeView extends BaseThreeBtnView{
             mFlightController = DJISampleApplication.getAircraftInstance().getFlightController();
 
             mFlightController.setFlightOrientationMode(
-                    DJIFlightControllerDataType.DJIFlightOrientationMode.CourseLock,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    DJIFlightOrientationMode.CourseLock,
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             Utils.setResultToToast(
@@ -134,8 +137,8 @@ public class OrientationModeView extends BaseThreeBtnView{
             mFlightController = DJISampleApplication.getAircraftInstance().getFlightController();
 
             mFlightController.setFlightOrientationMode(
-                    DJIFlightControllerDataType.DJIFlightOrientationMode.DefaultAircraftHeading,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    DJIFlightOrientationMode.DefaultAircraftHeading,
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             Utils.setResultToToast(

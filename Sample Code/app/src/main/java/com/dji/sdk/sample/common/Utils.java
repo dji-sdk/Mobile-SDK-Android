@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.utils.DJIDialog;
 
-import dji.sdk.base.DJIError;
+import dji.common.error.DJIError;
 
 /**
  * Created by dji on 15/12/18.

@@ -15,11 +15,12 @@ import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import java.io.File;
 
-import dji.sdk.Camera.DJICamera;
-import dji.sdk.Camera.DJICameraSettingsDef;
-import dji.sdk.Camera.DJIPlaybackManager;
+import dji.common.camera.DJICameraSettingsDef;
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
+import dji.sdk.camera.DJICamera;
+import dji.sdk.camera.DJIPlaybackManager;
 
 /**
  * Created by dji on 16/1/6.
@@ -49,7 +50,7 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
 
             mCamera.setCameraMode(
                     DJICameraSettingsDef.CameraMode.Playback,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
 

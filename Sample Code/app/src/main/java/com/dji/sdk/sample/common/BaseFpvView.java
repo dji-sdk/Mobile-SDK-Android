@@ -13,10 +13,11 @@ import android.widget.RelativeLayout;
 
 import com.dji.sdk.sample.R;
 
-import dji.sdk.AirLink.DJILBAirLink;
-import dji.sdk.Camera.DJICamera;
-import dji.sdk.Codec.DJICodecManager;
+import dji.common.product.Model;
+import dji.sdk.airlink.DJILBAirLink;
 import dji.sdk.base.DJIBaseProduct;
+import dji.sdk.camera.DJICamera;
+import dji.sdk.codec.DJICodecManager;
 
 /**
  * This class is designed for showing the fpv video feed from the camera or Lightbridge 2.
@@ -76,7 +77,7 @@ public class BaseFpvView extends RelativeLayout implements TextureView.SurfaceTe
         try {
             mProduct = DJISampleApplication.getProductInstance();
 
-            if (mProduct.getModel() != DJIBaseProduct.Model.UnknownAircraft) {
+            if (mProduct.getModel() != Model.UnknownAircraft) {
                 mProduct.getCamera().setDJICameraReceivedVideoDataCallback(mReceivedVideoDataCallback);
 
             } else {

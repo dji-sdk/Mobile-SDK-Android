@@ -4,6 +4,8 @@
     package="com.dji.sdk.sample" >
 
     <!-- SDK permission requirement -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -45,13 +47,15 @@
         -->
         <meta-data
             android:name="com.dji.sdk.API_KEY"
-            android:value="Please enter your App Key" />
+            android:value="Please Enter Your App Key Here" />
 
-        <service android:name="dji.sdk.SDKManager.DJIGlobalService" >
-        </service>
+        <service android:name="dji.sdk.sdkmanager.DJIGlobalService" />
+
+        <!-- Required for receiving GEO system pushing. -->
+        <service android:name="dji.sdk.sdkmanager.GeoSyncFileService"/>
 
         <activity
-            android:name="dji.sdk.SDKManager.DJIAoaControllerActivity"
+            android:name="dji.sdk.sdkmanager.DJIAoaControllerActivity"
             android:theme="@android:style/Theme.Translucent" >
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />

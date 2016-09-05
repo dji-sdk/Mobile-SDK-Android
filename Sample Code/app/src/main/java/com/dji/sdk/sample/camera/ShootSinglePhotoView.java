@@ -12,9 +12,10 @@ import com.dji.sdk.sample.common.BaseThreeBtnView;
 import com.dji.sdk.sample.common.DJISampleApplication;
 import com.dji.sdk.sample.utils.DJIDialog;
 
-import dji.sdk.Camera.DJICameraSettingsDef;
+import dji.common.camera.DJICameraSettingsDef;
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
 
 /**
  * Class for shooting single photo.
@@ -78,7 +79,7 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
 
             DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                     DJICameraSettingsDef.CameraMode.ShootPhoto,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
 
@@ -125,7 +126,7 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
         if (isModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().startShootPhoto(
                     DJICameraSettingsDef.CameraShootPhotoMode.Single,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             if (null == djiError)

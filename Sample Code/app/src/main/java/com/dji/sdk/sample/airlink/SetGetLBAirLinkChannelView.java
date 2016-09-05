@@ -12,9 +12,11 @@ import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import java.util.ArrayList;
 
-import dji.sdk.AirLink.DJILBAirLink;
+import dji.common.airlink.LBAirLinkChannelSelectionMode;
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
+import dji.sdk.airlink.DJILBAirLink;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
 
 /**
  * Class for setting and getting channel in Lightbridge.
@@ -31,8 +33,8 @@ public class SetGetLBAirLinkChannelView extends BaseSetGetView {
         if (DJIModuleVerificationUtil.isLBAirlinkAvailable()) {
             DJISampleApplication.getProductInstance().getAirLink().
                     getLBAirLink().setChannelSelectionMode(
-                    DJILBAirLink.LBAirLinkChannelSelectionMode.Manual,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    LBAirLinkChannelSelectionMode.Manual,
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
 
@@ -50,8 +52,8 @@ public class SetGetLBAirLinkChannelView extends BaseSetGetView {
         if (DJIModuleVerificationUtil.isLBAirlinkAvailable()) {
             DJISampleApplication.getProductInstance().getAirLink().
                     getLBAirLink().setChannelSelectionMode(
-                    DJILBAirLink.LBAirLinkChannelSelectionMode.Auto,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    LBAirLinkChannelSelectionMode.Auto,
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             Utils.showDialogBasedOnError(getContext(), djiError);
@@ -66,7 +68,7 @@ public class SetGetLBAirLinkChannelView extends BaseSetGetView {
         if (DJIModuleVerificationUtil.isLBAirlinkAvailable()) {
             DJISampleApplication.getProductInstance().getAirLink().getLBAirLink().setChannel(
                     mSpinnerSet.getSelectedItemPosition(),
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
 
@@ -80,7 +82,7 @@ public class SetGetLBAirLinkChannelView extends BaseSetGetView {
     protected void getMethod() {
         if (DJIModuleVerificationUtil.isLBAirlinkAvailable()) {
             DJISampleApplication.getProductInstance().getAirLink().getLBAirLink().getChannel(
-                    new DJIBaseComponent.DJICompletionCallbackWith<Integer>() {
+                    new DJICommonCallbacks.DJICompletionCallbackWith<Integer>() {
                         @Override
                         public void onSuccess(Integer integer) {
                             mGetTextString = integer.toString();

@@ -11,13 +11,15 @@ import com.dji.sdk.sample.common.BaseThreeBtnView;
 import com.dji.sdk.sample.common.DJISampleApplication;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
-import dji.sdk.FlightController.DJICompass;
-import dji.sdk.FlightController.DJIFlightController;
-import dji.sdk.FlightController.DJIFlightControllerDataType;
-import dji.sdk.FlightController.DJIFlightControllerDelegate;
-import dji.sdk.Products.DJIAircraft;
+import dji.common.error.DJIError;
+import dji.common.flightcontroller.DJIFlightControllerCurrentState;
+import dji.common.flightcontroller.DJIFlightControllerDataType;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
+import dji.sdk.flightcontroller.DJICompass;
+import dji.sdk.flightcontroller.DJIFlightController;
+import dji.sdk.flightcontroller.DJIFlightControllerDelegate;
+import dji.sdk.products.DJIAircraft;
 
 /**
  * Class of compass calibration.
@@ -64,7 +66,7 @@ public class CompassCalibrationView extends BaseThreeBtnView {
             mFlightController.setUpdateSystemStateCallback(
                     new DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback() {
                         @Override
-                        public void onResult(DJIFlightControllerDataType.DJIFlightControllerCurrentState
+                        public void onResult(DJIFlightControllerCurrentState
                                                      djiFlightControllerCurrentState) {
                             if (null != mCompass) {
                                 mStringBuffer.delete(0, mStringBuffer.length());
@@ -102,7 +104,7 @@ public class CompassCalibrationView extends BaseThreeBtnView {
             mCompass = ((DJIAircraft) DJISampleApplication.getProductInstance())
                     .getFlightController().getCompass();
 
-            mCompass.stopCompassCalibration(new DJIBaseComponent.DJICompletionCallback() {
+            mCompass.stopCompassCalibration(new DJICommonCallbacks.DJICompletionCallback() {
                 @Override
                 public void onResult(DJIError djiError) {
 
@@ -117,7 +119,7 @@ public class CompassCalibrationView extends BaseThreeBtnView {
             mCompass = ((DJIAircraft) DJISampleApplication.getProductInstance())
                     .getFlightController().getCompass();
 
-            mCompass.startCompassCalibration(new DJIBaseComponent.DJICompletionCallback() {
+            mCompass.startCompassCalibration(new DJICommonCallbacks.DJICompletionCallback() {
                 @Override
                 public void onResult(DJIError djiError) {
 

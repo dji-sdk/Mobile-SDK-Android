@@ -14,9 +14,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
-import dji.sdk.Camera.DJICameraSettingsDef;
+import dji.common.camera.DJICameraSettingsDef;
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
 
 /**
  * Created by dji on 16/1/6.
@@ -43,7 +44,7 @@ public class RecordVideoView extends BaseThreeBtnView {
         if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                     DJICameraSettingsDef.CameraMode.RecordVideo,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             Utils.setResultToToast(getContext(), "SetCameraMode to recordVideo");
@@ -59,7 +60,7 @@ public class RecordVideoView extends BaseThreeBtnView {
         if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().setCameraMode(
                     DJICameraSettingsDef.CameraMode.ShootPhoto,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             Utils.setResultToToast(getContext(), "SetCameraMode to shootPhoto");
@@ -95,7 +96,7 @@ public class RecordVideoView extends BaseThreeBtnView {
         Utils.setResultToText(context, mTexInfo, "00:00:00");
         if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().startRecordVideo(
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             //success so, start recording
@@ -127,7 +128,7 @@ public class RecordVideoView extends BaseThreeBtnView {
 
         if (DJIModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance().getCamera().stopRecordVideo(
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             Utils.setResultToToast(getContext(), "StopRecord");

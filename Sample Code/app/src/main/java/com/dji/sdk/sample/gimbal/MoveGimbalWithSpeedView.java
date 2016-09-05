@@ -11,9 +11,11 @@ import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import dji.sdk.Gimbal.DJIGimbal;
+import dji.common.error.DJIError;
+import dji.common.gimbal.DJIGimbalRotateDirection;
+import dji.common.gimbal.DJIGimbalSpeedRotation;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
 
 /**
  * Class for moving gimbal with speed.
@@ -22,7 +24,7 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
     private Timer mTimer;
     private GimbalRotateTimerTask mGimbalRotationTimerTask;
 
-    private DJIGimbal.DJIGimbalSpeedRotation mPitchSpeedRotation;
+    private DJIGimbalSpeedRotation mPitchSpeedRotation;
 
     public MoveGimbalWithSpeedView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -52,8 +54,8 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
     protected void getMiddleBtnMethod() {
         if (mTimer == null) {
             mTimer = new Timer();
-            mPitchSpeedRotation = new DJIGimbal.DJIGimbalSpeedRotation(10,
-                    DJIGimbal.DJIGimbalRotateDirection.Clockwise);
+            mPitchSpeedRotation = new DJIGimbalSpeedRotation(10,
+                    DJIGimbalRotateDirection.Clockwise);
             mGimbalRotationTimerTask = new GimbalRotateTimerTask(mPitchSpeedRotation,null,null);
             mTimer.schedule(mGimbalRotationTimerTask, 0, 100);
         }
@@ -72,7 +74,7 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
         if (DJIModuleVerificationUtil.isGimbalModuleAvailable()) {
             DJISampleApplication.getProductInstance().getGimbal().
                     rotateGimbalBySpeed(null, null, null,
-                            new DJIBaseComponent.DJICompletionCallback() {
+                            new DJICommonCallbacks.DJICompletionCallback() {
 
                                 @Override
                                 public void onResult(DJIError error) {
@@ -86,19 +88,19 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
     protected void getRightBtnMethod() {
         if (mTimer == null) {
             mTimer = new Timer();
-            mPitchSpeedRotation = new DJIGimbal.DJIGimbalSpeedRotation(10,
-                    DJIGimbal.DJIGimbalRotateDirection.CounterClockwise);
+            mPitchSpeedRotation = new DJIGimbalSpeedRotation(10,
+                    DJIGimbalRotateDirection.CounterClockwise);
             mGimbalRotationTimerTask = new GimbalRotateTimerTask(mPitchSpeedRotation,null,null);
             mTimer.schedule(mGimbalRotationTimerTask, 0, 100);
         }
     }
 
     class GimbalRotateTimerTask extends TimerTask {
-        DJIGimbal.DJIGimbalSpeedRotation mPitch;
-        DJIGimbal.DJIGimbalSpeedRotation mRoll;
-        DJIGimbal.DJIGimbalSpeedRotation mYaw;
+        DJIGimbalSpeedRotation mPitch;
+        DJIGimbalSpeedRotation mRoll;
+        DJIGimbalSpeedRotation mYaw;
 
-        GimbalRotateTimerTask(DJIGimbal.DJIGimbalSpeedRotation pitch, DJIGimbal.DJIGimbalSpeedRotation roll, DJIGimbal.DJIGimbalSpeedRotation yaw) {
+        GimbalRotateTimerTask(DJIGimbalSpeedRotation pitch, DJIGimbalSpeedRotation roll, DJIGimbalSpeedRotation yaw) {
             super();
             this.mPitch = pitch;
             this.mRoll = roll;
@@ -109,7 +111,7 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
             if (DJIModuleVerificationUtil.isGimbalModuleAvailable()) {
                 DJISampleApplication.getProductInstance().getGimbal().
                         rotateGimbalBySpeed(mPitch, mRoll, mYaw,
-                                new DJIBaseComponent.DJICompletionCallback() {
+                                new DJICommonCallbacks.DJICompletionCallback() {
 
                     @Override
                     public void onResult(DJIError error) {

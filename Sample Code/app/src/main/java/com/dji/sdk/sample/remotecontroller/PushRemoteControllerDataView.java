@@ -7,9 +7,10 @@ import com.dji.sdk.sample.common.BasePushDataView;
 import com.dji.sdk.sample.common.DJISampleApplication;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
-import dji.sdk.Products.DJIAircraft;
-import dji.sdk.RemoteController.DJIRemoteController;
-
+import dji.common.remotecontroller.DJIRCHardwareState;
+import dji.sdk.products.DJIAircraft;
+import dji.sdk.remotecontroller.DJIRemoteController;
+import dji.sdk.sdkmanager.GeoSyncFileService;
 /**
  * Class for getting remote controller information.
  */
@@ -33,7 +34,7 @@ public class PushRemoteControllerDataView extends BasePushDataView{
                     new DJIRemoteController.RCHardwareStateUpdateCallback() {
                 @Override
                 public void onHardwareStateUpdate(DJIRemoteController djiRemoteController,
-                          DJIRemoteController.DJIRCHardwareState djircHardwareState) {
+                          DJIRCHardwareState djircHardwareState) {
                     mStringBuffer.delete(0, mStringBuffer.length());
 
                     mStringBuffer.append("FlightModeSwitch: ").

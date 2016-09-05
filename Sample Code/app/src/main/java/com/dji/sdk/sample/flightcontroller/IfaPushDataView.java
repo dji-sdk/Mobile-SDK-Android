@@ -14,10 +14,11 @@ import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import java.util.List;
 
-import dji.sdk.FlightController.DJIFlightController;
-import dji.sdk.FlightController.DJIIntelligentFlightAssistant;
-import dji.sdk.Products.DJIAircraft;
-
+import dji.common.flightcontroller.DJIVisionDetectionSector;
+import dji.common.flightcontroller.DJIVisionDetectionState;
+import dji.sdk.flightcontroller.DJIFlightController;
+import dji.sdk.flightcontroller.DJIIntelligentFlightAssistant;
+import dji.sdk.products.DJIAircraft;
 
 /**
  * Class that retrieves the push data for Intelligent Flight Assistant
@@ -72,14 +73,14 @@ public class IfaPushDataView extends BaseThreeBtnView {
                 intelligentFlightAssistant.setVisionDetectionStateUpdatedCallback(
                     new DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback() {
                         @Override
-                        public void onStateUpdated(DJIIntelligentFlightAssistant.DJIVisionDetectionState djiVisionDetectionState) {
+                        public void onStateUpdated(DJIVisionDetectionState djiVisionDetectionState) {
                             if (null != djiVisionDetectionState) {
                                 mStringBuffer.delete(0, mStringBuffer.length());
 
-                                List<DJIIntelligentFlightAssistant.DJIVisionDetectionSector> visionDetectionSectorList =
+                                List<DJIVisionDetectionSector> visionDetectionSectorList =
                                     djiVisionDetectionState.getDetectionSectors();
 
-                                for (DJIIntelligentFlightAssistant.DJIVisionDetectionSector visionDetectionSector
+                                for (DJIVisionDetectionSector visionDetectionSector
                                         : visionDetectionSectorList) {
 
                                     visionDetectionSector.getObstacleDistanceInMeters();

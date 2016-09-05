@@ -24,22 +24,23 @@ import com.dji.sdk.sample.missionmanager.FollowmeMissionView.UpdateFollowmeSimLo
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-import dji.sdk.Camera.DJIMedia;
-import dji.sdk.FlightController.DJIFlightController;
-import dji.sdk.FlightController.DJIFlightControllerDataType;
-import dji.sdk.FlightController.DJIFlightControllerDataType.DJIFlightControllerFlightMode;
-import dji.sdk.FlightController.DJIFlightControllerDelegate;
-import dji.sdk.MissionManager.DJIFollowMeMission;
-import dji.sdk.MissionManager.DJIHotPointMission;
-import dji.sdk.MissionManager.DJIMission;
-import dji.sdk.MissionManager.DJIMissionManager;
-import dji.sdk.MissionManager.DJIPanoramaMission;
-import dji.sdk.MissionManager.DJIWaypointMission;
-import dji.sdk.Products.DJIAircraft;
+import dji.common.error.DJIError;
+import dji.common.flightcontroller.DJIFlightControllerCurrentState;
+import dji.common.flightcontroller.DJIFlightControllerFlightMode;
+import dji.common.flightcontroller.DJILocationCoordinate2D;
+import dji.common.util.DJICommonCallbacks;
+import dji.sdk.camera.DJIMedia;
+import dji.sdk.flightcontroller.DJIFlightController;
+import dji.sdk.flightcontroller.DJIFlightControllerDelegate;
+import dji.sdk.missionmanager.DJIFollowMeMission;
+import dji.sdk.missionmanager.DJIHotPointMission;
+import dji.sdk.missionmanager.DJIMission;
+import dji.sdk.missionmanager.DJIMissionManager;
+import dji.sdk.missionmanager.DJIPanoramaMission;
+import dji.sdk.missionmanager.DJIWaypointMission;
+import dji.sdk.products.DJIAircraft;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIBaseComponent.DJICompletionCallback;
 import dji.sdk.base.DJIBaseProduct;
-import dji.sdk.base.DJIError;
 
 /**
  * Class for basic manager view in mission manager
@@ -146,7 +147,7 @@ public abstract class MissionManagerBaseView extends LinearLayout implements Vie
                 mFlightController.setUpdateSystemStateCallback(new DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback() {
 
                     @Override
-                    public void onResult(DJIFlightControllerDataType.DJIFlightControllerCurrentState state) {
+                    public void onResult(DJIFlightControllerCurrentState state) {
 
                         mHomeLatitude = state.getHomeLocation().getLatitude();
                         mHomeLongitude = state.getHomeLocation().getLongitude();
@@ -206,10 +207,10 @@ public abstract class MissionManagerBaseView extends LinearLayout implements Vie
                         mFlightController != null
                 ) {
             final CountDownLatch cdl = new CountDownLatch(1);
-            mFlightController.getHomeLocation(new DJIBaseComponent.DJICompletionCallbackWith<DJIFlightControllerDataType.DJILocationCoordinate2D>() {
+            mFlightController.getHomeLocation(new DJICommonCallbacks.DJICompletionCallbackWith<DJILocationCoordinate2D>() {
 
                 @Override
-                public void onSuccess(DJIFlightControllerDataType.DJILocationCoordinate2D t) {
+                public void onSuccess(DJILocationCoordinate2D t) {
                     mHomeLatitude = t.getLatitude();
                     mHomeLongitude = t.getLongitude();
                     Utils.setResultToText(mContext, mFCPushInfoTV, "home point latitude: " + mHomeLatitude +
@@ -246,7 +247,7 @@ public abstract class MissionManagerBaseView extends LinearLayout implements Vie
                         setProgressBar((int)(progress * 100f));
                     }
 
-                }, new DJICompletionCallback() {
+                }, new DJICommonCallbacks.DJICompletionCallback() {
 
 
                     @Override
@@ -261,7 +262,7 @@ public abstract class MissionManagerBaseView extends LinearLayout implements Vie
             break;
             case R.id.btn_start:
                 if (mDJIMission != null) {
-                    mMissionManager.setMissionExecutionFinishedCallback(new DJICompletionCallback() {
+                    mMissionManager.setMissionExecutionFinishedCallback(new DJICommonCallbacks.DJICompletionCallback() {
 
                         @Override
                         public void onResult(DJIError error) {
@@ -272,7 +273,7 @@ public abstract class MissionManagerBaseView extends LinearLayout implements Vie
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
                                 }
-                                ((DJIPanoramaMission) mDJIMission).getPanoramaMediaFile(new DJIBaseComponent.DJICompletionCallbackWith<DJIMedia>() {
+                                ((DJIPanoramaMission) mDJIMission).getPanoramaMediaFile(new DJICommonCallbacks.DJICompletionCallbackWith<DJIMedia>() {
                                     @Override
                                     public void onSuccess(DJIMedia djiMedia) {
                                         Utils.setResultToToast(mContext, "Index: " + djiMedia.getId());
@@ -288,7 +289,7 @@ public abstract class MissionManagerBaseView extends LinearLayout implements Vie
                     });
                 }
                 //For the panorama mission, there will be no callback in some cases, we will fix it in next version.
-                mMissionManager.startMissionExecution(new DJICompletionCallback() {
+                mMissionManager.startMissionExecution(new DJICommonCallbacks.DJICompletionCallback() {
 
                     @Override
                     public void onResult(DJIError mError) {
@@ -305,7 +306,7 @@ public abstract class MissionManagerBaseView extends LinearLayout implements Vie
                 });
             break;
             case R.id.btn_stop:
-                mMissionManager.stopMissionExecution(new DJICompletionCallback() {
+                mMissionManager.stopMissionExecution(new DJICommonCallbacks.DJICompletionCallback() {
 
                     @Override
                     public void onResult(DJIError mError) {
@@ -324,7 +325,7 @@ public abstract class MissionManagerBaseView extends LinearLayout implements Vie
                 });
             break;
             case R.id.btn_pause:
-                mMissionManager.pauseMissionExecution(new DJICompletionCallback() {
+                mMissionManager.pauseMissionExecution(new DJICommonCallbacks.DJICompletionCallback() {
 
                     @Override
                     public void onResult(DJIError mError) {
@@ -340,7 +341,7 @@ public abstract class MissionManagerBaseView extends LinearLayout implements Vie
                 });
             break;
             case R.id.btn_resume:
-                mMissionManager.resumeMissionExecution(new DJICompletionCallback() {
+                mMissionManager.resumeMissionExecution(new DJICommonCallbacks.DJICompletionCallback() {
 
                     @Override
                     public void onResult(DJIError mError) {
@@ -363,7 +364,7 @@ public abstract class MissionManagerBaseView extends LinearLayout implements Vie
                     public void onProgress(DJIMission.DJIProgressType type, float progress) {
                         setProgressBar((int)(progress * 100f));
                     }
-                }, new DJIBaseComponent.DJICompletionCallbackWith<DJIMission>() {
+                }, new DJICommonCallbacks.DJICompletionCallbackWith<DJIMission>() {
 
                     @Override
                     public void onSuccess(DJIMission mission) {

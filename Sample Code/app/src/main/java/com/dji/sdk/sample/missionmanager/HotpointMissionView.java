@@ -5,12 +5,13 @@ import android.util.AttributeSet;
 
 import com.dji.sdk.sample.common.Utils;
 
-import dji.sdk.MissionManager.DJICustomMission;
-import dji.sdk.MissionManager.DJIFollowMeMission;
-import dji.sdk.MissionManager.DJIHotPointMission;
-import dji.sdk.MissionManager.DJIMission;
-import dji.sdk.MissionManager.DJIPanoramaMission;
-import dji.sdk.base.DJIError;
+import dji.common.error.DJIError;
+import dji.sdk.missionmanager.DJICustomMission;
+import dji.sdk.missionmanager.DJIFollowMeMission;
+import dji.sdk.missionmanager.DJIHotPointMission;
+import dji.sdk.missionmanager.DJIMission;
+import dji.sdk.missionmanager.DJIPanoramaMission;
+import dji.sdk.missionmanager.DJIMission;
 
 /**
  * Class for hot point mission.

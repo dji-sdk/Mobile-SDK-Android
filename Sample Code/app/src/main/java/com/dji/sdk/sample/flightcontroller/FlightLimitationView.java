@@ -9,8 +9,9 @@ import com.dji.sdk.sample.common.DJISampleApplication;
 import com.dji.sdk.sample.common.Utils;
 import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
 
 /**
  * Class for flight limitation.
@@ -47,7 +48,7 @@ public class FlightLimitationView extends BaseThreeBtnView {
         if (DJIModuleVerificationUtil.isFlightLimitationAvailable()) {
             DJISampleApplication.getAircraftInstance().getFlightController().
                 getFlightLimitation().setMaxFlightHeight(50,
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                 @Override
                 public void onResult(DJIError djiError) {
                     Utils.setResultToToast(
@@ -65,7 +66,7 @@ public class FlightLimitationView extends BaseThreeBtnView {
             DJISampleApplication.getAircraftInstance().getFlightController()
                 .getFlightLimitation().
                     setMaxFlightRadiusLimitationEnabled(mRadiusLimitaionToggleFlag,
-                         new DJIBaseComponent.DJICompletionCallback() {
+                         new DJICommonCallbacks.DJICompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {
                                 Utils.showDialogBasedOnError(getContext(), djiError);
@@ -81,7 +82,7 @@ public class FlightLimitationView extends BaseThreeBtnView {
         if (DJIModuleVerificationUtil.isFlightLimitationAvailable()) {
             DJISampleApplication.getAircraftInstance().getFlightController().
                     getFlightLimitation().setMaxFlightRadius(40,
-                        new DJIBaseComponent.DJICompletionCallback() {
+                        new DJICommonCallbacks.DJICompletionCallback() {
                 @Override
                 public void onResult(DJIError djiError) {
                     Utils.setResultToToast(

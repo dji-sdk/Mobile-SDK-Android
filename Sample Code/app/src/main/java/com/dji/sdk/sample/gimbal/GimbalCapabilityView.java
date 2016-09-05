@@ -10,18 +10,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-
 import com.dji.sdk.sample.R;
 
-import java.util.Objects;
-
-import dji.sdk.Gimbal.DJIGimbal;
-import dji.sdk.SDKManager.DJISDKManager;
-import dji.sdk.base.DJIBaseComponent;
+import dji.common.error.DJIError;
+import dji.common.gimbal.DJIGimbalAngleRotation;
+import dji.common.gimbal.DJIGimbalCapabilityKey;
+import dji.common.gimbal.DJIGimbalRotateAngleMode;
+import dji.common.gimbal.DJIGimbalRotateDirection;
+import dji.common.gimbal.DJIGimbalWorkMode;
+import dji.common.util.DJICommonCallbacks;
+import dji.common.util.DJIParamCapability;
 import dji.sdk.base.DJIBaseProduct;
-import dji.sdk.base.DJIError;
-import dji.sdk.util.DJIParamCapability;
-import dji.sdk.util.DJIParamMinMaxCapability;
+import dji.sdk.gimbal.DJIGimbal;
+import dji.sdk.sdkmanager.DJISDKManager;
+import dji.common.util.DJIParamMinMaxCapability;
 
 public class GimbalCapabilityView extends LinearLayout implements View.OnClickListener {
 
@@ -37,9 +39,9 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
     private Button mRollMaxBtn;
     private Button mResetBtn;
 
-    private DJIGimbal.DJIGimbalAngleRotation mPitchRotation;
-    private DJIGimbal.DJIGimbalAngleRotation mYawRotation;
-    private DJIGimbal.DJIGimbalAngleRotation mRollRotation;
+    private DJIGimbalAngleRotation mPitchRotation;
+    private DJIGimbalAngleRotation mYawRotation;
+    private DJIGimbalAngleRotation mRollRotation;
 
     protected Context mContext;
 
@@ -52,7 +54,7 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         setupRotationStructs();
         enablePitchExtensionIfPossible();
 
-        getGimbalInstance().setGimbalWorkMode(DJIGimbal.DJIGimbalWorkMode.YawFollowMode, new DJIBaseComponent.DJICompletionCallback() {
+        getGimbalInstance().setGimbalWorkMode(DJIGimbalWorkMode.YawFollowMode, new DJICommonCallbacks.DJICompletionCallback() {
             @Override
             public void onResult(DJIError error) {
                 if (error == null) {
@@ -81,14 +83,14 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
     /*
      * Check if The Gimbal Capability is supported
      */
-    private boolean isFeatureSupported(DJIGimbal.DJIGimbalCapabilityKey key) {
+    private boolean isFeatureSupported(DJIGimbalCapabilityKey key) {
 
         DJIGimbal gimbal = getGimbalInstance();
         if (gimbal == null){
             return false;
         }
 
-       DJIParamCapability capability = gimbal.gimbalCapability.get(key);
+       DJIParamCapability capability = gimbal.gimbalCapability().get(key);
        if(capability != null){
            return capability.isSuppported();
        }
@@ -96,19 +98,19 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
     }
 
     private void setupButtonsState() {
-        mPitchMinBtn.setEnabled(isFeatureSupported(DJIGimbal.DJIGimbalCapabilityKey.AdjustPitch));
-        mPitchMaxBtn.setEnabled(isFeatureSupported(DJIGimbal.DJIGimbalCapabilityKey.AdjustPitch));
-        mYawMinBtn.setEnabled(isFeatureSupported(DJIGimbal.DJIGimbalCapabilityKey.AdjustYaw));
-        mYawMaxBtn.setEnabled(isFeatureSupported(DJIGimbal.DJIGimbalCapabilityKey.AdjustYaw));
-        mRollMinBtn.setEnabled(isFeatureSupported(DJIGimbal.DJIGimbalCapabilityKey.AdjustRoll));
-        mRollMaxBtn.setEnabled(isFeatureSupported(DJIGimbal.DJIGimbalCapabilityKey.AdjustRoll));
+        mPitchMinBtn.setEnabled(isFeatureSupported(DJIGimbalCapabilityKey.AdjustPitch));
+        mPitchMaxBtn.setEnabled(isFeatureSupported(DJIGimbalCapabilityKey.AdjustPitch));
+        mYawMinBtn.setEnabled(isFeatureSupported(DJIGimbalCapabilityKey.AdjustYaw));
+        mYawMaxBtn.setEnabled(isFeatureSupported(DJIGimbalCapabilityKey.AdjustYaw));
+        mRollMinBtn.setEnabled(isFeatureSupported(DJIGimbalCapabilityKey.AdjustRoll));
+        mRollMaxBtn.setEnabled(isFeatureSupported(DJIGimbalCapabilityKey.AdjustRoll));
     }
 
     private void setupRotationStructs() {
 
-        mPitchRotation.enable = isFeatureSupported(DJIGimbal.DJIGimbalCapabilityKey.AdjustPitch);
-        mYawRotation.enable = isFeatureSupported(DJIGimbal.DJIGimbalCapabilityKey.AdjustYaw);
-        mRollRotation.enable = isFeatureSupported(DJIGimbal.DJIGimbalCapabilityKey.AdjustRoll);
+        mPitchRotation.enable = isFeatureSupported(DJIGimbalCapabilityKey.AdjustPitch);
+        mYawRotation.enable = isFeatureSupported(DJIGimbalCapabilityKey.AdjustYaw);
+        mRollRotation.enable = isFeatureSupported(DJIGimbalCapabilityKey.AdjustRoll);
 
     }
 
@@ -118,11 +120,11 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         if (gimbal == null){
             return;
         }
-        boolean ifPossible = isFeatureSupported(DJIGimbal.DJIGimbalCapabilityKey.PitchRangeExtension);
+        boolean ifPossible = isFeatureSupported(DJIGimbalCapabilityKey.PitchRangeExtension);
         if (ifPossible)
         {
            gimbal.setPitchRangeExtensionEnabled(true,
-                   new DJIBaseComponent.DJICompletionCallback() {
+                   new DJICommonCallbacks.DJICompletionCallback() {
                        @Override
                        public void onResult(DJIError djiError) {
                            if (djiError == null) {
@@ -145,8 +147,8 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
             return;
         }
 
-        gimbal.rotateGimbalByAngle(DJIGimbal.DJIGimbalRotateAngleMode.AbsoluteAngle, mPitchRotation, mRollRotation, mYawRotation,
-                new DJIBaseComponent.DJICompletionCallback() {
+        gimbal.rotateGimbalByAngle(DJIGimbalRotateAngleMode.AbsoluteAngle, mPitchRotation, mRollRotation, mYawRotation,
+                new DJICommonCallbacks.DJICompletionCallback() {
                     @Override
                     public void onResult(DJIError djiError) {
                         if (djiError == null) {
@@ -161,11 +163,11 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
 
     private Object getCorrespondingKeyWithButton(Button button){
         if (button == mPitchMaxBtn || button == mPitchMinBtn){
-            return DJIGimbal.DJIGimbalCapabilityKey.AdjustPitch;
+            return DJIGimbalCapabilityKey.AdjustPitch;
         }else if (button == mYawMaxBtn || button == mYawMinBtn){
-            return DJIGimbal.DJIGimbalCapabilityKey.AdjustYaw;
+            return DJIGimbalCapabilityKey.AdjustYaw;
         }else if (button == mRollMaxBtn || button == mRollMinBtn){
-            return DJIGimbal.DJIGimbalCapabilityKey.AdjustRoll;
+            return DJIGimbalCapabilityKey.AdjustRoll;
         }
         return null;
     }
@@ -194,20 +196,20 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         mRollMaxBtn.setOnClickListener(this);
         mResetBtn.setOnClickListener(this);
 
-        mPitchRotation = new DJIGimbal.DJIGimbalAngleRotation(false, 0, DJIGimbal.DJIGimbalRotateDirection.Clockwise);
-        mYawRotation = new DJIGimbal.DJIGimbalAngleRotation(false, 0, DJIGimbal.DJIGimbalRotateDirection.Clockwise);
-        mRollRotation = new DJIGimbal.DJIGimbalAngleRotation(false, 0, DJIGimbal.DJIGimbalRotateDirection.Clockwise);
+        mPitchRotation = new DJIGimbalAngleRotation(false, 0, DJIGimbalRotateDirection.Clockwise);
+        mYawRotation = new DJIGimbalAngleRotation(false, 0, DJIGimbalRotateDirection.Clockwise);
+        mRollRotation = new DJIGimbalAngleRotation(false, 0, DJIGimbalRotateDirection.Clockwise);
 
     }
 
-    private void rotateGimbalRoll(boolean rollEnable, float angle, DJIGimbal.DJIGimbalRotateDirection direction) {
+    private void rotateGimbalRoll(boolean rollEnable, float angle, DJIGimbalRotateDirection direction) {
 
-        DJIGimbal.DJIGimbalAngleRotation pitch = new DJIGimbal.DJIGimbalAngleRotation(rollEnable, angle,
-                DJIGimbal.DJIGimbalRotateDirection.Clockwise);
-        DJIGimbal.DJIGimbalAngleRotation roll = new DJIGimbal.DJIGimbalAngleRotation(false, 0,
-                DJIGimbal.DJIGimbalRotateDirection.Clockwise);
-        DJIGimbal.DJIGimbalAngleRotation yaw = new DJIGimbal.DJIGimbalAngleRotation(false, 0, DJIGimbal.DJIGimbalRotateDirection.Clockwise);
-        getGimbalInstance().rotateGimbalByAngle(DJIGimbal.DJIGimbalRotateAngleMode.AbsoluteAngle, pitch, roll, yaw, new DJIBaseComponent.DJICompletionCallback() {
+        DJIGimbalAngleRotation pitch = new DJIGimbalAngleRotation(rollEnable, angle,
+                DJIGimbalRotateDirection.Clockwise);
+        DJIGimbalAngleRotation roll = new DJIGimbalAngleRotation(false, 0,
+                DJIGimbalRotateDirection.Clockwise);
+        DJIGimbalAngleRotation yaw = new DJIGimbalAngleRotation(false, 0, DJIGimbalRotateDirection.Clockwise);
+        getGimbalInstance().rotateGimbalByAngle(DJIGimbalRotateAngleMode.AbsoluteAngle, pitch, roll, yaw, new DJICommonCallbacks.DJICompletionCallback() {
             @Override
             public void onResult(DJIError error) {
                 if (error == null) {
@@ -227,16 +229,16 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         }
 
         Object key = getCorrespondingKeyWithButton(button);
-        Number minValue = ((DJIParamMinMaxCapability)(gimbal.gimbalCapability.get(key))).getMin();
+        Number minValue = ((DJIParamMinMaxCapability)(gimbal.gimbalCapability().get(key))).getMin();
 
-        if (key == DJIGimbal.DJIGimbalCapabilityKey.AdjustPitch){
-            mPitchRotation.direction = DJIGimbal.DJIGimbalRotateDirection.Clockwise;
+        if (key == DJIGimbalCapabilityKey.AdjustPitch){
+            mPitchRotation.direction = DJIGimbalRotateDirection.Clockwise;
             mPitchRotation.angle = minValue.floatValue();
-        }else if(key == DJIGimbal.DJIGimbalCapabilityKey.AdjustYaw){
-            mYawRotation.direction = DJIGimbal.DJIGimbalRotateDirection.Clockwise;
+        }else if(key == DJIGimbalCapabilityKey.AdjustYaw){
+            mYawRotation.direction = DJIGimbalRotateDirection.Clockwise;
             mYawRotation.angle = minValue.floatValue();
-        }else if(key == DJIGimbal.DJIGimbalCapabilityKey.AdjustRoll){
-            mRollRotation.direction = DJIGimbal.DJIGimbalRotateDirection.Clockwise;
+        }else if(key == DJIGimbalCapabilityKey.AdjustRoll){
+            mRollRotation.direction = DJIGimbalRotateDirection.Clockwise;
             mRollRotation.angle = minValue.floatValue();
         }
 
@@ -251,16 +253,16 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         }
 
         Object key = getCorrespondingKeyWithButton(button);
-        Number maxValue = ((DJIParamMinMaxCapability)(gimbal.gimbalCapability.get(key))).getMax();
+        Number maxValue = ((DJIParamMinMaxCapability)(gimbal.gimbalCapability().get(key))).getMax();
 
-        if (key == DJIGimbal.DJIGimbalCapabilityKey.AdjustPitch){
-            mPitchRotation.direction = DJIGimbal.DJIGimbalRotateDirection.Clockwise;
+        if (key == DJIGimbalCapabilityKey.AdjustPitch){
+            mPitchRotation.direction = DJIGimbalRotateDirection.Clockwise;
             mPitchRotation.angle = maxValue.floatValue();
-        }else if(key == DJIGimbal.DJIGimbalCapabilityKey.AdjustYaw){
-            mYawRotation.direction = DJIGimbal.DJIGimbalRotateDirection.Clockwise;
+        }else if(key == DJIGimbalCapabilityKey.AdjustYaw){
+            mYawRotation.direction = DJIGimbalRotateDirection.Clockwise;
             mYawRotation.angle = maxValue.floatValue();
-        }else if(key == DJIGimbal.DJIGimbalCapabilityKey.AdjustRoll){
-            mRollRotation.direction = DJIGimbal.DJIGimbalRotateDirection.Clockwise;
+        }else if(key == DJIGimbalCapabilityKey.AdjustRoll){
+            mRollRotation.direction = DJIGimbalRotateDirection.Clockwise;
             mRollRotation.angle = maxValue.floatValue();
         }
 

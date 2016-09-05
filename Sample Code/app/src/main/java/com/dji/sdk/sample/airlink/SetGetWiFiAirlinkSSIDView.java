@@ -12,8 +12,9 @@ import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import java.util.ArrayList;
 
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
 
 /**
  * Class for setting and getting SSID in WiFi airlink.
@@ -41,7 +42,7 @@ public class SetGetWiFiAirlinkSSIDView extends BaseSetGetView {
         if (DJIModuleVerificationUtil.isWiFiAirlinkAvailable()) {
             DJISampleApplication.getProductInstance().getAirLink().getWiFiLink().setWiFiSSID(
                     mSSIDName.get(mSpinnerSet.getSelectedItemPosition()),
-                    new DJIBaseComponent.DJICompletionCallback() {
+                    new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
                             Utils.showDialogBasedOnError(getContext(), djiError);
@@ -55,7 +56,7 @@ public class SetGetWiFiAirlinkSSIDView extends BaseSetGetView {
     protected void getMethod() {
         if (DJIModuleVerificationUtil.isWiFiAirlinkAvailable()) {
             DJISampleApplication.getProductInstance().getAirLink().getWiFiLink().getWiFiSSID(
-                    new DJIBaseComponent.DJICompletionCallbackWith<String>() {
+                    new DJICommonCallbacks.DJICompletionCallbackWith<String>() {
                         @Override
                         public void onSuccess(String s) {
                             mGetTextString = s;

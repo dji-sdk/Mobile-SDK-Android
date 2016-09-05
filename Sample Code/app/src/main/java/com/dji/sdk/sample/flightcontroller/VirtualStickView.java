@@ -14,6 +14,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import dji.common.flightcontroller.DJIFlightControllerDataType;
+import dji.common.flightcontroller.DJISimulatorInitializationData;
+import dji.common.flightcontroller.DJISimulatorStateData;
+import dji.common.flightcontroller.DJIVirtualStickFlightControlData;
+import dji.common.flightcontroller.DJIVirtualStickFlightCoordinateSystem;
+import dji.common.flightcontroller.DJIVirtualStickRollPitchControlMode;
+import dji.common.flightcontroller.DJIVirtualStickVerticalControlMode;
+import dji.common.flightcontroller.DJIVirtualStickYawControlMode;
+import dji.common.util.DJICommonCallbacks;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.common.DJISampleApplication;
 import com.dji.sdk.sample.common.Utils;
@@ -24,10 +34,10 @@ import com.dji.sdk.sample.utils.OnScreenJoystickListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import dji.sdk.FlightController.DJIFlightControllerDataType;
-import dji.sdk.FlightController.DJISimulator;
+import dji.common.error.DJIError;
+import dji.common.util.DJICommonCallbacks.*;
 import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIError;
+import dji.sdk.flightcontroller.DJISimulator;
 
 /**
  * Class for virtual stick.
@@ -118,10 +128,10 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                     mTextView.setVisibility(VISIBLE);
 
                     DJISampleApplication.getAircraftInstance().getFlightController().getSimulator()
-                            .startSimulator(new DJISimulator.DJISimulatorInitializationData(
+                            .startSimulator(new DJISimulatorInitializationData(
                                     23, 113, 10, 10
                             )
-                                    ,new DJIBaseComponent.DJICompletionCallback() {
+                                    ,new DJICommonCallbacks.DJICompletionCallback() {
                                         @Override
                                         public void onResult(DJIError djiError) {
 
@@ -133,7 +143,7 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
 
                     DJISampleApplication.getAircraftInstance().getFlightController().getSimulator()
                             .stopSimulator(
-                                    new DJIBaseComponent.DJICompletionCallback() {
+                                    new DJICommonCallbacks.DJICompletionCallback() {
                                         @Override
                                         public void onResult(DJIError djiError) {
 
@@ -147,7 +157,7 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
         DJISampleApplication.getAircraftInstance().getFlightController().getSimulator()
                 .setUpdatedSimulatorStateDataCallback(new DJISimulator.UpdatedSimulatorStateDataCallback() {
                     @Override
-                    public void onSimulatorDataUpdated(final DJISimulator.DJISimulatorStateData djiSimulatorStateData) {
+                    public void onSimulatorDataUpdated(final DJISimulatorStateData djiSimulatorStateData) {
                         new Handler(Looper.getMainLooper()).post(new Runnable() {
 
                             @Override
@@ -224,7 +234,7 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
             case R.id.btn_enable_virtual_stick:
                 DJISampleApplication.getAircraftInstance().
                         getFlightController().enableVirtualStickControlMode(
-                        new DJIBaseComponent.DJICompletionCallback() {
+                        new DJICompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {
                                 Utils.showDialogBasedOnError(getContext(), djiError);
@@ -236,7 +246,7 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
             case R.id.btn_disable_virtual_stick:
                 DJISampleApplication.getAircraftInstance().
                         getFlightController().disableVirtualStickControlMode(
-                        new DJIBaseComponent.DJICompletionCallback() {
+                        new DJICompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {
                                 Utils.showDialogBasedOnError(getContext(), djiError);
@@ -249,12 +259,12 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                 if (mRollPitchControlModeFlag) {
                     DJISampleApplication.getAircraftInstance().getFlightController().
                         setRollPitchControlMode(
-                            DJIFlightControllerDataType.DJIVirtualStickRollPitchControlMode.Angle);
+                            DJIVirtualStickRollPitchControlMode.Angle);
                     mRollPitchControlModeFlag = false;
                 } else {
                     DJISampleApplication.getAircraftInstance().getFlightController().
                         setRollPitchControlMode(
-                            DJIFlightControllerDataType.DJIVirtualStickRollPitchControlMode.Velocity
+                            DJIVirtualStickRollPitchControlMode.Velocity
                         );
                     mRollPitchControlModeFlag = true;
                 }
@@ -269,13 +279,13 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                 if (mYawControlModeFlag) {
                     DJISampleApplication.getAircraftInstance().getFlightController().
                             setYawControlMode(
-                                    DJIFlightControllerDataType.DJIVirtualStickYawControlMode.Angle
+                                    DJIVirtualStickYawControlMode.Angle
                             );
                     mYawControlModeFlag = false;
                 } else {
                     DJISampleApplication.getAircraftInstance().getFlightController().
                         setYawControlMode(
-                            DJIFlightControllerDataType.DJIVirtualStickYawControlMode.AngularVelocity
+                            DJIVirtualStickYawControlMode.AngularVelocity
                         );
                     mYawControlModeFlag = true;
                 }
@@ -290,13 +300,13 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                 if (mVerticalControlModeFlag) {
                     DJISampleApplication.getAircraftInstance().getFlightController().
                         setVerticalControlMode(
-                            DJIFlightControllerDataType.DJIVirtualStickVerticalControlMode.Position
+                            DJIVirtualStickVerticalControlMode.Position
                         );
                     mVerticalControlModeFlag = false;
                 } else {
                     DJISampleApplication.getAircraftInstance().getFlightController().
                         setVerticalControlMode(
-                            DJIFlightControllerDataType.DJIVirtualStickVerticalControlMode.Velocity
+                            DJIVirtualStickVerticalControlMode.Velocity
                         );
                     mVerticalControlModeFlag = true;
                 }
@@ -311,13 +321,13 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                 if (mHorizontalCoordinateFlag) {
                     DJISampleApplication.getAircraftInstance().getFlightController().
                         setHorizontalCoordinateSystem(
-                            DJIFlightControllerDataType.DJIVirtualStickFlightCoordinateSystem.Ground
+                            DJIVirtualStickFlightCoordinateSystem.Ground
                         );
                     mHorizontalCoordinateFlag = false;
                 } else {
                     DJISampleApplication.getAircraftInstance().getFlightController().
                         setHorizontalCoordinateSystem(
-                            DJIFlightControllerDataType.DJIVirtualStickFlightCoordinateSystem.Body
+                            DJIVirtualStickFlightCoordinateSystem.Body
                         );
                     mHorizontalCoordinateFlag = true;
                 }
@@ -331,7 +341,7 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
             case R.id.btn_take_off:
 
                 DJISampleApplication.getAircraftInstance().getFlightController().takeOff(
-                        new DJIBaseComponent.DJICompletionCallback() {
+                        new DJICompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {
                                 Utils.showDialogBasedOnError(getContext(), djiError);
@@ -353,9 +363,9 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
             if (DJIModuleVerificationUtil.isFlightControllerAvailable()) {
                 DJISampleApplication.getAircraftInstance().
                         getFlightController().sendVirtualStickFlightControlData(
-                        new DJIFlightControllerDataType.DJIVirtualStickFlightControlData(
+                        new DJIVirtualStickFlightControlData(
                                 mPitch, mRoll, mYaw, mThrottle
-                        ), new DJIBaseComponent.DJICompletionCallback() {
+                        ), new DJICompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {
 

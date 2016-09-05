@@ -7,7 +7,8 @@ import android.util.Log;
 import com.dji.sdk.sample.common.BasePushDataView;
 import com.dji.sdk.sample.common.DJISampleApplication;
 
-import dji.sdk.Camera.DJICamera;
+import dji.common.camera.CameraSystemState;
+import dji.sdk.camera.DJICamera;
 
 /**
  * Class for getting the camera information
@@ -30,7 +31,7 @@ public class PushCameraDataView extends BasePushDataView {
         try {
             DJISampleApplication.getProductInstance().getCamera().setDJICameraUpdatedSystemStateCallback(new DJICamera.CameraUpdatedSystemStateCallback() {
                 @Override
-                public void onResult(DJICamera.CameraSystemState cameraSystemState) {
+                public void onResult(CameraSystemState cameraSystemState) {
                     if (null != cameraSystemState) {
                         mStringBuffer.delete(0, mStringBuffer.length());
 

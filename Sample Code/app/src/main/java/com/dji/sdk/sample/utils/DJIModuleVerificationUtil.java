@@ -2,8 +2,8 @@ package com.dji.sdk.sample.utils;
 
 import com.dji.sdk.sample.common.DJISampleApplication;
 
-import dji.sdk.Products.DJIAircraft;
-import dji.sdk.Products.DJIHandHeld;
+import dji.sdk.products.DJIAircraft;
+import dji.sdk.products.DJIHandHeld;
 
 /**
  * Created by dji on 16/1/6.
