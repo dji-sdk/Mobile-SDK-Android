@@ -4,6 +4,10 @@
 
 The DJI Mobile SDK enables you to automate your DJI Product. You can control flight, and many subsystems of the product including the camera and gimbal. Using the Mobile SDK, create a customized mobile app to unlock the full potential of your DJI aerial platform.
 
+## Different CPU Architectures Support
+
+For developers who want to support mobile devices with different CPU architectures accurately, please refer to the **SO Support Libraries** folder.
+
 ## Running the SDK Sample Code
 
 Developers can [run the sample application](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html) to immediately run code and see how the DJI Mobile SDK can be used.
