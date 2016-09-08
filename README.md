@@ -8,6 +8,10 @@ The DJI Mobile SDK enables you to automate your DJI Product. You can control fli
 
 For developers who want to support mobile devices with different CPU architectures accurately, please refer to the **SO Support Libraries** folder.
 
+## Package Name Replace Script
+
+Since Android SDK 3.3 has changed or deprecated some package names or class names, we provide an executable JAR file, which contains scripts for you to replace with latest names automatically. Please refer to [this link](./Executable JAR/README.md) for more details.
+
 ## Running the SDK Sample Code
 
 Developers can [run the sample application](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html) to immediately run code and see how the DJI Mobile SDK can be used.
