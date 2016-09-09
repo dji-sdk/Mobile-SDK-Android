@@ -10,7 +10,7 @@ The **DJI\_Script\_ReplacePackageName.jar** is an executable JAR file which cont
 
 **2.** Make sure you have installed the JDK (The minimum JDK version is 1.6) successfully and configured the environment variables in your PC/Mac.
 
-**3.** Execute the JAR file with the following commands in your **Terminal**:
+**3.** Use `cd` command to change directory to the location of the JAR file, execute the JAR file using the following commands in your **Terminal**:
 
 ~~~
 Java -jar DJI_Script_ReplacePackageName.jar YourFilePath 
