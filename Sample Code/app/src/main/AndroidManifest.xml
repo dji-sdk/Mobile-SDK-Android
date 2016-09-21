@@ -54,6 +54,8 @@
         <!-- Required for receiving GEO system pushing. -->
         <service android:name="dji.sdk.sdkmanager.GeoSyncFileService"/>
 
+        <!-- Required for receiving accessory attachment events.
+            This is necessary for product when connecting over USB. -->
         <activity
             android:name="dji.sdk.sdkmanager.DJIAoaControllerActivity"
             android:theme="@android:style/Theme.Translucent" >
