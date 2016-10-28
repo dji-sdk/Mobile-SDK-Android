@@ -2,7 +2,7 @@
 
 ## What Is This?
 
-The **DJI\_Script\_ReplacePackageName.jar** is an executable JAR file which contains script to help replace the old package names or class names (SDK Version 3.2.1) to the new ones (SDK Version 3.3) in your Android Studio Project.
+The **DJI\_Script\_ReplacePackageName.jar** is an executable JAR file which contains script to help replace the old package names or class names (SDK Version 3.2.1 or below) to the new ones (SDK Version 3.3 or above) in your Android Studio Project.
 
 ## How to Use It?
 

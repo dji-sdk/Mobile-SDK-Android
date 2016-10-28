@@ -4,14 +4,6 @@
 
 The DJI Mobile SDK enables you to automate your DJI Product. You can control flight, and many subsystems of the product including the camera and gimbal. Using the Mobile SDK, create a customized mobile app to unlock the full potential of your DJI aerial platform.
 
-## Different CPU Architectures Support
-
-For developers who want to support mobile devices with different CPU architectures accurately, please refer to the **SO Support Libraries** folder.
-
-## Package Name Replace Script
-
-Since Android SDK 3.3 has changed or deprecated some package names or class names, we provide an executable JAR file, which contains scripts for you to replace old package names (SDK Version 3.2.1 or below) to new package name (SDK Version 3.3 above) automatically. Please refer to [this link](./Executable JAR/README.md) for more details.
-
 ## Running the SDK Sample Code
 
 Developers can [run the sample application](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html) to immediately run code and see how the DJI Mobile SDK can be used.
@@ -46,6 +38,10 @@ Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk
 ## SDK API Reference
 
 [**Android SDK API Documentation**](https://developer.dji.com/iframe/mobile-sdk-doc/android/reference/packages.html)
+
+## Package Name Replace Script
+
+Since Android SDK 3.3 or above has changed or deprecated some package names or class names, we provide an executable JAR file, which contains scripts for you to replace old package names (SDK Version 3.2.1 or below ) to new package name (SDK Version 3.3 or  above) automatically. Please refer to [this link](./Executable JAR/README.md) for more details.
 
 ## Support
 
