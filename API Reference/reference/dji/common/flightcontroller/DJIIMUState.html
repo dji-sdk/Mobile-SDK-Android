@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft">
+    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
     
     </div>
     <div id="headerRight">
@@ -171,6 +171,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/camera/package-summary.html">dji.sdk.camera</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/camera/view/package-summary.html">dji.sdk.camera.view</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/codec/package-summary.html">dji.sdk.codec</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/flightcontroller/package-summary.html">dji.sdk.flightcontroller</a></li>
@@ -184,6 +186,8 @@
   <a href="../../../dji/sdk/missionmanager/package-summary.html">dji.sdk.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/missionmanager/missionstep/package-summary.html">dji.sdk.missionmanager.missionstep</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/mobilerc/package-summary.html">dji.sdk.mobilerc</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/products/package-summary.html">dji.sdk.products</a></li>
     <li class="api apilevel-">
@@ -206,6 +210,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerDataType.html">DJIFlightControllerDataType</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerSmartGoHomeStatus.html">DJIFlightControllerSmartGoHomeStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlyZoneInformation.html">DJIFlyZoneInformation</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultiOrientationCalibrationHint</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUState.html">DJIIMUState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJILocationCoordinate2D.html">DJILocationCoordinate2D</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJILocationCoordinate3D.html">DJILocationCoordinate3D</a></li>
@@ -223,17 +228,22 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/ActiveTrackMode.html">ActiveTrackMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIAircraftRemainingBatteryState.html">DJIAircraftRemainingBatteryState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJICompassCalibrationStatus.html">DJICompassCalibrationStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerAdvancedGoHomeState.html">DJIFlightControllerAdvancedGoHomeState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerControlMode.html">DJIFlightControllerControlMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerFlightMode.html">DJIFlightControllerFlightMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerNoFlyStatus.html">DJIFlightControllerNoFlyStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerPreciseLandingState.html">DJIFlightControllerPreciseLandingState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControlState.html">DJIFlightControlState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightFailsafeOperation.html">DJIFlightFailsafeOperation</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightOrientationMode.html">DJIFlightOrientationMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIGoHomeStatus.html">DJIGoHomeStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIGPSSignalStatus.html">DJIGPSSignalStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUCalibrationOrientation.html">DJIIMUCalibrationOrientation</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUCalibrationStatus.html">DJIIMUCalibrationStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUMultiOrientationCalibrationStatus.html">DJIIMUMultiOrientationCalibrationStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUSensorState.html">DJIIMUSensorState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJILandingGearMode.html">DJILandingGearMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJILandingGearStatus.html">DJILandingGearStatus</a></li>
@@ -462,6 +472,22 @@ Summary:
             
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIIMUState.html#DJIIMUState(int)">DJIIMUState</a></span>(int subImuCount)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIIMUState.html#DJIIMUState()">DJIIMUState</a></span>()
         
   </td></tr>
@@ -488,10 +514,26 @@ Summary:
             
             
             
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIIMUState.html#equals(java.lang.Object)">equals</a></span>(Object o)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
             <a href="../../../dji/common/flightcontroller/DJIIMUSensorState.html">DJIIMUSensorState</a>
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIIMUState.html#getAcceleratorState()">getAcceleratorState</a></span>()
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIIMUState.html#getAccelerometerStatus()">getAccelerometerStatus</a></span>()
         
         <div class="jd-descrdiv">Returns the state value of the Accelerator Sensor.</div>
   
@@ -499,7 +541,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -517,7 +559,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -535,7 +577,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -553,7 +595,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -564,6 +606,58 @@ Summary:
         </td>
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIIMUState.html#getImuId()">getImuId</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="../../../dji/common/flightcontroller/DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultiOrientationCalibrationHint</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIIMUState.html#getMultiOrientationCalibrationHint()">getMultiOrientationCalibrationHint</a></span>()
+        
+        <div class="jd-descrdiv">For products that require the user to orient the aircraft during the IMU
+  calibration, this can be used to inform the user when each orientation is
+  done.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="../../../dji/common/flightcontroller/DJIIMUState.html">DJIIMUState[]</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIIMUState.html#getSubIMUState()">getSubIMUState</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIIMUState.html#hashCode()">hashCode</a></span>()
         
   </td></tr>
 
@@ -802,6 +896,37 @@ From class
 
 
 
+<a id="DJIIMUState(int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">DJIIMUState</span>
+      <span class="normal">(int subImuCount)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 <a id="DJIIMUState()"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -848,7 +973,38 @@ From class
 
 
 
-<a id="getAcceleratorState()"></a>
+<a id="equals(java.lang.Object)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">equals</span>
+      <span class="normal">(Object o)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getAccelerometerStatus()"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -860,7 +1016,7 @@ From class
          
         <a href="../../../dji/common/flightcontroller/DJIIMUSensorState.html">DJIIMUSensorState</a>
       </span>
-      <span class="sympad">getAcceleratorState</span>
+      <span class="sympad">getAccelerometerStatus</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -990,6 +1146,102 @@ From class
         int
       </span>
       <span class="sympad">getImuId</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getMultiOrientationCalibrationHint()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../dji/common/flightcontroller/DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultiOrientationCalibrationHint</a>
+      </span>
+      <span class="sympad">getMultiOrientationCalibrationHint</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>For products that require the user to orient the aircraft during the IMU
+  calibration, this can be used to inform the user when each orientation is
+  done.
+  It is supported by flight controller firmware 3.2.0.0 or above.</p></div>
+
+    </div>
+</div>
+
+
+<a id="getSubIMUState()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../dji/common/flightcontroller/DJIIMUState.html">DJIIMUState[]</a>
+      </span>
+      <span class="sympad">getSubIMUState</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="hashCode()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">hashCode</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">

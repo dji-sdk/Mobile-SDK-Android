@@ -10,7 +10,7 @@ For developers who want to support mobile devices with different CPU architectur
 
 ## Package Name Replace Script
 
-Since Android SDK 3.3 has changed or deprecated some package names or class names, we provide an executable JAR file, which contains scripts for you to replace old package names (SDK Version 3.2.1) to new package name (SDK Version 3.3) automatically. Please refer to [this link](./Executable JAR/README.md) for more details.
+Since Android SDK 3.3 has changed or deprecated some package names or class names, we provide an executable JAR file, which contains scripts for you to replace old package names (SDK Version 3.2.1 or below) to new package name (SDK Version 3.3 above) automatically. Please refer to [this link](./Executable JAR/README.md) for more details.
 
 ## Running the SDK Sample Code
 

@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft">
+    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
     
     </div>
     <div id="headerRight">
@@ -171,6 +171,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/camera/package-summary.html">dji.sdk.camera</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/camera/view/package-summary.html">dji.sdk.camera.view</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/codec/package-summary.html">dji.sdk.codec</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/flightcontroller/package-summary.html">dji.sdk.flightcontroller</a></li>
@@ -184,6 +186,8 @@
   <a href="../../../dji/sdk/missionmanager/package-summary.html">dji.sdk.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/missionmanager/missionstep/package-summary.html">dji.sdk.missionmanager.missionstep</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/mobilerc/package-summary.html">dji.sdk.mobilerc</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/products/package-summary.html">dji.sdk.products</a></li>
     <li class="api apilevel-">
@@ -422,7 +426,8 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>ActiveTrack Mission allows an aircraft to track a moving subject using the vision system and without a GPS tracker on
+<p>ActiveTrack Mission allows an aircraft to track a moving subject using the vision system and without a GPS tracker
+ on
  the subject. To use an ActiveTrack mission:
  - prepareMission with the rectangle that best represents the target to track
  - startMission to initiate tracking of the object and begin the state updates (DJIMissionProgressStatus)
@@ -534,12 +539,23 @@ Summary:
           
           
           boolean</td>
+          <td class="jd-linkcol"><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#isGestureModeEnabled">isGestureModeEnabled</a></td>
+          <td class="jd-descrcol" width="100%"><code>true</code> to enable gesture mode.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol">
+          public
+          
+          
+          boolean</td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#isRetreatEnabled">isRetreatEnabled</a></td>
           <td class="jd-descrcol" width="100%"><code>true</code> if the aircraft can retreat (fly backwards) when the target comes toward it.</td>
       </tr>
       
     
-      <tr class=" api apilevel-" >
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol">
           public
           
@@ -622,8 +638,9 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#acceptConfirmation(dji.common.util.DJICommonCallbacks.DJICompletionCallback)">acceptConfirmation</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv">When the vision system is not sure the tracking rectangle is around the user's desired target, it will need
- confirmation before starting to fly relative to the target.</div>
+        <div class="jd-descrdiv">When the vision system is not sure the tracking rectangle is around the
+  user's desired target, it will need confirmation before starting to fly
+  relative to the target.</div>
   
   </td></tr>
 
@@ -639,10 +656,121 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#getActiveTrackMode(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.flightcontroller.ActiveTrackMode>)">getActiveTrackMode</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/flightcontroller/ActiveTrackMode.html">ActiveTrackMode</a>&gt; callback)
+        
+        <div class="jd-descrdiv">Gets the active track mode on currently executing mission.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#getCircularSpeed(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Float>)">getCircularSpeed</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Float&gt; callback)
+        
+        <div class="jd-descrdiv">In an ActiveTrack mission, the aircraft can be set to circle the target
+ while following it.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#getGestureModeEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)">getGestureModeEnabled</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
+        
+        <div class="jd-descrdiv"><code>true</code> if gesture mode is enabled.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#rejectConfirmation(dji.common.util.DJICommonCallbacks.DJICompletionCallback)">rejectConfirmation</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv">When the vision system is not sure the tracking rectangle is around the user's desired target, it will need
- confirmation before starting to fly relative to the target.</div>
+        <div class="jd-descrdiv">When the vision system is not sure the tracking rectangle is around the
+  user's desired target, it will need confirmation before starting to fly
+  relative to the target.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#setActiveTrackGestureModeEnabled(java.lang.Boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setActiveTrackGestureModeEnabled</a></span>(Boolean isEnabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv"><code>true</code> if gesture mode is enabled.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#setCircularSpeed(java.lang.Float, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setCircularSpeed</a></span>(Float speed, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Setting a non-zero speed starts the aircraft circling the target.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#setMode(dji.common.flightcontroller.ActiveTrackMode)">setMode</a></span>(<a href="../../../dji/common/flightcontroller/ActiveTrackMode.html">ActiveTrackMode</a> mode)
+        
+        <div class="jd-descrdiv">Set Active Track mode
+</div>
   
   </td></tr>
 
@@ -660,8 +788,8 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#setRecommendedConfiguration(dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setRecommendedConfiguration</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv">Sets the recommended camera and gimbal configuration that optimizes performance for the ActiveTrack Mission in
- most environments.</div>
+        <div class="jd-descrdiv">Sets the recommended camera and gimbal configuration that optimizes
+ performance for the ActiveTrack Mission in most environments.</div>
   
   </td></tr>
 
@@ -947,6 +1075,44 @@ From class
 
 
 
+<a id="isGestureModeEnabled"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        boolean
+      </span>
+        isGestureModeEnabled
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> to enable gesture mode. Gesture mode can enable the following features:
+ - The aircraft will detect moving human beings and set the human as target
+ if any.
+ - The tracked human can accept the confirmation by waving the arms.
+ - The tracked human can make the camera to shoot a photo by a gesture.
+ Gesture mode can only be enabled when in trace mode (`DJIActiveTrackModeTrace`).
+ Default is <code>false</code>.
+ It is only supported by Mavic Pro.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
 <a id="isRetreatEnabled"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1127,16 +1293,160 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>When the vision system is not sure the tracking rectangle is around the user's desired target, it will need
- confirmation before starting to fly relative to the target. The vision system will need confirmation whenever the
- ActiveTrack mission execution state is DJIActiveTrackMissionExecutionStateWaitingForConfirmation. The
- trackingRect property of DJIActiveTrackMissionExecutionState can be used to show the user the rectangle the
- vision system is using. If the user agrees the rectangle represents the target they want tracked, this method can
- be called to start flying relative to the target.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>When the vision system is not sure the tracking rectangle is around the
+  user's desired target, it will need confirmation before starting to fly
+  relative to the target. The vision system will need confirmation whenever
+  the ActiveTrack mission execution state is
+  <code>DJIActiveTrackMissionExecutionStateWaitingForConfirmation</code>. The
+  `trackingRect` property of `DJIActiveTrackMissionExecutionState` can be used
+  to show the user the rectangle the vision system is using. If the user
+  agrees the rectangle represents the target they want to track, this method
+  can be called to start flying relative to the target.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned execution result.</td>
+        </tr>
+      </table>
+  </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
-      <ul class="nolist"><li><code>rejectConfirmation</code>.</li>
+      <ul class="nolist"><li><code><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#rejectConfirmation(dji.common.util.DJICommonCallbacks.DJICompletionCallback)">rejectConfirmation(DJICompletionCallback)</a></code></li>
       </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getActiveTrackMode(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.flightcontroller.ActiveTrackMode>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getActiveTrackMode</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/flightcontroller/ActiveTrackMode.html">ActiveTrackMode</a>&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the active track mode on currently executing mission. This method
+ should be used when the ActiveTrack mission is executing. The property
+ `activeTrackMode` is used before the mission starts. Will return
+ `DJIActiveTrackModeUnknown` if mission hasn't started.
+
+ Only supported by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getCircularSpeed(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Float>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getCircularSpeed</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Float&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>In an ActiveTrack mission, the aircraft can be set to circle the target
+ while following it. This method returns the circular speed of the aircraft
+ in m/s.
+ Only supported by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getGestureModeEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getGestureModeEnabled</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if gesture mode is enabled.
+ Only supported by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
   </div>
 
     </div>
@@ -1168,17 +1478,154 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>When the vision system is not sure the tracking rectangle is around the user's desired target, it will need
- confirmation before starting to fly relative to the target. The vision system will need confirmation whenever the
- ActiveTrack mission execution state is DJIActiveTrackMissionExecutionStateWaitingForConfirmation. The
- trackingRect property of DJIMissionProgressStatus can be used to show the user the rectangle the vision system is
- using. If the user does not agree the rectangle represents the target they want tracked, this method can be used
- to stop the Mission.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>When the vision system is not sure the tracking rectangle is around the
+  user's desired target, it will need confirmation before starting to fly
+  relative to the target. The vision system will need confirmation whenever
+  the ActiveTrack mission execution state is
+  <code>DJIActiveTrackMissionExecutionStateWaitingForConfirmation</code>. The
+  `trackingRect` property of `DJIMissionProgressStatus` can be used to show
+  the user the rectangle the vision system is using. If the user does not
+  agree the rectangle represents the target they want to track, this method
+  can be used to stop the Mission.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned execution result.</td>
+        </tr>
+      </table>
+  </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
-      <ul class="nolist"><li><code>acceptConfirmation</code>.</li>
+      <ul class="nolist"><li><code><a href="../../../dji/sdk/missionmanager/DJIActiveTrackMission.html#acceptConfirmation(dji.common.util.DJICommonCallbacks.DJICompletionCallback)">acceptConfirmation(DJICompletionCallback)</a></code></li>
       </ul>
   </div>
+
+    </div>
+</div>
+
+
+<a id="setActiveTrackGestureModeEnabled(java.lang.Boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setActiveTrackGestureModeEnabled</span>
+      <span class="normal">(Boolean isEnabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if gesture mode is enabled.
+ Only supported by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setCircularSpeed(java.lang.Float, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCircularSpeed</span>
+      <span class="normal">(Float speed, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Setting a non-zero speed starts the aircraft circling the target. Speed
+ can be set within the range [-5, 5] m/s where a positive speed is a counter-clockwise
+ movement (when viewing from the top). Reverting the speed to 0 m/s ends the
+ circling movement.
+ This method can only be called when executing an ActiveTrack mission with modes
+ `DJIActiveTrackModeTrace` or `DJIActiveTrackModeProfile`.
+ Only supported by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>speed</th>
+          <td>Circular speed to set in m/s.</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned execution result.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setMode(dji.common.flightcontroller.ActiveTrackMode)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setMode</span>
+      <span class="normal">(<a href="../../../dji/common/flightcontroller/ActiveTrackMode.html">ActiveTrackMode</a> mode)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set Active Track mode
+</p></div>
 
     </div>
 </div>
@@ -1209,9 +1656,18 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the recommended camera and gimbal configuration that optimizes performance for the ActiveTrack Mission in
- most environments.
-</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the recommended camera and gimbal configuration that optimizes
+ performance for the ActiveTrack Mission in most environments.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned execution result.
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>

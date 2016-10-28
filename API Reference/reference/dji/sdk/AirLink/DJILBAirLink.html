@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft">
+    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
     
     </div>
     <div id="headerRight">
@@ -171,6 +171,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/camera/package-summary.html">dji.sdk.camera</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/camera/view/package-summary.html">dji.sdk.camera.view</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/codec/package-summary.html">dji.sdk.codec</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/flightcontroller/package-summary.html">dji.sdk.flightcontroller</a></li>
@@ -184,6 +186,8 @@
   <a href="../../../dji/sdk/missionmanager/package-summary.html">dji.sdk.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/missionmanager/missionstep/package-summary.html">dji.sdk.missionmanager.missionstep</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/mobilerc/package-summary.html">dji.sdk.mobilerc</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/products/package-summary.html">dji.sdk.products</a></li>
     <li class="api apilevel-">
@@ -206,8 +210,12 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedLightbridgeModuleSignalInformationCallback.html">DJILBAirLink.DJILBAirLinkUpdatedLightbridgeModuleSignalInformationCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedRemoteControllerSignalInformationCallback.html">DJILBAirLink.DJILBAirLinkUpdatedRemoteControllerSignalInformationCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJIOnReceivedVideoCallback.html">DJILBAirLink.DJIOnReceivedVideoCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIOcuSyncLink.FrequencyInterferenceUpdatedCallback.html">DJIOcuSyncLink.FrequencyInterferenceUpdatedCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIOcuSyncLink.ReceivedWarningMessageCallback.html">DJIOcuSyncLink.ReceivedWarningMessageCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIOcuSyncLink.VideoDataRateUpdatedCallback.html">DJIOcuSyncLink.VideoDataRateUpdatedCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIWiFiLink.DJIWiFiGetSignalChangedCallback.html">DJIWiFiLink.DJIWiFiGetSignalChangedCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIWiFiLink.DJIWiFiSignalQualityChangedCallback.html">DJIWiFiLink.DJIWiFiSignalQualityChangedCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIWiFiLink.RSSICallback.html">DJIWiFiLink.RSSICallback</a></li>
       </ul>
     </li>
               
@@ -216,6 +224,7 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIAirLink.html">DJIAirLink</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIAuxLink.html">DJIAuxLink</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.html">DJILBAirLink</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIOcuSyncLink.html">DJIOcuSyncLink</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html">DJIWiFiLink</a></li>
       </ul>
     </li>
@@ -572,7 +581,7 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#getChannelSelectionMode(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.LBAirLinkChannelSelectionMode>)">getChannelSelectionMode</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/LBAirLinkChannelSelectionMode.html">LBAirLinkChannelSelectionMode</a>&gt; callback)
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#getChannelSelectionMode(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.ChannelSelectionMode>)">getChannelSelectionMode</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/ChannelSelectionMode.html">ChannelSelectionMode</a>&gt; callback)
         
         <div class="jd-descrdiv">Gets the downlink channel selection mode.</div>
   
@@ -914,6 +923,22 @@ Summary:
             
             
             
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#getVideoSignalStrength(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Integer>)">getVideoSignalStrength</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer&gt; callback)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
@@ -925,7 +950,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -948,7 +973,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -962,6 +987,54 @@ Summary:
         
         <div class="jd-descrdiv"><code>true</code> if secondary video output supported.</div>
   
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#onEventBackgroundThread(DataOsdGetPushSignalQuality)">onEventBackgroundThread</a></span>(DataOsdGetPushSignalQuality mParams)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#onEventBackgroundThread(DataOsdGetPushSweepFrequency)">onEventBackgroundThread</a></span>(DataOsdGetPushSweepFrequency params)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#onEventBackgroundThread(DataRcGetPushParams)">onEventBackgroundThread</a></span>(DataRcGetPushParams params)
+        
   </td></tr>
 
 
@@ -994,7 +1067,7 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#setChannelSelectionMode(dji.common.airlink.LBAirLinkChannelSelectionMode, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setChannelSelectionMode</a></span>(<a href="../../../dji/common/airlink/LBAirLinkChannelSelectionMode.html">LBAirLinkChannelSelectionMode</a> mode, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#setChannelSelectionMode(dji.common.airlink.ChannelSelectionMode, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setChannelSelectionMode</a></span>(<a href="../../../dji/common/airlink/ChannelSelectionMode.html">ChannelSelectionMode</a> mode, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
         <div class="jd-descrdiv">Sets the downlink channel selection mode (automatic or manual).</div>
   
@@ -1059,7 +1132,7 @@ Summary:
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
-            
+            synchronized
             
             
             
@@ -1417,6 +1490,22 @@ Summary:
   </td></tr>
 
 
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            synchronized
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#setVideoSignalStrengthChangeCallback(dji.common.airlink.SignalQualityUpdatedCallback)">setVideoSignalStrengthChangeCallback</a></span>(<a href="../../../dji/common/airlink/SignalQualityUpdatedCallback.html">SignalQualityUpdatedCallback</a> callback)
+        
+  </td></tr>
+
+
 
 </table>
 
@@ -1480,6 +1569,24 @@ From class
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getLegacySerialNumber(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)">getLegacySerialNumber</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
+        
+        <div class="jd-descrdiv">Get the legacy serial number of the component.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getSerialNumber(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)">getSerialNumber</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
         <div class="jd-descrdiv">Get the serial number of the component.</div>
@@ -1488,7 +1595,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1506,7 +1613,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1820,7 +1927,7 @@ From class
 </div>
 
 
-<a id="getChannelSelectionMode(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.LBAirLinkChannelSelectionMode>)"></a>
+<a id="getChannelSelectionMode(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.ChannelSelectionMode>)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1833,7 +1940,7 @@ From class
         void
       </span>
       <span class="sympad">getChannelSelectionMode</span>
-      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/LBAirLinkChannelSelectionMode.html">LBAirLinkChannelSelectionMode</a>&gt; callback)</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/ChannelSelectionMode.html">ChannelSelectionMode</a>&gt; callback)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -2618,6 +2725,37 @@ From class
 </div>
 
 
+<a id="getVideoSignalStrength(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Integer>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getVideoSignalStrength</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 <a id="isDualEncodeModeSupported()"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -2721,6 +2859,99 @@ From class
 </div>
 
 
+<a id="onEventBackgroundThread(DataOsdGetPushSignalQuality)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onEventBackgroundThread</span>
+      <span class="normal">(DataOsdGetPushSignalQuality mParams)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="onEventBackgroundThread(DataOsdGetPushSweepFrequency)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onEventBackgroundThread</span>
+      <span class="normal">(DataOsdGetPushSweepFrequency params)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="onEventBackgroundThread(DataRcGetPushParams)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onEventBackgroundThread</span>
+      <span class="normal">(DataRcGetPushParams params)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 <a id="setChannel(int, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -2767,7 +2998,7 @@ From class
 </div>
 
 
-<a id="setChannelSelectionMode(dji.common.airlink.LBAirLinkChannelSelectionMode, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+<a id="setChannelSelectionMode(dji.common.airlink.ChannelSelectionMode, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2780,7 +3011,7 @@ From class
         void
       </span>
       <span class="sympad">setChannelSelectionMode</span>
-      <span class="normal">(<a href="../../../dji/common/airlink/LBAirLinkChannelSelectionMode.html">LBAirLinkChannelSelectionMode</a> mode, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+      <span class="normal">(<a href="../../../dji/common/airlink/ChannelSelectionMode.html">ChannelSelectionMode</a> mode, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -2944,7 +3175,7 @@ From class
          
          
          
-         
+        synchronized 
         void
       </span>
       <span class="sympad">setDJIOnReceivedVideoCallback</span>
@@ -3836,6 +4067,37 @@ From class
         </tr>
       </table>
   </div>
+
+    </div>
+</div>
+
+
+<a id="setVideoSignalStrengthChangeCallback(dji.common.airlink.SignalQualityUpdatedCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">setVideoSignalStrengthChangeCallback</span>
+      <span class="normal">(<a href="../../../dji/common/airlink/SignalQualityUpdatedCallback.html">SignalQualityUpdatedCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>

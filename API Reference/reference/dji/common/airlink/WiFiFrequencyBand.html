@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft">
+    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
     
     </div>
     <div id="headerRight">
@@ -171,6 +171,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/camera/package-summary.html">dji.sdk.camera</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/camera/view/package-summary.html">dji.sdk.camera.view</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/codec/package-summary.html">dji.sdk.codec</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/flightcontroller/package-summary.html">dji.sdk.flightcontroller</a></li>
@@ -185,6 +187,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/missionmanager/missionstep/package-summary.html">dji.sdk.missionmanager.missionstep</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/mobilerc/package-summary.html">dji.sdk.mobilerc</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/products/package-summary.html">dji.sdk.products</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/remotecontroller/package-summary.html">dji.sdk.remotecontroller</a></li>
@@ -198,24 +202,36 @@
           <div id="classes-nav">
             <ul>
               
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../dji/common/airlink/SignalQualityUpdatedCallback.html">SignalQualityUpdatedCallback</a></li>
+      </ul>
+    </li>
               
     <li><h2>Classes</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/common/airlink/ChannelRSSI.html">ChannelRSSI</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/airlink/DJISignalInformation.html">DJISignalInformation</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/airlink/FrequencyInterference.html">FrequencyInterference</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/airlink/SDRHdOffsetParams.html">SDRHdOffsetParams</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/airlink/WifiChannelInterference.html">WifiChannelInterference</a></li>
       </ul>
     </li>
               
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/common/airlink/ChannelSelectionMode.html">ChannelSelectionMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/airlink/DJIWiFiSignalQuality.html">DJIWiFiSignalQuality</a></li>
-          <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkBandwidth.html">LBAirLinkBandwidth</a></li>
-          <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkChannelSelectionMode.html">LBAirLinkChannelSelectionMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkDataRate.html">LBAirLinkDataRate</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkFPVVideoQualityLatency.html">LBAirLinkFPVVideoQualityLatency</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkPIPDisplay.html">LBAirLinkPIPDisplay</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkSecondaryVideoOutputPort.html">LBAirLinkSecondaryVideoOutputPort</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkUnit.html">LBAirLinkUnit</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/airlink/OcuSyncBandwidth.html">OcuSyncBandwidth</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/airlink/OcuSyncWarningMessage.html">OcuSyncWarningMessage</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/airlink/SDRInterferedTerminal.html">SDRInterferedTerminal</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/airlink/WifiAirLinkDataRate.html">WifiAirLinkDataRate</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/common/airlink/WiFiFrequencyBand.html">WiFiFrequencyBand</a></li>
       </ul>
     </li>
@@ -447,15 +463,15 @@ Summary:
     
     <tr class=" api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/airlink/WiFiFrequencyBand.html">WiFiFrequencyBand</a>&nbsp;</td>
-        <td class="jd-linkcol">FrequencyBand5Dot8G&nbsp;</td>
-        <td class="jd-descrcol" width="100%">The WiFi frequency band is 5.8 GHz.&nbsp;</td>
+        <td class="jd-linkcol">FrequencyBand5G&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The WiFi frequency band is 5 GHz.&nbsp;</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/airlink/WiFiFrequencyBand.html">WiFiFrequencyBand</a>&nbsp;</td>
-        <td class="jd-linkcol">FrequencyBandDualBand&nbsp;</td>
-        <td class="jd-descrcol" width="100%">The Wi-Fi frequency supports dual.&nbsp;</td>
+        <td class="jd-linkcol">FrequencyBandDual&nbsp;</td>
+        <td class="jd-descrcol" width="100%">Dual frequency band mode.&nbsp;</td>
     </tr>
     
     
@@ -1032,7 +1048,7 @@ From interface
 
 
 
-<a id="FrequencyBand5Dot8G"></a>
+<a id="FrequencyBand5G"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1042,7 +1058,7 @@ From interface
         final 
         <a href="../../../dji/common/airlink/WiFiFrequencyBand.html">WiFiFrequencyBand</a>
       </span>
-        FrequencyBand5Dot8G
+        FrequencyBand5G
     </h4>
       <div class="api-level">
         
@@ -1054,7 +1070,7 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The WiFi frequency band is 5.8 GHz.
+  <div class="jd-tagdata jd-tagdescr"><p>The WiFi frequency band is 5 GHz.
 </p></div>
 
     
@@ -1063,7 +1079,7 @@ From interface
 
 
 
-<a id="FrequencyBandDualBand"></a>
+<a id="FrequencyBandDual"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1073,7 +1089,7 @@ From interface
         final 
         <a href="../../../dji/common/airlink/WiFiFrequencyBand.html">WiFiFrequencyBand</a>
       </span>
-        FrequencyBandDualBand
+        FrequencyBandDual
     </h4>
       <div class="api-level">
         
@@ -1085,7 +1101,8 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The Wi-Fi frequency supports dual.
+  <div class="jd-tagdata jd-tagdescr"><p>Dual frequency band mode. The WiFi frequency band can be either 2.4 GHz
+ or 5 GHz.
 </p></div>
 
     

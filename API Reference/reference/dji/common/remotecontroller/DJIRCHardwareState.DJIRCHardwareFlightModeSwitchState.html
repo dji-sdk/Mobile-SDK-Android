@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft">
+    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
     
     </div>
     <div id="headerRight">
@@ -171,6 +171,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/camera/package-summary.html">dji.sdk.camera</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/camera/view/package-summary.html">dji.sdk.camera.view</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/codec/package-summary.html">dji.sdk.codec</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/flightcontroller/package-summary.html">dji.sdk.flightcontroller</a></li>
@@ -184,6 +186,8 @@
   <a href="../../../dji/sdk/missionmanager/package-summary.html">dji.sdk.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/missionmanager/missionstep/package-summary.html">dji.sdk.missionmanager.missionstep</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/mobilerc/package-summary.html">dji.sdk.mobilerc</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/products/package-summary.html">dji.sdk.products</a></li>
     <li class="api apilevel-">
@@ -209,6 +213,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCGPSData.html">DJIRCGPSData</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCGPSData.DJIRCGpsTime.html">DJIRCGPSData.DJIRCGpsTime</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCHardwareState.html">DJIRCHardwareState</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCHardwareState.DJIRCFiveDButton.html">DJIRCHardwareState.DJIRCFiveDButton</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCHardwareState.DJIRCHardwareButton.html">DJIRCHardwareState.DJIRCHardwareButton</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCHardwareState.DJIRCHardwareFlightModeSwitch.html">DJIRCHardwareState.DJIRCHardwareFlightModeSwitch</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCHardwareState.DJIRCHardwareJoystick.html">DJIRCHardwareState.DJIRCHardwareJoystick</a></li>
@@ -230,6 +235,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCControlChannelName.html">DJIRCControlChannelName</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCControlStyle.html">DJIRCControlStyle</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCGimbalControlDirection.html">DJIRCGimbalControlDirection</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCHardwareState.DJIRCFiveDButtonDirection.html">DJIRCHardwareState.DJIRCFiveDButtonDirection</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState.html">DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCHardwareState.DJIRCHardwareTransformationSwitchState.html">DJIRCHardwareState.DJIRCHardwareTransformationSwitchState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/remotecontroller/DJIRCJoinMasterResult.html">DJIRCJoinMasterResult</a></li>
@@ -476,7 +482,8 @@ Summary:
     <tr class="alt-color api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/remotecontroller/DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState.html">DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState</a>&nbsp;</td>
         <td class="jd-linkcol">P&nbsp;</td>
-        <td class="jd-descrcol" width="100%">&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The Remote Controller's flight mode switch is set to the P (Positioning)
+  mode.&nbsp;</td>
     </tr>
     
     
@@ -1121,7 +1128,17 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>The Remote Controller's flight mode switch is set to the P (Positioning)
+  mode. Positioning mode can use both GPS and the vision system (when
+  available) to fly and hover. For the Phantom 4 and Mavic Pro, P mode must be used to
+  enable Mission Manager functions from the Mobile Device.
+  The Phantom 4 remote controller flight mode switch is labeled A, S, P
+  from left to right.
+  The Phantom 3, Inspire 1 and M100 remote controller flight mode switch
+  is labeled F, A, P from left to right.
+  Any remote controller (P3, P4, Inspire 1, M100) used with any aircraft
+  will report P mode as selected if the switch is set to the right position.
+</p></div>
 
     
     </div>
@@ -1151,13 +1168,17 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The Remote Controller's flight mode switch is set to the S (Sport) mode. Sport mode can
- use both GPS and the vision system (when available) to hover. Sport mode is only supported
- when using the Phantom 4. The Phantom 4 remote controller flight mode switch is labelled
- A, S, P from left to right. The Phantom 3, Inspire 1 and M100 remote controller flight
- mode switch is labelled F, A, P from left to right. Independent of label, any remote
- controller (P3, P4, Inspire 1, M100) used with the Phantom 4 will report S mode as
- selected if the switch is set to the middle position.
+  <div class="jd-tagdata jd-tagdescr"><p>The Remote Controller's flight mode switch is set to the S (Sport) mode.
+  Sport mode can use both GPS and the vision system (when available) to hover.
+  Sport mode is only supported when using the Phantom 4.
+  Sport mode is only supported when using the Phantom 4 and Mavic Pro.
+  The Phantom 4 remote controller flight mode switch is labeled A, S, P
+  from left to right.
+  The Phantom 3, Inspire 1 and M100 remote controller flight mode switch
+  is labeled F, A, P from left to right.
+  Independent of label, any remote controller (P3, P4, Inspire 1, M100)
+  used with the Phantom 4 will report S mode as selected if the switch is
+  set to the middle position.
 </p></div>
 
     

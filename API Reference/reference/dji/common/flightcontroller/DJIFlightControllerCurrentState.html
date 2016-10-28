@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft">
+    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
     
     </div>
     <div id="headerRight">
@@ -171,6 +171,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/camera/package-summary.html">dji.sdk.camera</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/camera/view/package-summary.html">dji.sdk.camera.view</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/codec/package-summary.html">dji.sdk.codec</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/flightcontroller/package-summary.html">dji.sdk.flightcontroller</a></li>
@@ -184,6 +186,8 @@
   <a href="../../../dji/sdk/missionmanager/package-summary.html">dji.sdk.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/missionmanager/missionstep/package-summary.html">dji.sdk.missionmanager.missionstep</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/mobilerc/package-summary.html">dji.sdk.mobilerc</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/products/package-summary.html">dji.sdk.products</a></li>
     <li class="api apilevel-">
@@ -206,6 +210,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerDataType.html">DJIFlightControllerDataType</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerSmartGoHomeStatus.html">DJIFlightControllerSmartGoHomeStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlyZoneInformation.html">DJIFlyZoneInformation</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultiOrientationCalibrationHint</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUState.html">DJIIMUState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJILocationCoordinate2D.html">DJILocationCoordinate2D</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJILocationCoordinate3D.html">DJILocationCoordinate3D</a></li>
@@ -223,17 +228,22 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/ActiveTrackMode.html">ActiveTrackMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIAircraftRemainingBatteryState.html">DJIAircraftRemainingBatteryState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJICompassCalibrationStatus.html">DJICompassCalibrationStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerAdvancedGoHomeState.html">DJIFlightControllerAdvancedGoHomeState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerControlMode.html">DJIFlightControllerControlMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerFlightMode.html">DJIFlightControllerFlightMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerNoFlyStatus.html">DJIFlightControllerNoFlyStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerPreciseLandingState.html">DJIFlightControllerPreciseLandingState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControlState.html">DJIFlightControlState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightFailsafeOperation.html">DJIFlightFailsafeOperation</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightOrientationMode.html">DJIFlightOrientationMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIGoHomeStatus.html">DJIGoHomeStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIGPSSignalStatus.html">DJIGPSSignalStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUCalibrationOrientation.html">DJIIMUCalibrationOrientation</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUCalibrationStatus.html">DJIIMUCalibrationStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUMultiOrientationCalibrationStatus.html">DJIIMUMultiOrientationCalibrationStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIIMUSensorState.html">DJIIMUSensorState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJILandingGearMode.html">DJILandingGearMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJILandingGearStatus.html">DJILandingGearStatus</a></li>
@@ -395,7 +405,12 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>This class contains current state of the flight controller.
+<p><code>true</code> if the clearance between the aircraft and the ground is less than 0.3m
+  and confirmation from the user is needed to continue the landing. When the
+  confirmation is needed, user can use <code>confirmLanding</code> in
+  <code>DJIFlightController</code> to continue the landing.
+
+  It is supported by flight controller firmware 3.2.0.0 or above.
 </p>
 
 
@@ -1006,6 +1021,25 @@ Summary:
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIFlightControllerCurrentState.html#isLandingConfirmationNeeded()">isLandingConfirmationNeeded</a></span>()
+        
+        <div class="jd-descrdiv"><code>true</code> if the clearance between the aircraft and the ground is less than 0.3m
+  and confirmation from the user is needed to continue the landing.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIFlightControllerCurrentState.html#isMultipModeOpen()">isMultipModeOpen</a></span>()
         
         <div class="jd-descrdiv">Determines whether multiple flight modes are open.</div>
@@ -1014,7 +1048,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1032,7 +1066,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1050,7 +1084,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1068,7 +1102,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1090,7 +1124,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1108,7 +1142,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1119,6 +1153,22 @@ Summary:
         </td>
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIFlightControllerCurrentState.html#setFlightTime(int)">setFlightTime</a></span>(int time)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIFlightControllerCurrentState.html#setNeedConfirmLanding(boolean)">setNeedConfirmLanding</a></span>(boolean needForceLanding)
         
   </td></tr>
 
@@ -2371,6 +2421,43 @@ From class
 </div>
 
 
+<a id="isLandingConfirmationNeeded()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isLandingConfirmationNeeded</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the clearance between the aircraft and the ground is less than 0.3m
+  and confirmation from the user is needed to continue the landing. When the
+  confirmation is needed, user can use method, <code>confirmLanding</code>, in
+  <code>DJIFlightController</code> to continue the landing.
+
+  It is supported by flight controller firmware 3.2.0.0 or above.
+</p></div>
+
+    </div>
+</div>
+
+
 <a id="isMultipModeOpen()"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -2594,6 +2681,37 @@ From class
       </span>
       <span class="sympad">setFlightTime</span>
       <span class="normal">(int time)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setNeedConfirmLanding(boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setNeedConfirmLanding</span>
+      <span class="normal">(boolean needForceLanding)</span>
     </h4>
       <div class="api-level">
         <div>

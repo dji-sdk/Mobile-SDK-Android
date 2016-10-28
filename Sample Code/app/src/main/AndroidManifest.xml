@@ -47,9 +47,11 @@
         -->
         <meta-data
             android:name="com.dji.sdk.API_KEY"
-            android:value="Please Enter Your App Key Here" />
+            android:value="Please Enter Your App Key here." />
 
         <service android:name="dji.sdk.sdkmanager.DJIGlobalService" />
+
+        <service android:name="dji.internal.geofeature.flyforbid.FlyforbidUpdateService" />
 
         <!-- Required for receiving GEO system pushing. -->
         <service android:name="dji.sdk.sdkmanager.GeoSyncFileService"/>

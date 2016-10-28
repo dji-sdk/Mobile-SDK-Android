@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft">
+    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
     
     </div>
     <div id="headerRight">
@@ -171,6 +171,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/camera/package-summary.html">dji.sdk.camera</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/camera/view/package-summary.html">dji.sdk.camera.view</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/codec/package-summary.html">dji.sdk.codec</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/flightcontroller/package-summary.html">dji.sdk.flightcontroller</a></li>
@@ -184,6 +186,8 @@
   <a href="../../../dji/sdk/missionmanager/package-summary.html">dji.sdk.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/missionmanager/missionstep/package-summary.html">dji.sdk.missionmanager.missionstep</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/mobilerc/package-summary.html">dji.sdk.mobilerc</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/products/package-summary.html">dji.sdk.products</a></li>
     <li class="api apilevel-">
@@ -394,7 +398,13 @@ Summary:
             
               <a href="../../../dji/sdk/missionmanager/DJIMissionManager.html">DJIMissionManager</a>,
             
-              <a href="../../../dji/sdk/remotecontroller/DJIRemoteController.html">DJIRemoteController</a>
+              <a href="../../../dji/sdk/mobilerc/DJIMobileRemoteController.html">DJIMobileRemoteController</a>,
+            
+              <a href="../../../dji/sdk/airlink/DJIOcuSyncLink.html">DJIOcuSyncLink</a>,
+            
+              <a href="../../../dji/sdk/remotecontroller/DJIRemoteController.html">DJIRemoteController</a>,
+            
+              <a href="../../../dji/sdk/airlink/DJIWiFiLink.html">DJIWiFiLink</a>
             
           
       </div>
@@ -404,7 +414,8 @@ Summary:
   <table class="jd-sumtable-expando">
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/airlink/DJIAirLink.html">DJIAirLink</a></td>
-              <td class="jd-descrcol" width="100%">This class contains different wireless links between the product (aircraft, handheld), the remote controller (for aircraft products) and the mobile device.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This class contains different wireless links between the product (aircraft, handheld), the remote controller (for
+ aircraft products) and the mobile device.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/battery/DJIBattery.html">DJIBattery</a></td>
@@ -417,7 +428,9 @@ Summary:
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/flightcontroller/DJIFlightController.html">DJIFlightController</a></td>
-              <td class="jd-descrcol" width="100%">This class contains components of the flight controller and provides methods to send different commands to the flight controller.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This class contains components of the flight controller and provides methods to send different commands to the
+ flight
+ controller.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/gimbal/DJIGimbal.html">DJIGimbal</a></td>
@@ -437,8 +450,21 @@ Summary:
               <td class="jd-descrcol" width="100%">This class manages the execution cycle for a mission.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/sdk/mobilerc/DJIMobileRemoteController.html">DJIMobileRemoteController</a></td>
+              <td class="jd-descrcol" width="100%">A simulated remote controller on the mobile device to control the aircraft
+  when the physical remote controller is absent.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/sdk/airlink/DJIOcuSyncLink.html">DJIOcuSyncLink</a></td>
+              <td class="jd-descrcol" width="100%">This class is for handling the logic of SDRLink, which is the special Airlink that presents in Folding Drone.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/sdk/remotecontroller/DJIRemoteController.html">DJIRemoteController</a></td>
               <td class="jd-descrcol" width="100%">This class represents the remote controller of the aircraft.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html">DJIWiFiLink</a></td>
+              <td class="jd-descrcol" width="100%">This class provides methods to change the setting of the product's WiFi.&nbsp;</td>
           </tr>
   </table>
       </div>
@@ -601,6 +627,24 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getLegacySerialNumber(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)">getLegacySerialNumber</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
+        
+        <div class="jd-descrdiv">Get the legacy serial number of the component.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getSerialNumber(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)">getSerialNumber</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
         <div class="jd-descrdiv">Get the serial number of the component.</div>
@@ -609,7 +653,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -627,7 +671,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -934,6 +978,48 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns firmware version of the component.</p></div>
+
+    </div>
+</div>
+
+
+<a id="getLegacySerialNumber(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getLegacySerialNumber</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the legacy serial number of the component.
+ Note that this serial number does not match with the serial number found on the physical component.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the value(s) returned.
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>

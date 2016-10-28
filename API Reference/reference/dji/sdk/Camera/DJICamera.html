@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft">
+    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
     
     </div>
     <div id="headerRight">
@@ -171,6 +171,8 @@
     <li class="selected api apilevel-">
   <a href="../../../dji/sdk/camera/package-summary.html">dji.sdk.camera</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/camera/view/package-summary.html">dji.sdk.camera.view</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/codec/package-summary.html">dji.sdk.codec</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/flightcontroller/package-summary.html">dji.sdk.flightcontroller</a></li>
@@ -184,6 +186,8 @@
   <a href="../../../dji/sdk/missionmanager/package-summary.html">dji.sdk.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/missionmanager/missionstep/package-summary.html">dji.sdk.missionmanager.missionstep</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/mobilerc/package-summary.html">dji.sdk.mobilerc</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/products/package-summary.html">dji.sdk.products</a></li>
     <li class="api apilevel-">
@@ -213,6 +217,7 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJICamera.ThermalCameraUpdateTemperatureDataCallback.html">DJICamera.ThermalCameraUpdateTemperatureDataCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJICameraParameters.DJICameraParametersListener.html">DJICameraParameters.DJICameraParametersListener</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJIMediaManager.CameraDownloadListener.html">DJIMediaManager.CameraDownloadListener</a>&lt;E&gt;</li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJIMediaManager.MediaUpdatedVideoPlaybackStateCallback.html">DJIMediaManager.MediaUpdatedVideoPlaybackStateCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJIPlaybackManager.CameraFileDownloadCallback.html">DJIPlaybackManager.CameraFileDownloadCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJIPlaybackManager.DJICameraPlayBackStateCallBack.html">DJIPlaybackManager.DJICameraPlayBackStateCallBack</a></li>
       </ul>
@@ -225,6 +230,7 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJICameraParameters.VideoResolutionFps.html">DJICameraParameters.VideoResolutionFps</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJIMedia.html">DJIMedia</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJIMediaManager.html">DJIMediaManager</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJIMediaManager.VideoPlaybackState.html">DJIMediaManager.VideoPlaybackState</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJIPlaybackManager.html">DJIPlaybackManager</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJIPlaybackManager.DJICameraPlaybackState.html">DJIPlaybackManager.DJICameraPlaybackState</a></li>
       </ul>
@@ -234,6 +240,7 @@
     <li><h2>Enums</h2>
       <ul>
           <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJIMedia.MediaType.html">DJIMedia.MediaType</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/camera/DJIMedia.VideoPlaybackStatus.html">DJIMedia.VideoPlaybackStatus</a></li>
       </ul>
     </li>
               
@@ -607,68 +614,75 @@ Summary:
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNamePhantom34KCamera">DJICameraDisplayNamePhantom34KCamera</a></td>
+        <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNameMavicPro">DJICameraDisplayNameMavicPro</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
     <tr class=" api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNamePhantom34KCamera">DJICameraDisplayNamePhantom34KCamera</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNamePhantom3AdvancedCamera">DJICameraDisplayNamePhantom3AdvancedCamera</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNamePhantom3ProfessionalCamera">DJICameraDisplayNamePhantom3ProfessionalCamera</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNamePhantom3StandardCamera">DJICameraDisplayNamePhantom3StandardCamera</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNamePhantom4Camera">DJICameraDisplayNamePhantom4Camera</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNameX3">DJICameraDisplayNameX3</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNameX5">DJICameraDisplayNameX5</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNameX5Raw">DJICameraDisplayNameX5Raw</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNameXT">DJICameraDisplayNameXT</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../dji/sdk/camera/DJICamera.html#DJICameraDisplayNameZ3">DJICameraDisplayNameZ3</a></td>
         <td class="jd-descrcol" width="100%"></td>
@@ -862,6 +876,24 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#getAutoTurnOffLEDEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)">getAutoTurnOffLEDEnabled</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
+        
+        <div class="jd-descrdiv">Determines whether the automatic control of the front-arm LEDs is Enabled.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#getCameraMode(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.camera.DJICameraSettingsDef.CameraMode>)">getCameraMode</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/camera/DJICameraSettingsDef.CameraMode.html">DJICameraSettingsDef.CameraMode</a>&gt; callback)
         
         <div class="jd-descrdiv"><b>Also supported by thermal imaging camera.</div>
@@ -870,7 +902,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -888,7 +920,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -906,7 +938,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -924,7 +956,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -942,7 +974,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -960,7 +992,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -978,7 +1010,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -991,6 +1023,24 @@ Summary:
         <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#getFileIndexMode(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.camera.DJICameraSettingsDef.CameraFileIndexMode>)">getFileIndexMode</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/camera/DJICameraSettingsDef.CameraFileIndexMode.html">DJICameraSettingsDef.CameraFileIndexMode</a>&gt; callback)
         
         <div class="jd-descrdiv">Gets the camera's file index mode.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#getHighDefinitionLiveViewEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)">getHighDefinitionLiveViewEnabled</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
+        
+        <div class="jd-descrdiv"><code>true</code> if 1080p live view is enabled.</div>
   
   </td></tr>
 
@@ -1042,6 +1092,24 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#getLegacySerialNumber(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)">getLegacySerialNumber</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
+        
+        <div class="jd-descrdiv">Get legacy serial number of the component.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#getLensFocusAssistantEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWithTwoParam<java.lang.Boolean, java.lang.Boolean>)">getLensFocusAssistantEnabled</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWithTwoParam.html">DJICompletionCallbackWithTwoParam</a>&lt;Boolean,&nbsp;Boolean&gt; callback)
         
         <div class="jd-descrdiv"><b>Supported only by X5 camera and X5R camera.</div>
@@ -1050,7 +1118,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1068,7 +1136,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1086,7 +1154,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1104,7 +1172,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1122,7 +1190,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1140,7 +1208,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1158,7 +1226,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1176,7 +1244,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1194,7 +1262,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1207,6 +1275,24 @@ Summary:
         <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#getOpticalZoomSpec(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.camera.DJICameraSettingsDef.CameraOpticalZoomSpec>)">getOpticalZoomSpec</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/camera/DJICameraSettingsDef.CameraOpticalZoomSpec.html">DJICameraSettingsDef.CameraOpticalZoomSpec</a>&gt; callback)
         
         <div class="jd-descrdiv">Gets the specification of the zoom lens.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#getOrientation(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.camera.DJICameraSettingsDef.CameraOrientation>)">getOrientation</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/camera/DJICameraSettingsDef.CameraOrientation.html">DJICameraSettingsDef.CameraOrientation</a>&gt; callback)
+        
+        <div class="jd-descrdiv">Gets the camera's orientation.</div>
   
   </td></tr>
 
@@ -2483,6 +2569,24 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#setAutoTurnOffLEDEnabled(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setAutoTurnOffLEDEnabled</a></span>(boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Enables the automatic control of the front-arm LEDs.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#setCameraMode(dji.common.camera.DJICameraSettingsDef.CameraMode, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setCameraMode</a></span>(<a href="../../../dji/common/camera/DJICameraSettingsDef.CameraMode.html">DJICameraSettingsDef.CameraMode</a> mode, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
         <div class="jd-descrdiv"><b>Also supported by thermal imaging camera.</div>
@@ -2491,7 +2595,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2509,7 +2613,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2527,7 +2631,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2545,7 +2649,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2564,7 +2668,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2582,7 +2686,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2600,7 +2704,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2618,7 +2722,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2636,7 +2740,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2654,7 +2758,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2672,7 +2776,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2690,7 +2794,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2708,7 +2812,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2726,7 +2830,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2744,7 +2848,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2757,6 +2861,24 @@ Summary:
         <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#setFileIndexMode(dji.common.camera.DJICameraSettingsDef.CameraFileIndexMode, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setFileIndexMode</a></span>(<a href="../../../dji/common/camera/DJICameraSettingsDef.CameraFileIndexMode.html">DJICameraSettingsDef.CameraFileIndexMode</a> fileIndexMode, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
         <div class="jd-descrdiv">Sets the camera's file index mode.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#setHighDefinitionLiveViewEnabled(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setHighDefinitionLiveViewEnabled</a></span>(boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Enables HD (high-definition) live view.</div>
   
   </td></tr>
 
@@ -2916,6 +3038,24 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#setOrientation(dji.common.camera.DJICameraSettingsDef.CameraOrientation, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setOrientation</a></span>(<a href="../../../dji/common/camera/DJICameraSettingsDef.CameraOrientation.html">DJICameraSettingsDef.CameraOrientation</a> orientation, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Sets the camera's orientation.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#setPhotoAEBParam(dji.common.camera.DJICameraSettingsDef.CameraPhotoAEBParam, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setPhotoAEBParam</a></span>(<a href="../../../dji/common/camera/DJICameraSettingsDef.CameraPhotoAEBParam.html">DJICameraSettingsDef.CameraPhotoAEBParam</a> aebParam, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
         <div class="jd-descrdiv">Sets the camera's AEB capture parameters.</div>
@@ -2924,7 +3064,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2942,7 +3082,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2960,7 +3100,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2978,7 +3118,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -2996,7 +3136,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3014,7 +3154,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3032,7 +3172,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3052,7 +3192,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3071,7 +3211,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3089,7 +3229,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3107,7 +3247,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3125,7 +3265,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3143,7 +3283,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3162,7 +3302,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3180,7 +3320,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3198,7 +3338,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3217,7 +3357,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3236,7 +3376,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3254,7 +3394,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3272,7 +3412,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3291,7 +3431,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3309,7 +3449,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3328,7 +3468,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3347,7 +3487,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3365,7 +3505,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3384,7 +3524,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3403,7 +3543,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3422,7 +3562,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3441,7 +3581,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3460,7 +3600,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3479,7 +3619,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3497,7 +3637,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3516,7 +3656,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3535,7 +3675,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3554,7 +3694,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3573,7 +3713,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3591,7 +3731,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3610,7 +3750,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3629,7 +3769,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3648,7 +3788,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3666,7 +3806,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3685,7 +3825,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3703,7 +3843,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3721,7 +3861,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3739,7 +3879,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3757,7 +3897,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3775,7 +3915,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3793,7 +3933,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3812,7 +3952,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3830,7 +3970,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3848,7 +3988,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3866,7 +4006,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3884,7 +4024,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3902,7 +4042,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3914,13 +4054,14 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/camera/DJICamera.html#stopContinuousOpticalZoom(dji.common.util.DJICommonCallbacks.DJICompletionCallback)">stopContinuousOpticalZoom</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv">Called to stop focal length changing, when it currently is from calling `startContinuousOpticalZoom`.</div>
+        <div class="jd-descrdiv">Called to stop focal length changing, when it currently is from calling
+  <code>startContinuousOpticalZoom</code>.</div>
   
   </td></tr>
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3938,7 +4079,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -3956,7 +4097,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -4036,6 +4177,24 @@ From class
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getLegacySerialNumber(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)">getLegacySerialNumber</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
+        
+        <div class="jd-descrdiv">Get the legacy serial number of the component.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getSerialNumber(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)">getSerialNumber</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
         <div class="jd-descrdiv">Get the serial number of the component.</div>
@@ -4044,7 +4203,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -4062,7 +4221,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -4281,6 +4440,45 @@ From class
 <!-- ========= ENUM CONSTANTS DETAIL ======== -->
 <h2>Constants</h2>
 
+
+
+
+<a id="DJICameraDisplayNameMavicPro"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DJICameraDisplayNameMavicPro
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "Mavic Pro Camera"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
 
 
 
@@ -5028,6 +5226,48 @@ From class
 </div>
 
 
+<a id="getAutoTurnOffLEDEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getAutoTurnOffLEDEnabled</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Determines whether the automatic control of the front-arm LEDs is Enabled.
+  Supported only by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="getCameraMode(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.camera.DJICameraSettingsDef.CameraMode>)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -5349,6 +5589,50 @@ From class
 </div>
 
 
+<a id="getHighDefinitionLiveViewEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getHighDefinitionLiveViewEnabled</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if 1080p live view is enabled. This will return the value of the setter,
+  and not necessarily the actual live view resolution. For example, if recording in
+  4K and HD live view has previously been set, then this will return <code>true</code> but the
+  actual live view resolution will be 720p.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="getHue(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Integer>)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -5416,6 +5700,48 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Gets the camera's ISO value.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getLegacySerialNumber(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getLegacySerialNumber</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get legacy serial number of the component.
+ Please note this serial number does not match with the serial number found in the physical component.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -5796,7 +6122,8 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Gets zoom lens focal length in units of 0.1mm.
- It is only supported by X5 and X5R camera with lens Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ.</p></div>
+  It is only supported by X5 and X5R camera with lens Olympus M.Zuiko ED
+  14-42mm f/3.5-5.6 EZ and Z3 camera.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -5838,7 +6165,50 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Gets the specification of the zoom lens.
- It is only supported by X5 and X5R camera with lens Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ.</p></div>
+  It is only supported by X5 and X5R camera with lens Olympus M.Zuiko ED
+  14-42mm f/3.5-5.6 EZ and Z3 camera.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getOrientation(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.camera.DJICameraSettingsDef.CameraOrientation>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getOrientation</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/camera/DJICameraSettingsDef.CameraOrientation.html">DJICameraSettingsDef.CameraOrientation</a>&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the camera's orientation.
+  Supported only by Mavic Pro.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -8125,7 +8495,8 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Check if camera supports optical zoom.
- It is only supported by X5 and X5R camera with the Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ lens.</p></div>
+  It is only supported by X5 and X5R camera with the Olympus M.Zuiko ED
+  14-42mm f/3.5-5.6 EZ lens and Z3 camera.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li><code>true</code> if camera supports optical zoom.
@@ -8270,7 +8641,8 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Check if the current device supports Slow Motion video recording.
- Currently Slow Motion is supported only by the Osmo with X3 camera and Phantom 4 camera.
+ Currently Slow Motion is supported by the Osmo X3/Z3 camera, the Phantom 4
+ camera and the Mavic Pro camera.
  There are two ways to enter Slow Motion mode:
  1. Call setVideoSlowMotionEnabled with <code>true</code>.
  2. Call setVideoResolutionAndFrameRate with Resolution_1920x1080 and VideoFrameRate_120fps.
@@ -8718,6 +9090,54 @@ From class
         <tr>
           <th>enabled</th>
           <td>Enable or disable the audio record.</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned execution result.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setAutoTurnOffLEDEnabled(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setAutoTurnOffLEDEnabled</span>
+      <span class="normal">(boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enables the automatic control of the front-arm LEDs. The camera can turn off
+  the front-arm LEDs automatically when it shoots photos or records videos.
+  The LEDs will be turned on after the shooting or recording is finished.
+  Supported only by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>enabled</th>
+          <td>Enable the automatic control of the front-arm LEDs.</td>
         </tr>
         <tr>
           <th>callback</th>
@@ -9488,6 +9908,56 @@ From class
 </div>
 
 
+<a id="setHighDefinitionLiveViewEnabled(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setHighDefinitionLiveViewEnabled</span>
+      <span class="normal">(boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enables HD (high-definition) live view. When it is enabled, the live view
+  resolution is 1080p with frame rate 30 fps.
+  The settings will only take effect when the camera is in record-video mode
+  and the video resolution is either 1080p or 2.7k without slow-motion enabled.
+  If recording video in 4k, then the live stream will be limited to 720p.
+  Supported only by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>enabled</th>
+          <td>Enable or disable HD live view.</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned execution result.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="setHue(int, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -9877,14 +10347,62 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets focal length of the zoom lens.
- It is only supported by X5 and X5R camera with lens Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ.</p></div>
+  It is only supported by X5 and X5R camera with lens Olympus M.Zuiko ED
+  14-42mm f/3.5-5.6 EZ and Z3 camera.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>focalLength</th>
-          <td>Focal length of zoom lens. Valid range is [`CameraOpticalZoomSpec.minFocalLength`,
- `CameraOpticalZoomSpec.maxFocalLength`] and must be a multiple of `CameraOpticalZoomspec.focalLengthStep'</td>
+          <td>Focal length of zoom lens. Valid range is [<code>CameraOpticalZoomSpec.minFocalLength</code>,
+ <code>CameraOpticalZoomSpec.maxFocalLength</code>] and must be a multiple of <code>CameraOpticalZoomspec.focalLengthStep</code></td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned execution result.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setOrientation(dji.common.camera.DJICameraSettingsDef.CameraOrientation, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setOrientation</span>
+      <span class="normal">(<a href="../../../dji/common/camera/DJICameraSettingsDef.CameraOrientation.html">DJICameraSettingsDef.CameraOrientation</a> orientation, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the camera's orientation. The gimbal will rotate the roll axis based on
+  the orientation.
+  Supported only by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>orientation</th>
+          <td>Camera's orientation.</td>
         </tr>
         <tr>
           <th>callback</th>
@@ -12331,7 +12849,7 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by the Osmo with X3 and Phantom 4 camera</b><br>
  Sets whether Slow Motion mode is enabled or not. <br>
- When it is enabled, the resolution and frame rate will change to 1920x1080 120fps. <br>
+ When it is enabled, the resolution and frame rate will change to 1920x1080 120fps and 1280x720 120fpx only for Mavic. <br>
  When it is disabled, the reolution and frame rate will recover to previous setting for Osmo.
  For Phantom 4 camera, the resolution will become Resolution_1920x1080 and the frame rate will become
  FrameRate_48fps.</p></div>
@@ -12480,10 +12998,11 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Start changing the focal length of the lens in specified direction with specified speed. Focal length change
- (zooming) will halt when maximum or minimum focal lengths are reached, or `stopContinuousOpticalZoomWithCompletion`
- is called.
- It is only supported by X5 and X5R camera on Osmo with lens Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Start changing the focal length of the lens in specified direction with specified speed.
+ Focal length change (zooming) will halt when maximum or minimum focal lengths are reached,
+ or <code>stopContinuousOpticalZoom</code> is called.
+  It is only supported by X5 and X5R camera on Osmo with lens Olympus M.Zuiko
+  ED 14-42mm f/3.5-5.6 EZ and Z3 camera.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -12638,8 +13157,10 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Called to stop focal length changing, when it currently is from calling `startContinuousOpticalZoom`.
- It is only supported by X5 and X5R camera on Osmo with lens Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Called to stop focal length changing, when it currently is from calling
+  <code>startContinuousOpticalZoom</code>.
+  It is only supported by X5 and X5R camera on Osmo with lens Olympus M.Zuiko
+  ED 14-42mm f/3.5-5.6 EZ and Z3 camera.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">

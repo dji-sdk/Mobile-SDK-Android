@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft">
+    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
     
     </div>
     <div id="headerRight">
@@ -171,6 +171,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/camera/package-summary.html">dji.sdk.camera</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/camera/view/package-summary.html">dji.sdk.camera.view</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/codec/package-summary.html">dji.sdk.codec</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/flightcontroller/package-summary.html">dji.sdk.flightcontroller</a></li>
@@ -184,6 +186,8 @@
   <a href="../../../dji/sdk/missionmanager/package-summary.html">dji.sdk.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/missionmanager/missionstep/package-summary.html">dji.sdk.missionmanager.missionstep</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/mobilerc/package-summary.html">dji.sdk.mobilerc</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/products/package-summary.html">dji.sdk.products</a></li>
     <li class="api apilevel-">
@@ -426,20 +430,23 @@ Summary:
 
 <h2>Class Overview</h2>
 <p>In the waypoint mission, the aircraft will travel between waypoints, execute actions at
-  waypoints, and adjust heading and altitude between waypoints. Waypoints are physical locations
-  to which the aircraft will fly. Creating a series of waypoints, in effect, will program a flight
-  route for the aircraft to follow. Actions can also be added to waypoints, which will be carried
-  out when the aircraft reaches the waypoint.
+ waypoints, and adjust heading and altitude between waypoints. Waypoints are physical locations
+ to which the aircraft will fly. Creating a series of waypoints, in effect, will program a flight
+ route for the aircraft to follow. Actions can also be added to waypoints, which will be carried
+ out when the aircraft reaches the waypoint.
 
-  The aircraft travels between waypoints automatically at a base speed. However, the user can change the speed by
-  using the pitch joystick. If the stick is pushed up, the speed will increase. If the stick is pushed down, the speed
-  will slow down. The stick can be pushed down to stop the aircraft and further pushed to start making the aircraft
-  travel back along the path it came. When the aircraft is traveling through waypoints in the reverse order, it will
-  not execute waypoint actions at each waypoint. If the stick is released, the aircraft will again travel through the
-  waypoints in the original order, and continue to execute waypoint actions (even if executed previously).
+ The aircraft travels between waypoints automatically at a base speed. However, the user can change the speed by
+ using the pitch joystick. If the stick is pushed up, the speed will increase. If the stick is pushed down, the speed
+ will slow down. The stick can be pushed down to stop the aircraft and further pushed to start making the aircraft
+ travel back along the path it came. When the aircraft is traveling through waypoints in the reverse order, it will
+ not execute waypoint actions at each waypoint. If the stick is released, the aircraft will again travel through the
+ waypoints in the original order, and continue to execute waypoint actions (even if executed previously).
 
-  If the aircraft is pulled back along the waypoint mission all the way to the first waypoint, then it will hover in place
-  until the stick is released enough for it to again progress through the mission from start to finish.
+ If the aircraft is pulled back along the waypoint mission all the way to the first waypoint, then it will hover in
+ place
+ until the stick is released enough for it to again progress through the mission from start to finish.
+
+ It is not supported by Mavic Pro when using WiFi connection.
 </p>
 
 
@@ -659,7 +666,8 @@ Summary:
           
           float</td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/missionmanager/DJIWaypointMission.html#maxFlightSpeed">maxFlightSpeed</a></td>
-          <td class="jd-descrcol" width="100%">While the aircraft is travelling between waypoints, you can offset its speed by using the throttle joystick on the
+          <td class="jd-descrcol" width="100%">While the aircraft is travelling between waypoints, you can offset its speed by using the throttle joystick on
+ the
  remote controller.</td>
       </tr>
       
@@ -715,7 +723,7 @@ Summary:
           
           int</td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/missionmanager/DJIWaypointMission.html#repeatNum">repeatNum</a></td>
-          <td class="jd-descrcol" width="100%">How many times the ground station task will be repeated, meaning that if mRepeatNum is 1, 
+          <td class="jd-descrcol" width="100%">How many times the ground station task will be repeated, meaning that if mRepeatNum is 1,
  the aircraft will return to the first waypoint after finishing the task, and repeat the task once more.</td>
       </tr>
       
@@ -934,7 +942,7 @@ Summary:
         <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIWaypointMission.html#setAutoFlightSpeed(float, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setAutoFlightSpeed</a></span>(float speed, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
         <div class="jd-descrdiv">Set the flight speed while the mission is executing automatically (without manual joystick
-   speed input).</div>
+ speed input).</div>
   
   </td></tr>
 
@@ -1286,8 +1294,8 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                1
-                (0x00000001)
+                2
+                (0x00000002)
             
         </span>
         </div>
@@ -1336,7 +1344,8 @@ From class
 
  If autoFlightSpeed >0: Actual speed is autoFlightSpeed + Joystick Speed (with combined max of maxFlightSpeed)
  If autoFlightSpeed =0: Actual speed is controlled only by the remote controller joystick.
- If autoFlightSpeed <0 and the aircraft is at the first waypoint, then the aircraft will hover in place until the speed is made positive by the remote controller joystick.</p></div>
+ If autoFlightSpeed <0 and the aircraft is at the first waypoint, then the aircraft will hover in place until the
+ speed is made positive by the remote controller joystick.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
       <ul class="nolist"><li><code><a href="../../../dji/sdk/missionmanager/DJIWaypoint.html">DJIWaypoint</a></code></li>
@@ -1404,8 +1413,8 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by the Inspire 1 and Phantom 3 Series</b><br>
- What type of path is generated for the aircraft to follow. Path can either 
- be generated by connecting adjacent waypoints with straight lines, or with 
+ What type of path is generated for the aircraft to follow. Path can either
+ be generated by connecting adjacent waypoints with straight lines, or with
  smooth curves. Default is Normal. <br></p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
@@ -1441,7 +1450,8 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Determines how the aircraft goes to the first waypoint from the current position. The default is DJIWaypointMissionGotoWaypointSafely.
+  <div class="jd-tagdata jd-tagdescr"><p>Determines how the aircraft goes to the first waypoint from the current position. The default is
+ DJIWaypointMissionGotoWaypointSafely.
 </p></div>
 
     
@@ -1508,12 +1518,17 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>While the aircraft is travelling between waypoints, you can offset its speed by using the throttle joystick on the
+  <div class="jd-tagdata jd-tagdescr"><p>While the aircraft is travelling between waypoints, you can offset its speed by using the throttle joystick on
+ the
  remote controller. maxFlightSpeed is this offset when the joystick is pushed to maximum deflection. For example,
- If maxFlightSpeed is 10 m/s, then pushing the throttle joystick all the way up will add 10 m/s to the aircraft speed,
- while pushing down will subtrace 10 m/s from the aircraft speed. If the remote controller stick is not at maximum
- deflection, then the offset speed will be interpolated between [0, maxFlightSpeed] with a resolution of 1000 steps.
- If the offset speed is negative, then the aircraft will fly backwards to previous waypoints. When it reaches the first
+ If maxFlightSpeed is 10 m/s, then pushing the throttle joystick all the way up will add 10 m/s to the aircraft
+ speed,
+ while pushing down will subtrace 10 m/s from the aircraft speed. If the remote controller stick is not at
+ maximum
+ deflection, then the offset speed will be interpolated between [0, maxFlightSpeed] with a resolution of 1000
+ steps.
+ If the offset speed is negative, then the aircraft will fly backwards to previous waypoints. When it reaches the
+ first
  waypoint, it will then hover in place until a positive speed is applied.
  maxFlightSpeed has a range of [2,15] m/s.
 </p></div>
@@ -1578,8 +1593,8 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Determines whether the aircraft can rotate the gimbal pitch when executing a waypoint mission.
-   If <code>true</code>, the aircraft will control the gimbal pitch rotation between
-   waypoints using 'gimbalPitch' of DJIWaypoint.
+ If <code>true</code>, the aircraft will control the gimbal pitch rotation between
+ waypoints using 'gimbalPitch' of DJIWaypoint.
 </p></div>
 
     
@@ -1610,8 +1625,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Used when 'headingMode' is 'DJIWaypointMissionHeadingMode.TowardPointOfInterest'. The aircraft will always head to a
-  point while executing mission. Default is <code>NaN</code>.
+  <div class="jd-tagdata jd-tagdescr"><p>Used when 'headingMode' is 'DJIWaypointMissionHeadingMode.TowardPointOfInterest'. The aircraft will always head
+ to a
+ point while executing mission. Default is <code>NaN</code>.
 </p></div>
 
     
@@ -1642,8 +1658,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Property is used when 'headingMode' is 'DJIWaypointMissionHeadingMode.TowardPointOfInterest'. Aircraft will always head to a
-  point while executing mission. Default is <code>NaN</code>.
+  <div class="jd-tagdata jd-tagdescr"><p>Property is used when 'headingMode' is 'DJIWaypointMissionHeadingMode.TowardPointOfInterest'. Aircraft will
+ always head to a
+ point while executing mission. Default is <code>NaN</code>.
 </p></div>
 
     
@@ -1674,7 +1691,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>How many times the ground station task will be repeated, meaning that if mRepeatNum is 1, 
+  <div class="jd-tagdata jd-tagdescr"><p>How many times the ground station task will be repeated, meaning that if mRepeatNum is 1,
  the aircraft will return to the first waypoint after finishing the task, and repeat the task once more. <br>
  Default value is 0. Range is [0, 255].</p></div>
   <div class="jd-tagdata">
@@ -1806,8 +1823,8 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Add a waypoint to the waypoint mission. The maximum number of waypoints should not larger
-  than DJIWaypointMissionMaximumWaypointCount. A waypoint will only be valid if the distance
-  (in three dimensions) between two adjacent waypoints is in range [2,2000] meters.</p></div>
+ than DJI_WAYPOINT_MISSION_MAXIMUM_WAYPOINT_COUNT. A waypoint will only be valid if the distance
+ (in three dimensions) between two adjacent waypoints is in range [2,2000] meters.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -1896,7 +1913,7 @@ From class
         <tr>
           <th>index</th>
           <td>Index of the waypoint wanting to be retrieved from the array of waypoints in the
-  waypoint mission.</td>
+ waypoint mission.</td>
         </tr>
       </table>
   </div>
@@ -2084,7 +2101,7 @@ From class
         <tr>
           <th>index</th>
           <td>Index of waypoint to be removed from the waypoint mission from
-  the array of all waypoints.
+ the array of all waypoints.
 </td>
         </tr>
       </table>
@@ -2120,17 +2137,17 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Set the flight speed while the mission is executing automatically (without manual joystick
-   speed input). This is the only property or method in this class that can communicate with
-   the aircraft during a mission. All other properties and methods are used offline to prepare
-   the mission which is then uploaded to the aircraft.</p></div>
+ speed input). This is the only property or method in this class that can communicate with
+ the aircraft during a mission. All other properties and methods are used offline to prepare
+ the mission which is then uploaded to the aircraft.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>speed</th>
           <td>Auto flight speed to be set. The absolute value of the auto flight speed
-               should be less than or equal to the maxFlightSpeed. It's range is
-               then [-maxFlightSpeed, maxFlightSpeed] m/s.</td>
+ should be less than or equal to the maxFlightSpeed. It's range is
+ then [-maxFlightSpeed, maxFlightSpeed] m/s.</td>
         </tr>
         <tr>
           <th>callback</th>

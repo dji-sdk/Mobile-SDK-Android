@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp" >
+
+    <ImageView
+        android:id="@+id/log_dlg_control"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:scaleType="center"
+        android:src="@drawable/btn_zoom_selector" />
+
+    <ImageView
+        android:id="@+id/log_dlg_lock"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/log_dlg_control"
+        android:adjustViewBounds="true"
+        android:scaleType="center"
+        android:src="@drawable/btn_lock_selector" />
+    <LinearLayout
+        android:id="@+id/dbg_region"
+        android:orientation="vertical"
+        android:layout_width="140dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/log_dlg_lock"
+        android:layout_alignParentRight="true"
+        android:paddingTop="40dp"
+        >
+
+
+        <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberPicker1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Sre"
+            android:id="@+id/set_sre_button" />
+
+
+
+
+
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/log_dlg_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/dbg_region"
+        android:fadeScrollbars="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarSize="1dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarThumbVertical="@android:color/holo_red_light"
+        android:scrollbarTrackVertical="@color/midware_white_half"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/log_dlg_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffff0000"
+            android:textSize="10sp"
+            android:textStyle="bold" >
+        </TextView>
+    </ScrollView>
+
+    <RadioGroup 
+        android:id="@+id/log_dlg_rg"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/log_dlg_scroll"
+        android:layout_below="@id/log_dlg_lock"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="4dp">
+
+
+    </RadioGroup>
+</RelativeLayout>

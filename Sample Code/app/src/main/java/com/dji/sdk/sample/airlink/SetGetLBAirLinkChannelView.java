@@ -12,6 +12,7 @@ import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 
 import java.util.ArrayList;
 
+import dji.common.airlink.ChannelSelectionMode;
 import dji.common.airlink.LBAirLinkChannelSelectionMode;
 import dji.common.error.DJIError;
 import dji.common.util.DJICommonCallbacks;
@@ -33,7 +34,7 @@ public class SetGetLBAirLinkChannelView extends BaseSetGetView {
         if (DJIModuleVerificationUtil.isLBAirlinkAvailable()) {
             DJISampleApplication.getProductInstance().getAirLink().
                     getLBAirLink().setChannelSelectionMode(
-                    LBAirLinkChannelSelectionMode.Manual,
+                    ChannelSelectionMode.Manual,
                     new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
@@ -52,7 +53,7 @@ public class SetGetLBAirLinkChannelView extends BaseSetGetView {
         if (DJIModuleVerificationUtil.isLBAirlinkAvailable()) {
             DJISampleApplication.getProductInstance().getAirLink().
                     getLBAirLink().setChannelSelectionMode(
-                    LBAirLinkChannelSelectionMode.Auto,
+                    ChannelSelectionMode.Auto,
                     new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {

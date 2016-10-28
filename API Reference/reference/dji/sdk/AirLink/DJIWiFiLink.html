@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft">
+    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
     
     </div>
     <div id="headerRight">
@@ -171,6 +171,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/sdk/camera/package-summary.html">dji.sdk.camera</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/sdk/camera/view/package-summary.html">dji.sdk.camera.view</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/sdk/codec/package-summary.html">dji.sdk.codec</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/flightcontroller/package-summary.html">dji.sdk.flightcontroller</a></li>
@@ -184,6 +186,8 @@
   <a href="../../../dji/sdk/missionmanager/package-summary.html">dji.sdk.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/missionmanager/missionstep/package-summary.html">dji.sdk.missionmanager.missionstep</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/sdk/mobilerc/package-summary.html">dji.sdk.mobilerc</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/sdk/products/package-summary.html">dji.sdk.products</a></li>
     <li class="api apilevel-">
@@ -206,8 +210,12 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedLightbridgeModuleSignalInformationCallback.html">DJILBAirLink.DJILBAirLinkUpdatedLightbridgeModuleSignalInformationCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedRemoteControllerSignalInformationCallback.html">DJILBAirLink.DJILBAirLinkUpdatedRemoteControllerSignalInformationCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJIOnReceivedVideoCallback.html">DJILBAirLink.DJIOnReceivedVideoCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIOcuSyncLink.FrequencyInterferenceUpdatedCallback.html">DJIOcuSyncLink.FrequencyInterferenceUpdatedCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIOcuSyncLink.ReceivedWarningMessageCallback.html">DJIOcuSyncLink.ReceivedWarningMessageCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIOcuSyncLink.VideoDataRateUpdatedCallback.html">DJIOcuSyncLink.VideoDataRateUpdatedCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIWiFiLink.DJIWiFiGetSignalChangedCallback.html">DJIWiFiLink.DJIWiFiGetSignalChangedCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIWiFiLink.DJIWiFiSignalQualityChangedCallback.html">DJIWiFiLink.DJIWiFiSignalQualityChangedCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIWiFiLink.RSSICallback.html">DJIWiFiLink.RSSICallback</a></li>
       </ul>
     </li>
               
@@ -216,6 +224,7 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIAirLink.html">DJIAirLink</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIAuxLink.html">DJIAuxLink</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.html">DJILBAirLink</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIOcuSyncLink.html">DJIOcuSyncLink</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html">DJIWiFiLink</a></li>
       </ul>
     </li>
@@ -259,6 +268,13 @@
 <div id="api-info-block">
 
 
+
+  
+   
+  
+  
+  
+  
 
   
    
@@ -316,14 +332,18 @@ Summary:
     public
      
      
-    abstract
+    
     class
 <h1>DJIWiFiLink</h1>
 
 
 
   
-    extends Object<br/>
+  
+  
+
+  
+    extends <a href="../../../dji/sdk/base/DJIBaseComponent.html">DJIBaseComponent</a><br/>
   
   
   
@@ -343,11 +363,21 @@ Summary:
 
     <tr>
          	
-        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+        <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object</td>
     </tr>
     
 
     <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+         	
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../dji/sdk/base/DJIBaseComponent.html">dji.sdk.base.DJIBaseComponent</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
@@ -429,6 +459,19 @@ Summary:
     </tr>
     
     
+    <tr class="alt-color api apilevel-" >
+      <td class="jd-typecol">
+        
+         
+         
+        
+        interface</td>
+      <td class="jd-linkcol"><a href="../../../dji/sdk/airlink/DJIWiFiLink.RSSICallback.html">DJIWiFiLink.RSSICallback</a></td>
+      <td class="jd-descrcol" width="100%">Callback to listen to any changes in all RSSIs
+&nbsp;</td>
+    </tr>
+    
+    
 
 </table>
 
@@ -500,6 +543,60 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#getAvailableChannels(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Integer[]>)">getAvailableChannels</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer[]&gt; callback)
+        
+        <div class="jd-descrdiv">Gets the channels available for the current frequency band.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#getChannel(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Integer>)">getChannel</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer&gt; callback)
+        
+        <div class="jd-descrdiv">Gets the WiFi channel.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#getDataRate(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.WifiAirLinkDataRate>)">getDataRate</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/WifiAirLinkDataRate.html">WifiAirLinkDataRate</a>&gt; callback)
+        
+        <div class="jd-descrdiv">Gets the current data rate (throughput).</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#getWiFiFrequencyBand(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.WiFiFrequencyBand>)">getWiFiFrequencyBand</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/WiFiFrequencyBand.html">WiFiFrequencyBand</a>&gt; callback)
         
         <div class="jd-descrdiv">Gets the current WiFi frequency band.</div>
@@ -508,7 +605,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -526,7 +623,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -544,19 +641,69 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
-            abstract
             
             
             
             
-            boolean
+            
+            void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#isWiFiFrequencyBandEditable()">isWiFiFrequencyBandEditable</a></span>()
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#isWiFiFrequencyBandEditable(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)">isWiFiFrequencyBandEditable</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
         
-        <div class="jd-descrdiv"><code>true</code> if product allows user to change WiFi frequency bands.</div>
+        <div class="jd-descrdiv"><code>true</code> if the product allows the user to change WiFi frequency bands.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#onEventBackgroundThread(DataWifiGetPushElecSignal)">onEventBackgroundThread</a></span>(DataWifiGetPushElecSignal params)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#onEventBackgroundThread(DataWifiGetPushSignal)">onEventBackgroundThread</a></span>(DataWifiGetPushSignal params)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#rebootWiFi(dji.common.util.DJICommonCallbacks.DJICompletionCallback)">rebootWiFi</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Reboots the WiFi.</div>
   
   </td></tr>
 
@@ -572,9 +719,9 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#rebootWiFi(dji.common.util.DJICommonCallbacks.DJICompletionCallback)">rebootWiFi</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#setChannel(java.lang.Integer, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setChannel</a></span>(Integer channel, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv">Reboots the WiFi.</div>
+        <div class="jd-descrdiv">Sets the WiFi channel.</div>
   
   </td></tr>
 
@@ -612,6 +759,74 @@ Summary:
         
         <div class="jd-descrdiv">Sets up the callback for WiFi electric signal changed callback.</div>
   
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#setDataRate(dji.common.airlink.WifiAirLinkDataRate, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setDataRate</a></span>(<a href="../../../dji/common/airlink/WifiAirLinkDataRate.html">WifiAirLinkDataRate</a> rate, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Sets the WiFi data rate (throughput).</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#setRSSICallback(dji.sdk.airlink.DJIWiFiLink.RSSICallback)">setRSSICallback</a></span>(<a href="../../../dji/sdk/airlink/DJIWiFiLink.RSSICallback.html">DJIWiFiLink.RSSICallback</a> rssiCallback)
+        
+        <div class="jd-descrdiv">Setter for RSSI callback</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            synchronized
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#setRemoteControllerStrengthChangeCallback(dji.common.airlink.SignalQualityUpdatedCallback)">setRemoteControllerStrengthChangeCallback</a></span>(<a href="../../../dji/common/airlink/SignalQualityUpdatedCallback.html">SignalQualityUpdatedCallback</a> callback)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            synchronized
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJIWiFiLink.html#setVideoSignalStrengthChangeCallback(dji.common.airlink.SignalQualityUpdatedCallback)">setVideoSignalStrengthChangeCallback</a></span>(<a href="../../../dji/common/airlink/SignalQualityUpdatedCallback.html">SignalQualityUpdatedCallback</a> callback)
+        
   </td></tr>
 
 
@@ -682,6 +897,122 @@ Summary:
 <table id="inhmethods" class="jd-sumtable"><tr><th>
   <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
   <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-dji.sdk.base.DJIBaseComponent" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-dji.sdk.base.DJIBaseComponent-trigger"
+          src="../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../dji/sdk/base/DJIBaseComponent.html">dji.sdk.base.DJIBaseComponent</a>
+
+<div id="inherited-methods-dji.sdk.base.DJIBaseComponent">
+  <div id="inherited-methods-dji.sdk.base.DJIBaseComponent-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-dji.sdk.base.DJIBaseComponent-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getFirmwareVersion(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)">getFirmwareVersion</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
+        
+        <div class="jd-descrdiv">Returns firmware version of the component.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getLegacySerialNumber(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)">getLegacySerialNumber</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
+        
+        <div class="jd-descrdiv">Get the legacy serial number of the component.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#getSerialNumber(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)">getSerialNumber</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
+        
+        <div class="jd-descrdiv">Get the serial number of the component.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#isConnected()">isConnected</a></span>()
+        
+        <div class="jd-descrdiv">This is the method for detecting whether the component is connected.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/base/DJIBaseComponent.html#setDJIComponentListener(dji.sdk.base.DJIBaseComponent.DJIComponentListener)">setDJIComponentListener</a></span>(<a href="../../../dji/sdk/base/DJIBaseComponent.DJIComponentListener.html">DJIBaseComponent.DJIComponentListener</a> listener)
+        
+        <div class="jd-descrdiv">Sets the listener for the DJI component.</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
 
 
 <tr class="api apilevel-" >
@@ -934,6 +1265,134 @@ From class
 
 
 
+<a id="getAvailableChannels(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Integer[]>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getAvailableChannels</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer[]&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the channels available for the current frequency band. When
+ DJIWiFiFrequencyBandDual is selected, channels for both 2.4GHz and 5GHz
+ are available.
+ Supported only by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The completion block with the returned execution result.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getChannel(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Integer>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getChannel</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the WiFi channel. Channels 1-13 are in the 2.4 GHz band. Other channels
+ are in the 5 GHz band.
+ Supported only by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getDataRate(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.WifiAirLinkDataRate>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getDataRate</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/WifiAirLinkDataRate.html">WifiAirLinkDataRate</a>&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the current data rate (throughput).</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="getWiFiFrequencyBand(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.WiFiFrequencyBand>)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1058,7 +1517,7 @@ From class
 </div>
 
 
-<a id="isWiFiFrequencyBandEditable()"></a>
+<a id="isWiFiFrequencyBandEditable(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1066,12 +1525,12 @@ From class
         public 
          
          
-        abstract 
          
-        boolean
+         
+        void
       </span>
       <span class="sympad">isWiFiFrequencyBandEditable</span>
-      <span class="normal">()</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1083,9 +1542,71 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if product allows user to change WiFi frequency bands.
- Only Osmo supports this feature.
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the product allows the user to change WiFi frequency bands.
+ Osmo and Mavic Pro with WiFi connection support this feature.
 </p></div>
+
+    </div>
+</div>
+
+
+<a id="onEventBackgroundThread(DataWifiGetPushElecSignal)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onEventBackgroundThread</span>
+      <span class="normal">(DataWifiGetPushElecSignal params)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="onEventBackgroundThread(DataWifiGetPushSignal)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onEventBackgroundThread</span>
+      <span class="normal">(DataWifiGetPushSignal params)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>
@@ -1123,6 +1644,55 @@ From class
         <tr>
           <th>callback</th>
           <td>The execution callback with the value(s) returned.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setChannel(java.lang.Integer, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setChannel</span>
+      <span class="normal">(Integer channel, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the WiFi channel. `getAvailableChannels` must be used to determine
+ which channels are possible to set.
+ When a new channel is set, the WiFi on the product will reboot.
+ The channel can only be changed when the product is not flying.
+ Supported only by Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>channel</th>
+          <td>Index of the channel to select.</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned execution result.
 </td>
         </tr>
       </table>
@@ -1200,6 +1770,155 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets up the callback for WiFi electric signal changed callback.
 </p></div>
+
+    </div>
+</div>
+
+
+<a id="setDataRate(dji.common.airlink.WifiAirLinkDataRate, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setDataRate</span>
+      <span class="normal">(<a href="../../../dji/common/airlink/WifiAirLinkDataRate.html">WifiAirLinkDataRate</a> rate, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the WiFi data rate (throughput). Higher data rates increase the quality
+ of video transmission, but can only be used at shorter ranges.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>rate</th>
+          <td>Data rate (throughput).</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned execution result.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setRSSICallback(dji.sdk.airlink.DJIWiFiLink.RSSICallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setRSSICallback</span>
+      <span class="normal">(<a href="../../../dji/sdk/airlink/DJIWiFiLink.RSSICallback.html">DJIWiFiLink.RSSICallback</a> rssiCallback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Setter for RSSI callback</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>rssiCallback</th>
+          <td>your implementation of <code><a href="../../../dji/sdk/airlink/DJIWiFiLink.RSSICallback.html">DJIWiFiLink.RSSICallback</a></code>
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setRemoteControllerStrengthChangeCallback(dji.common.airlink.SignalQualityUpdatedCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">setRemoteControllerStrengthChangeCallback</span>
+      <span class="normal">(<a href="../../../dji/common/airlink/SignalQualityUpdatedCallback.html">SignalQualityUpdatedCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setVideoSignalStrengthChangeCallback(dji.common.airlink.SignalQualityUpdatedCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">setVideoSignalStrengthChangeCallback</span>
+      <span class="normal">(<a href="../../../dji/common/airlink/SignalQualityUpdatedCallback.html">SignalQualityUpdatedCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>
@@ -1323,7 +2042,7 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets the WiFi SSID. The setting will take effect only after the product
-  reboots.</p></div>
+ reboots.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
