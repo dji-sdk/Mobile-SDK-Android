@@ -28,7 +28,7 @@ public class PushBatteryDataView extends BasePushDataView {
         super.onAttachedToWindow();
 
         try {
-            DJISampleApplication.getProductInstance().getBattery().setBatteryStateUpdateCallback(
+            DJISampleApplication.getProductInstance().getBatteries().get(0).setBatteryStateUpdateCallback(
                     new DJIBattery.DJIBatteryStateUpdateCallback() {
                         @Override
                         public void onResult(DJIBatteryState djiBatteryState) {
