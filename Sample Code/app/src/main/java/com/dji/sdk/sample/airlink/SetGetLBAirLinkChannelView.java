@@ -13,7 +13,6 @@ import com.dji.sdk.sample.utils.DJIModuleVerificationUtil;
 import java.util.ArrayList;
 
 import dji.common.airlink.ChannelSelectionMode;
-import dji.common.airlink.LBAirLinkChannelSelectionMode;
 import dji.common.error.DJIError;
 import dji.common.util.DJICommonCallbacks;
 import dji.sdk.airlink.DJILBAirLink;

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Simulator is off."
+        android:id="@+id/textview_simulator"/>
+
+
+    <LinearLayout
+        android:id="@+id/group1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/textview_simulator"
+        android:orientation="horizontal">
+        <ToggleButton
+            android:id="@+id/btn_start_simulator"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Start Simulator"
+            android:textOff="Start Simulator"
+            android:textOn="Stop Simulator"
+            android:layout_marginBottom="10dp"
+            style="@style/common_button"
+            android:layout_marginRight="10dp" />
+        <Button
+            android:id="@+id/btn_force_land"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Confirm Land"
+            android:layout_marginBottom="10dp"
+            style="@style/common_button"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/group2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/group1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_take_off"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Take Off"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/common_button"/>
+        <Button
+            android:id="@+id/btn_auto_land"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Auto Land"
+            android:layout_marginBottom="10dp"
+            style="@style/common_button"/>
+    </LinearLayout>
+
+    <com.dji.sdk.sample.utils.OnScreenJoystick
+        android:id="@+id/directionJoystickLeft"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@mipmap/joystick_bg"/>
+
+    <com.dji.sdk.sample.utils.OnScreenJoystick
+        android:id="@+id/directionJoystickRight"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/joystick_bg"/>
+
+</RelativeLayout>

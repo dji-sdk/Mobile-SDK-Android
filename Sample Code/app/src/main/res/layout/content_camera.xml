@@ -5,107 +5,128 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:clickable="true">
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/listview_subtitle"
-        android:text="@string/camera_subtitle_general"/>
+        android:layout_height="match_parent">
 
-    <com.dji.sdk.sample.common.ListViewItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        set:list_item_name="@string/camera_listview_push_info"
-        set:sub_Layout="@layout/content_main"
-        set:component_name="@string/component_camera"
-        set:view_name="@string/view_push_camera_data"
-        >
-    </com.dji.sdk.sample.common.ListViewItem>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <com.dji.sdk.sample.common.ListViewItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        set:list_item_name="@string/camera_listview_iso"
-        set:sub_Layout="@layout/content_main"
-        set:component_name="@string/component_camera"
-        set:view_name="@string/view_set_get_iso">
-    </com.dji.sdk.sample.common.ListViewItem>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/listview_subtitle"
+                android:text="@string/camera_subtitle_general"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/listview_subtitle"
-        android:text="@string/camera_subtitle_shoot_photo"/>
+            <com.dji.sdk.sample.common.ListViewItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                set:list_item_name="@string/camera_listview_push_info"
+                set:sub_Layout="@layout/content_main"
+                set:component_name="@string/component_camera"
+                set:view_name="@string/view_push_camera_data"
+                >
+            </com.dji.sdk.sample.common.ListViewItem>
 
-    <com.dji.sdk.sample.common.ListViewItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        set:list_item_name="@string/camera_listview_shoot_single_photo"
-        set:sub_Layout="@layout/content_main"
-        set:component_name="@string/component_camera"
-        set:view_name="@string/view_shoot_single_photo">
-    </com.dji.sdk.sample.common.ListViewItem>
+            <com.dji.sdk.sample.common.ListViewItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                set:list_item_name="@string/camera_listview_iso"
+                set:sub_Layout="@layout/content_main"
+                set:component_name="@string/component_camera"
+                set:view_name="@string/view_set_get_iso">
+            </com.dji.sdk.sample.common.ListViewItem>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/listview_subtitle"
-        android:text="@string/camera_subtitle_record_video"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/listview_subtitle"
+                android:text="@string/camera_subtitle_shoot_photo"/>
 
-    <com.dji.sdk.sample.common.ListViewItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        set:list_item_name="@string/camera_listview_record_video"
-        set:sub_Layout="@layout/content_main"
-        set:component_name="@string/component_camera"
-        set:view_name="@string/view_record_video">
-    </com.dji.sdk.sample.common.ListViewItem>
+            <com.dji.sdk.sample.common.ListViewItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                set:list_item_name="@string/camera_listview_shoot_single_photo"
+                set:sub_Layout="@layout/content_main"
+                set:component_name="@string/component_camera"
+                set:view_name="@string/view_shoot_single_photo">
+            </com.dji.sdk.sample.common.ListViewItem>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/listview_subtitle"
-        android:text="@string/camera_subtitle_playback"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/listview_subtitle"
+                android:text="@string/camera_subtitle_record_video"/>
 
-    <com.dji.sdk.sample.common.ListViewItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        set:list_item_name="@string/camera_listview_playback_push_info"
-        set:sub_Layout="@layout/content_main"
-        set:component_name="@string/component_camera"
-        set:view_name="@string/view_playback_push_info">
-    </com.dji.sdk.sample.common.ListViewItem>
+            <com.dji.sdk.sample.common.ListViewItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                set:list_item_name="@string/camera_listview_record_video"
+                set:sub_Layout="@layout/content_main"
+                set:component_name="@string/component_camera"
+                set:view_name="@string/view_record_video">
+            </com.dji.sdk.sample.common.ListViewItem>
 
-    <com.dji.sdk.sample.common.ListViewItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        set:list_item_name="@string/camera_listview_playback_command"
-        set:sub_Layout="@layout/content_main"
-        set:component_name="@string/component_camera"
-        set:view_name="@string/view_playback_commands">
-    </com.dji.sdk.sample.common.ListViewItem>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/listview_subtitle"
+                android:text="@string/camera_subtitle_playback"/>
 
-    <com.dji.sdk.sample.common.ListViewItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        set:list_item_name="@string/camera_listview_playback_download"
-        set:sub_Layout="@layout/content_main"
-        set:component_name="@string/component_camera"
-        set:view_name="@string/view_playback_download">
-    </com.dji.sdk.sample.common.ListViewItem>
+            <com.dji.sdk.sample.common.ListViewItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                set:list_item_name="@string/camera_listview_playback_push_info"
+                set:sub_Layout="@layout/content_main"
+                set:component_name="@string/component_camera"
+                set:view_name="@string/view_playback_push_info">
+            </com.dji.sdk.sample.common.ListViewItem>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/listview_subtitle"
-        android:text="@string/camera_subtitle_media_download"/>
+            <com.dji.sdk.sample.common.ListViewItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                set:list_item_name="@string/camera_listview_playback_command"
+                set:sub_Layout="@layout/content_main"
+                set:component_name="@string/component_camera"
+                set:view_name="@string/view_playback_commands">
+            </com.dji.sdk.sample.common.ListViewItem>
 
-    <com.dji.sdk.sample.common.ListViewItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        set:list_item_name="@string/camera_listview_download_media"
-        set:sub_Layout="@layout/content_main"
-        set:component_name="@string/component_camera"
-        set:view_name="@string/view_fetch_media">
-    </com.dji.sdk.sample.common.ListViewItem>
+            <com.dji.sdk.sample.common.ListViewItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                set:list_item_name="@string/camera_listview_playback_download"
+                set:sub_Layout="@layout/content_main"
+                set:component_name="@string/component_camera"
+                set:view_name="@string/view_playback_download">
+            </com.dji.sdk.sample.common.ListViewItem>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/listview_subtitle"
+                android:text="@string/camera_subtitle_media_download"/>
+
+            <com.dji.sdk.sample.common.ListViewItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                set:list_item_name="@string/camera_listview_download_media"
+                set:sub_Layout="@layout/content_main"
+                set:component_name="@string/component_camera"
+                set:view_name="@string/view_fetch_media">
+            </com.dji.sdk.sample.common.ListViewItem>
+
+            <com.dji.sdk.sample.common.ListViewItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                set:list_item_name="@string/camera_listview_media_playback"
+                set:sub_Layout="@layout/content_main"
+                set:component_name="@string/component_camera"
+                set:view_name="@string/view_media_playback">
+            </com.dji.sdk.sample.common.ListViewItem>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

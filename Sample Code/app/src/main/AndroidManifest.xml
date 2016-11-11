@@ -29,7 +29,9 @@
         android:name="android.hardware.usb.accessory"
         android:required="true" />
 
+
     <!-- SDK requirement permission end -->
+
 
     <application
         android:name="com.dji.sdk.sample.common.DJISampleApplication"
@@ -47,7 +49,7 @@
         -->
         <meta-data
             android:name="com.dji.sdk.API_KEY"
-            android:value="Please Enter Your App Key here." />
+            android:value="Please enter your App Key here." />
 
         <service android:name="dji.sdk.sdkmanager.DJIGlobalService" />
 
@@ -74,6 +76,7 @@
             android:name="com.dji.sdk.sample.common.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/AppTheme" >
             <intent-filter>
                 <!--<action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />-->

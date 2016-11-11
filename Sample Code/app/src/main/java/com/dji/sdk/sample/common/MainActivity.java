@@ -8,11 +8,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.v(TAG, "Comes into the onCreate");
         // When the compile and target version is higher than 22, please request the following permissions at runtime to ensure the SDK work well.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             ActivityCompat.requestPermissions(this,
@@ -217,5 +220,11 @@ public class MainActivity extends AppCompatActivity {
             popView();
         }
 
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig){
+        Log.v(TAG, "Comes into the onConfigruation");
+        super.onConfigurationChanged(newConfig);
     }
 }

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation = "horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="454dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id = "@+id/btnResume"
+            android:layout_marginLeft = "5dp"
+            android:layout_height="wrap_content"
+            android:text="Resume"
+            android:layout_width="80dp" />
+
+        <Button
+            android:id = "@+id/btnPause"
+            android:layout_toRightOf ="@+id/btnResume"
+            android:layout_marginLeft = "5dp"
+            android:layout_height="wrap_content"
+            android:text="Pause"
+            android:layout_width="80dp" />
+
+        <Button
+            android:id = "@+id/btnStop"
+            android:layout_marginLeft = "5dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/btnPause"
+            android:text="Stop"
+            android:layout_width="60dp" />
+
+        <dji.sdk.camera.view.CameraLiveView
+            android:id="@+id/camera_live_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="NotSibling"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/btnResume"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+        </dji.sdk.camera.view.CameraLiveView>
+
+        <Button
+            android:id="@+id/btnStatus"
+            android:layout_marginLeft="0dp"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:layout_toEndOf="@+id/btnSeek"
+            android:layout_marginStart="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_width="100dp" />
+
+        <Button
+            android:id = "@+id/btnSeek"
+            android:layout_marginLeft = "5dp"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/btnStop"
+            android:layout_width="80dp" />
+
+        <TextView
+            android:text="Playback Status"
+            android:id="@+id/tv_mediaPushInfo"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"
+            tools:ignore="NotSibling"
+            android:textColor="@color/white"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_alignEnd="@+id/btnStatus"
+            android:layout_marginStart="50dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="124dp"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_height = "wrap_content"
+            android:id ="@+id/filelistView"
+            android:layout_marginLeft="0dp"
+            android:layout_alignParentEnd="true"
+            android:layout_width="120dp"
+            tools:ignore="RtlHardcoded"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+</LinearLayout>

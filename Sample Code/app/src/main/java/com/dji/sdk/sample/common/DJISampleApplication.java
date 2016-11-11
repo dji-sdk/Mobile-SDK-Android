@@ -83,6 +83,7 @@ public class DJISampleApplication extends Application {
         /**
          * handles SDK Registration using the API_KEY
          */
+        Log.v(TAG, "Comes into the initSDKManager");
         DJISDKManager.getInstance().initSDKManager(this, mDJISDKManagerCallback);
     }
 
@@ -147,6 +148,7 @@ public class DJISampleApplication extends Application {
 
             @Override
             public void onComponentConnectivityChanged(boolean isConnected) {
+                Log.v(TAG, "onComponentConnectivityChanged: " + isConnected);
                 notifyStatusChange();
             }
 

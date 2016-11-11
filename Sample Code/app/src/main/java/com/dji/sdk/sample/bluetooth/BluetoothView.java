@@ -3,6 +3,7 @@ package com.dji.sdk.sample.bluetooth;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -69,6 +70,7 @@ public class BluetoothView extends LinearLayout implements View.OnClickListener,
         super.onFinishInflate();
         initUI();
     }
+
 
     private void initUI(){
         mBtnSearchBluetooth = (Button) findViewById(R.id.btn_SearchBluetooth);
@@ -213,18 +215,17 @@ public class BluetoothView extends LinearLayout implements View.OnClickListener,
             return false;
         }
         for(int i = 0; i < ar1.size(); i++){
-            if(ar1.get(i).getAddress() != ar2.get(i).getAddress()){
-                return false;
-            }
-            if(ar1.get(i).getStatus() != ar2.get(i).getStatus()){
+            if(!ar1.get(i).equals(ar2.get(i))){
                 return false;
             }
         }
         return true;
-
-
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return true;
+    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

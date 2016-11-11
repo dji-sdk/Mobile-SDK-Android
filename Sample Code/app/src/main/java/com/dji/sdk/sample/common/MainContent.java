@@ -119,6 +119,7 @@ public class MainContent extends RelativeLayout implements DJIBaseProduct.DJIVer
 
     @Override
     protected void onAttachedToWindow() {
+        Log.d(TAG, "Comes into the onAttachedToWindow");
         refreshSDKRelativeUI();
         IntentFilter filter = new IntentFilter();
         filter.addAction(DJISampleApplication.FLAG_CONNECTION_CHANGE);
@@ -143,8 +144,6 @@ public class MainContent extends RelativeLayout implements DJIBaseProduct.DJIVer
         } else {
             mTextModelAvailable.setText(version); //"Firmware version: " +
         }
-
-
     }
 
     @Override
@@ -156,6 +155,7 @@ public class MainContent extends RelativeLayout implements DJIBaseProduct.DJIVer
 
         @Override
         public void onReceive(Context context, Intent intent) {
+            Log.d(TAG, "Comes into the BroadcastReceiver");
             refreshSDKRelativeUI();
         }
 
@@ -163,7 +163,7 @@ public class MainContent extends RelativeLayout implements DJIBaseProduct.DJIVer
 
     private void refreshSDKRelativeUI() {
         mProduct = DJISampleApplication.getProductInstance();
-
+        Log.d(TAG, "mProduct: " + (mProduct == null? "null" : "unnull") );
         if (null != mProduct && mProduct.isConnected()) {
             mBtnOpen.setEnabled(true);
 
