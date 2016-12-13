@@ -128,7 +128,7 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
                        @Override
                        public void onResult(DJIError djiError) {
                            if (djiError == null) {
-                             Log.d("PitchRangeExtension", "set PitchRangeExtension successfully");
+                               Log.d("PitchRangeExtension", "set PitchRangeExtension successfully");
                            }else{
                                Log.d("PitchRangeExtension", "set PitchRangeExtension failed");
                            }
@@ -228,6 +228,8 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
             return;
         }
 
+        gimbal.setCompletionTimeForControlAngleAction(1);
+
         Object key = getCorrespondingKeyWithButton(button);
         Number minValue = ((DJIParamMinMaxCapability)(gimbal.gimbalCapability().get(key))).getMin();
 
@@ -251,6 +253,8 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         if (gimbal == null){
             return;
         }
+
+        gimbal.setCompletionTimeForControlAngleAction(1);
 
         Object key = getCorrespondingKeyWithButton(button);
         Number maxValue = ((DJIParamMinMaxCapability)(gimbal.gimbalCapability().get(key))).getMax();
