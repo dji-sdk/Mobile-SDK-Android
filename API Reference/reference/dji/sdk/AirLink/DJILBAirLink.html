@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -206,7 +208,7 @@
       <ul>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIAuxLink.DJIAuxLinkUpdatedRemoteControllerSignalInformationCallback.html">DJIAuxLink.DJIAuxLinkUpdatedRemoteControllerSignalInformationCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkFPVBandwidthPercentChangedCallback.html">DJILBAirLink.DJILBAirLinkFPVBandwidthPercentChangedCallback</a></li>
-          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedLightbridgeModuleSignalInformationCallback.html">DJILBAirLink.DJILBAirLinkUpdatedLightbridgeModuleSignalInformationCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedRemoteControllerSignalInformationCallback.html">DJILBAirLink.DJILBAirLinkUpdatedRemoteControllerSignalInformationCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJIOnReceivedVideoCallback.html">DJILBAirLink.DJIOnReceivedVideoCallback</a></li>
@@ -452,8 +454,8 @@ Summary:
          
         
         interface</td>
-      <td class="jd-linkcol"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback</a></td>
-      <td class="jd-descrcol" width="100%">Signal strength for all available downlink channels.&nbsp;</td>
+      <td class="jd-linkcol"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback</a></td>
+      <td class="jd-descrcol" width="100%">Callback of signal strength of all signals present on all available downlink channels.&nbsp;</td>
     </tr>
     
     
@@ -709,6 +711,40 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#getFrequencyBand(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.LBAirLinkFrequencyBand>)">getFrequencyBand</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/LBAirLinkFrequencyBand.html">LBAirLinkFrequencyBand</a>&gt; callback)
+        
+        <div class="jd-descrdiv">Gets the LB air link frequency band.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#getFrequencyBandChannelRange(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.FrequencyBandChannelRange>)">getFrequencyBandChannelRange</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/FrequencyBandChannelRange.html">FrequencyBandChannelRange</a>&gt; callback)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#getHDMIOutputFormat(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.LBAirLinkSecondaryVideoFormat>)">getHDMIOutputFormat</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/LBAirLinkSecondaryVideoFormat.html">LBAirLinkSecondaryVideoFormat</a>&gt; callback)
         
         <div class="jd-descrdiv">Gets the Remote Controller HDMI video port output video format.</div>
@@ -908,9 +944,9 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#getVideoDataChannel(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.VideoDataChannel>)">getVideoDataChannel</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/VideoDataChannel.html">VideoDataChannel</a>&gt; callback)
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#getSupportedFrequencyBands(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.LBAirLinkFrequencyBand[]>)">getSupportedFrequencyBands</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/LBAirLinkFrequencyBand.html">LBAirLinkFrequencyBand[]</a>&gt; callback)
         
-        <div class="jd-descrdiv">Gets the video data which will be received by the video data.</div>
+        <div class="jd-descrdiv">Gets the frequency bands supported by the product in the current area.</div>
   
   </td></tr>
 
@@ -926,13 +962,31 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#getVideoDataChannel(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.VideoDataChannel>)">getVideoDataChannel</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/VideoDataChannel.html">VideoDataChannel</a>&gt; callback)
+        
+        <div class="jd-descrdiv">Gets the video data which will be received by the video data.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#getVideoSignalStrength(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Integer>)">getVideoSignalStrength</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Integer&gt; callback)
         
   </td></tr>
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -950,7 +1004,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -973,7 +1027,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -991,7 +1045,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1007,7 +1061,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1023,7 +1077,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1034,6 +1088,22 @@ Summary:
         </td>
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#onEventBackgroundThread(DataRcGetPushParams)">onEventBackgroundThread</a></span>(DataRcGetPushParams params)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#onValueChange(DJISDKCacheKey, DJISDKCacheParamValue, DJISDKCacheParamValue)">onValueChange</a></span>(DJISDKCacheKey key, DJISDKCacheParamValue oldValue, DJISDKCacheParamValue newValue)
         
   </td></tr>
 
@@ -1103,9 +1173,9 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#setDJILBAirLinkUpdatedAllChannelSignalStrengthsCallback(dji.sdk.airlink.DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback)">setDJILBAirLinkUpdatedAllChannelSignalStrengthsCallback</a></span>(<a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback</a> callback)
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#setDJILBAirLinkUpdatedAllChannelInterferenceCallback(dji.sdk.airlink.DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback)">setDJILBAirLinkUpdatedAllChannelInterferenceCallback</a></span>(<a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback</a> callback)
         
-        <div class="jd-descrdiv">Sets up the DJIALUpdateAllChannelSignalStrengthsCallback.</div>
+        <div class="jd-descrdiv">Sets up the DJIALUpdateAllChannelInterferenceCallback.</div>
   
   </td></tr>
 
@@ -1267,6 +1337,24 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#setFrequencyBand(dji.common.airlink.LBAirLinkFrequencyBand, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setFrequencyBand</a></span>(<a href="../../../dji/common/airlink/LBAirLinkFrequencyBand.html">LBAirLinkFrequencyBand</a> frequencyBand, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Sets the LB air link frequency band.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.html#setHDMIOutputFormat(dji.common.LBAirLinkSecondaryVideoFormat, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setHDMIOutputFormat</a></span>(<a href="../../../dji/common/LBAirLinkSecondaryVideoFormat.html">LBAirLinkSecondaryVideoFormat</a> outputFormat, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
         <div class="jd-descrdiv">Sets the Remote Controller HDMI video port output video format.</div>
@@ -1275,7 +1363,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1293,7 +1381,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1311,7 +1399,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1329,7 +1417,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1347,7 +1435,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1365,7 +1453,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1383,7 +1471,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1401,7 +1489,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1419,7 +1507,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1437,7 +1525,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1455,7 +1543,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1473,7 +1561,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1491,7 +1579,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             synchronized
@@ -2223,6 +2311,80 @@ From class
 </div>
 
 
+<a id="getFrequencyBand(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.LBAirLinkFrequencyBand>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getFrequencyBand</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/LBAirLinkFrequencyBand.html">LBAirLinkFrequencyBand</a>&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the LB air link frequency band.
+  It is only supported by Inspire 2 and Phantom 4 Pro. For the other products
+  with LB air link, the frequency band is always 2.4 GHz.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the value(s) returned.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getFrequencyBandChannelRange(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.FrequencyBandChannelRange>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getFrequencyBandChannelRange</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/FrequencyBandChannelRange.html">FrequencyBandChannelRange</a>&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 <a id="getHDMIOutputFormat(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.LBAirLinkSecondaryVideoFormat>)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -2684,6 +2846,49 @@ From class
 </div>
 
 
+<a id="getSupportedFrequencyBands(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.airlink.LBAirLinkFrequencyBand[]>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getSupportedFrequencyBands</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/airlink/LBAirLinkFrequencyBand.html">LBAirLinkFrequencyBand[]</a>&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the frequency bands supported by the product in the current area.
+  It is only supported by Inspire 2 and Phantom 4 Pro. For the other products
+  with LB air link, the frequency band is always 2.4 GHz.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the value(s) returned.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="getVideoDataChannel(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.VideoDataChannel>)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -2952,6 +3157,37 @@ From class
 </div>
 
 
+<a id="onValueChange(DJISDKCacheKey, DJISDKCacheParamValue, DJISDKCacheParamValue)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onValueChange</span>
+      <span class="normal">(DJISDKCacheKey key, DJISDKCacheParamValue oldValue, DJISDKCacheParamValue newValue)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 <a id="setChannel(int, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -3084,7 +3320,7 @@ From class
 </div>
 
 
-<a id="setDJILBAirLinkUpdatedAllChannelSignalStrengthsCallback(dji.sdk.airlink.DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback)"></a>
+<a id="setDJILBAirLinkUpdatedAllChannelInterferenceCallback(dji.sdk.airlink.DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3096,8 +3332,8 @@ From class
          
         void
       </span>
-      <span class="sympad">setDJILBAirLinkUpdatedAllChannelSignalStrengthsCallback</span>
-      <span class="normal">(<a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback</a> callback)</span>
+      <span class="sympad">setDJILBAirLinkUpdatedAllChannelInterferenceCallback</span>
+      <span class="normal">(<a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback</a> callback)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3109,13 +3345,13 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Sets up the DJIALUpdateAllChannelSignalStrengthsCallback.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Sets up the DJIALUpdateAllChannelInterferenceCallback.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>callback</th>
-          <td>The DJIALUpdateAllChannelSignalStrengthsCallback.
+          <td>The DJIALUpdateAllChannelInterferenceCallback.
 </td>
         </tr>
       </table>
@@ -3466,6 +3702,53 @@ From class
         <tr>
           <th>percent</th>
           <td>Percentage downlink bandwidth for FPV camera.</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the execution result returned.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setFrequencyBand(dji.common.airlink.LBAirLinkFrequencyBand, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setFrequencyBand</span>
+      <span class="normal">(<a href="../../../dji/common/airlink/LBAirLinkFrequencyBand.html">LBAirLinkFrequencyBand</a> frequencyBand, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the LB air link frequency band.
+  It is only supported by Inspire 2 and Phantom 4 Pro. For the other products
+  with LB air link, the frequency band is always 2.4 GHz.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>frequencyBand</th>
+          <td>LBAirLink frequency band to change to.</td>
         </tr>
         <tr>
           <th>callback</th>

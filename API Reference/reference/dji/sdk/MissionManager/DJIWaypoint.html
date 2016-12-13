@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -156,6 +156,8 @@
   <a href="../../../dji/common/gimbal/package-summary.html">dji.common.gimbal</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
@@ -633,13 +635,49 @@ Summary:
           public
           
           
+          float</td>
+          <td class="jd-linkcol"><a href="../../../dji/sdk/missionmanager/DJIWaypoint.html#shootPhotoDistanceInterval">shootPhotoDistanceInterval</a></td>
+          <td class="jd-descrcol" width="100%">The distance interval in meters when two photos are taken as the aircraft
+  moves between the current waypoint and the next waypoint.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol">
+          public
+          
+          
+          float</td>
+          <td class="jd-linkcol"><a href="../../../dji/sdk/missionmanager/DJIWaypoint.html#shootPhotoTimeInterval">shootPhotoTimeInterval</a></td>
+          <td class="jd-descrcol" width="100%">The time interval in seconds when two photos are taken as the aircraft moves
+  between the current waypoint and the next waypoint.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol">
+          public
+          
+          
+          float</td>
+          <td class="jd-linkcol"><a href="../../../dji/sdk/missionmanager/DJIWaypoint.html#speed">speed</a></td>
+          <td class="jd-descrcol" width="100%">The base automatic speed of the aircraft as it moves between this waypoint
+  and the next waypoint with range [0, 15] m/s.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol">
+          public
+          
+          
           <a href="../../../dji/sdk/missionmanager/DJIWaypoint.DJIWaypointTurnMode.html">DJIWaypoint.DJIWaypointTurnMode</a></td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/missionmanager/DJIWaypoint.html#turnMode">turnMode</a></td>
           <td class="jd-descrcol" width="100%">Determines whether the aircraft will turn clockwise or anti-clockwise when changing its heading.</td>
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
+      <tr class=" api apilevel-" >
           <td class="jd-typecol">
           public
           
@@ -1416,6 +1454,159 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Waypoint coordinate longitude in degrees.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="shootPhotoDistanceInterval"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        float
+      </span>
+        shootPhotoDistanceInterval
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The distance interval in meters when two photos are taken as the aircraft
+  moves between the current waypoint and the next waypoint. The first photo
+  is taken at the first waypoint.
+
+  The maximum value is 6,000.0. The minimum value is above 0.0 and depends on
+  the camera type, the camera parameters and the flight speed. When the photo
+  file format is JPEG, the time interval between two photos cannot smaller
+  than 2 seconds. When the photo file format is RAW, the time interval between
+  two photos cannot smaller than 10 seconds for all cameras except those on the
+  Inspire 2 which can be 5 seconds. If the input exceeds the camera's
+  capability, the taken photos may be less than expectation.
+
+  The default value is 0.0 and no photo will be taken. For a waypoint, either
+  `shootPhotoTimeInterval` or `shootPhotoDistanceInterval` is 0.0.
+
+  Input with precision of greater than 1 decimal places, will be rounded to 1.
+
+  Warning: `speed`, `shootPhotoTimeInterval` and `shootPhotoDistanceInterval`
+  relate to behavior between this waypoint and the next waypoint in the
+  mission. In comparison, `turnMode`, `altitude` and `heading` relate to
+  behavior between the last waypoint and this waypoint in the waypoint mission.
+  Only supported by flight controller firmware 3.2.10.0 or above.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="shootPhotoTimeInterval"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        float
+      </span>
+        shootPhotoTimeInterval
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The time interval in seconds when two photos are taken as the aircraft moves
+  between the current waypoint and the next waypoint. The first photo will be
+  taken as the aircraft leaves the current waypoint.
+
+  The maximum value is 6,000.0. The minimum value is above 0.0 and depends on
+  the camera type and the camera parameters. When the photo file format is
+  JPEG, the recommended minimum value is 2.0. When the photo file format is
+  RAW, the time interval between two photos cannot smaller than 10 seconds for
+  all cameras except those on the Inspire 2 which can be 5 seconds. If the
+  input exceeds the camera's capability, the pictures will be taken at the
+  maximum possible speed.
+
+  The default value is 0.0 and no photo will be taken. For a waypoint, either
+  `shootPhotoTimeInterval` or `shootPhotoDistanceInterval` is 0.0.
+
+  Input with precision of greater than 1 decimal places, will be rounded to 1.
+
+  Warning: `speed`, `shootPhotoTimeInterval` and `shootPhotoDistanceInterval`
+  relate to behavior between this waypoint and the next waypoint in the
+  mission. In comparison, `turnMode`, `altitude` and `heading` relate to
+  behavior between the last waypoint and this waypoint in the waypoint mission.
+  Only supported by flight controller firmware 3.2.10.0 or above.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="speed"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        float
+      </span>
+        speed
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The base automatic speed of the aircraft as it moves between this waypoint
+  and the next waypoint with range [0, 15] m/s.
+  By default, it is 0.0 and the aircraft will fly with `autoFlightSpeed` of
+  the waypoint mission. If greater than 0, `speed` will override `autoFlightSpeed`.
+  This `speed` can only define movement forward through the waypoint mission
+  in comparison to `autoFlightSpeed` which can be both forward and backwards
+  through a waypoint mission.
+
+  Waypoint mission speed priority from highest to lowest is:
+  1) manual speed adjustment with remote controller joy sticks
+  2) `speed`
+  3) `setAutoFlightSpeed`
+  4) `autoFlightSpeed`
+
+  Warning: `speed`, `shootPhotoTimeInterval` and `shootPhotoDistanceInterval`
+  relate to behavior between this waypoint and the next waypoint in the
+  mission. In comparison, `turnMode`, `altitude` and `heading` relate to
+  behavior between the last waypoint and this waypoint in the waypoint mission.
+  Only supported by flight controller firmware 3.2.10.0 or above.
 </p></div>
 
     

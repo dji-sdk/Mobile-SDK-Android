@@ -356,7 +356,7 @@
 </package>
 <package name="dji.common.airlink"
 >
-<class name="ChannelRSSI"
+<class name="ChannelInterference"
  extends="java.lang.Object"
  abstract="false"
  static="false"
@@ -364,38 +364,36 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<constructor name="ChannelRSSI"
- type="dji.common.airlink.ChannelRSSI"
+<constructor name="ChannelInterference"
+ type="dji.common.airlink.ChannelInterference"
  static="false"
  final="false"
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="ismBandIndex" type="short">
-</parameter>
-<parameter name="rssi" type="int">
-</parameter>
 </constructor>
-<field name="ismBandIndex"
- type="short"
- transient="false"
- volatile="false"
+<method name="getChannel"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
  static="false"
  final="false"
  deprecated="not deprecated"
  visibility="public"
 >
-</field>
-<field name="rssi"
- type="int"
- transient="false"
- volatile="false"
+</method>
+<method name="getPower"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
  static="false"
  final="false"
  deprecated="not deprecated"
  visibility="public"
 >
-</field>
+</method>
 </class>
 <class name="ChannelSelectionMode"
  extends="java.lang.Enum"
@@ -575,6 +573,37 @@
  synchronized="false"
  static="true"
  final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="FrequencyBandChannelRange"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getEndIndex"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getStartIndex"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
  deprecated="not deprecated"
  visibility="public"
 >
@@ -763,6 +792,39 @@
 </method>
 <method name="values"
  return="dji.common.airlink.LBAirLinkFPVVideoQualityLatency[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="LBAirLinkFrequencyBand"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="dji.common.airlink.LBAirLinkFrequencyBand"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="dji.common.airlink.LBAirLinkFrequencyBand[]"
  abstract="false"
  native="false"
  synchronized="false"
@@ -1426,6 +1488,62 @@
 >
 </method>
 </class>
+<class name="WorkingFrequence"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="find"
+ return="dji.common.airlink.WorkingFrequence"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="valueOf"
+ return="dji.common.airlink.WorkingFrequence"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="dji.common.airlink.WorkingFrequence[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="value"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
 </package>
 <package name="dji.common.battery"
 >
@@ -1778,6 +1896,39 @@
 </parameter>
 </method>
 </class>
+<class name="DJIBatteryPairStatus"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="dji.common.battery.DJIBatteryPairStatus"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="dji.common.battery.DJIBatteryPairStatus[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
 <class name="DJIBatteryState"
  extends="java.lang.Object"
  abstract="false"
@@ -1883,6 +2034,17 @@
 >
 </method>
 <method name="isBeingCharged"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isInSingleBatteryMode"
  return="boolean"
  abstract="false"
  native="false"
@@ -2568,6 +2730,76 @@
 </parameter>
 </method>
 </class>
+<class name="CameraPurchasedLicense"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="_equals"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="int">
+</parameter>
+</method>
+<method name="find"
+ return="dji.common.camera.CameraPurchasedLicense"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="value"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="dji.common.camera.CameraPurchasedLicense"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="dji.common.camera.CameraPurchasedLicense[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
 <class name="CameraSDCardState"
  extends="java.lang.Object"
  abstract="false"
@@ -2975,6 +3207,17 @@
  visibility="public"
 >
 </method>
+<method name="getRAWPhotoBurstCount"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="getRemainingSpaceInMegaBytes"
  return="long"
  abstract="false"
@@ -3200,6 +3443,17 @@
  visibility="public"
 >
 </method>
+<method name="isShootingRAWBurstPhoto"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="isShootingSinglePhoto"
  return="boolean"
  abstract="false"
@@ -3243,6 +3497,75 @@
  deprecated="deprecated"
  visibility="public"
 >
+</method>
+</class>
+<class name="CameraTapZoomTargetPoint"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="CameraTapZoomTargetPoint"
+ type="dji.common.camera.CameraTapZoomTargetPoint"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="x" type="float">
+</parameter>
+<parameter name="y" type="float">
+</parameter>
+</constructor>
+<method name="getX"
+ return="float"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getY"
+ return="float"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setX"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="x" type="float">
+</parameter>
+</method>
+<method name="setY"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="y" type="float">
+</parameter>
 </method>
 </class>
 <class name="CameraThermalVersion"
@@ -5482,6 +5805,76 @@
 >
 </method>
 </class>
+<class name="DJICameraSettingsDef.CameraSSDVideoDigitalFilter"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="_equals"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="int">
+</parameter>
+</method>
+<method name="find"
+ return="dji.common.camera.DJICameraSettingsDef.CameraSSDVideoDigitalFilter"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="value"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="dji.common.camera.DJICameraSettingsDef.CameraSSDVideoDigitalFilter"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="dji.common.camera.DJICameraSettingsDef.CameraSSDVideoDigitalFilter[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
 <class name="DJICameraSettingsDef.CameraSharpness"
  extends="java.lang.Enum"
  abstract="false"
@@ -5702,16 +6095,6 @@
  visibility="public"
 >
 </method>
-<field name="shutterSpeed"
- type="float"
- transient="false"
- volatile="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
 </class>
 <class name="DJICameraSettingsDef.CameraShutterSpeedRange"
  extends="dji.common.camera.BaseRange"
@@ -7088,6 +7471,39 @@
 >
 </method>
 </class>
+<class name="DJICameraSettingsDef.VideoFileCompressionStandard"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="dji.common.camera.DJICameraSettingsDef.VideoFileCompressionStandard"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="dji.common.camera.DJICameraSettingsDef.VideoFileCompressionStandard[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
 <class name="DJICameraThermalMeasurementMode"
  extends="java.lang.Enum"
  abstract="false"
@@ -7997,6 +8413,16 @@
 </parameter>
 </method>
 <field name="BATTERY_GET_SMART_BATTERY_INFO_FAILED"
+ type="dji.common.error.DJIError"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="BATTERY_PAIR_FAILED"
  type="dji.common.error.DJIError"
  transient="false"
  volatile="false"
@@ -12062,7 +12488,7 @@
 >
 </method>
 </class>
-<class name="DJIFlightControllerPreciseLandingState"
+<class name="DJIFlightControllerRemoteControllerFlightMode"
  extends="java.lang.Enum"
  abstract="false"
  static="false"
@@ -12070,45 +12496,8 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<method name="_equals"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="b" type="int">
-</parameter>
-</method>
-<method name="find"
- return="dji.common.flightcontroller.DJIFlightControllerPreciseLandingState"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="b" type="int">
-</parameter>
-</method>
-<method name="value"
- return="int"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
 <method name="valueOf"
- return="dji.common.flightcontroller.DJIFlightControllerPreciseLandingState"
+ return="dji.common.flightcontroller.DJIFlightControllerRemoteControllerFlightMode"
  abstract="false"
  native="false"
  synchronized="false"
@@ -12121,7 +12510,7 @@
 </parameter>
 </method>
 <method name="values"
- return="dji.common.flightcontroller.DJIFlightControllerPreciseLandingState[]"
+ return="dji.common.flightcontroller.DJIFlightControllerRemoteControllerFlightMode[]"
  abstract="false"
  native="false"
  synchronized="false"
@@ -14498,6 +14887,88 @@
 >
 </method>
 </class>
+<class name="DJIVisionControlState"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DJIVisionControlState"
+ type="dji.common.flightcontroller.DJIVisionControlState"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="landingProtectionState" type="dji.common.flightcontroller.DJIVisionLandingProtectionStatus">
+</parameter>
+<parameter name="isLandingPrecisely" type="boolean">
+</parameter>
+<parameter name="isBraking" type="boolean">
+</parameter>
+<parameter name="isRoofLimitationReached" type="boolean">
+</parameter>
+<parameter name="isAvoidingActiveObstacleCollision" type="boolean">
+</parameter>
+</constructor>
+<method name="isAscentLimitedByObstacle"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isAvoidingActiveObstacleCollision"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isBraking"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isPerformingPrecisionLanding"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="landingProtectionStatus"
+ return="dji.common.flightcontroller.DJIVisionLandingProtectionStatus"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
 <class name="DJIVisionDetectionSector"
  extends="java.lang.Object"
  abstract="false"
@@ -14556,17 +15027,17 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="isForwardDetectingAvailable" type="boolean">
-</parameter>
-<parameter name="isCollisionAvoidanceAvailable" type="boolean">
-</parameter>
 <parameter name="isVisionSencorWorking" type="boolean">
 </parameter>
 <parameter name="isBraking" type="boolean">
 </parameter>
+<parameter name="obstacleDistanceInMeters" type="double">
+</parameter>
 <parameter name="warningLevel" type="dji.common.flightcontroller.DJIVisionSystemWarning">
 </parameter>
 <parameter name="forwardObstacleInfos" type="java.util.List&lt;dji.common.flightcontroller.DJIVisionDetectionSector&gt;">
+</parameter>
+<parameter name="position" type="dji.common.flightcontroller.DJIVisionSensorPosition">
 </parameter>
 </constructor>
 <method name="getDetectionSectors"
@@ -14580,7 +15051,29 @@
  visibility="public"
 >
 </method>
-<method name="getWarningLevel"
+<method name="getObstacleDistanceInMeters"
+ return="double"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPosition"
+ return="dji.common.flightcontroller.DJIVisionSensorPosition"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSystemWarning"
  return="dji.common.flightcontroller.DJIVisionSystemWarning"
  abstract="false"
  native="false"
@@ -14598,7 +15091,7 @@
  synchronized="false"
  static="false"
  final="false"
- deprecated="not deprecated"
+ deprecated="deprecated"
  visibility="public"
 >
 </method>
@@ -14609,6 +15102,76 @@
  synchronized="false"
  static="false"
  final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="DJIVisionLandingProtectionStatus"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="_equals"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="int">
+</parameter>
+</method>
+<method name="find"
+ return="dji.common.flightcontroller.DJIVisionLandingProtectionStatus"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="value"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="dji.common.flightcontroller.DJIVisionLandingProtectionStatus"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="dji.common.flightcontroller.DJIVisionLandingProtectionStatus[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
  deprecated="not deprecated"
  visibility="public"
 >
@@ -14674,6 +15237,76 @@
 </method>
 <method name="values"
  return="dji.common.flightcontroller.DJIVisionSectorWarning[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="DJIVisionSensorPosition"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="_equals"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="int">
+</parameter>
+</method>
+<method name="find"
+ return="dji.common.flightcontroller.DJIVisionSensorPosition"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="value"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="dji.common.flightcontroller.DJIVisionSensorPosition"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="dji.common.flightcontroller.DJIVisionSensorPosition[]"
  abstract="false"
  native="false"
  synchronized="false"
@@ -16033,6 +16666,17 @@
  visibility="public"
 >
 </method>
+<method name="getCalibrationProgress"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="getPitchTestResult"
  return="dji.common.gimbal.DJIGimbalBalanceTestResult"
  abstract="false"
@@ -16321,8 +16965,30 @@
  visibility="public"
 >
 </method>
+<method name="getJoystickHorizontalPosition"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="getJoystickVerticalDirection"
  return="dji.common.handheld.JoystickVerticalDirection"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getJoystickVerticalPosition"
+ return="int"
  abstract="false"
  native="false"
  synchronized="false"
@@ -16343,6 +17009,101 @@
  visibility="public"
 >
 </method>
+<method name="isTriggerBeingPressed"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="DJIHandheldControllerLEDColorPattern"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DJIHandheldControllerLEDColorPattern"
+ type="dji.common.handheld.DJIHandheldControllerLEDColorPattern"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<field name="pattern"
+ type="java.util.ArrayList"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="repeatTimes"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="DJIHandheldControllerLEDCommand"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DJIHandheldControllerLEDCommand"
+ type="dji.common.handheld.DJIHandheldControllerLEDCommand"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<field name="blue"
+ type="dji.common.handheld.DJIHandheldControllerLEDColorPattern"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="green"
+ type="dji.common.handheld.DJIHandheldControllerLEDColorPattern"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="red"
+ type="dji.common.handheld.DJIHandheldControllerLEDColorPattern"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 </class>
 <class name="DJIHandheldPowerMode"
  extends="java.lang.Enum"
@@ -16514,6 +17275,79 @@
 </method>
 </class>
 </package>
+<package name="dji.common.missionmanager"
+>
+<class name="DJITapFlyMode"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="_equals"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="int">
+</parameter>
+</method>
+<method name="find"
+ return="dji.common.missionmanager.DJITapFlyMode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="value"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="dji.common.missionmanager.DJITapFlyMode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="dji.common.missionmanager.DJITapFlyMode[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+</package>
 <package name="dji.common.product"
 >
 <class name="Model"
@@ -16611,6 +17445,76 @@
  visibility="public"
 >
 </field>
+</class>
+<class name="DJIRCChargeMobileMode"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="_equals"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="int">
+</parameter>
+</method>
+<method name="find"
+ return="dji.common.remotecontroller.DJIRCChargeMobileMode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="value"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="dji.common.remotecontroller.DJIRCChargeMobileMode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="dji.common.remotecontroller.DJIRCChargeMobileMode[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 </class>
 <class name="DJIRCControlChannel"
  extends="java.lang.Object"
@@ -17318,7 +18222,7 @@
 </parameter>
 <parameter name="transformSwitch" type="dji.common.remotecontroller.DJIRCHardwareState.DJIRCHardwareTransformationSwitch">
 </parameter>
-<parameter name="flightModeSwitch" type="dji.common.remotecontroller.DJIRCHardwareState.DJIRCHardwareFlightModeSwitch">
+<parameter name="flightModeSwitch" type="dji.common.remotecontroller.DJIRCHardwareState.DJIRemoteControllerFlightModeSwitchPosition">
 </parameter>
 <parameter name="isGoHomeButtonDown" type="dji.common.remotecontroller.DJIRCHardwareState.DJIRCHardwareButton">
 </parameter>
@@ -17365,8 +18269,8 @@
  visibility="public"
 >
 </field>
-<field name="flightModeSwitch"
- type="dji.common.remotecontroller.DJIRCHardwareState.DJIRCHardwareFlightModeSwitch"
+<field name="flightModeSwitchPosition"
+ type="dji.common.remotecontroller.DJIRCHardwareState.DJIRemoteControllerFlightModeSwitchPosition"
  transient="false"
  volatile="false"
  static="false"
@@ -17718,115 +18622,6 @@
 >
 </field>
 </class>
-<class name="DJIRCHardwareState.DJIRCHardwareFlightModeSwitch"
- extends="java.lang.Object"
- abstract="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<constructor name="DJIRCHardwareFlightModeSwitch"
- type="dji.common.remotecontroller.DJIRCHardwareState.DJIRCHardwareFlightModeSwitch"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="mode" type="dji.common.remotecontroller.DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState">
-</parameter>
-</constructor>
-<field name="isPresent"
- type="boolean"
- transient="false"
- volatile="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-<field name="mode"
- type="dji.common.remotecontroller.DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState"
- transient="false"
- volatile="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-</class>
-<class name="DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState"
- extends="java.lang.Enum"
- abstract="false"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-<method name="_equals"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="b" type="int">
-</parameter>
-</method>
-<method name="find"
- return="dji.common.remotecontroller.DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="value" type="int">
-</parameter>
-</method>
-<method name="value"
- return="int"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="valueOf"
- return="dji.common.remotecontroller.DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="name" type="java.lang.String">
-</parameter>
-</method>
-<method name="values"
- return="dji.common.remotecontroller.DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState[]"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-</class>
 <class name="DJIRCHardwareState.DJIRCHardwareJoystick"
  extends="java.lang.Object"
  abstract="false"
@@ -18065,6 +18860,78 @@
 </method>
 <method name="values"
  return="dji.common.remotecontroller.DJIRCHardwareState.DJIRCHardwareTransformationSwitchState[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="DJIRCHardwareState.DJIRemoteControllerFlightModeSwitchPosition"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="_equals"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="int">
+</parameter>
+</method>
+<method name="find"
+ return="dji.common.remotecontroller.DJIRCHardwareState.DJIRemoteControllerFlightModeSwitchPosition"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="productType" type="ProductType">
+</parameter>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="value"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="dji.common.remotecontroller.DJIRCHardwareState.DJIRemoteControllerFlightModeSwitchPosition"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="dji.common.remotecontroller.DJIRCHardwareState.DJIRemoteControllerFlightModeSwitchPosition[]"
  abstract="false"
  native="false"
  synchronized="false"
@@ -18545,6 +19412,71 @@
 >
 </method>
 </class>
+<class name="JoinMasterData"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="JoinMasterData"
+ type="dji.common.remotecontroller.JoinMasterData"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getAuthCode"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMasterId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setAuthCode"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="authCode" type="java.lang.String">
+</parameter>
+</method>
+<method name="setMasterId"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="masterId" type="java.lang.String">
+</parameter>
+</method>
+</class>
 <class name="JoinMasterParams"
  extends="java.lang.Object"
  abstract="false"
@@ -18639,6 +19571,95 @@
 >
 </field>
 </class>
+<class name="MasterMode"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="MasterMode"
+ type="dji.common.remotecontroller.MasterMode"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="MasterSlaverState"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="MasterSlaverState"
+ type="dji.common.remotecontroller.MasterSlaverState"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getAuthenticateCode"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMasterId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMode"
+ return="dji.common.remotecontroller.DJIRemoteControllerMode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSlaveId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isConnected"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
 <class name="RCCustomButtonTagParam"
  extends="java.lang.Object"
  abstract="false"
@@ -18716,6 +19737,43 @@
 </package>
 <package name="dji.common.util"
 >
+<class name="ConvertKeyUtil"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ConvertKeyUtil"
+ type="dji.common.util.ConvertKeyUtil"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<field name="flightControllerConvertMap"
+ type="java.util.HashMap"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="gimbalConvertMap"
+ type="java.util.HashMap"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
 <class name="DJICommonCallbacks"
  extends="java.lang.Object"
  abstract="false"
@@ -18862,6 +19920,128 @@
 </parameter>
 </method>
 </interface>
+<class name="DJILensFeatureUtils"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DJILensFeatureUtils"
+ type="dji.common.util.DJILensFeatureUtils"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getProductName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="memberId" type="int">
+</parameter>
+<parameter name="modelId" type="int">
+</parameter>
+<parameter name="versionId" type="int">
+</parameter>
+</method>
+<method name="loadDJISp"
+ return="&lt;any&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="loadJKImagingSp"
+ return="&lt;any&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="loadKenkoTokinaSp"
+ return="&lt;any&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="loadOlympusSp"
+ return="&lt;any&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="loadPanasonic2Sp"
+ return="&lt;any&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="loadPanasonic3Sp"
+ return="&lt;any&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="loadSigmaSp"
+ return="&lt;any&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="loadTamronSp"
+ return="&lt;any&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
 <class name="DJIParamCapability"
  extends="java.lang.Object"
  abstract="false"
@@ -19506,6 +20686,32 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Integer&gt;">
 </parameter>
 </method>
+<method name="getFrequencyBand"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.airlink.LBAirLinkFrequencyBand&gt;">
+</parameter>
+</method>
+<method name="getFrequencyBandChannelRange"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.airlink.FrequencyBandChannelRange&gt;">
+</parameter>
+</method>
 <method name="getHDMIOutputFormat"
  return="void"
  abstract="false"
@@ -19649,6 +20855,19 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.airlink.LBAirLinkSecondaryVideoOutputPort&gt;">
 </parameter>
 </method>
+<method name="getSupportedFrequencyBands"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.airlink.LBAirLinkFrequencyBand[]&gt;">
+</parameter>
+</method>
 <method name="getVideoDataChannel"
  return="void"
  abstract="false"
@@ -19747,6 +20966,23 @@
 <parameter name="params" type="DataOsdGetPushSweepFrequency">
 </parameter>
 </method>
+<method name="onValueChange"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="key" type="DJISDKCacheKey">
+</parameter>
+<parameter name="oldValue" type="DJISDKCacheParamValue">
+</parameter>
+<parameter name="newValue" type="DJISDKCacheParamValue">
+</parameter>
+</method>
 <method name="setChannel"
  return="void"
  abstract="false"
@@ -19790,7 +21026,7 @@
 <parameter name="callback" type="dji.sdk.airlink.DJILBAirLink.DJILBAirLinkFPVBandwidthPercentChangedCallback">
 </parameter>
 </method>
-<method name="setDJILBAirLinkUpdatedAllChannelSignalStrengthsCallback"
+<method name="setDJILBAirLinkUpdatedAllChannelInterferenceCallback"
  return="void"
  abstract="false"
  native="false"
@@ -19800,7 +21036,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="callback" type="dji.sdk.airlink.DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback">
+<parameter name="callback" type="dji.sdk.airlink.DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback">
 </parameter>
 </method>
 <method name="setDJILBAirLinkUpdatedLightbridgeModuleSignalInformationCallback"
@@ -19915,6 +21151,21 @@
  visibility="public"
 >
 <parameter name="percent" type="int">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setFrequencyBand"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="frequencyBand" type="dji.common.airlink.LBAirLinkFrequencyBand">
 </parameter>
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
@@ -20147,7 +21398,7 @@
 </parameter>
 </method>
 </interface>
-<interface name="DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback"
+<interface name="DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback"
  abstract="true"
  static="true"
  final="false"
@@ -20164,7 +21415,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="rssi" type="int[]">
+<parameter name="channelInterferences" type="dji.common.airlink.ChannelInterference[]">
 </parameter>
 </method>
 </interface>
@@ -22541,6 +23792,19 @@
 <parameter name="numberOfDischarge" type="int">
 </parameter>
 </constructor>
+<method name="getBatteryPairStatus"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.battery.DJIBatteryPairStatus&gt;">
+</parameter>
+</method>
 <method name="getCellVoltages"
  return="void"
  abstract="true"
@@ -22728,6 +23992,21 @@
  visibility="public"
 >
 <parameter name="callback" type="dji.sdk.battery.DJIBattery.DJIBatteryAggregationStateUpdatedCallback">
+</parameter>
+</method>
+<method name="setBatteryPairStatus"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="status" type="dji.common.battery.DJIBatteryPairStatus">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
 </method>
 <method name="setBatteryStateUpdateCallback"
@@ -23110,12 +24389,29 @@
 >
 </method>
 </interface>
+<class name="DJIInspire2Battery"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DJIInspire2Battery"
+ type="dji.sdk.battery.DJIInspire2Battery"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
 </package>
 <package name="dji.sdk.camera"
 >
 <class name="DJICamera"
  extends="dji.sdk.base.DJIBaseComponent"
- abstract="false"
+ abstract="true"
  static="false"
  final="false"
  deprecated="not deprecated"
@@ -23129,6 +24425,21 @@
  visibility="public"
 >
 </constructor>
+<method name="activateSSDVideoLicense"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="license" type="dji.common.camera.CameraPurchasedLicense">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
 <method name="formatSDCard"
  return="void"
  abstract="false"
@@ -23220,6 +24531,19 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
 </parameter>
 </method>
+<method name="getAutoAEUnlockEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
+</parameter>
+</method>
 <method name="getAutoTurnOffLEDEnabled"
  return="void"
  abstract="false"
@@ -23257,6 +24581,19 @@
  visibility="public"
 >
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.camera.DJICameraSettingsDef.CameraContrast&gt;">
+</parameter>
+</method>
+<method name="getDefogEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
 </parameter>
 </method>
 <method name="getDigitalFilter"
@@ -23489,6 +24826,19 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Integer&gt;">
 </parameter>
 </method>
+<method name="getOpticalZoomScale"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Float&gt;">
+</parameter>
+</method>
 <method name="getOpticalZoomSpec"
  return="void"
  abstract="false"
@@ -23593,6 +24943,19 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Integer&gt;">
 </parameter>
 </method>
+<method name="getPhotoRAWBurstCount"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.camera.DJICameraSettingsDef.CameraPhotoBurstCount&gt;">
+</parameter>
+</method>
 <method name="getPhotoRatio"
  return="void"
  abstract="false"
@@ -23630,7 +24993,59 @@
  visibility="public"
 >
 </method>
-<method name="getSSDRawVideoResolutionAndFrameRate"
+<method name="getSSDVideoDigitalFilter"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.camera.DJICameraSettingsDef.CameraSSDVideoDigitalFilter&gt;">
+</parameter>
+</method>
+<method name="getSSDVideoLicense"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.camera.CameraPurchasedLicense&gt;">
+</parameter>
+</method>
+<method name="getSSDVideoLicenses"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.camera.CameraPurchasedLicense[]&gt;">
+</parameter>
+</method>
+<method name="getSSDVideoRecordingEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
+</parameter>
+</method>
+<method name="getSSDVideoResolutionAndFrameRate"
  return="void"
  abstract="false"
  native="false"
@@ -23693,6 +25108,32 @@
  visibility="public"
 >
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWithTwoParam&lt;java.lang.Integer, java.lang.Integer&gt;">
+</parameter>
+</method>
+<method name="getTapZoomEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
+</parameter>
+</method>
+<method name="getTapZoomMultiplier"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Integer&gt;">
 </parameter>
 </method>
 <method name="getThermalACE"
@@ -24046,6 +25487,19 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
 </parameter>
 </method>
+<method name="getVideoFileCompressionStandard"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.camera.DJICameraSettingsDef.VideoFileCompressionStandard&gt;">
+</parameter>
+</method>
 <method name="getVideoFileFormat"
  return="void"
  abstract="false"
@@ -24232,6 +25686,17 @@
  visibility="public"
 >
 </method>
+<method name="isTapZoomSupported"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="isThermalImagingCamera"
  return="boolean"
  abstract="false"
@@ -24372,6 +25837,21 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
 </method>
+<method name="setAutoAEUnlockEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="boolean">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
 <method name="setAutoTurnOffLEDEnabled"
  return="void"
  abstract="false"
@@ -24482,6 +25962,19 @@
 <parameter name="updatedSystemStateCallBack" type="dji.sdk.camera.DJICamera.CameraUpdatedSystemStateCallback">
 </parameter>
 </method>
+<method name="setDJIFpvCameraReceivedVideoDataCallback"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="receivedVideoDataCallback" type="dji.sdk.camera.DJICamera.CameraReceivedVideoDataCallback">
+</parameter>
+</method>
 <method name="setDJIThermalCameraTemperatureDataCallback"
  return="void"
  abstract="false"
@@ -24532,6 +26025,21 @@
  visibility="public"
 >
 <parameter name="updatedSSDStateCallback" type="dji.sdk.camera.DJICamera.CameraUpdatedSSDStateCallback">
+</parameter>
+</method>
+<method name="setDefogEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="boolean">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
 </method>
 <method name="setDigitalFilter"
@@ -24853,6 +26361,21 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
 </method>
+<method name="setPhotoRAWBurstCount"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="count" type="dji.common.camera.DJICameraSettingsDef.CameraPhotoBurstCount">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
 <method name="setPhotoRatio"
  return="void"
  abstract="false"
@@ -24887,7 +26410,7 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
 </method>
-<method name="setSSDRawVideoResolutionAndFrameRate"
+<method name="setSSDVideoDigitalFilter"
  return="void"
  abstract="false"
  native="false"
@@ -24897,9 +26420,39 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="videoResolution" type="dji.common.camera.DJICameraSettingsDef.CameraVideoResolution">
+<parameter name="ssdDigitalFilter" type="dji.common.camera.DJICameraSettingsDef.CameraSSDVideoDigitalFilter">
 </parameter>
-<parameter name="videoFrameRate" type="dji.common.camera.DJICameraSettingsDef.CameraVideoFrameRate">
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setSSDVideoRecordingEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="boolean">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setSSDVideoResolutionAndFrameRate"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resolution" type="dji.common.camera.DJICameraSettingsDef.CameraVideoResolution">
+</parameter>
+<parameter name="frameRate" type="dji.common.camera.DJICameraSettingsDef.CameraVideoFrameRate">
 </parameter>
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
@@ -24962,6 +26515,36 @@
 <parameter name="rowIndex" type="int">
 </parameter>
 <parameter name="colIndex" type="int">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setTapZoomEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="boolean">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setTapZoomMultiplier"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="multiplier" type="int">
 </parameter>
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
@@ -25457,6 +27040,21 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
 </method>
+<method name="setVideoFileCompressionStandard"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="standard" type="dji.common.camera.DJICameraSettingsDef.VideoFileCompressionStandard">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
 <method name="setVideoFileFormat"
  return="void"
  abstract="false"
@@ -25620,6 +27218,21 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
 </method>
+<method name="tapZoomAtTarget"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="point" type="dji.common.camera.CameraTapZoomTargetPoint">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
 <method name="triggerFFC"
  return="void"
  abstract="false"
@@ -25710,6 +27323,17 @@
  visibility="public"
 >
 </field>
+<field name="DJICameraDisplayNameX4S"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;X4S&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 <field name="DJICameraDisplayNameX5"
  type="java.lang.String"
  transient="false"
@@ -25732,6 +27356,17 @@
  visibility="public"
 >
 </field>
+<field name="DJICameraDisplayNameX5S"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;X5S&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 <field name="DJICameraDisplayNameXT"
  type="java.lang.String"
  transient="false"
@@ -25748,6 +27383,28 @@
  transient="false"
  volatile="false"
  value="&quot;Zenmuse Z3&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DJICameraDisplayNameZ30"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;Zenmuse Z30&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DJICameraDisplaynamePhantom4PCamera"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;Phantom 4 Professional Camera&quot;"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -26013,7 +27670,7 @@
  return="dji.sdk.camera.DJICameraParameters"
  abstract="false"
  native="false"
- synchronized="false"
+ synchronized="true"
  static="true"
  final="false"
  deprecated="not deprecated"
@@ -26030,6 +27687,19 @@
  deprecated="not deprecated"
  visibility="public"
 >
+</method>
+<method name="onEventBackgroundThread"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pushInfo" type="DataCameraGetPushRawParams">
+</parameter>
 </method>
 <method name="removeAllListener"
  return="void"
@@ -26101,6 +27771,17 @@
 </method>
 <method name="supportedCameraModeRange"
  return="dji.common.camera.DJICameraSettingsDef.CameraMode[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="supportedCameraSSDVideoResolutionRange"
+ return="dji.common.camera.DJICameraSettingsDef.CameraVideoResolution[]"
  abstract="false"
  native="false"
  synchronized="false"
@@ -26203,6 +27884,19 @@
  visibility="public"
 >
 <parameter name="newRange" type="dji.common.camera.DJICameraSettingsDef.CameraMode[]">
+</parameter>
+</method>
+<method name="onCameraSSDRawVideoResolutionRangeChange"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="newRange" type="dji.common.camera.DJICameraSettingsDef.CameraVideoResolution[]">
 </parameter>
 </method>
 <method name="onCameraShutterSpeedRangeChange"
@@ -26583,6 +28277,19 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<method name="addMediaUpdatedVideoPlaybackStateCallback"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.sdk.camera.DJIMediaManager.MediaUpdatedVideoPlaybackStateCallback">
+</parameter>
+</method>
 <method name="continueDownloading"
  return="void"
  abstract="false"
@@ -26709,6 +28416,19 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
 </method>
+<method name="removeMediaUpdatedVideoPlaybackStateCallback"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.sdk.camera.DJIMediaManager.MediaUpdatedVideoPlaybackStateCallback">
+</parameter>
+</method>
 <method name="resume"
  return="void"
  abstract="false"
@@ -26733,19 +28453,6 @@
  visibility="public"
 >
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
-</parameter>
-</method>
-<method name="setMediaUpdatedVideoPlaybackStateCallback"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="callback" type="dji.sdk.camera.DJIMediaManager.MediaUpdatedVideoPlaybackStateCallback">
 </parameter>
 </method>
 <method name="stop"
@@ -27572,8 +29279,95 @@
  transient="false"
  volatile="false"
  value="&quot;CameraLiveView&quot;"
- static="false"
+ static="true"
  final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="FpvLiveView"
+ extends="SurfaceView"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="FpvLiveView"
+ type="dji.sdk.camera.view.FpvLiveView"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="Context">
+</parameter>
+<parameter name="attrs" type="AttributeSet">
+</parameter>
+</constructor>
+<method name="surfaceChanged"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="holder" type="SurfaceHolder">
+</parameter>
+<parameter name="format" type="int">
+</parameter>
+<parameter name="width" type="int">
+</parameter>
+<parameter name="height" type="int">
+</parameter>
+</method>
+<method name="surfaceCreated"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="holder" type="SurfaceHolder">
+</parameter>
+</method>
+<method name="surfaceDestroyed"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="holder" type="SurfaceHolder">
+</parameter>
+</method>
+<field name="TAG"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;FpvLiveView&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="decoder"
+ type="DJIVideoDecoder"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
  deprecated="not deprecated"
  visibility="public"
 >
@@ -28055,6 +29849,32 @@
  visibility="public"
 >
 </method>
+<method name="getQuickSpinEnabled"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
+</parameter>
+</method>
+<method name="getRemoteControllerFlightModeMappingWithCompletion"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.flightcontroller.DJIFlightControllerRemoteControllerFlightMode[]&gt;">
+</parameter>
+</method>
 <method name="getRollPitchControlMode"
  return="dji.common.flightcontroller.DJIVirtualStickRollPitchControlMode"
  abstract="false"
@@ -28278,6 +30098,21 @@
  visibility="public"
 >
 <parameter name="controlData" type="dji.common.flightcontroller.DJIVirtualStickFlightControlData">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setAutoQuickSpinEnabled"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="java.lang.Boolean">
 </parameter>
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
@@ -29044,6 +30879,23 @@
 >
 </constructor>
 </class>
+<class name="DJIInspire2FlightController"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DJIInspire2FlightController"
+ type="dji.sdk.flightcontroller.DJIInspire2FlightController"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
 <class name="DJIIntelligentFlightAssistant"
  extends="java.lang.Object"
  abstract="false"
@@ -29071,7 +30923,59 @@
  visibility="public"
 >
 </method>
+<method name="getActiveObstacleAvoidance"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
+</parameter>
+</method>
 <method name="getCollisionAvoidanceEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
+</parameter>
+</method>
+<method name="getLandingProtectionEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
+</parameter>
+</method>
+<method name="getPrecisionLandingEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
+</parameter>
+</method>
+<method name="getUpwardsAvoidanceEnabled"
  return="void"
  abstract="false"
  native="false"
@@ -29097,6 +31001,21 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
 </parameter>
 </method>
+<method name="setActiveObstacleAvoidance"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="boolean">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
 <method name="setCollisionAvoidanceEnabled"
  return="void"
  abstract="false"
@@ -29110,6 +31029,64 @@
 <parameter name="enable" type="boolean">
 </parameter>
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setLandingProtectionEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="boolean">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setPrecisionLandingEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="boolean">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setUpwardsAvoidanceEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="java.lang.Boolean">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setVisionControlStateUpdatedcallback"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.sdk.flightcontroller.DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback">
 </parameter>
 </method>
 <method name="setVisionDetectionStateUpdatedCallback"
@@ -29141,6 +31118,27 @@
 </parameter>
 </method>
 </class>
+<interface name="DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onStateUpdated"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="state" type="dji.common.flightcontroller.DJIVisionControlState">
+</parameter>
+</method>
+</interface>
 <interface name="DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback"
  abstract="true"
  static="true"
@@ -29939,6 +31937,23 @@
  visibility="public"
 >
 </field>
+</class>
+<class name="DJIP4PFlightController"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DJIP4PFlightController"
+ type="dji.sdk.flightcontroller.DJIP4PFlightController"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
 </class>
 <class name="DJISimulator"
  extends="java.lang.Object"
@@ -30863,7 +32878,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="enable" type="boolean">
+<parameter name="shouldExtend" type="boolean">
 </parameter>
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
@@ -31043,6 +33058,36 @@
 </parameter>
 </method>
 </interface>
+<class name="DJIInspire2Gimbal"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DJIInspire2Gimbal"
+ type="dji.sdk.gimbal.DJIInspire2Gimbal"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="onEventBackgroundThread"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="gimbalPush" type="DataGimbalGetPushAutoCalibrationStatus">
+</parameter>
+</method>
+</class>
 </package>
 <package name="dji.sdk.handheldcontroller"
 >
@@ -31073,6 +33118,34 @@
  visibility="public"
 >
 </method>
+<method name="controlLEDWithCommand"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="command" type="dji.common.handheld.DJIHandheldControllerLEDCommand">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="getStickGimbalControlEnabled"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
+</parameter>
+</method>
 <method name="setDJIHandheldPowerModeListener"
  return="void"
  abstract="false"
@@ -31097,6 +33170,21 @@
  visibility="public"
 >
 <parameter name="mode" type="dji.common.handheld.DJIHandheldPowerMode">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setStickGimbalControlEnabled"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="java.lang.Boolean">
 </parameter>
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
@@ -31283,19 +33371,6 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
 </method>
-<method name="setMode"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="mode" type="dji.common.flightcontroller.ActiveTrackMode">
-</parameter>
-</method>
 <method name="setRecommendedConfiguration"
  return="void"
  abstract="false"
@@ -31462,17 +33537,6 @@
  visibility="public"
 >
 </method>
-<method name="isGestureEnabled"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
 <method name="isHuman"
  return="boolean"
  abstract="false"
@@ -31483,19 +33547,6 @@
  deprecated="not deprecated"
  visibility="public"
 >
-</method>
-<method name="setGestureEnabled"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="gestureEnabled" type="boolean">
-</parameter>
 </method>
 </class>
 <class name="DJICustomMission"
@@ -32579,6 +34630,30 @@
 <parameter name="code" type="int">
 </parameter>
 </method>
+<method name="getFinishedCallback"
+ return="dji.common.util.DJICommonCallbacks.DJICompletionCallback"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="invokeFinishCallback"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="error" type="dji.common.error.DJIError">
+</parameter>
+</method>
 <method name="onDestroy"
  return="void"
  abstract="false"
@@ -32643,6 +34718,47 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setCurrentExecutingMission"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mCurrentExecutingMission" type="dji.sdk.missionmanager.DJIMission">
+</parameter>
+</method>
+<method name="setInternalCallback"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="internalCallback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setMissionExecutionEnable"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enable" type="boolean">
+</parameter>
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
 </method>
@@ -32718,16 +34834,6 @@
  static="false"
  final="false"
  deprecated="deprecated"
- visibility="public"
->
-</field>
-<field name="mInternalCallback"
- type="dji.common.util.DJICommonCallbacks.DJICompletionCallback"
- transient="false"
- volatile="false"
- static="false"
- final="false"
- deprecated="not deprecated"
  visibility="public"
 >
 </field>
@@ -32951,6 +35057,17 @@
 <parameter name="point" type="PointF">
 </parameter>
 </constructor>
+<method name="getTapFlyMode"
+ return="dji.common.missionmanager.DJITapFlyMode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="setAutoFlightSpeed"
  return="void"
  abstract="false"
@@ -32964,6 +35081,19 @@
 <parameter name="autoFlightSpeed" type="float">
 </parameter>
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setTapFlyMode"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mode" type="dji.common.missionmanager.DJITapFlyMode">
 </parameter>
 </method>
 <field name="autoFlightSpeed"
@@ -33170,6 +35300,8 @@
 </parameter>
 <parameter name="bypassingState" type="dji.sdk.missionmanager.DJITapFlyMission.DJIBypassDirection">
 </parameter>
+<parameter name="relativeHeading" type="float">
+</parameter>
 </constructor>
 <method name="getBypassDirection"
  return="dji.sdk.missionmanager.DJITapFlyMission.DJIBypassDirection"
@@ -33206,6 +35338,17 @@
 </method>
 <method name="getImageLocation"
  return="PointF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRelativeHeading"
+ return="float"
  abstract="false"
  native="false"
  synchronized="false"
@@ -33435,6 +35578,36 @@
 </field>
 <field name="longitude"
  type="double"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="shootPhotoDistanceInterval"
+ type="float"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="shootPhotoTimeInterval"
+ type="float"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="speed"
+ type="float"
  transient="false"
  volatile="false"
  static="false"
@@ -35641,6 +37814,21 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
 </method>
+<method name="getAuthCodeFromMaster"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
 <method name="getAvailableMasters"
  return="void"
  abstract="true"
@@ -35664,6 +37852,19 @@
  deprecated="not deprecated"
  visibility="public"
 >
+</method>
+<method name="getChargeMobileMode"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.remotecontroller.DJIRCChargeMobileMode&gt;">
+</parameter>
 </method>
 <method name="getGimbalControlRequestFromSlaveReceivedCallback"
  return="dji.sdk.remotecontroller.DJIRemoteController.RCReceiveGimbalControlRequestFromSlaveCallback"
@@ -35722,6 +37923,32 @@
  visibility="public"
 >
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.Boolean&gt;">
+</parameter>
+</method>
+<method name="getMasterSlaveId"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.String&gt;">
+</parameter>
+</method>
+<method name="getMasters"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;java.lang.String[]&gt;">
 </parameter>
 </method>
 <method name="getRCControlGimbalDirection"
@@ -35932,6 +38159,21 @@
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith&lt;dji.common.remotecontroller.DJIRCJoinMasterResult&gt;">
 </parameter>
 </method>
+<method name="joinMasterWithID"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mode" type="dji.common.remotecontroller.JoinMasterData">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
 <method name="removeMaster"
  return="void"
  abstract="true"
@@ -36003,6 +38245,21 @@
 <parameter name="batteryStateUpdateCallback" type="dji.sdk.remotecontroller.DJIRemoteController.RCBatteryStateUpdateCallback">
 </parameter>
 </method>
+<method name="setChargeMobileMode"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mode" type="dji.common.remotecontroller.DJIRCChargeMobileMode">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
 <method name="setGimbalControlRequestFromSlaveReceivedCallback"
  return="void"
  abstract="false"
@@ -36040,6 +38297,49 @@
  visibility="public"
 >
 <parameter name="hardwareStateUpdateCallback" type="dji.sdk.remotecontroller.DJIRemoteController.RCHardwareStateUpdateCallback">
+</parameter>
+</method>
+<method name="setMasterAuthorizationCode"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="authorizationCode" type="java.lang.String">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setMasterSlaveId"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+<parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
+</parameter>
+</method>
+<method name="setOnMasterSlaveStateUpdateCallback"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="dji.sdk.remotecontroller.DJIRemoteController.RCMasterSlaveStateUpdateCallback">
 </parameter>
 </method>
 <method name="setRCControlGimbalDirection"
@@ -36157,7 +38457,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="workMode" type="dji.common.remotecontroller.DJIRemoteControllerMode">
+<parameter name="mode" type="dji.common.remotecontroller.DJIRemoteControllerMode">
 </parameter>
 <parameter name="callback" type="dji.common.util.DJICommonCallbacks.DJICompletionCallback">
 </parameter>
@@ -36285,6 +38585,29 @@
 <parameter name="rc" type="dji.sdk.remotecontroller.DJIRemoteController">
 </parameter>
 <parameter name="state" type="dji.common.remotecontroller.DJIRCHardwareState">
+</parameter>
+</method>
+</interface>
+<interface name="DJIRemoteController.RCMasterSlaveStateUpdateCallback"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onMasterSlaveStateUpdate"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="rc" type="dji.sdk.remotecontroller.DJIRemoteController">
+</parameter>
+<parameter name="masterSlaveState" type="dji.common.remotecontroller.MasterSlaverState">
 </parameter>
 </method>
 </interface>
@@ -36590,17 +38913,6 @@
  visibility="public"
 >
 </method>
-<method name="disableCountryCodeCheck"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
 <method name="enterDebugModeWithDebugIP"
  return="void"
  abstract="false"
@@ -36740,6 +39052,17 @@
 >
 <parameter name="enable" type="boolean">
 </parameter>
+</method>
+<method name="setDisableCountryCodeCheck"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
 </method>
 <method name="setSupportOnlyForBluetoothDevice"
  return="void"

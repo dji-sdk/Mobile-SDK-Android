@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -156,6 +156,8 @@
   <a href="../../../dji/common/gimbal/package-summary.html">dji.common.gimbal</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
@@ -565,24 +567,6 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/sdkmanager/DJISDKManager.html#disableCountryCodeCheck()">disableCountryCodeCheck</a></span>()
-        
-        <div class="jd-descrdiv">The Mavic Pro broadcasts wi-fi signal on spectrum that is not permissable in some specific countries.</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
-            void
-        </td>
-        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/sdkmanager/DJISDKManager.html#enterDebugModeWithDebugIP(java.lang.String)">enterDebugModeWithDebugIP</a></span>(String debugIP)
         
         <div class="jd-descrdiv">Enter debug mode with debug IP.</div>
@@ -591,7 +575,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -607,7 +591,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -623,7 +607,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -639,7 +623,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -657,7 +641,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -673,7 +657,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             synchronized
@@ -689,7 +673,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -707,7 +691,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -725,7 +709,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -743,7 +727,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -763,7 +747,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -777,6 +761,25 @@ Summary:
         
         <div class="jd-descrdiv">Determines whether the callback should be invoked in UIThread or
  BackgroundThread.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/sdkmanager/DJISDKManager.html#setDisableCountryCodeCheck()">setDisableCountryCodeCheck</a></span>()
+        
+        <div class="jd-descrdiv">Some products (Mavic Pro, Inspire 2, Phantom 4 Pro) can use 5 GHz wireless
+  spectrum that is not permissable in some countries.</div>
   
   </td></tr>
 
@@ -1309,44 +1312,6 @@ From class
 </div>
 
 
-<a id="disableCountryCodeCheck()"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">disableCountryCodeCheck</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>The Mavic Pro broadcasts wi-fi signal on spectrum that is not permissable in some specific countries.
- The SDK has an automatic means of checking and disabling this functionality on applicable products.
- Calling this method will disable the check involving DJI servers behavior.
- The developer still has the responsibility to adhere to all applicable regulations at all times.
- The automatic behavior is always on by default.
-
- Note: this method must be called before calling <code><a href="../../../dji/sdk/sdkmanager/DJISDKManager.html#initSDKManager(Context, dji.sdk.sdkmanager.DJISDKManager.DJISDKManagerCallback)">initSDKManager(Context, DJISDKManager.DJISDKManagerCallback)</a></code> in order to take effect.
-</p></div>
-
-    </div>
-</div>
-
-
 <a id="enterDebugModeWithDebugIP(java.lang.String)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1743,6 +1708,46 @@ From class
   <div class="jd-tagdata jd-tagdescr"><p>Determines whether the callback should be invoked in UIThread or
  BackgroundThread. This method is just for setXXX and getXXX, the
  push callback is forced to run in the BackgroundThread.
+</p></div>
+
+    </div>
+</div>
+
+
+<a id="setDisableCountryCodeCheck()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setDisableCountryCodeCheck</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Some products (Mavic Pro, Inspire 2, Phantom 4 Pro) can use 5 GHz wireless
+  spectrum that is not permissable in some countries. By default, the 5 GHz
+  usage is not enabled, but on registration the SDK will do a country code
+  check to determine whether 5 GHz can be used. The check can involve sending
+  location data to a server. This method can be used to disable this check,
+  leaving the default configuration of only using the 2.4 GHz spectrum.
+
+  Note: this method must be called before calling `+registerApp:withDelegate:`
+  in order to take effect.
 </p></div>
 
     </div>

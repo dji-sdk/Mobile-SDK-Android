@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -216,6 +218,7 @@
         <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDRawVideoResolutionAndFrameRate.html">CameraSSDRawVideoResolutionAndFrameRate</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDState.html">CameraSSDState</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSystemState.html">CameraSystemState</a></li>
+        <li class="api apilevel-"><a href="../../../dji/common/camera/CameraTapZoomTargetPoint.html">CameraTapZoomTargetPoint</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/CameraVideoResolutionAndFrameRate.html">CameraVideoResolutionAndFrameRate</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/CameraWhiteBalanceAndColorTemperature.html">CameraWhiteBalanceAndColorTemperature</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraExposureParameters.html">DJICameraExposureParameters</a></li>
@@ -242,6 +245,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+        <li class="api apilevel-"><a href="../../../dji/common/camera/CameraPurchasedLicense.html">CameraPurchasedLicense</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDCapacity.html">CameraSSDCapacity</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDOperationState.html">CameraSSDOperationState</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/CameraThermalVersion.html">CameraThermalVersion</a></li>
@@ -272,6 +276,7 @@
         <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraSharpness.html">DJICameraSettingsDef.CameraSharpness</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShutterSpeed.html">DJICameraSettingsDef.CameraShutterSpeed</a></li>
+        <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraSSDVideoDigitalFilter.html">DJICameraSettingsDef.CameraSSDVideoDigitalFilter</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalDigitalZoomScale.html">DJICameraSettingsDef.CameraThermalDigitalZoomScale</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalExternalParamProfile.html">DJICameraSettingsDef.CameraThermalExternalParamProfile</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalFFCMode.html">DJICameraSettingsDef.CameraThermalFFCMode</a></li>
@@ -291,6 +296,7 @@
         <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraWhiteBalance.html">DJICameraSettingsDef.CameraWhiteBalance</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.OpticalZoomDirection.html">DJICameraSettingsDef.OpticalZoomDirection</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.OpticalZoomSpeed.html">DJICameraSettingsDef.OpticalZoomSpeed</a></li>
+        <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.VideoFileCompressionStandard.html">DJICameraSettingsDef.VideoFileCompressionStandard</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraThermalMeasurementMode.html">DJICameraThermalMeasurementMode</a></li>
       </ul>
     </li>
@@ -378,7 +384,9 @@
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/CameraLensState.html">CameraLensState</a></td>
-              <td class="jd-descrcol" width="100%"><b>Supported only by X5 camera and X5R camera.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This class contains information about the lens' current state, including
+  lens type, focus status, focus mode, focus assistant state, and Auto Focus
+  (AF) switch state.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/CameraParamRangeManager.html">CameraParamRangeManager</a></td>
@@ -405,94 +413,98 @@
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/CameraSSDState.html">CameraSSDState</a></td>
-              <td class="jd-descrcol" width="100%"><b>Supported only by X5R camera</b><br>
- This class contains the information about camera SSD's info, including state, whether it's connected, its capacity,
- video size and rate, etc.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This class contains the information about camera's Solid State Drive (SSD)
+  information, including state, whether it is connected, its capacity, video
+  size and rate, etc.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/CameraSystemState.html">CameraSystemState</a></td>
               <td class="jd-descrcol" width="100%">This class provides general information and current status of the camera.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/common/camera/CameraTapZoomTargetPoint.html">CameraTapZoomTargetPoint</a></td>
+              <td class="jd-descrcol" width="100%">Tap Zoom Target Point.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/CameraVideoResolutionAndFrameRate.html">CameraVideoResolutionAndFrameRate</a></td>
               <td class="jd-descrcol" width="100%">The camera's video resolution and frame rate.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/CameraWhiteBalanceAndColorTemperature.html">CameraWhiteBalanceAndColorTemperature</a></td>
               <td class="jd-descrcol" width="100%">The camera’s white balance (color temperature).&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraExposureParameters.html">DJICameraExposureParameters</a></td>
               <td class="jd-descrcol" width="100%">This class contains current values for some camera parameters.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.html">DJICameraSettingsDef</a></td>
               <td class="jd-descrcol" width="100%">This class contains all the enums and setting classes for the DJI Camera.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraApertureRange.html">DJICameraSettingsDef.CameraApertureRange</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraExposureCompensationRange.html">DJICameraSettingsDef.CameraExposureCompensationRange</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraExposureModeRange.html">DJICameraSettingsDef.CameraExposureModeRange</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraISORange.html">DJICameraSettingsDef.CameraISORange</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraModeRange.html">DJICameraSettingsDef.CameraModeRange</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraOpticalZoomSpec.html">DJICameraSettingsDef.CameraOpticalZoomSpec</a></td>
               <td class="jd-descrcol" width="100%">Zoom lens profile.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraPhotoAEBParam.html">DJICameraSettingsDef.CameraPhotoAEBParam</a></td>
               <td class="jd-descrcol" width="100%">AEB continue capture parameter values.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraPhotoIntervalParam.html">DJICameraSettingsDef.CameraPhotoIntervalParam</a></td>
               <td class="jd-descrcol" width="100%">Sets the number of pictures,
  and the time interval between pictures for the Interval capture shoot photo mode.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShutterSpeedRange.html">DJICameraSettingsDef.CameraShutterSpeedRange</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalProfile.html">DJICameraSettingsDef.CameraThermalProfile</a></td>
               <td class="jd-descrcol" width="100%"><b>Supported only by thermal Camera</b><br>
  The profile of thermal imaging camera, which includes information about resolution, frame rate and focal length.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRateRange.html">DJICameraSettingsDef.CameraVideoFrameRateRange</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoResolutionAndFrameRateRange.html">DJICameraSettingsDef.CameraVideoResolutionAndFrameRateRange</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoResolutionRange.html">DJICameraSettingsDef.CameraVideoResolutionRange</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/ThermalAreaTemperatureAggregations.html">ThermalAreaTemperatureAggregations</a></td>
               <td class="jd-descrcol" width="100%">All information about temperature of ThermalSportMeteringArea
 &nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/ThermalExternalSceneSettings.html">ThermalExternalSceneSettings</a></td>
               <td class="jd-descrcol" width="100%">Thermal cameras measure the apparent surface temperature of a given object.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/ThermalSpotMeteringTargetPoint.html">ThermalSpotMeteringTargetPoint</a></td>
               <td class="jd-descrcol" width="100%">The thermal spot metering Target point.&nbsp;</td>
           </tr>
@@ -507,130 +519,141 @@
     
   <table class="jd-sumtable-expando">
         <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/common/camera/CameraPurchasedLicense.html">CameraPurchasedLicense</a></td>
+              <td class="jd-descrcol" width="100%">CinemaDNG and Apple ProRes license key
+
+  Only supported by Inspire 2 X5S camera.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/CameraSSDCapacity.html">CameraSSDCapacity</a></td>
               <td class="jd-descrcol" width="100%">SSD Capacity.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/CameraSSDOperationState.html">CameraSSDOperationState</a></td>
               <td class="jd-descrcol" width="100%">SSD state information for currently executing operations.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/CameraThermalVersion.html">CameraThermalVersion</a></td>
               <td class="jd-descrcol" width="100%">There is a standard version and version with Advanced Radiometry capabilities
   of the Zenmuse XT thermal camera.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraAntiFlicker.html">DJICameraSettingsDef.CameraAntiFlicker</a></td>
               <td class="jd-descrcol" width="100%">Camera anti-flicker values.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraAperture.html">DJICameraSettingsDef.CameraAperture</a></td>
               <td class="jd-descrcol" width="100%">Camera aperture values.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraContrast.html">DJICameraSettingsDef.CameraContrast</a></td>
               <td class="jd-descrcol" width="100%">Camera contrast.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraCustomSettings.html">DJICameraSettingsDef.CameraCustomSettings</a></td>
               <td class="jd-descrcol" width="100%">Camera user settings.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraDeletePhotoOperation.html">DJICameraSettingsDef.CameraDeletePhotoOperation</a></td>
               <td class="jd-descrcol" width="100%">Camera Delete Photo Operation Define (Support Lists: Inspire1)
 &nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraDigitalFilter.html">DJICameraSettingsDef.CameraDigitalFilter</a></td>
               <td class="jd-descrcol" width="100%">Camera digital filters.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraExposureCompensation.html">DJICameraSettingsDef.CameraExposureCompensation</a></td>
               <td class="jd-descrcol" width="100%">Camera exposure compensation values.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraExposureMode.html">DJICameraSettingsDef.CameraExposureMode</a></td>
               <td class="jd-descrcol" width="100%">Camera exposure modes.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraFileIndexMode.html">DJICameraSettingsDef.CameraFileIndexMode</a></td>
               <td class="jd-descrcol" width="100%">File index modes.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraISO.html">DJICameraSettingsDef.CameraISO</a></td>
               <td class="jd-descrcol" width="100%">Camera ISO values.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraLensFocusMode.html">DJICameraSettingsDef.CameraLensFocusMode</a></td>
               <td class="jd-descrcol" width="100%"><b>Supported only by X5 Camera</b><br>
  Camera focus mode.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraLensFocusStatus.html">DJICameraSettingsDef.CameraLensFocusStatus</a></td>
               <td class="jd-descrcol" width="100%"><b>Supported only by X5 Camera</b><br>
  The focusing status of the camera's lens.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraLensType.html">DJICameraSettingsDef.CameraLensType</a></td>
               <td class="jd-descrcol" width="100%"><b>Supported only by X5 Camera</b><br>
  The enum type camera lens.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraMediaFileDeleteStatus.html">DJICameraSettingsDef.CameraMediaFileDeleteStatus</a></td>
               <td class="jd-descrcol" width="100%">The file deletion status when deleting a file as the camera is in Playback MODE.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraMediaFileType.html">DJICameraSettingsDef.CameraMediaFileType</a></td>
               <td class="jd-descrcol" width="100%">Showing media file types when the camera is in Playback mode.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraMeteringMode.html">DJICameraSettingsDef.CameraMeteringMode</a></td>
               <td class="jd-descrcol" width="100%">Camera exposure metering values.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraMode.html">DJICameraSettingsDef.CameraMode</a></td>
               <td class="jd-descrcol" width="100%">Camera modes.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraOrientation.html">DJICameraSettingsDef.CameraOrientation</a></td>
               <td class="jd-descrcol" width="100%">Physical orientation of the camera.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraPhotoAspectRatio.html">DJICameraSettingsDef.CameraPhotoAspectRatio</a></td>
               <td class="jd-descrcol" width="100%">Camera's photo ratios, where the first value is the width and the
  second value is the height.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraPhotoBurstCount.html">DJICameraSettingsDef.CameraPhotoBurstCount</a></td>
               <td class="jd-descrcol" width="100%">The amount of photos taken in one burst shot (shooting photo in burst mode).&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraPhotoFileFormat.html">DJICameraSettingsDef.CameraPhotoFileFormat</a></td>
               <td class="jd-descrcol" width="100%">Camera photo storage formats.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraPhotoQuality.html">DJICameraSettingsDef.CameraPhotoQuality</a></td>
               <td class="jd-descrcol" width="100%">Photo quality of the JPEG image.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraPhotoTimeLapseFileFormat.html">DJICameraSettingsDef.CameraPhotoTimeLapseFileFormat</a></td>
               <td class="jd-descrcol" width="100%">File format for camera when it is in time-lapse mode.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraPlaybackMode.html">DJICameraSettingsDef.CameraPlaybackMode</a></td>
               <td class="jd-descrcol" width="100%">A playback mode represents a task that the Playback manager is executing.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraSharpness.html">DJICameraSettingsDef.CameraSharpness</a></td>
               <td class="jd-descrcol" width="100%">Camera sharpness values.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a></td>
               <td class="jd-descrcol" width="100%">The camera work mode for ShootPhoto has several modes within its definition.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShutterSpeed.html">DJICameraSettingsDef.CameraShutterSpeed</a></td>
               <td class="jd-descrcol" width="100%">Camera's shutter speed options.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraSSDVideoDigitalFilter.html">DJICameraSettingsDef.CameraSSDVideoDigitalFilter</a></td>
+              <td class="jd-descrcol" width="100%">Camera digital filters for videos that will be stored in SSD with Apple ProRes
+  codecs.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalDigitalZoomScale.html">DJICameraSettingsDef.CameraThermalDigitalZoomScale</a></td>
@@ -720,6 +743,10 @@
               <td class="jd-descrcol" width="100%">The speed of lens to zoom.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.VideoFileCompressionStandard.html">DJICameraSettingsDef.VideoFileCompressionStandard</a></td>
+              <td class="jd-descrcol" width="100%">The compression standard used to store the video files.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/camera/DJICameraThermalMeasurementMode.html">DJICameraThermalMeasurementMode</a></td>
               <td class="jd-descrcol" width="100%">Thermal measurement mode.&nbsp;</td>
           </tr>

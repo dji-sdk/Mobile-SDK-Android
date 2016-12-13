@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -216,6 +218,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDRawVideoResolutionAndFrameRate.html">CameraSSDRawVideoResolutionAndFrameRate</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDState.html">CameraSSDState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSystemState.html">CameraSystemState</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/CameraTapZoomTargetPoint.html">CameraTapZoomTargetPoint</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraVideoResolutionAndFrameRate.html">CameraVideoResolutionAndFrameRate</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraWhiteBalanceAndColorTemperature.html">CameraWhiteBalanceAndColorTemperature</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraExposureParameters.html">DJICameraExposureParameters</a></li>
@@ -242,6 +245,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/CameraPurchasedLicense.html">CameraPurchasedLicense</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDCapacity.html">CameraSSDCapacity</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDOperationState.html">CameraSSDOperationState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraThermalVersion.html">CameraThermalVersion</a></li>
@@ -272,6 +276,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraSharpness.html">DJICameraSettingsDef.CameraSharpness</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShutterSpeed.html">DJICameraSettingsDef.CameraShutterSpeed</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraSSDVideoDigitalFilter.html">DJICameraSettingsDef.CameraSSDVideoDigitalFilter</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalDigitalZoomScale.html">DJICameraSettingsDef.CameraThermalDigitalZoomScale</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalExternalParamProfile.html">DJICameraSettingsDef.CameraThermalExternalParamProfile</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalFFCMode.html">DJICameraSettingsDef.CameraThermalFFCMode</a></li>
@@ -291,6 +296,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraWhiteBalance.html">DJICameraSettingsDef.CameraWhiteBalance</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.OpticalZoomDirection.html">DJICameraSettingsDef.OpticalZoomDirection</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.OpticalZoomSpeed.html">DJICameraSettingsDef.OpticalZoomSpeed</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.VideoFileCompressionStandard.html">DJICameraSettingsDef.VideoFileCompressionStandard</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraThermalMeasurementMode.html">DJICameraThermalMeasurementMode</a></li>
       </ul>
     </li>
@@ -516,61 +522,96 @@ Summary:
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
-        <td class="jd-linkcol">FrameRate_120fps&nbsp;</td>
-        <td class="jd-descrcol" width="100%">The camera's video frame rate is 120fps (frames per second).&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_100FPS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The camera's video frame rate is 100fps (frames per second).&nbsp;</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
-        <td class="jd-linkcol">FrameRate_24fps&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_120FPS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The camera's video frame rate is 120 FPS (frames per second).&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_23dot976FPS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The camera's video frame rate is 23.976fps (frames per second).&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_24FPS&nbsp;</td>
         <td class="jd-descrcol" width="100%">The camera's video frame rate is 24fps (frames per second).&nbsp;</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
-        <td class="jd-linkcol">FrameRate_25fps&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_25FPS&nbsp;</td>
         <td class="jd-descrcol" width="100%">The camera's video frame rate is 25fps (frames per second).&nbsp;</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
-        <td class="jd-linkcol">FrameRate_30fps&nbsp;</td>
-        <td class="jd-descrcol" width="100%">The camera's video frame rate is 30fps (frames per second).&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_29dot970FPS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The camera's video frame rate is 29.970fps (frames per second).&nbsp;</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
-        <td class="jd-linkcol">FrameRate_48fps&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_30FPS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The camera's video frame rate is 30fps (frames per second).&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_47dot950FPS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The camera's video frame rate is 47.950fps (frames per second).&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_48FPS&nbsp;</td>
         <td class="jd-descrcol" width="100%">The camera's video frame rate is 48fps (frames per second).&nbsp;</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
-        <td class="jd-linkcol">FrameRate_50fps&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_50FPS&nbsp;</td>
         <td class="jd-descrcol" width="100%">The camera's video frame rate is 50fps (frames per second).&nbsp;</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
-        <td class="jd-linkcol">FrameRate_60fps&nbsp;</td>
-        <td class="jd-descrcol" width="100%">The camera's video frame rate is 60fps (frames per second).&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_59dot940FPS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The camera's video frame rate is 59.940fps (frames per second).&nbsp;</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
-        <td class="jd-linkcol">FrameRate_96fps&nbsp;</td>
-        <td class="jd-descrcol" width="100%">The camera's video frame rate is 96fps (frames per second).&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_60FPS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The camera's video frame rate is 60fps (frames per second).&nbsp;</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
+        <td class="jd-linkcol">FrameRate_96FPS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The camera's video frame rate is 96fps (frames per second).&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>&nbsp;</td>
         <td class="jd-linkcol">Unknown&nbsp;</td>
         <td class="jd-descrcol" width="100%">The camera's video frame rate is unknown.&nbsp;</td>
@@ -1111,7 +1152,7 @@ From interface
 
 
 
-<a id="FrameRate_120fps"></a>
+<a id="FrameRate_100FPS"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1121,7 +1162,7 @@ From interface
         final 
         <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
       </span>
-        FrameRate_120fps
+        FrameRate_100FPS
     </h4>
       <div class="api-level">
         
@@ -1133,9 +1174,7 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The camera's video frame rate is 120fps (frames per second).
- The frame rate can be used only when <code>isSlowMotionSupported()</code> returns <code>true</code>.
-</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>The camera's video frame rate is 100fps (frames per second).</p></div>
 
     
     </div>
@@ -1143,7 +1182,7 @@ From interface
 
 
 
-<a id="FrameRate_24fps"></a>
+<a id="FrameRate_120FPS"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1153,7 +1192,70 @@ From interface
         final 
         <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
       </span>
-        FrameRate_24fps
+        FrameRate_120FPS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The camera's video frame rate is 120 FPS (frames per second). For X3,
+  Z3, Phantom 4 camera and Mavic Pro camera, when 120 FPS is used, video
+  recording will be in slow motion mode. For Phantom 4 Pro camera, X4S and
+  X5S, video is recorded without slow motion.</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="FrameRate_23dot976FPS"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
+      </span>
+        FrameRate_23dot976FPS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The camera's video frame rate is 23.976fps (frames per second).</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="FrameRate_24FPS"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
+      </span>
+        FrameRate_24FPS
     </h4>
       <div class="api-level">
         
@@ -1173,7 +1275,7 @@ From interface
 
 
 
-<a id="FrameRate_25fps"></a>
+<a id="FrameRate_25FPS"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1183,7 +1285,7 @@ From interface
         final 
         <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
       </span>
-        FrameRate_25fps
+        FrameRate_25FPS
     </h4>
       <div class="api-level">
         
@@ -1203,7 +1305,7 @@ From interface
 
 
 
-<a id="FrameRate_30fps"></a>
+<a id="FrameRate_29dot970FPS"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1213,7 +1315,37 @@ From interface
         final 
         <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
       </span>
-        FrameRate_30fps
+        FrameRate_29dot970FPS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The camera's video frame rate is 29.970fps (frames per second).</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="FrameRate_30FPS"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
+      </span>
+        FrameRate_30FPS
     </h4>
       <div class="api-level">
         
@@ -1233,7 +1365,7 @@ From interface
 
 
 
-<a id="FrameRate_48fps"></a>
+<a id="FrameRate_47dot950FPS"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1243,7 +1375,37 @@ From interface
         final 
         <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
       </span>
-        FrameRate_48fps
+        FrameRate_47dot950FPS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The camera's video frame rate is 47.950fps (frames per second).</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="FrameRate_48FPS"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
+      </span>
+        FrameRate_48FPS
     </h4>
       <div class="api-level">
         
@@ -1263,7 +1425,7 @@ From interface
 
 
 
-<a id="FrameRate_50fps"></a>
+<a id="FrameRate_50FPS"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1273,7 +1435,7 @@ From interface
         final 
         <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
       </span>
-        FrameRate_50fps
+        FrameRate_50FPS
     </h4>
       <div class="api-level">
         
@@ -1293,7 +1455,7 @@ From interface
 
 
 
-<a id="FrameRate_60fps"></a>
+<a id="FrameRate_59dot940FPS"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1303,7 +1465,37 @@ From interface
         final 
         <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
       </span>
-        FrameRate_60fps
+        FrameRate_59dot940FPS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The camera's video frame rate is 59.940fps (frames per second).</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="FrameRate_60FPS"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
+      </span>
+        FrameRate_60FPS
     </h4>
       <div class="api-level">
         
@@ -1323,7 +1515,7 @@ From interface
 
 
 
-<a id="FrameRate_96fps"></a>
+<a id="FrameRate_96FPS"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1333,7 +1525,7 @@ From interface
         final 
         <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoFrameRate.html">DJICameraSettingsDef.CameraVideoFrameRate</a>
       </span>
-        FrameRate_96fps
+        FrameRate_96FPS
     </h4>
       <div class="api-level">
         

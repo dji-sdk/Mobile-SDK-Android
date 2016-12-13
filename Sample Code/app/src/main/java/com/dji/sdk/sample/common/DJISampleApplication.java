@@ -83,7 +83,7 @@ public class DJISampleApplication extends Application {
         /**
          * handles SDK Registration using the API_KEY
          */
-        Log.v(TAG, "Comes into the initSDKManager");
+        Log.d("Alex", "Comes into the initSDKManager");
         DJISDKManager.getInstance().initSDKManager(this, mDJISDKManagerCallback);
     }
 
@@ -112,7 +112,7 @@ public class DJISampleApplication extends Application {
         @Override
         public void onProductChanged(DJIBaseProduct oldProduct, DJIBaseProduct newProduct) {
 
-            Log.v(TAG, String.format("onProductChanged oldProduct:%s, newProduct:%s", oldProduct, newProduct));
+            Log.d("Alex", String.format("onProductChanged oldProduct:%s, newProduct:%s", oldProduct, newProduct));
             mProduct = newProduct;
             if(mProduct != null) {
                 mProduct.setDJIBaseProductListener(mDJIBaseProductListener);
@@ -129,7 +129,7 @@ public class DJISampleApplication extends Application {
                 if(newComponent != null) {
                     newComponent.setDJIComponentListener(mDJIComponentListener);
                 }
-                Log.v(TAG, String.format("onComponentChange key:%s, oldComponent:%s, newComponent:%s", key, oldComponent, newComponent));
+                Log.d("Alex", String.format("onComponentChange key:%s, oldComponent:%s, newComponent:%s", key, oldComponent, newComponent));
 
                 notifyStatusChange();
             }
@@ -137,7 +137,7 @@ public class DJISampleApplication extends Application {
             @Override
             public void onProductConnectivityChanged(boolean isConnected) {
 
-                Log.v(TAG, "onProductConnectivityChanged: " + isConnected);
+                Log.d("Alex", "onProductConnectivityChanged: " + isConnected);
 
                 notifyStatusChange();
             }
@@ -148,7 +148,7 @@ public class DJISampleApplication extends Application {
 
             @Override
             public void onComponentConnectivityChanged(boolean isConnected) {
-                Log.v(TAG, "onComponentConnectivityChanged: " + isConnected);
+                Log.d("Alex", "onComponentConnectivityChanged: " + isConnected);
                 notifyStatusChange();
             }
 

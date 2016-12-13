@@ -38,7 +38,7 @@ public class PushRemoteControllerDataView extends BasePushDataView{
                     mStringBuffer.delete(0, mStringBuffer.length());
 
                     mStringBuffer.append("FlightModeSwitch: ").
-                            append(djircHardwareState.flightModeSwitch.mode.name()).append("\n");
+                            append(djircHardwareState.flightModeSwitchPosition).append("\n");
                     mStringBuffer.append("OnClickGoHomeBtn: ").
                             append(djircHardwareState.goHomeButton.buttonDown).append("\n");
                     mStringBuffer.append("RightHorizontalChanged: ")

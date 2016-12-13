@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.v(TAG, "Comes into the onCreate");
+        Log.d("Alex", "Comes into the onCreate");
         // When the compile and target version is higher than 22, please request the following permissions at runtime to ensure the SDK work well.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             ActivityCompat.requestPermissions(this,
@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onConfigurationChanged(Configuration newConfig){
-        Log.v(TAG, "Comes into the onConfigruation");
+        Log.d("Alex", "Comes into the onConfigruation");
         super.onConfigurationChanged(newConfig);
     }
 }

@@ -444,6 +444,12 @@ public class MediaPlaybackView extends RelativeLayout implements DJIMediaManager
 
     @Override
     public void onResult(DJIMediaManager.VideoPlaybackState videoPlaybackState) {
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(context, "VideoPlaybackState on Result", Toast.LENGTH_SHORT).show();
+            }
+        });
         updateTextView(videoPlaybackState);
     }
 

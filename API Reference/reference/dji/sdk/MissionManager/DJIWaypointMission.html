@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -156,6 +156,8 @@
   <a href="../../../dji/common/gimbal/package-summary.html">dji.common.gimbal</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
@@ -435,7 +437,8 @@ Summary:
  route for the aircraft to follow. Actions can also be added to waypoints, which will be carried
  out when the aircraft reaches the waypoint.
 
- The aircraft travels between waypoints automatically at a base speed. However, the user can change the speed by
+ The aircraft travels between waypoints automatically at a base speed. However, the user can chan
+ he speed by
  using the pitch joystick. If the stick is pushed up, the speed will increase. If the stick is pushed down, the speed
  will slow down. The stick can be pushed down to stop the aircraft and further pushed to start making the aircraft
  travel back along the path it came. When the aircraft is traveling through waypoints in the reverse order, it will
@@ -608,7 +611,8 @@ Summary:
           
           float</td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/missionmanager/DJIWaypointMission.html#autoFlightSpeed">autoFlightSpeed</a></td>
-          <td class="jd-descrcol" width="100%">The base automatic speed of the aircraft as it moves between waypoints with range [-15, 15] m/s.</td>
+          <td class="jd-descrcol" width="100%">The base automatic speed of the aircraft as it moves between waypoints with
+  range [-15, 15] m/s.</td>
       </tr>
       
     
@@ -1337,20 +1341,24 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The base automatic speed of the aircraft as it moves between waypoints with range [-15, 15] m/s.
+  <div class="jd-tagdata jd-tagdescr"><p>The base automatic speed of the aircraft as it moves between waypoints with
+  range [-15, 15] m/s.
 
- The aircraft's actual speed is a combination of the base automatic speed, and the speed control
- given by the throttle joystick on the remote controller.
+  The aircraft's actual speed is a combination of the base automatic speed,
+  and the speed control given by the throttle joystick on the remote controller.
 
- If autoFlightSpeed >0: Actual speed is autoFlightSpeed + Joystick Speed (with combined max of maxFlightSpeed)
- If autoFlightSpeed =0: Actual speed is controlled only by the remote controller joystick.
- If autoFlightSpeed <0 and the aircraft is at the first waypoint, then the aircraft will hover in place until the
- speed is made positive by the remote controller joystick.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">See Also</h5>
-      <ul class="nolist"><li><code><a href="../../../dji/sdk/missionmanager/DJIWaypoint.html">DJIWaypoint</a></code></li>
-      </ul>
-  </div>
+  If <code>autoFlightSpeed</code> >0: Actual speed is <code>autoFlightSpeed</code> + Joystick Speed
+  (with combined max of <code>maxFlightSpeed</code>)
+  If <code>autoFlightSpeed</code> =0: Actual speed is controlled only by the remote
+  controller joystick.
+  If <code>autoFlightSpeed</code> <0 and the aircraft is at the first waypoint, the
+  aircraft will hover in place until the speed is made positive by the remote
+  controller joystick.
+
+  In flight controller firmware 3.2.10.0 or above, different speeds between
+  individual waypoints can also be set in waypoint objects which will overwrite
+  `autoFlightSpeed`.
+</p></div>
 
     
     </div>

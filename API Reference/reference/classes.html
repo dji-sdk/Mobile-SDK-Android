@@ -87,7 +87,7 @@
 
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -155,6 +155,8 @@
   <a href="./dji/common/gimbal/package-summary.html">dji.common.gimbal</a></li>
     <li class="api apilevel-">
   <a href="./dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
+    <li class="api apilevel-">
+  <a href="./dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="./dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
@@ -309,7 +311,9 @@
     
         <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/CameraLensState.html">CameraLensState</a></td>
-            <td class="jd-descrcol" width="100%"><b>Supported only by X5 camera and X5R camera.&nbsp;</td>
+            <td class="jd-descrcol" width="100%">This class contains information about the lens' current state, including
+  lens type, focus status, focus mode, focus assistant state, and Auto Focus
+  (AF) switch state.&nbsp;</td>
         </tr>
     
     
@@ -334,47 +338,61 @@
     
     
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/camera/CameraPurchasedLicense.html">CameraPurchasedLicense</a></td>
+            <td class="jd-descrcol" width="100%">CinemaDNG and Apple ProRes license key
+
+  Only supported by Inspire 2 X5S camera.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/CameraSDCardState.html">CameraSDCardState</a></td>
             <td class="jd-descrcol" width="100%">This class provides the SD card's general information and current status.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/CameraSpotMeteringArea.html">CameraSpotMeteringArea</a></td>
             <td class="jd-descrcol" width="100%">The spot metering area index.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/CameraSSDCapacity.html">CameraSSDCapacity</a></td>
             <td class="jd-descrcol" width="100%">SSD Capacity.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/CameraSSDOperationState.html">CameraSSDOperationState</a></td>
             <td class="jd-descrcol" width="100%">SSD state information for currently executing operations.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/CameraSSDRawVideoResolutionAndFrameRate.html">CameraSSDRawVideoResolutionAndFrameRate</a></td>
             <td class="jd-descrcol" width="100%"><b>Supported only by X5R camera</b><br>
  Set Raw Video Resolution and Frame Rate of the SSD.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/CameraSSDState.html">CameraSSDState</a></td>
-            <td class="jd-descrcol" width="100%"><b>Supported only by X5R camera</b><br>
- This class contains the information about camera SSD's info, including state, whether it's connected, its capacity,
- video size and rate, etc.&nbsp;</td>
+            <td class="jd-descrcol" width="100%">This class contains the information about camera's Solid State Drive (SSD)
+  information, including state, whether it is connected, its capacity, video
+  size and rate, etc.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/camera/CameraSystemState.html">CameraSystemState</a></td>
+            <td class="jd-descrcol" width="100%">This class provides general information and current status of the camera.&nbsp;</td>
         </tr>
     
     
         <tr class="alt-color api apilevel-" >
-            <td class="jd-linkcol"><a href="./dji/common/camera/CameraSystemState.html">CameraSystemState</a></td>
-            <td class="jd-descrcol" width="100%">This class provides general information and current status of the camera.&nbsp;</td>
+            <td class="jd-linkcol"><a href="./dji/common/camera/CameraTapZoomTargetPoint.html">CameraTapZoomTargetPoint</a></td>
+            <td class="jd-descrcol" width="100%">Tap Zoom Target Point.&nbsp;</td>
         </tr>
     
     
@@ -398,14 +416,21 @@
     
     
         <tr class="alt-color api apilevel-" >
-            <td class="jd-linkcol"><a href="./dji/common/airlink/ChannelRSSI.html">ChannelRSSI</a></td>
-            <td class="jd-descrcol" width="100%">Created by hai.vo on 2016/9/21.&nbsp;</td>
+            <td class="jd-linkcol"><a href="./dji/common/airlink/ChannelInterference.html">ChannelInterference</a></td>
+            <td class="jd-descrcol" width="100%">The interference power of a LBAirLink channel.&nbsp;</td>
         </tr>
     
     
         <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/airlink/ChannelSelectionMode.html">ChannelSelectionMode</a></td>
             <td class="jd-descrcol" width="100%">Downlink channel selection mode (manual or automatic) for the wireless link.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/util/ConvertKeyUtil.html">ConvertKeyUtil</a></td>
+            <td class="jd-descrcol" width="100%">This class will map the external keys to internal keys (Specially for the flight controller keys and gimbal internal
+ keys).&nbsp;</td>
         </tr>
     
     
@@ -557,7 +582,7 @@
     
         <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/battery/DJIBatteryAggregationState.html">DJIBatteryAggregationState</a></td>
-            <td class="jd-descrcol" width="100%"><b>Only supported by M600.&nbsp;</td>
+            <td class="jd-descrcol" width="100%">Provides a real time summary of the aggregated battery system.&nbsp;</td>
         </tr>
     
     
@@ -594,7 +619,7 @@
     
         <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/battery/DJIBatteryLowCellVoltageOperation.html">DJIBatteryLowCellVoltageOperation</a></td>
-            <td class="jd-descrcol" width="100%">Created by dji on 16/8/12.&nbsp;</td>
+            <td class="jd-descrcol" width="100%">Defines aircraft operation when the cell voltage is low.&nbsp;</td>
         </tr>
     
     
@@ -605,95 +630,102 @@
     
     
         <tr class="alt-color api apilevel-" >
-            <td class="jd-linkcol"><a href="./dji/common/battery/DJIBatteryState.html">DJIBatteryState</a></td>
-            <td class="jd-descrcol" width="100%">The DJIBatteryState is used to keep track of the real-time state of the battery.&nbsp;</td>
+            <td class="jd-linkcol"><a href="./dji/common/battery/DJIBatteryPairStatus.html">DJIBatteryPairStatus</a></td>
+            <td class="jd-descrcol" width="100%">Battery pairing state for batteries that can be paired.&nbsp;</td>
         </tr>
     
     
         <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/battery/DJIBatteryState.html">DJIBatteryState</a></td>
+            <td class="jd-descrcol" width="100%"><code>DJIBatteryState</code> is used to keep track of the real-time state of the
+  battery.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/battery/DJIBatteryStatus.html">DJIBatteryStatus</a></td>
             <td class="jd-descrcol" width="100%">Created by petyrzhan on 6/28/16.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/battery/DJIBatteryWarningInformation.html">DJIBatteryWarningInformation</a></td>
             <td class="jd-descrcol" width="100%">This class is used to keep a record of any unusual status for the battery
  in the past 30 discharge.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/sdkmanager/DJIBluetoothDevice.html">DJIBluetoothDevice</a></td>
             <td class="jd-descrcol" width="100%">This class contains information for DJI bluetooth device.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/sdkmanager/DJIBluetoothDevice.DJIBluetoothDeviceStatus.html">DJIBluetoothDevice.DJIBluetoothDeviceStatus</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/sdkmanager/DJIBluetoothProductConnector.html">DJIBluetoothProductConnector</a></td>
             <td class="jd-descrcol" width="100%">This class contains methods to find DJI products around the mobile device
  that can be connected using Bluetooth and connect product with SDK.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/sdkmanager/DJIBluetoothProductConnector.BluetoothProductConnectorListener.html">DJIBluetoothProductConnector.BluetoothProductConnectorListener</a></td>
             <td class="jd-descrcol" width="100%">Delegate that receives the product list found by the connector.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.html">DJICamera</a></td>
             <td class="jd-descrcol" width="100%">This class provides methods to change camera settings and perform
  camera actions.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.CameraGeneratedNewMediaFileCallback.html">DJICamera.CameraGeneratedNewMediaFileCallback</a></td>
             <td class="jd-descrcol" width="100%">Tells that a new media file (photo or video) is generated.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.CameraGeneratedTimeLapsePreviewCallback.html">DJICamera.CameraGeneratedTimeLapsePreviewCallback</a></td>
             <td class="jd-descrcol" width="100%"><b>Supported only by the Osmo camera</b><br>
  Tells the callback that a preview image for the Time-lapse is generated.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.CameraReceivedVideoDataCallback.html">DJICamera.CameraReceivedVideoDataCallback</a></td>
             <td class="jd-descrcol" width="100%">Video data update callback.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.CameraUpdatedCurrentExposureValuesCallback.html">DJICamera.CameraUpdatedCurrentExposureValuesCallback</a></td>
             <td class="jd-descrcol" width="100%">Called whenever the camera parameters change.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.CameraUpdatedLensStateCallback.html">DJICamera.CameraUpdatedLensStateCallback</a></td>
             <td class="jd-descrcol" width="100%"><b>Supported only by X5 camera and X5R camera.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.CameraUpdatedSDCardStateCallback.html">DJICamera.CameraUpdatedSDCardStateCallback</a></td>
             <td class="jd-descrcol" width="100%">This interface provides general information and current statuses on the
  SD card.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.CameraUpdatedSSDStateCallback.html">DJICamera.CameraUpdatedSSDStateCallback</a></td>
             <td class="jd-descrcol" width="100%"><b>Supported only by X5R camera</b><br>
  This interface provides general information and current status of the
@@ -701,285 +733,292 @@
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.CameraUpdatedSystemStateCallback.html">DJICamera.CameraUpdatedSystemStateCallback</a></td>
             <td class="jd-descrcol" width="100%">Updates the camera's current state.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.ThermalCameraAreaTemperatureAggregationsUpdatedCallback.html">DJICamera.ThermalCameraAreaTemperatureAggregationsUpdatedCallback</a></td>
             <td class="jd-descrcol" width="100%">This interface provides information about the aggregate temperature of metering area.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.ThermalCameraExternalSceneSettingsUpdatedCallback.html">DJICamera.ThermalCameraExternalSceneSettingsUpdatedCallback</a></td>
             <td class="jd-descrcol" width="100%">This interface provides information about the external scene settings.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICamera.ThermalCameraUpdateTemperatureDataCallback.html">DJICamera.ThermalCameraUpdateTemperatureDataCallback</a></td>
             <td class="jd-descrcol" width="100%">Received temperature in degrees Celsius of image.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/error/DJICameraError.html">DJICameraError</a></td>
             <td class="jd-descrcol" width="100%">Defines all camera-related errors.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraExposureParameters.html">DJICameraExposureParameters</a></td>
             <td class="jd-descrcol" width="100%">This class contains current values for some camera parameters.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICameraParameters.html">DJICameraParameters</a></td>
             <td class="jd-descrcol" width="100%">Some of the camera's parameters have dynamic ranges.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICameraParameters.DJICameraParametersListener.html">DJICameraParameters.DJICameraParametersListener</a></td>
             <td class="jd-descrcol" width="100%">Notified when the the camera parameters' range changes.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJICameraParameters.VideoResolutionFps.html">DJICameraParameters.VideoResolutionFps</a></td>
             <td class="jd-descrcol" width="100%">Defines video resolution and frame rate as a type.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.html">DJICameraSettingsDef</a></td>
             <td class="jd-descrcol" width="100%">This class contains all the enums and setting classes for the DJI Camera.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraAntiFlicker.html">DJICameraSettingsDef.CameraAntiFlicker</a></td>
             <td class="jd-descrcol" width="100%">Camera anti-flicker values.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraAperture.html">DJICameraSettingsDef.CameraAperture</a></td>
             <td class="jd-descrcol" width="100%">Camera aperture values.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraApertureRange.html">DJICameraSettingsDef.CameraApertureRange</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraContrast.html">DJICameraSettingsDef.CameraContrast</a></td>
             <td class="jd-descrcol" width="100%">Camera contrast.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraCustomSettings.html">DJICameraSettingsDef.CameraCustomSettings</a></td>
             <td class="jd-descrcol" width="100%">Camera user settings.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraDeletePhotoOperation.html">DJICameraSettingsDef.CameraDeletePhotoOperation</a></td>
             <td class="jd-descrcol" width="100%">Camera Delete Photo Operation Define (Support Lists: Inspire1)
 &nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraDigitalFilter.html">DJICameraSettingsDef.CameraDigitalFilter</a></td>
             <td class="jd-descrcol" width="100%">Camera digital filters.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraExposureCompensation.html">DJICameraSettingsDef.CameraExposureCompensation</a></td>
             <td class="jd-descrcol" width="100%">Camera exposure compensation values.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraExposureCompensationRange.html">DJICameraSettingsDef.CameraExposureCompensationRange</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraExposureMode.html">DJICameraSettingsDef.CameraExposureMode</a></td>
             <td class="jd-descrcol" width="100%">Camera exposure modes.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraExposureModeRange.html">DJICameraSettingsDef.CameraExposureModeRange</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraFileIndexMode.html">DJICameraSettingsDef.CameraFileIndexMode</a></td>
             <td class="jd-descrcol" width="100%">File index modes.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraISO.html">DJICameraSettingsDef.CameraISO</a></td>
             <td class="jd-descrcol" width="100%">Camera ISO values.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraISORange.html">DJICameraSettingsDef.CameraISORange</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraLensFocusMode.html">DJICameraSettingsDef.CameraLensFocusMode</a></td>
             <td class="jd-descrcol" width="100%"><b>Supported only by X5 Camera</b><br>
  Camera focus mode.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraLensFocusStatus.html">DJICameraSettingsDef.CameraLensFocusStatus</a></td>
             <td class="jd-descrcol" width="100%"><b>Supported only by X5 Camera</b><br>
  The focusing status of the camera's lens.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraLensType.html">DJICameraSettingsDef.CameraLensType</a></td>
             <td class="jd-descrcol" width="100%"><b>Supported only by X5 Camera</b><br>
  The enum type camera lens.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraMediaFileDeleteStatus.html">DJICameraSettingsDef.CameraMediaFileDeleteStatus</a></td>
             <td class="jd-descrcol" width="100%">The file deletion status when deleting a file as the camera is in Playback MODE.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraMediaFileType.html">DJICameraSettingsDef.CameraMediaFileType</a></td>
             <td class="jd-descrcol" width="100%">Showing media file types when the camera is in Playback mode.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraMeteringMode.html">DJICameraSettingsDef.CameraMeteringMode</a></td>
             <td class="jd-descrcol" width="100%">Camera exposure metering values.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraMode.html">DJICameraSettingsDef.CameraMode</a></td>
             <td class="jd-descrcol" width="100%">Camera modes.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraModeRange.html">DJICameraSettingsDef.CameraModeRange</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraOpticalZoomSpec.html">DJICameraSettingsDef.CameraOpticalZoomSpec</a></td>
             <td class="jd-descrcol" width="100%">Zoom lens profile.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraOrientation.html">DJICameraSettingsDef.CameraOrientation</a></td>
             <td class="jd-descrcol" width="100%">Physical orientation of the camera.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraPhotoAEBParam.html">DJICameraSettingsDef.CameraPhotoAEBParam</a></td>
             <td class="jd-descrcol" width="100%">AEB continue capture parameter values.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraPhotoAspectRatio.html">DJICameraSettingsDef.CameraPhotoAspectRatio</a></td>
             <td class="jd-descrcol" width="100%">Camera's photo ratios, where the first value is the width and the
  second value is the height.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraPhotoBurstCount.html">DJICameraSettingsDef.CameraPhotoBurstCount</a></td>
             <td class="jd-descrcol" width="100%">The amount of photos taken in one burst shot (shooting photo in burst mode).&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraPhotoFileFormat.html">DJICameraSettingsDef.CameraPhotoFileFormat</a></td>
             <td class="jd-descrcol" width="100%">Camera photo storage formats.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraPhotoIntervalParam.html">DJICameraSettingsDef.CameraPhotoIntervalParam</a></td>
             <td class="jd-descrcol" width="100%">Sets the number of pictures,
  and the time interval between pictures for the Interval capture shoot photo mode.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraPhotoQuality.html">DJICameraSettingsDef.CameraPhotoQuality</a></td>
             <td class="jd-descrcol" width="100%">Photo quality of the JPEG image.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraPhotoTimeLapseFileFormat.html">DJICameraSettingsDef.CameraPhotoTimeLapseFileFormat</a></td>
             <td class="jd-descrcol" width="100%">File format for camera when it is in time-lapse mode.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraPlaybackMode.html">DJICameraSettingsDef.CameraPlaybackMode</a></td>
             <td class="jd-descrcol" width="100%">A playback mode represents a task that the Playback manager is executing.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraSharpness.html">DJICameraSettingsDef.CameraSharpness</a></td>
             <td class="jd-descrcol" width="100%">Camera sharpness values.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a></td>
             <td class="jd-descrcol" width="100%">The camera work mode for ShootPhoto has several modes within its definition.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraShutterSpeed.html">DJICameraSettingsDef.CameraShutterSpeed</a></td>
             <td class="jd-descrcol" width="100%">Camera's shutter speed options.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraShutterSpeedRange.html">DJICameraSettingsDef.CameraShutterSpeedRange</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.CameraSSDVideoDigitalFilter.html">DJICameraSettingsDef.CameraSSDVideoDigitalFilter</a></td>
+            <td class="jd-descrcol" width="100%">Camera digital filters for videos that will be stored in SSD with Apple ProRes
+  codecs.&nbsp;</td>
         </tr>
     
     
@@ -1134,96 +1173,102 @@
     
     
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraSettingsDef.VideoFileCompressionStandard.html">DJICameraSettingsDef.VideoFileCompressionStandard</a></td>
+            <td class="jd-descrcol" width="100%">The compression standard used to store the video files.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/camera/DJICameraThermalMeasurementMode.html">DJICameraThermalMeasurementMode</a></td>
             <td class="jd-descrcol" width="100%">Thermal measurement mode.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/codec/DJICodecManager.html">DJICodecManager</a></td>
             <td class="jd-descrcol" width="100%">Class that handles encoding and decoding of media
 &nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/util/DJICommonCallbacks.html">DJICommonCallbacks</a></td>
             <td class="jd-descrcol" width="100%">Created by dji on 5/25/16.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a></td>
             <td class="jd-descrcol" width="100%">Completion callback for asynchronous operations.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICommonCallbacks.DJICompletionCallbackWith</a>&lt;T&gt;</td>
             <td class="jd-descrcol" width="100%">DJI completion callback with parameter T, the T will be defined where it
  is called.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/util/DJICommonCallbacks.DJICompletionCallbackWithThreeParam.html">DJICommonCallbacks.DJICompletionCallbackWithThreeParam</a>&lt;X,&nbsp;Y,&nbsp;Z&gt;</td>
             <td class="jd-descrcol" width="100%">DJI completion callback with parameters X, Y, Z, which will be
  defined where it is called.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/util/DJICommonCallbacks.DJICompletionCallbackWithTwoParam.html">DJICommonCallbacks.DJICompletionCallbackWithTwoParam</a>&lt;X,&nbsp;Y&gt;</td>
             <td class="jd-descrcol" width="100%">DJI completion callback with parameters X, Y, which will be defined
  where it is called.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJICompass.html">DJICompass</a></td>
             <td class="jd-descrcol" width="100%">This class contains important status for the compass of the product, and provides methods to calibrate the compass.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJICompassCalibrationStatus.html">DJICompassCalibrationStatus</a></td>
             <td class="jd-descrcol" width="100%">An enum class representing compass calibration.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJICustomMission.html">DJICustomMission</a></td>
             <td class="jd-descrcol" width="100%">In a custom mission, you can create multiple kinds of mission steps to control the aircraft to
   execute a series of complex tasks.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJICustomMission.DJICustomMissionProgressStatus.html">DJICustomMission.DJICustomMissionProgressStatus</a></td>
             <td class="jd-descrcol" width="100%">This class contains real-time status of the executing custom mission.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/base/DJIDiagnostics.html">DJIDiagnostics</a></td>
             <td class="jd-descrcol" width="100%">Product Diagnostics.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/base/DJIDiagnostics.UpdateDiagnosticsListCallback.html">DJIDiagnostics.UpdateDiagnosticsListCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback interface that updates the product's current diagnostics information.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/error/DJIError.html">DJIError</a></td>
             <td class="jd-descrcol" width="100%">Class that handles all errors that are not handled by
  individual components.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIFlightController.html">DJIFlightController</a></td>
             <td class="jd-descrcol" width="100%">This class contains components of the flight controller and provides methods to send different commands to the
  flight
@@ -1231,485 +1276,517 @@
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightControllerAdvancedGoHomeState.html">DJIFlightControllerAdvancedGoHomeState</a></td>
             <td class="jd-descrcol" width="100%">Created by changjian.xu on 2016/8/11.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightControllerControlMode.html">DJIFlightControllerControlMode</a></td>
             <td class="jd-descrcol" width="100%">Control mode of the flight controller.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightControllerCurrentState.html">DJIFlightControllerCurrentState</a></td>
             <td class="jd-descrcol" width="100%"><code>true</code> if the clearance between the aircraft and the ground is less than 0.3m
   and confirmation from the user is needed to continue the landing.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightControllerDataType.html">DJIFlightControllerDataType</a></td>
             <td class="jd-descrcol" width="100%">This class provides the data type for flight controller.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIFlightControllerDelegate.html">DJIFlightControllerDelegate</a></td>
             <td class="jd-descrcol" width="100%">This class provides delegate methods to update flight controller's current state.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIFlightControllerDelegate.FlightControllerIMUStateChangedCallback.html">DJIFlightControllerDelegate.FlightControllerIMUStateChangedCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback interface that is used to receive IMU state from flight controller.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIFlightControllerDelegate.FlightControllerReceivedDataFromExternalDeviceCallback.html">DJIFlightControllerDelegate.FlightControllerReceivedDataFromExternalDeviceCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback function that updates the data received from an external device (e.g.the onboard device).&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback.html">DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback function that updates the flight controller's current state data.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIFlightControllerDelegate.ReceivedNoFlyZoneFromFlightControllerCallback.html">DJIFlightControllerDelegate.ReceivedNoFlyZoneFromFlightControllerCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback interface that is used to receive no fly zone information from the flight controller 
 &nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/error/DJIFlightControllerError.html">DJIFlightControllerError</a></td>
             <td class="jd-descrcol" width="100%">Defines all flight controller errors.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightControllerFlightMode.html">DJIFlightControllerFlightMode</a></td>
             <td class="jd-descrcol" width="100%">Flight controller flight modes.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightControllerNoFlyStatus.html">DJIFlightControllerNoFlyStatus</a></td>
             <td class="jd-descrcol" width="100%">This will return the status of the aircraft whether the
  aircraft is near the no fly zone or not.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
-            <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightControllerPreciseLandingState.html">DJIFlightControllerPreciseLandingState</a></td>
-            <td class="jd-descrcol" width="100%">Created by changjian.xu on 2016/8/11.&nbsp;</td>
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightControllerRemoteControllerFlightMode.html">DJIFlightControllerRemoteControllerFlightMode</a></td>
+            <td class="jd-descrcol" width="100%">Flight modes that map to the flight mode switch on the remote controller.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightControllerSmartGoHomeStatus.html">DJIFlightControllerSmartGoHomeStatus</a></td>
             <td class="jd-descrcol" width="100%">Class for smart go home status.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightControlState.html">DJIFlightControlState</a></td>
             <td class="jd-descrcol" width="100%">This is an enum for notification of flight control state.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/DJIFlightError.html">DJIFlightError</a></td>
             <td class="jd-descrcol" width="100%">Created by Shirley.Yang on 2016/8/5.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/DJIFlightErrorInformation.html">DJIFlightErrorInformation</a></td>
             <td class="jd-descrcol" width="100%">Created by Shirley.Yang on 2016/8/5.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightFailsafeOperation.html">DJIFlightFailsafeOperation</a></td>
             <td class="jd-descrcol" width="100%">Defines aircraft failsafe action when signal between the remote controller and the aircraft is lost.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIFlightLimitation.html">DJIFlightLimitation</a></td>
             <td class="jd-descrcol" width="100%">This class contains the flight status of the aircraft related to the flight limitation, and provides methods to configure the flight limitation.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlightOrientationMode.html">DJIFlightOrientationMode</a></td>
             <td class="jd-descrcol" width="100%">Tells the aircraft how to interpret flight commands for forward, backward, left and right.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIFlyZoneInformation.html">DJIFlyZoneInformation</a></td>
             <td class="jd-descrcol" width="100%">The geospatial information in GEO is categorized in one of the three ways which are Warning Zone, Authorization
  Zone and Restricted Zone).&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIFlyZoneManager.html">DJIFlyZoneManager</a></td>
             <td class="jd-descrcol" width="100%">This class manages the Geospatial Environment Online (GEO) system which provides warning, enhanced
  warning, authorization and restricted fly zone information.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIFlyZoneManager.FlyForbidStatusUpdatedCallback.html">DJIFlyZoneManager.FlyForbidStatusUpdatedCallback</a></td>
             <td class="jd-descrcol" width="100%">An interface for obtaining <code>FlyForbidStatus</code>.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIFoldingDroneFlightController.html">DJIFoldingDroneFlightController</a></td>
             <td class="jd-descrcol" width="100%">Created on 16/9/27.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIFollowMeMission.html">DJIFollowMeMission</a></td>
             <td class="jd-descrcol" width="100%">The class represents a follow-me mission.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIFollowMeMission.DJIFollowMeHeading.html">DJIFollowMeMission.DJIFollowMeHeading</a></td>
             <td class="jd-descrcol" width="100%">Aircraft's heading during a follow me mission.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIFollowMeMission.DJIFollowMeMissionExecutionState.html">DJIFollowMeMission.DJIFollowMeMissionExecutionState</a></td>
             <td class="jd-descrcol" width="100%">All possible follow me mission execution states.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIFollowMeMission.DJIFollowMeMissionStatus.html">DJIFollowMeMission.DJIFollowMeMissionStatus</a></td>
             <td class="jd-descrcol" width="100%">This class provides the real-time status of the executing follow-me mission.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/missionstep/DJIFollowmeMissionStep.html">DJIFollowmeMissionStep</a></td>
             <td class="jd-descrcol" width="100%">This class represents a follow-me step for a custom mission.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/error/DJIGeoError.html">DJIGeoError</a></td>
             <td class="jd-descrcol" width="100%">This class contains the error type for GEO feature.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/base/DJIGeoError.html">DJIGeoError</a></td>
             <td class="jd-descrcol" width="100%">This class contains the error type for GEO feature.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/gimbal/DJIGimbal.html">DJIGimbal</a></td>
             <td class="jd-descrcol" width="100%">DJIGimbal is the class for controlling the view
  of the drone.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/gimbal/DJIGimbal.GimbalAdvancedSettingsStateUpdateCallback.html">DJIGimbal.GimbalAdvancedSettingsStateUpdateCallback</a></td>
             <td class="jd-descrcol" width="100%"><b>Supported only by Osmo</b><br>
  This interface provides the method to receive the updated state and user configuration.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/gimbal/DJIGimbal.GimbalBatteryRemainingEnergyUpdateCallback.html">DJIGimbal.GimbalBatteryRemainingEnergyUpdateCallback</a></td>
             <td class="jd-descrcol" width="100%">Gimbal energy remaining of Ronin MX in percent.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/gimbal/DJIGimbal.GimbalStateUpdateCallback.html">DJIGimbal.GimbalStateUpdateCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback for updating the gimbal's current state.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalAdvancedSettingsProfile.html">DJIGimbalAdvancedSettingsProfile</a></td>
             <td class="jd-descrcol" width="100%">The Advanced Settings Profile contains presets for SmoothTrack and the Physical Controller sensitivity.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalAdvancedSettingsState.html">DJIGimbalAdvancedSettingsState</a></td>
             <td class="jd-descrcol" width="100%">The current advanced settings of the gimbal.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalAngleRotation.html">DJIGimbalAngleRotation</a></td>
             <td class="jd-descrcol" width="100%">This is used to enable the gimbal rotation in pitch, roll and yaw direction.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalAttitude.html">DJIGimbalAttitude</a></td>
             <td class="jd-descrcol" width="100%">Created by Robert.Liu on 6/2/16.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/missionstep/DJIGimbalAttitudeStep.html">DJIGimbalAttitudeStep</a></td>
             <td class="jd-descrcol" width="100%">Subclass of DJIMission Step: you can control gimbal attitude using this mission step.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalAxis.html">DJIGimbalAxis</a></td>
             <td class="jd-descrcol" width="100%">Gimbal Axis.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalBalanceTestResult.html">DJIGimbalBalanceTestResult</a></td>
             <td class="jd-descrcol" width="100%">The balance test result.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalCalibrationState.html">DJIGimbalCalibrationState</a></td>
             <td class="jd-descrcol" width="100%">Created by dji on 6/2/16.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalCapabilityKey.html">DJIGimbalCapabilityKey</a></td>
             <td class="jd-descrcol" width="100%">These enums are keys for gimbal capability map.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalControllerMode.html">DJIGimbalControllerMode</a></td>
             <td class="jd-descrcol" width="100%"><b>Supported only by Osmo.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalEndpointDirection.html">DJIGimbalEndpointDirection</a></td>
             <td class="jd-descrcol" width="100%">Gimbal endpoint setting.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/error/DJIGimbalError.html">DJIGimbalError</a></td>
             <td class="jd-descrcol" width="100%">Defines all gimbal related errors.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalLoadingBalanceStatus.html">DJIGimbalLoadingBalanceStatus</a></td>
             <td class="jd-descrcol" width="100%">The loading balance status of the gimbal.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalMotorControlPreset.html">DJIGimbalMotorControlPreset</a></td>
             <td class="jd-descrcol" width="100%">Different cameras have different preset parameters for gimbal motor stiffness, strength, gyro filtering and
  pre-control.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalRotateAngleMode.html">DJIGimbalRotateAngleMode</a></td>
             <td class="jd-descrcol" width="100%">The rotation angle of gimbal can be defined as either Absolute (relative to heading),
  or Relative (relative to it's current angle).&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalRotateDirection.html">DJIGimbalRotateDirection</a></td>
             <td class="jd-descrcol" width="100%">Gimbal rotate direction.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalSpeedRotation.html">DJIGimbalSpeedRotation</a></td>
             <td class="jd-descrcol" width="100%">This is used to set the gimbal's rotation speed (angular velocity).&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalState.html">DJIGimbalState</a></td>
             <td class="jd-descrcol" width="100%">This class provides the current state of the gimbal.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/gimbal/DJIGimbalWorkMode.html">DJIGimbalWorkMode</a></td>
             <td class="jd-descrcol" width="100%">Gimbal work modes.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIGoHomeStatus.html">DJIGoHomeStatus</a></td>
             <td class="jd-descrcol" width="100%">A class used to identify the different stage of go home process.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/missionstep/DJIGoHomeStep.html">DJIGoHomeStep</a></td>
             <td class="jd-descrcol" width="100%">This class represents a go-home step for a custom mission.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/missionstep/DJIGoToStep.html">DJIGoToStep</a></td>
             <td class="jd-descrcol" width="100%">This class represents a go-to step for a custom mission.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIGPSSignalStatus.html">DJIGPSSignalStatus</a></td>
             <td class="jd-descrcol" width="100%">A enum class representing GPS signal levels, which are used to measure the signal quality.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/products/DJIHandHeld.html">DJIHandHeld</a></td>
             <td class="jd-descrcol" width="100%">This class contains the components of a handheld device.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/handheld/DJIHandheldButtonStatus.html">DJIHandheldButtonStatus</a></td>
             <td class="jd-descrcol" width="100%">The status of the shutter button and record button on the handheld
   controller.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/handheldcontroller/DJIHandheldController.html">DJIHandheldController</a></td>
             <td class="jd-descrcol" width="100%">This class contains interfaces to control a handheld device.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/handheldcontroller/DJIHandheldController.DJIHandheldPowerModeListener.html">DJIHandheldController.DJIHandheldPowerModeListener</a></td>
             <td class="jd-descrcol" width="100%">Callback to receive the updated power mode of the handheld controller.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/handheldcontroller/DJIHandheldController.DJIUpdateHardwareStateCallback.html">DJIHandheldController.DJIUpdateHardwareStateCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback for the handheld controller's current hardware state (e.g.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/handheld/DJIHandheldControllerHardwareState.html">DJIHandheldControllerHardwareState</a></td>
             <td class="jd-descrcol" width="100%">Handheld controller's current state.&nbsp;</td>
         </tr>
     
     
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/handheld/DJIHandheldControllerLEDColorPattern.html">DJIHandheldControllerLEDColorPattern</a></td>
+            <td class="jd-descrcol" width="100%">Pattern used to control a single color (red, green or blue) of the handheld
+  controller's LED.&nbsp;</td>
+        </tr>
+    
+    
         <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/handheld/DJIHandheldControllerLEDCommand.html">DJIHandheldControllerLEDCommand</a></td>
+            <td class="jd-descrcol" width="100%">Command used to control different colors (red, green and blue) of the
+  handheld controller's LED.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/handheld/DJIHandheldPowerMode.html">DJIHandheldPowerMode</a></td>
             <td class="jd-descrcol" width="100%">Created by hai on 5/26/16.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/handheld/DJIHandheldTriggerStatus.html">DJIHandheldTriggerStatus</a></td>
             <td class="jd-descrcol" width="100%">The status of the shutter button and record button on the handheld
   controller.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIHotPointMission.html">DJIHotPointMission</a></td>
             <td class="jd-descrcol" width="100%">The class represents a hotpoint mission, which can be executed by the mission manager.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIHotPointMission.DJIHotPointHeading.html">DJIHotPointMission.DJIHotPointHeading</a></td>
             <td class="jd-descrcol" width="100%">Heading of the aircraft while orbiting the hot point.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIHotPointMission.DJIHotpointMissionExecutionState.html">DJIHotPointMission.DJIHotpointMissionExecutionState</a></td>
             <td class="jd-descrcol" width="100%">All possible hot point mission execution states.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIHotPointMission.DJIHotPointMissionStatus.html">DJIHotPointMission.DJIHotPointMissionStatus</a></td>
             <td class="jd-descrcol" width="100%">This class provides the real-time status of the executing hot-point mission.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIHotPointMission.DJIHotPointStartPoint.html">DJIHotPointMission.DJIHotPointStartPoint</a></td>
             <td class="jd-descrcol" width="100%">Aircraft start point relative to the hot point.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/missionstep/DJIHotpointStep.html">DJIHotpointStep</a></td>
             <td class="jd-descrcol" width="100%">This class represents a hot-point step for a custom mission.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIIMUCalibrationOrientation.html">DJIIMUCalibrationOrientation</a></td>
             <td class="jd-descrcol" width="100%">The different orientations the aircraft needs for a multi-orientation IMU calibration.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIIMUCalibrationStatus.html">DJIIMUCalibrationStatus</a></td>
             <td class="jd-descrcol" width="100%">Enum for IMU calibration
 &nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultiOrientationCalibrationHint</a></td>
             <td class="jd-descrcol" width="100%">This class is used to lead the user through an IMU calibration for products
  that require calibration at multiple orientations.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIIMUMultiOrientationCalibrationStatus.html">DJIIMUMultiOrientationCalibrationStatus</a></td>
             <td class="jd-descrcol" width="100%">IMU calibration status for the current aircraft orientation.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIIMUSensorState.html">DJIIMUSensorState</a></td>
             <td class="jd-descrcol" width="100%">Enum for IMU sensor status
 &nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIIMUState.html">DJIIMUState</a></td>
             <td class="jd-descrcol" width="100%">This class contains current state of the DJI Inertial Measurement Unit(IMU) State.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/sdk/battery/DJIInspire2Battery.html">DJIInspire2Battery</a></td>
+            <td class="jd-descrcol" width="100%">Created by dji on 16/11/2.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIInspire2FlightController.html">DJIInspire2FlightController</a></td>
+            <td class="jd-descrcol" width="100%">Created by dji on 16/11/2.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/sdk/gimbal/DJIInspire2Gimbal.html">DJIInspire2Gimbal</a></td>
+            <td class="jd-descrcol" width="100%">Created by dji on 16/11/2.&nbsp;</td>
         </tr>
     
     
@@ -1721,64 +1798,76 @@
     
     
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback</a></td>
             <td class="jd-descrcol" width="100%">This protocol provides a interface to update the Intelligent Flight Assistant current state.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJILandingGear.html">DJILandingGear</a></td>
             <td class="jd-descrcol" width="100%">This class contains the state of the landing gear.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJILandingGearMode.html">DJILandingGearMode</a></td>
             <td class="jd-descrcol" width="100%">Current Mode of the Landing Gear
 &nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJILandingGearStatus.html">DJILandingGearStatus</a></td>
-            <td class="jd-descrcol" width="100%">Current state of the Landing Gear.&nbsp;</td>
+            <td class="jd-descrcol" width="100%">The current state/position of the landing gear.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/airlink/DJILBAirLink.html">DJILBAirLink</a></td>
             <td class="jd-descrcol" width="100%">This class contains methods to change the settings of the Lightbridge Air Link.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/airlink/DJILBAirLink.DJILBAirLinkFPVBandwidthPercentChangedCallback.html">DJILBAirLink.DJILBAirLinkFPVBandwidthPercentChangedCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback for when the FPV video bandwidth percentage has changed.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
-            <td class="jd-linkcol"><a href="./dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback</a></td>
-            <td class="jd-descrcol" width="100%">Signal strength for all available downlink channels.&nbsp;</td>
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback</a></td>
+            <td class="jd-descrcol" width="100%">Callback of signal strength of all signals present on all available downlink channels.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedLightbridgeModuleSignalInformationCallback.html">DJILBAirLink.DJILBAirLinkUpdatedLightbridgeModuleSignalInformationCallback</a></td>
             <td class="jd-descrcol" width="100%">Signal quality and strength information for the current downlink channel on each air link module antenna.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedRemoteControllerSignalInformationCallback.html">DJILBAirLink.DJILBAirLinkUpdatedRemoteControllerSignalInformationCallback</a></td>
             <td class="jd-descrcol" width="100%">Signal quality and strength information for the current uplink channel on each Remote Controller (or ground
  station) antenna.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/airlink/DJILBAirLink.DJIOnReceivedVideoCallback.html">DJILBAirLink.DJIOnReceivedVideoCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback for when updated video data is received.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/util/DJILensFeatureUtils.html">DJILensFeatureUtils</a></td>
+            <td class="jd-descrcol" width="100%">Created by Shirley.Yang on 2016/11/16.&nbsp;</td>
         </tr>
     
     
@@ -1941,71 +2030,83 @@
     
     
         <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/sdk/flightcontroller/DJIP4PFlightController.html">DJIP4PFlightController</a></td>
+            <td class="jd-descrcol" width="100%">Created by Shirley.Yang on 2016/11/8.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIPanoramaMission.html">DJIPanoramaMission</a></td>
             <td class="jd-descrcol" width="100%">During a Panorama Mission, the user can rotate the camera 360 or 180 degrees to take several
   photos, and then download the photos to render a panorama.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIPanoramaMission.DJIPanoramaMissionStatus.html">DJIPanoramaMission.DJIPanoramaMissionStatus</a></td>
             <td class="jd-descrcol" width="100%"><b>Supported only by the Osmo camera</b><br>
   This class provides the real-time status of an executing panorama mission.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/missionmanager/DJIPanoramaMission.DJIPanoramaMode.html">DJIPanoramaMission.DJIPanoramaMode</a></td>
             <td class="jd-descrcol" width="100%"><b>Supported only by the Osmo camera</b><br>
  Defines options for different types of modes for a panorama mission.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/util/DJIParamCapability.html">DJIParamCapability</a></td>
             <td class="jd-descrcol" width="100%"><code>DJIParamCapability</code> represents the capability of a parameter of a component or product.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/util/DJIParamMinMaxCapability.html">DJIParamMinMaxCapability</a></td>
             <td class="jd-descrcol" width="100%"><code>DJIParamCapabilityMinMax</code> adds the maximum and minimum possible values of the parameter to the base class property of whether the parameter is supported by the component or product.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/util/DJIParamMinMaxCapability.html">DJIParamMinMaxCapability</a></td>
             <td class="jd-descrcol" width="100%"><code>DJIParamCapabilityMinMax</code> adds the maximum and minimum possible values of the parameter to the base class property of whether the parameter is supported by the component or product.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJIPlaybackManager.html">DJIPlaybackManager</a></td>
             <td class="jd-descrcol" width="100%">The playback manager is used to interact with the playback system of the camera.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJIPlaybackManager.CameraFileDownloadCallback.html">DJIPlaybackManager.CameraFileDownloadCallback</a></td>
             <td class="jd-descrcol" width="100%">This callback will notify the process of downloading selected files.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJIPlaybackManager.DJICameraPlaybackState.html">DJIPlaybackManager.DJICameraPlaybackState</a></td>
             <td class="jd-descrcol" width="100%">This class provides general information and current status of Camera Playback State.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/camera/DJIPlaybackManager.DJICameraPlayBackStateCallBack.html">DJIPlaybackManager.DJICameraPlayBackStateCallBack</a></td>
             <td class="jd-descrcol" width="100%">The interface provides the method to receive the updated state of the playback manager.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCBatteryInfo.html">DJIRCBatteryInfo</a></td>
             <td class="jd-descrcol" width="100%">Remote Controller's battery information.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCChargeMobileMode.html">DJIRCChargeMobileMode</a></td>
+            <td class="jd-descrcol" width="100%">Modes to charge the iOS mobile device.&nbsp;</td>
         </tr>
     
     
@@ -2090,18 +2191,6 @@
     
     
         <tr class=" api apilevel-" >
-            <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCHardwareState.DJIRCHardwareFlightModeSwitch.html">DJIRCHardwareState.DJIRCHardwareFlightModeSwitch</a></td>
-            <td class="jd-descrcol" width="100%">The value of the Remote Controller's flight mode switch.&nbsp;</td>
-        </tr>
-    
-    
-        <tr class="alt-color api apilevel-" >
-            <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState.html">DJIRCHardwareState.DJIRCHardwareFlightModeSwitchState</a></td>
-            <td class="jd-descrcol" width="100%">The state of flight mode switch button on the upper left of a Remote Controller.&nbsp;</td>
-        </tr>
-    
-    
-        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCHardwareState.DJIRCHardwareJoystick.html">DJIRCHardwareState.DJIRCHardwareJoystick</a></td>
             <td class="jd-descrcol" width="100%">Remote Controller's hardware joystick
 &nbsp;</td>
@@ -2134,19 +2223,25 @@
     
     
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCHardwareState.DJIRemoteControllerFlightModeSwitchPosition.html">DJIRCHardwareState.DJIRemoteControllerFlightModeSwitchPosition</a></td>
+            <td class="jd-descrcol" width="100%">Remote Controller Flight Mode switch position.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCInfo.html">DJIRCInfo</a></td>
             <td class="jd-descrcol" width="100%">This class contains the information of a remote controller.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCJoinMasterResult.html">DJIRCJoinMasterResult</a></td>
             <td class="jd-descrcol" width="100%">Results when a slave Remote Controller tries to join
  a master Remote Controller.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCRemoteFocusState.html">DJIRCRemoteFocusState</a></td>
             <td class="jd-descrcol" width="100%">Remote Controller's Remote Focus State
 
@@ -2155,51 +2250,57 @@
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCRemoteFocusState.DJIRCRemoteFocusControlDirection.html">DJIRCRemoteFocusState.DJIRCRemoteFocusControlDirection</a></td>
             <td class="jd-descrcol" width="100%">Remote Focus Control Direction.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCRemoteFocusState.DJIRCRemoteFocusControlType.html">DJIRCRemoteFocusState.DJIRCRemoteFocusControlType</a></td>
             <td class="jd-descrcol" width="100%">Remote Focus Control Type.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCRequestGimbalControlResult.html">DJIRCRequestGimbalControlResult</a></td>
             <td class="jd-descrcol" width="100%">Result when a slave requests permission to control the gimbal.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/remotecontroller/DJIRCToAircraftPairingState.html">DJIRCToAircraftPairingState</a></td>
             <td class="jd-descrcol" width="100%">Remote controller pairing state.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/remotecontroller/DJIRemoteController.html">DJIRemoteController</a></td>
             <td class="jd-descrcol" width="100%">This class represents the remote controller of the aircraft.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/remotecontroller/DJIRemoteController.RCBatteryStateUpdateCallback.html">DJIRemoteController.RCBatteryStateUpdateCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback function that updates the Remote Controller's current battery state.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/remotecontroller/DJIRemoteController.RCGpsDataUpdateCallback.html">DJIRemoteController.RCGpsDataUpdateCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback function that updates the Remote Controller's current GPS data.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/remotecontroller/DJIRemoteController.RCHardwareStateUpdateCallback.html">DJIRemoteController.RCHardwareStateUpdateCallback</a></td>
             <td class="jd-descrcol" width="100%">Callback function that updates the Remote Controller's current hardware state.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/sdk/remotecontroller/DJIRemoteController.RCMasterSlaveStateUpdateCallback.html">DJIRemoteController.RCMasterSlaveStateUpdateCallback</a></td>
+            <td class="jd-descrcol" width="100%">Callback function that updates the Remote Controller's master and slave state.&nbsp;</td>
         </tr>
     
     
@@ -2369,45 +2470,58 @@
     
     
         <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/missionmanager/DJITapFlyMode.html">DJITapFlyMode</a></td>
+            <td class="jd-descrcol" width="100%">Different modes of the TapFly Mission.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/sdk/util/DJIVector.html">DJIVector</a></td>
             <td class="jd-descrcol" width="100%">A cartesian vector in 3D space.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIVirtualStickFlightControlData.html">DJIVirtualStickFlightControlData</a></td>
             <td class="jd-descrcol" width="100%">Contains all the virtual stick control data needed to move the aircraft in all directions
 &nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIVirtualStickFlightCoordinateSystem.html">DJIVirtualStickFlightCoordinateSystem</a></td>
             <td class="jd-descrcol" width="100%">An enum class representing flight control coordinate system.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIVirtualStickRollPitchControlMode.html">DJIVirtualStickRollPitchControlMode</a></td>
             <td class="jd-descrcol" width="100%">Defines how manual roll and pitch values are interpreted by the aircraft.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIVirtualStickVerticalControlMode.html">DJIVirtualStickVerticalControlMode</a></td>
             <td class="jd-descrcol" width="100%">Defines how vertical control values are interpreted by the aircraft.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIVirtualStickYawControlMode.html">DJIVirtualStickYawControlMode</a></td>
             <td class="jd-descrcol" width="100%">Defines how manual yaw values are interpreted by the aircraft.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIVisionAssistantStatus.html">DJIVisionAssistantStatus</a></td>
             <td class="jd-descrcol" width="100%">The status of vision assistant.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIVisionControlState.html">DJIVisionControlState</a></td>
+            <td class="jd-descrcol" width="100%">This class gives the aircraft's state controlled by the intelligent flight
+  assistant.&nbsp;</td>
         </tr>
     
     
@@ -2419,13 +2533,27 @@
     
         <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIVisionDetectionState.html">DJIVisionDetectionState</a></td>
-            <td class="jd-descrcol" width="100%">This class gives state information about the vision system and aircraft, including information from each sector the vision system covers.&nbsp;</td>
+            <td class="jd-descrcol" width="100%">This class gives state information about the product's vision sensors used
+  for obstacle detection.&nbsp;</td>
         </tr>
     
     
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIVisionLandingProtectionStatus.html">DJIVisionLandingProtectionStatus</a></td>
+            <td class="jd-descrcol" width="100%">Landing protection status returned by the downward vision sensor.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIVisionSectorWarning.html">DJIVisionSectorWarning</a></td>
             <td class="jd-descrcol" width="100%">The warning level of the vision system.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/flightcontroller/DJIVisionSensorPosition.html">DJIVisionSensorPosition</a></td>
+            <td class="jd-descrcol" width="100%">Position of the sensor on the aircraft
+&nbsp;</td>
         </tr>
     
     
@@ -2572,6 +2700,18 @@
     
     
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/sdk/camera/view/FpvLiveView.html">FpvLiveView</a></td>
+            <td class="jd-descrcol" width="100%">A ready to use FPV live view, only Inspire 2 FPV live video supported.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/airlink/FrequencyBandChannelRange.html">FrequencyBandChannelRange</a></td>
+            <td class="jd-descrcol" width="100%">Channels range for different frequency band.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/airlink/FrequencyInterference.html">FrequencyInterference</a></td>
             <td class="jd-descrcol" width="100%">This class represents the power spectral density of a frequency slice.&nbsp;</td>
         </tr>
@@ -2617,18 +2757,24 @@
     
     
         <tr class=" api apilevel-" >
-            <td class="jd-linkcol"><a href="./dji/common/remotecontroller/JoinMasterParams.html">JoinMasterParams</a></td>
+            <td class="jd-linkcol"><a href="./dji/common/remotecontroller/JoinMasterData.html">JoinMasterData</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/remotecontroller/JoinMasterParams.html">JoinMasterParams</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/handheld/JoystickHorizontalDirection.html">JoystickHorizontalDirection</a></td>
             <td class="jd-descrcol" width="100%">Joystick Horizontal direction.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/handheld/JoystickVerticalDirection.html">JoystickVerticalDirection</a></td>
             <td class="jd-descrcol" width="100%">Joystick Vertical direction.&nbsp;</td>
         </tr>
@@ -2660,30 +2806,36 @@
     
     
         <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/airlink/LBAirLinkFrequencyBand.html">LBAirLinkFrequencyBand</a></td>
+            <td class="jd-descrcol" width="100%">Frequency band for LB airlink.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/airlink/LBAirLinkPIPDisplay.html">LBAirLinkPIPDisplay</a></td>
             <td class="jd-descrcol" width="100%">Defines the combination of video sources to form the secondary output video.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/LBAirLinkPIPPosition.html">LBAirLinkPIPPosition</a></td>
             <td class="jd-descrcol" width="100%">PIP (Picture In Picture) position on the screen relative to the main subject video.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/LBAirLinkSecondaryVideoFormat.html">LBAirLinkSecondaryVideoFormat</a></td>
             <td class="jd-descrcol" width="100%">Secondary output video resolution and frame rate.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/airlink/LBAirLinkSecondaryVideoOutputPort.html">LBAirLinkSecondaryVideoOutputPort</a></td>
             <td class="jd-descrcol" width="100%">Remote Controller port to send secondary video to (in addition to USB video sent to the Mobile Device).&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/airlink/LBAirLinkUnit.html">LBAirLinkUnit</a></td>
             <td class="jd-descrcol" width="100%">OSD data units.&nbsp;</td>
         </tr>
@@ -2694,6 +2846,18 @@
 
 <h2 id="letter_M">M</h2>
 <table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/remotecontroller/MasterMode.html">MasterMode</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/remotecontroller/MasterSlaverState.html">MasterSlaverState</a></td>
+            <td class="jd-descrcol" width="100%">State of the remote controller related to the master and slave mode.&nbsp;</td>
+        </tr>
     
     
         <tr class="alt-color api apilevel-" >
@@ -2841,6 +3005,12 @@
         <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./dji/common/airlink/WiFiFrequencyBand.html">WiFiFrequencyBand</a></td>
             <td class="jd-descrcol" width="100%">WiFi frequency band.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./dji/common/airlink/WorkingFrequence.html">WorkingFrequence</a></td>
+            <td class="jd-descrcol" width="100%">Created by petyrzhan on 9/25/16.&nbsp;</td>
         </tr>
     
     

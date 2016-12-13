@@ -92,7 +92,7 @@ public class IfaPushDataView extends BaseThreeBtnView {
                                             .append(visionDetectionSector.getWarningLevel()).append("\n");
                                 }
 
-                                mStringBuffer.append("WarningLevel: ").append(djiVisionDetectionState.getWarningLevel().toString()).append("\n");
+                                mStringBuffer.append("WarningLevel: ").append(djiVisionDetectionState.getSystemWarning().name()).append("\n");
                                 mStringBuffer.append("Braking state: ").append(djiVisionDetectionState.isBraking()).append("\n");
                                 mStringBuffer.append("Sensor state: ").append(djiVisionDetectionState.isSensorWorking()).append("\n");
 

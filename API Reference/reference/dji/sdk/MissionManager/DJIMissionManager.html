@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -156,6 +156,8 @@
   <a href="../../../dji/common/gimbal/package-summary.html">dji.common.gimbal</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
@@ -518,17 +520,6 @@ Summary:
           public
           
           
-          <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a></td>
-          <td class="jd-linkcol"><a href="../../../dji/sdk/missionmanager/DJIMissionManager.html#mInternalCallback">mInternalCallback</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol">
-          public
-          
-          
           boolean</td>
           <td class="jd-linkcol"><a href="../../../dji/sdk/missionmanager/DJIMissionManager.html#mIsCustomMissionExecuting">mIsCustomMissionExecuting</a></td>
           <td class="jd-descrcol" width="100%"></td>
@@ -617,6 +608,38 @@ Summary:
         </td>
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIMissionManager.html#getDJIErrorByCode(int)">getDJIErrorByCode</a></span>(int code)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIMissionManager.html#getFinishedCallback()">getFinishedCallback</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIMissionManager.html#invokeFinishCallback(dji.common.error.DJIError)">invokeFinishCallback</a></span>(<a href="../../../dji/common/error/DJIError.html">DJIError</a> error)
         
   </td></tr>
 
@@ -736,6 +759,54 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIMissionManager.html#setCurrentExecutingMission(dji.sdk.missionmanager.DJIMission)">setCurrentExecutingMission</a></span>(<a href="../../../dji/sdk/missionmanager/DJIMission.html">DJIMission</a> mCurrentExecutingMission)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIMissionManager.html#setInternalCallback(dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setInternalCallback</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> internalCallback)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIMissionManager.html#setMissionExecutionEnable(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setMissionExecutionEnable</a></span>(boolean enable, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJIMissionManager.html#setMissionExecutionFinishedCallback(dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setMissionExecutionFinishedCallback</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
         <div class="jd-descrdiv">Set up the Mission Execution Finished Callback.</div>
@@ -744,7 +815,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -760,7 +831,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -778,7 +849,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -796,7 +867,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1180,36 +1251,6 @@ From class
 
 
 
-<a id="mInternalCallback"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-        <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a>
-      </span>
-        mInternalCallback
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
 <a id="mIsCustomMissionExecuting"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1382,6 +1423,68 @@ From class
       </span>
       <span class="sympad">getDJIErrorByCode</span>
       <span class="normal">(int code)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getFinishedCallback()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a>
+      </span>
+      <span class="sympad">getFinishedCallback</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="invokeFinishCallback(dji.common.error.DJIError)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">invokeFinishCallback</span>
+      <span class="normal">(<a href="../../../dji/common/error/DJIError.html">DJIError</a> error)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1628,6 +1731,99 @@ From class
         </tr>
       </table>
   </div>
+
+    </div>
+</div>
+
+
+<a id="setCurrentExecutingMission(dji.sdk.missionmanager.DJIMission)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCurrentExecutingMission</span>
+      <span class="normal">(<a href="../../../dji/sdk/missionmanager/DJIMission.html">DJIMission</a> mCurrentExecutingMission)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setInternalCallback(dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setInternalCallback</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> internalCallback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setMissionExecutionEnable(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setMissionExecutionEnable</span>
+      <span class="normal">(boolean enable, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>

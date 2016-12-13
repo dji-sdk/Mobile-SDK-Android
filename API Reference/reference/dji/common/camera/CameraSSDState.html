@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -216,6 +218,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDRawVideoResolutionAndFrameRate.html">CameraSSDRawVideoResolutionAndFrameRate</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/common/camera/CameraSSDState.html">CameraSSDState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSystemState.html">CameraSystemState</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/CameraTapZoomTargetPoint.html">CameraTapZoomTargetPoint</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraVideoResolutionAndFrameRate.html">CameraVideoResolutionAndFrameRate</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraWhiteBalanceAndColorTemperature.html">CameraWhiteBalanceAndColorTemperature</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraExposureParameters.html">DJICameraExposureParameters</a></li>
@@ -242,6 +245,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/CameraPurchasedLicense.html">CameraPurchasedLicense</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDCapacity.html">CameraSSDCapacity</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDOperationState.html">CameraSSDOperationState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraThermalVersion.html">CameraThermalVersion</a></li>
@@ -272,6 +276,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraSharpness.html">DJICameraSettingsDef.CameraSharpness</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShutterSpeed.html">DJICameraSettingsDef.CameraShutterSpeed</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraSSDVideoDigitalFilter.html">DJICameraSettingsDef.CameraSSDVideoDigitalFilter</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalDigitalZoomScale.html">DJICameraSettingsDef.CameraThermalDigitalZoomScale</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalExternalParamProfile.html">DJICameraSettingsDef.CameraThermalExternalParamProfile</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalFFCMode.html">DJICameraSettingsDef.CameraThermalFFCMode</a></li>
@@ -291,6 +296,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraWhiteBalance.html">DJICameraSettingsDef.CameraWhiteBalance</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.OpticalZoomDirection.html">DJICameraSettingsDef.OpticalZoomDirection</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.OpticalZoomSpeed.html">DJICameraSettingsDef.OpticalZoomSpeed</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.VideoFileCompressionStandard.html">DJICameraSettingsDef.VideoFileCompressionStandard</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraThermalMeasurementMode.html">DJICameraThermalMeasurementMode</a></li>
       </ul>
     </li>
@@ -437,9 +443,11 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p><b>Supported only by X5R camera</b><br>
- This class contains the information about camera SSD's info, including state, whether it's connected, its capacity,
- video size and rate, etc.
+<p>This class contains the information about camera's Solid State Drive (SSD)
+  information, including state, whether it is connected, its capacity, video
+  size and rate, etc.
+
+  Supported only by the X5R camera an X5S camera.
 </p>
 
 
@@ -550,6 +558,24 @@ Summary:
             
             
             
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/common/camera/CameraSSDState.html#getRAWPhotoBurstCount()">getRAWPhotoBurstCount</a></span>()
+        
+        <div class="jd-descrdiv">Number of photos that are shot in RAW burst mode.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
             long
         </td>
         <td class="jd-linkcol" width="100%">
@@ -561,7 +587,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -579,7 +605,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -597,7 +623,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -615,7 +641,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -633,7 +659,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -945,6 +971,38 @@ From class
       <ul class="nolist"><li>SSD's remaining time measured in seconds.
 </li></ul>
   </div>
+
+    </div>
+</div>
+
+
+<a id="getRAWPhotoBurstCount()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getRAWPhotoBurstCount</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Number of photos that are shot in RAW burst mode.
+</p></div>
 
     </div>
 </div>

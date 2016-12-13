@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -209,6 +211,7 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback.html">DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFlightControllerDelegate.ReceivedNoFlyZoneFromFlightControllerCallback.html">DJIFlightControllerDelegate.ReceivedNoFlyZoneFromFlightControllerCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFlyZoneManager.FlyForbidStatusUpdatedCallback.html">DJIFlyZoneManager.FlyForbidStatusUpdatedCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJISimulator.UpdatedSimulatorStateDataCallback.html">DJISimulator.UpdatedSimulatorStateDataCallback</a></li>
       </ul>
@@ -222,8 +225,10 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFlightLimitation.html">DJIFlightLimitation</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFlyZoneManager.html">DJIFlyZoneManager</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFoldingDroneFlightController.html">DJIFoldingDroneFlightController</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIInspire2FlightController.html">DJIInspire2FlightController</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html">DJIIntelligentFlightAssistant</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJILandingGear.html">DJILandingGear</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIP4PFlightController.html">DJIP4PFlightController</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJISimulator.html">DJISimulator</a></li>
       </ul>
     </li>
@@ -890,7 +895,42 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIFlightController.html#getNumberOfIMUs()">getNumberOfIMUs</a></span>()
         
-        <div class="jd-descrdiv">Number of IMU modules in the flight controller.</div>
+        <div class="jd-descrdiv">The number of IMU module in the flight controller.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIFlightController.html#getQuickSpinEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)">getQuickSpinEnabled</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIFlightController.html#getRemoteControllerFlightModeMappingWithCompletion(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.flightcontroller.DJIFlightControllerRemoteControllerFlightMode[]>)">getRemoteControllerFlightModeMappingWithCompletion</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/flightcontroller/DJIFlightControllerRemoteControllerFlightMode.html">DJIFlightControllerRemoteControllerFlightMode[]</a>&gt; callback)
+        
+        <div class="jd-descrdiv">Gets the mapping between the flight modes and the flight mode switch
+  positions on the remote controller.</div>
   
   </td></tr>
 
@@ -1255,6 +1295,24 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIFlightController.html#setAutoQuickSpinEnabled(java.lang.Boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setAutoQuickSpinEnabled</a></span>(Boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Enable/disable Auto Quick Spin.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIFlightController.html#setControlMode(dji.common.flightcontroller.DJIFlightControllerControlMode, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setControlMode</a></span>(<a href="../../../dji/common/flightcontroller/DJIFlightControllerControlMode.html">DJIFlightControllerControlMode</a> controlMode, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
         <div class="jd-descrdiv">Sets the control mode of the flight controller.</div>
@@ -1263,7 +1321,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1281,7 +1339,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1300,7 +1358,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1319,7 +1377,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1337,7 +1395,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1355,7 +1413,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1374,7 +1432,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1392,7 +1450,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1410,7 +1468,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1428,7 +1486,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1446,7 +1504,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1465,7 +1523,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1483,7 +1541,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1501,7 +1559,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1519,7 +1577,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1537,7 +1595,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1555,7 +1613,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1573,7 +1631,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1591,7 +1649,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1609,7 +1667,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1627,7 +1685,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1645,7 +1703,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1663,7 +1721,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1681,7 +1739,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -2795,7 +2853,8 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Gets if the LEDs in the front is enabled or not.
- It is only supported by Phantom 3 series and Phantom 4.</p></div>
+ It is only supported by Phantom 3 series, Phantom 4, Phantom 4 Pro, Mavic
+ Pro and Inspire 2.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -2941,9 +3000,101 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Number of IMU modules in the flight controller.
- Products except Phantom 4 have only 1 IMU. Phantom 4 has two IMUs.
+  <div class="jd-tagdata jd-tagdescr"><p>The number of IMU module in the flight controller.
+  Most products have 1 IMU
+
+  Exceptions:
+  - Phantom 4, Phantom 4 Pro, Mavic Pro and Inspire 2 have 2 IMUs
+  - A3, Matrice 600 and Matrice 600 Pro have 1 inner IMU and can have at most
+    2 external IMUs.
+  - N3 has 2 inner IMUs and can have 1 external IMU.
 </p></div>
+
+    </div>
+</div>
+
+
+<a id="getQuickSpinEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">getQuickSpinEnabled</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getRemoteControllerFlightModeMappingWithCompletion(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<dji.common.flightcontroller.DJIFlightControllerRemoteControllerFlightMode[]>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">getRemoteControllerFlightModeMappingWithCompletion</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;<a href="../../../dji/common/flightcontroller/DJIFlightControllerRemoteControllerFlightMode.html">DJIFlightControllerRemoteControllerFlightMode[]</a>&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the mapping between the flight modes and the flight mode switch
+  positions on the remote controller.
+  Elements 0, 1 and 2 of the returning array to
+  `DJIRemoteControllerFlightModeSwitchPosition.One`,
+  `DJIRemoteControllerFlightModeSwitchPosition.Two` and
+  `DJIRemoteControllerFlightModeSwitchPosition.Three` of the `flightModeSwitch`
+  in `DJIRCHardwareState`. The value of each Enum item is representing the corresponding
+  index of the DJIFlightControllerRemoteControllerFlightMode array representing the flight mode.
+
+  The mapping is fixed for Phantom series, Inspire series, Mavic Pro and
+  the M100. For N3, A3, Matrice 600, and Matrice 600 Pro the mapping is
+  firmware dependent. With firmware version 3.2.11.0 or above, the mapping
+  can be customized in DJI Assistant 2.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>Completion callback that receives the getter result. Each
+                      element of array is an instance with a
+                      value of <code>DJIFlightControllerRemoteControllerFlightMode</code>.
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
@@ -3107,7 +3258,7 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Gets if terrain follow mode is enabled or not.
-  It is only supported by Mavic Pro.</p></div>
+  It is only supported by Mavic Proa nd Phantom 4 Pro.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -3659,6 +3810,51 @@ From class
 </div>
 
 
+<a id="setAutoQuickSpinEnabled(java.lang.Boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setAutoQuickSpinEnabled</span>
+      <span class="normal">(Boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enable/disable Auto Quick Spin. When the gimbal reaches a yaw movement 
+  limit, the aircraft will automatically rotate the aircraft 360 degrees
+  to uniwind the gimbal, allowing it to continue moving in the yaw direction.
+  It is only available when the aircraft is flying at least 3m above the
+  ground.
+  Only supported by Inspire 2.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>enabled</th>
+          <td><code>true</code> to enable Auto Quick Spin.</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="setControlMode(dji.common.flightcontroller.DJIFlightControllerControlMode, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -4062,9 +4258,10 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Turns on/off the LEDs in the front. The LEDs are used to indicate the status of the aircraft. By default, it is
- on.
- It is only supported by Phantom 3 series and Phantom 4.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Turns on/off the LEDs in the front. The LEDs are used to indicate the status
+  of the aircraft. By default, it is on.
+  It is only supported by Phantom 3 series, Phantom 4, Phantom 4 Pro, Mavic
+  Pro and Inspire 2.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -4322,7 +4519,7 @@ From class
   <div class="jd-tagdata jd-tagdescr"><p>Enable/disable terrain follow mode. The aircraft uses height information
   gathered by the onboard ultrasonic system, and its downward facing cameras
   to keep flying at the same height above the ground.
-  It is only supported by Mavic Pro.</p></div>
+  It is only supported by Mavic Pro and Phantom 4 Pro.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">

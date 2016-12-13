@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -156,6 +156,8 @@
   <a href="../../../dji/common/gimbal/package-summary.html">dji.common.gimbal</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
@@ -525,6 +527,24 @@ Summary:
 	 
     <tr class=" api apilevel-" >
         <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/handheldcontroller/DJIHandheldController.html#controlLEDWithCommand(dji.common.handheld.DJIHandheldControllerLEDCommand, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">controlLEDWithCommand</a></span>(<a href="../../../dji/common/handheld/DJIHandheldControllerLEDCommand.html">DJIHandheldControllerLEDCommand</a> command, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Controls the LED of the handheld controller.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
             
             
             
@@ -536,6 +556,24 @@ Summary:
         <span class="sympad"><a href="../../../dji/sdk/handheldcontroller/DJIHandheldController.html#getFirmwareVersion(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)">getFirmwareVersion</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;String&gt; callback)
         
         <div class="jd-descrdiv">Returns firmware version of the component.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/handheldcontroller/DJIHandheldController.html#getStickGimbalControlEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)">getStickGimbalControlEnabled</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
+        
+        <div class="jd-descrdiv">Gets if the gimbal control with the joystick is enabled or not.</div>
   
   </td></tr>
 
@@ -578,6 +616,24 @@ Summary:
 
 	 
     <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/handheldcontroller/DJIHandheldController.html#setStickGimbalControlEnabled(java.lang.Boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setStickGimbalControlEnabled</a></span>(Boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Enables/disables joystick control of the gimbal.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1006,6 +1062,51 @@ From class
 </div>
 
 
+<a id="controlLEDWithCommand(dji.common.handheld.DJIHandheldControllerLEDCommand, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">controlLEDWithCommand</span>
+      <span class="normal">(<a href="../../../dji/common/handheld/DJIHandheldControllerLEDCommand.html">DJIHandheldControllerLEDCommand</a> command, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Controls the LED of the handheld controller.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>command</th>
+          <td>The command to control the LED.</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the execution result returned.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="getFirmwareVersion(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.String>)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1032,6 +1133,48 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns firmware version of the component.</p></div>
+
+    </div>
+</div>
+
+
+<a id="getStickGimbalControlEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">getStickGimbalControlEnabled</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets if the gimbal control with the joystick is enabled or not.
+  It is only supported in firmware version 1.2.0.40 or above.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
@@ -1112,6 +1255,56 @@ From class
           <td>The power mode to set.
                   CAUTION: when the mode is DJIHandheldPowerModePowerOff, the handheld device will be shut down and
                   the connection will be broken. The user must then power on the device manually.</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the execution result returned.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setStickGimbalControlEnabled(java.lang.Boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setStickGimbalControlEnabled</span>
+      <span class="normal">(Boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enables/disables joystick control of the gimbal.
+  By default, it is enabled. The handheld will be reset to the default value
+  when it reboots or SDK reinitializes. When gimbal control is disabled, the
+  joystick can be used for other purposes in an SDK application by reading its
+  position values with `joystickVerticalDirection` and `joystickHorizontalDirection`.
+  It is only supported in firmware version 1.2.0.40 or above.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>enabled</th>
+          <td><code>True</code> to enable the gimbal control.</td>
         </tr>
         <tr>
           <th>callback</th>

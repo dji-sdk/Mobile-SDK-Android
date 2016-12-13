@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -209,6 +211,7 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback.html">DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFlightControllerDelegate.ReceivedNoFlyZoneFromFlightControllerCallback.html">DJIFlightControllerDelegate.ReceivedNoFlyZoneFromFlightControllerCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFlyZoneManager.FlyForbidStatusUpdatedCallback.html">DJIFlyZoneManager.FlyForbidStatusUpdatedCallback</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJISimulator.UpdatedSimulatorStateDataCallback.html">DJISimulator.UpdatedSimulatorStateDataCallback</a></li>
       </ul>
@@ -222,8 +225,10 @@
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFlightLimitation.html">DJIFlightLimitation</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFlyZoneManager.html">DJIFlyZoneManager</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIFoldingDroneFlightController.html">DJIFoldingDroneFlightController</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIInspire2FlightController.html">DJIInspire2FlightController</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html">DJIIntelligentFlightAssistant</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJILandingGear.html">DJILandingGear</a></li>
+          <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJIP4PFlightController.html">DJIP4PFlightController</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/flightcontroller/DJISimulator.html">DJISimulator</a></li>
       </ul>
     </li>
@@ -419,6 +424,18 @@ Summary:
          
         
         interface</td>
+      <td class="jd-linkcol"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback</a></td>
+      <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+      <td class="jd-typecol">
+        
+         
+         
+        
+        interface</td>
       <td class="jd-linkcol"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback</a></td>
       <td class="jd-descrcol" width="100%">This protocol provides a interface to update the Intelligent Flight Assistant current state.&nbsp;</td>
     </tr>
@@ -509,9 +526,79 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#getActiveObstacleAvoidance(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)">getActiveObstacleAvoidance</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#getCollisionAvoidanceEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)">getCollisionAvoidanceEnabled</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
         
         <div class="jd-descrdiv">Get collision avoidance enabled.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#getLandingProtectionEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)">getLandingProtectionEnabled</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
+        
+        <div class="jd-descrdiv">Gets if landing protection is enabled.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#getPrecisionLandingEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)">getPrecisionLandingEnabled</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
+        
+        <div class="jd-descrdiv">Gets if precision landing is enabled.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#getUpwardsAvoidanceEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)">getUpwardsAvoidanceEnabled</a></span>(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)
+        
+        <div class="jd-descrdiv">Gets if upwards avoidance is enabled.</div>
   
   </td></tr>
 
@@ -545,9 +632,9 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#setCollisionAvoidanceEnabled(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setCollisionAvoidanceEnabled</a></span>(boolean enable, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#setActiveObstacleAvoidance(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setActiveObstacleAvoidance</a></span>(boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv">Set collision avoidance enabled.</div>
+        <div class="jd-descrdiv">Enables/disables active obstacle avoidance.</div>
   
   </td></tr>
 
@@ -563,16 +650,106 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#setVisionDetectionStateUpdatedCallback(dji.sdk.flightcontroller.DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback)">setVisionDetectionStateUpdatedCallback</a></span>(<a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback</a> callback)
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#setCollisionAvoidanceEnabled(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setCollisionAvoidanceEnabled</a></span>(boolean enable, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
         
-        <div class="jd-descrdiv">Set intelligent flight assist state update callback
-</div>
+        <div class="jd-descrdiv">Set collision avoidance enabled.</div>
   
   </td></tr>
 
 
 	 
     <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#setLandingProtectionEnabled(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setLandingProtectionEnabled</a></span>(boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Enables/disables landing protection.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#setPrecisionLandingEnabled(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setPrecisionLandingEnabled</a></span>(boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Enables/disables precision landing.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#setUpwardsAvoidanceEnabled(java.lang.Boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)">setUpwardsAvoidanceEnabled</a></span>(Boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)
+        
+        <div class="jd-descrdiv">Enables/disables upwards avoidance.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#setVisionControlStateUpdatedcallback(dji.sdk.flightcontroller.DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback)">setVisionControlStateUpdatedcallback</a></span>(<a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback</a> callback)
+        
+        <div class="jd-descrdiv">Callback function that updates the aircraft state controlled by the
+  intelligent flight assistant.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.html#setVisionDetectionStateUpdatedCallback(dji.sdk.flightcontroller.DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback)">setVisionDetectionStateUpdatedCallback</a></span>(<a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback</a> callback)
+        
+        <div class="jd-descrdiv">Callback function that updates the detection state of each vision sensor.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -884,6 +1061,37 @@ From class
 </div>
 
 
+<a id="getActiveObstacleAvoidance(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getActiveObstacleAvoidance</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 <a id="getCollisionAvoidanceEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -916,6 +1124,132 @@ From class
 </div>
 
 
+<a id="getLandingProtectionEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getLandingProtectionEnabled</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets if landing protection is enabled.
+  It is supported by Mavic Pro, Phantom 4 Pro and Inspire 2.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getPrecisionLandingEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getPrecisionLandingEnabled</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets if precision landing is enabled.
+  It is supported by Phantom 4 Pro and Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getUpwardsAvoidanceEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getUpwardsAvoidanceEnabled</span>
+      <span class="normal">(<a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallbackWith.html">DJICompletionCallbackWith</a>&lt;Boolean&gt; callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets if upwards avoidance is enabled.
+  It is supported by Inspire 2.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="getVisionPositioningEnabled(dji.common.util.DJICommonCallbacks.DJICompletionCallbackWith<java.lang.Boolean>)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -943,6 +1277,55 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Get vision position enable.
 </p></div>
+
+    </div>
+</div>
+
+
+<a id="setActiveObstacleAvoidance(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setActiveObstacleAvoidance</span>
+      <span class="normal">(boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enables/disables active obstacle avoidance. When enabled, and an obstacle is
+  moving toward the aircraft, the aircraft will actively fly away from it. If
+  while actively avoiding a moving obstacle, the aircraft detects another obstacle
+  in its avoidance path, it will stop.
+  `CollisionAvoidance` must also be enabled.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>enabled</th>
+          <td><code>true</code> to enable the active avoidance.</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>Completion callback that receives the setter result.
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
@@ -981,6 +1364,190 @@ From class
 </div>
 
 
+<a id="setLandingProtectionEnabled(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setLandingProtectionEnabled</span>
+      <span class="normal">(boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enables/disables landing protection. During auto-landing,
+  the downward facing vision sensor will check if the ground surface is flat
+  enough for a safe landing. If it is not and landing proteciton is `YES`,
+  then landing will abort and need to be manually performed
+  by the user.
+  It is supported by Mavic Pro, Phantom 4 Pro and Inspire 2.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>enabled</th>
+          <td><code>true</code> to enable the landing protection.</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned execution result.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setPrecisionLandingEnabled(boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setPrecisionLandingEnabled</span>
+      <span class="normal">(boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enables/disables precision landing. When enabled, the aircraft will record
+  its take-off location visually (as well as with GPS). On a Return-To-Home
+  action the aircraft will attempt to perform a precision landing using the
+  additional visual information. This method only works on a Return-To-Home
+  action when the home location is successfully recorded during take-off, and
+  not changed during flight.
+  It is supported by Phantom 4 Pro and Mavic Pro.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>enabled</th>
+          <td><code>True</code> to enable the precise landing.</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned execution result.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setUpwardsAvoidanceEnabled(java.lang.Boolean, dji.common.util.DJICommonCallbacks.DJICompletionCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setUpwardsAvoidanceEnabled</span>
+      <span class="normal">(Boolean enabled, <a href="../../../dji/common/util/DJICommonCallbacks.DJICompletionCallback.html">DJICommonCallbacks.DJICompletionCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enables/disables upwards avoidance. When the infrared sensor on top of the
+  Inspire 2 detects an obstacle, the aircraft will slow down the ascent speed
+  and maintain a minimum distance (1 meter) from the obstacle. The
+  sensor has a 10-degree horizontal field of view (FOV) and 10-degree vertical
+  FOV. The maximum detection distance is 5 meters.
+  It is supported by Inspire 2.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>enabled</th>
+          <td><code>True</code> to enable the upwards avoidance.</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>The execution callback with the returned value(s).
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setVisionControlStateUpdatedcallback(dji.sdk.flightcontroller.DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setVisionControlStateUpdatedcallback</span>
+      <span class="normal">(<a href="../../../dji/sdk/flightcontroller/DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback.html">DJIIntelligentFlightAssistant.VisionControlStateUpdatedCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Callback function that updates the aircraft state controlled by the
+  intelligent flight assistant.
+</p></div>
+
+    </div>
+</div>
+
+
 <a id="setVisionDetectionStateUpdatedCallback(dji.sdk.flightcontroller.DJIIntelligentFlightAssistant.VisionDetectionStateUpdatedCallback)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1006,7 +1573,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Set intelligent flight assist state update callback
+  <div class="jd-tagdata jd-tagdescr"><p>Callback function that updates the detection state of each vision sensor.
 </p></div>
 
     </div>

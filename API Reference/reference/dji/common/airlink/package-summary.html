@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -210,8 +212,9 @@
               
     <li><h2>Classes</h2>
       <ul>
-        <li class="api apilevel-"><a href="../../../dji/common/airlink/ChannelRSSI.html">ChannelRSSI</a></li>
+        <li class="api apilevel-"><a href="../../../dji/common/airlink/ChannelInterference.html">ChannelInterference</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/airlink/DJISignalInformation.html">DJISignalInformation</a></li>
+        <li class="api apilevel-"><a href="../../../dji/common/airlink/FrequencyBandChannelRange.html">FrequencyBandChannelRange</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/airlink/FrequencyInterference.html">FrequencyInterference</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/airlink/SDRHdOffsetParams.html">SDRHdOffsetParams</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/airlink/WifiChannelInterference.html">WifiChannelInterference</a></li>
@@ -225,6 +228,7 @@
         <li class="api apilevel-"><a href="../../../dji/common/airlink/DJIWiFiSignalQuality.html">DJIWiFiSignalQuality</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkDataRate.html">LBAirLinkDataRate</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkFPVVideoQualityLatency.html">LBAirLinkFPVVideoQualityLatency</a></li>
+        <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkFrequencyBand.html">LBAirLinkFrequencyBand</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkPIPDisplay.html">LBAirLinkPIPDisplay</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkSecondaryVideoOutputPort.html">LBAirLinkSecondaryVideoOutputPort</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/airlink/LBAirLinkUnit.html">LBAirLinkUnit</a></li>
@@ -233,6 +237,7 @@
         <li class="api apilevel-"><a href="../../../dji/common/airlink/SDRInterferedTerminal.html">SDRInterferedTerminal</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/airlink/WifiAirLinkDataRate.html">WifiAirLinkDataRate</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/airlink/WiFiFrequencyBand.html">WiFiFrequencyBand</a></li>
+        <li class="api apilevel-"><a href="../../../dji/common/airlink/WorkingFrequence.html">WorkingFrequence</a></li>
       </ul>
     </li>
               
@@ -316,22 +321,26 @@
     
   <table class="jd-sumtable-expando">
         <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../dji/common/airlink/ChannelRSSI.html">ChannelRSSI</a></td>
-              <td class="jd-descrcol" width="100%">Created by hai.vo on 2016/9/21.&nbsp;</td>
+              <td class="jd-linkcol"><a href="../../../dji/common/airlink/ChannelInterference.html">ChannelInterference</a></td>
+              <td class="jd-descrcol" width="100%">The interference power of a LBAirLink channel.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/DJISignalInformation.html">DJISignalInformation</a></td>
               <td class="jd-descrcol" width="100%">This class contains the signal status of a channel.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/common/airlink/FrequencyBandChannelRange.html">FrequencyBandChannelRange</a></td>
+              <td class="jd-descrcol" width="100%">Channels range for different frequency band.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/FrequencyInterference.html">FrequencyInterference</a></td>
               <td class="jd-descrcol" width="100%">This class represents the power spectral density of a frequency slice.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/SDRHdOffsetParams.html">SDRHdOffsetParams</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/WifiChannelInterference.html">WifiChannelInterference</a></td>
               <td class="jd-descrcol" width="100%">The interference power of a WiFi channel.&nbsp;</td>
           </tr>
@@ -362,37 +371,45 @@
               <td class="jd-descrcol" width="100%">FPV (First-person view) video can prioritize either quality or latency.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/common/airlink/LBAirLinkFrequencyBand.html">LBAirLinkFrequencyBand</a></td>
+              <td class="jd-descrcol" width="100%">Frequency band for LB airlink.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/LBAirLinkPIPDisplay.html">LBAirLinkPIPDisplay</a></td>
               <td class="jd-descrcol" width="100%">Defines the combination of video sources to form the secondary output video.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/LBAirLinkSecondaryVideoOutputPort.html">LBAirLinkSecondaryVideoOutputPort</a></td>
               <td class="jd-descrcol" width="100%">Remote Controller port to send secondary video to (in addition to USB video sent to the Mobile Device).&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/LBAirLinkUnit.html">LBAirLinkUnit</a></td>
               <td class="jd-descrcol" width="100%">OSD data units.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/OcuSyncBandwidth.html">OcuSyncBandwidth</a></td>
               <td class="jd-descrcol" width="100%">The channel bandwidth for the OcuSync downlink (from the aircraft to the
   remote controller).&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/OcuSyncWarningMessage.html">OcuSyncWarningMessage</a></td>
               <td class="jd-descrcol" width="100%">OcuSync link warning messages.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/SDRInterferedTerminal.html">SDRInterferedTerminal</a></td>
               <td class="jd-descrcol" width="100%">&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/WifiAirLinkDataRate.html">WifiAirLinkDataRate</a></td>
               <td class="jd-descrcol" width="100%">WiFi data rate.&nbsp;</td>
           </tr>
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/airlink/WiFiFrequencyBand.html">WiFiFrequencyBand</a></td>
               <td class="jd-descrcol" width="100%">WiFi frequency band.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/common/airlink/WorkingFrequence.html">WorkingFrequence</a></td>
+              <td class="jd-descrcol" width="100%">Created by petyrzhan on 9/25/16.&nbsp;</td>
           </tr>
   </table>
     </div>

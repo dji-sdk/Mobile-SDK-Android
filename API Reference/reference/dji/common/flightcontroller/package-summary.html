@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -220,6 +222,7 @@
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJISimulatorInitializationData.html">DJISimulatorInitializationData</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJISimulatorStateData.html">DJISimulatorStateData</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVirtualStickFlightControlData.html">DJIVirtualStickFlightControlData</a></li>
+        <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionControlState.html">DJIVisionControlState</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionSector.html">DJIVisionDetectionSector</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html">DJIVisionDetectionState</a></li>
       </ul>
@@ -235,7 +238,7 @@
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerControlMode.html">DJIFlightControllerControlMode</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerFlightMode.html">DJIFlightControllerFlightMode</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerNoFlyStatus.html">DJIFlightControllerNoFlyStatus</a></li>
-        <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerPreciseLandingState.html">DJIFlightControllerPreciseLandingState</a></li>
+        <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerRemoteControllerFlightMode.html">DJIFlightControllerRemoteControllerFlightMode</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControlState.html">DJIFlightControlState</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightFailsafeOperation.html">DJIFlightFailsafeOperation</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightOrientationMode.html">DJIFlightOrientationMode</a></li>
@@ -253,7 +256,9 @@
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVirtualStickVerticalControlMode.html">DJIVirtualStickVerticalControlMode</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVirtualStickYawControlMode.html">DJIVirtualStickYawControlMode</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionAssistantStatus.html">DJIVisionAssistantStatus</a></li>
+        <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionLandingProtectionStatus.html">DJIVisionLandingProtectionStatus</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionSectorWarning.html">DJIVisionSectorWarning</a></li>
+        <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionSensorPosition.html">DJIVisionSensorPosition</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionSystemWarning.html">DJIVisionSystemWarning</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/FlyForbidStatus.html">FlyForbidStatus</a></li>
         <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/FlyZoneCategory.html">FlyZoneCategory</a></li>
@@ -395,12 +400,18 @@
 &nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJIVisionControlState.html">DJIVisionControlState</a></td>
+              <td class="jd-descrcol" width="100%">This class gives the aircraft's state controlled by the intelligent flight
+  assistant.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionSector.html">DJIVisionDetectionSector</a></td>
               <td class="jd-descrcol" width="100%">The vision system can see in front of the aircraft with a 70 degree horizontal field of view (FOV) and 55 degree veritcal FOV.&nbsp;</td>
           </tr>
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html">DJIVisionDetectionState</a></td>
-              <td class="jd-descrcol" width="100%">This class gives state information about the vision system and aircraft, including information from each sector the vision system covers.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">This class gives state information about the product's vision sensors used
+  for obstacle detection.&nbsp;</td>
           </tr>
   </table>
     </div>
@@ -442,8 +453,8 @@
  aircraft is near the no fly zone or not.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJIFlightControllerPreciseLandingState.html">DJIFlightControllerPreciseLandingState</a></td>
-              <td class="jd-descrcol" width="100%">Created by changjian.xu on 2016/8/11.&nbsp;</td>
+              <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJIFlightControllerRemoteControllerFlightMode.html">DJIFlightControllerRemoteControllerFlightMode</a></td>
+              <td class="jd-descrcol" width="100%">Flight modes that map to the flight mode switch on the remote controller.&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJIFlightControlState.html">DJIFlightControlState</a></td>
@@ -490,7 +501,7 @@
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJILandingGearStatus.html">DJILandingGearStatus</a></td>
-              <td class="jd-descrcol" width="100%">Current state of the Landing Gear.&nbsp;</td>
+              <td class="jd-descrcol" width="100%">The current state/position of the landing gear.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJIRTKPositioningSolution.html">DJIRTKPositioningSolution</a></td>
@@ -517,8 +528,17 @@
               <td class="jd-descrcol" width="100%">The status of vision assistant.&nbsp;</td>
           </tr>
         <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJIVisionLandingProtectionStatus.html">DJIVisionLandingProtectionStatus</a></td>
+              <td class="jd-descrcol" width="100%">Landing protection status returned by the downward vision sensor.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJIVisionSectorWarning.html">DJIVisionSectorWarning</a></td>
               <td class="jd-descrcol" width="100%">The warning level of the vision system.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJIVisionSensorPosition.html">DJIVisionSensorPosition</a></td>
+              <td class="jd-descrcol" width="100%">Position of the sensor on the aircraft
+&nbsp;</td>
           </tr>
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../dji/common/flightcontroller/DJIVisionSystemWarning.html">DJIVisionSystemWarning</a></td>

@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -156,6 +156,8 @@
   <a href="../../../dji/common/gimbal/package-summary.html">dji.common.gimbal</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
@@ -503,7 +505,7 @@ Summary:
             
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html#DJITapFlyMissionProgressStatus(dji.sdk.missionmanager.DJITapFlyMission.DJITapFlyMissionExecutionState, dji.sdk.util.DJIVector, boolean, boolean, dji.sdk.missionmanager.DJITapFlyMission.DJIBypassDirection)">DJITapFlyMissionProgressStatus</a></span>(<a href="../../../dji/sdk/missionmanager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a> flightState, <a href="../../../dji/sdk/util/DJIVector.html">DJIVector</a> direction, boolean isBraking, boolean hasReachedLowLimitation, <a href="../../../dji/sdk/missionmanager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a> bypassingState)
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html#DJITapFlyMissionProgressStatus(dji.sdk.missionmanager.DJITapFlyMission.DJITapFlyMissionExecutionState, dji.sdk.util.DJIVector, boolean, boolean, dji.sdk.missionmanager.DJITapFlyMission.DJIBypassDirection, float)">DJITapFlyMissionProgressStatus</a></span>(<a href="../../../dji/sdk/missionmanager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a> flightState, <a href="../../../dji/sdk/util/DJIVector.html">DJIVector</a> direction, boolean isBraking, boolean hasReachedLowLimitation, <a href="../../../dji/sdk/missionmanager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a> bypassingState, float relativeHeading)
         
   </td></tr>
 
@@ -590,6 +592,22 @@ Summary:
         
         <div class="jd-descrdiv">The location in the image corresponding to the direction.</div>
   
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            float
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/missionmanager/DJITapFlyMission.DJITapFlyMissionProgressStatus.html#getRelativeHeading()">getRelativeHeading</a></span>()
+        
   </td></tr>
 
 
@@ -886,7 +904,7 @@ From class
 </div>
 
 
-<a id="DJITapFlyMissionProgressStatus(dji.sdk.missionmanager.DJITapFlyMission.DJITapFlyMissionExecutionState, dji.sdk.util.DJIVector, boolean, boolean, dji.sdk.missionmanager.DJITapFlyMission.DJIBypassDirection)"></a>
+<a id="DJITapFlyMissionProgressStatus(dji.sdk.missionmanager.DJITapFlyMission.DJITapFlyMissionExecutionState, dji.sdk.util.DJIVector, boolean, boolean, dji.sdk.missionmanager.DJITapFlyMission.DJIBypassDirection, float)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -899,7 +917,7 @@ From class
         
       </span>
       <span class="sympad">DJITapFlyMissionProgressStatus</span>
-      <span class="normal">(<a href="../../../dji/sdk/missionmanager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a> flightState, <a href="../../../dji/sdk/util/DJIVector.html">DJIVector</a> direction, boolean isBraking, boolean hasReachedLowLimitation, <a href="../../../dji/sdk/missionmanager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a> bypassingState)</span>
+      <span class="normal">(<a href="../../../dji/sdk/missionmanager/DJITapFlyMission.DJITapFlyMissionExecutionState.html">DJITapFlyMission.DJITapFlyMissionExecutionState</a> flightState, <a href="../../../dji/sdk/util/DJIVector.html">DJIVector</a> direction, boolean isBraking, boolean hasReachedLowLimitation, <a href="../../../dji/sdk/missionmanager/DJITapFlyMission.DJIBypassDirection.html">DJITapFlyMission.DJIBypassDirection</a> bypassingState, float relativeHeading)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1056,6 +1074,37 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>The location in the image corresponding to the direction.
 </p></div>
+
+    </div>
+</div>
+
+
+<a id="getRelativeHeading()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        float
+      </span>
+      <span class="sympad">getRelativeHeading</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>

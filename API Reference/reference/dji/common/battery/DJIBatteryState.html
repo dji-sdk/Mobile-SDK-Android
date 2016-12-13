@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -217,6 +219,7 @@
     <li><h2>Enums</h2>
       <ul>
           <li class="api apilevel-"><a href="../../../dji/common/battery/DJIBatteryLowCellVoltageOperation.html">DJIBatteryLowCellVoltageOperation</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/battery/DJIBatteryPairStatus.html">DJIBatteryPairStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/battery/DJIBatteryStatus.html">DJIBatteryStatus</a></li>
       </ul>
     </li>
@@ -363,7 +366,12 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>The DJIBatteryState is used to keep track of the real-time state of the battery.
+<p><code>DJIBatteryState</code> is used to keep track of the real-time state of the
+  battery. It is supported by both smart and non-smart batteries. However for
+  non-smart batteries, only some of the properties are valid:
+  - When the connected product is A3 and N3, only `currentVoltage` and
+    `cellVoltageLevel` are valid.
+  - When the connected product is A2, only `currentVoltage` is valid.
 </p>
 
 
@@ -609,6 +617,25 @@ Summary:
         <span class="sympad"><a href="../../../dji/common/battery/DJIBatteryState.html#isBeingCharged()">isBeingCharged</a></span>()
         
         <div class="jd-descrdiv"><code>true</code> if the battery is being charged.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/common/battery/DJIBatteryState.html#isInSingleBatteryMode()">isInSingleBatteryMode</a></span>()
+        
+        <div class="jd-descrdiv"><code>true</code> if only one battery is inserted to slot on the the right or starboard
+  side of the aircraft.</div>
   
   </td></tr>
 
@@ -1169,6 +1196,42 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the battery is being charged.
   It is only supported by Osmo Mobile.
+</p></div>
+
+    </div>
+</div>
+
+
+<a id="isInSingleBatteryMode()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isInSingleBatteryMode</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if only one battery is inserted to slot on the the right or starboard
+  side of the aircraft. The aircraft can still take off but the flight time
+  will be shorter.
+  It is only supported by Inspire 2. Inspire 2 must always have a battery
+  in the right or starboard slot.
 </p></div>
 
     </div>

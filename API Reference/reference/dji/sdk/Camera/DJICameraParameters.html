@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -156,6 +156,8 @@
   <a href="../../../dji/common/gimbal/package-summary.html">dji.common.gimbal</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
+    <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
@@ -502,7 +504,7 @@ Summary:
     <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
-            
+            synchronized
             
             static
             
@@ -545,6 +547,22 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/camera/DJICameraParameters.html#onEventBackgroundThread(DataCameraGetPushRawParams)">onEventBackgroundThread</a></span>(DataCameraGetPushRawParams pushInfo)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/sdk/camera/DJICameraParameters.html#removeAllListener()">removeAllListener</a></span>()
         
         <div class="jd-descrdiv">Remove all listeners.</div>
@@ -553,7 +571,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -571,7 +589,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -589,7 +607,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -607,7 +625,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -625,7 +643,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -643,7 +661,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -656,6 +674,24 @@ Summary:
         <span class="sympad"><a href="../../../dji/sdk/camera/DJICameraParameters.html#supportedCameraModeRange()">supportedCameraModeRange</a></span>()
         
         <div class="jd-descrdiv">Returns the current valid range for camera mode (CameraMode).</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoResolution.html">CameraVideoResolution[]</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/sdk/camera/DJICameraParameters.html#supportedCameraSSDVideoResolutionRange()">supportedCameraSSDVideoResolutionRange</a></span>()
+        
+        <div class="jd-descrdiv">Returns the current valid range for camera's RAW video resolution.</div>
   
   </td></tr>
 
@@ -973,7 +1009,7 @@ From class
         static 
          
          
-         
+        synchronized 
         <a href="../../../dji/sdk/camera/DJICameraParameters.html">DJICameraParameters</a>
       </span>
       <span class="sympad">getInstance</span>
@@ -1023,6 +1059,37 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Release the object.
 </p></div>
+
+    </div>
+</div>
+
+
+<a id="onEventBackgroundThread(DataCameraGetPushRawParams)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onEventBackgroundThread</span>
+      <span class="normal">(DataCameraGetPushRawParams pushInfo)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>
@@ -1280,6 +1347,44 @@ From class
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li>Array of CameraMode elements. Each element represents one current supported camera mode.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="supportedCameraSSDVideoResolutionRange()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraVideoResolution.html">CameraVideoResolution[]</a>
+      </span>
+      <span class="sympad">supportedCameraSSDVideoResolutionRange</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the current valid range for camera's RAW video resolution. Returns
+  `null` if current camera does not support any RAW video resolution or the
+  camera is disconnected.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Array of CameraVideoResolution. Each element represent one current supported aperture value.
 </li></ul>
   </div>
 

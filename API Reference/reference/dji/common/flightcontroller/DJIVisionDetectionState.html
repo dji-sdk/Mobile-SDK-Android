@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -220,6 +222,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJISimulatorInitializationData.html">DJISimulatorInitializationData</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJISimulatorStateData.html">DJISimulatorStateData</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVirtualStickFlightControlData.html">DJIVirtualStickFlightControlData</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionControlState.html">DJIVisionControlState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionSector.html">DJIVisionDetectionSector</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html">DJIVisionDetectionState</a></li>
       </ul>
@@ -235,7 +238,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerControlMode.html">DJIFlightControllerControlMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerFlightMode.html">DJIFlightControllerFlightMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerNoFlyStatus.html">DJIFlightControllerNoFlyStatus</a></li>
-          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerPreciseLandingState.html">DJIFlightControllerPreciseLandingState</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControllerRemoteControllerFlightMode.html">DJIFlightControllerRemoteControllerFlightMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightControlState.html">DJIFlightControlState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightFailsafeOperation.html">DJIFlightFailsafeOperation</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIFlightOrientationMode.html">DJIFlightOrientationMode</a></li>
@@ -253,7 +256,9 @@
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVirtualStickVerticalControlMode.html">DJIVirtualStickVerticalControlMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVirtualStickYawControlMode.html">DJIVirtualStickYawControlMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionAssistantStatus.html">DJIVisionAssistantStatus</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionLandingProtectionStatus.html">DJIVisionLandingProtectionStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionSectorWarning.html">DJIVisionSectorWarning</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionSensorPosition.html">DJIVisionSensorPosition</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/DJIVisionSystemWarning.html">DJIVisionSystemWarning</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/FlyForbidStatus.html">FlyForbidStatus</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/flightcontroller/FlyZoneCategory.html">FlyZoneCategory</a></li>
@@ -405,7 +410,12 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>This class gives state information about the vision system and aircraft, including information from each sector the vision system covers.
+<p>This class gives state information about the product's vision sensors used
+  for obstacle detection. The two types of sensors used are dual camera
+  sensors operating in the visible spectrum (dual-camera sensor) and infrared
+  time of flight (TOF) sensors. Note, Inspire 2's upward facing infrared TOF
+  sensor is not returned in this state. It is accessed through `DJIVisionControlState`.
+
 </p>
 
 
@@ -472,7 +482,7 @@ Summary:
             
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html#DJIVisionDetectionState(boolean, boolean, boolean, boolean, dji.common.flightcontroller.DJIVisionSystemWarning, java.util.List<dji.common.flightcontroller.DJIVisionDetectionSector>)">DJIVisionDetectionState</a></span>(boolean isForwardDetectingAvailable, boolean isCollisionAvoidanceAvailable, boolean isVisionSencorWorking, boolean isBraking, <a href="../../../dji/common/flightcontroller/DJIVisionSystemWarning.html">DJIVisionSystemWarning</a> warningLevel, List&lt;<a href="../../../dji/common/flightcontroller/DJIVisionDetectionSector.html">DJIVisionDetectionSector</a>&gt; forwardObstacleInfos)
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html#DJIVisionDetectionState(boolean, boolean, double, dji.common.flightcontroller.DJIVisionSystemWarning, java.util.List<dji.common.flightcontroller.DJIVisionDetectionSector>, dji.common.flightcontroller.DJIVisionSensorPosition)">DJIVisionDetectionState</a></span>(boolean isVisionSencorWorking, boolean isBraking, double obstacleDistanceInMeters, <a href="../../../dji/common/flightcontroller/DJIVisionSystemWarning.html">DJIVisionSystemWarning</a> warningLevel, List&lt;<a href="../../../dji/common/flightcontroller/DJIVisionDetectionSector.html">DJIVisionDetectionSector</a>&gt; forwardObstacleInfos, <a href="../../../dji/common/flightcontroller/DJIVisionSensorPosition.html">DJIVisionSensorPosition</a> position)
         
   </td></tr>
 
@@ -503,7 +513,44 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html#getDetectionSectors()">getDetectionSectors</a></span>()
         
-        <div class="jd-descrdiv">The vision system can see in front of the aircraft with a 70 degree horizontal field of view (FOV) and 55 degree veritcal FOV for the Phantom 4.</div>
+        <div class="jd-descrdiv">A dual-camera vision sensor can see an area with a 60-degree horizontal
+  field of view (FOV) and 55-degree vertical FOV.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            double
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html#getObstacleDistanceInMeters()">getObstacleDistanceInMeters</a></span>()
+        
+        <div class="jd-descrdiv">The distance to the closest detected obstacle in meters.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="../../../dji/common/flightcontroller/DJIVisionSensorPosition.html">DJIVisionSensorPosition</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html#getPosition()">getPosition</a></span>()
+        
+        <div class="jd-descrdiv">The vision sensor's position on the aircraft.</div>
   
   </td></tr>
 
@@ -519,9 +566,9 @@ Summary:
             <a href="../../../dji/common/flightcontroller/DJIVisionSystemWarning.html">DJIVisionSystemWarning</a>
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html#getWarningLevel()">getWarningLevel</a></span>()
+        <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html#getSystemWarning()">getSystemWarning</a></span>()
         
-        <div class="jd-descrdiv">Warning level between the obstacle and the aircraft.</div>
+        <div class="jd-descrdiv">Obstacle detection warning level for the vision sensor.</div>
   
   </td></tr>
 
@@ -539,7 +586,11 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html#isBraking()">isBraking</a></span>()
         
-        <div class="jd-descrdiv">True if the aircraft is braking automatically to avoid collision.</div>
+        <div class="jd-descrdiv">
+      <em>
+  This method is deprecated.
+      Use `isBraking` in `DJIVisionControlState` instead.
+</em></div>
   
   </td></tr>
 
@@ -557,7 +608,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../dji/common/flightcontroller/DJIVisionDetectionState.html#isSensorWorking()">isSensorWorking</a></span>()
         
-        <div class="jd-descrdiv">True if the vision sensor is working.</div>
+        <div class="jd-descrdiv"><code>true</code> if the vision sensor is working.</div>
   
   </td></tr>
 
@@ -780,7 +831,7 @@ From class
 
 
 
-<a id="DJIVisionDetectionState(boolean, boolean, boolean, boolean, dji.common.flightcontroller.DJIVisionSystemWarning, java.util.List<dji.common.flightcontroller.DJIVisionDetectionSector>)"></a>
+<a id="DJIVisionDetectionState(boolean, boolean, double, dji.common.flightcontroller.DJIVisionSystemWarning, java.util.List<dji.common.flightcontroller.DJIVisionDetectionSector>, dji.common.flightcontroller.DJIVisionSensorPosition)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -793,7 +844,7 @@ From class
         
       </span>
       <span class="sympad">DJIVisionDetectionState</span>
-      <span class="normal">(boolean isForwardDetectingAvailable, boolean isCollisionAvoidanceAvailable, boolean isVisionSencorWorking, boolean isBraking, <a href="../../../dji/common/flightcontroller/DJIVisionSystemWarning.html">DJIVisionSystemWarning</a> warningLevel, List&lt;<a href="../../../dji/common/flightcontroller/DJIVisionDetectionSector.html">DJIVisionDetectionSector</a>&gt; forwardObstacleInfos)</span>
+      <span class="normal">(boolean isVisionSencorWorking, boolean isBraking, double obstacleDistanceInMeters, <a href="../../../dji/common/flightcontroller/DJIVisionSystemWarning.html">DJIVisionSystemWarning</a> warningLevel, List&lt;<a href="../../../dji/common/flightcontroller/DJIVisionDetectionSector.html">DJIVisionDetectionSector</a>&gt; forwardObstacleInfos, <a href="../../../dji/common/flightcontroller/DJIVisionSensorPosition.html">DJIVisionSensorPosition</a> position)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -851,15 +902,22 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The vision system can see in front of the aircraft with a 70 degree horizontal field of view (FOV) and 55 degree veritcal FOV for the Phantom 4. The horizontal FOV is split into four equal sectors and this array contains the distance and warning information for each sector. For Phantom 4, the horizontal FOV is separated into 4 sectors.
-
+  <div class="jd-tagdata jd-tagdescr"><p>A dual-camera vision sensor can see an area with a 60-degree horizontal
+  field of view (FOV) and 55-degree vertical FOV. The horizontal FOV is split
+  into four equal sectors and this array contains the distance and warning
+  information for each sector.
+  Phantom 4, Mavic Pro and Inspire 2 have one dual-camera vision sensor in the
+  nose of the aircraft.
+  For Phantrom 4 Pro, the dual-camera vision sensors are on the nose and the
+  tail.
+  It is nil if it is an infrared sensor or the sensor is not working properly.
 </p></div>
 
     </div>
 </div>
 
 
-<a id="getWarningLevel()"></a>
+<a id="getObstacleDistanceInMeters()"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -869,9 +927,9 @@ From class
          
          
          
-        <a href="../../../dji/common/flightcontroller/DJIVisionSystemWarning.html">DJIVisionSystemWarning</a>
+        double
       </span>
-      <span class="sympad">getWarningLevel</span>
+      <span class="sympad">getObstacleDistanceInMeters</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -884,7 +942,82 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Warning level between the obstacle and the aircraft. This is a combination of warning levels from each sector.
+  <div class="jd-tagdata jd-tagdescr"><p>The distance to the closest detected obstacle in meters.
+  It is only used when the sensor is an infrared TOF sensor. The valid range
+  is [0.3, 5.0].
+  Phantom 4 Pro has two infrared sensors on the left and right of the product.
+  Both sensors have a 70-degree horizontal field of view (FOV) and 20-degree
+  vertical FOV. The value is always 0.0 if the sensor is a dual-camera sensor
+  or the sensor is not working properly.
+</p></div>
+
+    </div>
+</div>
+
+
+<a id="getPosition()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../dji/common/flightcontroller/DJIVisionSensorPosition.html">DJIVisionSensorPosition</a>
+      </span>
+      <span class="sympad">getPosition</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The vision sensor's position on the aircraft.
+  For Phantom 4 Pro, there are 4 vision sensors on the aircraft.
+  The sensors on the nose and tail are dual-camera sensors. The sensors on
+  the left and right are infrared time-of-flight (TOF) sensors.
+</p></div>
+
+    </div>
+</div>
+
+
+<a id="getSystemWarning()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../dji/common/flightcontroller/DJIVisionSystemWarning.html">DJIVisionSystemWarning</a>
+      </span>
+      <span class="sympad">getSystemWarning</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Obstacle detection warning level for the vision sensor.
+  Note: dual-camera vision sensors have a field of view (FOV) split into
+  sectors. This warning level is a combination of all sectors.
 </p></div>
 
     </div>
@@ -915,9 +1048,13 @@ From class
 
       </div>
     <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>True if the aircraft is braking automatically to avoid collision.
-</p></div>
+      <p>
+  <p class="caution">
+      <strong>
+  This method is deprecated.</strong><br/> Use `isBraking` in `DJIVisionControlState` instead.
+
+  </p>
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the aircraft is braking automatically to avoid collision.</p></div>
 
     </div>
 </div>
@@ -948,7 +1085,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>True if the vision sensor is working.
+  <div class="jd-tagdata jd-tagdescr"><p><code>true</code> if the vision sensor is working.
 </p></div>
 
     </div>

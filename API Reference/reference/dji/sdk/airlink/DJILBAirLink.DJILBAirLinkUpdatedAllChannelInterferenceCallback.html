@@ -57,7 +57,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
 <title>
 
-  DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback
+  DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback
 
 
 </title>
@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -206,7 +208,7 @@
       <ul>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJIAuxLink.DJIAuxLinkUpdatedRemoteControllerSignalInformationCallback.html">DJIAuxLink.DJIAuxLinkUpdatedRemoteControllerSignalInformationCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkFPVBandwidthPercentChangedCallback.html">DJILBAirLink.DJILBAirLinkFPVBandwidthPercentChangedCallback</a></li>
-          <li class="selected api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback</a></li>
+          <li class="selected api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback.html">DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedLightbridgeModuleSignalInformationCallback.html">DJILBAirLink.DJILBAirLinkUpdatedLightbridgeModuleSignalInformationCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedRemoteControllerSignalInformationCallback.html">DJILBAirLink.DJILBAirLinkUpdatedRemoteControllerSignalInformationCallback</a></li>
           <li class="api apilevel-"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJIOnReceivedVideoCallback.html">DJILBAirLink.DJIOnReceivedVideoCallback</a></li>
@@ -293,7 +295,7 @@
      
     
     interface
-<h1>DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback</h1>
+<h1>DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback</h1>
 
 
 
@@ -312,7 +314,7 @@
 
     <tr>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">dji.sdk.airlink.DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback</td>
+        <td colspan="1" class="jd-inheritance-class-cell">dji.sdk.airlink.DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback</td>
     </tr>
     
 
@@ -328,7 +330,8 @@
 
 
 <h2>Class Overview</h2>
-<p>Signal strength for all available downlink channels.
+<p>Callback of signal strength of all signals present on all available downlink channels. Signals that
+ are not the communication signal are considered interference.
 </p>
 
 
@@ -399,9 +402,9 @@
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelSignalStrengthsCallback.html#onResult(int[])">onResult</a></span>(int[] rssi)
+        <span class="sympad"><a href="../../../dji/sdk/airlink/DJILBAirLink.DJILBAirLinkUpdatedAllChannelInterferenceCallback.html#onResult(dji.common.airlink.ChannelInterference[])">onResult</a></span>(<a href="../../../dji/common/airlink/ChannelInterference.html">ChannelInterference[]</a> channelInterferences)
         
-        <div class="jd-descrdiv">Returns the strength for all 8 channels.</div>
+        <div class="jd-descrdiv">Signal strength of all signals present on all available downlink channels.</div>
   
   </td></tr>
 
@@ -454,7 +457,7 @@
 
 
 
-<a id="onResult(int[])"></a>
+<a id="onResult(dji.common.airlink.ChannelInterference[])"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -467,7 +470,7 @@
         void
       </span>
       <span class="sympad">onResult</span>
-      <span class="normal">(int[] rssi)</span>
+      <span class="normal">(<a href="../../../dji/common/airlink/ChannelInterference.html">ChannelInterference[]</a> channelInterferences)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -479,16 +482,25 @@
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Returns the strength for all 8 channels.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Signal strength of all signals present on all available downlink channels.
+ Signals that are not the communication signal are considered interference.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
-          <th>rssi</th>
-          <td>(Received Signal Strength Indicator) in dBm with range [-100, -60].
+          <th>channelInterferences</th>
+          <td>The updated interference information. The elements in
+                      the array of `DJILBAirLinkChannelInterference` objects each hold the
+                      interference signal strength of a channel.
+                      Elements are sorted by increasing channel number.
 </td>
         </tr>
       </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../dji/common/airlink/ChannelInterference.html">ChannelInterference</a></code></li>
+      </ul>
   </div>
 
     </div>

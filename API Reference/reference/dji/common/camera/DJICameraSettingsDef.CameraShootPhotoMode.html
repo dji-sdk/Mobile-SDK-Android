@@ -88,7 +88,7 @@
 <body class="">
 
 <div id="header">
-    <div id="headerLeft"><h2 style="margin:margin: 0 0 8px 0px;">DJI Android Mobile SDK Reference</h2>
+    <div id="headerLeft">
     
     </div>
     <div id="headerRight">
@@ -157,6 +157,8 @@
     <li class="api apilevel-">
   <a href="../../../dji/common/handheld/package-summary.html">dji.common.handheld</a></li>
     <li class="api apilevel-">
+  <a href="../../../dji/common/missionmanager/package-summary.html">dji.common.missionmanager</a></li>
+    <li class="api apilevel-">
   <a href="../../../dji/common/product/package-summary.html">dji.common.product</a></li>
     <li class="api apilevel-">
   <a href="../../../dji/common/remotecontroller/package-summary.html">dji.common.remotecontroller</a></li>
@@ -216,6 +218,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDRawVideoResolutionAndFrameRate.html">CameraSSDRawVideoResolutionAndFrameRate</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDState.html">CameraSSDState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSystemState.html">CameraSystemState</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/CameraTapZoomTargetPoint.html">CameraTapZoomTargetPoint</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraVideoResolutionAndFrameRate.html">CameraVideoResolutionAndFrameRate</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraWhiteBalanceAndColorTemperature.html">CameraWhiteBalanceAndColorTemperature</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraExposureParameters.html">DJICameraExposureParameters</a></li>
@@ -242,6 +245,7 @@
               
     <li><h2>Enums</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/CameraPurchasedLicense.html">CameraPurchasedLicense</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDCapacity.html">CameraSSDCapacity</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraSSDOperationState.html">CameraSSDOperationState</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/CameraThermalVersion.html">CameraThermalVersion</a></li>
@@ -272,6 +276,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraSharpness.html">DJICameraSettingsDef.CameraSharpness</a></li>
           <li class="selected api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShutterSpeed.html">DJICameraSettingsDef.CameraShutterSpeed</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraSSDVideoDigitalFilter.html">DJICameraSettingsDef.CameraSSDVideoDigitalFilter</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalDigitalZoomScale.html">DJICameraSettingsDef.CameraThermalDigitalZoomScale</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalExternalParamProfile.html">DJICameraSettingsDef.CameraThermalExternalParamProfile</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraThermalFFCMode.html">DJICameraSettingsDef.CameraThermalFFCMode</a></li>
@@ -291,6 +296,7 @@
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraWhiteBalance.html">DJICameraSettingsDef.CameraWhiteBalance</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.OpticalZoomDirection.html">DJICameraSettingsDef.OpticalZoomDirection</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.OpticalZoomSpeed.html">DJICameraSettingsDef.OpticalZoomSpeed</a></li>
+          <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraSettingsDef.VideoFileCompressionStandard.html">DJICameraSettingsDef.VideoFileCompressionStandard</a></li>
           <li class="api apilevel-"><a href="../../../dji/common/camera/DJICameraThermalMeasurementMode.html">DJICameraThermalMeasurementMode</a></li>
       </ul>
     </li>
@@ -531,25 +537,33 @@ Summary:
     <tr class="alt-color api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a>&nbsp;</td>
         <td class="jd-linkcol">HDR&nbsp;</td>
-        <td class="jd-descrcol" width="100%">Set the camera to take multiple pictures at once.&nbsp;</td>
+        <td class="jd-descrcol" width="100%">Sets the camera to take an HDR photo.&nbsp;</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a>&nbsp;</td>
         <td class="jd-linkcol">Interval&nbsp;</td>
-        <td class="jd-descrcol" width="100%">Sets the camera to take a picture (or multiple pictures) continuously at a set time interval.&nbsp;</td>
+        <td class="jd-descrcol" width="100%">Sets the camera to take a picture (or multiple pictures) continuously at
+  a set time interval.&nbsp;</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a>&nbsp;</td>
+        <td class="jd-linkcol">RAWBurst&nbsp;</td>
+        <td class="jd-descrcol" width="100%">Sets the camera to take a burst of RAW photos.&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a>&nbsp;</td>
         <td class="jd-linkcol">Single&nbsp;</td>
         <td class="jd-descrcol" width="100%">Sets the camera to take a single photo.&nbsp;</td>
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-descrcol"><a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a>&nbsp;</td>
         <td class="jd-linkcol">TimeLapse&nbsp;</td>
         <td class="jd-descrcol" width="100%"><b>Supported only by Osmo with X3 camera</b><br>
@@ -1211,8 +1225,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Set the camera to take multiple pictures at once.
- The X5, X5R and XT cameras do not support HDR mode.
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the camera to take an HDR photo.
+  X5 camera, X5R camera, XT camera, Z30 camera, Phantom 4 Pro camera, X4S
+  camera and X5S camera do not support HDR mode.
 </p></div>
 
     
@@ -1243,9 +1258,49 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the camera to take a picture (or multiple pictures) continuously at a set time interval.
- The minimum interval for JPEG format of any quality is 2s.
- The minimum interval for Raw or Raw+JPEG format is 10s.
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the camera to take a picture (or multiple pictures) continuously at
+  a set time interval.
+  The minimum interval for JPEG format of any quality is 2s.
+  For all cameras except X4S, X5S and Phantom 4 Pro camera: The minimum
+  interval for RAW or RAW+JPEG format is 10s.
+  For the X4S, X5S and Phantom 4 Pro cameras the minimum interval for RAW
+  or RAW+JPEG dformat is 5s.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="RAWBurst"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../dji/common/camera/DJICameraSettingsDef.CameraShootPhotoMode.html">DJICameraSettingsDef.CameraShootPhotoMode</a>
+      </span>
+        RAWBurst
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the camera to take a burst of RAW photos. Use `rawPhotoBurstCount`
+  in `DJICameraSSDState` to check how many photos have been shot. RAW
+  photos can be shot faster with a continuous RAW burst than using
+  `DJICameraShootPhotoModeInterval` as the burst is used in conjunction
+  with SSD storage.
+  Only supported by X5S when using SSD storage.
 </p></div>
 
     
@@ -1309,12 +1364,12 @@ From interface
       
   <div class="jd-tagdata jd-tagdescr"><p><b>Supported only by Osmo with X3 camera</b><br>
  Sets the camera to take a picture (or multiple pictures) continuously at a set time interval.
- The camera will merge the photo sequence and the output is a video.
+ The camera will merge the photo pattern and the output is a video.
  The minimum interval for Video only format is 1 s.
  The minimum interval for Video+Photo format is 2 s.
 
  When using the Osmo firmware version TBD, no video feed will be received if the camera is shooting
- photos with Time-lapse mode. Instead, user can receive a sequence of preview images using delegate
+ photos with Time-lapse mode. Instead, user can receive a pattern of preview images using delegate
  method generateTimeLapsePreview.
 </p></div>
 
