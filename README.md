@@ -38,6 +38,7 @@ Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk
 ## SDK API Reference
 
 [**Android SDK API Documentation**](https://developer.dji.com/iframe/mobile-sdk-doc/android/reference/packages.html)
+
 [**Release Notes**](https://developer.dji.com/mobile-sdk/downloads/)
 
 ## Package Name Replace Script
