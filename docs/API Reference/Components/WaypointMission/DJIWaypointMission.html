@@ -1,0 +1,906 @@
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<html lang="en" style="padding-bottom:0px" class="local"></html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
+  <title>DJI Mobile SDK Documentation
+  </title><link rel="stylesheet" href="../../stylesheets/doc-vendor.css"><link rel="stylesheet" href="../../stylesheets/doc-app.css">
+</head>
+<body>
+  <nav id="site-header" class="site-header navbar">
+    <div class="container">
+      <div class="navbar-header"><a href="/" class="logo"><img src="../../images/dji-logo@2x.png">Android SDK API Reference</a></div>
+    </div>
+  </nav>
+  <div id="documentation-page" class="documentation-page">
+    <div class="container">
+      <div class="site-sidebar">
+        <div class="searcher">
+          <div id="panel" class="panel panel_tree">
+            <div class="header">
+              <div class="search-con">
+                <label id="search-label" for="search">
+                </label>
+                <input id="search" type="text" placeholder="Search" autosave="searchdoc" results="10" autocomplete="off">
+                <div class="search-icon"></div><a class="clean-search glyphicon glyphicon-remove-circle"></a>
+              </div>
+            </div>
+            <div class="tree">
+              <ul></ul>
+            </div>
+            <div class="result">
+              <ul></ul>
+            </div>
+          </div>
+        </div>
+        <div class="nav scrollable js-tree-menu">
+          <dl>
+            <dt>Manager Classes
+            </dt>
+                  <dd><a data-href="../SDKManager/DJISDKManager.html" class="sub-toggle">DJISDKManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../SDKManager/DJIBluetoothProductConnector.html" class="sub-toggle">BluetoothProductConnector<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../SDKManager/DJIBluetoothProductConnector_DJIBluetoothDevice.html">BluetoothDevice</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../KeyManager/DJIKeyManager.html" class="sub-toggle">KeyManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../KeyManager/DJIKey.html" class="sub-toggle">DJIKey<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../KeyManager/DJIBatteryKey.html">BatteryKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJICameraKey.html">CameraKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIGimbalKey.html">GimbalKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIProductKey.html">ProductKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIRemoteControllerKey.html">RemoteControllerKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIHandheldControllerKey.html">HandheldControllerKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIAirLinkKey.html">AirLinkKey</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../FlyZoneManager/DJIFlyZoneManager.html" class="sub-toggle">FlyZoneManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyZoneInformation.html" class="sub-toggle">FlyZoneInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJISubFlyZoneInformation.html">SubFlyZoneInformation</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Base Classes
+            </dt>
+                  <dd><a data-href="../../BaseClasses/DJIBaseProduct.html" class="sub-toggle">BaseProduct<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../../BaseClasses/DJIVideoFeeder.html">VideoFeeder</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../BaseComponent/DJIBaseComponent.html">BaseComponent</a>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Product Classes
+            </dt>
+                  <dd><a href="../../Products/Aircraft/DJIAircraft.html">Aircraft</a>
+                  </dd>
+                  <dd><a href="../../Products/Handheld/DJIHandheld.html">HandHeld</a>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Component Classes
+            </dt>
+                  <dd><a data-href="../FlightController/DJIFlightController.html" class="sub-toggle">FlightController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../FlightController/DJIFlightController_DJIFlightControllerCurrectState.html" class="sub-toggle">FlightControllerState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIFlightController_DJIAttitude.html">Attitude</a>
+                                      </dd>
+                                      <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate3D.html">LocationCoordinate3D</a>
+                                      </dd>
+                                      <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerCurrectState_DJIFlightControllerSmartGoHomeStatus.html">GoHomeAssessment</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Compass/DJICompass.html">Compass</a>
+                            </dd>
+                            <dd><a data-href="../RTK/DJIRTK.html" class="sub-toggle">RTK<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a data-href="../RTK/DJIRTK_DJIRTKState.html" class="sub-toggle">RTKState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../RTK/DJIRTK_DJIRTKReceiverInfo.html">ReceiverInfo</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../LandingGear/DJILandingGear.html">LandingGear</a>
+                            </dd>
+                            <dd><a data-href="../IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html" class="sub-toggle">Intelligent Flight Assistant<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a data-href="../VisionDetectionState/DJIVisionDetectionState.html" class="sub-toggle">VisionDetectionState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../VisionDetectionState/DJIVisionDetectionState_DJIVisionDetectionSector.html">Detection Sector</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a href="../IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html">Detection State</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">Simulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Simulator/DJISimulator_DJISimulatorInitializationData.html">InitializationData</a>
+                                      </dd>
+                                      <dd><a href="../Simulator/DJISimulator_DJISimulatorState.html">SimulatorState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">IMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">MultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
+                            </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Battery/DJIBattery_BatteryState.html">BatteryState</a>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Battery/DJIBattery_WarningRecord.html">WarningRecord</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Camera/DJICamera_DJICameraSystemState.html">SystemState</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraLensState.html">FocusState</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">SDCardState</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDState.html">SSDState</a>
+                            </dd>
+                            <dd><a data-href="../Camera/DJIMediaManager.html" class="sub-toggle">MediaManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJIMediaManager_DJIMedia.html">MediaFile</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">VideoPlaybackState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Camera/DJIPlaybackManager.html" class="sub-toggle">PlaybackManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJIPlaybackManager_DJICameraPlaybackState.html">PlaybackState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraParameters.html">Capabilities</a>
+                            </dd>
+                            <dd><a data-href="../Camera/DJICamera_DJICameraSettingsDef.html" class="sub-toggle">SettingsDefinitions<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_DJICameraExposureParameters.html">ExposureSettings</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraOpticalZoomSpec.html">OpticalZoomSpec</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraPhotoIntervalParam.html">PhotoTimeIntervalSettings</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraThermalProfile.html">ThermalProfile</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraThermalAreaTemperatureAggregations.html">ThermalAreaTemperatureAggregations</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraThermalExternalSceneSettings.html">ThermalExternalSceneSettings</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">ResolutionAndFrameRate</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraPictureStylePreset.html">PictureStylePreset</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_CameraLiveView.html">CameraLiveView</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Gimbal/DJIGimbal.html" class="sub-toggle">Gimbal<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Gimbal/DJIGimbal_GimbalState.html">GimbalState</a>
+                            </dd>
+                            <dd><a href="../Gimbal/DJIGimbal_movementSettingsState.html">MovementSettings</a>
+                            </dd>
+                            <dd><a href="../Gimbal/DJIGimbal_attitude.html">Attitude</a>
+                            </dd>
+                            <dd><a data-href="../Gimbal/DJIGimbal_DJIGimbalRotation.html" class="sub-toggle">Rotation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Gimbal/DJIGimbal_DJIGimbalRotation_Constructor.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../AirLink/DJIAirLink.html" class="sub-toggle">AirLink<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../LBAirLink/DJILBAirLink.html" class="sub-toggle">Lightbridge<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../LBAirLink/DJILBAirLink_DJILBAirLinkChannelInterference.html">ChannelInterference</a>
+                                      </dd>
+                                      <dd><a href="../LBAirLink/DJILBAirLink_DJILightbridgeAntennaRSSI.html">LightbridgeAntennaRSSI</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../OcuSyncLink/DJIOcuSyncLink.html" class="sub-toggle">OcuSyncLink<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../OcuSyncLink/DJIOcuSyncLink_DJIOcuSyncFrequencyInterference.html">FrequencyInterference</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../WiFiLink/DJIWiFiLink.html" class="sub-toggle">WiFi<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../WiFiLink/DJIWiFiLink_DJIWiFiChannelInterference.html">WifiChannelInterference</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">RemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightWheel</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareTransformationSwitch.html">TransformationSwitch</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html">Button</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCFiveDButton.html">FiveDButton</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCGPSData.html" class="sub-toggle">GPSData<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCGpsTime.html">Time</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_GPSLocation.html">GPSLocation</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCBatteryInfo.html">ChargeRemaining</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCRemoteFocusState.html">FocusControllerState</a>
+                            </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html" class="sub-toggle">AircraftMapping<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftStickMapping.html">AircraftStickMapping</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html" class="sub-toggle">CustomButtonTags<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam_Constructor.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCInfo.html">Information</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCMasterSlaveState.html">MasterSlaveState</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalControlSpeed.html">GimbalControlSpeedCoefficient</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_ResponseForGimbalControl.html">ResponseForGimbalControl</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_JoinMasterAuthorizationInfo.html">AuthorizationInfo</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../HandheldController/DJIHandheldController.html" class="sub-toggle">HandheldController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../HandheldController/DJIHandheldController_DJIHandheldControllerHardwareState.html">HardwareState</a>
+                            </dd>
+                            <dd><a data-href="../HandheldController/DJIHandheldController_DJIHandheldControllerLEDCommand.html" class="sub-toggle">LEDCommand<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../HandheldController/DJIHandheldController_DJIHandheldControllerLEDCommand_DJIHandheldControllerLEDColorPattern.html">LEDColorPattern</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../MobileRemoteController/DJIMobileRemoteController.html">MobileRemoteController</a>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Mission Classes
+            </dt>
+                  <dd><a data-href="../Missions/DJIMissionControl.html" class="sub-toggle">MissionControl<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionControlTimelineElement.html">TimelineElement</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionControlError.html">MissionControlError</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIMissionAction.html" class="sub-toggle">MissionAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJITakeOffAction.html">TakeOffAction</a>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIAircraftYawAction.html" class="sub-toggle">AircraftYawAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIAircraftYawAction_DJIAircraftYawActionError.html">AircraftYawActionError</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIGoToAction.html" class="sub-toggle">GoToAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIGoToAction_DJIGoToActionError.html">GoToActionError</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Missions/DJIGoHomeAction.html">GoHomeAction</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIHotpointAction.html">HotpointAction</a>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIGimbalAttitudeAction.html" class="sub-toggle">GimbalAttitudeAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIGimbalAttitudeAction_DJIGimbalAttitudeActionError.html">GimbalAttitudeActionError</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIRecordVideoAction.html" class="sub-toggle">RecordVideoAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIRecordVideoAction_DJIRecordVideoActionError.html">RecordVideoActionError</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIShootPhotoAction.html" class="sub-toggle">ShootPhotoAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIShootPhotoAction_DJIShootPhotoActionError.html">ShootPhotoActionError</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../Missions/DJIMissionTrigger.html">Trigger</a>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../Missions/DJIWaypointMission.html" class="sub-toggle">WaypointMission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIWaypointMission_Builder.html">Builder</a>
+                                      </dd>
+                                      <dd><a data-href="../Missions/DJIWaypoint.html" class="sub-toggle">Waypoint<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../Missions/DJIWaypoint_DJIWaypointAction.html">WaypointAction</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Missions/DJIWaypointMissionEvent.html">WaypointMissionEvent</a>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIWaypointMissionUploadEvent.html" class="sub-toggle">WaypointMissionUploadEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIWaypointMission_DJIWaypointUploadProgress.html">WaypointUploadProgress</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIWaypointMissionDownloadEvent.html" class="sub-toggle">WaypointMissionDownloadEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIWaypointMission_DJIWaypointDownloadProgress.html">WaypointDownloadProgress</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIWaypointMissionExecutionEvent.html" class="sub-toggle">WaypointMissionExecutionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIWaypointMission_DJIWaypointExecutionProgress.html">WaypointExecutionProgress</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Missions/DJIWaypointMissionState.html">WaypointMissionState</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIFollowMeMissionOperator.html" class="sub-toggle">FollowMeMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIFollowMeMission.html">FollowMeMission</a>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIFollowMeMissionEvent.html" class="sub-toggle">FollowMeMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIFollowMeMissionState.html">FollowMeMissionState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIPanoramaMissionOperator.html" class="sub-toggle">PanoramaMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIPanoramaMissionEvent.html">PanoramaMissionEvent</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIPanoramaMissionState.html">PanoramaMissionState</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIPanoramaMission_DJIPanoramaMissionStatus.html">PanoramaMissionExecutionState</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIHotpointMissionOperator.html" class="sub-toggle">HotpointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIHotPointMission.html">HotpointMission</a>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIHotpointMissionEvent.html" class="sub-toggle">HotpoinMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIHotpointMissionState.html">HotpointMissionState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJITapFlyMissionOperator.html" class="sub-toggle">TapFlyMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../Missions/DJITapFlyMission.html" class="sub-toggle">TapFlyMission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJITapFlyMission_DJITapFlyExecutionState.html">TapFlyExecutionState</a>
+                                      </dd>
+                                      <dd><a href="../Missions/DJITapFlyMission_DJIVector.html">Vector</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJITapFlyMissionEvent.html" class="sub-toggle">TapFlyMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJITapFlyMissionState.html">TapFlyMissionState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIActiveTrackMissionOperator.html" class="sub-toggle">ActiveTrackOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../Missions/DJIActiveTrackMission.html" class="sub-toggle">ActiveTrackMission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIActiveTrackTrackingState.html">ActiveTrackTrackingState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIActiveTrackMissionEvent.html" class="sub-toggle">ActiveTrackMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIActiveTrackMissionState.html">ActiveTrackState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Misc Classes
+            </dt>
+                  <dd><a href="../../Utils/DJICommonCallbacks.html">CommonCallbacks</a>
+                  </dd>
+                  <dd><a data-href="../ParamCapability/DJIParamCapability.html" class="sub-toggle">DJIParamCapability<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../ParamCapability/DJIParamCapability_DJIParamCapabilityMinMax.html">DJIParamMinMaxCapability</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../SDKError/DJIError.html" class="sub-toggle">DJIError<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../SDKError/DJIError_DJIGimbalError.html">DJIGimbalError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJISDKCacheError.html">DJISDKCacheError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJICameraError.html">DJICameraError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIFlightControllerError.html">DJIFlightControllerError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIMissionManagerError.html">DJIMissionError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIAirLinkError.html">DJIAirLinkError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../Diagnostics/DJIDiagnostics.html">DJIDiagnostics</a>
+                  </dd>
+                  <dd><a href="../CodecManager/DJICodecManager.html">DJICodecManager</a>
+                  </dd>
+                  <dd><a href="../Stick/DJIStick.html">Stick</a>
+                  </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="site-main">
+        <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIWaypointMission</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJIWaypointMission</span> <span class="keyword">extends</span> <span class="title">DJIMission</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/Mission/DJIMission.html#djimission">DJIMission</a></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission</font></td></tr></table></html>
+<h5 id="description">Description:</h5>
+<p><font color="#666">In the waypoint mission, the aircraft will travel between waypoints, execute actions at waypoints, and  adjust heading and altitude between waypoints. Waypoints are physical locations to which the aircraft  will fly. Creating a series of waypoints, in effect, will program a flight route for the aircraft to  follow. Actions can also be added to waypoints, which will be carried out when the aircraft reaches the  waypoint. The aircraft travels between waypoints automatically at a base speed. However, the user can  change the speed by using the pitch joystick. If the stick is pushed up, the speed will increase. If  the stick is pushed down, the speed will slow down. The stick can be pushed down to stop the aircraft  and further pushed to start making the aircraft travel back along the path it came. When the aircraft  is traveling through waypoints in the reverse order, it will not execute waypoint actions at each  waypoint. If the stick is released, the aircraft will again travel through the waypoints in the original  order, and continue to execute waypoint actions (even if executed previously). If the aircraft is pulled  back along the waypoint mission all the way to the first waypoint, then it will hover in place until the  stick is released enough for it to again progress through the mission from start to finish. It is not  supported by Mavic Pro when using WiFi connection.</font></p>
+<h5 id="class-members">Class Members:</h5>
+<div class="api-row" id="djiwaypointmission_waypointcount"><div class="api-col left">Waypoint Count</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_waypointcount_inline">getWaypointCount</a></div></div><div class="inline-doc" id="djiwaypointmission_waypointcount_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getWaypointCount</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getWaypointCount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_waypointCount</font></td></tr></table></html>
+<h5 id="description-v2">Description:</h5>
+<p><font color="#666">Number of waypoints in the waypoint mission.</font></p>
+<h5 id="return">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiwaypointmission_maxflightspeed"><div class="api-col left">Max Flight Speed</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_maxflightspeed_inline">maxFlightSpeed</a></div></div><div class="inline-doc" id="djiwaypointmission_maxflightspeed_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>maxFlightSpeed</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">float</span> maxFlightSpeed</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_maxFlightSpeed</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">While the aircraft is traveling between waypoints, you can offset its speed by using the throttle joystick  on the remote controller. <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_maxflightspeed">maxFlightSpeed</a></code> is this offset when the joystick is pushed  to maximum deflection. For example, If maxFlightSpeed is 10 m/s, then pushing the throttle joystick all the  way up will add 10 m/s to the aircraft speed, while pushing down will subtract 10 m/s from the aircraft  speed. If the remote controller stick is not at maximum deflection, then the offset speed will be  interpolated between [0, <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_maxflightspeed">maxFlightSpeed</a></code>] with a resolution of 1000 steps. If the  offset speed is negative, then the aircraft will fly backwards to previous waypoints. When it reaches the  first waypoint, it will then hover in place until a positive speed is  applied. <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_maxflightspeed">maxFlightSpeed</a></code> has a range of [2,15] m/s.</font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_autoflightspeed"><div class="api-col left">Auto Flight Speed</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_autoflightspeed_inline">autoFlightSpeed</a></div></div><div class="inline-doc" id="djiwaypointmission_autoflightspeed_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>autoFlightSpeed</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">float</span> autoFlightSpeed</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_autoFlightSpeed</font></td></tr></table></html>
+<h5 id="description-v4">Description:</h5>
+<p><font color="#666">The base automatic speed of the aircraft as it moves between waypoints with range [-15, 15] m/s. The  aircraft's actual speed is a combination of the base automatic speed, and the speed control given by  the throttle joystick on the remote controller. If <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_autoflightspeed">autoFlightSpeed</a></code> &gt;0: Actual  speed is <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_autoflightspeed">autoFlightSpeed</a></code> + Joystick Speed (with combined max  of <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_maxflightspeed">maxFlightSpeed</a></code>) If <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_autoflightspeed">autoFlightSpeed</a></code> =0: Actual speed is  controlled only by the remote controller joystick. If <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_autoflightspeed">autoFlightSpeed</a></code> &lt;0 and the  aircraft is at the first waypoint, the aircraft will hover in place until the speed is made positive by  the remote controller joystick.</font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_finishedaction"><div class="api-col left">Finished Action</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_finishedaction_inline">finishedAction</a></div></div><div class="inline-doc" id="djiwaypointmission_finishedaction_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>finishedAction</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">DJIWaypointMissionFinishedAction finishedAction</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_finishedAction</font></td></tr></table></html>
+<h5 id="description-v5">Description:</h5>
+<p><font color="#666">Action the aircraft will take when the waypoint mission is complete.</font></p>
+<h5 id="see-also">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionfinishedaction">DJIWaypointMissionFinishedAction</a></code></font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_headingmode"><div class="api-col left">Heading Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_headingmode_inline">headingMode</a></div></div><div class="inline-doc" id="djiwaypointmission_headingmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>headingMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">DJIWaypointMissionHeadingMode headingMode = DJIWaypointMissionHeadingMode.AUTO</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_headingMode</font></td></tr></table></html>
+<h5 id="description-v6">Description:</h5>
+<p><font color="#666">Heading of the aircraft as it moves between waypoints. Default  is <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionheadingmode_auto">AUTO</a></code>.</font></p>
+<h5 id="see-also-v2">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionheadingmode">DJIWaypointMissionHeadingMode</a></code>, <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_headingmode">headingMode</a></code>, <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionheadingmode">DJIWaypointMissionHeadingMode</a></code></font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_flightpathmode"><div class="api-col left">Flight Path Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_flightpathmode_inline">flightPathMode</a></div></div><div class="inline-doc" id="djiwaypointmission_flightpathmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>flightPathMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">DJIWaypointMissionFlightPathMode flightPathMode</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_flightPathMode</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">What type of path is generated for the aircraft to follow. Path can either be generated by connecting  adjacent waypoints with straight lines, or with smooth curves. Default is Normal. <br></font></p>
+<h5 id="see-also-v3">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode">DJIWaypointMissionFlightPathMode</a></code></font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_gotofirstwaypointmode"><div class="api-col left">Go To First Waypoint Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_gotofirstwaypointmode_inline">goFirstWaypointMode</a></div></div><div class="inline-doc" id="djiwaypointmission_gotofirstwaypointmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>goFirstWaypointMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">DJIWaypointMissionGotoWaypointMode goFirstWaypointMode = DJIWaypointMissionGotoWaypointMode.SAFELY</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_gotoFirstWaypointMode</font></td></tr></table></html>
+<h5 id="description-v8">Description:</h5>
+<p><font color="#666">Determines the aricraft how to go to first waypoint frome current position. Default  is <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissiongotowaypointmode_safely">SAFELY</a></code>.</font></p>
+<h5 id="see-also-v4">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissiongotowaypointmode">DJIWaypointMissionGotoWaypointMode</a></code>, <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_gotofirstwaypointmode">goFirstWaypointMode</a></code>, <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissiongotowaypointmode">DJIWaypointMissionGotoWaypointMode</a></code></font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_exitmissiononrcsignallost"><div class="api-col left">Whether Exit Mission</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_exitmissiononrcsignallost_inline">needExitMissionOnRCSignalLost</a></div></div><div class="inline-doc" id="djiwaypointmission_exitmissiononrcsignallost_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>needExitMissionOnRCSignalLost</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">boolean</span> needExitMissionOnRCSignalLost = <span class="keyword">false</span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_exitMissionOnRCSignalLost</font></td></tr></table></html>
+<h5 id="description-v9">Description:</h5>
+<p><font color="#666">Determines whether to exit the mission when the RC signal is lost. Default is <code>false</code>.</font></p>
+<h5 id="see-also-v5">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_exitmissiononrcsignallost">needExitMissionOnRCSignalLost</a></code></font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_pointofinterestlatitude"><div class="api-col left">Point of Interest Latitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_pointofinterestlatitude_inline">pointOfInterestLatitude</a></div></div><div class="inline-doc" id="djiwaypointmission_pointofinterestlatitude_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>pointOfInterestLatitude</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">double</span> pointOfInterestLatitude = Double.NaN</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_pointOfInterestLatitude</font></td></tr></table></html>
+<h5 id="description-v10">Description:</h5>
+<p><font color="#666">Used when <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_headingmode">headingMode</a></code> is <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionheadingmode_towardpointofinterest">TOWARD_POINT_OF_INTEREST</a></code>.  The aircraft will always head to a point while executing mission. Default is 'NaN'.</font></p>
+<h5 id="see-also-v6">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_pointofinterestlatitude">pointOfInterestLatitude</a></code></font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_pointofinterestlongitude"><div class="api-col left">Point of Interest Longitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_pointofinterestlongitude_inline">pointOfInterestLongitude</a></div></div><div class="inline-doc" id="djiwaypointmission_pointofinterestlongitude_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>pointOfInterestLongitude</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">double</span> pointOfInterestLongitude = Double.NaN</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_pointOfInterestLongitude</font></td></tr></table></html>
+<h5 id="description-v11">Description:</h5>
+<p><font color="#666">Property is used when <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_headingmode">headingMode</a></code> is <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionheadingmode_towardpointofinterest">TOWARD_POINT_OF_INTEREST</a></code>.  Aircraft will always head to a point while executing mission. Default is 'NaN'.</font></p>
+<h5 id="see-also-v7">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_pointofinterestlongitude">pointOfInterestLongitude</a></code></font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_rotategimbalpitch"><div class="api-col left">Rotate Gimbal Pitch</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_rotategimbalpitch_inline">needRotateGimbalPitch</a></div></div><div class="inline-doc" id="djiwaypointmission_rotategimbalpitch_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>needRotateGimbalPitch</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">boolean</span> needRotateGimbalPitch = <span class="keyword">false</span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_rotateGimbalPitch</font></td></tr></table></html>
+<h5 id="description-v12">Description:</h5>
+<p><font color="#666">Determines whether the aircraft can rotate gimbal pitch when executing waypoint mission. If <code>true</code>, the aircraft will control gimbal pitch rotation between waypoints using  the <code><a href="../../Components/Waypoint/DJIWaypoint.html#djiwaypoint_gimbalpitch">gimbalPitch</a></code> of the <code><a href="../../Components/Waypoint/DJIWaypoint.html#djiwaypoint">DJIWaypoint</a></code>.</font></p>
+<h5 id="see-also-v8">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_rotategimbalpitch">needRotateGimbalPitch</a></code></font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_repeattimes"><div class="api-col left">Repeat Times</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_repeattimes_inline">repeatNum</a></div></div><div class="inline-doc" id="djiwaypointmission_repeattimes_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>repeatNum</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">int</span> repeatNum = <span class="number">1</span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_repeatTimes</font></td></tr></table></html>
+<h5 id="description-v13">Description:</h5>
+<p><font color="#666">Repeat times for mission execution. Default is 0. If the value is 1, the aircraft will return to the  first waypoint after finishing the task, and repeat the task once more.</font></p>
+<h5 id="see-also-v9">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_repeattimes">repeatNum</a></code></font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_addwaypoint"><div class="api-col left">Add Waypoint</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_addwaypoint_inline">addWaypoint</a></div></div><div class="inline-doc" id="djiwaypointmission_addwaypoint_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>addWaypoint</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">addWaypoint</span><span class="params">(DJIWaypoint waypoint)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_addWaypoint</font></td></tr></table></html>
+<h5 id="description-v14">Description:</h5>
+<p><font color="#666">Add a waypoint to the waypoint mission. The number of waypoints should be in the range [TODO, 99]. A  waypoint will only be valid if the distance (in three dimensions) between two adjacent waypoints is in  range [0.5,2000] meters.</font></p>
+<h5 id="input-parameters">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Waypoint/DJIWaypoint.html#djiwaypoint">DJIWaypoint</a> <font color="#000">waypoint</font></font></td><td><font color="#666"><i>to be added to the waypoint mission.</i></font></td></tr></table></html>
+<h5 id="return-v2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiwaypointmission_addwaypoints"><div class="api-col left">Add Waypoints</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_addwaypoints_inline">addWaypoints</a></div></div><div class="inline-doc" id="djiwaypointmission_addwaypoints_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>addWaypoints</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">addWaypoints</span><span class="params">(List&lt;DJIWaypoint&gt; waypoints)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_addWaypoints</font></td></tr></table></html>
+<h5 id="description-v15">Description:</h5>
+<p><font color="#666">Adds a list of waypoints to the waypoint mission.</font></p>
+<h5 id="input-parameters-v2">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../../Components/Waypoint/DJIWaypoint.html#djiwaypoint">DJIWaypoint</a>&gt; <font color="#000">waypoints</font></font></td><td><font color="#666"><i>Array of waypoints to be added to the waypoint mission.</i></font></td></tr></table></html>
+<h5 id="return-v3">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiwaypointmission_removewaypoint"><div class="api-col left">Remove Waypoint</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_removewaypoint_inline">removeWaypoint</a></div></div><div class="inline-doc" id="djiwaypointmission_removewaypoint_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>removeWaypoint</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeWaypoint</span><span class="params">(DJIWaypoint waypoint)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_removeWaypoint</font></td></tr></table></html>
+<h5 id="description-v16">Description:</h5>
+<p><font color="#666">Removes a specific waypoint that was previously added.</font></p>
+<h5 id="input-parameters-v3">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Waypoint/DJIWaypoint.html#djiwaypoint">DJIWaypoint</a> <font color="#000">waypoint</font></font></td><td><font color="#666"><i>Waypoint object to be removed.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiwaypointmission_removewaypointatindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_removewaypointatindex_inline">removeWaypointAtIndex</a></div></div><div class="inline-doc" id="djiwaypointmission_removewaypointatindex_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>removeWaypointAtIndex</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeWaypointAtIndex</span><span class="params">(<span class="keyword">int</span> index)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_removeWaypointAtIndex</font></td></tr></table></html>
+<h5 id="description-v17">Description:</h5>
+<p><font color="#666">Removes the specific waypoint that was previously added.</font></p>
+<h5 id="input-parameters-v4">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</font></font></td><td><font color="#666"><i>Index of the waypoint to be removed from the waypoint mission.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiwaypointmission_removeallwaypoints"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_removeallwaypoints_inline">removeAllWaypoints</a></div></div><div class="inline-doc" id="djiwaypointmission_removeallwaypoints_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>removeAllWaypoints</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeAllWaypoints</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_removeAllWaypoints</font></td></tr></table></html>
+<h5 id="description-v18">Description:</h5>
+<p><font color="#666">Removes all waypoints from the waypoint mission.</font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_getwaypointatindex"><div class="api-col left">Get Waypoint At Index</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_getwaypointatindex_inline">getWaypointAtIndex</a></div></div><div class="inline-doc" id="djiwaypointmission_getwaypointatindex_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getWaypointAtIndex</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIWaypoint <span class="title">getWaypointAtIndex</span><span class="params">(<span class="keyword">int</span> index)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_getWaypointAtIndex</font></td></tr></table></html>
+<h5 id="description-v19">Description:</h5>
+<p><font color="#666">Gets the waypoint at the specified index in the mission waypoint array. Return Waypoint of  type <code><a href="../../Components/Waypoint/DJIWaypoint.html#djiwaypoint">DJIWaypoint</a></code>, if the index exists.</font></p>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</font></font></td><td><font color="#666"><i>Index of the waypoint to be retrieved from the array of waypoints in the waypoint mission.</i></font></td></tr></table></html>
+<h5 id="return-v4">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Waypoint/DJIWaypoint.html#djiwaypoint">DJIWaypoint</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/Waypoint/DJIWaypoint.html#djiwaypoint">DJIWaypoint</a></code>.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiwaypointmission_setautoflightspeed"><div class="api-col left">Set Auto Flight Speed</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_setautoflightspeed_inline">setAutoFlightSpeed</a></div></div><div class="inline-doc" id="djiwaypointmission_setautoflightspeed_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setAutoFlightSpeed</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setAutoFlightSpeed</span><span class="params">(<span class="keyword">float</span> speed, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_setAutoFlightSpeed</font></td></tr></table></html>
+<h5 id="description-v20">Description:</h5>
+<p><font color="#666">Set the flight speed while the mission is executing automatically (without manual joystick speed input).  This is the only property or method in this class that can communicate with the aircraft during a mission.  All other properties and methods are used offline to prepare the mission which is then uploaded to the aircraft.</font></p>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">speed</font></font></td><td><font color="#666"><i>Auto flight speed to be set. The absolute value of the auto flight speed should be less than or equal to  the <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_maxflightspeed">maxFlightSpeed</a></code>. Its range is [-<code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_maxflightspeed">maxFlightSpeed</a></code>, <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_maxflightspeed">maxFlightSpeed</a></code>] m/s.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the execution result returned.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiwaypointmission_waypointslist"><div class="api-col left">Waypoints List</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_waypointslist_inline">waypointsList</a></div></div><div class="inline-doc" id="djiwaypointmission_waypointslist_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>waypointsList</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">List&lt;DJIWaypoint&gt; waypointsList</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_waypointsList</font></td></tr></table></html>
+<h5 id="description-v21">Description:</h5>
+<p><font color="#666">ArrayList of waypoints in the task.</font></p>
+</div>
+<div class="api-row" id="djiwaypointmission_ispausable"><div class="api-col left">Check Mission Pausable</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_ispausable_inline">isPausable</a></div></div><div class="inline-doc" id="djiwaypointmission_ispausable_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>isPausable</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"> <span class="function"><span class="keyword">boolean</span> <span class="title">isPausable</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_isPausable</font></td></tr></table></html>
+<h5 id="description-v22">Description:</h5>
+<p><font color="#666">Indicates whether the mission can be paused.</font></p>
+<h5 id="return-v5">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
+<h5 id="related">Related:</h5>
+<div class="api-row" id="djiwaypointmission_djiwaypointmissionstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/WaypointMission/DJIWaypointMission_DJIWaypointMissionStatus.html">DJIWaypointMissionStatus</a></div></div><div class="api-row" id="djiwaypointmission_djiwaypointmissionexecutestate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_djiwaypointmissionexecutestate_inline">DJIWaypointMissionExecutionState</a></div></div><div class="inline-doc" id="djiwaypointmission_djiwaypointmissionexecutestate_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>DJIWaypointMissionExecutionState</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">enum</span> DJIWaypointMissionExecutionState</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_DJIWaypointMissionExecuteState</font></td></tr></table></html>
+<h5 id="description-v23">Description:</h5>
+<p><font color="#666">Current waypoint mission state.</font></p>
+<h5 id="enum-members">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionexecutestate_initializing_inline"></a>INITIALIZING</font></td><td><font color="#666">Waypoint mission is initializing, which means the mission has started and the aircraft is going to the first waypoint.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionexecutestate_moving_inline"></a>MOVING</font></td><td><font color="#666">Aircraft is currently moving toward the mission's next waypoint. This happens when  the <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode">DJIWaypointMissionFlightPathMode</a></code> is set  to <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode_normal">NORMAL</a></code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionexecutestate_curvemodemoving_inline"></a>CURVE_MODE_MOVING</font></td><td><font color="#666">Aircraft is currently moving. This happens when the <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode">DJIWaypointMissionFlightPathMode</a></code> is set  to <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode_curved">CURVED</a></code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionexecutestate_curvemodeturning_inline"></a>CURVE_MODE_TURNING</font></td><td><font color="#666">Aircraft is currently turning. This happens when the <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode">DJIWaypointMissionFlightPathMode</a></code>  is set to <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode_curved">CURVED</a></code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionexecutestate_beginaction_inline"></a>BEGIN_ACTION</font></td><td><font color="#666">Aircraft has reached a waypoint, has rotated to the new heading and is now processing actions. This state  will be called before the waypoint actions starts executing and will occur for each waypoint action.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionexecutestate_doingaction_inline"></a>DOING_ACTION</font></td><td><font color="#666">Aircraft is at a waypoint and is executing an action.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionexecutestate_finishedaction_inline"></a>FINISHED_ACTION</font></td><td><font color="#666">Aircraft is at a waypoint and has finished executing the current waypoint action. This state occurs once  for each waypoint action.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionexecutestate_returntofirstwaypoint_inline"></a>RETURN_TO_FIRST_WAYPOINT</font></td><td><font color="#666">Aircraft has returned to the first waypoint. This happens when the <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_finishedaction">finishedAction</a></code>  is set to <code><a href="../../Components/WaypointMission/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionexecutestate_returntofirstwaypoint">RETURN_TO_FIRST_WAYPOINT</a></code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionexecutestate_paused_inline"></a>PAUSED</font></td><td><font color="#666">The mission is currently paused by the user.</font></td></tr></table></html>
+<h5 id="class-members-v2">Class Members:</h5>
+</div>
+<div class="api-row" id="djiwaypointmission_djiwaypointmissionfinishedaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_djiwaypointmissionfinishedaction_inline">DJIWaypointMissionFinishedAction</a></div></div><div class="inline-doc" id="djiwaypointmission_djiwaypointmissionfinishedaction_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>DJIWaypointMissionFinishedAction</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">enum</span> DJIWaypointMissionFinishedAction</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_DJIWaypointMissionFinishedAction</font></td></tr></table></html>
+<h5 id="description-v24">Description:</h5>
+<p><font color="#666">Actions taken when the waypoint mission has finished.</font></p>
+<h5 id="enum-members-v2">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionfinishedaction_noaction_inline"></a>NO_ACTION</font></td><td><font color="#666">No further action will be taken on completion of mission. At this point, the aircraft can be  controlled by the remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionfinishedaction_gohome_inline"></a>GO_HOME</font></td><td><font color="#666">The aircraft will go home when the mission is complete. If the aircraft is more than 20m away from  the home point it will go home and land. Otherwise, it will land directly at the current location.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionfinishedaction_autoland_inline"></a>AUTO_LAND</font></td><td><font color="#666">The aircraft will land automatically at the last waypoint.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionfinishedaction_gofirstwaypoint_inline"></a>GO_FIRST_WAYPOINT</font></td><td><font color="#666">The aircraft will go back to its first waypoint and hover in position.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionfinishedaction_continueuntilstop_inline"></a>CONTINUE_UNTIL_END</font></td><td><font color="#666">When the aircraft reaches its final waypoint, it will hover without ending the mission. The joystick  can still be used to pull the aircraft back along its previous waypoints. The only way this mission  can end is if stopMission is called.</font></td></tr></table></html>
+<h5 id="class-members-v3">Class Members:</h5>
+</div>
+<div class="api-row" id="djiwaypointmission_djiwaypointmissionheadingmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_djiwaypointmissionheadingmode_inline">DJIWaypointMissionHeadingMode</a></div></div><div class="inline-doc" id="djiwaypointmission_djiwaypointmissionheadingmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>DJIWaypointMissionHeadingMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">enum</span> DJIWaypointMissionHeadingMode</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_DJIWaypointMissionHeadingMode</font></td></tr></table></html>
+<h5 id="description-v25">Description:</h5>
+<p><font color="#666">Current waypoint mission heading mode.</font></p>
+<h5 id="enum-members-v3">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionheadingmode_auto_inline"></a>AUTO</font></td><td><font color="#666">Aircraft's heading will always be in the direction of flight.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionheadingmode_usinginitialdirection_inline"></a>USING_INITIAL_DIRECTION</font></td><td><font color="#666">Aircraft's heading will be set to the initial take-off heading.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionheadingmode_controledbyremotecontroller_inline"></a>CONTROL_BY_REMOTE_CONTROLLER</font></td><td><font color="#666">Aircraft's heading will be controlled by the remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionheadingmode_usingwaypointheading_inline"></a>USING_WAYPOINT_HEADING</font></td><td><font color="#666">Aircraft's heading will be set to the previous waypoint's heading while travelling between waypoints.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionheadingmode_towardpointofinterest_inline"></a>TOWARD_POINT_OF_INTEREST</font></td><td><font color="#666">Aircraft's heading will always toward point of interest.</font></td></tr></table></html>
+<h5 id="class-members-v4">Class Members:</h5>
+</div>
+<div class="api-row" id="djiwaypointmission_djiwaypointmissionflightpathmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_djiwaypointmissionflightpathmode_inline">DJIWaypointMissionFlightPathMode</a></div></div><div class="inline-doc" id="djiwaypointmission_djiwaypointmissionflightpathmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>DJIWaypointMissionFlightPathMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">enum</span> DJIWaypointMissionFlightPathMode</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_DJIWaypointMissionFlightPathMode</font></td></tr></table></html>
+<h5 id="description-v26">Description:</h5>
+<p><font color="#666">Waypoint mission flight path mode.</font></p>
+<h5 id="enum-members-v4">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionflightpathmode_normal_inline"></a>NORMAL</font></td><td><font color="#666">The flight path will be normal and the aircraft will move from one waypoint to the next in straight lines.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissionflightpathmode_curved_inline"></a>CURVED</font></td><td><font color="#666">The flight path will be curved and the aircraft will move from one waypoint to the next in a curved motion,  adhering to the <code><a href="../../Components/Waypoint/DJIWaypoint.html#djiwaypoint_cornerradiusinmeters">cornerRadiusInMeters</a></code>, which is set in <code><a href="../../Components/Waypoint/DJIWaypoint.html#djiwaypoint">DJIWaypoint</a></code>.</font></td></tr></table></html>
+<h5 id="class-members-v5">Class Members:</h5>
+</div>
+<div class="api-row" id="djiwaypointmission_djiwaypointmissiongotowaypointmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_djiwaypointmissiongotowaypointmode_inline">DJIWaypointMissionGotoWaypointMode</a></div></div><div class="inline-doc" id="djiwaypointmission_djiwaypointmissiongotowaypointmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>DJIWaypointMissionGotoWaypointMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">enum</span> DJIWaypointMissionGotoWaypointMode</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_DJIWaypointMissionGotoWaypointMode</font></td></tr></table></html>
+<h5 id="description-v27">Description:</h5>
+<p><font color="#666">This enum will determine the goto point mode while the drone executes the flight.</font></p>
+<h5 id="enum-members-v5">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissiongotowaypointmode_safely_inline"></a>SAFELY</font></td><td><font color="#666">Go to the waypoint safely. The aircraft will rise to the same altitude of the waypoint if the current  altitude is lower then the waypoint altitude. It then goes to the waypoint coordinate from the current  altitude, and proceeds to the altitude of the waypoint.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointmission_djiwaypointmissiongotowaypointmode_pointtopoint_inline"></a>POINT_TO_POINT</font></td><td><font color="#666">Go to the waypoint from the current aircraft point to the waypoint directly.</font></td></tr></table></html>
+<h5 id="class-members-v6">Class Members:</h5>
+</div>
+<div class="api-row" id="djiwaypointmission_djiwaypointmissionoperatorlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_djiwaypointmissionoperatorlistener_inline">WaypointMissionOperatorListener</a></div></div><div class="inline-doc" id="djiwaypointmission_djiwaypointmissionoperatorlistener_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">interface </font>WaypointMissionOperatorListener</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">WaypointMissionOperatorListener</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missioncontrol.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_DJIWaypointMissionOperatorListener</font></td></tr></table></html>
+<h5 id="description-v28">Description:</h5>
+<p><font color="#666">An object that encapsulate the necessary elements to listen to event, state and other updates on the mission. These may be created manually or using the convenience creators.</font></p>
+<h5 id="interface-methods">Interface Methods:</h5>
+<div class="api-row" id="djiwaypointmission_djiwaypointmissionoperator_djiwaypointmissionoperatorlisteningblock"><div class="api-col left">Listening Block</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmission_djiwaypointmissionoperator_djiwaypointmissionoperatorlisteningblock_inline">onUpdate</a></div></div><div class="inline-doc" id="djiwaypointmission_djiwaypointmissionoperator_djiwaypointmissionoperatorlisteningblock_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>onUpdate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(@Nullable WaypointMissionState previousState,</span></span></div><div class="line">              @NonNull WaypointMissionState currentState,</div><div class="line">              @NonNull WaypointMissionOldEvent event,</div><div class="line">              @Nullable Object info)</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missioncontrol.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_DJIWaypointMissionOperator_DJIWaypointMissionOperatorListeningBlock</font></td></tr></table></html>
+<h5 id="description-v29">Description:</h5>
+<p><font color="#666">This block is used in all common listening of state and event changes of the mission</font></p>
+<h5 id="input-parameters-v7">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIWaypointMission_DJIWaypointMissionOperator.html#djiwaypointmission_djiwaypointmissionoperator_djiwaypointmissionevent">WaypointMissionOldEvent</a> <font color="#000">event</font></font></td><td><font color="#666"><i>The event which trigger this block to be called.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Components/Missions/DJIWaypointMission_DJIWaypointMissionOperator.html#djiwaypointmission_djiwaypointmissionoperator_djiwaypointmissionstate">WaypointMissionState</a> <font color="#000">previousState</font></font></td><td><font color="#666"><i>The previous state of the mission.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIWaypointMission_DJIWaypointMissionOperator.html#djiwaypointmission_djiwaypointmissionoperator_djiwaypointmissionstate">WaypointMissionState</a> <font color="#000">currentState</font></font></td><td><font color="#666"><i>The current state of the mission. May be the same as previous state.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable Object <font color="#000">info</font></font></td><td><font color="#666"><i>An optional additional object containing relevant data for the block.</i></font></td></tr></table></html></div>
+</div>
+<h5 id="inherited-methods">Inherited Methods:</h5>
+<div class="api-row" id="djimission_ispausable"><div class="api-col left">dji.sdk.missionmanager.DJIMission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimission_ispausable_inline">isPausable</a></div></div><div class="inline-doc" id="djimission_ispausable_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>isPausable</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isPausable</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.missionmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMission_isPausable</font></td></tr></table></html>
+<h5 id="description-v30">Description:</h5>
+<p><font color="#666">Determines whether current mission can be paused.</font></p>
+<h5 id="return-v6">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the mission can be paused. No if the mission can not be paused.</i></font></td></tr></table></html></div>
+
+        </div>
+      </div>
+    </div>
+    <div id="search-modal" class="search-modal modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
+            <h2 class="title"> Search Mobile SDK Document
+            </h2>
+            <input type="text" v-model="searchInput" @keydown.enter="search">
+          </div>
+          <div class="modal-body">
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            </p>
+            <ul v-show="!!searchCount" class="search-result">
+              <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
+                  <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
+                  <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
+            </ul>
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
+            <div v-show="searchLoading" class="text-center">Loading...
+            </div>
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    window.Config = window.config = {
+      sdk: "mobile-sdk",
+      locale: "en",
+      environment: "development",
+      api_host: ""
+    };
+    
+  </script>
+  <!-- build:js /javascripts/doc-vendor.js-->
+  <script src="../../javascripts/lib/jquery-2.1.4.min.js" type="text/javascript"></script>
+  <script src="../../javascripts/lib/bootstrap.js" type="text/javascript"></script>
+  <script src="../../javascripts/lib/vue.min.js" type="text/javascript"></script>
+  <!-- endbuild-->
+  <!-- build:js /javascripts/doc-app.js-->
+  <script src="../../javascripts/util/cookie.js" type="text/javascript"></script>
+  <script src="../../javascripts/util/url-manager.js" type="text/javascript"></script>
+  <script src="../../javascripts/util/ajax-manager.js" type="text/javascript"></script>
+  <script src="../../javascripts/base/footer.js" type="text/javascript"></script>
+  <script src="../../javascripts/base/header.js" type="text/javascript"></script>
+  <script src="../../javascripts/util/searcher.js" type="text/javascript"></script>
+  <script src="../../javascripts/search_index.js" type="text/javascript"></script>
+  <script src="../../javascripts/searchdoc.js" type="text/javascript"></script>
+  <script src="../../javascripts/api.js" type="text/javascript"></script>
+  <!-- endbuild-->
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-43055594-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>

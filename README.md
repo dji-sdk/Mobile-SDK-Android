@@ -35,13 +35,25 @@ Several Android tutorials are provided as examples on how to use different featu
 
 Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk/documentation/introduction/index.html) for more details.
 
+## SDK Keys
+
+SDK Keys can be used as an alternative interface to access the product.
+
+A detailed introduction for SDK Keys is [here](./docs/README-KeyedInterface.md).
+
+## Missions Refactor
+
+Missions are an important part of the SDK as they allow developers to automate DJI's products using a simple, high level interface. In 4.0, missions are being refactored to be more robust and easier to manage.
+
+A detailed introduction for missions is [here](./docs/README-Mission.md).
+
+## Android Bridge App
+
+Please check this [link](https://github.com/dji-sdk/Android-Bridge-App) to download the apk of the Android Bridge App apk file.
+
 ## SDK API Reference
 
 [**Android SDK API Documentation**](https://developer.dji.com/iframe/mobile-sdk-doc/android/reference/packages.html)
-
-## Package Name Replace Script
-
-Since Android SDK 3.3 or above has changed or deprecated some package names or class names, we provide an executable JAR file, which contains scripts for you to replace old package names (SDK Version 3.2.1 or below ) to new package name (SDK Version 3.3 or  above) automatically. Please refer to [this link](./Executable JAR/README.md) for more details.
 
 ## Support
 

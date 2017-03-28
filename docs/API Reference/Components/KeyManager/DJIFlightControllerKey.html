@@ -1,0 +1,989 @@
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<html lang="en" style="padding-bottom:0px" class="local"></html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
+  <title>DJI Mobile SDK Documentation
+  </title><link rel="stylesheet" href="../../stylesheets/doc-vendor.css"><link rel="stylesheet" href="../../stylesheets/doc-app.css">
+</head>
+<body>
+  <nav id="site-header" class="site-header navbar">
+    <div class="container">
+      <div class="navbar-header"><a href="/" class="logo"><img src="../../images/dji-logo@2x.png">Android SDK API Reference</a></div>
+    </div>
+  </nav>
+  <div id="documentation-page" class="documentation-page">
+    <div class="container">
+      <div class="site-sidebar">
+        <div class="searcher">
+          <div id="panel" class="panel panel_tree">
+            <div class="header">
+              <div class="search-con">
+                <label id="search-label" for="search">
+                </label>
+                <input id="search" type="text" placeholder="Search" autosave="searchdoc" results="10" autocomplete="off">
+                <div class="search-icon"></div><a class="clean-search glyphicon glyphicon-remove-circle"></a>
+              </div>
+            </div>
+            <div class="tree">
+              <ul></ul>
+            </div>
+            <div class="result">
+              <ul></ul>
+            </div>
+          </div>
+        </div>
+        <div class="nav scrollable js-tree-menu">
+          <dl>
+            <dt>Manager Classes
+            </dt>
+                  <dd><a data-href="../SDKManager/DJISDKManager.html" class="sub-toggle">DJISDKManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../SDKManager/DJIBluetoothProductConnector.html" class="sub-toggle">BluetoothProductConnector<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../SDKManager/DJIBluetoothProductConnector_DJIBluetoothDevice.html">BluetoothDevice</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="DJIKeyManager.html" class="sub-toggle">KeyManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="DJIKey.html" class="sub-toggle">DJIKey<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="DJIBatteryKey.html">BatteryKey</a>
+                                      </dd>
+                                      <dd><a href="DJICameraKey.html">CameraKey</a>
+                                      </dd>
+                                      <dd><a href="" class="active">FlightControllerKey</a>
+                                      </dd>
+                                      <dd><a href="DJIGimbalKey.html">GimbalKey</a>
+                                      </dd>
+                                      <dd><a href="DJIProductKey.html">ProductKey</a>
+                                      </dd>
+                                      <dd><a href="DJIRemoteControllerKey.html">RemoteControllerKey</a>
+                                      </dd>
+                                      <dd><a href="DJIHandheldControllerKey.html">HandheldControllerKey</a>
+                                      </dd>
+                                      <dd><a href="DJIAirLinkKey.html">AirLinkKey</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../FlyZoneManager/DJIFlyZoneManager.html" class="sub-toggle">FlyZoneManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyZoneInformation.html" class="sub-toggle">FlyZoneInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJISubFlyZoneInformation.html">SubFlyZoneInformation</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Base Classes
+            </dt>
+                  <dd><a data-href="../../BaseClasses/DJIBaseProduct.html" class="sub-toggle">BaseProduct<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../../BaseClasses/DJIVideoFeeder.html">VideoFeeder</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../BaseComponent/DJIBaseComponent.html">BaseComponent</a>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Product Classes
+            </dt>
+                  <dd><a href="../../Products/Aircraft/DJIAircraft.html">Aircraft</a>
+                  </dd>
+                  <dd><a href="../../Products/Handheld/DJIHandheld.html">HandHeld</a>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Component Classes
+            </dt>
+                  <dd><a data-href="../FlightController/DJIFlightController.html" class="sub-toggle">FlightController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../FlightController/DJIFlightController_DJIFlightControllerCurrectState.html" class="sub-toggle">FlightControllerState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIFlightController_DJIAttitude.html">Attitude</a>
+                                      </dd>
+                                      <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate3D.html">LocationCoordinate3D</a>
+                                      </dd>
+                                      <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerCurrectState_DJIFlightControllerSmartGoHomeStatus.html">GoHomeAssessment</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Compass/DJICompass.html">Compass</a>
+                            </dd>
+                            <dd><a data-href="../RTK/DJIRTK.html" class="sub-toggle">RTK<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a data-href="../RTK/DJIRTK_DJIRTKState.html" class="sub-toggle">RTKState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../RTK/DJIRTK_DJIRTKReceiverInfo.html">ReceiverInfo</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../LandingGear/DJILandingGear.html">LandingGear</a>
+                            </dd>
+                            <dd><a data-href="../IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html" class="sub-toggle">Intelligent Flight Assistant<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a data-href="../VisionDetectionState/DJIVisionDetectionState.html" class="sub-toggle">VisionDetectionState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../VisionDetectionState/DJIVisionDetectionState_DJIVisionDetectionSector.html">Detection Sector</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a href="../IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html">Detection State</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">Simulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Simulator/DJISimulator_DJISimulatorInitializationData.html">InitializationData</a>
+                                      </dd>
+                                      <dd><a href="../Simulator/DJISimulator_DJISimulatorState.html">SimulatorState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">IMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">MultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
+                            </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Battery/DJIBattery_BatteryState.html">BatteryState</a>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Battery/DJIBattery_WarningRecord.html">WarningRecord</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Camera/DJICamera_DJICameraSystemState.html">SystemState</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraLensState.html">FocusState</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">SDCardState</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDState.html">SSDState</a>
+                            </dd>
+                            <dd><a data-href="../Camera/DJIMediaManager.html" class="sub-toggle">MediaManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJIMediaManager_DJIMedia.html">MediaFile</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">VideoPlaybackState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Camera/DJIPlaybackManager.html" class="sub-toggle">PlaybackManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJIPlaybackManager_DJICameraPlaybackState.html">PlaybackState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraParameters.html">Capabilities</a>
+                            </dd>
+                            <dd><a data-href="../Camera/DJICamera_DJICameraSettingsDef.html" class="sub-toggle">SettingsDefinitions<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_DJICameraExposureParameters.html">ExposureSettings</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraOpticalZoomSpec.html">OpticalZoomSpec</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraPhotoIntervalParam.html">PhotoTimeIntervalSettings</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraThermalProfile.html">ThermalProfile</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraThermalAreaTemperatureAggregations.html">ThermalAreaTemperatureAggregations</a>
+                                      </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraThermalExternalSceneSettings.html">ThermalExternalSceneSettings</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">ResolutionAndFrameRate</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraPictureStylePreset.html">PictureStylePreset</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_CameraLiveView.html">CameraLiveView</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Gimbal/DJIGimbal.html" class="sub-toggle">Gimbal<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Gimbal/DJIGimbal_GimbalState.html">GimbalState</a>
+                            </dd>
+                            <dd><a href="../Gimbal/DJIGimbal_movementSettingsState.html">MovementSettings</a>
+                            </dd>
+                            <dd><a href="../Gimbal/DJIGimbal_attitude.html">Attitude</a>
+                            </dd>
+                            <dd><a data-href="../Gimbal/DJIGimbal_DJIGimbalRotation.html" class="sub-toggle">Rotation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Gimbal/DJIGimbal_DJIGimbalRotation_Constructor.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../AirLink/DJIAirLink.html" class="sub-toggle">AirLink<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../LBAirLink/DJILBAirLink.html" class="sub-toggle">Lightbridge<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../LBAirLink/DJILBAirLink_DJILBAirLinkChannelInterference.html">ChannelInterference</a>
+                                      </dd>
+                                      <dd><a href="../LBAirLink/DJILBAirLink_DJILightbridgeAntennaRSSI.html">LightbridgeAntennaRSSI</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../OcuSyncLink/DJIOcuSyncLink.html" class="sub-toggle">OcuSyncLink<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../OcuSyncLink/DJIOcuSyncLink_DJIOcuSyncFrequencyInterference.html">FrequencyInterference</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../WiFiLink/DJIWiFiLink.html" class="sub-toggle">WiFi<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../WiFiLink/DJIWiFiLink_DJIWiFiChannelInterference.html">WifiChannelInterference</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">RemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightWheel</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareTransformationSwitch.html">TransformationSwitch</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html">Button</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCFiveDButton.html">FiveDButton</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCGPSData.html" class="sub-toggle">GPSData<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCGpsTime.html">Time</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_GPSLocation.html">GPSLocation</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCBatteryInfo.html">ChargeRemaining</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCRemoteFocusState.html">FocusControllerState</a>
+                            </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html" class="sub-toggle">AircraftMapping<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftStickMapping.html">AircraftStickMapping</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html" class="sub-toggle">CustomButtonTags<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam_Constructor.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCInfo.html">Information</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCMasterSlaveState.html">MasterSlaveState</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalControlSpeed.html">GimbalControlSpeedCoefficient</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_ResponseForGimbalControl.html">ResponseForGimbalControl</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_JoinMasterAuthorizationInfo.html">AuthorizationInfo</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../HandheldController/DJIHandheldController.html" class="sub-toggle">HandheldController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../HandheldController/DJIHandheldController_DJIHandheldControllerHardwareState.html">HardwareState</a>
+                            </dd>
+                            <dd><a data-href="../HandheldController/DJIHandheldController_DJIHandheldControllerLEDCommand.html" class="sub-toggle">LEDCommand<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../HandheldController/DJIHandheldController_DJIHandheldControllerLEDCommand_DJIHandheldControllerLEDColorPattern.html">LEDColorPattern</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../MobileRemoteController/DJIMobileRemoteController.html">MobileRemoteController</a>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Mission Classes
+            </dt>
+                  <dd><a data-href="../Missions/DJIMissionControl.html" class="sub-toggle">MissionControl<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionControlTimelineElement.html">TimelineElement</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionControlError.html">MissionControlError</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIMissionAction.html" class="sub-toggle">MissionAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJITakeOffAction.html">TakeOffAction</a>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIAircraftYawAction.html" class="sub-toggle">AircraftYawAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIAircraftYawAction_DJIAircraftYawActionError.html">AircraftYawActionError</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIGoToAction.html" class="sub-toggle">GoToAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIGoToAction_DJIGoToActionError.html">GoToActionError</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Missions/DJIGoHomeAction.html">GoHomeAction</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIHotpointAction.html">HotpointAction</a>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIGimbalAttitudeAction.html" class="sub-toggle">GimbalAttitudeAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIGimbalAttitudeAction_DJIGimbalAttitudeActionError.html">GimbalAttitudeActionError</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIRecordVideoAction.html" class="sub-toggle">RecordVideoAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIRecordVideoAction_DJIRecordVideoActionError.html">RecordVideoActionError</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIShootPhotoAction.html" class="sub-toggle">ShootPhotoAction<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIShootPhotoAction_DJIShootPhotoActionError.html">ShootPhotoActionError</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../Missions/DJIMissionTrigger.html">Trigger</a>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../Missions/DJIWaypointMission.html" class="sub-toggle">WaypointMission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIWaypointMission_Builder.html">Builder</a>
+                                      </dd>
+                                      <dd><a data-href="../Missions/DJIWaypoint.html" class="sub-toggle">Waypoint<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../Missions/DJIWaypoint_DJIWaypointAction.html">WaypointAction</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Missions/DJIWaypointMissionEvent.html">WaypointMissionEvent</a>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIWaypointMissionUploadEvent.html" class="sub-toggle">WaypointMissionUploadEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIWaypointMission_DJIWaypointUploadProgress.html">WaypointUploadProgress</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIWaypointMissionDownloadEvent.html" class="sub-toggle">WaypointMissionDownloadEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIWaypointMission_DJIWaypointDownloadProgress.html">WaypointDownloadProgress</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIWaypointMissionExecutionEvent.html" class="sub-toggle">WaypointMissionExecutionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIWaypointMission_DJIWaypointExecutionProgress.html">WaypointExecutionProgress</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Missions/DJIWaypointMissionState.html">WaypointMissionState</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIFollowMeMissionOperator.html" class="sub-toggle">FollowMeMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIFollowMeMission.html">FollowMeMission</a>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIFollowMeMissionEvent.html" class="sub-toggle">FollowMeMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIFollowMeMissionState.html">FollowMeMissionState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIPanoramaMissionOperator.html" class="sub-toggle">PanoramaMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIPanoramaMissionEvent.html">PanoramaMissionEvent</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIPanoramaMissionState.html">PanoramaMissionState</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIPanoramaMission_DJIPanoramaMissionStatus.html">PanoramaMissionExecutionState</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIHotpointMissionOperator.html" class="sub-toggle">HotpointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIHotPointMission.html">HotpointMission</a>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIHotpointMissionEvent.html" class="sub-toggle">HotpoinMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIHotpointMissionState.html">HotpointMissionState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJITapFlyMissionOperator.html" class="sub-toggle">TapFlyMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../Missions/DJITapFlyMission.html" class="sub-toggle">TapFlyMission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJITapFlyMission_DJITapFlyExecutionState.html">TapFlyExecutionState</a>
+                                      </dd>
+                                      <dd><a href="../Missions/DJITapFlyMission_DJIVector.html">Vector</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJITapFlyMissionEvent.html" class="sub-toggle">TapFlyMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJITapFlyMissionState.html">TapFlyMissionState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Missions/DJIActiveTrackMissionOperator.html" class="sub-toggle">ActiveTrackOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../Missions/DJIActiveTrackMission.html" class="sub-toggle">ActiveTrackMission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIActiveTrackTrackingState.html">ActiveTrackTrackingState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Missions/DJIActiveTrackMissionEvent.html" class="sub-toggle">ActiveTrackMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIActiveTrackMissionState.html">ActiveTrackState</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Misc Classes
+            </dt>
+                  <dd><a href="../../Utils/DJICommonCallbacks.html">CommonCallbacks</a>
+                  </dd>
+                  <dd><a data-href="../ParamCapability/DJIParamCapability.html" class="sub-toggle">DJIParamCapability<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../ParamCapability/DJIParamCapability_DJIParamCapabilityMinMax.html">DJIParamMinMaxCapability</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../SDKError/DJIError.html" class="sub-toggle">DJIError<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../SDKError/DJIError_DJIGimbalError.html">DJIGimbalError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJISDKCacheError.html">DJISDKCacheError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJICameraError.html">DJICameraError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIFlightControllerError.html">DJIFlightControllerError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIMissionManagerError.html">DJIMissionError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIAirLinkError.html">DJIAirLinkError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../Diagnostics/DJIDiagnostics.html">DJIDiagnostics</a>
+                  </dd>
+                  <dd><a href="../CodecManager/DJICodecManager.html">DJICodecManager</a>
+                  </dd>
+                  <dd><a href="../Stick/DJIStick.html">Stick</a>
+                  </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="site-main">
+        <div class="article"><div class="article"><h1><font color="#AAA">class </font>FlightControllerKey</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlightControllerKey</span> <span class="keyword">extends</span> <span class="title">DJIKey</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.key</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/KeyManager/DJIKey.html#djikey">DJIKey</a></code></font></td></tr></table></html>
+<h5 id="description">Description:</h5>
+<p><font color="#666"><code><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey">FlightControllerKey</a></code> provides dedicated access to Flight  controller attributes.</font></p>
+<h5 id="class-members">Class Members:</h5>
+<div class="api-row" id="djiflightcontrollerkey_create"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontrollerkey_create_inline">create</a></div></div><div class="inline-doc" id="djiflightcontrollerkey_create_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>create</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> FlightControllerKey <span class="title">create</span><span class="params">(@FlightControllerParamKey @NonNull String paramKey)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.key</font></td></tr></table></html>
+<h5 id="description-v2">Description:</h5>
+<p><font color="#666">Creates a FlightController key.</font></p>
+<h5 id="input-parameters">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@FlightControllerParamKey @NonNull String <font color="#000">paramKey</font></font></td><td><font color="#666"><i>A valid paramKey</i></font></td></tr></table></html>
+<h5 id="return">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static <a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey">FlightControllerKey</a></font></td><td><font color="#666"><i>FlightController Key</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiflightcontrollerkey_create_flightassistant"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontrollerkey_create_flightassistant_inline">createFlightAssistantKey</a></div></div><div class="inline-doc" id="djiflightcontrollerkey_create_flightassistant_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>createFlightAssistantKey</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> FlightControllerKey <span class="title">createFlightAssistantKey</span><span class="params">(</span></span></div><div class="line">       @IntelligentFlightAssistantParamKey @NonNull String paramKey)</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.key</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">Creates a FlightAssistant key.</font></p>
+<h5 id="input-parameters-v2">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@IntelligentFlightAssistantParamKey @NonNull String <font color="#000">paramKey</font></font></td><td><font color="#666"><i>A valid paramKey</i></font></td></tr></table></html>
+<h5 id="return-v2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static <a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey">FlightControllerKey</a></font></td><td><font color="#666"><i>FlightAssistant Key</i></font></td></tr></table></html></div>
+<h5 id="inherited-methods">Inherited Methods:</h5>
+<h5 id="class-keys">Class Keys:</h5>
+<html><table class="key_table"><tr><td colspan="2"><a href="#flightcontrollerkeyis_home_location_set_inline"></a><p class="key_table_key_string key_table_key_first_row">IS_HOME_LOCATION_SET</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_ishomepointset">isHomeLocationSet</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyvelocity_y_inline"></a><p class="key_table_key_string key_table_key_row">VELOCITY_Y</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_velocityy">getVelocityY</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyvelocity_x_inline"></a><p class="key_table_key_string key_table_key_row">VELOCITY_X</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_velocityx">getVelocityX</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyvelocity_z_inline"></a><p class="key_table_key_string key_table_key_row">VELOCITY_Z</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_velocityz">getVelocityZ</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeydetection_sectors_inline"></a><p class="key_table_key_string key_table_key_row">DETECTION_SECTORS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/VisionDetectionState/DJIVisionDetectionState_DJIVisionDetectionSector.html#djivisiondetectionstate_djivisiondetectionsector">ObstacleDetectionSector</a>[]</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/VisionDetectionState/DJIVisionDetectionState.html#djivisiondetectionstate_detectionsectors">getDetectionSectors</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_satellite_glonass_count_inline"></a><p class="key_table_key_string key_table_key_row">RTK_SATELLITE_GLONASS_COUNT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_satellitecount">getSatelliteCount</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyactive_track_mode_inline"></a><p class="key_table_key_string key_table_key_row">ACTIVE_TRACK_MODE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH, SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode">ActiveTrackMode</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode">ActiveTrackMode</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_vision_positioning_sensor_being_used_inline"></a><p class="key_table_key_string key_table_key_row">IS_VISION_POSITIONING_SENSOR_BEING_USED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_isvisionsensorbeingused">isVisionPositioningSensorBeingUsed</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/VisionDetectionState/DJIVisionDetectionState.html#djivisiondetectionstate_issensorworking">isSensorBeingUsed</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeycompass_has_error_inline"></a><p class="key_table_key_string key_table_key_row">COMPASS_HAS_ERROR</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Compass/DJICompass.html#djicompass_haserror">hasError</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_satellite_beidou_count_is_on_inline"></a><p class="key_table_key_string key_table_key_row">RTK_SATELLITE_BEIDOU_COUNT_IS_ON</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_isconstellationsupported">isConstellationSupported</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyturn_on_motors_inline"></a><p class="key_table_key_string key_table_key_row">TURN_ON_MOTORS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_turnonmotors">turnOnMotors</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeystart_imu_calibration_inline"></a><p class="key_table_key_string key_table_key_row">START_IMU_CALIBRATION</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_startimucalibration">startIMUCalibration</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeystart_landing_inline"></a><p class="key_table_key_string key_table_key_row">START_LANDING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_autolanding">startLanding</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeysatellite_count_inline"></a><p class="key_table_key_string key_table_key_row">SATELLITE_COUNT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_satellitecount">getSatelliteCount</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeystart_simulator_inline"></a><p class="key_table_key_string key_table_key_row">START_SIMULATOR</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/Simulator/DJISimulator_DJISimulatorInitializationData.html#djisimulator_djisimulatorinitializationdata">InitializationData</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Simulator/DJISimulator.html#djisimulator_startsimulator">start</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeydeploy_landing_gear_inline"></a><p class="key_table_key_string key_table_key_row">DEPLOY_LANDING_GEAR</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/LandingGear/DJILandingGear.html#djilandinggear_deploylandinggear">deploy</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyflight_mode_key_inline"></a><p class="key_table_key_string key_table_key_row">FLIGHT_MODE_KEY</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>String</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_flightmodestring">getFlightModeString</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_direct_angle_inline"></a><p class="key_table_key_string key_table_key_row">RTK_DIRECT_ANGLE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_heading">getHeading</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyaircraft_location_latitude_inline"></a><p class="key_table_key_string key_table_key_row">AIRCRAFT_LOCATION_LATITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_aircraftlocation">getAircraftLocation</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeystop_simulator_inline"></a><p class="key_table_key_string key_table_key_row">STOP_SIMULATOR</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Simulator/DJISimulator.html#djisimulator_stopsimulator">stop</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_performing_precision_landing_inline"></a><p class="key_table_key_string key_table_key_row">IS_PERFORMING_PRECISION_LANDING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html#djivisiondetectionstate_djivisioncontrolstate_isperformingprecisionlanding">isPerformingPrecisionLanding</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyhome_location_using_current_aircraft_location_inline"></a><p class="key_table_key_string key_table_key_row">HOME_LOCATION_USING_CURRENT_AIRCRAFT_LOCATION</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_sethomelocationusingaircraftcurrentlocation">setHomeLocationUsingAircraftCurrentLocation</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyremaining_flight_time_inline"></a><p class="key_table_key_string key_table_key_row">REMAINING_FLIGHT_TIME</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrectstate_djiflightcontrollersmartgohomestatus_remainingflighttime">getRemainingFlightTime</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeygps_signal_level_inline"></a><p class="key_table_key_string key_table_key_row">GPS_SIGNAL_LEVEL</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djigpssignalstatus">GPSSignalLevel</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrentstate_gpssignalstatus">getGPSSignalLevel</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_satellite_glonass_count_is_on_inline"></a><p class="key_table_key_string key_table_key_row">RTK_SATELLITE_GLONASS_COUNT_IS_ON</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_isconstellationsupported">isConstellationSupported</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeylanding_gear_mode_inline"></a><p class="key_table_key_string key_table_key_row">LANDING_GEAR_MODE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/LandingGear/DJILandingGear.html#djilandinggear_djilandinggearmode">LandingGearMode</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/LandingGear/DJILandingGear.html#djilandinggear_mode">getMode</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_ground_glonass_count_inline"></a><p class="key_table_key_string key_table_key_row">RTK_GROUND_GLONASS_COUNT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_satellitecount">getSatelliteCount</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyflight_mode_inline"></a><p class="key_table_key_string key_table_key_row">FLIGHT_MODE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollerflightmode">FlightMode</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_flightmode">getFlightMode</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeytake_off_inline"></a><p class="key_table_key_string key_table_key_row">TAKE_OFF</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_takeoff">startTakeoff</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyfly_time_in_seconds_inline"></a><p class="key_table_key_string key_table_key_row">FLY_TIME_IN_SECONDS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_flighttime">getFlightTimeInSeconds</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyultrasonic_height_in_meters_inline"></a><p class="key_table_key_string key_table_key_row">ULTRASONIC_HEIGHT_IN_METERS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_ultrasonicheight">getUltrasonicHeightInMeters</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeycancel_take_off_inline"></a><p class="key_table_key_string key_table_key_row">CANCEL_TAKE_OFF</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_canceltakeoff">cancelTakeoff</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeygo_home_status_inline"></a><p class="key_table_key_string key_table_key_row">GO_HOME_STATUS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollergohomeexecutionstatus">GoHomeExecutionState</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrentstate_gohomeexecutionstatus">getGoHomeExecutionState</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyimu_count_inline"></a><p class="key_table_key_string key_table_key_row">IMU_COUNT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_numberofimus">getIMUCount</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeylanding_protection_state_inline"></a><p class="key_table_key_string key_table_key_row">LANDING_PROTECTION_STATE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html#djivisiondetectionstate_djivisioncontrolstate_djivisionlandingprotectionstatus">VisionLandingProtectionState</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html#djivisiondetectionstate_djivisioncontrolstate_landingprotectionstatus">landingProtectionState</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html#djivisiondetectionstate_djivisioncontrolstate_djivisionlandingprotectionstatus">VisionLandingProtectionState</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyaircraft_location_longitude_inline"></a><p class="key_table_key_string key_table_key_row">AIRCRAFT_LOCATION_LONGITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_aircraftlocation">getAircraftLocation</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyattitude_roll_inline"></a><p class="key_table_key_string key_table_key_row">ATTITUDE_ROLL</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_attitude">getAttitude</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_ground_beidou_count_inline"></a><p class="key_table_key_string key_table_key_row">RTK_GROUND_BEIDOU_COUNT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_satellitecount">getSatelliteCount</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyturn_off_motors_inline"></a><p class="key_table_key_string key_table_key_row">TURN_OFF_MOTORS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_turnoffmotors">turnOffMotors</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeycompass_heading_inline"></a><p class="key_table_key_string key_table_key_row">COMPASS_HEADING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Compass/DJICompass.html#djicompass_heading">getHeading</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeystart_imu_calibration_with_id_inline"></a><p class="key_table_key_string key_table_key_row">START_IMU_CALIBRATION_WITH_ID</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_startimucalibrationforid">startIMUCalibration</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_enabled_inline"></a><p class="key_table_key_string key_table_key_row">RTK_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK.html#djirtk_setrtkenabled">setRtkEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_isrtkenabled">isRTKEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeylanding_gear_automatic_movement_enabled_inline"></a><p class="key_table_key_string key_table_key_row">LANDING_GEAR_AUTOMATIC_MOVEMENT_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/LandingGear/DJILandingGear.html#djilandinggear_setautomaticmovementenabled">setAutomaticMovementEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/LandingGear/DJILandingGear.html#djilandinggear_getautomaticmovementenabled">getAutomaticMovementEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_error_inline"></a><p class="key_table_key_string key_table_key_row">RTK_ERROR</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_error">getError</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyorientation_mode_inline"></a><p class="key_table_key_string key_table_key_row">ORIENTATION_MODE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightorientationmode">FlightOrientationMode</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_orientationmode">getOrientationMode</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyimu_state_calibration_progress_inline"></a><p class="key_table_key_string key_table_key_row">IMU_STATE_CALIBRATION_PROGRESS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IMUState/DJIIMUState.html#djiimustate_calibrationprogress">getCalibrationProgress</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyvision_assisted_positioning_enabled_inline"></a><p class="key_table_key_string key_table_key_row">VISION_ASSISTED_POSITIONING_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_setvisionpositioningenabled">setVisionAssistedPositioningEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_getvisionpositioningenabled">getVisionAssistedPositioningEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyattitude_pitch_inline"></a><p class="key_table_key_string key_table_key_row">ATTITUDE_PITCH</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_attitude">getAttitude</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_flying_inline"></a><p class="key_table_key_string key_table_key_row">IS_FLYING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_isflying">isFlying</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyaltitude_inline"></a><p class="key_table_key_string key_table_key_row">ALTITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_aircraftlocation">getAircraftLocation</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_satellite_gps_count_is_on_inline"></a><p class="key_table_key_string key_table_key_row">RTK_SATELLITE_GPS_COUNT_IS_ON</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_isconstellationsupported">isConstellationSupported</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeylanding_protection_enabled_inline"></a><p class="key_table_key_string key_table_key_row">LANDING_PROTECTION_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_setlandingprotectionenabled">setLandingProtectionEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_getlandingprotectionenabled">getLandingProtectionEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_main_gps_count_inline"></a><p class="key_table_key_string key_table_key_row">RTK_MAIN_GPS_COUNT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_satellitecount">getSatelliteCount</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_landing_inline"></a><p class="key_table_key_string key_table_key_row">IS_LANDING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_ground_latitude_inline"></a><p class="key_table_key_string key_table_key_row">RTK_GROUND_LATITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_basestationlocation">getBaseStationLocation</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeysimulator_state_inline"></a><p class="key_table_key_string key_table_key_row">SIMULATOR_STATE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/Simulator/DJISimulator_DJISimulatorState.html#djisimulator_djisimulatorstate">SimulatorState</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Simulator/DJISimulator.html#djisimulator_setupdatedsimulatorstatedatacallback">setStateCallback</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Simulator/DJISimulator_DJISimulatorState.html#djisimulator_djisimulatorstate">SimulatorState</a></code></font></p>
+<p></p></td></tr><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Simulator/DJISimulator_DJISimulatorState.html#djisimulator_updatedsimulatorstatedatacallbackinterface">Callback</a></code></font></p>
+<p></p></td></tr><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Simulator/DJISimulator_DJISimulatorState.html#djisimulator_updatesimulatorstate">onUpdate</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_ground_glonass_count_is_on_inline"></a><p class="key_table_key_string key_table_key_row">RTK_GROUND_GLONASS_COUNT_IS_ON</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#flightcontrollerkeypositioning_solution_inline"></a><p class="key_table_key_string key_table_key_row">POSITIONING_SOLUTION</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkpositioningsolution">PositioningSolution</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#flightcontrollerkeycompass_is_calibrating_inline"></a><p class="key_table_key_string key_table_key_row">COMPASS_IS_CALIBRATING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Compass/DJICompass.html#djicompass_iscalibrating">isCalibrating</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_air_altitude_inline"></a><p class="key_table_key_string key_table_key_row">RTK_AIR_ALTITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_mobilestationantenna1altitude">getMobileStationAltitude</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyprecision_landing_enabled_inline"></a><p class="key_table_key_string key_table_key_row">PRECISION_LANDING_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_setprecisionlandingenabled">setPrecisionLandingEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_getprecisionlandingenabled">getPrecisionLandingEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyis_landing_confirmation_needed_inline"></a><p class="key_table_key_string key_table_key_row">IS_LANDING_CONFIRMATION_NEEDED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_islandingconfirmationneeded">isLandingConfirmationNeeded</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyenter_transport_mode_inline"></a><p class="key_table_key_string key_table_key_row">ENTER_TRANSPORT_MODE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/LandingGear/DJILandingGear.html#djilandinggear_entertransportmode">enterTransportMode</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeycancel_landing_inline"></a><p class="key_table_key_string key_table_key_row">CANCEL_LANDING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_cancelautolanding">cancelLanding</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyhas_reached_max_flight_height_inline"></a><p class="key_table_key_string key_table_key_row">HAS_REACHED_MAX_FLIGHT_HEIGHT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_isreachlimitedheight">hasReachedMaxFlightHeight</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyvirtual_stick_control_mode_enabled_inline"></a><p class="key_table_key_string key_table_key_row">VIRTUAL_STICK_CONTROL_MODE_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH, SET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_virtualstickcontrolmodecategory_setvirtualstickmodeenabled">setVirtualStickModeEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_virtualstickcontrolmodecategory_getvirtualstickmodeenabled">getVirtualStickModeEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyis_imu_preheating_inline"></a><p class="key_table_key_string key_table_key_row">IS_IMU_PREHEATING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_isimupreheating">isIMUPreheating</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyexit_transport_mode_inline"></a><p class="key_table_key_string key_table_key_row">EXIT_TRANSPORT_MODE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/LandingGear/DJILandingGear.html#djilandinggear_exittransportmode">exitTransportMode</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyimu_state_gyroscope_state_inline"></a><p class="key_table_key_string key_table_key_row">IMU_STATE_GYROSCOPE_STATE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/IMUState/DJIIMUState.html#djiimustate_djiimusensorstatus">SensorState</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IMUState/DJIIMUState.html#djiimustate_gyroscopestatus">getGyroscopeState</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyfly_zone_limitation_enabled_inline"></a><p class="key_table_key_string key_table_key_row">FLY_ZONE_LIMITATION_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Simulator/DJISimulator.html#djisimulator_setflyzoneenabled">setFlyZoneLimitationEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Simulator/DJISimulator.html#djisimulator_getflyzoneenabled">getFlyZoneLimitationEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_main_glonass_count_inline"></a><p class="key_table_key_string key_table_key_row">RTK_MAIN_GLONASS_COUNT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_satellitecount">getSatelliteCount</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_ground_gps_count_inline"></a><p class="key_table_key_string key_table_key_row">RTK_GROUND_GPS_COUNT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_satellitecount">getSatelliteCount</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_main_gps_count_is_on_inline"></a><p class="key_table_key_string key_table_key_row">RTK_MAIN_GPS_COUNT_IS_ON</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_isconstellationsupported">isConstellationSupported</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_avoiding_active_obstacle_collision_inline"></a><p class="key_table_key_string key_table_key_row">IS_AVOIDING_ACTIVE_OBSTACLE_COLLISION</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html#djivisiondetectionstate_djivisioncontrolstate_isavoidingactiveobstaclecollision">isAvoidingActiveObstacleCollision</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyquick_spin_enabled_inline"></a><p class="key_table_key_string key_table_key_row">QUICK_SPIN_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_getautoquickspinenabled">getQuickSpinEnabled</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyactive_track_gps_assistant_enabled_inline"></a><p class="key_table_key_string key_table_key_row">ACTIVE_TRACK_GPS_ASSISTANT_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_ascent_limited_by_obstacle_inline"></a><p class="key_table_key_string key_table_key_row">IS_ASCENT_LIMITED_BY_OBSTACLE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html#djivisiondetectionstate_djivisioncontrolstate_isascentlimitedbyobstacle">isAscentLimitedByObstacle</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeylock_course_using_current_heading_inline"></a><p class="key_table_key_string key_table_key_row">LOCK_COURSE_USING_CURRENT_HEADING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightorientationmodecategory_lockcourseusingcurrentdirection">lockCourseUsingCurrentHeading</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyaircraft_name_inline"></a><p class="key_table_key_string key_table_key_row">AIRCRAFT_NAME</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>String</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_main_beidou_count_inline"></a><p class="key_table_key_string key_table_key_row">RTK_MAIN_BEIDOU_COUNT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_satellitecount">getSatelliteCount</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyhome_location_latitude_inline"></a><p class="key_table_key_string key_table_key_row">HOME_LOCATION_LATITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_homelocation">getHomeLocation</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyactive_track_circular_speed_inline"></a><p class="key_table_key_string key_table_key_row">ACTIVE_TRACK_CIRCULAR_SPEED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#flightcontrollerkeyattitude_yaw_inline"></a><p class="key_table_key_string key_table_key_row">ATTITUDE_YAW</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_attitude">getAttitude</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeymax_flight_height_inline"></a><p class="key_table_key_string key_table_key_row">MAX_FLIGHT_HEIGHT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightlimitation_setmaxflightheight">setMaxFlightHeight</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightlimitation_getmaxflightheight">getMaxFlightHeight</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyis_virtual_stick_control_mode_available_inline"></a><p class="key_table_key_string key_table_key_row">IS_VIRTUAL_STICK_CONTROL_MODE_AVAILABLE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_virtualstickcontrolmodecategory_isvirtualstickcontrolmodeavailable">isVirtualStickControlModeAvailable</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_going_home_inline"></a><p class="key_table_key_string key_table_key_row">IS_GOING_HOME</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrentstate_isgoinghome">isGoingHome</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_ground_beidou_count_is_on_inline"></a><p class="key_table_key_string key_table_key_row">RTK_GROUND_BEIDOU_COUNT_IS_ON</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_isconstellationsupported">isConstellationSupported</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeylanding_gear_status_inline"></a><p class="key_table_key_string key_table_key_row">LANDING_GEAR_STATUS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/LandingGear/DJILandingGear.html#djilandinggear_djilandinggearstatus">LandingGearState</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/LandingGear/DJILandingGear.html#djilandinggear_status">getState</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeymulti_mode_open_inline"></a><p class="key_table_key_string key_table_key_row">MULTI_MODE_OPEN</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_ismultiplemodeopen">isMultipleModeOpen</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_simulator_active_inline"></a><p class="key_table_key_string key_table_key_row">IS_SIMULATOR_ACTIVE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Simulator/DJISimulator.html#djisimulator_issimulatorstarted">isSimulatorActive</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyhas_reached_max_flight_radius_inline"></a><p class="key_table_key_string key_table_key_row">HAS_REACHED_MAX_FLIGHT_RADIUS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_isreachlimitedradius">hasReachedMaxFlightRadius</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeycollision_avoidance_enabled_inline"></a><p class="key_table_key_string key_table_key_row">COLLISION_AVOIDANCE_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_setcollisionavoidanceenabled">setCollisionAvoidanceEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_getcollisionavoidanceenabled">getCollisionAvoidanceEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyimu_state_inline"></a><p class="key_table_key_string key_table_key_row">IMU_STATE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/IMUState/DJIIMUState.html#djiimustate">IMUState</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IMUState/DJIIMUState.html#djiflightcontroller_updateimustate">onUpdate</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IMUState/DJIIMUState.html#djiimustate">IMUState</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyflight_orientation_mode_inline"></a><p class="key_table_key_string key_table_key_row">FLIGHT_ORIENTATION_MODE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightorientationmode">FlightOrientationMode</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightorientationmodecategory_setflightorientationmode">setFlightOrientationMode</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeygo_home_battery_threshold_inline"></a><p class="key_table_key_string key_table_key_row">GO_HOME_BATTERY_THRESHOLD</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH, SET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_setgohomebatterythreshold">setGoHomeBatteryThreshold</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_getgohomebatterythreshold">getGoHomeBatteryThreshold</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyleds_enabled_inline"></a><p class="key_table_key_string key_table_key_row">LEDS_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_setledsenabled">setLEDsEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_getledsenabled">getLEDsEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyaircraft_should_go_home_inline"></a><p class="key_table_key_string key_table_key_row">AIRCRAFT_SHOULD_GO_HOME</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrectstate_djiflightcontrollersmartgohomestatus_aircraftshouldgohome">isAircraftRequestingToGoHome</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_fail_safe_inline"></a><p class="key_table_key_string key_table_key_row">IS_FAIL_SAFE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_isfailsafe">isFailsafeEnabled</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_air_latitude_inline"></a><p class="key_table_key_string key_table_key_row">RTK_AIR_LATITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_mobilestationantenna1location">getMobileStationLocation</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeytime_needed_to_land_from_current_height_inline"></a><p class="key_table_key_string key_table_key_row">TIME_NEEDED_TO_LAND_FROM_CURRENT_HEIGHT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrectstate_djiflightcontrollersmartgohomestatus_timeneededtolandfromcurrentheight">getTimeNeededToLandFromCurrentHeight</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_is_heading_valid_inline"></a><p class="key_table_key_string key_table_key_row">RTK_IS_HEADING_VALID</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_isheadingvalid">isHeadingValid</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyimu_state_accelerometer_state_inline"></a><p class="key_table_key_string key_table_key_row">IMU_STATE_ACCELEROMETER_STATE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/IMUState/DJIIMUState.html#djiimustate_djiimusensorstatus">SensorState</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IMUState/DJIIMUState.html#djiimustate_accelerometorstatus">getAccelerometerState</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyultrasonic_error_inline"></a><p class="key_table_key_string key_table_key_row">ULTRASONIC_ERROR</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrentstate_isultrasonicerror">doesUltrasonicHaveError</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyserial_number_inline"></a><p class="key_table_key_string key_table_key_row">SERIAL_NUMBER</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>String</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#flightcontrollerkeyprecision_mode_enabled_inline"></a><p class="key_table_key_string key_table_key_row">PRECISION_MODE_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">-</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_flight_assistant_supported_inline"></a><p class="key_table_key_string key_table_key_row">IS_FLIGHT_ASSISTANT_SUPPORTED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_isintelligentflightassistantsupported">isFlightAssistantSupported</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyhome_location_inline"></a><p class="key_table_key_string key_table_key_row">HOME_LOCATION</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_sethomelocation">setHomeLocation</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_gethomelocation">getHomeLocation</a></code></font></p>
+<p></p></td></tr><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_homelocation">getHomeLocation</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeymax_flight_radius_inline"></a><p class="key_table_key_string key_table_key_row">MAX_FLIGHT_RADIUS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightlimitation_setmaxflightradius">setMaxFlightRadius</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightlimitation_getmaxflightradius">getMaxFlightRadius</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyconnection_fail_safe_behavior_inline"></a><p class="key_table_key_string key_table_key_row">CONNECTION_FAIL_SAFE_BEHAVIOR</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightfailsafeoperation">ConnectionFailSafeBehavior</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_setflightfailsafeoperation">setConnectionFailSafeBehavior</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_getflightfailsafeoperation">getConnectionFailSafeBehavior</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeycancel_go_home_inline"></a><p class="key_table_key_string key_table_key_row">CANCEL_GO_HOME</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_cancelgohome">cancelGoHome</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_braking_inline"></a><p class="key_table_key_string key_table_key_row">IS_BRAKING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html#djivisiondetectionstate_djivisioncontrolstate_isbraking">isBraking</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyvision_system_warning_inline"></a><p class="key_table_key_string key_table_key_row">VISION_SYSTEM_WARNING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/VisionDetectionState/DJIVisionDetectionState.html#djivisiondetectionstate_visionsystemwarning">VisionSystemWarning</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/VisionDetectionState/DJIVisionDetectionState.html#djivisiondetectionstate_systemwarning">getSystemWarning</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/VisionDetectionState/DJIVisionDetectionState.html#djivisiondetectionstate_visionsystemwarning">VisionSystemWarning</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyactive_obstacle_avoidance_enabled_inline"></a><p class="key_table_key_string key_table_key_row">ACTIVE_OBSTACLE_AVOIDANCE_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_setactiveobstacleavoidanceenabled">setActiveObstacleAvoidanceEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_getactiveobstacleavoidanceenabled">getActiveObstacleAvoidanceEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyhome_location_longitude_inline"></a><p class="key_table_key_string key_table_key_row">HOME_LOCATION_LONGITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_homelocation">getHomeLocation</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeybattery_threshold_behavior_inline"></a><p class="key_table_key_string key_table_key_row">BATTERY_THRESHOLD_BEHAVIOR</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_djiaircraftremainingbatterystate">BatteryThresholdBehavior</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_remainingbattery">getBatteryThresholdBehavior</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeymax_flight_radius_enabled_inline"></a><p class="key_table_key_string key_table_key_row">MAX_FLIGHT_RADIUS_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightlimitation_setmaxflightradiuslimitationenabled">setMaxFlightRadiusLimitationEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightlimitation_getmaxflightradiuslimitationenabled">getMaxFlightRadiusLimitationEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeycurrent_land_immediately_battery_inline"></a><p class="key_table_key_string key_table_key_row">CURRENT_LAND_IMMEDIATELY_BATTERY</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrectstate_djiflightcontrollersmartgohomestatus_batterypercentageneededtolandfromcurrentheight">getBatteryPercentageNeededToLandFromCurrentHeight</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeybattery_percentage_needed_to_go_home_inline"></a><p class="key_table_key_string key_table_key_row">BATTERY_PERCENTAGE_NEEDED_TO_GO_HOME</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrectstate_djiflightcontrollersmartgohomestatus_batterypercentageneededtogohome">getBatteryPercentageNeededToGoHome</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeycompass_calibration_status_inline"></a><p class="key_table_key_string key_table_key_row">COMPASS_CALIBRATION_STATUS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/Compass/DJICompass.html#djicompass_djicompasscalibrationstatus">CompassCalibrationState</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Compass/DJICompass.html#djicompass_calibrationstatus">getCalibrationState</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Compass/DJICompass.html#djicompass_calibrationstatuscallback">setCalibrationStateCallback</a></code></font></p>
+<p></p></td></tr><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Compass/DJICompass.html#djicompass_compasscalibrationstatecallback">Callback</a></code></font></p>
+<p></p></td></tr><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Compass/DJICompass.html#djicompass_updatecompasscalibrationstate">onUpdate</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyis_ultrasonic_being_used_inline"></a><p class="key_table_key_string key_table_key_row">IS_ULTRASONIC_BEING_USED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_isultrasonicbeingused">isUltrasonicBeingUsed</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyhome_point_altitude_inline"></a><p class="key_table_key_string key_table_key_row">HOME_POINT_ALTITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrentstate_homepointaltitude">getHomePointAltitude</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeycontrol_mode_inline"></a><p class="key_table_key_string key_table_key_row">CONTROL_MODE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightcontrollercontrolmode">ControlMode</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_setcontrolmode">setControlMode</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_getcontrolmode">getControlMode</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeytime_needed_to_go_home_inline"></a><p class="key_table_key_string key_table_key_row">TIME_NEEDED_TO_GO_HOME</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrectstate_djiflightcontrollersmartgohomestatus_timeneededtogohome">getTimeNeededToGoHome</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeysend_virtual_stick_flight_control_data_inline"></a><p class="key_table_key_string key_table_key_row">SEND_VIRTUAL_STICK_FLIGHT_CONTROL_DATA</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_virtualstickcontrolmodecategory_sendvirtualstickflightcontroldata">sendVirtualStickFlightControlData</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_main_beidou_count_is_on_inline"></a><p class="key_table_key_string key_table_key_row">RTK_MAIN_BEIDOU_COUNT_IS_ON</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_isconstellationsupported">isConstellationSupported</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_ground_gps_count_is_on_inline"></a><p class="key_table_key_string key_table_key_row">RTK_GROUND_GPS_COUNT_IS_ON</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_isconstellationsupported">isConstellationSupported</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeygo_home_height_in_meters_inline"></a><p class="key_table_key_string key_table_key_row">GO_HOME_HEIGHT_IN_METERS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH, SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_setgohomealtitude">setGoHomeHeightInMeters</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_getgohomealtitude">getGoHomeHeightInMeters</a></code></font></p>
+<p></p></td></tr><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_getgohomeheight">getGoHomeHeight</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeystart_go_home_inline"></a><p class="key_table_key_string key_table_key_row">START_GO_HOME</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_gohome">startGoHome</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyconfirm_landing_inline"></a><p class="key_table_key_string key_table_key_row">CONFIRM_LANDING</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_confirmlanding">confirmLanding</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyterrain_follow_mode_enabled_inline"></a><p class="key_table_key_string key_table_key_row">TERRAIN_FOLLOW_MODE_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_setterrainfollowmodeenabled">setTerrainFollowModeEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_getterrainfollowmodeenabled">getTerrainFollowModeEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeycompass_start_calibration_inline"></a><p class="key_table_key_string key_table_key_row">COMPASS_START_CALIBRATION</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Compass/DJICompass.html#djicompass_startcalibration">startCalibration</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyactive_track_gesture_mode_enabled_inline"></a><p class="key_table_key_string key_table_key_row">ACTIVE_TRACK_GESTURE_MODE_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#flightcontrollerkeyare_motor_on_inline"></a><p class="key_table_key_string key_table_key_row">ARE_MOTOR_ON</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_aremotorson">areMotorsOn</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyretract_landing_gear_inline"></a><p class="key_table_key_string key_table_key_row">RETRACT_LANDING_GEAR</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/LandingGear/DJILandingGear.html#djilandinggear_retractlandinggear">retract</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_main_glonass_count_is_on_inline"></a><p class="key_table_key_string key_table_key_row">RTK_MAIN_GLONASS_COUNT_IS_ON</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_isconstellationsupported">isConstellationSupported</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeysubcomponent_imu_key_inline"></a><p class="key_table_key_string key_table_key_row">SUBCOMPONENT_IMU_KEY</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">-</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#flightcontrollerkeymax_radius_aircraft_can_fly_and_go_home_inline"></a><p class="key_table_key_string key_table_key_row">MAX_RADIUS_AIRCRAFT_CAN_FLY_AND_GO_HOME</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrectstate_djiflightcontrollersmartgohomestatus_maxradiusaircraftcanflyandgohome">getMaxRadiusAircraftCanFlyAndGoHome</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyupwards_avoidance_enabled_inline"></a><p class="key_table_key_string key_table_key_row">UPWARDS_AVOIDANCE_ENABLED</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_setupwardsavoidanceenabled">setUpwardsAvoidanceEnabled</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_getupwardsavoidanceenabled">getUpwardsAvoidanceEnabled</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_air_longitude_inline"></a><p class="key_table_key_string key_table_key_row">RTK_AIR_LONGITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_mobilestationantenna1location">getMobileStationLocation</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_ground_longitude_inline"></a><p class="key_table_key_string key_table_key_row">RTK_GROUND_LONGITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_basestationlocation">getBaseStationLocation</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_satellite_beidou_count_inline"></a><p class="key_table_key_string key_table_key_row">RTK_SATELLITE_BEIDOU_COUNT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_satellitecount">getSatelliteCount</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_ground_altitude_inline"></a><p class="key_table_key_string key_table_key_row">RTK_GROUND_ALTITUDE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_basestationaltitude">getBaseStationAltitude</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyis_landing_gear_movable_inline"></a><p class="key_table_key_string key_table_key_row">IS_LANDING_GEAR_MOVABLE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_islandinggearmovable">isLandingGearMovable</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyrtk_satellite_gps_count_inline"></a><p class="key_table_key_string key_table_key_row">RTK_SATELLITE_GPS_COUNT</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo_satellitecount">getSatelliteCount</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeysend_data_to_on_board_sdk_device_inline"></a><p class="key_table_key_string key_table_key_row">SEND_DATA_TO_ON_BOARD_SDK_DEVICE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>byte[]</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_senddatatoonboardsdkdevice">sendDataToOnboardSDKDevice</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeycompass_stop_calibration_inline"></a><p class="key_table_key_string key_table_key_row">COMPASS_STOP_CALIBRATION</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Compass/DJICompass.html#djicompass_stopcalibration">stopCalibration</a></code></font></p>
+<p></p></td><tr><td colspan="2"><a href="#flightcontrollerkeyland_immediately_battery_threshold_inline"></a><p class="key_table_key_string key_table_key_row">LAND_IMMEDIATELY_BATTERY_THRESHOLD</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH, SET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_setlandimmediatelybatterythreshold">setLandImmediatelyBatteryThreshold</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_getlandimmediatelybatterythreshold">getLandImmediatelyBatteryThreshold</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#flightcontrollerkeyis_on_board_sdk_available_inline"></a><p class="key_table_key_string key_table_key_row">IS_ON_BOARD_SDK_AVAILABLE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_isonboardsdkdeviceavailable">isOnboardSDKDeviceAvailable</a></code></font></p>
+<p></p></td></table></html>
+
+        </div>
+      </div>
+    </div>
+    <div id="search-modal" class="search-modal modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
+            <h2 class="title"> Search Mobile SDK Document
+            </h2>
+            <input type="text" v-model="searchInput" @keydown.enter="search">
+          </div>
+          <div class="modal-body">
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            </p>
+            <ul v-show="!!searchCount" class="search-result">
+              <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
+                  <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
+                  <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
+            </ul>
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
+            <div v-show="searchLoading" class="text-center">Loading...
+            </div>
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    window.Config = window.config = {
+      sdk: "mobile-sdk",
+      locale: "en",
+      environment: "development",
+      api_host: ""
+    };
+    
+  </script>
+  <!-- build:js /javascripts/doc-vendor.js-->
+  <script src="../../javascripts/lib/jquery-2.1.4.min.js" type="text/javascript"></script>
+  <script src="../../javascripts/lib/bootstrap.js" type="text/javascript"></script>
+  <script src="../../javascripts/lib/vue.min.js" type="text/javascript"></script>
+  <!-- endbuild-->
+  <!-- build:js /javascripts/doc-app.js-->
+  <script src="../../javascripts/util/cookie.js" type="text/javascript"></script>
+  <script src="../../javascripts/util/url-manager.js" type="text/javascript"></script>
+  <script src="../../javascripts/util/ajax-manager.js" type="text/javascript"></script>
+  <script src="../../javascripts/base/footer.js" type="text/javascript"></script>
+  <script src="../../javascripts/base/header.js" type="text/javascript"></script>
+  <script src="../../javascripts/util/searcher.js" type="text/javascript"></script>
+  <script src="../../javascripts/search_index.js" type="text/javascript"></script>
+  <script src="../../javascripts/searchdoc.js" type="text/javascript"></script>
+  <script src="../../javascripts/api.js" type="text/javascript"></script>
+  <!-- endbuild-->
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-43055594-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
