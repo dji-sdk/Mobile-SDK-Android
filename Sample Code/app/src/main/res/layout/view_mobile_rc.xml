@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:clickable="true"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
     <TextView
         android:layout_marginTop="70dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
         android:text="Simulator is off."
         android:id="@+id/textview_simulator"/>
 
@@ -30,7 +29,7 @@
             android:textOn="Stop Simulator"
             android:layout_marginBottom="10dp"
             style="@style/common_button"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"/>
         <Button
             android:id="@+id/btn_force_land"
             android:layout_width="120dp"
@@ -64,7 +63,7 @@
             style="@style/common_button"/>
     </LinearLayout>
 
-    <com.dji.sdk.sample.utils.OnScreenJoystick
+    <com.dji.sdk.sample.internal.utils.OnScreenJoystick
         android:id="@+id/directionJoystickLeft"
         android:layout_width="130dp"
         android:layout_height="130dp"
@@ -74,7 +73,7 @@
         android:layout_marginLeft="10dp"
         android:background="@mipmap/joystick_bg"/>
 
-    <com.dji.sdk.sample.utils.OnScreenJoystick
+    <com.dji.sdk.sample.internal.utils.OnScreenJoystick
         android:id="@+id/directionJoystickRight"
         android:layout_width="130dp"
         android:layout_height="130dp"
@@ -84,4 +83,4 @@
         android:layout_marginRight="10dp"
         android:background="@mipmap/joystick_bg"/>
 
-</RelativeLayout>
+</merge>

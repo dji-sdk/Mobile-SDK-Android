@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
     <Button
         android:id="@+id/btn_disable_virtual_stick"
@@ -10,13 +9,14 @@
         android:layout_marginTop="150dp"
         android:text="Disable Virtual Stick"
         style="@style/common_button"
-        />
+    />
 
     <TextView
         android:layout_marginTop="70dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/gray"
         android:text="Simulator is off."
         android:id="@+id/textview_simulator"/>
 
@@ -78,7 +78,7 @@
         style="@style/common_button"
         android:layout_below="@+id/btn_yaw_control_mode"
         android:layout_alignStart="@+id/btn_yaw_control_mode"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"/>
 
     <Button
         android:id="@+id/btn_take_off"
@@ -89,9 +89,9 @@
         style="@style/common_button"
         android:layout_below="@+id/btn_vertical_control_mode"
         android:layout_alignLeft="@+id/btn_vertical_control_mode"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"/>
 
-    <com.dji.sdk.sample.utils.OnScreenJoystick
+    <com.dji.sdk.sample.internal.utils.OnScreenJoystick
         android:id="@+id/directionJoystickRight"
         android:layout_width="130dp"
         android:layout_height="130dp"
@@ -101,7 +101,7 @@
         android:layout_marginLeft="10dp"
         android:background="@mipmap/joystick_bg"/>
 
-    <com.dji.sdk.sample.utils.OnScreenJoystick
+    <com.dji.sdk.sample.internal.utils.OnScreenJoystick
         android:id="@+id/directionJoystickLeft"
         android:layout_width="130dp"
         android:layout_height="130dp"
@@ -111,4 +111,4 @@
         android:layout_marginRight="10dp"
         android:background="@mipmap/joystick_bg"/>
 
-</RelativeLayout>
+</merge>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.dji.sdk.sample.common.MainContent xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:clickable="true">
+<com.dji.sdk.sample.internal.view.MainContent xmlns:android="http://schemas.android.com/apk/res/android"
+                                              xmlns:tools="http://schemas.android.com/tools"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="match_parent"
+                                              android:orientation="vertical"
+                                              tools:context=".internal.controller.MainActivity"
+                                              android:clickable="true">
 
     <TextView
         android:id="@+id/text_connection_status"
@@ -28,7 +30,7 @@
         android:textSize="20dp"
         android:gravity="center"
         android:textStyle="bold"
-        />
+    />
 
     <TextView
         android:id="@+id/text_model_available"
@@ -37,6 +39,7 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginTop="230dp"
+        android:textColor="@color/gray"
         android:text="@string/model_not_available"
         android:textSize="15dp"/>
 
@@ -52,10 +55,9 @@
         android:text="Bluetooth"
         android:textColor="@color/common_text_color"
         android:textSize="15dp"
-        />
-
+    />
     <Button
-        android:id="@+id/btn_open"
+        android:id="@+id/btn_bridge"
         android:layout_width="150dp"
         android:layout_height="55dp"
         android:layout_centerHorizontal="true"
@@ -63,18 +65,35 @@
         android:background="@drawable/round_btn"
         android:textAllCaps="false"
         android:layout_marginTop="25dp"
+        android:text="Bridge Mode"
+        android:textColor="@color/common_text_color"
+        android:textSize="15dp"
+    />
+
+    <Button
+        android:id="@+id/btn_open"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btn_bridge"
+        android:background="@drawable/round_btn"
+        android:textAllCaps="false"
+        android:layout_marginTop="25dp"
         android:text="Open"
         android:textColor="@color/common_text_color"
         android:textSize="15dp"
-        />
+    />
 
     <TextView
+        android:layout_below="@+id/btn_open"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/gray"
         android:text="@string/sdk_version"
         android:textSize="15dp"
-        />
+    />
 
-</com.dji.sdk.sample.common.MainContent>
+
+</com.dji.sdk.sample.internal.view.MainContent>

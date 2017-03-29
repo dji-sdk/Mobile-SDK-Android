@@ -7,9 +7,16 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="actionMenuTextAppearance">@style/menu_item_appearance</item>
     </style>
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!-- OptionsMenu text -->
+    <style name="menu_item_appearance" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Menu">
+        <item name="android:textSize">25sp</item>
+    </style>
+
 
     <!-- List divider list -->
     <style name="set_divider">
@@ -88,5 +95,48 @@
         <item name="android:shadowRadius">6</item>
         <item name="android:textSize">@dimen/test_log_textsize</item>
         <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!-- ExpandableList  item title style -->
+    <style name="expandable_item_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/item_min_height</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:textSize">@dimen/item_title_size</item>
+        <item name="android:text">"Item name"</item>
+    </style>
+
+    <!-- ExpandableList  item title style -->
+    <style name="expandable_second_level_item_title" parent="expandable_item_title">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+
+    <!-- ExpandableList item right arrow style -->
+    <style name="expandable_item_right_arrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/item_min_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/item_value_size</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:text">">"</item>
+    </style>
+
+
+    <!-- ExpandableList item down arrow style -->
+    <style name="expandable_item_down_arrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/item_min_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/item_value_size</item>
+        <item name="android:layout_marginLeft">@dimen/fab_margin</item>
+        <item name="android:layout_marginRight">@dimen/fab_margin</item>
+        <item name="android:text">"⌄"</item>
     </style>
 </resources>

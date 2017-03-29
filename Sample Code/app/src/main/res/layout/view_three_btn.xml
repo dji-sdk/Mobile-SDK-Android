@@ -1,68 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#FFFFFF"
-        android:clickable="true"
-        tools:context="com.dji.sdk.sample.common.MainActivity"
-    android:weightSum="1">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
-    <com.dji.sdk.sample.common.BaseFpvView style="@style/fpv"
-        android:layout_marginTop="100dp" />
+    <com.dji.sdk.sample.internal.view.BaseFpvView style="@style/fpv"
+                                                  android:layout_marginTop="100dp"/>
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/text_info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-           android:id="@+id/text_info"
-           android:layout_width="match_parent"
-           android:layout_height="114dp"
-           android:layout_centerHorizontal="true"
-           android:layout_marginTop="10dp"
-           android:gravity="center"
-           android:text="test"/>
-    </LinearLayout>
+        android:layout_height="114dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="test"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:weightSum="3">
         <Button
-           android:id="@+id/btn_left"
-           android:layout_below="@id/text_info"
-           android:layout_centerHorizontal="true"
-           android:layout_marginTop="0dp"
-           style="@style/common_button"
+            android:id="@+id/btn_left"
+            android:layout_marginTop="0dp"
+            style="@style/common_button"
             android:layout_marginLeft="10dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
-       <Button
-           android:id="@+id/btn_middle"
-           android:layout_below="@id/text_info"
-           android:layout_centerHorizontal="true"
-           android:layout_marginRight="0dp"
-           android:layout_marginLeft="5dp"
-           android:layout_marginTop="0dp"
-           android:layout_toLeftOf="@id/btn_left"
-           style="@style/common_button"
-           android:text="Fetch Thumbnail"
-           android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/btn_middle"
+            android:layout_marginRight="0dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            style="@style/common_button"
+            android:text="Fetch Thumbnail"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
-       <Button
-           android:id="@+id/btn_right"
-           android:layout_below="@id/text_info"
-           android:layout_centerHorizontal="true"
-           android:layout_marginLeft="5dp"
-           android:layout_marginTop="0dp"
-           android:layout_toRightOf="@id/btn_middle"
-           style="@style/common_button"
-           android:layout_marginRight="20dp"
-           android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/btn_right"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            style="@style/common_button"
+            android:layout_marginRight="20dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
-</LinearLayout>
+</merge>

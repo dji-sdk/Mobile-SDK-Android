@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_timeline_init"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:text="Init"
+                android:layout_alignParentLeft="true"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_timeline_start"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:text="Start"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_timeline_pause"
+                android:layout_marginLeft="5dp"
+                android:text="Pause"
+                android:layout_alignParentLeft="true"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_timeline_resume"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentLeft="true"
+                android:text="Resume"
+                style="@style/common_button" />
+
+
+            <Button
+                android:id="@+id/btn_timeline_stop"
+                android:layout_marginLeft="5dp"
+                android:text="Stop"
+                android:layout_alignParentLeft="true"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_timeline_clean"
+                android:layout_marginLeft="5dp"
+                android:text="Clean Data"
+                style="@style/common_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_timeline_info_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/btn_timeline_start"
+                android:text="Timeline Steps:" />
+
+            <ScrollView
+                android:id="@+id/tv_timeline_info_sv"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/btn_timeline_start">
+            <TextView
+                android:id="@+id/tv_timeline_info"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:scrollbars="vertical" />
+
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_running_info_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_timeline_start"
+                android:text="Timeline running results:" />
+
+            <ScrollView
+                android:id="@+id/tv_running_info_sv"
+                android:layout_width="250dp"
+                android:layout_height="300dp"
+                android:layout_alignParentRight="true"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_timeline_start">
+
+                <TextView
+                    android:id="@+id/tv_running_info"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</merge>

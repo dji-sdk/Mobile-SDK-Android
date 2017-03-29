@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:clickable="true">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
     <Button
         android:id="@+id/btn_next"
@@ -11,7 +9,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         style="@style/common_button"
-        />
+    />
 
     <Button
         android:id="@+id/btn_previous"
@@ -20,7 +18,7 @@
         android:layout_marginTop="150dp"
         android:layout_marginRight="5dp"
         style="@style/common_button"
-        />
+    />
 
     <Button
         android:id="@+id/btn_multiple"
@@ -29,7 +27,7 @@
         android:layout_marginTop="150dp"
         android:layout_marginLeft="5dp"
         style="@style/common_button"
-        />
+    />
 
     <Button
         android:id="@+id/btn_single"
@@ -38,8 +36,8 @@
         android:layout_below="@id/btn_next"
         style="@style/common_button"/>
 
-    <com.dji.sdk.sample.common.BaseFpvView
+    <com.dji.sdk.sample.internal.view.BaseFpvView
         style="@style/fpv"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
-</RelativeLayout>
+</merge>

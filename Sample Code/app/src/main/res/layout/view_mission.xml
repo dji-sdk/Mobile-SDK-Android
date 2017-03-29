@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clickable="true">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/tv_fc_info"
         android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
+        android:textColor="@color/black"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:gravity="center"
@@ -19,58 +18,62 @@
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
         android:layout_marginTop="150dp"
         android:gravity="center"
         android:clickable="true"/>
+    <Button
+        android:id="@+id/btn_load"
+        android:layout_below="@id/tv_mission_info"
+        android:layout_toLeftOf="@+id/btn_upload"
+        android:text="Load"
+        style="@style/common_button"/>
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_below="@id/tv_mission_info"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Upload"
+        style="@style/common_button"/>
 
     <Button
         android:id="@+id/btn_start"
         android:layout_below="@id/tv_mission_info"
-        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/btn_upload"
         android:text="Start"
-        style="@style/common_button"
-        />
-
-    <Button
-        android:id="@+id/btn_prepare"
-        android:layout_below="@id/tv_mission_info"
-        android:layout_centerHorizontal="true"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@id/btn_start"
-        android:text="Prepare"
         style="@style/common_button"/>
 
     <Button
-        android:id="@+id/btn_stop"
-        android:layout_below="@id/tv_mission_info"
+        android:id="@+id/btn_pause"
+        android:layout_below="@id/btn_load"
+        android:layout_toLeftOf="@+id/btn_resume"
+        android:text="Pause"
+        style="@style/common_button"/>
+
+    <Button
+        android:id="@+id/btn_resume"
+        android:layout_below="@id/btn_upload"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/btn_start"
+        android:layout_margin="10dp"
+        android:text="Resume"
+        style="@style/common_button"/>
+
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_below="@id/btn_start"
+        android:layout_toRightOf="@id/btn_resume"
         android:text="Stop"
         style="@style/common_button"/>
 
 
     <Button
-        android:id="@+id/btn_pause"
-        android:layout_alignLeft="@id/btn_start"
-        android:layout_below="@id/btn_start"
-        android:text="Pause"
-        style="@style/common_button"/>
-
-    <Button
         android:id="@+id/btn_download"
-        android:layout_below="@id/btn_stop"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@id/btn_pause"
+        android:layout_below="@id/btn_pause"
+        android:layout_centerHorizontal="true"
         android:text="Download"
-        style="@style/common_button"/>
-
-    <Button
-        android:id="@+id/btn_resume"
-        android:layout_below="@id/btn_stop"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/btn_pause"
-        android:text="Resume"
         style="@style/common_button"/>
 
 
@@ -89,4 +92,4 @@
         android:visibility="invisible"/>
 
 
-</RelativeLayout>
+</merge>

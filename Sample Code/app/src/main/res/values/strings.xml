@@ -2,13 +2,15 @@
     <string name="app_name">DJI SDK Sample</string>
     <string name="action_settings">Settings</string>
 
-    <string name="sdk_version">DJI SDK Version: 3.5.1</string>
+    <string name="sdk_version">DJI SDK Version: 4.0</string>
 
     <!-- Main activity UI string -->
     <string name="connection_loose">Status: No Product Connected</string>
     <string name="model_not_available">Model Not Available</string>
     <string name="product_information">Product Information</string>
-    <string name="sdk_registration_message">SDK Registration Failed. Please check the bundle ID and your network connectivity</string>
+    <string name="sdk_registration_message">SDK Registration Failed. Please check the bundle ID and your network
+        connectivity
+    </string>
 
     <string name="activity_component_list">Component List</string>
 
@@ -23,15 +25,14 @@
     <string name="component_listview_airlink">Air Link</string>
     <string name="component_listview_remote_controller">Remote Controller</string>
     <string name="component_listview_mobile_remote_controller">Mobile Remote Controller</string>
-    <string name="component_listview_mission_manager">Mission Manager</string>
-    <string name="component_listview_waypoint_mission">Waypoint Mission</string>
-    <string name="component_listview_hotpoint_mission">Hotpoint Mission</string>
-    <string name="component_listview_followme_mission">FollowMe Mission</string>
-    <string name="component_listview_custom_mission">Custom Mission</string>
-    <string name="component_listview_half_pano_mission">Half Circle Panorama Mission</string>
-    <string name="component_listview_full_pano_mission">Full Circle Panorama Mission</string>
+    <string name="component_listview_mission_manager">Mission Manager (Deprecated)</string>
+    <string name="component_listview_timeline_mission_control">Timeline Mission Control</string>
     <string name="component_listview_bluetooth">Bluetooth</string>
 
+
+    <string name="component_listview_sdk_4.0">4.0 New Interfaces</string>
+    <string name="component_listview_waypoint_mission_operator">New Waypoint Mission Operator</string>
+    <string name="component_listview_keyed_interface">Keyed Interface Sample</string>
     <!-- Camera list -->
     <string name="camera_subtitle_general">General</string>
     <string name="camera_listview_push_info">Push Info</string>
@@ -43,6 +44,7 @@
     <string name="camera_listview_record_video">Record Video</string>
     <string name="camera_subtitle_playback">Playback</string>
     <string name="camera_listview_playback_push_info">Playback Push Info</string>
+    <string name="camera_listview_playback_push_info_description">Playback State Information</string>
     <string name="camera_listview_playback_command">Playback Commands</string>
     <string name="camera_listview_playback_download">Playback Download</string>
     <string name="camera_subtitle_media_download">Media Download</string>
@@ -102,7 +104,9 @@
     <string name="support_mediadownload">This product supports media download function.</string>
 
     <!-- Playback Download View -->
-    <string name="playback_download_description">In this mode, you could download the media file using the playback mode. The pre-condition is that camera is in the multiple edit mode.</string>
+    <string name="playback_download_description">In this mode, you could download the media file using the playback
+        mode. The pre-condition is that camera is in the multiple edit mode.
+    </string>
     <string name="playback_download_select_0">1st Photo</string>
     <string name="playback_download_select_1">2nd Photo</string>
     <string name="playback_download_download">Download</string>
@@ -114,18 +118,25 @@
     <string name="move_gimbal_in_speed_up">Up</string>
     <string name="move_gimbal_in_speed_stop">Stop</string>
     <string name="move_gimbal_in_speed_down">Down</string>
-    <string name="move_gimbal_in_speed_description">This view will show how to rotate the gimbal in speed. Please set up a timer for keeping sending the rotateGimbalBySpeed with specific values and send null, null, null using rotateGimbalInSpeed to the aircraft.</string>
+    <string name="move_gimbal_in_speed_description">This view will show how to rotate the gimbal in speed. Please set up
+        a timer for keeping sending the rotateGimbalBySpeed with specific values and send null, null, null using
+        rotateGimbalInSpeed to the aircraft.
+    </string>
 
     <!--*************** Flight controller string set ***************-->
     <!-- Compass Calibration View -->
     <string name="compass_calibration_start_calibration">Start Calibration</string>
     <string name="compass_calibration_stop_calibration">Stop Calibration</string>
-    <string name="compass_calibration_description">This view is for calibration. The calibration process includes two parts: horizontal calibration and vertical calibration</string>
+    <string name="compass_calibration_description">This view is for calibration. The calibration process includes two
+        parts: horizontal calibration and vertical calibration
+    </string>
 
     <string name="flight_limitation_set_height_limitation">Set Height Limitation</string>
     <string name="flight_limitation_toggle_enable_radius_limitation">Limitation ON/OFF</string>
     <string name="flight_limitation_set_radius_limitation">Set Radius Limitation</string>
-    <string name="flight_limitation_description">The height limitation is always on, the range of the flight limitation is [20, 500]. The range of the radius flight limitation is [15, 500].</string>
+    <string name="flight_limitation_description">The height limitation is always on, the range of the flight limitation
+        is [20, 500]. The range of the radius flight limitation is [15, 500].
+    </string>
 
     <!-- Orientation Mode View -->
     <string name="orientation_mode_description">Current Orientation Mode is</string>
@@ -135,71 +146,27 @@
 
     <string name="intelligent_flight_assistant_description">This view is for Intelligent Flight Assistant.</string>
 
-     <!--*************** Airlink string set ***************-->
+    <!--*************** Airlink string set ***************-->
     <!-- Set Get LB Airlink Channel View -->
-    <string name="set_get_lb_airlink_channel_description">This view will help you understand how to setLBAirlinkChannel. Before send setLBAirlinkChannel, the mode of the LB should be in Manual mode. For the auto mode, it will be more efficient for the remote control to choose the best channel</string>
+    <string name="set_get_lb_airlink_channel_description">This view will help you understand how to setLBAirlinkChannel.
+        Before send setLBAirlinkChannel, the mode of the LB should be in Manual mode. For the auto mode, it will be more
+        efficient for the remote control to choose the best channel
+    </string>
 
     <!-- Set Get WiFi Airlink SSID View -->
-    <string name="set_get_wifi_airlink_ssid_description">This view will help you understand how to setWiFiAirlinkSSID. After setting SSID, Password and frequency, please reboot the WiFi so that it would work immediately.</string>
+    <string name="set_get_wifi_airlink_ssid_description">This view will help you understand how to setWiFiAirlinkSSID.
+        After setting SSID, Password and frequency, please reboot the WiFi so that it would work immediately.
+    </string>
 
     <!-- Reboot WiFi Airlink View -->
-    <string name="reboot_wifi_airlink_description">This view will help you understand how to use the rebootWiFiAirlink. After setting SSID, Password and frequency, please reboot the WiFi so that it would work immediately. </string>
+    <string name="reboot_wifi_airlink_description">This view will help you understand how to use the rebootWiFiAirlink.
+        After setting SSID, Password and frequency, please reboot the WiFi so that it would work immediately.
+    </string>
     <string name="reboot_wifi_airlink_reboot_wifi">Reboot WiFi</string>
-    <string name="reboot_wifi_airlink_hint">If you reoot the WiFi, the connection between product and mobile phone device might lose.</string>
+    <string name="reboot_wifi_airlink_hint">If you reboot the WiFi, the connection between product and mobile phone
+        device might lose.
+    </string>
 
-    <!-- Component string -->
-    <string name="component_camera">camera</string>
-    <string name="component_gimbal">gimbal</string>
-    <string name="component_airlink">airlink</string>
-    <string name="component_battery">battery</string>
-    <string name="component_flight_controller">flightcontroller</string>
-    <string name="component_remotoe_controller">remotecontroller</string>
-    <string name="component_mobile_remote_controller">mobileremotecontroller</string>
-    <string name="component_mission_manager">missionmanager</string>
-
-    <!-- View camera class name -->
-    <string name="view_set_get_iso">SetGetISOView</string>
-    <string name="view_shoot_single_photo">ShootSinglePhotoView</string>
-    <string name="view_push_camera_data">PushCameraDataView</string>
-    <string name="view_record_video">RecordVideoView</string>
-    <string name="view_playback_push_info">PlaybackPushInfoView</string>
-    <string name="view_playback_commands">PlaybackCommandsView</string>
-    <string name="view_playback_download">PlaybackDownloadView</string>
-    <string name="view_fetch_media">FetchMediaView</string>
-    <string name="view_media_playback">MediaPlaybackView</string>
-
-    <!-- View gimbal class name -->
-    <string name="view_push_gimbal_data">PushGimbalDataView</string>
-    <string name="view_move_gimbal_with_speed">MoveGimbalWithSpeedView</string>
-    <string name="view_get_gimbal_capability">GimbalCapabilityView</string>
-
-    <!-- View battery class name -->
-    <string name="view_push_battery_data">PushBatteryDataView</string>
-    <string name="view_set_get_discharge_day">SetGetDischargeDayView</string>
-
-    <!-- View airlink class name -->
-    <string name="view_reboot_wifi_airlink_view">RebootWiFiAirlinkView</string>
-    <string name="view_set_get_lb_airlink_channel">SetGetLBAirLinkChannelView</string>
-    <string name="view_set_get_wifi_airlink_ssid_view">SetGetWiFiAirlinkSSIDView</string>
-
-    <!-- View flight controller class name -->
-    <string name="view_compass_calibration">CompassCalibrationView</string>
-    <string name="view_flight_limitation">FlightLimitationView</string>
-    <string name="view_orientation_mode">OrientationModeView</string>
-    <string name="view_virtual_stick">VirtualStickView</string>
-    <string name="view_intelligent_flight_assistant">IfaPushDataView</string>
-
-    <!-- View remote controller class name -->
-    <string name="view_push_remote_controller_data">PushRemoteControllerDataView</string>
-    <string name="view_push_mobile_remote_controller_data">MobileRemoteControllerView</string>
-
-    <!-- View mission manager class name -->
-    <string name="view_waypoint_mission">WaypointMissionView</string>
-    <string name="view_hotpoint_mission">HotpointMissionView</string>
-    <string name="view_followme_mission">FollowmeMissionView</string>
-    <string name="view_custom_mission">CustomMissionView</string>
-    <string name="view_half_circle_pano_mission">HalfCirclePanoramaMissionView</string>
-    <string name="view_full_circle_pano_mission">FullCirclePanoramaMissionView</string>
 
     <!-- media playback -->
     <string name="video_playback_state_push_info">Video playback state</string>
@@ -207,5 +174,17 @@
     <string name="sync_file_title">Sync file</string>
     <string name="sync_success">Sync file success</string>
     <string name="playback_disconnected">Disconnected</string>
+
+    <!-- keyed interface-->
+    <string name="component_keyed_interface">key</string>
+    <string name="battery_title">Get battery level</string>
+    <string name="battery_value">%1$s %</string>
+    <string name="camera_title">Switch Camera Mode</string>
+    <string name="camera_value">Current Mode: %1$s</string>
+    <string name="gps_title">Start Listening</string>
+    <string name="gps_value">Lat: %1$s - Long: %2$s</string>
+    <string name="exposure_title">Get Exposure Setting</string>
+    <string name="exposure_value">%1$s</string>
+    <string name="search_for_demo">Search for demo</string>
 
 </resources>
