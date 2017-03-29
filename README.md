@@ -53,7 +53,7 @@ Please check this [link](https://github.com/dji-sdk/Android-Bridge-App) to downl
 
 ## SDK API Reference
 
-[**Android SDK API Documentation**](https://developer.dji.com/iframe/mobile-sdk-doc/android/reference/packages.html)
+[**Android SDK API Documentation**](http://developer.dji.com/api-reference/android-api/index.html)
 
 ## Support
 
