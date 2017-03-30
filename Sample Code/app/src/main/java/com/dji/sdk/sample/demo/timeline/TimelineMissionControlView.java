@@ -22,7 +22,9 @@ import com.dji.sdk.sample.internal.view.PresentableView;
 import dji.common.error.DJIError;
 import dji.common.gimbal.Attitude;
 import dji.common.gimbal.Rotation;
+import dji.common.mission.hotpoint.HotpointHeading;
 import dji.common.mission.hotpoint.HotpointMission;
+import dji.common.mission.hotpoint.HotpointStartPoint;
 import dji.common.mission.waypoint.Waypoint;
 import dji.common.mission.waypoint.WaypointAction;
 import dji.common.mission.waypoint.WaypointActionType;
@@ -181,6 +183,10 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         hotpointMission.setAltitude(40);
         hotpointMission.setRadius(10);
         hotpointMission.setAngularVelocity(10);
+        HotpointStartPoint startPoint = HotpointStartPoint.NEAREST;
+        hotpointMission.setStartPoint(startPoint);
+        HotpointHeading heading = HotpointHeading.TOWARDS_HOT_POINT;
+        hotpointMission.setHeading(heading);
         elements.add(new HotpointAction(hotpointMission, 360));
 
         //Step 11: go back home
