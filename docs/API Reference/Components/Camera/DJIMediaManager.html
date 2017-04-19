@@ -552,7 +552,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>MediaManager</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MediaManager</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The media manager is used to interact with the file system on the SD card. By using the media manager, the user  can get the metadata for all the multimedia files, and has access to each individual multimedia file.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -560,7 +560,7 @@
 <div class="article"><h6><font color="#AAA">method </font>addMediaUpdatedVideoPlaybackStateListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addMediaUpdatedVideoPlaybackStateListener</span><span class="params">(VideoPlaybackStateListener callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_updateVideoPlaybackStateCallback</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Sets the callback object for updating the video playback state of the media manager.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -569,7 +569,7 @@
 <div class="article"><h6><font color="#AAA">method </font>fetchMediaList</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fetchMediaList</span><span class="params">(<span class="keyword">final</span> DownloadListener&lt;List&lt;MediaFile&gt;&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_fetchMediaList</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Fetch the media list from the remote album. Set the camera's work mode to <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameramode_djicameramodemediadownload">MEDIA_DOWNLOAD</a></code>  before executing this method.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -578,7 +578,7 @@
 <div class="article"><h6><font color="#AAA">method </font>deleteMedia</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">deleteMedia</span><span class="params">(<span class="keyword">final</span> List&lt;MediaFile&gt; toBeDeletedMediaFiles,</span></span></div><div class="line">                           <span class="keyword">final</span> CompletionCallbackWithTwoParam&lt;List&lt;MediaFile&gt;, DJICameraError&gt; callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_deleteMedia</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Delete media from remote album. At most 255 media files can be deleted once. The recommended media files to delete  at the same time is around 20. <br><br> Precondition:<br> The camera work mode is MediaDownload mode. <br><br> Post  Condition:<br> This method will delete the media files based on the DJIMedia arraylist.<br></font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -587,7 +587,7 @@
 <div class="article"><h6><font color="#AAA">method </font>continueDownloading</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">continueDownloading</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_continueDownloading</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Continues downloading. The downloading threads are put into a single thread pool. This function will continue the download  process and starting from downloading requests in the not-started execution list. <br><br> <br>Precondition:<br> Developers  invoke the function of pauseDownloading().<br> <br> <br>Post Condition:<br> After this function invoked, the thread pool will  continue to execute the downloading request.<br></font></p>
 </div>
@@ -595,7 +595,7 @@
 <div class="article"><h6><font color="#AAA">method </font>pauseDownloading</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pauseDownloading</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_pauseDownloading</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Shuts down the downloading process immediately. It will not wait for the actively downloading request to terminate.  This method will shut down the download process BUT it will not entirely stop the downloading process.   Once the developer invokes ContinueDownloading, the process will continue to starting from the un-commenced downloading  request.  <br><br> Precondition:<br> The camera is fetching data from the SDCard in the camera back to SDK.<br> <br>  <br>Post Condition:<br> After this function invoked, the downloading process will shut down temporarily.<br></font></p>
 </div>
@@ -603,7 +603,7 @@
 <div class="article"><h6><font color="#AAA">method </font>exitMediaDownloading</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">exitMediaDownloading</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_exitMediaDownloading</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">This will entirely stop the downloading process and of course clean the downloading thread pool. The camera will  exit the MediaDownload mode and enter the TAKEPHOTO mode. <br><br> Precondition:<br> The camera enters the  MediaDownload mode.<br> <br> <br>Post Condition:<br> After this function invoked, the camera mode will shift to  TAKEPHOTO mode.<br></font></p>
 </div>
@@ -611,7 +611,7 @@
 <div class="article"><h6><font color="#AAA">method </font>fetchThumbnail</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fetchThumbnail</span><span class="params">(@NonNull MediaFile mediaFile, @NonNull <span class="keyword">final</span> DownloadListener&lt;Bitmap&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_DJIMedia_fetchThumbnail</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Fetches this media's thumbnail with a resolution (99 x 99) from the SD card. This method can be used to fetch  either a photo or a video, where the first frame of the video is the thumbnail that is fetched. It is not  available if the media type is Panorama. <br><br> Precondition:<br> The camera mode is MediaDownload mode.  <br><br> Post Condition:<br> This method will start to download the media thumbnail in the SD card. The content  can be videos or images.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -620,7 +620,7 @@
 <div class="article"><h6><font color="#AAA">method </font>fetchPreviewImage</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fetchPreviewImage</span><span class="params">(@NonNull MediaFile mediaFile,</span></span></div><div class="line">                                 @NonNull <span class="keyword">final</span> MediaManager.DownloadListener&lt;Bitmap&gt; callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_DJIMedia_fetchPreviewImage</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Fetch media's preview image. The preview image is a lower resolution (960 x 540) version of a still picture or the first frame of a video. The <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype">MediaType</a></code> of this media object should be <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype_jpeg">JPEG</a></code>. It is not available if the media type is <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype_panorama">PANORAMA</a></code>.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -629,7 +629,7 @@
 <div class="article"><h6><font color="#AAA">method </font>fetchSubMediaFileList</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fetchSubMediaFileList</span><span class="params">(@NonNull MediaFile mediaFile,</span></span></div><div class="line">                                     @NonNull <span class="keyword">final</span> MediaManager.DownloadListener&lt;List&lt;MediaFile&gt;&gt; callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_DJIMedia_fetchSubMediaFileList</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Fetch sub media files. It is available only when the media type is <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype_panorama">PANORAMA</a></code>.  User should use this method to fetch the set of photos shot in a panorama mission. <br><br> Precondition:<br> The camera  mode should be set as <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameramode_djicameramodemediadownload">MEDIA_DOWNLOAD</a></code> mode. <br><br></font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
@@ -638,7 +638,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isVideoPlaybackSupported</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isVideoPlaybackSupported</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_VideoPlayback_isVideoPlaybackSupported</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Checks if the media manager supports video playback or not. Video playback is supported only by Mavic Pro.  @return <code>true</code> if the media manager supports video playback.</font></p>
 <h5 id="return">Return:</h5>
@@ -647,7 +647,7 @@
 <div class="article"><h6><font color="#AAA">method </font>playVideoMediaFile</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">playVideoMediaFile</span><span class="params">(@NonNull MediaFile videoMediaFile, @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_VideoPlayback_playVideo</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Start video playback through <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager">MediaManager</a></code>. When the media manager is playing a video, video data can be  received from <code><a href="../../Components/Camera/DJICamera.html#djicamera_didreceivevideodata">onReceive</a></code> and playback state received  from <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_updatevideoplaybackstate">onUpdate</a></code>. Video playback  through <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager">MediaManager</a></code> is fixed at 720p.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
@@ -656,7 +656,7 @@
 <div class="article"><h6><font color="#AAA">method </font>resume</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">resume</span><span class="params">(@Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_VideoPlayback_resume</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">The media manager resumes the paused video.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
@@ -665,7 +665,7 @@
 <div class="article"><h6><font color="#AAA">method </font>pause</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pause</span><span class="params">(@Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_VideoPlayback_pause</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">The media manager pauses the playing video.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
@@ -674,7 +674,7 @@
 <div class="article"><h6><font color="#AAA">method </font>stop</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">stop</span><span class="params">(@Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_VideoPlayback_stop</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">The media manager stops the playing video.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
@@ -683,7 +683,7 @@
 <div class="article"><h6><font color="#AAA">method </font>moveToPosition</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">moveToPosition</span><span class="params">(@FloatRange(from = <span class="number">0</span>)</span> <span class="keyword">float</span> position, @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_VideoPlayback_moveToPosition</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Video playback is skipped to the new position in seconds from the start of the video.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
@@ -693,7 +693,7 @@
 <div class="article"><h6><font color="#AAA">interface </font>VideoPlaybackStateListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">VideoPlaybackStateListener</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_updateVideoPlaybackStateCallbackInterface</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">Updates the video playback state of the media manager. This update method will only be called when the media manager is playing a video.</font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
@@ -702,7 +702,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onUpdate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(VideoPlaybackState videoPlaybackState)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_updateVideoPlaybackState</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Updates the video playback state of the media manager. This update method will only be called when the media manager is playing a video.</font></p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
@@ -712,7 +712,7 @@
 <div class="article"><h6><font color="#AAA">interface </font>DownloadListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">DownloadListener</span>&lt;<span class="title">E</span>&gt;</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_CameraDownloadListenerInterface</font></td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
 <p><font color="#666">This callback will notify the app when the media download executed.</font></p>
 <h5 id="interface-methods-v2">Interface Methods:</h5>
@@ -721,7 +721,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onStart</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_CameraDownloadOnStart</font></td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
 <p><font color="#666">Called when the file download begins.</font></p>
 </div>
@@ -729,7 +729,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onRateUpdate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onRateUpdate</span><span class="params">(<span class="keyword">long</span> total, <span class="keyword">long</span> current, <span class="keyword">long</span> persize)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_CameraDownloadOnRateUpdate</font></td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
 <p><font color="#666">Called to show the download rate. It is called every 1 second. Hence, the persize which is the download size among two calls is the download rate.</font></p>
 <h5 id="input-parameters-v13">Input Parameters:</h5>
@@ -738,7 +738,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onProgress</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onProgress</span><span class="params">(<span class="keyword">long</span> total, <span class="keyword">long</span> current)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_CameraDownloadOnProgress</font></td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
 <p><font color="#666">Called to update the download progress. It is called every time there is data received.</font></p>
 <h5 id="input-parameters-v14">Input Parameters:</h5>
@@ -747,7 +747,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onSuccess</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(E data)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_CameraDownloadOnSuccess</font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
 <p><font color="#666">Called when the media download is completed.</font></p>
 <h5 id="input-parameters-v15">Input Parameters:</h5>
@@ -756,7 +756,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onFailure</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(DJIError error)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMediaManager_CameraDownloadOnFailure</font></td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
 <p><font color="#666">Called when the media download failed.</font></p>
 <h5 id="input-parameters-v16">Input Parameters:</h5>

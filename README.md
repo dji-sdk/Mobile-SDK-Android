@@ -35,6 +35,10 @@ Several Android tutorials are provided as examples on how to use different featu
 
 Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk/documentation/introduction/index.html) for more details.
 
+## DJI Mobile UI Library
+
+DJI Mobile UILibrary is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the DJI Mobile SDK. For more details, please check [here](https://github.com/dji-sdk/Mobile-UILibrary-Android).
+
 ## SDK Keys
 
 SDK Keys can be used as an alternative interface to access the product.

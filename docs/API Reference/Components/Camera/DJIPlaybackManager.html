@@ -552,7 +552,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>PlaybackManager</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PlaybackManager</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The playback manager is used to interact with the playback system of the camera. By using the playback manager,  the user can control the playback system.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -561,7 +561,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setPlaybackStateCallback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setPlaybackStateCallback</span><span class="params">(PlaybackState.CallBack cameraPlayBackStateCB)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_setDJICameraPlayBackStateCallBack</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Sets the camera's playback state callback. Called according to the camera's update timer. <br> <br> Precondition:  <br> You must first define a Callback object to pass in as a parameter. <br> <br> Post  Condition: <br> Every time the playback state changes, the Callback interface that was passed  in as a parameter will call its onResult function. <br> The onResult function takes in a DJICameraPlayBackState  object, which provides playback information such as the number of photos currently selected, the video playback  progress (if a video is being played), and much more.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -572,7 +572,7 @@
 <div class="article"><h6><font color="#AAA">method </font>enterSinglePreviewModeWithIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIError <span class="title">enterSinglePreviewModeWithIndex</span><span class="params">(<span class="keyword">int</span> index)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_enterSinglePreviewMode</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Enters single file preview mode for a file at the specified index. In order for this method to be called,  the camera work mode must be <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameramode_djicameramodeplayback">PLAYBACK</a></code>. <br> <br> @return  DJICameraError Shows the possible error during the execution. If there is no error, it returns <code>null</code>.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -583,7 +583,7 @@
 <div class="article"><h6><font color="#AAA">method </font>proceedToNextSinglePreviewPage</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">proceedToNextSinglePreviewPage</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_goToNextSinglePreviewPage</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Goes to the next page. <br> <br> Precondition:<br> The camera must enter Single File Preview Mode.<br> <br>  Special case:<br> If it is the last image, it will go to the first image. @return DJICameraError  Shows the possible error during the execution. If there is no error, it returns <code>null</code>.</font></p>
 <h5 id="return-v2">Return:</h5>
@@ -592,7 +592,7 @@
 <div class="article"><h6><font color="#AAA">method </font>proceedToPreviousSinglePreviewPage</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">proceedToPreviousSinglePreviewPage</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_goToPreviousSinglePreviewPage</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Goes back to the previous page. <br> <br> Precondition:<br> The camera must enter Single File Preview Mode. <br> <br> Special case:<br> If it is the first image, it will go to the last image. @return DJICameraError  Shows the possible error during the execution. If there is no error, it returns <code>null</code>.</font></p>
 <h5 id="return-v3">Return:</h5>
@@ -601,7 +601,7 @@
 <div class="article"><h6><font color="#AAA">method </font>playVideo</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">playVideo</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_startVideoPlayback</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Starts video playback. The selected file must be a video file.<br> <br> Precondition:<br> The camera must enter  Single Preview Mode.<br> <br> Post condition:<br> If the video finishes playing, it will stop and go back to the  beginning of the file. @return DJICameraError Shows the possible error during the execution. If there is no error,  it returns <code>null</code>.</font></p>
 <h5 id="return-v4">Return:</h5>
@@ -610,7 +610,7 @@
 <div class="article"><h6><font color="#AAA">method </font>pauseVideo</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">pauseVideo</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_pauseVideoPlayback</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Pauses a video during playback. <br> <br> Precondition:<br> The video is being played.<br> @return  DJICameraError Shows the possible error during the execution. If there is no error, it returns <code>null</code>.</font></p>
 <h5 id="return-v5">Return:</h5>
@@ -619,7 +619,7 @@
 <div class="article"><h6><font color="#AAA">method </font>stopVideo</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">stopVideo</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_stopVideoPlayback</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Stops a video during playback. <br> <br> Precondition:<br> The video is being played.<br> <br> Post condition:<br>  The file will stop and go back to the beginning of the file. @return DJICameraError Shows the possible error during  the execution. If there is no error, it returns <code>null</code>.</font></p>
 <h5 id="return-v6">Return:</h5>
@@ -628,7 +628,7 @@
 <div class="article"><h6><font color="#AAA">method </font>playVideoFromPositionInPercent</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIError <span class="title">playVideoFromPositionInPercent</span><span class="params">(Byte location)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_setVideoPlaybackFromLocation</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Plays a video from the specified location. The selected file must be a video file.<br> <br> Precondition:<br>  The camera must enter Single File Preview Mode.<br> <br> Post condition:<br> The file will play from a specific location immediately. This command can only be called if the video is currently playing or is paused. If paused, the playback position will be updated and playing will resume.
 @return DJICameraError Shows the possible error during the execution. If there is no error, it returns <code>null</code>.</font></p>
@@ -640,7 +640,7 @@
 <div class="article"><h6><font color="#AAA">method </font>deleteCurrentPreviewFile</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">deleteCurrentPreviewFile</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_deleteCurrentPreviewFile</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Deletes the current file being previewed. <br> <br> Precondition:<br> The camera must enter single file preview  mode.<br> <br> Post condition:<br> The image will be deleted from the SD card. @return DJICameraError Shows the  possible error during the execution. If there is no error, it returns <code>null</code>.</font></p>
 <h5 id="return-v8">Return:</h5>
@@ -651,7 +651,7 @@
 <div class="article"><h6><font color="#AAA">method </font>enterMultiplePreviewMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">enterMultiplePreviewMode</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_enterMultiplePreviewMode</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Enables the user to preview multiple files when the camera is in Playback mode. <br> <br> Precondition:<br> The  camera work mode should be set to Playback mode.<br> <br> Post condition:<br> There will be 8 images on one page.  @return DJICameraError Shows the possible error during the execution. If there is no error, it returns  <code>null</code>.</font></p>
 <h5 id="return-v9">Return:</h5>
@@ -660,7 +660,7 @@
 <div class="article"><h6><font color="#AAA">method </font>proceedToNextMultiplePreviewPage</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">proceedToNextMultiplePreviewPage</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_goToNextMultiplePreviewPage</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Goes to the next page when there are multiple pages. <br> <br> Precondition:<br> The camera must enter Multiple  Preview Mode.<br> <br> Special case:<br> If it is the last page, it will stay at the last page.  @return DJICameraErrorr Shows the possible error during the execution. If there is no error, it  returns <code>null</code>.</font></p>
 <h5 id="return-v10">Return:</h5>
@@ -669,7 +669,7 @@
 <div class="article"><h6><font color="#AAA">method </font>proceedToPreviousMultiplePreviewPage</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">proceedToPreviousMultiplePreviewPage</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_goToPreviousMultiplePreviewPage</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Goes back to the previous page when there are multiple pages. <br> <br> Precondition:<br>  The camera must enter Multiple Preview Mode.<br> <br> Special case:<br> If it is the first page, it will  stay at the first page. @return DJICameraError Shows the possible error during the execution. If there is  no error, it returns <code>null</code>.</font></p>
 <h5 id="return-v11">Return:</h5>
@@ -680,7 +680,7 @@
 <div class="article"><h6><font color="#AAA">method </font>enterMultipleEditMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">enterMultipleEditMode</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_enterMultipleEditMode</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">This enables the user to select, download, or delete multiple media files when the camera is in Playback mode. <br> Precondition:<br> The camera work mode must be set to Camera Play back mode and then Multiple Preview Mode.<br>  <br> Post condition:<br> Multiple photos can be selected to be downloaded or deleted. @return DJICameraError Shows the  possible error during the execution. If there is no error, it returns <code>null</code>.</font></p>
 <h5 id="return-v12">Return:</h5>
@@ -689,7 +689,7 @@
 <div class="article"><h6><font color="#AAA">method </font>exitMultipleEditMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">exitMultipleEditMode</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_exitMultipleEditMode</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Exits multiple edit mode. @return DJICameraError Shows the possible error during the execution. If there is no error, it returns null.</font></p>
 <h5 id="return-v13">Return:</h5>
@@ -698,7 +698,7 @@
 <div class="article"><h6><font color="#AAA">method </font>toggleFileSelectionAtIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIError <span class="title">toggleFileSelectionAtIndex</span><span class="params">(<span class="keyword">int</span> index)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_toggleFileSelectionAtIndex</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Selects or unselects a file at the specified index of the current page. This index is unrelated to the filename,  and is used in multiple edit mode. <br> <br> Precondition:<br> The camera must enter Multiple Edit Mode. <br>  @return DJICameraError Shows the possible error during the execution. If there is no error, it returns  <code>null</code>.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -709,7 +709,7 @@
 <div class="article"><h6><font color="#AAA">method </font>selectAllFiles</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">selectAllFiles</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_selectAllFiles</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">Selects all the files on the SD card. <br> <br> Precondition:<br> The camera must enter Multi Edit Mode.  @return DJICameraError Shows the possible error during the execution. If there is no error, it  returns <code>null</code>.</font></p>
 <h5 id="return-v15">Return:</h5>
@@ -718,7 +718,7 @@
 <div class="article"><h6><font color="#AAA">method </font>unselectAllFiles</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">unselectAllFiles</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_unselectAllFiles</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Unselects all the files on the SD card. <br> Precondition:<br> The camera must enter Multiple Edit Mode.  @return DJICameraError Shows the possible error during the execution. If there is no error,  it returns <code>null</code>.</font></p>
 <h5 id="return-v16">Return:</h5>
@@ -727,7 +727,7 @@
 <div class="article"><h6><font color="#AAA">method </font>selectAllFilesInPage</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">selectAllFilesInPage</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_selectAllFilesInPage</font></td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
 <p><font color="#666">Selects all the file(s) on the current page. <br> <br> Precondition:<br> The camera must enter Multiple Edit Mode.   @return DJICameraError Shows the possible error during the execution. If there is no error, it returns  <code>null</code>.</font></p>
 <h5 id="return-v17">Return:</h5>
@@ -736,7 +736,7 @@
 <div class="article"><h6><font color="#AAA">method </font>unselectAllFilesInPage</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">unselectAllFilesInPage</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_unselectAllFilesInPage</font></td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
 <p><font color="#666">Unselects all the file(s) on the current page. <br> <br> Precondition:<br> The camera must enter Multiple Edit  Mode. @return DJICameraError Shows the possible error during the execution. If there is no error, it  returns <code>null</code>.</font></p>
 <h5 id="return-v18">Return:</h5>
@@ -745,7 +745,7 @@
 <div class="article"><h6><font color="#AAA">method </font>deleteAllSelectedFiles</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraError <span class="title">deleteAllSelectedFiles</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_deleteAllSelectedFiles</font></td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
 <p><font color="#666">Deletes all selected files from the SD card. <br> <br> Precondition:<br> The camera must enter Multiple Edit Mode. <br> <br> Post condition:<br> The images will be deleted from the SD card.  @return DJICameraError Shows  the possible error during the execution. If there is no error, it returns <code>null</code>.</font></p>
 <h5 id="return-v19">Return:</h5>
@@ -754,7 +754,7 @@
 <div class="article"><h6><font color="#AAA">method </font>downloadSelectedFiles</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">downloadSelectedFiles</span><span class="params">(<span class="keyword">final</span> File destDir, <span class="keyword">final</span> FileDownloadCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_downloadSelectedFiles</font></td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
 <p><font color="#666">Downloads the currently selected media files. <br> <br> Precondition:<br> The camera must enter multiple preview mode.<br> <br></font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -765,7 +765,7 @@
 <div class="article"><h6><font color="#AAA">interface </font>FileDownloadCallback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">FileDownloadCallback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_CameraFileDownloadCallbackInterface</font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
 <p><font color="#666">This callback will notify the process of downloading selected files.<br></font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
@@ -774,7 +774,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onStart</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_CameraFileDownloadOnStart</font></td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
 <p><font color="#666">Called as a file is about to start downloading.</font></p>
 </div>
@@ -782,7 +782,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onEnd</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onEnd</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_CameraFileDownloadOnEnd</font></td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
 <p><font color="#666">Called when a file has completed downloading.</font></p>
 </div>
@@ -790,7 +790,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception exception)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_CameraFileDownloadOnError</font></td></tr></table></html>
 <h5 id="description-v26">Description:</h5>
 <p><font color="#666">Called when there is an error during download.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
@@ -799,7 +799,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onProgressUpdate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onProgressUpdate</span><span class="params">(<span class="keyword">int</span> progress)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager_CameraFileDownloadOnProgressUpdate</font></td></tr></table></html>
 <h5 id="description-v27">Description:</h5>
 <p><font color="#666">Called to update the progress on downloading a file in percent. Range is [0, 100].</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>

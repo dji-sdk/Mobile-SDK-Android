@@ -552,16 +552,16 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>FlightController</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlightController</span> <span class="keyword">extends</span> <span class="title">BaseComponent</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">This class provides multiple methods to control the gimbal. These include setting the gimbal work mode,  rotating the gimbal with angle, starting the gimbal auto calibration, etc. This object is available from the <code><a href="../../Products/Aircraft/DJIAircraft.html#djiaircraft">Aircraft</a></code> object which is a subclass of <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</font></p>
+<p><font color="#666">This class contains components of the flight controller and provides methods to  send different commands to the flight controller. This object is available from the <code><a href="../../Products/Aircraft/DJIAircraft.html#djiaircraft">Aircraft</a></code> object which is a subclass of <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="state-updates">State Updates</h4>
 <div class="api-row" id="djiflightcontroller_setupdatesystemstatecallback"><div class="api-col left">Callbacks</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_setupdatesystemstatecallback_inline">setStateCallback</a></div></div><div class="inline-doc" id="djiflightcontroller_setupdatesystemstatecallback_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setStateCallback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStateCallback</span><span class="params">(@Nullable FlightControllerState.Callback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setUpdateSystemStateCallback</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Sets the callback function that updates the flight controller's current state data. This method is called  10 times per second.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -570,7 +570,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setIMUStateCallback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setIMUStateCallback</span><span class="params">(@Nullable IMUState.Callback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setOnIMUStateChangedCallback</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Sets the IMU State callback, which will receive the changed state of the IMU.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -579,7 +579,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setOnboardSDKDeviceDataCallback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setOnboardSDKDeviceDataCallback</span><span class="params">(</span></span></div><div class="line">       @Nullable OnboardSDKDeviceDataCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setReceiveExternalDeviceDataCallback</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Sets the callback function that updates the data received from an external device (e.g. the onboard device).</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -590,7 +590,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getState</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@NonNull</span></div><div class="line"> <span class="function">FlightControllerState <span class="title">getState</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getCurrentState</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Returns the current state of flight controller.</font></p>
 <h5 id="return">Return:</h5>
@@ -601,7 +601,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getCompass</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Compass <span class="title">getCompass</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_compass</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Compass object.</font></p>
 <h5 id="return-v2">Return:</h5>
@@ -610,7 +610,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getRTK</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line"> <span class="function">RTK <span class="title">getRTK</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_RTK</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">RTK positioning object.</font></p>
 <h5 id="return-v3">Return:</h5>
@@ -619,7 +619,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getIMUCount</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIMUCount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_imu_count_inline">FlightControllerKey.IMU_COUNT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_imu_count_inline">FlightControllerKey.IMU_COUNT</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_numberOfIMUS</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Number of IMU modules in the flight controller. Most products have one IMU. <br> <br> Exceptions: <br>  <ul> <li>Phantom 4, Phantom 4 Pro, Mavic Pro, and Inspire 2 each have two IMUs</li> <li>A3, Matrice 600, and Matrice 600 Pro each have one inner IMU and can have at most two external IMUs.</li> <li>N3 has two inner IMUs and can have one external IMU.</li> </ul></font></p>
 <h5 id="return-v4">Return:</h5>
@@ -628,7 +628,7 @@
 <div class="article"><h6><font color="#AAA">method </font>startIMUCalibration</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">startIMUCalibration</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_start_imu_calibration_inline">FlightControllerKey.START_IMU_CALIBRATION</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_start_imu_calibration_inline">FlightControllerKey.START_IMU_CALIBRATION</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_startIMUCalibration</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Starts IMU calibration. For aircraft with multiple IMUs, this method will start the calibration  of all IMUs. Keep the aircraft stationary and horizontal during calibration, which will take 5 to 10  minutes. The completion block will be called once the calibration is started. Use the  <code><a href="../../Components/IMUState/DJIIMUState.html#djiflightcontroller_updateimustate">onUpdate</a></code> method to check the execution status of the IMU calibration.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -637,7 +637,7 @@
 <div class="article"><h6><font color="#AAA">method </font>startIMUCalibration</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">startIMUCalibration</span><span class="params">(@IntRange(from = <span class="number">0</span>, to = <span class="number">2</span>)</span> <span class="keyword">int</span> index,</span></div><div class="line">                                            @Nullable CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_start_imu_calibration_with_id_inline">FlightControllerKey.START_IMU_CALIBRATION_WITH_ID</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_start_imu_calibration_with_id_inline">FlightControllerKey.START_IMU_CALIBRATION_WITH_ID</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_startIMUCalibrationForID</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Starts the calibration for IMU with a specific ID. Keep the aircraft stationary and horizontal during calibration, which will take 5 to 10  minutes. The completion block will be called once the calibration is started.  Use the <code><a href="../../Components/IMUState/DJIIMUState.html#djiflightcontroller_updateimustate">onUpdate</a></code> method to check the execution  status of the IMU calibration.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -648,7 +648,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getLandingGear</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">LandingGear <span class="title">getLandingGear</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_landingGear</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Landing Gear object. For products with movable landing gear only.</font></p>
 <h5 id="return-v5">Return:</h5>
@@ -657,7 +657,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isLandingGearMovable</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLandingGearMovable</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_landing_gear_movable_inline">FlightControllerKey.IS_LANDING_GEAR_MOVABLE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_landing_gear_movable_inline">FlightControllerKey.IS_LANDING_GEAR_MOVABLE</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_isLandingGearMovable</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666"><code>true</code> if landing gear is supported for the connected aircraft.</font></p>
 <h5 id="return-v6">Return:</h5>
@@ -666,7 +666,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setLEDsEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setLEDsEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, @Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_leds_enabled_inline">FlightControllerKey.LEDS_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_leds_enabled_inline">FlightControllerKey.LEDS_ENABLED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setLEDsEnabled</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Turns on/off the forward LEDs, which are used to indicate aircraft status. They are on by default.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
@@ -675,7 +675,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getLEDsEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getLEDsEnabled</span><span class="params">(@NonNull CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_leds_enabled_inline">FlightControllerKey.LEDS_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_leds_enabled_inline">FlightControllerKey.LEDS_ENABLED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getLEDsEnabled</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Gets on/off status of forward LEDs.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
@@ -684,7 +684,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSimulator</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Simulator <span class="title">getSimulator</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_simulator</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Simulator object.</font></p>
 <h5 id="return-v7">Return:</h5>
@@ -693,7 +693,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isOnboardSDKDeviceAvailable</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isOnboardSDKDeviceAvailable</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_on_board_sdk_available_inline">FlightControllerKey.IS_ON_BOARD_SDK_AVAILABLE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_on_board_sdk_available_inline">FlightControllerKey.IS_ON_BOARD_SDK_AVAILABLE</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_isOnboardSDKDeviceAvailable</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Checks if the onboard SDK device is available.</font></p>
 <h5 id="return-v8">Return:</h5>
@@ -702,7 +702,7 @@
 <div class="article"><h6><font color="#AAA">method </font>sendDataToOnboardSDKDevice</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendDataToOnboardSDKDevice</span><span class="params">(@Size(min = <span class="number">1</span>, max = <span class="number">100</span>)</span> <span class="keyword">byte</span>[] data,</span></div><div class="line">                                                   @Nullable CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_send_data_to_on_board_sdk_device_inline">FlightControllerKey.SEND_DATA_TO_ON_BOARD_SDK_DEVICE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_send_data_to_on_board_sdk_device_inline">FlightControllerKey.SEND_DATA_TO_ON_BOARD_SDK_DEVICE</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_sendDataToOnboardSDKDevice</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">If there is a device connected to the aircraft using the Onboard SDK, this method will send data to that  device. The size of the data cannot be greater than 100 bytes, and will be sent in 40 byte increments every  14ms. This method is only supported on products that support the Onboard SDK (Matrice 100, Matrice 600, Matrice 600 Pro, A3, A3 Pro, and N3).</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
@@ -713,7 +713,7 @@
 <div class="article"><h6><font color="#AAA">method </font>turnOnMotors</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">turnOnMotors</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_turn_on_motors_inline">FlightControllerKey.TURN_ON_MOTORS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_turn_on_motors_inline">FlightControllerKey.TURN_ON_MOTORS</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_turnOnMotors</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Turns on the aircraft's motors. Supported by flight controller firmware 3.1.0.0 or above.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
@@ -722,7 +722,7 @@
 <div class="article"><h6><font color="#AAA">method </font>turnOffMotors</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">turnOffMotors</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_turn_off_motors_inline">FlightControllerKey.TURN_OFF_MOTORS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_turn_off_motors_inline">FlightControllerKey.TURN_OFF_MOTORS</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_turnOffMotors</font></td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
 <p><font color="#666">Turns off the aircraft's motors. The method can only be called when the aircraft is on the ground.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
@@ -731,7 +731,7 @@
 <div class="article"><h6><font color="#AAA">method </font>startTakeoff</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">startTakeoff</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_take_off_inline">FlightControllerKey.TAKE_OFF</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_take_off_inline">FlightControllerKey.TAKE_OFF</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_takeOff</font></td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
 <p><font color="#666">Starts aircraft takeoff. Takeoff is considered complete when the aircraft is hovering 1.2 meters (4 feet)  above the ground. Completion block is called when aircraft crosses 0.5 meters (1.6 feet). If the motors  are already on, this command cannot be executed.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
@@ -740,7 +740,7 @@
 <div class="article"><h6><font color="#AAA">method </font>cancelTakeoff</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">cancelTakeoff</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_cancel_take_off_inline">FlightControllerKey.CANCEL_TAKE_OFF</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_cancel_take_off_inline">FlightControllerKey.CANCEL_TAKE_OFF</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_cancelTakeOff</font></td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
 <p><font color="#666">Stops aircraft takeoff. If called before <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_takeoff">startTakeoff</a></code> is complete, the aircraft will  cancel takeoff (<code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_takeoff">startTakeoff</a></code> completion block will return an error) and hover at the  current height.</font></p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
@@ -749,16 +749,16 @@
 <div class="article"><h6><font color="#AAA">method </font>startLanding</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">startLanding</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_start_landing_inline">FlightControllerKey.START_LANDING</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_start_landing_inline">FlightControllerKey.START_LANDING</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_autoLanding</font></td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
-<p><font color="#666">Starts auto-landing of the aircraft. Landing is considered complete once the aircraft lands on the ground,  and powers down propellors to medium throttle.</font></p>
+<p><font color="#666">Starts auto-landing of the aircraft. Returns completion block once aircraft begins to descend for auto-land.</font></p>
 <h5 id="input-parameters-v13">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_cancelautolanding"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_cancelautolanding_inline">cancelLanding</a></div></div><div class="inline-doc" id="djiflightcontroller_cancelautolanding_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>cancelLanding</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">cancelLanding</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_cancel_landing_inline">FlightControllerKey.CANCEL_LANDING</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_cancel_landing_inline">FlightControllerKey.CANCEL_LANDING</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_cancelAutoLanding</font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
 <p><font color="#666">Stops auto-landing of the aircraft. If called before <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_autolanding">startLanding</a></code> is complete, then the  auto landing will be cancelled (<code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_autolanding">startLanding</a></code> completion block will return an error) and  the aircraft will hover at its current location.</font></p>
 <h5 id="input-parameters-v14">Input Parameters:</h5>
@@ -767,7 +767,7 @@
 <div class="article"><h6><font color="#AAA">method </font>confirmLanding</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">confirmLanding</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_confirm_landing_inline">FlightControllerKey.CONFIRM_LANDING</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_confirm_landing_inline">FlightControllerKey.CONFIRM_LANDING</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_confirmLanding</font></td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
 <p><font color="#666">Confirms continuation of landing action. When the clearance between the aircraft and the ground is less than  0.3m, the aircraft will pause landing and wait for user's confirmation. Can  use <code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate_islandingconfirmationneeded">isLandingConfirmationNeeded</a></code>  in <code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html#djiflightcontroller_djiflightcontrollercurrectstate">FlightControllerState</a></code> to check if confirmation is needed. It is  supported by flight controller firmware 3.2.0.0 and above.</font></p>
 <h5 id="input-parameters-v15">Input Parameters:</h5>
@@ -778,7 +778,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isVirtualStickControlModeAvailable</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isVirtualStickControlModeAvailable</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_virtual_stick_control_mode_available_inline">FlightControllerKey.IS_VIRTUAL_STICK_CONTROL_MODE_AVAILABLE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_virtual_stick_control_mode_available_inline">FlightControllerKey.IS_VIRTUAL_STICK_CONTROL_MODE_AVAILABLE</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_VirtualStickControlModeCategory_isVirtualStickControlModeAvailable</font></td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
 <p><font color="#666">Indicates whether the virtual stick control interface can be used. Virtual stick mode  is only availablle when all of the follow requirements are met: <ul> <li>Virtual stick mode is enabled.</li> <li>No waypoint, hotpoint, or follow-me mission is running.</li> <li><code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightorientationmode">FlightOrientationMode</a></code> is set to <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightorientationmode_defaultaircraftheading">AIRCRAFT_HEADING</a></code></li> <li>Terrain-follow is disabled if the aircraft supports this feature.</li> <li>Tripod mode is disabled if the aircraft supports this feature.</li> </ul></font></p>
 <h5 id="return-v9">Return:</h5>
@@ -787,7 +787,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setVirtualStickModeEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVirtualStickModeEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_virtual_stick_control_mode_enabled_inline">FlightControllerKey.VIRTUAL_STICK_CONTROL_MODE_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_virtual_stick_control_mode_enabled_inline">FlightControllerKey.VIRTUAL_STICK_CONTROL_MODE_ENABLED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_VirtualStickControlModeCategory_setVirtualStickModeEnabled</font></td></tr></table></html>
 <h5 id="description-v26">Description:</h5>
 <p><font color="#666">Enables/disables virtual stick control mode. By enabling virtual stick control mode, the aircraft can be controlled  using <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_virtualstickcontrolmodecategory_sendvirtualstickflightcontroldata">sendVirtualStickFlightControlData</a></code>. Not  supported by Mavic Pro when using the WiFi connection.</font></p>
 <h5 id="input-parameters-v16">Input Parameters:</h5>
@@ -796,7 +796,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getVirtualStickModeEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getVirtualStickModeEnabled</span><span class="params">(@Nullable <span class="keyword">final</span> CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_virtual_stick_control_mode_enabled_inline">FlightControllerKey.VIRTUAL_STICK_CONTROL_MODE_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_virtual_stick_control_mode_enabled_inline">FlightControllerKey.VIRTUAL_STICK_CONTROL_MODE_ENABLED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_VirtualStickControlModeCategory_getVirtualStickModeEnabled</font></td></tr></table></html>
 <h5 id="description-v27">Description:</h5>
 <p><font color="#666">Gets virtual stick mode status (enabled/disabled). Not supported by Mavic Pro when using the WiFi connection.</font></p>
 <h5 id="input-parameters-v17">Input Parameters:</h5>
@@ -805,7 +805,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isVirtualStickAdvancedModeEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isVirtualStickAdvancedModeEnabled</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_virtualStickAdvancedModeEnabled</font></td></tr></table></html>
 <h5 id="description-v28">Description:</h5>
 <p><font color="#666"><code>true</code> if Virtual Stick advanced mode is enabled. By default, it is <code>false</code>. Assuming GPS signal is good, advanced mode will allow aircraft to compensate for wind when hovering.  For the Phantom 4, collision avoidance can be enabled for virtual stick  control if advanced mode is on, and collision avoidance is enabled in <code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant">FlightAssistant</a></code>.  Only supported by flight controller firmware versions 3.1.x.x or above.</font></p>
 <h5 id="return-v10">Return:</h5>
@@ -814,7 +814,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setVirtualStickAdvancedModeEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVirtualStickAdvancedModeEnabled</span><span class="params">(<span class="keyword">boolean</span> virtualStickAdvancedModeEnabled)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setVirtualStickAdvancedModeEnabled</font></td></tr></table></html>
 <h5 id="description-v29">Description:</h5>
 <p><font color="#666">Set <code>true</code> to enable Virtual Stick advanced mode. By default, it is <code>false</code>. Assuming GPS signal is good, advanced mode will allow aircraft to compensate for wind when hovering.
 For the Phantom 4, collision avoidance can be enabled for virtual stick
@@ -826,7 +826,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getVerticalControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">VerticalControlMode <span class="title">getVerticalControlMode</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_verticalControlMode</font></td></tr></table></html>
 <h5 id="description-v30">Description:</h5>
 <p><font color="#666">Returns current mode of <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djivirtualstickverticalcontrolmode">VerticalControlMode</a></code>.</font></p>
 <h5 id="return-v11">Return:</h5>
@@ -835,7 +835,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setVerticalControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVerticalControlMode</span><span class="params">(@NonNull VerticalControlMode verticalControlMode)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setVerticalControlMode</font></td></tr></table></html>
 <h5 id="description-v31">Description:</h5>
 <p><font color="#666">Sets whether virtual stick vertical controller changes aircraft's altitude or vertical velocity.</font></p>
 <h5 id="input-parameters-v19">Input Parameters:</h5>
@@ -844,7 +844,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getRollPitchControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">RollPitchControlMode <span class="title">getRollPitchControlMode</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_rollPitchControlMode</font></td></tr></table></html>
 <h5 id="description-v32">Description:</h5>
 <p><font color="#666">Returns current mode of <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djivirtualstickrollpitchcontrolmode">RollPitchControlMode</a></code>.</font></p>
 <h5 id="return-v12">Return:</h5>
@@ -853,7 +853,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setRollPitchControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setRollPitchControlMode</span><span class="params">(@NonNull RollPitchControlMode rollPitchControlMode)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setRollPitchControlMode</font></td></tr></table></html>
 <h5 id="description-v33">Description:</h5>
 <p><font color="#666">Sets whether roll/pitch virtual controllers change aircraft's angle relative to level orientation, or aircraft's velocity on horizontal axes.</font></p>
 <h5 id="input-parameters-v20">Input Parameters:</h5>
@@ -862,7 +862,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getYawControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">YawControlMode <span class="title">getYawControlMode</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_yawControlMode</font></td></tr></table></html>
 <h5 id="description-v34">Description:</h5>
 <p><font color="#666">Returns current mode of <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djivirtualstickyawcontrolmode">YawControlMode</a></code>.</font></p>
 <h5 id="return-v13">Return:</h5>
@@ -871,7 +871,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setYawControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setYawControlMode</span><span class="params">(@NonNull YawControlMode yawControlMode)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setYawControlMode</font></td></tr></table></html>
 <h5 id="description-v35">Description:</h5>
 <p><font color="#666">Sets whether virtual stick yaw controller changes aircraft's heading by angle or by angular velocity.</font></p>
 <h5 id="input-parameters-v21">Input Parameters:</h5>
@@ -880,7 +880,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getRollPitchCoordinateSystem</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">FlightCoordinateSystem <span class="title">getRollPitchCoordinateSystem</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_rollPitchCoordinateSystem</font></td></tr></table></html>
 <h5 id="description-v36">Description:</h5>
 <p><font color="#666">Gets current mode of <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djivirtualstickflightcoordinatesystem">FlightCoordinateSystem</a></code>.</font></p>
 <h5 id="return-v14">Return:</h5>
@@ -889,7 +889,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setRollPitchCoordinateSystem</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setRollPitchCoordinateSystem</span><span class="params">(@NonNull FlightCoordinateSystem rollPitchCoordinateSystem)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setRollPitchCoordinateSystem</font></td></tr></table></html>
 <h5 id="description-v37">Description:</h5>
 <p><font color="#666">Sets whether horizontal axes are fixed relative to the ground or to the aircraft.</font></p>
 <h5 id="input-parameters-v22">Input Parameters:</h5>
@@ -898,7 +898,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>sendVirtualStickFlightControlData</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendVirtualStickFlightControlData</span><span class="params">(@NonNull FlightControlData controlData,</span></span></div><div class="line">                                                          @Nullable <span class="keyword">final</span> CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_send_virtual_stick_flight_control_data_inline">FlightControllerKey.SEND_VIRTUAL_STICK_FLIGHT_CONTROL_DATA</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_send_virtual_stick_flight_control_data_inline">FlightControllerKey.SEND_VIRTUAL_STICK_FLIGHT_CONTROL_DATA</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_VirtualStickControlModeCategory_sendVirtualStickFlightControlData</font></td></tr></table></html>
 <h5 id="description-v38">Description:</h5>
 <p><font color="#666">Sends flight control data using virtual stick commands. The <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_virtualstickcontrolmodecategory_isvirtualstickcontrolmodeavailable">isVirtualStickControlModeAvailable</a></code>  method must return <code>true</code> to use virtual stick commands. Virtual stick commands  should be sent to the aircraft between 5 Hz and 25 Hz. If virtual stick commands are not sent frequently  enough, the aircraft may regard the connection as broken, which will cause the aircraft to hover in place  until the next command comes through.</font></p>
 <h5 id="input-parameters-v23">Input Parameters:</h5>
@@ -909,7 +909,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>isFlightAssistantSupported</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isFlightAssistantSupported</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_flight_assistant_supported_inline">FlightControllerKey.IS_FLIGHT_ASSISTANT_SUPPORTED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_flight_assistant_supported_inline">FlightControllerKey.IS_FLIGHT_ASSISTANT_SUPPORTED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_isIntelligentFlightAssistantSupported</font></td></tr></table></html>
 <h5 id="description-v39">Description:</h5>
 <p><font color="#666"><code>true</code> if the product supports IntelligentFlightAssistant.</font></p>
 <h5 id="return-v15">Return:</h5>
@@ -918,7 +918,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getFlightAssistant</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line"> <span class="function">FlightAssistant <span class="title">getFlightAssistant</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_intelligentFlightAssistant</font></td></tr></table></html>
 <h5 id="description-v40">Description:</h5>
 <p><font color="#666">Intelligent flight assistant.</font></p>
 <h5 id="return-v16">Return:</h5>
@@ -927,7 +927,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setFlightOrientationMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFlightOrientationMode</span><span class="params">(@NonNull FlightOrientationMode type,</span></span></div><div class="line">                                                 @Nullable CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_flight_orientation_mode_inline">FlightControllerKey.FLIGHT_ORIENTATION_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_flight_orientation_mode_inline">FlightControllerKey.FLIGHT_ORIENTATION_MODE</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_DJIFlightOrientationModeCategory_setFlightOrientationMode</font></td></tr></table></html>
 <h5 id="description-v41">Description:</h5>
 <p><font color="#666">Sets the aircraft flight orientation relative to the Aircraft Heading, Course Lock, or Home Lock. See the  <i>Flight Controller User Guide</i> for more information about flight orientation.</font></p>
 <h5 id="input-parameters-v24">Input Parameters:</h5>
@@ -936,7 +936,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>lockCourseUsingCurrentHeading</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">lockCourseUsingCurrentHeading</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_lock_course_using_current_heading_inline">FlightControllerKey.LOCK_COURSE_USING_CURRENT_HEADING</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_lock_course_using_current_heading_inline">FlightControllerKey.LOCK_COURSE_USING_CURRENT_HEADING</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_DJIFlightOrientationModeCategory_lockCourseUsingCurrentDirection</font></td></tr></table></html>
 <h5 id="description-v42">Description:</h5>
 <p><font color="#666">Locks the current heading of the aircraft as the Course Lock. Used when Flight Orientation Mode  is <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightorientationmode_courselock">COURSE_LOCK</a></code>.</font></p>
 <h5 id="input-parameters-v25">Input Parameters:</h5>
@@ -945,7 +945,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setTripodModeEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTripodModeEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled,</span></span></div><div class="line">                                             @Nullable CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setTripodModeEnabled</font></td></tr></table></html>
 <h5 id="description-v43">Description:</h5>
 <p><font color="#666">Enables/disables tripod mode. Tripod Mode drops the aircraft's maximum speed to 2.2mph (3.6kph), and  significantly reduces the control stick sensitivity of the remote controller to give the user the  precision needed for accurate framing. When tripod mode is enabled, missions, terrain follow mode,  course lock, and home lock are not allowed. Tripod mode is not allowed if the aircraft is running a  mission. If GPS or vision positioning aren't available, tripod mode cannot be enabled. If the GPS  and/or the vision system is providing the flight controller with velocity information, the  aircraft will be able to automatically compensate for wind. If however, position information is not  available, manual intervention will be required. User should beware that any manual  compensation will be limited due to the reduced maximum velocity and sensitivity. If GPS and vision  position become unavailable while in tripod mode, it is advisable to alert the user and disable Tripod Mode.</font></p>
 <h5 id="input-parameters-v26">Input Parameters:</h5>
@@ -954,7 +954,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getTripodModeEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getTripodModeEnabled</span><span class="params">(@NonNull CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getTripodModeEnabled</font></td></tr></table></html>
 <h5 id="description-v44">Description:</h5>
 <p><font color="#666">Gets tripod mode status (enabled/disabled).</font></p>
 <h5 id="input-parameters-v27">Input Parameters:</h5>
@@ -963,7 +963,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setTerrainFollowModeEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTerrainFollowModeEnabled</span><span class="params">(Boolean enabled,</span></span></div><div class="line">                                                    @Nullable CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_terrain_follow_mode_enabled_inline">FlightControllerKey.TERRAIN_FOLLOW_MODE_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_terrain_follow_mode_enabled_inline">FlightControllerKey.TERRAIN_FOLLOW_MODE_ENABLED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setTerrainFollowModeEnabled</font></td></tr></table></html>
 <h5 id="description-v45">Description:</h5>
 <p><font color="#666">Enable/disable terrain follow mode. The aircraft uses height information gathered by the onboard ultrasonic system and its downward facing cameras to keep flying at the same height above the ground.</font></p>
 <h5 id="input-parameters-v28">Input Parameters:</h5>
@@ -972,7 +972,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getTerrainFollowModeEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getTerrainFollowModeEnabled</span><span class="params">(</span></span></div><div class="line">       @NonNull <span class="keyword">final</span> CompletionCallbackWith&lt;Boolean&gt; callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_terrain_follow_mode_enabled_inline">FlightControllerKey.TERRAIN_FOLLOW_MODE_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_terrain_follow_mode_enabled_inline">FlightControllerKey.TERRAIN_FOLLOW_MODE_ENABLED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getTerrainFollowModeEnabled</font></td></tr></table></html>
 <h5 id="description-v46">Description:</h5>
 <p><font color="#666">Gets terrain mode status (enabled/disabled).</font></p>
 <h5 id="input-parameters-v29">Input Parameters:</h5>
@@ -981,7 +981,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setControlMode</span><span class="params">(@NonNull ControlMode mode, @Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_control_mode_inline">FlightControllerKey.CONTROL_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_control_mode_inline">FlightControllerKey.CONTROL_MODE</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setControlMode</font></td></tr></table></html>
 <h5 id="description-v47">Description:</h5>
 <p><font color="#666">Sets the control mode of the flight controller. It is highly recommended you keep the default value  of <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightcontrollercontrolmode_smart">SMART</a></code>. See <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightcontrollercontrolmode">ControlMode</a></code> for details.  Only supported by stand-alone A3.</font></p>
 <h5 id="input-parameters-v30">Input Parameters:</h5>
@@ -990,7 +990,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getControlMode</span><span class="params">(@NonNull CompletionCallbackWith&lt;ControlMode&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_control_mode_inline">FlightControllerKey.CONTROL_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_control_mode_inline">FlightControllerKey.CONTROL_MODE</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getControlMode</font></td></tr></table></html>
 <h5 id="description-v48">Description:</h5>
 <p><font color="#666">Gets the control mode of the flight controller.</font></p>
 <h5 id="input-parameters-v31">Input Parameters:</h5>
@@ -999,7 +999,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setAutoQuickSpinEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAutoQuickSpinEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, @Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setAutoQuickSpinEnabled</font></td></tr></table></html>
 <h5 id="description-v49">Description:</h5>
 <p><font color="#666">Enable/disable Auto Quick Spin. When the gimbal reaches a yaw movement limit, the aircraft will  automatically rotate 360 degrees to unwind the gimbal, allowing it to continue moving  in the yaw direction. This method is only available when the aircraft is flying at least 3m above the ground.</font></p>
 <h5 id="input-parameters-v32">Input Parameters:</h5>
@@ -1008,7 +1008,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getQuickSpinEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getQuickSpinEnabled</span><span class="params">(@NonNull CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_quick_spin_enabled_inline">FlightControllerKey.QUICK_SPIN_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_quick_spin_enabled_inline">FlightControllerKey.QUICK_SPIN_ENABLED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getAutoQuickSpinEnabled</font></td></tr></table></html>
 <h5 id="description-v50">Description:</h5>
 <p><font color="#666">Gets current Auto Quick Spin mode (enabled/disabled).</font></p>
 <h5 id="input-parameters-v33">Input Parameters:</h5>
@@ -1017,7 +1017,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setMaxFlightHeight</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMaxFlightHeight</span><span class="params">(@FloatRange(from = <span class="number">20.0</span>, to = <span class="number">500.0</span>)</span> <span class="keyword">float</span> maxHeight,</span></div><div class="line">                                  @Nullable <span class="keyword">final</span> CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_height_inline">FlightControllerKey.MAX_FLIGHT_HEIGHT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_height_inline">FlightControllerKey.MAX_FLIGHT_HEIGHT</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightLimitation_setMaxFlightHeight</font></td></tr></table></html>
 <h5 id="description-v51">Description:</h5>
 <p><font color="#666">Sets the maximum flight height limitation of the aircraft. The <code>maxHeight</code> value must be in the  range [20, 500] m.</font></p>
 <h5 id="input-parameters-v34">Input Parameters:</h5>
@@ -1026,7 +1026,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getMaxFlightHeight</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getMaxFlightHeight</span><span class="params">(@NonNull <span class="keyword">final</span> CompletionCallbackWith&lt;Float&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_height_inline">FlightControllerKey.MAX_FLIGHT_HEIGHT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_height_inline">FlightControllerKey.MAX_FLIGHT_HEIGHT</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightLimitation_getMaxFlightHeight</font></td></tr></table></html>
 <h5 id="description-v52">Description:</h5>
 <p><font color="#666">Gets the maximum flight height limitation of the aircraft.</font></p>
 <h5 id="input-parameters-v35">Input Parameters:</h5>
@@ -1035,7 +1035,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setMaxFlightRadius</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMaxFlightRadius</span><span class="params">(@FloatRange(from = <span class="number">15.0</span>, to = <span class="number">500.0</span>)</span> <span class="keyword">float</span> maxRadius,</span></div><div class="line">                                  @Nullable <span class="keyword">final</span> CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_radius_inline">FlightControllerKey.MAX_FLIGHT_RADIUS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_radius_inline">FlightControllerKey.MAX_FLIGHT_RADIUS</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightLimitation_setMaxFlightRadius</font></td></tr></table></html>
 <h5 id="description-v53">Description:</h5>
 <p><font color="#666">Sets the maximum flight radius limitation of the aircraft. The radius is calculated from the home point.  The <code>maxRadius</code> value must be in the range [15, 500] m.</font></p>
 <h5 id="input-parameters-v36">Input Parameters:</h5>
@@ -1044,7 +1044,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getMaxFlightRadius</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getMaxFlightRadius</span><span class="params">(@NonNull <span class="keyword">final</span> CompletionCallbackWith&lt;Float&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_radius_inline">FlightControllerKey.MAX_FLIGHT_RADIUS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_radius_inline">FlightControllerKey.MAX_FLIGHT_RADIUS</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightLimitation_getMaxFlightRadius</font></td></tr></table></html>
 <h5 id="description-v54">Description:</h5>
 <p><font color="#666">Gets the maximum flight radius limitation of the aircraft.</font></p>
 <h5 id="input-parameters-v37">Input Parameters:</h5>
@@ -1053,7 +1053,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setMaxFlightRadiusLimitationEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMaxFlightRadiusLimitationEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_radius_enabled_inline">FlightControllerKey.MAX_FLIGHT_RADIUS_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_radius_enabled_inline">FlightControllerKey.MAX_FLIGHT_RADIUS_ENABLED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightLimitation_setMaxFlightRadiusLimitationEnabled</font></td></tr></table></html>
 <h5 id="description-v55">Description:</h5>
 <p><font color="#666">Sets whether the maximum flight radius limitation is enabled. If enabled is <code>false</code>,  there is no maximum flight radius limitation.</font></p>
 <h5 id="input-parameters-v38">Input Parameters:</h5>
@@ -1062,7 +1062,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getMaxFlightRadiusLimitationEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getMaxFlightRadiusLimitationEnabled</span><span class="params">(@NonNull <span class="keyword">final</span> CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_radius_enabled_inline">FlightControllerKey.MAX_FLIGHT_RADIUS_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_flight_radius_enabled_inline">FlightControllerKey.MAX_FLIGHT_RADIUS_ENABLED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightLimitation_getMaxFlightRadiusLimitationEnabled</font></td></tr></table></html>
 <h5 id="description-v56">Description:</h5>
 <p><font color="#666">Gets the maximum flight radius limitation status (enabled/disabled).</font></p>
 <h5 id="input-parameters-v39">Input Parameters:</h5>
@@ -1073,7 +1073,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>startGoHome</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">startGoHome</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_start_go_home_inline">FlightControllerKey.START_GO_HOME</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_start_go_home_inline">FlightControllerKey.START_GO_HOME</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_goHome</font></td></tr></table></html>
 <h5 id="description-v57">Description:</h5>
 <p><font color="#666">The aircraft will start to go home. This method is considered complete once the aircraft has landed at its  home position.</font></p>
 <h5 id="input-parameters-v40">Input Parameters:</h5>
@@ -1082,7 +1082,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>cancelGoHome</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">cancelGoHome</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_cancel_go_home_inline">FlightControllerKey.CANCEL_GO_HOME</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_cancel_go_home_inline">FlightControllerKey.CANCEL_GO_HOME</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_cancelGoHome</font></td></tr></table></html>
 <h5 id="description-v58">Description:</h5>
 <p><font color="#666">The aircraft will stop going home and will hover in place. The <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_gohome">startGoHome</a></code> completion  block will immediately return an error.</font></p>
 <h5 id="input-parameters-v41">Input Parameters:</h5>
@@ -1091,7 +1091,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setHomeLocation</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHomeLocation</span><span class="params">(@NonNull LocationCoordinate2D homeLocation,</span></span></div><div class="line">                                        @Nullable CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_home_location_inline">FlightControllerKey.HOME_LOCATION</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_home_location_inline">FlightControllerKey.HOME_LOCATION</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setHomeLocation</font></td></tr></table></html>
 <h5 id="description-v59">Description:</h5>
 <p><font color="#666">Sets the home location of the aircraft. The home location is where the aircraft returns when commanded  by <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_gohome">startGoHome</a></code>, when its signal is lost or when the battery is below  the lowBatteryWarning threshold. The user should be careful setting a new home point location, as  sometimes the product will not be under user control when returning home. A home location  is valid if it is within 30m of one of the following: <ul> <li>initial take-off location</li> <li>aircraft's current location</li> <li>current mobile location with at least kCLLocationAccuracyNearestTenMeters accuracy level</li> <li>current remote controller's location as shown by RC GPS.</li> </ul> <br><br> Note: If setting home point around mobile location, before calling  this method, the locationServicesEnabled must be true in CLLocationManager, the  NSLocationWhenInUseUsageDescription or NSLocationAlwaysUsageDescription key needs to be specified in the  applications Info.plist and the requestWhenInUseAuthorization or requestAlwaysAuthorization method of  CLLocationManager object needs to be called to get the user's permission to access location services.</font></p>
 <h5 id="input-parameters-v42">Input Parameters:</h5>
@@ -1100,7 +1100,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setHomeLocationUsingAircraftCurrentLocation</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHomeLocationUsingAircraftCurrentLocation</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_home_location_using_current_aircraft_location_inline">FlightControllerKey.HOME_LOCATION_USING_CURRENT_AIRCRAFT_LOCATION</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_home_location_using_current_aircraft_location_inline">FlightControllerKey.HOME_LOCATION_USING_CURRENT_AIRCRAFT_LOCATION</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setHomeLocationUsingAircraftCurrentLocation</font></td></tr></table></html>
 <h5 id="description-v60">Description:</h5>
 <p><font color="#666">Sets the home location of the aircraft to the current location of the aircraft.  See <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_sethomelocation">setHomeLocation</a></code> for details on home point use.</font></p>
 <h5 id="input-parameters-v43">Input Parameters:</h5>
@@ -1109,7 +1109,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getHomeLocation</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getHomeLocation</span><span class="params">(@NonNull CompletionCallbackWith&lt;LocationCoordinate2D&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_home_location_inline">FlightControllerKey.HOME_LOCATION</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_home_location_inline">FlightControllerKey.HOME_LOCATION</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getHomeLocation</font></td></tr></table></html>
 <h5 id="description-v61">Description:</h5>
 <p><font color="#666">Gets the home point of the aircraft.</font></p>
 <h5 id="input-parameters-v44">Input Parameters:</h5>
@@ -1118,7 +1118,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setGoHomeHeightInMeters</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setGoHomeHeightInMeters</span><span class="params">(@FloatRange(from = <span class="number">20.0</span>, to = <span class="number">500.0</span>)</span> <span class="keyword">float</span> height,</span></div><div class="line">                                                @Nullable CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_height_in_meters_inline">FlightControllerKey.GO_HOME_HEIGHT_IN_METERS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_height_in_meters_inline">FlightControllerKey.GO_HOME_HEIGHT_IN_METERS</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setGoHomeAltitude</font></td></tr></table></html>
 <h5 id="description-v62">Description:</h5>
 <p><font color="#666">Sets the minimum altitude, relative to where the aircraft took off, at which the aircraft must be before  going home. This can be useful when the user foresees obstacles in the aircraft's flight path. If the aircraft's  current altitude is higher than the minimum go home altitude, it will go home at its current altitude.  The valid range for the altitude is from 20m to 500m.</font></p>
 <h5 id="input-parameters-v45">Input Parameters:</h5>
@@ -1127,7 +1127,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getGoHomeHeightInMeters</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getGoHomeHeightInMeters</span><span class="params">(@NonNull CompletionCallbackWith&lt;Float&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_height_in_meters_inline">FlightControllerKey.GO_HOME_HEIGHT_IN_METERS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_height_in_meters_inline">FlightControllerKey.GO_HOME_HEIGHT_IN_METERS</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getGoHomeAltitude</font></td></tr></table></html>
 <h5 id="description-v63">Description:</h5>
 <p><font color="#666">Gets the minimum altitude (relative to the take-off location in meters) at which the aircraft must be before  going home.</font></p>
 <h5 id="input-parameters-v46">Input Parameters:</h5>
@@ -1138,7 +1138,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setConnectionFailSafeBehavior</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setConnectionFailSafeBehavior</span><span class="params">(@NonNull ConnectionFailSafeBehavior behavior,</span></span></div><div class="line">                                                      @Nullable CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_connection_fail_safe_behavior_inline">FlightControllerKey.CONNECTION_FAIL_SAFE_BEHAVIOR</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_connection_fail_safe_behavior_inline">FlightControllerKey.CONNECTION_FAIL_SAFE_BEHAVIOR</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setFlightFailsafeOperation</font></td></tr></table></html>
 <h5 id="description-v64">Description:</h5>
 <p><font color="#666">Sets the FailSafe action for when the connection between remote controller and aircraft is lost.</font></p>
 <h5 id="input-parameters-v47">Input Parameters:</h5>
@@ -1147,7 +1147,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getConnectionFailSafeBehavior</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getConnectionFailSafeBehavior</span><span class="params">(</span></span></div><div class="line">       @NonNull CompletionCallbackWith&lt;ConnectionFailSafeBehavior&gt; callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_connection_fail_safe_behavior_inline">FlightControllerKey.CONNECTION_FAIL_SAFE_BEHAVIOR</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_connection_fail_safe_behavior_inline">FlightControllerKey.CONNECTION_FAIL_SAFE_BEHAVIOR</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getFlightFailsafeOperation</font></td></tr></table></html>
 <h5 id="description-v65">Description:</h5>
 <p><font color="#666">Gets the FailSafe action for when the connection between remote controller and aircraft is lost.</font></p>
 <h5 id="input-parameters-v48">Input Parameters:</h5>
@@ -1156,7 +1156,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setGoHomeBatteryThreshold</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setGoHomeBatteryThreshold</span><span class="params">(@IntRange(from = <span class="number">25</span>, to = <span class="number">50</span>)</span> <span class="keyword">int</span> percent,</span></div><div class="line">                                                  @Nullable CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_battery_threshold_inline">FlightControllerKey.GO_HOME_BATTERY_THRESHOLD</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_battery_threshold_inline">FlightControllerKey.GO_HOME_BATTERY_THRESHOLD</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setGoHomeBatteryThreshold</font></td></tr></table></html>
 <h5 id="description-v66">Description:</h5>
 <p><font color="#666">Sets the low battery go home percentage threshold. The percentage must be in the range [25, 50].</font></p>
 <h5 id="input-parameters-v49">Input Parameters:</h5>
@@ -1165,7 +1165,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getGoHomeBatteryThreshold</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getGoHomeBatteryThreshold</span><span class="params">(@NonNull CompletionCallbackWith&lt;Integer&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_battery_threshold_inline">FlightControllerKey.GO_HOME_BATTERY_THRESHOLD</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_battery_threshold_inline">FlightControllerKey.GO_HOME_BATTERY_THRESHOLD</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getGoHomeBatteryThreshold</font></td></tr></table></html>
 <h5 id="description-v67">Description:</h5>
 <p><font color="#666">Gets the go home battery percentage threshold. The value of the percent parameter must be in the range [25, 50].</font></p>
 <h5 id="input-parameters-v50">Input Parameters:</h5>
@@ -1174,7 +1174,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setLandImmediatelyBatteryThreshold</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setLandImmediatelyBatteryThreshold</span><span class="params">(@IntRange(from = <span class="number">10</span>, to = <span class="number">25</span>)</span> <span class="keyword">int</span> percent,</span></div><div class="line">                                                           @Nullable CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_land_immediately_battery_threshold_inline">FlightControllerKey.LAND_IMMEDIATELY_BATTERY_THRESHOLD</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_land_immediately_battery_threshold_inline">FlightControllerKey.LAND_IMMEDIATELY_BATTERY_THRESHOLD</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_setLandImmediatelyBatteryThreshold</font></td></tr></table></html>
 <h5 id="description-v68">Description:</h5>
 <p><font color="#666">Sets the land immediately battery percentage threshold with range [10, 25].</font></p>
 <h5 id="input-parameters-v51">Input Parameters:</h5>
@@ -1183,7 +1183,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getLandImmediatelyBatteryThreshold</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getLandImmediatelyBatteryThreshold</span><span class="params">(@NonNull CompletionCallbackWith&lt;Integer&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_land_immediately_battery_threshold_inline">FlightControllerKey.LAND_IMMEDIATELY_BATTERY_THRESHOLD</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_land_immediately_battery_threshold_inline">FlightControllerKey.LAND_IMMEDIATELY_BATTERY_THRESHOLD</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getLandImmediatelyBatteryThreshold</font></td></tr></table></html>
 <h5 id="description-v69">Description:</h5>
 <p><font color="#666">Gets the land immediately battery percentage threshold with range [10, 25].</font></p>
 <h5 id="input-parameters-v52">Input Parameters:</h5>
@@ -1194,7 +1194,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getRCSwitchFlightModeMapping</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getRCSwitchFlightModeMapping</span><span class="params">(</span></span></div><div class="line">       @NonNull CompletionCallbackWith&lt;RCSwitchFlightMode[]&gt; callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_getRemoteControllerFlightModeMapping</font></td></tr></table></html>
 <h5 id="description-v70">Description:</h5>
 <p><font color="#666">Gets the mapping between the flight modes and the flight mode switch positions on the remote controller. Elements 0, 1, and 2 of the returned array map to <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState.html#djiremotecontroller_djiremotecontrollerflightmodeswitchpositionone">POSITION_ONE</a></code>, <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState.html#djiremotecontroller_djiremotecontrollerflightmodeswitchpositiontwo">POSITION_TWO</a></code>, and <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState.html#djiremotecontroller_djiremotecontrollerflightmodeswitchpositionthree">POSITION_THREE</a></code> of the <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState.html#djiremotecontroller_djirchardwarestate_flightmodeswitch">getFlightModeSwitch</a></code>. The value of each Enum item represents the  corresponding value of the <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightcontrollerremotecontrollerflightmode">RCSwitchFlightMode</a></code> Enum representing the flight mode. <br>The mapping is fixed for the Phantom series, Inspire series, Mavic Pro, and  M100. For N3, A3, Matrice 600, and Matrice 600 Pro the mapping is firmware dependent. With firmware version 3.2.11.0 or above, the mapping can be customized in DJI Assistant 2.</font></p>
 <h5 id="input-parameters-v53">Input Parameters:</h5>
@@ -1205,7 +1205,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">interface </font>OnboardSDKDeviceDataCallback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">OnboardSDKDeviceDataCallback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_ReceivedDataFromExternalDeviceCallbackInterface</font></td></tr></table></html>
 <h5 id="description-v71">Description:</h5>
 <p><font color="#666">Callback function that updates the data received from an external device (e.g.the onboard device).</font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
@@ -1214,7 +1214,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>onReceive</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(<span class="keyword">byte</span>[] data)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_ReceiveDataFromExternalDevice</font></td></tr></table></html>
 <h5 id="description-v72">Description:</h5>
 <p><font color="#666">Called when the data received from an external device (e.g. the onboard device) has been updated.</font></p>
 <h5 id="input-parameters-v54">Input Parameters:</h5>
@@ -1224,7 +1224,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">enum </font>VerticalControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> VerticalControlMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_DJIVirtualStickVerticalControlMode</font></td></tr></table></html>
 <h5 id="description-v73">Description:</h5>
 <p><font color="#666">Defines how vertical control values are interpreted by the aircraft.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
@@ -1235,7 +1235,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">enum </font>RollPitchControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> RollPitchControlMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_DJIVirtualStickRollPitchControlMode</font></td></tr></table></html>
 <h5 id="description-v74">Description:</h5>
 <p><font color="#666">Defines how manual roll and pitch values are interpreted by the aircraft.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
@@ -1246,7 +1246,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">enum </font>YawControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> YawControlMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_DJIVirtualStickYawControlMode</font></td></tr></table></html>
 <h5 id="description-v75">Description:</h5>
 <p><font color="#666">Defines how manual yaw values are interpreted by the aircraft.</font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>
@@ -1257,7 +1257,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">enum </font>FlightCoordinateSystem</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> FlightCoordinateSystem</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_DJIVirtualStickFlightCoordinateSystem</font></td></tr></table></html>
 <h5 id="description-v76">Description:</h5>
 <p><font color="#666">Flight control coordinate system.</font></p>
 <h5 id="enum-members-v4">Enum Members:</h5>
@@ -1268,7 +1268,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">enum </font>ControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> ControlMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_DJIFlightControllerControlMode</font></td></tr></table></html>
 <h5 id="description-v77">Description:</h5>
 <p><font color="#666">Control mode of the flight controller. It determines how the pilot can control the aircraft.  By default, it is in smart control mode.</font></p>
 <h5 id="enum-members-v5">Enum Members:</h5>
@@ -1279,7 +1279,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">enum </font>FlightOrientationMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> FlightOrientationMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_DJIFlightOrientationMode</font></td></tr></table></html>
 <h5 id="description-v78">Description:</h5>
 <p><font color="#666">Tells the aircraft how to interpret flight commands for forward, backward, left and right. See the <i>Flight  Controller User Guide</i> for more information.</font></p>
 <h5 id="enum-members-v6">Enum Members:</h5>
@@ -1290,7 +1290,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">enum </font>ConnectionFailSafeBehavior</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> ConnectionFailSafeBehavior</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_DJIFlightFailsafeOperation</font></td></tr></table></html>
 <h5 id="description-v79">Description:</h5>
 <p><font color="#666">Defines aircraft failsafe action when signal between the remote controller and the aircraft is lost.</font></p>
 <h5 id="enum-members-v7">Enum Members:</h5>
@@ -1301,7 +1301,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">enum </font>RCSwitchFlightMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> RCSwitchFlightMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlightController_DJIFlightControllerRemoteControllerFlightMode</font></td></tr></table></html>
 <h5 id="description-v80">Description:</h5>
 <p><font color="#666">Flight modes that map to the flight mode switch on the remote controller.</font></p>
 <h5 id="enum-members-v8">Enum Members:</h5>
@@ -1313,7 +1313,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>setComponentListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setComponentListener</span><span class="params">(ComponentListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseComponent_setDJIComponentListener</font></td></tr></table></html>
 <h5 id="description-v81">Description:</h5>
 <p><font color="#666">Sets the listener for the DJI component.</font></p>
 <h5 id="input-parameters-v55">Input Parameters:</h5>
@@ -1322,7 +1322,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>isConnected</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isConnected</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseComponent_connected</font></td></tr></table></html>
 <h5 id="description-v82">Description:</h5>
 <p><font color="#666"><code>true</code> if the component is connected.</font></p>
 <h5 id="return-v17">Return:</h5>
@@ -1331,7 +1331,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getSerialNumber</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSerialNumber</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999">DJIKey.SERIAL_NUMBER</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999">DJIKey.SERIAL_NUMBER</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseComponent_getSerialNumber</font></td></tr></table></html>
 <h5 id="description-v83">Description:</h5>
 <p><font color="#666">Gets the serial number of the component. Depending on the component, this serial number might not match the serial number found  on the physical component.</font></p>
 <h5 id="input-parameters-v56">Input Parameters:</h5>
@@ -1340,7 +1340,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <div class="article"><h6><font color="#AAA">method </font>getFirmwareVersion</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFirmwareVersion</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#batterykey_firmware_version_inline">BatteryKey.FIRMWARE_VERSION</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#batterykey_firmware_version_inline">BatteryKey.FIRMWARE_VERSION</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseComponent_getFirmwareVersion</font></td></tr></table></html>
 <h5 id="description-v84">Description:</h5>
 <p><font color="#666">Returns the firmware version of the component. Each component will  have a different firmware version, the combination of which will  form the package firmware version <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_getfirmwarepackageversion">getFirmwarePackageVersion</a></code> found in <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</font></p>
 <h5 id="input-parameters-v57">Input Parameters:</h5>

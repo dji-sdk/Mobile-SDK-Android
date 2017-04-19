@@ -552,7 +552,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>Waypoint</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Waypoint</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The class represents a target point in the waypoint mission. For a waypoint mission, a flight route  consists of multiple <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint">Waypoint</a></code> objects. The user can also define the actions to perform for  each <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint">Waypoint</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -560,7 +560,7 @@
 <div class="article"><h6><font color="#AAA">method </font>Waypoint</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Waypoint(<span class="keyword">double</span> latitude, <span class="keyword">double</span> longitude, <span class="keyword">float</span> altitude)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_initWithCoordinate</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Initiate instance with specific waypoint.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -569,27 +569,25 @@
 <div class="article"><h6><font color="#AAA">property </font>coordinate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">LocationCoordinate2D coordinate</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_coordinate</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Waypoint coordinate latitude and longitude in degrees.</font></p>
-<h5 id="see-also">See Also:</h5>
-<p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></code></font></p>
 </div>
 <div class="api-row" id="djiwaypoint_altitude"><div class="api-col left">Altitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypoint_altitude_inline">altitude</a></div></div><div class="inline-doc" id="djiwaypoint_altitude_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>altitude</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@FloatRange</span>(from = MIN_ALTITUDE, to = MAX_ALTITUDE) <span class="keyword">float</span> altitude</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_altitude</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Altitude of the aircraft in meters when it reaches waypoint. The altitude of the aircraft is relative to  the ground at the take-off location, has a range of [-200,500], and should not be larger than the  aircraft's maximum altitude. If two adjacent waypoints have different altitudes, the altitude will  gradually change as the aircraft flys between waypoints.</font></p>
-<h5 id="see-also-v2">See Also:</h5>
+<h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_djihotpointmaxaltitude">MAX_ALTITUDE</a></code></font></p>
 </div>
 <div class="api-row" id="djiwaypoint_heading"><div class="api-col left">Heading</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypoint_heading_inline">heading</a></div></div><div class="inline-doc" id="djiwaypoint_heading_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>heading</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@IntRange</span>(from = MIN_HEADING, to = MAX_HEADING) <span class="keyword">int</span> heading</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_heading</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The heading to which the aircraft will rotate by the time it reaches the waypoint. The aircraft heading  will gradually change between two waypoints with different headings if the waypoint  mission's <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_headingmode">getHeadingMode</a></code> is set  to <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionheadingmode_usingwaypointheading">USING_WAYPOINT_HEADING</a></code>. A heading has a range of  [-180, 180] degrees, where 0 represents True North.</font></p>
 </div>
@@ -597,27 +595,27 @@
 <div class="article"><h6><font color="#AAA">property </font>cornerRadiusInMeters</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@FloatRange</span>(from = MIN_CORNER_RADIUS, to = MAX_CORNER_RADIUS) <span class="keyword">float</span> cornerRadiusInMeters = <span class="number">0.2f</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_cornerRadiusInMeters</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Corner radius of the waypoint. When the flight path mode  is <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode_curved">CURVED</a></code> the flight path near a waypoint will be  a curve (rounded corner) with radius [0.2,1000]. When there is a corner radius, the aircraft will never  go through the waypoint. By default, the radius is 0.2 m. The radius should not be larger than the three  dimensional distance between any two of the three waypoints that comprise the corner.</font></p>
-<h5 id="see-also-v3">See Also:</h5>
+<h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_cornerradiusinmeters">cornerRadiusInMeters</a></code></font></p>
 </div>
 <div class="api-row" id="djiwaypoint_turnmode"><div class="api-col left">Turn Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypoint_turnmode_inline">turnMode</a></div></div><div class="inline-doc" id="djiwaypoint_turnmode_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>turnMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">WaypointTurnMode turnMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_turnMode</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Determines whether the aircraft will turn clockwise or anitclockwise when changing its heading.</font></p>
-<h5 id="see-also-v4">See Also:</h5>
+<h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_djiwaypointturnmode">WaypointTurnMode</a></code></font></p>
 </div>
 <div class="api-row" id="djiwaypoint_gimbalpitch"><div class="api-col left">Gimbal Pitch</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypoint_gimbalpitch_inline">gimbalPitch</a></div></div><div class="inline-doc" id="djiwaypoint_gimbalpitch_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>gimbalPitch</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@FloatRange</span>(from = MIN_GIMBAL_PITCH, to = MAX_GIMBAL_PITCH) <span class="keyword">float</span> gimbalPitch</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_gimbalPitch</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Gimbal pitch angle when reached this waypoint. This property is used when the    <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_rotategimbalpitch">isGimbalPitchRotationEnabled</a></code> is TRUE. Value should in range [-90, 0] degree.</font></p>
 </div>
@@ -625,7 +623,7 @@
 <div class="article"><h6><font color="#AAA">property </font>speed</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@FloatRange</span>(from = MIN_SPEED, to = MAX_SPEED) <span class="keyword">float</span> speed</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_speed</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">The base automatic speed of the aircraft as it moves between this waypoint and the next waypoint with range  [0, 15] m/s. By default, it is 0.0 and the aircraft will fly with <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_autoflightspeed">getAutoFlightSpeed</a></code> of  the waypoint mission. If greater than 0, 'speed' will override <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_autoflightspeed">getAutoFlightSpeed</a></code>.  This 'speed' can only define movement forward through the waypoint mission in comparison  to <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_autoflightspeed">getAutoFlightSpeed</a></code> which can be both forward and backwards through a waypoint  mission. <br> Waypoint mission speed priority from highest to lowest is: <br> 1) manual speed adjustment  with remote controller joy sticks <br> 2) 'speed' <br> 3) <code><a href="../../Components/Missions/DJIWaypointMissionOperator.html#djiwaypointmissionoperator_setautoflightspeed">setAutoFlightSpeed</a></code> <br>  4) <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_autoflightspeed">getAutoFlightSpeed</a></code> <br> Warning: 'speed', <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_shootphototimeinterval">shootPhotoTimeInterval</a></code>  and <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_shootphotodistanceinterval">shootPhotoDistanceInterval</a></code> relate to behavior between this waypoint and the next  waypoint in the mission. In comparison, <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_turnmode">turnMode</a></code>, <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_altitude">altitude</a></code>  and <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_heading">heading</a></code> relate to behavior between the last waypoint and this waypoint in the waypoint  mission. Only supported by flight controller firmware 3.2.10.0 or above.</font></p>
 </div>
@@ -633,7 +631,7 @@
 <div class="article"><h6><font color="#AAA">property </font>shootPhotoTimeInterval</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">float</span> shootPhotoTimeInterval</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_shootPhotoTimeInterval</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The time interval in seconds when two photos are taken as the aircraft moves between the current waypoint  and the next waypoint. The first photo will be taken as the aircraft leaves the current waypoint. The  maximum value is 6,000.0. The minimum value is above 0.0 and depends on the camera type and the camera  parameters. When the photo file format is JPEG, the recommended minimum value is 2.0. When the photo file  format is RAW, the minimum value is 10.0. If the input exceeds the camera's capability, the pictures will  be taken at the maximum possible speed. The default value is 0.0 and no photo will be taken. For a  waypoint, either <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_shootphototimeinterval">shootPhotoTimeInterval</a></code> or <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_shootphotodistanceinterval">shootPhotoDistanceInterval</a></code>  is 0.0. Input with precision of greater than 1 decimal places, will be rounded to 1. Warning: 'speed', <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_shootphototimeinterval">shootPhotoTimeInterval</a></code>  and <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_shootphotodistanceinterval">shootPhotoDistanceInterval</a></code> relate to behavior between this waypoint and the next waypoint  in the mission. In comparison, <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_turnmode">turnMode</a></code>, <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_altitude">altitude</a></code> and <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_heading">heading</a></code>  relate to behavior between the last waypoint and this waypoint in the waypoint mission. Only supported by flight  controller firmware 3.2.10.0 or above.</font></p>
 </div>
@@ -641,7 +639,7 @@
 <div class="article"><h6><font color="#AAA">property </font>shootPhotoDistanceInterval</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">float</span> shootPhotoDistanceInterval</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_shootPhotoDistanceInterval</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">The distance interval in meters when two photos are taken as the aircraft moves between the current  waypoint and the next waypoint. The maximum value is 6,000.0. The minimum value is above 0.0 and depends  on the camera type, the camera parameters and the flight speed. When the photo file format is JPEG, the  time interval between two photos cannot smaller than 2 seconds. When the photo file format is RAW, the  time interval between two photos cannot smaller than 10 seconds. If the input exceeds the camera's  capability, the taken photos may be less than expectation. The default value is 0.0 and no photo will be  taken. For a waypoint, either <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_shootphototimeinterval">shootPhotoTimeInterval</a></code>  or <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_shootphotodistanceinterval">shootPhotoDistanceInterval</a></code> is 0.0. Input with precision of greater than 1 decimal  places, will be rounded to 1. Warning: 'speed', <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_shootphototimeinterval">shootPhotoTimeInterval</a></code>  and <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_shootphotodistanceinterval">shootPhotoDistanceInterval</a></code> relate to behavior between this waypoint and the next  waypoint in the mission. In comparison, <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_turnmode">turnMode</a></code>, <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_altitude">altitude</a></code>  and <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_heading">heading</a></code> relate to behavior between the last waypoint and this waypoint in the waypoint  mission. Only supported by flight controller firmware 3.2.10.0 or above.</font></p>
 </div>
@@ -649,7 +647,7 @@
 <div class="article"><h6><font color="#AAA">property </font>hasAction</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">boolean</span> hasAction</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_hasAction</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">A flag to indicate whether there are any actions to be carried out at the waypoint.</font></p>
 </div>
@@ -657,7 +655,7 @@
 <div class="article"><h6><font color="#AAA">property </font>waypointActions</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">List&lt;WaypointAction&gt; waypointActions</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_waypointActions</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Array of all waypoint actions for the respective waypoint. The waypoint actions will be executed  consecutively from the start of the array once the aircraft reaches the waypoint.</font></p>
 </div>
@@ -665,7 +663,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getActionAtIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">WaypointAction <span class="title">getActionAtIndex</span><span class="params">(<span class="keyword">int</span> index)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_getActionAtIndex</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Gets the action at the specified index.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -676,7 +674,7 @@
 <div class="article"><h6><font color="#AAA">method </font>adjustActionAtIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">adjustActionAtIndex</span><span class="params">(<span class="keyword">int</span> index, WaypointAction action)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_adjustActionAtIndex</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Switches the action at the specified index.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -687,27 +685,27 @@
 <div class="article"><h6><font color="#AAA">property </font>actionRepeatTimes</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@IntRange</span>(from = MIN_ACTION_REPEAT_TIMES, to = MAX_ACTION_REPEAT_TIMES) <span class="keyword">int</span> actionRepeatTimes = <span class="number">1</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_actionRepeatTimes</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Determines how many times the set of waypoint actions are repeated. The default value is one time, and  the maximum is <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_djimaxactionrepeattimes">MAX_ACTION_REPEAT_TIMES</a></code>.</font></p>
-<h5 id="see-also-v5">See Also:</h5>
+<h5 id="see-also-v4">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_djimaxactionrepeattimes">MAX_ACTION_REPEAT_TIMES</a></code>, <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_actionrepeattimes">actionRepeatTimes</a></code></font></p>
 </div>
 <div class="api-row" id="djiwaypoint_actiontimeoutinseconds"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypoint_actiontimeoutinseconds_inline">actionTimeoutInSeconds</a></div></div><div class="inline-doc" id="djiwaypoint_actiontimeoutinseconds_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>actionTimeoutInSeconds</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@IntRange</span>(from = MIN_ACTION_TIMEOUT, to = MAX_ACTION_TIMEOUT) <span class="keyword">int</span> actionTimeoutInSeconds = <span class="number">999</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_actionTimeoutInSeconds</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">The maximum time set to execute all the waypoint actions for a waypoint. If the time while executing the  waypoint actions goes above the time set, the aircraft will stop executing the waypoint actions for the  current waypoint and will move on to the next waypoint. The value of this property must be in the range  of [0, 999] seconds. The default value is 60 seconds.</font></p>
-<h5 id="see-also-v6">See Also:</h5>
+<h5 id="see-also-v5">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_actiontimeoutinseconds">actionTimeoutInSeconds</a></code></font></p>
 </div>
 <div class="api-row" id="djiwaypoint_addaction"><div class="api-col left">Add Action</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypoint_addaction_inline">addAction</a></div></div><div class="inline-doc" id="djiwaypoint_addaction_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>addAction</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">addAction</span><span class="params">(WaypointAction action)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_addAction</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Adds a waypoint action to a waypoint. The number of waypoint actions should not be larger  than <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_djimaxactioncount">MAX_ACTION_COUNT</a></code>. The action will only be executed when the  mission's <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_flightpathmode">getFlightPathMode</a></code> property is set  to <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode_normal">NORMAL</a></code> and will not be executed when the  mission's <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_flightpathmode">getFlightPathMode</a></code> property is set  to <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode_curved">CURVED</a></code>. The maximum number of waypoint  actions you can add is 15.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -718,7 +716,7 @@
 <div class="article"><h6><font color="#AAA">method </font>insertAction</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">insertAction</span><span class="params">(WaypointAction action, <span class="keyword">int</span> index)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_insertAction</font></td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
 <p><font color="#666">Insert a waypoint action at index. @return <code>true</code>, if the waypoint action has been  inserted. <code>false</code> if the waypoint action count is too high or the index is invalid.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -729,7 +727,7 @@
 <div class="article"><h6><font color="#AAA">method </font>removeAction</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">removeAction</span><span class="params">(WaypointAction action)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_removeAction</font></td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
 <p><font color="#666">Removes a waypoint action from the waypoint. @return <code>true</code> if the waypoint action  has been removed from the waypoint.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
@@ -740,7 +738,7 @@
 <div class="article"><h6><font color="#AAA">method </font>removeActionAtIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">removeActionAtIndex</span><span class="params">(<span class="keyword">int</span> index)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_removeActionAtIndex</font></td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
 <p><font color="#666">Removes a waypoint action from the waypoint by index. After removal, all actions higher than the index will  be shifted down by one.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
@@ -751,7 +749,7 @@
 <div class="article"><h6><font color="#AAA">method </font>removeAllAction</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeAllAction</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_removeAllActions</font></td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
 <p><font color="#666">Remove all the actions.</font></p>
 </div>
@@ -760,7 +758,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>WaypointTurnMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> WaypointTurnMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_DJIWaypointTurnMode</font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
 <p><font color="#666">How the aircraft will turn at a waypoint to transition between headings.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
@@ -771,7 +769,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MAX_ACTION_COUNT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MAX_ACTION_COUNT = <span class="number">15</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_DJIMaxActionCount</font></td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
 <p><font color="#666">Maximum number of actions a single waypoint can have. The maximum supported number is 15.</font></p>
 </div>
@@ -779,7 +777,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MAX_ACTION_REPEAT_TIMES</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MAX_ACTION_REPEAT_TIMES = <span class="number">15</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypoint_DJIMaxActionRepeatTimes</font></td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
 <p><font color="#666">Maximum number of times a single waypoint action can be repeated. The maximum supported number is 15.</font></p>
 </div>
