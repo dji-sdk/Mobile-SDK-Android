@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -161,6 +167,12 @@
                             <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">AirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">AirSenseAirplaneState</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -552,7 +564,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>Trigger</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trigger</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Mission Triggers can be used to trigger an action during the execution of a Timeline element if a set of criteria is met. The subclass of <code><a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a></code> should implement the logic for collecting and judging the criteria, and then executing the action. Mission Triggers are  used in the Timeline element <code><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a></code>. <br><br> Trigger actions can be listened to, so when subclassing this class, <code><a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger_notifylistenersofeventerror">notifyListenersOfEvent</a></code> should be used to notify listeners of trigger events.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -560,7 +572,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isActive</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isActive</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_isActive</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666"><code>true</code> if the trigger is currently active. The trigger is active when the Timeline element it is associated with is being executed in the Timeline.</font></p>
 <h5 id="return">Return:</h5>
@@ -569,7 +581,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setAction</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAction</span><span class="params">(Action action)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_setAction</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The action to execute. It is up to the trigger's implementation to decide when  to call this action. The action should never be called by anything but the  trigger. Actions can be implemented without using this property, but in addition <code><a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger_notifylistenersofeventerror">notifyListenersOfEvent</a></code> needs to be used to notify any listeners of the Trigger that an action was executed. <br><br> In future subclasses of this property to be provided, this action  block will be used to give developers control of an action when a  set of criteria has been met. For example, a subclass of this may  be a battery threshold trigger. Once the battery passes some threshold developers will be able to define the action they want to trigger.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -578,7 +590,7 @@
 <div class="article"><h6><font color="#AAA">method </font>start</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_start</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Begins trigger activity including monitoring the criteria required to  trigger the action. When subclassing,  the super class's <code>start</code> method should be called on the first line.</font></p>
 </div>
@@ -586,7 +598,7 @@
 <div class="article"><h6><font color="#AAA">method </font>stop</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_stop</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Ends all trigger activity including monitoring the criteria required to  trigger the action. When subclassing,  the super class's <code>stop</code> method should be called at the end.</font></p>
 </div>
@@ -594,7 +606,7 @@
 <div class="article"><h6><font color="#AAA">method </font>addListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addListener</span><span class="params">(Listener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_addListener</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Adds a listener to all trigger events</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -603,7 +615,7 @@
 <div class="article"><h6><font color="#AAA">method </font>removeListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeListener</span><span class="params">(Listener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_removeListener</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Removes the listener from the listeners pool of all trigger events.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -612,7 +624,7 @@
 <div class="article"><h6><font color="#AAA">method </font>removeAllListeners</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeAllListeners</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_removeAllListeners</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Removes all listeners from the listeners pool of all trigger events.</font></p>
 </div>
@@ -620,7 +632,7 @@
 <div class="article"><h6><font color="#AAA">method </font>notifyListenersOfEvent</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">notifyListenersOfEvent</span><span class="params">(TriggerEvent event, DJIError error)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_notifyListenersOfEventError</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Notifies listeners about a trigger event. Should be used in subclasses especially after calling the action.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -630,7 +642,7 @@
 <div class="article"><h6><font color="#AAA">interface </font>Action</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Action</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_DJIMissionTriggerActionInterface</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The type for the block being called when the trigger is triggered.</font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
@@ -638,7 +650,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onCall</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onCall</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_DJIMissionTriggerActionCallback</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Call the action.</font></p>
 </div>
@@ -647,7 +659,7 @@
 <div class="article"><h6><font color="#AAA">interface </font>Listener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Listener</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_listenerInterface</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Listener interface for Trigger events.</font></p>
 <h5 id="interface-methods-v2">Interface Methods:</h5>
@@ -656,7 +668,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onEvent</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onEvent</span><span class="params">(Trigger trigger, TriggerEvent event, @Nullable DJIError error)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_onEventCallback</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Called when a trigger event occurs.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -666,7 +678,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>TriggerEvent</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> TriggerEvent</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMissionTrigger_DJIMissionTriggerEvent</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline.triggers</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Events that may occur during the lifecycle of a mission trigger.</font></p>
 <h5 id="enum-members">Enum Members:</h5>

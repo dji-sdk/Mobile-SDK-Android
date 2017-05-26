@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -161,6 +167,12 @@
                             <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">AirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">AirSenseAirplaneState</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -552,7 +564,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJISDKError</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJISDKError</span> <span class="keyword">extends</span> <span class="title">DJIError</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">DJI SDK Error.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -561,7 +573,7 @@
 <div class="article"><h6><font color="#AAA">final </font>FEATURE_NOT_SUPPORTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError FEATURE_NOT_SUPPORTED = <span class="keyword">new</span> DJISDKError(<span class="string">"This feature is not supported in the SDK"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_SDKFeatureNotSupported</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Feature not supported error.</font></p>
 </div>
@@ -569,7 +581,7 @@
 <div class="article"><h6><font color="#AAA">final </font>APPLICATION_NOT_ACTIVATED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError APPLICATION_NOT_ACTIVATED = <span class="keyword">new</span> DJISDKError(<span class="string">"Application is not registered"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_ApplicationNotActivated</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Application not activated error.</font></p>
 </div>
@@ -577,7 +589,7 @@
 <div class="article"><h6><font color="#AAA">final </font>SYSTEM_BUSY</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError SYSTEM_BUSY = <span class="keyword">new</span> DJISDKError(<span class="string">"System is busy, please retry later"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_SystemBusy</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">System busy error.</font></p>
 </div>
@@ -585,7 +597,7 @@
 <div class="article"><h6><font color="#AAA">final </font>INVALID_PARAMETERS</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError INVALID_PARAMETERS = <span class="keyword">new</span> DJISDKError(<span class="string">"The parameters are invalid. Please review and submit the request"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_InvalidParameters</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Parameters invalid error.</font></p>
 </div>
@@ -593,7 +605,7 @@
 <div class="article"><h6><font color="#AAA">final </font>PARAMETER_GET_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError PARAMETER_GET_FAILED = <span class="keyword">new</span> DJISDKError(<span class="string">"Getting parameters operation failed"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_ParameterGetFailed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Get parameter failed error.</font></p>
 </div>
@@ -601,7 +613,7 @@
 <div class="article"><h6><font color="#AAA">final </font>PARAMETER_SET_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError PARAMETER_SET_FAILED = <span class="keyword">new</span> DJISDKError(<span class="string">"Setting parameters operation failed"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_ParameterSetFailed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Setting parameters operation failed.</font></p>
 </div>
@@ -609,7 +621,7 @@
 <div class="article"><h6><font color="#AAA">final </font>COMMAND_EXECUTION_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError COMMAND_EXECUTION_FAILED =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"There was an error executing the command"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_CommandExecutionFailed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Command execute failed error.</font></p>
 </div>
@@ -617,7 +629,7 @@
 <div class="article"><h6><font color="#AAA">final </font>SEND_DATA_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError SEND_DATA_FAILED = <span class="keyword">new</span> DJISDKError(<span class="string">"There was an error sending the data"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_SendDataFailed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Send data failed error.</font></p>
 </div>
@@ -625,7 +637,7 @@
 <div class="article"><h6><font color="#AAA">final </font>CONNECTION_TO_SDK_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError CONNECTION_TO_SDK_FAILED =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"There was an error connecting to the SDK"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_ConnectionToSDKFailed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Connection to SDK failed error.</font></p>
 </div>
@@ -633,7 +645,7 @@
 <div class="article"><h6><font color="#AAA">final </font>NOT_DEFINED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError NOT_DEFINED = <span class="keyword">new</span> DJISDKError(<span class="string">"Not defined error."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_NotDefined</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Not defined error.</font></p>
 </div>
@@ -641,7 +653,7 @@
 <div class="article"><h6><font color="#AAA">final </font>COULD_NOT_CONNECT_TO_INTERNET</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError COULD_NOT_CONNECT_TO_INTERNET =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"For first time registration, app should be connected to Internet."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_ErrorCouldNotConnectToInternet</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">The application is not able to connect to the Internet the first time it tries to register the API Key.</font></p>
 </div>
@@ -649,7 +661,7 @@
 <div class="article"><h6><font color="#AAA">final </font>INVALID_APP_KEY</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError INVALID_APP_KEY =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"The app key submitted is invalid. Please check the app key you provided."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_InvalidAppKey</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">The application key you provided is incorrect.</font></p>
 </div>
@@ -657,7 +669,7 @@
 <div class="article"><h6><font color="#AAA">final </font>HTTP_TIMEOUT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError HTTP_TIMEOUT = <span class="keyword">new</span> DJISDKError(<span class="string">"The server may be busy or is not reachable."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_HTTPTimeout</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">The network you are trying to reach is busy, or the server is unreachable.</font></p>
 </div>
@@ -665,7 +677,7 @@
 <div class="article"><h6><font color="#AAA">final </font>DEVICE_NOT_MATCH</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError DEVICE_NOT_MATCH =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"Attempt to copy metadata from another registered device is not permitted."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_DeviceDoesNotMatch</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">The attempt to copy metadata from another registered device to a device that is currently connected is not  permitted. For example, if a developer has two devices and the application is activated with the app key on  one of the devices and if the other device is plugged in and tries to register the application, this error  will occur.</font></p>
 </div>
@@ -673,7 +685,7 @@
 <div class="article"><h6><font color="#AAA">final </font>BUNDLE_NOT_MATCH</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError BUNDLE_NOT_MATCH = <span class="keyword">new</span> DJISDKError(</div><div class="line">       <span class="string">"The bundle identifier of your app should be identical to the one you registered on the website."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_BundleIdDoesNotMatch</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">The bundle identifier of your application does not match the bundle identifier you registered on the  developer website when you applied to obtain an application key.</font></p>
 </div>
@@ -681,7 +693,7 @@
 <div class="article"><h6><font color="#AAA">final </font>APP_KEY_PROHIBITED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError APP_KEY_PROHIBITED =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"The app key is prohibited, please contact &lt;dev@dji.com&gt; for help."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_AppKeyProhibited</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">The application key is prohibited. This occurs when an application key that has already been released by DJI  is revoked. Please contact DJI for assistance.</font></p>
 </div>
@@ -689,7 +701,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MAX_ACTIVATION_COUNT_REACHED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError MAX_ACTIVATION_COUNT_REACHED =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"The app key reached maximum number of activations, please contact &lt;dev@dji.com&gt; for help."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_MaxActivationCountReached</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">There is a maximum number of devices one application key can be used to activate. The maximum number of  devices is given when an application is registered on the DJI developer website. This error will occur  if the maximum number of activations has been reached.</font></p>
 </div>
@@ -697,7 +709,7 @@
 <div class="article"><h6><font color="#AAA">final </font>APP_KEY_INVALID_PLATFORM</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError APP_KEY_INVALID_PLATFORM =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"The app key is not valid for this platform."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_AppKeyInvalidPlatformError</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
 <p><font color="#666">This error occurs when an application key was given for a specific platform and is trying to be used to  activate an application for another platform. For instance, if an application key was given for an iOS  applicationa and is used to activate an Android application, this error will occur.</font></p>
 </div>
@@ -705,7 +717,7 @@
 <div class="article"><h6><font color="#AAA">final </font>APP_KEY_NOT_EXIST</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError APP_KEY_NOT_EXIST =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"The app key does not exist. Please check the app key you provided."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_AppKeyDoesNotExist</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
 <p><font color="#666">The application key does not exist. Please make sure the application key you are entering is correct.</font></p>
 </div>
@@ -713,7 +725,7 @@
 <div class="article"><h6><font color="#AAA">final </font>APP_KEY_LEVEL_NOT_PERMITTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError APP_KEY_LEVEL_NOT_PERMITTED =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"The app key does not have the required permission."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_AppKeyLevelNotPermitted</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
 <p><font color="#666">There are two levels for the SDK framework, level 1 and level 2. If an application key was given under one  level and is trying to be used to active an application using another level SDK framework, this error will occur.</font></p>
 </div>
@@ -721,7 +733,7 @@
 <div class="article"><h6><font color="#AAA">final </font>SERVER_PARSE_FAILURE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError SERVER_PARSE_FAILURE =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"Server error, please contact &lt;dev@dji.com&gt; for help."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_ServerParseFailure</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
 <p><font color="#666">There is a server error. Please contact DJI for assistance.</font></p>
 </div>
@@ -729,7 +741,7 @@
 <div class="article"><h6><font color="#AAA">final </font>SERVER_WRITE_FAILURE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError SERVER_WRITE_FAILURE =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"Server error, please contact &lt;dev@dji.com&gt; for help."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_ServerWriteError</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
 <p><font color="#666">There is a server error. Please contact DJI for assistance.</font></p>
 </div>
@@ -737,7 +749,7 @@
 <div class="article"><h6><font color="#AAA">final </font>SERVER_DATA_ABNORMAL</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError SERVER_DATA_ABNORMAL =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"Server error, please contact &lt;dev@dji.com&gt; for help."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_ServerDataAbnormal</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
 <p><font color="#666">There is a server error. Please contact DJI for assistance.</font></p>
 </div>
@@ -745,7 +757,7 @@
 <div class="article"><h6><font color="#AAA">final </font>INVALID_METADATA</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError INVALID_METADATA =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"The metadata received from server is invalid, please reconnect to the server and try."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_InvalidMetaData</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
 <p><font color="#666">The activation data received from server is invalid. Please reconnect to the internet and try again.</font></p>
 </div>
@@ -753,7 +765,7 @@
 <div class="article"><h6><font color="#AAA">final </font>EMPTY_APP_KEY</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError EMPTY_APP_KEY = <span class="keyword">new</span> DJISDKError(<span class="string">"The app key was not provided."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_EmptyAppKey</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v26">Description:</h5>
 <p><font color="#666">No application key was provided.</font></p>
 </div>
@@ -761,7 +773,7 @@
 <div class="article"><h6><font color="#AAA">final </font>UNKNOWN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError UNKNOWN = <span class="keyword">new</span> DJISDKError(<span class="string">"Unknown error occurred during registration"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKRegistrationError_Unknown</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v27">Description:</h5>
 <p><font color="#666">An unknown error occurred when the application was trying to register. Please contact DJI for assistance.</font></p>
 </div>
@@ -769,7 +781,7 @@
 <div class="article"><h6><font color="#AAA">final </font>REGISTRATION_AESENCRYPT_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError REGISTRATION_AESENCRYPT_FAILED =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"Server error, please contact &lt;dev@dji.com&gt; for help"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_REGISTRATION_AESENCRYPT_FAILED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v28">Description:</h5>
 <p><font color="#666">Server error, please contact <a href="mailto:dev@dji.com" target="_blank" rel="external">dev@dji.com</a> for help.</font></p>
 </div>
@@ -777,7 +789,7 @@
 <div class="article"><h6><font color="#AAA">final </font>REGISTRATION_AESENCRYPT_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError REGISTRATION_AESENCRYPT_ERROR =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"Server error, please contact &lt;dev@dji.com&gt; for help."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_REGISTRATION_AESENCRYPT_ERROR</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v29">Description:</h5>
 <p><font color="#666">Server error, please contact <a href="mailto:dev@dji.com" target="_blank" rel="external">dev@dji.com</a> for help.</font></p>
 </div>
@@ -785,7 +797,7 @@
 <div class="article"><h6><font color="#AAA">final </font>REGISTRATION_INVALID_UUID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError REGISTRATION_INVALID_UUID =</div><div class="line">       <span class="keyword">new</span> DJISDKError(<span class="string">"Server error, please contact &lt;dev@dji.com&gt; for help."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_REGISTRATION_INVALID_UUID</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v30">Description:</h5>
 <p><font color="#666">Server error, please contact <a href="mailto:dev@dji.com" target="_blank" rel="external">dev@dji.com</a> for help.</font></p>
 </div>
@@ -795,7 +807,7 @@
 <div class="article"><h6><font color="#AAA">final </font>DEVICE_NOT_FOUND</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError DEVICE_NOT_FOUND = <span class="keyword">new</span> DJISDKError(<span class="string">"Device is not connected or does not exist."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKError_DeviceNotFound</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v31">Description:</h5>
 <p><font color="#666">Device not found.</font></p>
 </div>
@@ -804,7 +816,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getDescription</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">String <span class="title">getDescription</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_getDescription</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v32">Description:</h5>
 <p><font color="#666">Returns the description of the error code.</font></p>
 <h5 id="return">Return:</h5>
@@ -813,7 +825,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setDescription</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String desc)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_setDescription</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v33">Description:</h5>
 <p><font color="#666">Sets the description for the error code.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -822,7 +834,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getDJIError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(Ccode ccode)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_getDJIError</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v34">Description:</h5>
 <p><font color="#666">Returns common error according to the error code.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>

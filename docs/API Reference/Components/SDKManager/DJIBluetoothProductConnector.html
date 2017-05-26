@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -161,6 +167,12 @@
                             <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">AirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">AirSenseAirplaneState</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -552,7 +564,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>BluetoothProductConnector</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BluetoothProductConnector</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBluetoothProductConnector</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Some DJI products can be controlled using the Mobile SDK over a Bluetooth wireless  connection. This class contains methods to search for, connect to, and disconnect from such products.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -560,7 +572,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setBluetoothDevicesListCallback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setBluetoothDevicesListCallback</span><span class="params">(@Nullable BluetoothDevicesListCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBluetoothProductConnector_setBluetoothProductConnectorListener</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Set DJIBluetoothProductConnector Listener.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -569,7 +581,7 @@
 <div class="article"><h6><font color="#AAA">method </font>searchBluetoothProducts</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">searchBluetoothProducts</span><span class="params">(@Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBluetoothProductConnector_searchBluetoothProducts</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Used to start searching for DJI Products that are near the mobile device and can be controlled with the Mobile  SDK using Bluetooth. Use <code><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html#djibluetoothproductconnector_connectordidfindproducts">onUpdate</a></code> to receive the product list.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -578,7 +590,7 @@
 <div class="article"><h6><font color="#AAA">method </font>connect</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">connect</span><span class="params">(BluetoothDevice product, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBluetoothProductConnector_connectProductWithCompletion</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Connects to the DJI product using Bluetooth. Once it is connected, <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code> can be used to access the product.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -587,7 +599,7 @@
 <div class="article"><h6><font color="#AAA">method </font>disconnect</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">disconnect</span><span class="params">(<span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBluetoothProductConnector_disconnectProduct</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Disconnects connected Bluetooth product.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -597,7 +609,7 @@
 <div class="article"><h6><font color="#AAA">interface </font>BluetoothDevicesListCallback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">BluetoothDevicesListCallback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBluetoothProductConnector_BluetoothProductConnectorListenerInterface</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Delegate that receives the product list found by the connector.</font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
@@ -605,7 +617,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onUpdate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(@NonNull ArrayList&lt;BluetoothDevice&gt; devices)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBluetoothProductConnector_ConnectorDidFindProducts</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Provides the list of DJI products that can be connected with the mobile device over Bluetooth. Delegate will  continue to receive an updated list after <code><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html#djibluetoothproductconnector_searchbluetoothproducts">searchBluetoothProducts</a></code> is called  until the searching is finished (either product is connected or after 10s).</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>

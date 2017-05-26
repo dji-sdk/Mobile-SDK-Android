@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -161,6 +167,12 @@
                             <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">AirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">AirSenseAirplaneState</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -552,7 +564,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>HotpointMissionState</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HotpointMissionState</span> <span class="keyword">extends</span> <span class="title">MissionState</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>MissionState</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>MissionState</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">States of <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator">HotpointMissionOperator</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -561,15 +573,15 @@
 <div class="article"><h6><font color="#AAA">final </font>UNKNOWN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> HotpointMissionState UNKNOWN = <span class="keyword">new</span> HotpointMissionState(<span class="string">"UNKNOWN"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionState_Unknown</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">The state of the operator is unknown. This is the inital state when the  operator has just been created.</font></p>
+<p><font color="#666">The state of the operator is unknown. This is the initial state when the  operator has just been created.</font></p>
 </div>
 <div class="api-row" id="djihotpointmissionstate_disconnected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djihotpointmissionstate_disconnected_inline">DISCONNECTED</a></div></div><div class="inline-doc" id="djihotpointmissionstate_disconnected_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">final </font>DISCONNECTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> HotpointMissionState DISCONNECTED = <span class="keyword">new</span> HotpointMissionState(<span class="string">"DISCONNECTED"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionState_Disconnected</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The connection between the mobile device and aircraft is broken.</font></p>
 </div>
@@ -577,7 +589,7 @@
 <div class="article"><h6><font color="#AAA">final </font>RECOVERING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> HotpointMissionState RECOVERING = <span class="keyword">new</span> HotpointMissionState(<span class="string">"RECOVERING"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionState_Recovering</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The connection between the mobile device and aircraft is recovering.  At this time, the operator is synchronizing the state from the aircraft.</font></p>
 </div>
@@ -585,7 +597,7 @@
 <div class="article"><h6><font color="#AAA">final </font>NOT_SUPPORTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> HotpointMissionState NOT_SUPPORTED = <span class="keyword">new</span> HotpointMissionState(<span class="string">"NOT_SUPPORTED"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionState_NotSupported</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The connected product does not support Hotpoint mission.</font></p>
 </div>
@@ -593,7 +605,7 @@
 <div class="article"><h6><font color="#AAA">final </font>READY_TO_EXECUTE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> HotpointMissionState READY_TO_EXECUTE = <span class="keyword">new</span> HotpointMissionState(<span class="string">"READY_TO_EXECUTE"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionState_ReadyToExecute</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Mission is uploaded completely and the aircraft is ready to start the execution.</font></p>
 </div>
@@ -601,15 +613,15 @@
 <div class="article"><h6><font color="#AAA">final </font>INITIAL_PHASE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> HotpointMissionState INITIAL_PHASE = <span class="keyword">new</span> HotpointMissionState(<span class="string">"INITIAL_PHASE"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionState_InitialPhase</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">The aircraft is moving torwards the start point of the Hotpoint mission.</font></p>
+<p><font color="#666">The aircraft is moving towards the start point of the Hotpoint mission.</font></p>
 </div>
 <div class="api-row" id="djihotpointmissionstate_executing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djihotpointmissionstate_executing_inline">EXECUTING</a></div></div><div class="inline-doc" id="djihotpointmissionstate_executing_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">final </font>EXECUTING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> HotpointMissionState EXECUTING = <span class="keyword">new</span> HotpointMissionState(<span class="string">"EXECUTING"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionState_Executing</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">The execution is started successfully.</font></p>
 </div>
@@ -617,7 +629,7 @@
 <div class="article"><h6><font color="#AAA">final </font>EXECUTION_PAUSED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> HotpointMissionState EXECUTION_PAUSED = <span class="keyword">new</span> HotpointMissionState(<span class="string">"EXECUTION_PAUSED"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionState_ExecutionPaused</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Hotpoint mission is paused successfully. User can call  <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator_resumemission">resume</a></code> to continue the execution.</font></p>
 </div>

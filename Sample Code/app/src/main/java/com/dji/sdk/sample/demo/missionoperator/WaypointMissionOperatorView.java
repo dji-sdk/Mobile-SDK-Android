@@ -197,7 +197,6 @@ public class WaypointMissionOperatorView extends MissionBaseView {
         waypointMissionOperator = MissionControl.getInstance().getWaypointMissionOperator();
 
         setUpListener();
-        waypointMissionOperator.addListener(listener);
     }
 
     @Override
@@ -206,8 +205,6 @@ public class WaypointMissionOperatorView extends MissionBaseView {
         if (flightController != null) {
             flightController.getSimulator().stop(null);
         }
-
-        waypointMissionOperator.removeListener(listener);
         super.onDetachedFromWindow();
     }
     //endregion

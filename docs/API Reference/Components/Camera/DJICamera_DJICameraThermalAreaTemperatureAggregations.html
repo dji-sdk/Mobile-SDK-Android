@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -161,6 +167,12 @@
                             <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">AirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">AirSenseAirplaneState</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -552,7 +564,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>ThermalAreaTemperatureAggregations</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThermalAreaTemperatureAggregations</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJICamera_DJICameraThermalAreaTemperatureAggregations</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The aggregate temperature measurements for a selected metering area.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -561,7 +573,7 @@
 <div class="article"><h6><font color="#AAA">interface </font>Callback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Callback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_area_temperature_aggregations_inline">CameraKey.THERMAL_AREA_TEMPERATURE_AGGREGATIONS</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJICamera_ThermalCameraAreaTemperatureAggregationsUpdatedCallbackInterface</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_area_temperature_aggregations_inline">CameraKey.THERMAL_AREA_TEMPERATURE_AGGREGATIONS</a></font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">This interface provides information about the aggregate temperature of metering area.</font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
@@ -570,7 +582,7 @@
 <div class="article"><h6><font color="#AAA">method </font>onUpdate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(@NonNull ThermalAreaTemperatureAggregations aggregations)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_area_temperature_aggregations_inline">CameraKey.THERMAL_AREA_TEMPERATURE_AGGREGATIONS</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJICamera_didUpdateAreaTemperatureAggregations</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_area_temperature_aggregations_inline">CameraKey.THERMAL_AREA_TEMPERATURE_AGGREGATIONS</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Called when there are new min, max, and average temperature values available for the set spot metering area.  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -580,7 +592,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getAverageAreaTemperature</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getAverageAreaTemperature</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJICamera_DJICameraThermalAreaTemperatureAggregations_averageAreaTemperature</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Get the average temperature of the selected metering area.</font></p>
 <h5 id="return">Return:</h5>
@@ -589,7 +601,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getMinAreaTemperature</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getMinAreaTemperature</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJICamera_DJICameraThermalAreaTemperatureAggregations_minAreaTemperature</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Get the minimum temperature of the selected metering area.</font></p>
 <h5 id="return-v2">Return:</h5>
@@ -598,7 +610,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getMinTemperaturePoint</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@NonNull</span></div><div class="line"> <span class="function">Point <span class="title">getMinTemperaturePoint</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJICamera_DJICameraThermalAreaTemperatureAggregations_minTemperaturePoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The minimum temperature coordinate of the selected metering area.</font></p>
 <h5 id="return-v3">Return:</h5>
@@ -607,7 +619,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getMaxAreaTemperature</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getMaxAreaTemperature</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJICamera_DJICameraThermalAreaTemperatureAggregations_maxAreaTemperature</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Get the maximum temperature of the selected metering area.</font></p>
 <h5 id="return-v4">Return:</h5>
@@ -616,7 +628,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getMaxTemperaturePoint</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@NonNull</span></div><div class="line"> <span class="function">Point <span class="title">getMaxTemperaturePoint</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJICamera_DJICameraThermalAreaTemperatureAggregations_maxTemperaturePoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">The maximum temperature coordinate of the selected metering area.</font></p>
 <h5 id="return-v5">Return:</h5>

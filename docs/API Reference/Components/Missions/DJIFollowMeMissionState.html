@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -161,6 +167,12 @@
                             <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">AirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">AirSenseAirplaneState</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -552,7 +564,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>FollowMeMissionState</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">FollowMeMissionState</span> <span class="keyword">extends</span> <span class="title">MissionState</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>MissionState</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFollowMeMissionState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>MissionState</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">All the possible state of <code><a href="../../Components/Missions/DJIFollowMeMissionOperator.html#djifollowmemissionoperator">FollowMeMissionOperator</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -561,15 +573,15 @@
 <div class="article"><h6><font color="#AAA">final </font>UNKNOWN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> FollowMeMissionState UNKNOWN = <span class="keyword">new</span> FollowMeMissionState(<span class="string">"UNKNOWN"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFollowMeMissionState_Unknown</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">The state of the operator is unknown. It is the inital state when the  operator is just created.</font></p>
+<p><font color="#666">The state of the operator is unknown. It is the initial state when the  operator is just created.</font></p>
 </div>
 <div class="api-row" id="djifollowmemissionstate_disconnected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djifollowmemissionstate_disconnected_inline">DISCONNECTED</a></div></div><div class="inline-doc" id="djifollowmemissionstate_disconnected_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">final </font>DISCONNECTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> FollowMeMissionState DISCONNECTED = <span class="keyword">new</span> FollowMeMissionState(<span class="string">"DISCONNECTED"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFollowMeMissionState_Disconnected</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The connection between the mobile device and aircraft is lost.</font></p>
 </div>
@@ -577,7 +589,7 @@
 <div class="article"><h6><font color="#AAA">final </font>NOT_SUPPORTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> FollowMeMissionState NOT_SUPPORTED = <span class="keyword">new</span> FollowMeMissionState(<span class="string">"NOT_SUPPORTED"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFollowMeMissionState_NotSupported</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The connected product does not support Follow Me mission.</font></p>
 </div>
@@ -585,7 +597,7 @@
 <div class="article"><h6><font color="#AAA">final </font>RECOVERING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> FollowMeMissionState RECOVERING = <span class="keyword">new</span> FollowMeMissionState(<span class="string">"RECOVERING"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFollowMeMissionState_Recovering</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The connection between the mobile device and aircraft is built-up. The operator  is synchronizing the state from the aircraft.</font></p>
 </div>
@@ -593,7 +605,7 @@
 <div class="article"><h6><font color="#AAA">final </font>NOT_READY</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> FollowMeMissionState NOT_READY = <span class="keyword">new</span> FollowMeMissionState(<span class="string">"NOT_READY"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFollowMeMissionState_notReady</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The current state is not ready for uploading a mission.</font></p>
 </div>
@@ -601,7 +613,7 @@
 <div class="article"><h6><font color="#AAA">final </font>READY_TO_EXECUTE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> FollowMeMissionState READY_TO_EXECUTE = <span class="keyword">new</span> FollowMeMissionState(<span class="string">"READY_TO_EXECUTE"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFollowMeMissionState_ReadyToStart</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The operator is ready to start a Follow Me mission.</font></p>
 </div>
@@ -609,7 +621,7 @@
 <div class="article"><h6><font color="#AAA">final </font>EXECUTING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> FollowMeMissionState EXECUTING = <span class="keyword">new</span> FollowMeMissionState(<span class="string">"EXECUTING"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFollowMeMissionState_Executing</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">The mission execution is started successfully.</font></p>
 </div>
@@ -617,7 +629,7 @@
 <div class="article"><h6><font color="#AAA">final </font>GOT_STUCK</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> FollowMeMissionState GOT_STUCK = <span class="keyword">new</span> FollowMeMissionState(<span class="string">"GOT_STUCK"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFollowMeMissionState_GotStuck</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.followme</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">The mission execution is not executing successfully.</font></p>
 </div>

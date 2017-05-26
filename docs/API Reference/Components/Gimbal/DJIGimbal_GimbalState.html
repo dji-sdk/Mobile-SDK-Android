@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -161,6 +167,12 @@
                             <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">AirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">AirSenseAirplaneState</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -552,7 +564,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>GimbalState</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">GimbalState</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class provides the current state of the gimbal.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -561,7 +573,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getAttitudeInDegrees</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Attitude <span class="title">getAttitudeInDegrees</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_attitude_in_degrees_inline">GimbalKey.ATTITUDE_IN_DEGREES</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_attitude</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_attitude_in_degrees_inline">GimbalKey.ATTITUDE_IN_DEGREES</a></font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The current gimbal attitude in degrees. Roll, pitch and yaw are 0 if the gimbal is level with the  aircraft and points in the forward direction of North Pole.</font></p>
 <h5 id="return">Return:</h5>
@@ -570,7 +582,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getRollFineTuneInDegrees</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getRollFineTuneInDegrees</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_roll_fine_tune_in_degrees_inline">GimbalKey.ROLL_FINE_TUNE_IN_DEGREES</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_rollFineTuneInDegrees</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_roll_fine_tune_in_degrees_inline">GimbalKey.ROLL_FINE_TUNE_IN_DEGREES</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Returns the gimbal's roll fine-tune value. The range for the fine-tuned value is [-10, 10] degrees.  If the fine-tune value is negative, the gimbal will be fine-tuned to the specified number of degrees in  the counterclockwise direction.</font></p>
 <h5 id="return-v2">Return:</h5>
@@ -579,7 +591,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">GimbalMode <span class="title">getMode</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_mode_inline">GimbalKey.MODE</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_workMode</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_mode_inline">GimbalKey.MODE</a></font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Returns the gimbal's current work mode.</font></p>
 <h5 id="return-v3">Return:</h5>
@@ -588,7 +600,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isAttitudeReset</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isAttitudeReset</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_attitude_reset_inline">GimbalKey.IS_ATTITUDE_RESET</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_isAttitudeReset</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_attitude_reset_inline">GimbalKey.IS_ATTITUDE_RESET</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666"><code>true</code> if the attitude has been reset. If the gimbal is not in the original  position, this value will return <code>false</code>.</font></p>
 <h5 id="return-v4">Return:</h5>
@@ -597,7 +609,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isMobileDeviceMounted</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isMobileDeviceMounted</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_mobile_device_mounted_inline">GimbalKey.IS_MOBILE_DEVICE_MOUNTED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_isMobileDeviceMounted</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_mobile_device_mounted_inline">GimbalKey.IS_MOBILE_DEVICE_MOUNTED</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666"><code>true</code> if the mobile device is mounted on the gimbal.</font></p>
 <h5 id="return-v5">Return:</h5>
@@ -606,7 +618,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isMotorOverloaded</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isMotorOverloaded</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_motor_over_loaded_inline">GimbalKey.IS_MOTOR_OVER_LOADED</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_isMotorOverloaded</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_motor_over_loaded_inline">GimbalKey.IS_MOTOR_OVER_LOADED</a></font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666"><code>true</code> if one of the gimbal motors is overloaded.</font></p>
 <h5 id="return-v6">Return:</h5>
@@ -617,7 +629,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isCalibrationSuccessful</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isCalibrationSuccessful</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_calibration_successful_inline">GimbalKey.IS_CALIBRATION_SUCCESSFUL</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_isCalibrationSuccessful</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_calibration_successful_inline">GimbalKey.IS_CALIBRATION_SUCCESSFUL</a></font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666"><code>true</code> if the gimbal calibration succeeded.</font></p>
 <h5 id="return-v7">Return:</h5>
@@ -626,7 +638,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isCalibrating</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isCalibrating</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_calibrating_inline">GimbalKey.IS_CALIBRATING</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_isCalibrating</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_calibrating_inline">GimbalKey.IS_CALIBRATING</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666"><code>true</code> if the gimbal is calibrating.</font></p>
 <h5 id="return-v8">Return:</h5>
@@ -635,7 +647,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getCalibrationProgress</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getCalibrationProgress</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_calibration_progress_inline">GimbalKey.CALIBRATION_PROGRESS</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_calibrationProgress</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_calibration_progress_inline">GimbalKey.CALIBRATION_PROGRESS</a></font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Current progress (percentage) for calibration.</font></p>
 <h5 id="return-v9">Return:</h5>
@@ -646,7 +658,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isPitchAtStop</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isPitchAtStop</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_pitch_at_stop_inline">GimbalKey.IS_PITCH_AT_STOP</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_isPitchAtStop</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_pitch_at_stop_inline">GimbalKey.IS_PITCH_AT_STOP</a></font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666"><code>true</code> if the gimbal's pitch value is at its limit.</font></p>
 <h5 id="return-v10">Return:</h5>
@@ -655,7 +667,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isRollAtStop</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isRollAtStop</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_roll_at_stop_inline">GimbalKey.IS_ROLL_AT_STOP</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_isRollAtStop</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_roll_at_stop_inline">GimbalKey.IS_ROLL_AT_STOP</a></font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666"><code>true</code> if the gimbal's roll value is at its limit.</font></p>
 <h5 id="return-v11">Return:</h5>
@@ -664,7 +676,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isYawAtStop</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isYawAtStop</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_yaw_at_stop_inline">GimbalKey.IS_YAW_AT_STOP</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_isYawAtStop</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_yaw_at_stop_inline">GimbalKey.IS_YAW_AT_STOP</a></font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666"><code>true</code> if the gimbal's yaw value is at its limit.</font></p>
 <h5 id="return-v12">Return:</h5>
@@ -675,7 +687,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isBalanceTesting</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isBalanceTesting</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_testing_balance_inline">GimbalKey.IS_TESTING_BALANCE</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_isTestingBalance</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_is_testing_balance_inline">GimbalKey.IS_TESTING_BALANCE</a></font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666"><code>true</code> if the gimbal is currently testing payload balance.</font></p>
 <h5 id="return-v13">Return:</h5>
@@ -684,7 +696,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getPitchBalanceTestResult</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">BalanceTestResult <span class="title">getPitchBalanceTestResult</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_pitch_test_result_inline">GimbalKey.PITCH_TEST_RESULT</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_pitchTestResult</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_pitch_test_result_inline">GimbalKey.PITCH_TEST_RESULT</a></font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Returns the pitch axis balance test result.</font></p>
 <h5 id="return-v14">Return:</h5>
@@ -693,7 +705,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getRollBalanceTestResult</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">BalanceTestResult <span class="title">getRollBalanceTestResult</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_roll_test_result_inline">GimbalKey.ROLL_TEST_RESULT</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_rollTestResult</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_roll_test_result_inline">GimbalKey.ROLL_TEST_RESULT</a></font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Returns the roll axis balance test result.</font></p>
 <h5 id="return-v15">Return:</h5>
@@ -702,7 +714,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getBalanceState</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">BalanceState <span class="title">getBalanceState</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_balance_state_inline">GimbalKey.BALANCE_STATE</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIGimbal_GimbalState_balanceState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_balance_state_inline">GimbalKey.BALANCE_STATE</a></font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">Returns the balance status of the gimbal.</font></p>
 <h5 id="return-v16">Return:</h5>

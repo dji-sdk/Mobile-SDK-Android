@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -161,6 +167,12 @@
                             <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">AirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">AirSenseAirplaneState</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -552,7 +564,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>ActiveTrackState</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ActiveTrackState</span> <span class="keyword">extends</span> <span class="title">MissionState</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>MissionState</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>MissionState</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">All the possible states of <code><a href="../../Components/Missions/DJIActiveTrackMissionOperator.html#djiactivetrackmissionoperator">ActiveTrackOperator</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -561,15 +573,15 @@
 <div class="article"><h6><font color="#AAA">final </font>UNKNOWN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState UNKNOWN = <span class="keyword">new</span> ActiveTrackState(<span class="string">"UNKNOWN"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_Unknown</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">The state of the operator is unknown. It is the inital state when the  operator is just created.</font></p>
+<p><font color="#666">The state of the operator is unknown. It is the initial state when the  operator is just created.</font></p>
 </div>
 <div class="api-row" id="djiactivetrackmissionstate_disconnected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_disconnected_inline">DISCONNECTED</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_disconnected_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">final </font>DISCONNECTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState DISCONNECTED = <span class="keyword">new</span> ActiveTrackState(<span class="string">"DISCONNECTED"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_Disconnected</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The connection between the mobile device and aircraft is broken.</font></p>
 </div>
@@ -577,7 +589,7 @@
 <div class="article"><h6><font color="#AAA">final </font>RECOVERING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState RECOVERING = <span class="keyword">new</span> ActiveTrackState(<span class="string">"RECOVERING"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_Recovering</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The connection between the mobile device and aircraft is recovering.  In this state, the operator is synchronizing the state from the aircraft.</font></p>
 </div>
@@ -585,7 +597,7 @@
 <div class="article"><h6><font color="#AAA">final </font>NOT_SUPPORT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState NOT_SUPPORT = <span class="keyword">new</span> ActiveTrackState(<span class="string">"NOT_SUPPORT"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_NotSupported</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The connected product does not support ActiveTrack mission.</font></p>
 </div>
@@ -593,7 +605,7 @@
 <div class="article"><h6><font color="#AAA">final </font>CANNOT_START</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState CANNOT_START = <span class="keyword">new</span> ActiveTrackState(<span class="string">"CANNOT_START"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_CannotStart</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">There is existing error stopping any ActiveTrack mission to start.</font></p>
 </div>
@@ -601,7 +613,7 @@
 <div class="article"><h6><font color="#AAA">final </font>DETECTING_HUMAN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState DETECTING_HUMAN = <span class="keyword">new</span> ActiveTrackState(<span class="string">"DETECTING_HUMAN"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_DetectingHuman</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Gesture mode is enabled and the aircraft is looking for a target automatically.  If a target is found, the operator will go to state <code><a href="../../Components/Missions/DJIActiveTrackMissionState.html#djiactivetrackmissionstate_waitingforconfirmation">WAITING_FOR_CONFIRMATION</a></code>  or <code><a href="../../Components/Missions/DJIActiveTrackMissionState.html#djiactivetrackmissionstate_cannotconfirm">CANNOT_CONFIRM</a></code>.</font></p>
 </div>
@@ -609,7 +621,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAITING_FOR_CONFIRMATION</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState WAITING_FOR_CONFIRMATION = <span class="keyword">new</span> ActiveTrackState(<span class="string">"WAITING_FOR_CONFIRMATION"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_WaitingForConfirmation</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Target is found. Camera is already tracking the target. In order to make the  aircraft follow the target, the confirmation from user is required. Once the  target is confirmed, the state will become  <code><a href="../../Components/Missions/DJIActiveTrackMissionState.html#djiactivetrackmissionstate_aircraftfollowing">AIRCRAFT_FOLLOWING</a></code>.</font></p>
 </div>
@@ -617,7 +629,7 @@
 <div class="article"><h6><font color="#AAA">final </font>CANNOT_CONFIRM</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState CANNOT_CONFIRM = <span class="keyword">new</span> ActiveTrackState(<span class="string">"CANNOT_CONFIRM"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_CannotConfirm</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Target is found. Camera is already tracking the target but there is an error  stopping the aircraft to follow the target. Use <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate_cannotconfirmreason">getReason</a></code>  in <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate">ActiveTrackTrackingState</a></code> to check the reason.</font></p>
 </div>
@@ -625,7 +637,7 @@
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_FOLLOWING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState AIRCRAFT_FOLLOWING = <span class="keyword">new</span> ActiveTrackState(<span class="string">"AIRCRAFT_FOLLOWING"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_AircraftFollowing</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Target is found. Camera is already tracking the target and the aircraft is following the target.</font></p>
 </div>
@@ -633,7 +645,7 @@
 <div class="article"><h6><font color="#AAA">final </font>ONLY_CAMERA_FOLLOWING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState ONLY_CAMERA_FOLLOWING = <span class="keyword">new</span> ActiveTrackState(<span class="string">"ONLY_CAMERA_FOLLOWING"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_OnlyCameraFollowing</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">The operator is executing an ActiveTrack mission in Splotlight mode or  Spotlight Pro mode. The target is found and camera is following the target.</font></p>
 </div>
@@ -641,15 +653,15 @@
 <div class="article"><h6><font color="#AAA">final </font>FINDING_TRACKED_TARGET</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState FINDING_TRACKED_TARGET = <span class="keyword">new</span> ActiveTrackState(<span class="string">"FINDING_TRACKED_TARGET"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_FindingTrackedTarget</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666">ActiveTrack is started but the target is lost. The vision system is detecting  the previous found target.</font></p>
+<p><font color="#666">ActiveTrack is started but the target is lost. The vision system is detecting  the previously found target.</font></p>
 </div>
 <div class="api-row" id="djiactivetrackmissionstate_idle"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_idle_inline">IDLE</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_idle_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">final </font>IDLE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState IDLE = <span class="keyword">new</span> ActiveTrackState(<span class="string">"IDLE"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMissionState_IDLE</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">The mission is idle.</font></p>
 </div>

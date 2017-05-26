@@ -31,6 +31,7 @@ import com.dji.sdk.sample.demo.gimbal.PushGimbalDataView;
 import com.dji.sdk.sample.demo.key.KeyedInterfaceView;
 import com.dji.sdk.sample.demo.missionoperator.WaypointMissionOperatorView;
 import com.dji.sdk.sample.demo.mobileremotecontroller.MobileRemoteControllerView;
+import com.dji.sdk.sample.demo.appactivation.AppActivationView;
 import com.dji.sdk.sample.demo.remotecontroller.PushRemoteControllerDataView;
 import com.dji.sdk.sample.demo.timeline.TimelineMissionControlView;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
@@ -70,6 +71,12 @@ public class DemoListView extends FrameLayout {
 
         // Build model for ListView
         ListBuilder builder = new ListBuilder();
+
+        builder.addGroup(R.string.component_listview_sdk_4_1,
+                         false,
+                         new GroupItem(R.string.component_listview_app_activation,
+                                       AppActivationView.class));
+
 
         builder.addGroup(R.string.component_listview_sdk_4_0,
                          false,

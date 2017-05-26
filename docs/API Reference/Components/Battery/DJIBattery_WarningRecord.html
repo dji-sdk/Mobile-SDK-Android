@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -161,6 +167,12 @@
                             <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">AirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">AirSenseAirplaneState</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -552,7 +564,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>WarningRecord</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">WarningRecord</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#batterykey_latest_warning_record_inline">BatteryKey.LATEST_WARNING_RECORD</a>, <a href="../../Components/KeyManager/DJIBatteryKey.html#batterykey_historical_warning_records_inline">BatteryKey.HISTORICAL_WARNING_RECORDS</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBattery_WarningRecord</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#batterykey_latest_warning_record_inline">BatteryKey.LATEST_WARNING_RECORD</a>, <a href="../../Components/KeyManager/DJIBatteryKey.html#batterykey_historical_warning_records_inline">BatteryKey.HISTORICAL_WARNING_RECORDS</a></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Used to keep a record of any unusual battery statues in the past 30 discharges. For all the properties below, monitor these values frequently to ensure the battery's state is normal. If any of the properties below indicate there is an issue with the battery, notifying the user is recommended. <br><br> NOTE: No automatic action will be taken if any of the properties below return <code>true</code>, which is why it is imperative that the user is notified of the issue.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -561,7 +573,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isCurrentOverloaded</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isCurrentOverloaded</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBattery_WarningRecord_isCurrentOverloaded</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666"><code>true</code> if the battery should be discharged due to a current overload.</font></p>
 <h5 id="return">Return:</h5>
@@ -570,7 +582,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isShortCircuited</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isShortCircuited</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBattery_WarningRecord_isShortCircuited</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666"><code>true</code> if the battery has been or is short circuited.</font></p>
 <h5 id="return-v2">Return:</h5>
@@ -579,7 +591,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getLowVoltageCellIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getLowVoltageCellIndex</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBattery_WarningRecord_lowVoltageCellIndex</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Returns the index at which one of the cells in the battery is below the normal voltage. The first cell has an index of 0.  -1 represents no battery cells under voltage. Phantom Series Aircraft have four cell batteries. Inspire series aircraft and the M100 have 6 cell batteries.</font></p>
 <h5 id="return-v3">Return:</h5>
@@ -588,7 +600,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isOverHeated</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isOverHeated</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBattery_WarningRecord_isOverHeated</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666"><code>true</code> if the battery has overheated.</font></p>
 <h5 id="return-v4">Return:</h5>
@@ -597,7 +609,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isLowTemperature</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLowTemperature</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBattery_WarningRecord_isLowTemperature</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666"><code>true</code> if the battery has experienced a temperature that is too low.</font></p>
 <h5 id="return-v5">Return:</h5>
@@ -606,7 +618,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isCustomDischargeEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isCustomDischargeEnabled</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBattery_WarningRecord_isCustomDischargeEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666"><code>true</code> if the battery has been configured to be discharged over a specific number of days. Once the battery is fully recharged, the battery will again discharge over the number of days set here. This process is cyclical.</font></p>
 <h5 id="return-v6">Return:</h5>
@@ -615,7 +627,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getDamagedCellIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getDamagedCellIndex</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBattery_WarningRecord_damagedCellIndex</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.battery</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Returns the index at which one of the cells in the battery is damaged. The first cell has an index of 0. -1 represents no damaged battery cells. Phantom 3 aircraft have 4 cell batteries. Inspire series aircraft and the M100 have 6 cell batteries.</font></p>
 <h5 id="return-v7">Return:</h5>

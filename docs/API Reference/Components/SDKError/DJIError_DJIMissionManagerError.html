@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -161,6 +167,12 @@
                             <dd><a href="../FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a>
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">AirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">AirSenseAirplaneState</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -552,7 +564,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIMissionError</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJIMissionError</span> <span class="keyword">extends</span> <span class="title">DJIError</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Defines all mission manager related errors.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -561,7 +573,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MAX_FLIGHT_SPEED_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MAX_FLIGHT_SPEED_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Max Flight speed value provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointMissionErrorMaxFlightSpeed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Max Flight speed value provided is invalid</font></p>
 </div>
@@ -569,7 +581,7 @@
 <div class="article"><h6><font color="#AAA">final </font>AUTO_FLIGHT_SPEED_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AUTO_FLIGHT_SPEED_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Auto flight speed value provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointMissionErrorAutoFlightSpeed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Auto flight speed value provided is invalid</font></p>
 </div>
@@ -577,7 +589,7 @@
 <div class="article"><h6><font color="#AAA">final </font>REPEAT_TIME_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError REPEAT_TIME_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Repeat time value provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointMissionErrorRepeatTime</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Repeat time value provided is invalid</font></p>
 </div>
@@ -585,7 +597,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_COUNT_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_COUNT_NOT_VALID = <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint count is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointMissionErrorWaypointCount</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Waypoint count is invalid</font></p>
 </div>
@@ -593,7 +605,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_LIST_SIZE_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_LIST_SIZE_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint list size is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointMissionErrorWaypointListSize</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Waypoint list size is invalid</font></p>
 </div>
@@ -601,7 +613,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_COORDINATE_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_COORDINATE_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint coordinate provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorCoordinate</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Waypoint coordinate provided is invalid</font></p>
 </div>
@@ -609,7 +621,7 @@
 <div class="article"><h6><font color="#AAA">final </font>ALTITUDE_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError ALTITUDE_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint altitude provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorAltitude</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Waypoint altitude provided is invalid</font></p>
 </div>
@@ -617,7 +629,7 @@
 <div class="article"><h6><font color="#AAA">final </font>HEADING_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError HEADING_NOT_VALID = <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint heading provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorHeading</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Waypoint heading provided is invalid</font></p>
 </div>
@@ -625,7 +637,7 @@
 <div class="article"><h6><font color="#AAA">final </font>ACTION_REPEAT_TIME_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError ACTION_REPEAT_TIME_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint repeat time provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorRepeatTime</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Waypoint repeat time provided is invalid</font></p>
 </div>
@@ -633,7 +645,7 @@
 <div class="article"><h6><font color="#AAA">final </font>ACTION_TIMEOUT_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError ACTION_TIMEOUT_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint action timeout provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorActionTimeout</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Waypoint action timeout provided is invalid</font></p>
 </div>
@@ -641,7 +653,7 @@
 <div class="article"><h6><font color="#AAA">final </font>CORNER_RADIUS_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError CORNER_RADIUS_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint corner radius provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorCornerRadius</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Waypoint corner radius provided is invalid</font></p>
 </div>
@@ -649,7 +661,7 @@
 <div class="article"><h6><font color="#AAA">final </font>GIMBAL_PITCH_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError GIMBAL_PITCH_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint gimbal pitch provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorGimbalPitch</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Waypoint gimbal pitch provided is invalid</font></p>
 </div>
@@ -657,7 +669,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_SPEED_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_SPEED_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint speed provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorSpeed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Waypoint speed provided is invalid</font></p>
 </div>
@@ -665,7 +677,7 @@
 <div class="article"><h6><font color="#AAA">final </font>SHOOT_PHOTO_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError SHOOT_PHOTO_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint shoot photo distance provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorShootPhotoDistance</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Waypoint shoot photo distance provided is invalid</font></p>
 </div>
@@ -673,7 +685,7 @@
 <div class="article"><h6><font color="#AAA">final </font>STAY_ACTION_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError STAY_ACTION_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint stay action param provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorStayActionParam</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Waypoint stay action param provided is invalid</font></p>
 </div>
@@ -681,7 +693,7 @@
 <div class="article"><h6><font color="#AAA">final </font>ROTATE_GIMBAL_ACTION_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError ROTATE_GIMBAL_ACTION_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint rotate gimbal action param provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorRotateGimbalActionParam</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">Waypoint rotate gimbal action param provided is invalid</font></p>
 </div>
@@ -689,7 +701,7 @@
 <div class="article"><h6><font color="#AAA">final </font>ROTATE_AIRCRAFT_ACTION_NOT_VALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError ROTATE_AIRCRAFT_ACTION_NOT_VALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint rotate aircraft action param provided is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_WaypointErrorRotateAircraftActionParam</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Waypoint rotate aircraft action param provided is invalid</font></p>
 </div>
@@ -697,7 +709,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getDJIError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(Ccode ccode)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_getDJIError</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
 <p><font color="#666">Returns the specific error in DJIMissionManagerError according to the error code.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -710,7 +722,7 @@
 <div class="article"><h6><font color="#AAA">final </font>COMMON_UNSUPPORTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError COMMON_UNSUPPORTED = <span class="keyword">new</span> DJIMissionError(<span class="string">"Not supported"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_COMMON_UNSUPPORTED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
 <p><font color="#666">Unsupported feature error. <br>Where possible:<br> This error will be returned by the function for a special  feature interface when the feature is not supported by the device.<br></font></p>
 </div>
@@ -718,7 +730,7 @@
 <div class="article"><h6><font color="#AAA">final </font>COMMON_DISCONNECTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError COMMON_DISCONNECTED = <span class="keyword">new</span> DJIMissionError(<span class="string">"Disconnected"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_COMMON_DISCONNECTED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
 <p><font color="#666">Disconnected.</font></p>
 </div>
@@ -726,7 +738,7 @@
 <div class="article"><h6><font color="#AAA">final </font>BEGAN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError BEGAN = <span class="keyword">new</span> DJIMissionError(<span class="string">"began"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_BEGAN</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
 <p><font color="#666">Mission began (Phantom 2 series).</font></p>
 </div>
@@ -734,7 +746,7 @@
 <div class="article"><h6><font color="#AAA">final </font>CANCELED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError CANCELED = <span class="keyword">new</span> DJIMissionError(<span class="string">"canceled"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_CANCELED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
 <p><font color="#666">Mission canceled.</font></p>
 </div>
@@ -742,7 +754,7 @@
 <div class="article"><h6><font color="#AAA">final </font>FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError FAILED = <span class="keyword">new</span> DJIMissionError(<span class="string">"failed"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_FAILED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
 <p><font color="#666">Mission failed.</font></p>
 </div>
@@ -750,7 +762,7 @@
 <div class="article"><h6><font color="#AAA">final </font>NO_MISSION_RUNNING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError NO_MISSION_RUNNING = <span class="keyword">new</span> DJIMissionError(<span class="string">"Mission not existed"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_NOT_EXISTED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
 <p><font color="#666">Mission not existed.</font></p>
 </div>
@@ -758,7 +770,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TIMEOUT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TIMEOUT = <span class="keyword">new</span> DJIMissionError(<span class="string">"Execution of this process has timed out"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_TIMEOUT</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v26">Description:</h5>
 <p><font color="#666">Mission timeout.</font></p>
 </div>
@@ -766,7 +778,7 @@
 <div class="article"><h6><font color="#AAA">final </font>GPS_NOT_READY</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError GPS_NOT_READY = <span class="keyword">new</span> DJIMissionError(<span class="string">"GPS of aircraft is not ready"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_GPS_NOT_READY</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v27">Description:</h5>
 <p><font color="#666">The GPS of the aircraft is not ready.<br> Maybe the aircraft haven't got the home point location.</font></p>
 </div>
@@ -774,7 +786,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MOTORS_DID_NOT_START</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MOTORS_DID_NOT_START =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft's motor has not started"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MOTOR_NOT_START</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v28">Description:</h5>
 <p><font color="#666">The aircraft's motor has not started.</font></p>
 </div>
@@ -782,7 +794,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TAKE_OFF</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TAKE_OFF = <span class="keyword">new</span> DJIMissionError(<span class="string">"Aircraft is taking off"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_TAKEOFF</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v29">Description:</h5>
 <p><font color="#666">The aircraft is taking off.</font></p>
 </div>
@@ -790,7 +802,7 @@
 <div class="article"><h6><font color="#AAA">final </font>IS_FLYING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError IS_FLYING = <span class="keyword">new</span> DJIMissionError(<span class="string">"Aircraft is flying"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_IS_FLYING</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v30">Description:</h5>
 <p><font color="#666">The aircraft is flying.</font></p>
 </div>
@@ -798,7 +810,7 @@
 <div class="article"><h6><font color="#AAA">final </font>NOT_AUTO_MODE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError NOT_AUTO_MODE = <span class="keyword">new</span> DJIMissionError(<span class="string">"Aircraft is not in auto mode"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_NOT_AUTO_MODE</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v31">Description:</h5>
 <p><font color="#666">The aircraft is not in auto mode.</font></p>
 </div>
@@ -806,7 +818,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MAX_NUMBER_OF_WAYPOINTS_UPLOAD_LIMIT_REACHED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MAX_NUMBER_OF_WAYPOINTS_UPLOAD_LIMIT_REACHED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint mission has reached the maximum points limit"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_UPLOAD_WAYPOINT_NUM_MAX_LIMIT</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v32">Description:</h5>
 <p><font color="#666">Waypoint mission has reached the maximum points limit.<br> 1. Phantom 2 Vision/Vision+: the max points limit  is 16.<br> 2. Inspire1/ Phantom 3 series: the max points limit is 99.</font></p>
 </div>
@@ -814,7 +826,7 @@
 <div class="article"><h6><font color="#AAA">final </font>UPLOADING_WAYPOINT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError UPLOADING_WAYPOINT = <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint mission is uploading"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_UPLOADING</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v33">Description:</h5>
 <p><font color="#666">Waypoint is uploading.</font></p>
 </div>
@@ -822,7 +834,7 @@
 <div class="article"><h6><font color="#AAA">final </font>KEY_LEVEL_LOW</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError KEY_LEVEL_LOW =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The API key provided to you is not at the correct permission level"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_KEY_LEVEL_LOW</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v34">Description:</h5>
 <p><font color="#666">The API key provided to you is not at the correct permission level.<br> Check whether your key is a level 2  application key in your AndroidManifest.xml.</font></p>
 </div>
@@ -830,7 +842,7 @@
 <div class="article"><h6><font color="#AAA">final </font>NAVIGATION_MODE_DISABLED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError NAVIGATION_MODE_DISABLED = <span class="keyword">new</span> DJIMissionError(<span class="string">"Navigation is not open"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_NAVIGATION_IS_NOT_OPEN</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v35">Description:</h5>
 <p><font color="#666">Navigation is not open.</font></p>
 </div>
@@ -838,7 +850,7 @@
 <div class="article"><h6><font color="#AAA">final </font>IOC_TYPE_UNKNOWN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError IOC_TYPE_UNKNOWN = <span class="keyword">new</span> DJIMissionError(<span class="string">"The type of IOC is unknown"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_IOC_TYPE_UNKNOWN</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v36">Description:</h5>
 <p><font color="#666">The type of IOC is unknown.</font></p>
 </div>
@@ -846,7 +858,7 @@
 <div class="article"><h6><font color="#AAA">final </font>HOME_POINT_VALUE_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError HOME_POINT_VALUE_INVALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The home point is not a valid float value"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_HOMEPOINT_VALUE_INVALID</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v37">Description:</h5>
 <p><font color="#666">The homepoint is not a valid float value.</font></p>
 </div>
@@ -854,7 +866,7 @@
 <div class="article"><h6><font color="#AAA">final </font>HOME_POINT_LOCATION_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError HOME_POINT_LOCATION_INVALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The latitude and longitude of homepoint are invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_HOMEPOINT_LOCATION_INVALID</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v38">Description:</h5>
 <p><font color="#666">The latitude and longitude of the homepoint are invalid.</font></p>
 </div>
@@ -862,7 +874,7 @@
 <div class="article"><h6><font color="#AAA">final </font>HOME_POINT_DIRECTION_UNKNOWN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError HOME_POINT_DIRECTION_UNKNOWN =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The direction of homepoint is unknown"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_HOMEPOINT_DIRECTION_UNKNOWN</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v39">Description:</h5>
 <p><font color="#666">The direction of the homepoint is unknown.</font></p>
 </div>
@@ -870,7 +882,7 @@
 <div class="article"><h6><font color="#AAA">final </font>HOME_POINT_MISSION_PAUSED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError HOME_POINT_MISSION_PAUSED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The home-point mission is paused"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_HOMEPOINT_PAUSED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v40">Description:</h5>
 <p><font color="#666">Homepoint is paused.</font></p>
 </div>
@@ -878,7 +890,7 @@
 <div class="article"><h6><font color="#AAA">final </font>HOME_POINT_MISSION_NOT_PAUSED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError HOME_POINT_MISSION_NOT_PAUSED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The home-point  mission is not paused"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_HOMEPOINT_NOT_PAUSED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v41">Description:</h5>
 <p><font color="#666">The homepoint is not paused.</font></p>
 </div>
@@ -886,7 +898,7 @@
 <div class="article"><h6><font color="#AAA">final </font>FOLLOW_ME_DISTANCE_TOO_LARGE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError FOLLOW_ME_DISTANCE_TOO_LARGE = <span class="keyword">new</span> DJIMissionError(</div><div class="line">       <span class="string">"Distance between the aircraft and mobile phone is beyond acceptable limit(must be lower than 20000m)"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_FOLLOWME_DISTANCE_TOO_LARGE</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v42">Description:</h5>
 <p><font color="#666">The distance between the aircraft and mobile phone is too large (must be lower than 20000m). This error will  be returned when initializing the follow me task.</font></p>
 </div>
@@ -894,7 +906,7 @@
 <div class="article"><h6><font color="#AAA">final </font>FOLLOW_ME_DISCONNECT_TIME_TOO_LONG</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError FOLLOW_ME_DISCONNECT_TIME_TOO_LONG =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The disconnect time of follow me mission is too long"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_FOLLOWME_DISCONNECT_TIME_TOOLONG</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v43">Description:</h5>
 <p><font color="#666">The disconnect time of the Follow Me mission is too long.</font></p>
 </div>
@@ -902,7 +914,7 @@
 <div class="article"><h6><font color="#AAA">final </font>FOLLOW_ME_GIMBAL_PITCH_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError FOLLOW_ME_GIMBAL_PITCH_ERROR =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The initial pitch angle of gimbal is too large"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_FOLLOWME_GIMBAL_PITCH_ERROR</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v44">Description:</h5>
 <p><font color="#666">The initial pitch angle of the gimbal is too large.</font></p>
 </div>
@@ -910,7 +922,7 @@
 <div class="article"><h6><font color="#AAA">final </font>ALTITUDE_TOO_HIGH</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError ALTITUDE_TOO_HIGH = <span class="keyword">new</span> DJIMissionError(<span class="string">"The altitude is too high"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_ALTITUDE_TOO_HIGH</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v45">Description:</h5>
 <p><font color="#666">The altitude is too high.</font></p>
 </div>
@@ -918,7 +930,7 @@
 <div class="article"><h6><font color="#AAA">final </font>ALTITUDE_TOO_LOW</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError ALTITUDE_TOO_LOW = <span class="keyword">new</span> DJIMissionError(<span class="string">"The altitude is too low"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_ALTITUDE_TOO_LOW</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v46">Description:</h5>
 <p><font color="#666">The altitude is too low.</font></p>
 </div>
@@ -926,7 +938,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_RADIUS_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_RADIUS_INVALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The radius of mission is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_RADIUS_INVALID</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v47">Description:</h5>
 <p><font color="#666">The radius of mission is invalid.</font></p>
 </div>
@@ -934,7 +946,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_SPEED_TOO_HIGH</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_SPEED_TOO_HIGH =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The speed of mission is too large"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_SPEED_TOO_LARGE</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v48">Description:</h5>
 <p><font color="#666">The speed of the mission is too high.</font></p>
 </div>
@@ -942,7 +954,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_ENTRY_POINT_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_ENTRY_POINT_INVALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The entry point of mission is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_ENTRYPOINT_INVALID</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v49">Description:</h5>
 <p><font color="#666">The entry point of the mission is invalid.</font></p>
 </div>
@@ -950,7 +962,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_HEADING_MODE_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_HEADING_MODE_INVALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The heading mode of mission is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_HEADING_MODE_INVALID</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v50">Description:</h5>
 <p><font color="#666">The heading mode of the mission is invalid.</font></p>
 </div>
@@ -958,7 +970,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_RADIUS_OVER_LIMIT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_RADIUS_OVER_LIMIT =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The radius of mission is over the acceptable limit"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_RADIUS_OVERLIMITED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v51">Description:</h5>
 <p><font color="#666">The radius of the mission is over the acceptable limit.</font></p>
 </div>
@@ -966,7 +978,7 @@
 <div class="article"><h6><font color="#AAA">final </font>NAVIGATION_MODE_NOT_SUPPORTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError NAVIGATION_MODE_NOT_SUPPORTED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Navigation mode is not supported"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_UNSUPPORTED_NAVIGATION_FOR_THE_PRODUCT</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v52">Description:</h5>
 <p><font color="#666">Navigation in the product is unsupported.</font></p>
 </div>
@@ -974,7 +986,7 @@
 <div class="article"><h6><font color="#AAA">final </font>DISTANCE_FROM_MISSION_TARGET_TOO_LONG</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError DISTANCE_FROM_MISSION_TARGET_TOO_LONG =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Navigation in the product is unsupported"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_DISTANCE_FROM_MISSION_TARGET_TOO_LONG</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v53">Description:</h5>
 <p><font color="#666">The distance from the mission target is too long.<br> For example, the distance from hotpoint target position  is too long,  <br> or the distance from the first waypoint target position is too long</font></p>
 </div>
@@ -982,7 +994,7 @@
 <div class="article"><h6><font color="#AAA">final </font>RC_MODE_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError RC_MODE_ERROR =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Mode error, please make sure the remote controller's mode switch is in 'F' mode."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_RC_MODE_ERROR</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v54">Description:</h5>
 <p><font color="#666">Remote controller mode error.<br> You should put the remote controller's mode selection bar to F position.</font></p>
 </div>
@@ -990,7 +1002,7 @@
 <div class="article"><h6><font color="#AAA">final </font>IOC_WORKING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError IOC_WORKING = <span class="keyword">new</span> DJIMissionError(<span class="string">"The IOC mode is working"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_IOC_WORKING</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v55">Description:</h5>
 <p><font color="#666">The IOC mode is working.</font></p>
 </div>
@@ -998,7 +1010,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_NOT_INITIALIZED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_NOT_INITIALIZED = <span class="keyword">new</span> DJIMissionError(<span class="string">"The mission is not initialized"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_NOT_INIT</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v56">Description:</h5>
 <p><font color="#666">The mission is not initialized.</font></p>
 </div>
@@ -1006,7 +1018,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_NOT_EXIST</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_NOT_EXIST = <span class="keyword">new</span> DJIMissionError(<span class="string">"The mission does not exist"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_NOT_EXIST</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v57">Description:</h5>
 <p><font color="#666">The mission does not exist.</font></p>
 </div>
@@ -1014,7 +1026,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_CONFLICT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_CONFLICT =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"There is a conflicting setting in the mission"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_CONFLICT</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v58">Description:</h5>
 <p><font color="#666">There is a conflicting setting in the mission.</font></p>
 </div>
@@ -1022,7 +1034,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_ESTIMATE_TIME_TOO_LONG</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_ESTIMATE_TIME_TOO_LONG =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The estimated time for the mission is too long"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_ESTIMATE_TIME_TOO_LONG</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v59">Description:</h5>
 <p><font color="#666">The estimated time for the mission is too long.</font></p>
 </div>
@@ -1030,7 +1042,7 @@
 <div class="article"><h6><font color="#AAA">final </font>HIGH_PRIORITY_MISSION_EXECUTING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError HIGH_PRIORITY_MISSION_EXECUTING =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"A higher priority mission is executing"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_HIGH_PRIORITY_MISSION_EXECUTING</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v60">Description:</h5>
 <p><font color="#666">A higher priority mission is executing.</font></p>
 </div>
@@ -1038,7 +1050,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_CONDITION_NOT_SATISFIED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_CONDITION_NOT_SATISFIED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The condition of mission is not satisfied"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_CONDITION_NOT_SATISFIED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v61">Description:</h5>
 <p><font color="#666">The condition of the mission is not satisfied.</font></p>
 </div>
@@ -1046,7 +1058,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_ACROSS_NO_FLY_ZONE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_ACROSS_NO_FLY_ZONE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The mission is across the no fly zone"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_ACROSS_NOFLYZONE</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v62">Description:</h5>
 <p><font color="#666">The mission is across a no fly zone.</font></p>
 </div>
@@ -1054,7 +1066,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_INFO_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_INFO_INVALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The information of mission is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_MISSION_INFO_INVALID</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v63">Description:</h5>
 <p><font color="#666">The information for the mission is invalid.</font></p>
 </div>
@@ -1062,7 +1074,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_INFO_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_INFO_INVALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The information of waypoint is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_INFO_INVALID</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v64">Description:</h5>
 <p><font color="#666">The information for the waypoint is invalid.</font></p>
 </div>
@@ -1070,7 +1082,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_TRACE_TOO_LONG</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_TRACE_TOO_LONG =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The trace of waypoint is too long"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_TRACE_TOO_LONG</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v65">Description:</h5>
 <p><font color="#666">The waypoint trace is too long. The maximum waypoint trace is 30km. The waypoint trace is the sum of all distances between waypoints in a mission.</font></p>
 </div>
@@ -1078,7 +1090,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_TOTAL_TRACE_TOO_LONG</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_TOTAL_TRACE_TOO_LONG =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The total trace of waypoint is too long"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_TOTAL_TRACE_TOO_LONG</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v66">Description:</h5>
 <p><font color="#666">The total waypoint mission distance is too long. The maximum total distance is 40km.  The total distance includes the sum of: <ul></ul></font></p>
   <li>Distance from current aircraft location to first waypoint</li>
@@ -1090,7 +1102,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_INDEX_OVER_RANGE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_INDEX_OVER_RANGE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The index of waypoint is over range"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_INDEX_OVERRANGE</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v67">Description:</h5>
 <p><font color="#666">The index of the waypoint is out of range.</font></p>
 </div>
@@ -1098,7 +1110,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_DISTANCE_TOO_CLOSE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_DISTANCE_TOO_CLOSE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The waypoint distance is too close"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_DISTANCE_TOO_CLOSE</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v68">Description:</h5>
 <p><font color="#666">The waypoint distance is too close.</font></p>
 </div>
@@ -1106,7 +1118,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_DISTANCE_TOO_LONG</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_DISTANCE_TOO_LONG =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The waypoint distance is too long"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_DISTANCE_TOO_LONG</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v69">Description:</h5>
 <p><font color="#666">The waypoint distance is too long. A valid distance between two adjacent waypoints  is less than 2km and greater than 0.5m. In addition, the first and last waypoint of  the mission must also have a separation of less than 2km and greater than 0.5m. If  the separation of any consecutive waypoints or the separation of the first and  last waypoint is larger than 2km, then this error will be raised.</font></p>
 </div>
@@ -1114,7 +1126,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_DAMPING_CHECK_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_DAMPING_CHECK_FAILED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The damping check is failed"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_DAMPING_CHECK_FAILED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v70">Description:</h5>
 <p><font color="#666">The damping check failed.</font></p>
 </div>
@@ -1122,7 +1134,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_ACTION_PARAMETER_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_ACTION_PARAMETER_INVALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The parameter of waypoint action is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_ACTION_PARAM_INVALID</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v71">Description:</h5>
 <p><font color="#666">The parameter of the waypoint action is invalid.</font></p>
 </div>
@@ -1130,7 +1142,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINTS_UPLOADING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINTS_UPLOADING = <span class="keyword">new</span> DJIMissionError(<span class="string">"The waypoints are still uploading"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINTS_UPLOADING</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v72">Description:</h5>
 <p><font color="#666">The waypoints are still uploading.</font></p>
 </div>
@@ -1138,7 +1150,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_MISSION_INFO_NOT_UPLOADED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_MISSION_INFO_NOT_UPLOADED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The info of waypoint mission is not completely uploaded"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_MISSION_INFO_NOT_UPLOADED</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v73">Description:</h5>
 <p><font color="#666">The information for the waypoint mission is not completely uploaded.</font></p>
 </div>
@@ -1146,7 +1158,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_UPLOAD_NOT_COMPLETE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_UPLOAD_NOT_COMPLETE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The waypoint uploading is not complete"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_UPLOAD_NOT_COMPLETE</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v74">Description:</h5>
 <p><font color="#666">The waypoint uploading is not complete.</font></p>
 </div>
@@ -1154,7 +1166,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_REQUEST_IS_RUNNING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_REQUEST_IS_RUNNING =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The waypoint request is running"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_REQUEST_IS_RUNNING</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v75">Description:</h5>
 <p><font color="#666">The waypoint mission is running.</font></p>
 </div>
@@ -1162,7 +1174,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_NOT_RUNNING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_NOT_RUNNING =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The waypoint mission is not running"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_NOT_RUNNING</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v76">Description:</h5>
 <p><font color="#666">The waypoint mission is not running.</font></p>
 </div>
@@ -1170,7 +1182,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_IDLE_VELOCITY_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_IDLE_VELOCITY_INVALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The idle velocity is invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WAYPOINT_IDLE_VELOCITY_INVALID</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v77">Description:</h5>
 <p><font color="#666">The idle velocity is invalid.</font></p>
 </div>
@@ -1178,7 +1190,7 @@
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_STARTING_MOTOR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_STARTING_MOTOR =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is starting the motor"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_AIRCRAFT_STARTING_MOTOR</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v78">Description:</h5>
 <p><font color="#666">The aircraft is starting the motor.</font></p>
 </div>
@@ -1186,7 +1198,7 @@
 <div class="article"><h6><font color="#AAA">final </font>WRONG_CMD</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WRONG_CMD = <span class="keyword">new</span> DJIMissionError(<span class="string">"The command is wrong"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_WRONG_CMD</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v79">Description:</h5>
 <p><font color="#666">The command is wrong.</font></p>
 </div>
@@ -1194,7 +1206,7 @@
 <div class="article"><h6><font color="#AAA">final </font>POINTING_AIRCRAFT_NOT_IN_THE_AIR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError POINTING_AIRCRAFT_NOT_IN_THE_AIR =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is not in the air. Please take off first."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_POINTING_AIRCRAFT_NOT_IN_THE_AIR</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v80">Description:</h5>
 <p><font color="#666">The aircraft is not in the air. Please take off first.</font></p>
 </div>
@@ -1202,7 +1214,7 @@
 <div class="article"><h6><font color="#AAA">final </font>VISION_SENSOR_LOW_QUALITY</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_SENSOR_LOW_QUALITY =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The quality of vision sensor is low."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_VISION_SENSOR_LOW_QUALITY</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v81">Description:</h5>
 <p><font color="#666">The quality of vision sensor is low.</font></p>
 </div>
@@ -1210,7 +1222,7 @@
 <div class="article"><h6><font color="#AAA">final </font>UNKNOWN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError UNKNOWN = <span class="keyword">new</span> DJIMissionError(<span class="string">"Unknown result"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJIMissionManagerError_MISSION_RESULT_UNKNOWN</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v82">Description:</h5>
 <p><font color="#666">Unknown result.</font></p>
 </div>
@@ -1218,15 +1230,15 @@
 <div class="article"><h6><font color="#AAA">final </font>MODE_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MODE_ERROR =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The control mode of the aircraft is not in the correct state"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_ModeError</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v83">Description:</h5>
-<p><font color="#666">Cannot execute in the current mode. For products and flight controller firmware versions that support 'F'  mode (e.g. Phantom 3 Professional, Inspire 1, A3 with flight controller firmware version lowever than  3.2.10.0, etc), please make sure the remote controller's mode switch is in 'F' mode. For the others,  please make sure the remote controller's mode switch is in 'P' mode.</font></p>
+<p><font color="#666">Cannot execute in the current mode. For products and flight controller firmware versions that support 'F'  mode (e.g. Phantom 3 Professional, Inspire 1, A3 with flight controller firmware version lower than  3.2.10.0, etc), please make sure the remote controller's mode switch is in 'F' mode. For the others,  please make sure the remote controller's mode switch is in 'P' mode.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftbadgps"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftbadgps_inline">GPS_SIGNAL_WEAK</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftbadgps_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">final </font>GPS_SIGNAL_WEAK</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError GPS_SIGNAL_WEAK = <span class="keyword">new</span> DJIMissionError(<span class="string">"The GPS signal of the aircraft is weak"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftBadGPS</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v84">Description:</h5>
 <p><font color="#666">The GPS signal of the aircraft is weak.</font></p>
 </div>
@@ -1234,7 +1246,7 @@
 <div class="article"><h6><font color="#AAA">final </font>LOW_BATTERY</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError LOW_BATTERY = <span class="keyword">new</span> DJIMissionError(<span class="string">"Low battery level warning"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftLowBattery</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v85">Description:</h5>
 <p><font color="#666">Low battery level warning.</font></p>
 </div>
@@ -1242,7 +1254,7 @@
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_NOT_IN_THE_AIR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_NOT_IN_THE_AIR = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is not in the air"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftNotInTheAir</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v86">Description:</h5>
 <p><font color="#666">The aircraft is not in the air.</font></p>
 </div>
@@ -1250,7 +1262,7 @@
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_ALTITUDE_TOO_HIGH</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_ALTITUDE_TOO_HIGH =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft's altitude is too high."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftAltitudeTooHigh</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v87">Description:</h5>
 <p><font color="#666">The aircraft's altitude is too high.</font></p>
 </div>
@@ -1258,7 +1270,7 @@
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_ALTITUDE_TOO_LOW</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_ALTITUDE_TOO_LOW =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft's altitude is too low."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftAltitudeTooLow</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v88">Description:</h5>
 <p><font color="#666">The aircraft's altitude is too low.</font></p>
 </div>
@@ -1266,7 +1278,7 @@
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_TAKING_OFF</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_TAKING_OFF = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is taking off"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftTakingoff</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v89">Description:</h5>
 <p><font color="#666">Aircraft is taking off.</font></p>
 </div>
@@ -1274,7 +1286,7 @@
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_LANDING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_LANDING = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is landing"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftLanding</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v90">Description:</h5>
 <p><font color="#666">Aircraft is landing.</font></p>
 </div>
@@ -1282,7 +1294,7 @@
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_GOING_HOME</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_GOING_HOME = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is going home"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftGoingHome</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v91">Description:</h5>
 <p><font color="#666">Aircraft is going home.</font></p>
 </div>
@@ -1290,7 +1302,7 @@
 <div class="article"><h6><font color="#AAA">final </font>HOME_POINT_NOT_RECORDED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError HOME_POINT_NOT_RECORDED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The home point of aircraft is not recorded"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftHomePointNotRecorded</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v92">Description:</h5>
 <p><font color="#666">The home point of the aircraft is not recorded.</font></p>
 </div>
@@ -1298,7 +1310,7 @@
 <div class="article"><h6><font color="#AAA">final </font>IN_NOVICE_MODE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError IN_NOVICE_MODE = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is in novice mode now"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftInNoviceMode</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v93">Description:</h5>
 <p><font color="#666">Aircraft is in novice mode.</font></p>
 </div>
@@ -1306,7 +1318,7 @@
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_IN_NO_FLY_ZONE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_IN_NO_FLY_ZONE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is in the no fly zone"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftInNoFlyZone</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v94">Description:</h5>
 <p><font color="#666">Aircraft is in a no fly zone.</font></p>
 </div>
@@ -1314,7 +1326,7 @@
 <div class="article"><h6><font color="#AAA">final </font>REACH_FLIGHT_LIMITATION</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError REACH_FLIGHT_LIMITATION =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft has reached the flight limitation."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_ReachFlightLimitation</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v95">Description:</h5>
 <p><font color="#666">The aircraft has reached the flight limitation.</font></p>
 </div>
@@ -1322,7 +1334,7 @@
 <div class="article"><h6><font color="#AAA">final </font>RUNNING_MISSION</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError RUNNING_MISSION = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is running a mission"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftRunningMission</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v96">Description:</h5>
 <p><font color="#666">The aircraft is running a mission.</font></p>
 </div>
@@ -1330,7 +1342,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TOO_CLOSE_TO_HOME_POINT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TOO_CLOSE_TO_HOME_POINT =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Aircraft is too close to home point"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_AircraftNearHomePoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v97">Description:</h5>
 <p><font color="#666">Aircraft is too close to the home point.</font></p>
 </div>
@@ -1338,7 +1350,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_PARAMETERS_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_PARAMETERS_INVALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The parameters of the mission are invalid"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_MissionParametersInvalid</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v98">Description:</h5>
 <p><font color="#666">The parameters of the mission are invalid.</font></p>
 </div>
@@ -1346,7 +1358,7 @@
 <div class="article"><h6><font color="#AAA">final </font>MISSION_RESUME_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_RESUME_FAILED = <span class="keyword">new</span> DJIMissionError(<span class="string">"Failed to resume the mission"</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_MissionResumeFailed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v99">Description:</h5>
 <p><font color="#666">Mission resume failed.</font></p>
 </div>
@@ -1354,7 +1366,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_TARGET_LOST</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_LOST = <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target is lost."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_TrackingTargetLost</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v100">Description:</h5>
 <p><font color="#666">The tracking target is lost.</font></p>
 </div>
@@ -1362,7 +1374,7 @@
 <div class="article"><h6><font color="#AAA">final </font>NO_VIDEO_FEED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError NO_VIDEO_FEED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"No live video feed is captured for the ActiveTrack Mission. "</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_NoVideoFeed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v101">Description:</h5>
 <p><font color="#666">No live video feed is captured for the ActiveTrack Mission.</font></p>
 </div>
@@ -1370,7 +1382,7 @@
 <div class="article"><h6><font color="#AAA">final </font>VIDEO_FRAME_RATE_TOO_LOW</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VIDEO_FRAME_RATE_TOO_LOW =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The frame rate of the live video feed is too low."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_VideoFrameRateTooLow</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v102">Description:</h5>
 <p><font color="#666">The frame rate of the live video feed is too low.</font></p>
 </div>
@@ -1378,7 +1390,7 @@
 <div class="article"><h6><font color="#AAA">final </font>VISION_SYSTEM_NOT_AUTHORIZED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_SYSTEM_NOT_AUTHORIZED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The vision system cannot get the authorization to control the aircraft. "</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_VisionSystemNotAuthorized</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v103">Description:</h5>
 <p><font color="#666">The vision system cannot get the authorization to control the aircraft.</font></p>
 </div>
@@ -1386,7 +1398,7 @@
 <div class="article"><h6><font color="#AAA">final </font>VISION_SYSTEM_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_SYSTEM_ERROR =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The vision system encounters system error."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_VisionSystemError</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v104">Description:</h5>
 <p><font color="#666">The vision system encounters system error.</font></p>
 </div>
@@ -1394,7 +1406,7 @@
 <div class="article"><h6><font color="#AAA">final </font>CANNOT_BYPASS_OBSTACLE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError CANNOT_BYPASS_OBSTACLE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft cannot bypass the obstacle."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_CannotBypassObstacle</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v105">Description:</h5>
 <p><font color="#666">The aircraft cannot bypass the obstacle.</font></p>
 </div>
@@ -1402,7 +1414,7 @@
 <div class="article"><h6><font color="#AAA">final </font>STOPPED_BY_USER</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError STOPPED_BY_USER = <span class="keyword">new</span> DJIMissionError(<span class="string">"Mission was stopped by the user."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_StoppedByUser</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v106">Description:</h5>
 <p><font color="#666">Mission was stopped by the user.</font></p>
 </div>
@@ -1410,7 +1422,7 @@
 <div class="article"><h6><font color="#AAA">final </font>VISION_SYSTEM_NEEDS_CALIBRATION</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_SYSTEM_NEEDS_CALIBRATION =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The vision system requires calibration."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_VisionSystemNeedCalibration</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v107">Description:</h5>
 <p><font color="#666">The vision system requires calibration.</font></p>
 </div>
@@ -1418,7 +1430,7 @@
 <div class="article"><h6><font color="#AAA">final </font>VISION_SENSOR_OVEREXPOSED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_SENSOR_OVEREXPOSED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The vision sensors are overexposed."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_VisionSensorOverexposed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v108">Description:</h5>
 <p><font color="#666">The vision sensors are overexposed.</font></p>
 </div>
@@ -1426,7 +1438,7 @@
 <div class="article"><h6><font color="#AAA">final </font>VISION_SENSOR_UNDEREXPOSED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_SENSOR_UNDEREXPOSED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The vision sensors are underexposed."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_VisionSensorUnderexposed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v109">Description:</h5>
 <p><font color="#666">The vision sensors are underexposed.</font></p>
 </div>
@@ -1434,7 +1446,7 @@
 <div class="article"><h6><font color="#AAA">final </font>VISION_DATA_ABNORMAL</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_DATA_ABNORMAL =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The data from the vision system is abnormal."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_VisionDataAbnormal</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v110">Description:</h5>
 <p><font color="#666">The data from the vision system is abnormal.</font></p>
 </div>
@@ -1442,7 +1454,7 @@
 <div class="article"><h6><font color="#AAA">final </font>FEATURE_POINT_CANNOT_MATCH</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError FEATURE_POINT_CANNOT_MATCH =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The feature points found by both vision sensors cannot match."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_FeaturePointCannotMatch</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v111">Description:</h5>
 <p><font color="#666">The feature points found by both vision sensors cannot match.</font></p>
 </div>
@@ -1450,7 +1462,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_RECT_TOO_SMALL</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_RECT_TOO_SMALL =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking rectangle is too small."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_TrackingRectTooSmall</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v112">Description:</h5>
 <p><font color="#666">The tracking rectangle is too small.</font></p>
 </div>
@@ -1458,7 +1470,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_RECT_TOO_LARGE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_RECT_TOO_LARGE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking rectangle is too large."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_TrackingRectTooLarge</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v113">Description:</h5>
 <p><font color="#666">The tracking rectangle is too large.</font></p>
 </div>
@@ -1466,7 +1478,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_TARGET_NOT_ENOUGH_FEATURES</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_NOT_ENOUGH_FEATURES =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target doesn't have enough features to lock onto."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_TrackingTargetNotEnoughFeature</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v114">Description:</h5>
 <p><font color="#666">The tracking target doesn't have enough features to lock onto.</font></p>
 </div>
@@ -1474,7 +1486,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_TARGET_TOO_CLOSE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_TOO_CLOSE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target is too close to the aircraft."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_TrackingTargetTooClose</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v115">Description:</h5>
 <p><font color="#666">The Tracking target is too close to the aircraft.</font></p>
 </div>
@@ -1482,7 +1494,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_TARGET_TOO_FAR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_TOO_FAR =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target is too far away from the aircraft."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_TrackingTargetTooFar</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v116">Description:</h5>
 <p><font color="#666">The tracking target is too far away from the aircraft.</font></p>
 </div>
@@ -1490,7 +1502,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_TARGET_TOO_HIGH</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_TOO_HIGH =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target is too high."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_TrackingTargetTooHigh</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v117">Description:</h5>
 <p><font color="#666">The tracking target is too high.</font></p>
 </div>
@@ -1498,7 +1510,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_TARGET_SHAKING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_SHAKING =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target is shaking too much."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_TrackingTargetShaking</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v118">Description:</h5>
 <p><font color="#666">The tracking target is shaking too much.</font></p>
 </div>
@@ -1506,7 +1518,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_TARGET_LOW_CONFIDENCE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_LOW_CONFIDENCE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The ActiveTrack mission is too unsure the tracking object and confirmation is required."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_TrackingTargetLowConfidence</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v119">Description:</h5>
 <p><font color="#666">The ActiveTrack mission is too unsure the tracking object and confirmation is required.</font></p>
 </div>
@@ -1514,7 +1526,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_PAUSED_BY_USER</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_PAUSED_BY_USER = <span class="keyword">new</span> DJIMissionError(<span class="string">"Mission is paused by user."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_MissionPausedByUser</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v120">Description:</h5>
 <p><font color="#666">Mission is paused by user.</font></p>
 </div>
@@ -1522,7 +1534,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_GIMBAL_PITCH_TOO_LOW</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_GIMBAL_PITCH_TOO_LOW =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The gimbal pitch is too low."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_GimbalPitchTooLow</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v121">Description:</h5>
 <p><font color="#666">Gimbal pitch is too low.</font></p>
 </div>
@@ -1530,7 +1542,7 @@
 <div class="article"><h6><font color="#AAA">final </font>TRACKING_OBSTACLE_DETECTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_OBSTACLE_DETECTED = <span class="keyword">new</span> DJIMissionError(<span class="string">"Obstacles are detected."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_ObstacleDetected</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v122">Description:</h5>
 <p><font color="#666">Encounter an obstacle.</font></p>
 </div>
@@ -1538,7 +1550,7 @@
 <div class="article"><h6><font color="#AAA">final </font>REACH_ALTITUDE_LOWER_BOUND</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError REACH_ALTITUDE_LOWER_BOUND =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft reaches the altitude lower bound of the TapFly Mission."</span>)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_DJISDKMissionError_ReachAltitudeLowerBound</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v123">Description:</h5>
 <p><font color="#666">The aircraft reaches the altitude lower bound of the TapFly Mission.</font></p>
 </div>
@@ -1547,7 +1559,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getDescription</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">String <span class="title">getDescription</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_getDescription</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v124">Description:</h5>
 <p><font color="#666">Returns the description of the error code.</font></p>
 <h5 id="return-v2">Return:</h5>
@@ -1556,7 +1568,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setDescription</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String desc)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_setDescription</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v125">Description:</h5>
 <p><font color="#666">Sets the description for the error code.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -1565,7 +1577,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getDJIError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(Ccode ccode)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIError_getDJIError</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v126">Description:</h5>
 <p><font color="#666">Returns common error according to the error code.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
