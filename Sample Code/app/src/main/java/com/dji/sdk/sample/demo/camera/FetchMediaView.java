@@ -12,6 +12,10 @@ import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
+import dji.sdk.camera.FetchMediaTask;
+import dji.sdk.camera.FetchMediaTaskContent;
+import dji.sdk.camera.FetchMediaTaskScheduler;
+import dji.sdk.camera.FetchMediaTaskScheduler.FetchMediaTaskSchedulerState;
 import dji.sdk.camera.MediaFile;
 import dji.sdk.camera.MediaManager;
 import java.io.File;
@@ -24,6 +28,8 @@ public class FetchMediaView extends BaseThreeBtnView {
 
     private MediaFile media;
     private MediaManager mediaManager;
+    private FetchMediaTaskScheduler taskScheduler;
+    private FetchMediaTask.Callback fetchMediaFileTaskCallback;
 
     public FetchMediaView(Context context) {
         super(context);
@@ -32,8 +38,29 @@ public class FetchMediaView extends BaseThreeBtnView {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
+        setUpListener();
         if (ModuleVerificationUtil.isCameraModuleAvailable()) {
             if (ModuleVerificationUtil.isMediaManagerAvailable()) {
+                if (mediaManager == null) {
+                    mediaManager = DJISampleApplication.getProductInstance().getCamera().getMediaManager();
+                }
+
+                if(taskScheduler == null) {
+                    taskScheduler = mediaManager.getScheduler();
+                    if (taskScheduler.getState()== FetchMediaTaskSchedulerState.SUSPENDED) {
+                        taskScheduler.resume(new CommonCallbacks.CompletionCallback() {
+                            @Override
+                            public void onResult(DJIError djiError) {
+
+                                if (djiError != null) {
+                                    ToastUtils.setResultToToast("taskScheduler resume failed: "+djiError.getDescription());
+                                }
+
+                            }
+                        });
+                    }
+                }
+
                 DJISampleApplication.getProductInstance()
                                     .getCamera()
                                     .setMode(SettingsDefinitions.CameraMode.MEDIA_DOWNLOAD,
@@ -43,9 +70,6 @@ public class FetchMediaView extends BaseThreeBtnView {
                                                      if (null == djiError) fetchMediaList();
                                                  }
                                              });
-                if (mediaManager == null) {
-                    mediaManager = DJISampleApplication.getProductInstance().getCamera().getMediaManager();
-                }
             } else {
                 changeDescription(R.string.not_support_mediadownload);
             }
@@ -60,6 +84,7 @@ public class FetchMediaView extends BaseThreeBtnView {
                                 .getCamera()
                                 .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO, null);
         }
+        taskScheduler.suspend(null);
     }
 
     @Override
@@ -89,76 +114,91 @@ public class FetchMediaView extends BaseThreeBtnView {
     @Override
     protected void handleMiddleBtnClick() {
         // Fetch Thumbnail Button
-        if (ModuleVerificationUtil.isMediaManagerAvailable() && media != null && mediaManager != null) {
-            mediaManager.fetchThumbnail(media, new DownloadHandler<Bitmap>());
+        if (ModuleVerificationUtil.isMediaManagerAvailable()
+            && media != null
+            && mediaManager != null
+            && taskScheduler != null) {
+
+            taskScheduler.moveTaskToEnd(new FetchMediaTask(media,
+                                                           FetchMediaTaskContent.THUMBNAIL,
+                                                           fetchMediaFileTaskCallback));
         }
     }
 
     @Override
     protected void handleLeftBtnClick() {
         // Fetch Preview Button
-        if (ModuleVerificationUtil.isMediaManagerAvailable() && media != null && mediaManager != null) {
-            mediaManager.fetchPreviewImage(media, new DownloadHandler<Bitmap>());
+        if (ModuleVerificationUtil.isMediaManagerAvailable()
+            && media != null
+            && mediaManager != null
+            && taskScheduler != null) {
+            taskScheduler.moveTaskToEnd(new FetchMediaTask(media,
+                                                           FetchMediaTaskContent.PREVIEW,
+                                                           fetchMediaFileTaskCallback));
         }
     }
 
     @Override
     protected void handleRightBtnClick() {
         // Fetch Media Data Button
-        if (ModuleVerificationUtil.isCameraModuleAvailable() && media != null && mediaManager != null) {
+        if (ModuleVerificationUtil.isCameraModuleAvailable()
+            && media != null
+            && mediaManager != null) {
             File destDir = new File(Environment.getExternalStorageDirectory().
                 getPath() + "/Dji_Sdk_Test/");
-            mediaManager.fetchMediaData(media, destDir, "testName", new DownloadHandler<String>());
+            media.fetchFileData(destDir, "testName", new DownloadHandler<String>());
         }
+    }
+
+    private void setUpListener() {
+        // Example of Listener
+        fetchMediaFileTaskCallback = new FetchMediaTask.Callback() {
+            @Override
+            public void onUpdate(MediaFile mediaFile, FetchMediaTaskContent fetchMediaTaskContent, DJIError djiError) {
+
+                if (djiError == null) {
+                    Bitmap bitmap = null;
+                    if (FetchMediaTaskContent.PREVIEW == fetchMediaTaskContent) {
+                        bitmap = mediaFile.getPreview();
+                    }
+                    if (FetchMediaTaskContent.THUMBNAIL == fetchMediaTaskContent) {
+                        bitmap = mediaFile.getThumbnail();
+                    }
+                } else {
+                    ToastUtils.setResultToToast("fetch media failed: "+djiError.getDescription());
+                }
+            }
+        };
     }
 
     // Initialize the view with getting a media file.
     private void fetchMediaList() {
         if (ModuleVerificationUtil.isMediaManagerAvailable()) {
-            DJISampleApplication.getProductInstance()
-                                .getCamera()
-                                .getMediaManager()
-                                .fetchMediaList(new MediaManager.DownloadListener<List<MediaFile>>() {
-                                    String str;
+            if (mediaManager != null) {
+                mediaManager.refreshFileList(new CommonCallbacks.CompletionCallback() {
+                    @Override
+                    public void onResult(DJIError djiError) {
+                        String str;
+                        if (null == djiError) {
+                            List<MediaFile> djiMedias = mediaManager.getFileListSnapshot();
 
-                                    @Override
-                                    public void onStart() {
-                                        changeDescription("Start fetch media list");
-                                    }
-
-                                    @Override
-                                    public void onRateUpdate(long total, long current, long persize) {
-                                        changeDescription("in progress");
-                                    }
-
-                                    @Override
-                                    public void onProgress(long l, long l1) {
-
-                                    }
-
-                                    @Override
-                                    public void onSuccess(List<MediaFile> djiMedias) {
-                                        if (null != djiMedias) {
-                                            if (!djiMedias.isEmpty()) {
-                                                media = djiMedias.get(0);
-                                                str = "Total Media files:"
-                                                    + djiMedias.size()
-                                                    + "\n"
-                                                    + "Media 1: "
-                                                    + djiMedias.get(0).getFileName();
-                                                changeDescription(str);
-                                            } else {
-                                                str = "No Media in SD Card";
-                                                changeDescription(str);
-                                            }
-                                        }
-                                    }
-
-                                    @Override
-                                    public void onFailure(DJIError djiError) {
-                                        changeDescription(djiError.getDescription());
-                                    }
-                                });
+                            if (null != djiMedias) {
+                                if (!djiMedias.isEmpty()) {
+                                    media = djiMedias.get(0);
+                                    str = "Total Media files:" + djiMedias.size() + "\n" + "Media 1: " +
+                                        djiMedias.get(0).getFileName();
+                                    changeDescription(str);
+                                } else {
+                                    str = "No Media in SD Card";
+                                    changeDescription(str);
+                                }
+                            }
+                        } else {
+                            changeDescription(djiError.getDescription());
+                        }
+                    }
+                });
+            }
         }
     }
 

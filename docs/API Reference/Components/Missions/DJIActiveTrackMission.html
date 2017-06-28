@@ -206,6 +206,12 @@
                                       </dd>
                                       <dd><a href="../Camera/DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">VideoPlaybackState</a>
                                       </dd>
+                                      <dd><a data-href="../Camera/DJIMediaManager_FetchMediaTaskScheduler.html" class="sub-toggle">FetchMediaTaskScheduler<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJIMediaManager_DJIFetchMediaTask.html">FetchMediaTask</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../Camera/DJIPlaybackManager.html" class="sub-toggle">PlaybackManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -595,32 +601,59 @@
 <p><font color="#666">ActiveTrack Mission mode. Defaults to <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode_trace">TRACE</a></code>.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode">ActiveTrackMode</a> <font color="#000">mode</font></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode">ActiveTrackMode</a></code>.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiactivetrackmission_quickshotmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_quickshotmode_inline">getQuickShotMode</a></div></div><div class="inline-doc" id="djiactivetrackmission_quickshotmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getQuickShotMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">QuickShotMode <span class="title">getQuickShotMode</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
+<h5 id="description-v5">Description:</h5>
+<p><font color="#666">The QuickShot mode determines the preset flight path. It is only used when <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_mode">setMode</a></code>  is <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode_quickshot">QUICK_SHOT</a></code>.  Defaults to <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackquickshotmode_unknown">UNKNOWN</a></code>.  It is only supported by Spark.</font></p>
+<h5 id="return-v2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackquickshotmode">QuickShotMode</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackquickshotmode">QuickShotMode</a></code>.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiactivetrackmission_setquickshotmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_setquickshotmode_inline">setQuickShotMode</a></div></div><div class="inline-doc" id="djiactivetrackmission_setquickshotmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setQuickShotMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setQuickShotMode</span><span class="params">(QuickShotMode quickShotMode)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
+<h5 id="description-v6">Description:</h5>
+<p><font color="#666">Set the QuickShot mode. It is only supported by Spark.</font></p>
+<h5 id="input-parameters-v3">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackquickshotmode">QuickShotMode</a> <font color="#000">quickShotMode</font></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackquickshotmode">QuickShotMode</a></code>.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiactivetrackmission_constructor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_constructor_inline">ActiveTrackMission</a></div></div><div class="inline-doc" id="djiactivetrackmission_constructor_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>ActiveTrackMission</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">ActiveTrackMission(RectF targetRect, <span class="keyword">int</span> targetIndex, ActiveTrackMode mode)</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">A constructor method for ActiveTrackMission.</font></p>
+<h5 id="input-parameters-v4">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">RectF <font color="#000">targetRect</font></font></td><td><font color="#666"><i>The target rect.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">targetIndex</font></font></td><td><font color="#666"><i>An int value of target index.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode">ActiveTrackMode</a> <font color="#000">mode</font></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode">ActiveTrackMode</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiactivetrackmission_getmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_getmode_inline">getMode</a></div></div><div class="inline-doc" id="djiactivetrackmission_getmode_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">ActiveTrackMode <span class="title">getMode</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666">Get the current ActiveTrack mode for ActiveTrack mission.</font></p>
-<h5 id="return-v2">Return:</h5>
+<h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode">ActiveTrackMode</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode">ActiveTrackMode</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiactivetrackmission_targetindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_targetindex_inline">setTargetIndex</a></div></div><div class="inline-doc" id="djiactivetrackmission_targetindex_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setTargetIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTargetIndex</span><span class="params">(<span class="keyword">int</span> targetIndex)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Set Target Index.</font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">targetIndex</font></font></td><td><font color="#666"><i>An int value of the target index.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiactivetrackmission_gettargetindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_gettargetindex_inline">getTargetIndex</a></div></div><div class="inline-doc" id="djiactivetrackmission_gettargetindex_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getTargetIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getTargetIndex</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Get Target Index.</font></p>
-<h5 id="return-v3">Return:</h5>
+<h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of target index.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djiactivetracktrackingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIActiveTrackTrackingState.html">ActiveTrackTrackingState</a></div></div><div class="api-row" id="djiactivetrackmission_djiactivetrackmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_djiactivetrackmode_inline">ActiveTrackMode</a></div></div><div class="inline-doc" id="djiactivetrackmission_djiactivetrackmode_inline" <blockquote="">
@@ -628,11 +661,22 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> ActiveTrackMode</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_active_track_mode_inline">FlightControllerKey.ACTIVE_TRACK_MODE</a></font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Different modes of the ActiveTrack Mission. Defaults to  <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode_trace">TRACE</a></code>, set to  others to enable the feature.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_trace_inline"></a>TRACE</font></td><td><font color="#666">Aircraft moves in behind the subject keeping a constant distance to it.  Mission with this mode can only be started when the aircraft is flying.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_profile_inline"></a>PROFILE</font></td><td><font color="#666">Aircraft moves in parallel with the subject in the frame instead of behind.  Mission with this mode can only be started when the aircraft is flying.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_spotlight_inline"></a>SPOTLIGHT</font></td><td><font color="#666">In Spotlight mode, the aircraft camera automatically follows the subject by  rotating the aircraft's yaw, but the aircraft does not automatically keep a  constant distance with the subject. Mission with this mode can only be started  when the aircraft is flying.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_spotlightpro_inline"></a>SPOTLIGHT_PRO</font></td><td><font color="#666">In Spotlight Pro mode, the aircraft camera automatically follows the subject by  rotating the gimbal's yaw, but the aircraft does not automatically keep a constant  distance with the subject.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The active track mode is unknown.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_trace_inline"></a>TRACE</font></td><td><font color="#666">Aircraft moves in behind the subject keeping a constant distance to it.  Mission with this mode can only be started when the aircraft is flying.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_profile_inline"></a>PROFILE</font></td><td><font color="#666">Aircraft moves in parallel with the subject in the frame instead of behind.  Mission with this mode can only be started when the aircraft is flying.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_spotlight_inline"></a>SPOTLIGHT</font></td><td><font color="#666">In Spotlight mode, the aircraft camera automatically follows the subject by  rotating the aircraft's yaw, but the aircraft does not automatically keep a  constant distance with the subject. Mission with this mode can only be started  when the aircraft is flying.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_spotlightpro_inline"></a>SPOTLIGHT_PRO</font></td><td><font color="#666">In Spotlight Pro mode, the aircraft camera automatically follows the subject by  rotating the gimbal's yaw, but the aircraft does not automatically keep a constant  distance with the subject.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_quickshot_inline"></a>QUICK_SHOT</font></td><td><font color="#666">In QuickShot mode, the aircraft will fly in one of four preset paths (see <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackquickshotmode">QuickShotMode</a></code>)  while tracking the object recording a video. When a QuickShot mission ends, a 10-second video will be  generated. It is only supported by Spark.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The active track mode is unknown.</font></td></tr></table></html>
 <h5 id="class-members-v2">Class Members:</h5>
+</div>
+<div class="api-row" id="djiactivetrackmission_djiactivetrackquickshotmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_djiactivetrackquickshotmode_inline">QuickShotMode</a></div></div><div class="inline-doc" id="djiactivetrackmission_djiactivetrackquickshotmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>QuickShotMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> QuickShotMode</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
+<h5 id="description-v12">Description:</h5>
+<p><font color="#666">QuickShot modes, which define different preset path for a QuickShot mission.</font></p>
+<h5 id="enum-members-v2">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_circle_inline"></a>CIRCLE</font></td><td><font color="#666">Aircraft will circle around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_dronie_inline"></a>DRONIE</font></td><td><font color="#666">Aircraft will fly backward and upward with camera locked on the objec it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_helix_inline"></a>HELIX</font></td><td><font color="#666">Aircraft will fly upward, spiraling around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_rocket_inline"></a>ROCKET</font></td><td><font color="#666">The aircraft will ascend with the camera pointing downward on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
+<h5 id="class-members-v3">Class Members:</h5>
 </div>
 
         </div>

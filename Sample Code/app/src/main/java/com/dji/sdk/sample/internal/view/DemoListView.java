@@ -98,18 +98,6 @@ public class DemoListView extends FrameLayout {
                          new GroupItem(R.string.camera_listview_download_media, FetchMediaView.class),
                          new GroupItem(R.string.camera_listview_media_playback, MediaPlaybackView.class));
 
-        builder.addGroup(R.string.component_listview_camera,
-                         false,
-                         new GroupItem(R.string.camera_listview_push_info, PushCameraDataView.class),
-                         new GroupItem(R.string.camera_listview_iso, SetGetISOView.class),
-                         new GroupItem(R.string.camera_listview_shoot_single_photo, ShootSinglePhotoView.class),
-                         new GroupItem(R.string.camera_listview_record_video, RecordVideoView.class),
-                         new GroupItem(R.string.camera_listview_playback_push_info, PlaybackPushInfoView.class),
-                         new GroupItem(R.string.camera_listview_playback_command, PlaybackCommandsView.class),
-                         new GroupItem(R.string.camera_listview_playback_download, PlaybackDownloadView.class),
-                         new GroupItem(R.string.camera_listview_download_media, FetchMediaView.class),
-                         new GroupItem(R.string.camera_listview_media_playback, MediaPlaybackView.class));
-
         builder.addGroup(R.string.component_listview_gimbal,
                          false,
                          new GroupItem(R.string.gimbal_listview_push_info, PushGimbalDataView.class),

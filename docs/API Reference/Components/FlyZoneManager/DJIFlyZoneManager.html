@@ -206,6 +206,12 @@
                                       </dd>
                                       <dd><a href="../Camera/DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">VideoPlaybackState</a>
                                       </dd>
+                                      <dd><a data-href="../Camera/DJIMediaManager_FetchMediaTaskScheduler.html" class="sub-toggle">FetchMediaTaskScheduler<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJIMediaManager_DJIFetchMediaTask.html">FetchMediaTask</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../Camera/DJIPlaybackManager.html" class="sub-toggle">PlaybackManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -683,7 +689,7 @@ has been authorized to unlock authorization zones.</li>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setGEOSystemEnabled</span><span class="params">(Boolean enabled, @Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666"><code>true</code> to enable GEO system. By default, if the GEO system is available at the aircraft's  location, the GEO system will be enabled.  This setting can be changed when the aircraft is in the air, however it will not take effect until the aircraft lands. When the GEO system is disabled, the aircraft  reverts to the NFZ (No Fly Zone) system. This interface may be deprecated in the future.</font></p>
+<p><font color="#666"><code>true</code> to enable GEO system. By default, if the GEO system is available at the aircraft's  location, the GEO system will be enabled.  This setting can be changed when the aircraft is in the air, however it will not take effect until the aircraft lands. When the GEO system is disabled, the aircraft  reverts to the NFZ (No Fly Zone) system. This interface may be deprecated in the future. It  is only supported when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isIndividualUnlockZoneSupported</a></code> returns <code>false</code>.  Otherwise, GEO system is always enabled when the current location supports it.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> to enable GEO system.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflyzonemanager_getgeosystemenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_getgeosystemenabled_inline">getGEOSystemEnabled</a></div></div><div class="inline-doc" id="djiflyzonemanager_getgeosystemenabled_inline" <blockquote="">

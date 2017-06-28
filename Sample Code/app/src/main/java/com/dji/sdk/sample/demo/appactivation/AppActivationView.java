@@ -60,6 +60,19 @@ public class AppActivationView  extends BaseAppActivationView {
                                                          });
 
                 break;
+            case R.id.btn_login_out:
+                UserAccountManager.getInstance().logoutOfDJIUserAccount(new CommonCallbacks.CompletionCallback() {
+                    @Override
+                    public void onResult(DJIError error) {
+                        if (null == error) {
+                            ToastUtils.setResultToToast("Success");
+                            ToastUtils.setResultToText(accountStateTV, "NotLoggedIn");
+                        } else {
+                            ToastUtils.setResultToToast("error:" + error.getDescription());
+                        }
+                    }
+                });
+                break;
             default:
                 break;
         }

@@ -173,12 +173,14 @@ public class MainContent extends RelativeLayout {
 
     @Subscribe
     public void onConnectivityChange(DJISampleApplication.ConnectivityChangeEvent event) {
-        post(new Runnable() {
-            @Override
-            public void run() {
-                refreshSDKRelativeUI();
-            }
-        });
+        if (mHandlerUI != null) {
+            mHandlerUI.post(new Runnable() {
+                @Override
+                public void run() {
+                    refreshSDKRelativeUI();
+                }
+            });
+        }
     }
 
     private void refreshSDKRelativeUI() {

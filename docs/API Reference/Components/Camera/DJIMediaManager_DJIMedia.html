@@ -206,6 +206,12 @@
                                       </dd>
                                       <dd><a href="DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">VideoPlaybackState</a>
                                       </dd>
+                                      <dd><a data-href="DJIMediaManager_FetchMediaTaskScheduler.html" class="sub-toggle">FetchMediaTaskScheduler<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="DJIMediaManager_DJIFetchMediaTask.html">FetchMediaTask</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="DJIPlaybackManager.html" class="sub-toggle">PlaybackManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -596,106 +602,187 @@
 <p><font color="#666">Returns the name of the media file in the SD Card.</font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>A String instance of the name of the media file.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimediamanager_djimedia_getid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_getid_inline">getID</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_getid_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getID</h6></div>
+<div class="api-row" id="djimediamanager_djimedia_valid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_valid_inline">isValid</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_valid_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>isValid</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getID</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Get the file index used in the camera.</font></p>
+<p><font color="#666"><code>true</code> if the media file is still valid. If a media file is from the file list of the  media manager, the file will become invalid after the file list is reset.</font></p>
 <h5 id="return-v2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value to check if the media file is still valid.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimediamanager_djimedia_getid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_getid_inline">getIndex</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_getid_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getIndex</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v6">Description:</h5>
+<p><font color="#666">Get the file index used in the camera.</font></p>
+<h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of the file index.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_djimedia_mediatype"><div class="api-col left">Information</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_mediatype_inline">getMediaType</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_mediatype_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getMediaType</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">MediaType <span class="title">getMediaType</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v7">Description:</h5>
 <p><font color="#666">Returns the type of media file.</font></p>
-<h5 id="return-v3">Return:</h5>
+<h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype">MediaType</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype">MediaType</a></code>.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimediamanager_djimedia_downloadedsize"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_downloadedsize_inline">getDownloadedSize</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_downloadedsize_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getDownloadedSize</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">long</span> <span class="title">getDownloadedSize</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v8">Description:</h5>
+<p><font color="#666">Downloaded size in Bytes of the media file.</font></p>
+<h5 id="return-v5">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</font></td><td><font color="#666"><i>A long value of downloaded size.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_djimedia_filesizeinbytes"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_filesizeinbytes_inline">getFileSize</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_filesizeinbytes_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getFileSize</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">long</span> <span class="title">getFileSize</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Returns the size, in bytes, of the media file.</font></p>
-<h5 id="return-v4">Return:</h5>
+<h5 id="return-v6">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</font></td><td><font color="#666"><i>Size of media file.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_djimedia_timecreated"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_timecreated_inline">getDateCreated</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_timecreated_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getDateCreated</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">String <span class="title">getDateCreated</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Returns the time when the media file was created as a string in the format &quot;yyyy-MM-dd HH:mm:ss&quot;.</font></p>
-<h5 id="return-v5">Return:</h5>
+<h5 id="return-v7">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>A String instance of the media file created date.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_djimedia_gettimecreated"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_gettimecreated_inline">getTimeCreated</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_gettimecreated_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getTimeCreated</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">long</span> <span class="title">getTimeCreated</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Returns the time when the media file was created as a long type.</font></p>
-<h5 id="return-v6">Return:</h5>
+<h5 id="return-v8">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</font></td><td><font color="#666"><i>A long value of the media file created date.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_djimedia_durationinseconds"><div class="api-col left">Photo & Video Properties</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_durationinseconds_inline">getDurationInSeconds</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_durationinseconds_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getDurationInSeconds</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getDurationInSeconds</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">If the media file is a video, this property returns the duration of the video in seconds. Will be 0s if the media  file is a photo.</font></p>
-<h5 id="return-v7">Return:</h5>
+<h5 id="return-v9">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>Media duration.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_djimedia_framerate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_framerate_inline">getFrameRate</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_framerate_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getFrameRate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">VideoFrameRate <span class="title">getFrameRate</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Frame rate when the media file is a video.</font></p>
-<h5 id="return-v8">Return:</h5>
+<h5 id="return-v10">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoframerate">VideoFrameRate</a></font></td><td><font color="#666"><i>An int value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_djimedia_resolution"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_resolution_inline">getResolution</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_resolution_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getResolution</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">VideoResolution <span class="title">getResolution</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Camera resolution.</font></p>
-<h5 id="return-v9">Return:</h5>
+<h5 id="return-v11">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoresolution">VideoResolution</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoresolution">VideoResolution</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_djimedia_videoorientation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_videoorientation_inline">getVideoOrientation</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_videoorientation_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getVideoOrientation</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Orientation <span class="title">getVideoOrientation</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">The orientation of the camera when the video file was first recorded. If the camera orientation changes during a  video capture, this will report the initial orientation. Will be <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraorientation_landscape">LANDSCAPE</a></code> if  the media file is a photo. Only Mavic Pro supports this property. Will be <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraorientation_landscape">LANDSCAPE</a></code>  for other products.</font></p>
-<h5 id="return-v10">Return:</h5>
+<h5 id="return-v12">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraorientation">Orientation</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraorientation">Orientation</a></code></i></font></td></tr></table></html></div>
-<div class="api-row" id="djimediamanager_djimedia_fetchmediadata"><div class="api-col left">Download Media</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_fetchmediadata_inline">fetchMediaData</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_fetchmediadata_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>fetchMediaData</h6></div>
+<div class="api-row" id="djimediamanager_djimedia_thumbnail"><div class="api-col left">Download Media</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_thumbnail_inline">getThumbnail</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_thumbnail_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getThumbnail</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fetchMediaData</span><span class="params">(@NonNull MediaFile mediaFile,</span></span></div><div class="line">                              @NonNull <span class="keyword">final</span> File destDir,</div><div class="line">                              @Nullable String fileNameWithoutExtension,</div><div class="line">                              @NonNull <span class="keyword">final</span> MediaManager.DownloadListener&lt;String&gt; callback)</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Bitmap <span class="title">getThumbnail</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
-<p><font color="#666">Fetches this media's data from the SD card. The difference between fetching the media data and fetching the  thumbnail is that fetching the thumbnail will return a low-resolution image of the actual picture, while fetching  the media data will return all data for a video or image. The fetched data is stored in the directory  destDir, with the name fileName+&quot;.&quot;+fileExtension. DJI SDK will add the file extension according to the media type.</font></p>
+<h5 id="description-v16">Description:</h5>
+<p><font color="#666">Returns the thumbnail for this media. If this property returns nil, call <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimedia_fetchthumbnail">fetchThumbnail</a></code>.</font></p>
+<h5 id="return-v13">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap</font></td><td><font color="#666"><i>A Bitmap object.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimediamanager_djimedia_preview"><div class="api-col left">Preview Image</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_preview_inline">getPreview</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_preview_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getPreview</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Bitmap <span class="title">getPreview</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v17">Description:</h5>
+<p><font color="#666">Returns the preview image for this media. If this property returns <code>null</code>,  call <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_fetchpreview">fetchPreview</a></code>.</font></p>
+<h5 id="return-v14">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap</font></td><td><font color="#666"><i>A Bitmap object.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimediamanager_djimedia_resetthumbnail"><div class="api-col left">Reset thumbnail</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_resetthumbnail_inline">resetThumbnail</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_resetthumbnail_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>resetThumbnail</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">resetThumbnail</span><span class="params">(@Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v18">Description:</h5>
+<p><font color="#666">Resets the cached thumbnail to <code>null</code> to release the memory usage.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a> <font color="#000">mediaFile</font></font></td><td><font color="#666"><i>An object of <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull final File <font color="#000">destDir</font></font></td><td><font color="#666"><i>File instance of location to save the files, which can not be null.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable String <font color="#000">fileNameWithoutExtension</font></font></td><td><font color="#666"><i>The fileName to store in mobile devices, without the file extension.&lt;br&gt; If it is null, the file name in the camera's SDCard will be used.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Components/Camera/DJIMediaManager.html#djimediamanager">MediaManager</a>.<a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_cameradownloadlistenerinterface">DownloadListener</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback with the returned execution result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimediamanager_djimedia_fetchpreview"><div class="api-col left">Fetch Preview</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_fetchpreview_inline">fetchPreview</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_fetchpreview_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>fetchPreview</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fetchPreview</span><span class="params">(@NonNull <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v19">Description:</h5>
+<p><font color="#666">Fetch media's preview image. The preview image is a lower resolution (960 x 540) version of  a photo. The <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype">MediaType</a></code> of this media object should be  <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype_jpeg">JPEG</a></code> or  <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype_tiff">TIFF</a></code>. The preview will be stored in  <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_preview">getPreview</a></code>.</font></p>
+<h5 id="input-parameters-v3">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The <code>completion callback</code> with the returned execution result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimediamanager_djimedia_resetpreview"><div class="api-col left">Reset Preview</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_resetpreview_inline">resetPreview</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_resetpreview_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>resetPreview</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">resetPreview</span><span class="params">(@Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v20">Description:</h5>
+<p><font color="#666">Resets the cached preview image to <code>null</code> to release the memory usage.</font></p>
+<h5 id="input-parameters-v4">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The <code>completion callback</code> with the returned execution result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimediamanager_djimedia_fetchfiledata"><div class="api-col left">Fetch File Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_fetchfiledata_inline">fetchFileData</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_fetchfiledata_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>fetchFileData</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fetchFileData</span><span class="params">(@NonNull <span class="keyword">final</span> File destDir,</span></span></div><div class="line">                             @Nullable String fileNameWithoutExtension,</div><div class="line">                             @NonNull <span class="keyword">final</span> DownloadListener&lt;String&gt; callback)</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v21">Description:</h5>
+<p><font color="#666">Fetches this media file's full resolution data from the SD card. The  difference between fetching the media data and fetching the thumbnail is  that fetching the thumbnail will return a low-resolution image of the actual  picture, while fetching the media data will return all data for a video or  image. If last download action is aborted, it will continue to download the data  from where the file download has been aborted.</font></p>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull final File <font color="#000">destDir</font></font></td><td><font color="#666"><i>File instance of location to save the files, which can not be null.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable String <font color="#000">fileNameWithoutExtension</font></font></td><td><font color="#666"><i>The fileName to store in mobile devices, without the file extension.&lt;br&gt; If it  is null, the file name in the camera's SDCard will be used.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_cameradownloadlistenerinterface">DownloadListener</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback to receive the result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimediamanager_djimedia_stopfetchingfiledata"><div class="api-col left">Stop Fetching File Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_stopfetchingfiledata_inline">stopFetchingFileData</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_stopfetchingfiledata_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>stopFetchingFileData</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">stopFetchingFileData</span> <span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v22">Description:</h5>
+<p><font color="#666">Stops a currently executing call of <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_fetchfiledata">fetchFileData</a></code>.</font></p>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The <code>completion callback</code> with the returned execution result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimediamanager_djimedia_fetchsubfiledatalist"><div class="api-col left">Fetching File Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_fetchsubfiledatalist_inline">fetchSubFileDataList</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_fetchsubfiledatalist_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>fetchSubFileDataList</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fetchSubFileDataList</span><span class="params">(@NonNull <span class="keyword">final</span> CompletionCallbackWith&lt;List&lt;MediaFile&gt;&gt; callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v23">Description:</h5>
+<p><font color="#666">Fetch the file data of the sub media files. It is available only when  <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_mediatype">getMediaType</a></code> is  <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype_panorama">PANORAMA</a></code> or  <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype_shallowfocus">SHALLOW_FOCUS</a></code>.</font></p>
+<h5 id="input-parameters-v7">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;List&lt;<a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a>&gt;&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback to receive the result.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djimediamanager_djimedia_djimediatype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_djimediatype_inline">MediaType</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_djimediatype_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>MediaType</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> MediaType</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">Media types.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown file type.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_jpeg_inline"></a>JPEG</font></td><td><font color="#666">Image of JPEG format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_mp4_inline"></a>MP4</font></td><td><font color="#666">Video of MP4 format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_mov_inline"></a>MOV</font></td><td><font color="#666">Video of MOV format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_m4v_inline"></a>M4V</font></td><td><font color="#666">Video of M4V format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_rawdng_inline"></a>RAW_DNG</font></td><td><font color="#666">Image of DNG format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_panorama_inline"></a>PANORAMA</font></td><td><font color="#666">PANORAMA file type.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_tiff_inline"></a>TIFF</font></td><td><font color="#666">Tiff file type.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown file type.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_jpeg_inline"></a>JPEG</font></td><td><font color="#666">Image of JPEG format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_mp4_inline"></a>MP4</font></td><td><font color="#666">Video of MP4 format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_mov_inline"></a>MOV</font></td><td><font color="#666">Video of MOV format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_rawdng_inline"></a>RAW_DNG</font></td><td><font color="#666">Image of DNG format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_panorama_inline"></a>PANORAMA</font></td><td><font color="#666">Panorama file type.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_shallowfocus_inline"></a>SHALLOW_FOCUS</font></td><td><font color="#666">ShallowFocus file type. ShallowFocus files have a shallow depth of field.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_tiff_inline"></a>TIFF</font></td><td><font color="#666">Tiff file type.</font></td></tr></table></html>
 <h5 id="class-members-v2">Class Members:</h5>
 </div>
 

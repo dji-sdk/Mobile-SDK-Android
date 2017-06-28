@@ -198,9 +198,17 @@ public class VirtualStickView extends RelativeLayout implements View.OnClickList
                 float pitchJoyControlMaxSpeed = 10;
                 float rollJoyControlMaxSpeed = 10;
 
-                pitch = (float) (pitchJoyControlMaxSpeed * pY);
+                if (horizontalCoordinateFlag) {
+                    if (rollPitchControlModeFlag) {
+                        pitch = (float) (pitchJoyControlMaxSpeed * pX);
 
-                roll = (float) (rollJoyControlMaxSpeed * pX);
+                        roll = (float) (rollJoyControlMaxSpeed * pY);
+                    } else {
+                        pitch = -(float) (pitchJoyControlMaxSpeed * pY);
+
+                        roll = (float) (rollJoyControlMaxSpeed * pX);
+                    }
+                }
 
                 if (null == sendVirtualStickDataTimer) {
                     sendVirtualStickDataTask = new SendVirtualStickDataTask();

@@ -210,8 +210,10 @@ public class OnScreenJoystick extends SurfaceView implements
 
 		@Override
 		public synchronized void start() {
-			running = true;
-			super.start();
+			if(!running) {
+				running = true;
+				super.start();
+			}
 		}
 
 		public void setRunning(final boolean pRunning) {

@@ -13,6 +13,7 @@ import com.dji.sdk.sample.R;
 public abstract class BaseAppActivationView extends FrameLayout implements View.OnClickListener,PresentableView{
 
     protected Button userAccountStateBtn;
+    protected Button logOutBtn;
     protected TextView bindingStateTV;
     protected TextView appActivationStateTV;
     protected TextView accountStateTV;
@@ -45,7 +46,9 @@ public abstract class BaseAppActivationView extends FrameLayout implements View.
         accountStateTV = (TextView) findViewById(R.id.tv_account_state_info);
         adsbStateTV = (TextView) findViewById(R.id.tv_adsb_info);
         userAccountStateBtn = (Button) findViewById(R.id.btn_login);
+        logOutBtn = (Button) findViewById(R.id.btn_login_out);
         userAccountStateBtn.setOnClickListener(this);
+        logOutBtn.setOnClickListener(this);
     }
 
 }

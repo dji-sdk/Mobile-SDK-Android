@@ -206,6 +206,12 @@
                                       </dd>
                                       <dd><a href="../Camera/DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">VideoPlaybackState</a>
                                       </dd>
+                                      <dd><a data-href="../Camera/DJIMediaManager_FetchMediaTaskScheduler.html" class="sub-toggle">FetchMediaTaskScheduler<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJIMediaManager_DJIFetchMediaTask.html">FetchMediaTask</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../Camera/DJIPlaybackManager.html" class="sub-toggle">PlaybackManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -636,7 +642,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDisableCountryCodeCheck</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">Some products (e.g. Mavic Pro, Inspire 2, Phantom 4 Pro) make use of both 2.4 GHz and 5 GHz spectrums for wireless communication. While 5 GHz will not necessarily have the same range as 2.4 GHz, it can be useful  if the 2.4 GHz band has a lot of existing interference. However, as some countries do not permit the use of the 5 GHz spectrum, the SDK will automatically try to determine the country in which the product is operating and enable or disable the 5 GHz option accordingly. The process of determining in which country the product is flying uses location information. This method can be used to disable this check, but must  be called before <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerApp</a></code> to take effect. If  disabled, only 2.4 GHz will be available as an option.</font></p>
+<p><font color="#666">The SDK will automatically try to determine the country in which the product is operating and decide  the behaviour accordingly. The process of determining in which country the product is flying uses  location information. This method can be used to disable this check, but must be called before  <code>registerAppWithDelegate</code> to take effect. Influenced features includes: <br> - Some products (e.g.  Mavic Pro, Inspire 2, Phantom 4 Pro) make use of both 2.4 GHz and 5 GHz spectrums for wireless  communication. While 5 GHz will not necessarily have the same range as 2.4 GHz, it can be useful  if the 2.4 GHz band has a lot of existing interference. However, as some countries do not permit  the use of the 5 GHz spectrum. If country code check is disabled, only 2.4 GHz will be available  as an option. <br><br> - <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_appactivationmanager">getAppActivationManager</a></code> uses country information to  determine whether the user needs to log into their DJI account to activate the application. If  the country code check is disabled, the user will need to log into their DJI account by default.</font></p>
 </div>
 <div class="api-row" id="djisdkmanager_appactivationmanager"><div class="api-col left">App Activation Manager</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_appactivationmanager_inline">getAppActivationManager</a></div></div><div class="inline-doc" id="djisdkmanager_appactivationmanager_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getAppActivationManager</h6></div>
@@ -673,9 +679,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSupportOnlyForBluetoothDevice</span><span class="params">(<span class="keyword">boolean</span> isBluetoothDevice)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">Change the flag if we are only connect bluetooth device. Otherwise, the default value for  isSupportOnlyForBluetoothDevice is false.</font></p>
+<p><font color="#666">If only Bluetooth devices will be connected, then this should be set to <code>true</code>.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isBluetoothDevice</font></font></td><td><font color="#666"><i>TRUE if the service is only for bluetooth device.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isBluetoothDevice</font></font></td><td><font color="#666"><i><code>true</code> if only Bluetooth devices will be connected.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djisdkmanager_startconnectiontoproduct"><div class="api-col left">Connection</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_startconnectiontoproduct_inline">startConnectionToProduct</a></div></div><div class="inline-doc" id="djisdkmanager_startconnectiontoproduct_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>startConnectionToProduct</h6></div>
 

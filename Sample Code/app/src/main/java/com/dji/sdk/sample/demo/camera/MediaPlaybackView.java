@@ -120,43 +120,26 @@ public class MediaPlaybackView extends LinearLayout
         mediaManager = DJISampleApplication.getProductInstance().getCamera().getMediaManager();
         if (mediaManager != null) {
 
-            mediaManager.fetchMediaList(new MediaManager.DownloadListener<List<MediaFile>>() {
-
+            mediaManager.refreshFileList(new CommonCallbacks.CompletionCallback() {
                 @Override
-                public void onFailure(DJIError error) {
-                    handler.sendMessage(handler.obtainMessage(HIDE_PROGRESS_DIALOG, null));
-                    handler.sendMessage(handler.obtainMessage(SHOW_TOAST, error.getDescription()));
-                }
+                public void onResult(DJIError djiError) {
+                    if (djiError == null) {
 
-                @Override
-                public void onProgress(long total, long current) {
-                    Log.d(TAG, "fetchMediaList onProgress");
-
-                }
-
-                @Override
-                public void onRateUpdate(long total, long current, long arg2) {
-                    Log.d(TAG, "fetchMediaList  onRateUpdate");
-
-                }
-
-                @Override
-                public void onStart() {
-                    Log.d(TAG, "fetchMediaList onStart");
-                }
-
-                @Override
-                public void onSuccess(List<MediaFile> medias) {
-                    Log.d(TAG, "fetchMediaList onSuccess");
-                    handler.sendMessage(handler.obtainMessage(HIDE_PROGRESS_DIALOG, null));
-                    if (DJIMediaList != null) {
-                        DJIMediaList.clear();
+                        List<MediaFile> medias = mediaManager.getFileListSnapshot();
+                        Log.d(TAG, "fetchMediaList onSuccess");
+                        handler.sendMessage(handler.obtainMessage(HIDE_PROGRESS_DIALOG, null));
+                        if (DJIMediaList != null) {
+                            DJIMediaList.clear();
+                        }
+                        for (MediaFile media : medias) {
+                            DJIMediaList.add(media);
+                        }
+                        handler.sendMessage(handler.obtainMessage(NEED_REFRESH_FILE_LIST, null));
+                        handler.removeMessages(GET_THUMBNAILS);
+                    } else {
+                        handler.sendMessage(handler.obtainMessage(HIDE_PROGRESS_DIALOG, null));
+                        handler.sendMessage(handler.obtainMessage(SHOW_TOAST, djiError.getDescription()));
                     }
-                    for (MediaFile media : medias) {
-                        DJIMediaList.add(media);
-                    }
-                    handler.sendMessage(handler.obtainMessage(NEED_REFRESH_FILE_LIST, null));
-                    handler.removeMessages(GET_THUMBNAILS);
                 }
             });
         }
@@ -431,8 +414,7 @@ public class MediaPlaybackView extends LinearLayout
             if (DJIMediaList.size() != 0) {
                 final MediaFile media = DJIMediaList.get(index);
 
-                if (media.getMediaType() != MediaFile.MediaType.M4V
-                    && media.getMediaType() != MediaFile.MediaType.MOV
+                if (media.getMediaType() != MediaFile.MediaType.MOV
                     && media.getMediaType() != MediaFile.MediaType.MP4) {
                     mItemHolder.btnPlayVideo.setVisibility(View.GONE);
                 } else {
@@ -492,7 +474,7 @@ public class MediaPlaybackView extends LinearLayout
         addLineToSB(pushInfo, "Video Playback State", null);
         if (currentVideoPlaybackState != null) {
             if (currentVideoPlaybackState.getPlayingMediaFile() != null) {
-                addLineToSB(pushInfo, "media index", currentVideoPlaybackState.getPlayingMediaFile().getID());
+                addLineToSB(pushInfo, "media index", currentVideoPlaybackState.getPlayingMediaFile().getIndex());
                 addLineToSB(pushInfo, "media size", currentVideoPlaybackState.getPlayingMediaFile().getFileSize());
                 addLineToSB(pushInfo,
                             "media duration",

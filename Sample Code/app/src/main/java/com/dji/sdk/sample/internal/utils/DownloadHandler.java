@@ -2,8 +2,7 @@ package com.dji.sdk.sample.internal.utils;
 
 import android.graphics.Bitmap;
 import dji.common.error.DJIError;
-import dji.sdk.camera.MediaManager.DownloadListener;
-
+import dji.sdk.camera.DownloadListener;
 
 public class DownloadHandler<B> implements DownloadListener<B> {
 
