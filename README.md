@@ -39,6 +39,10 @@ Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk
 
 DJI Mobile UILibrary is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the DJI Mobile SDK. For more details, please check [here](https://github.com/dji-sdk/Mobile-UILibrary-Android).
 
+## ProGuard
+
+If you're planning on optimizing your app with [ProGuard](https://developer.android.com/studio/build/shrink-code.html), you can add the rules in [proguard-project.txt](./proguard-project.txt) to your app's `proguard.cfg` file.
+
 ## SDK Keys
 
 SDK Keys can be used as an alternative interface to access the product.

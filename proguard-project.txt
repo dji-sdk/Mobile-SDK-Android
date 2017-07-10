@@ -1,0 +1,85 @@
+-keep class net.sqlcipher.** { *; }
+-keep class net.sqlcipher.database.* { *; }
+-keepattributes *Annotation*
+-keepclassmembers class ** {
+    @dji.thirdparty.v3.eventbus.Subscribe <methods>;
+}
+-keep enum dji.thirdparty.v3.eventbus.ThreadMode { *; }
+-keepclassmembers class * extends dji.thirdparty.v3.eventbus.util.ThrowableFailureEvent {
+    <init>(java.lang.Throwable);
+}
+-keepnames class * implements java.io.Serializable
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    !static !transient <fields>;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+-keep class * extends android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+
+-keepclassmembers class dji.** {
+    <fields>;
+    <methods>;
+}
+
+-keepclassmembers class com.dji.** {
+    <fields>;
+    <methods>;
+}
+
+-keep,allowshrinking class com.handmark.** {
+    <fields>;
+    <methods>;
+}
+-keep,allowshrinking class com.google.** {
+    <fields>;
+    <methods>;
+}
+
+-keep,allowshrinking class com.hp.hpl.** {
+    <fields>;
+    <methods>;
+}
+
+-keep,allowshrinking class net.sourceforge.** {
+    <fields>;
+    <methods>;
+}
+
+-keep,allowshrinking class org.bouncycastle.** {
+    <fields>;
+    <methods>;
+}
+-keep,allowshrinking class org.** {
+    <fields>;
+    <methods>;
+}
+
+-keep,allowshrinking class com.trilead.** {
+    <fields>;
+    <methods>;
+}
+
+-keep,allowshrinking class com.jcraft.** {
+    <fields>;
+    <methods>;
+}
+
+-keep,allowshrinking class de.mud.** {
+    <fields>;
+    <methods>;
+}
+
+-keep,allowshrinking class net.sourceforge.** {
+    <fields>;
+    <methods>;
+}
+
+-keepclasseswithmembers,allowshrinking class * {
+    native <methods>;
+}
