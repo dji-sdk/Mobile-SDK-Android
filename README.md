@@ -41,7 +41,17 @@ DJI Mobile UILibrary is a suite of product agnostic UI objects that fast tracks 
 
 ## ProGuard
 
-If you're planning on optimizing your app with [ProGuard](https://developer.android.com/studio/build/shrink-code.html), you can add the rules in [proguard-project.txt](./proguard-project.txt) to your app's `proguard.cfg` file.
+If you're planning on optimizing your app with [ProGuard](https://developer.android.com/studio/build/shrink-code.html), you can add the following rules to your app's `proguard.cfg` file:
+
+- For **AAR** file, please use the following rule:
+
+~~~
+"-libraryjars ./PATH_TO_THIS_FILE/dji_android_sdk.aar"
+~~~
+
+- For **API Library** folder, please use the rules in [proguard-project.txt](./proguard-project.txt) file. 
+
+> **Note**: There are two types of DJI Android SDK: **AAR** and **API Library folder**, you can download them from DJI Developer Website: <http://developer.dji.com/mobile-sdk/downloads/>.
 
 ## SDK Keys
 
