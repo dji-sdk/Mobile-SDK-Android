@@ -369,12 +369,12 @@ public class MediaPlaybackView extends LinearLayout
 
     @Override
     public void onUpdate(MediaManager.VideoPlaybackState videoPlaybackState) {
-        post(new Runnable() {
-            @Override
-            public void run() {
-                ToastUtils.setResultToToast(" VideoPlaybackState on Result");
-            }
-        });
+        //post(new Runnable() {
+        //    @Override
+        //    public void run() {
+        //        ToastUtils.setResultToToast(" VideoPlaybackState on Result");
+        //    }
+        //});
         updateTextView(videoPlaybackState);
     }
 
