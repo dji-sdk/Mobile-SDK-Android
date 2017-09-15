@@ -9,8 +9,6 @@ import android.view.LayoutInflater;
 import android.view.TextureView;
 import android.widget.FrameLayout;
 import com.dji.sdk.sample.R;
-import com.dji.sdk.sample.internal.controller.DJISampleApplication;
-import dji.sdk.base.BaseProduct;
 import dji.sdk.camera.VideoFeeder;
 import dji.sdk.codec.DJICodecManager;
 
@@ -57,13 +55,8 @@ public class BaseFpvView extends FrameLayout implements TextureView.SurfaceTextu
 
     private void initSDKCallback() {
         try {
-            BaseProduct mProduct = DJISampleApplication.getProductInstance();
-
-            if (VideoFeeder.getInstance().getVideoFeeds() != null
-                && VideoFeeder.getInstance().getVideoFeeds().size() > 0) {
-                VideoFeeder.getInstance().getVideoFeeds().get(0).setCallback(receivedVideoDataCallback);
-            }
-        } catch (Exception exception) {
+            VideoFeeder.getInstance().getPrimaryVideoFeed().setCallback(receivedVideoDataCallback);
+        } catch (Exception ignored) {
         }
     }
 

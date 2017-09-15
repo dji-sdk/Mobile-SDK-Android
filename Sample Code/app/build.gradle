@@ -1,15 +1,19 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    mavenLocal()
+}
+
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 24
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         applicationId "com.dji.sdk.sample"
-        minSdkVersion 16
-        targetSdkVersion 23
+        minSdkVersion 17
+        targetSdkVersion 24
         versionCode 1
-        versionName "1.0"
+        versionName "4.3.0"
         multiDexEnabled true
     }
     buildTypes {
@@ -28,8 +32,8 @@ repositories {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.squareup:otto:1.3.8'
-    compile(name:'dji-sdk', ext:'aar')
+    compile 'com.dji:dji-sdk:4.3.0'
 }

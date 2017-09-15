@@ -1,13 +1,17 @@
 package com.dji.sdk.sample.internal.controller;
 
+import android.Manifest;
 import android.app.Application;
+import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.multidex.MultiDex;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
 import com.dji.sdk.sample.R;
+import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.squareup.otto.Bus;
 import com.squareup.otto.ThreadEnforcer;
 import dji.common.error.DJIError;
@@ -43,6 +47,11 @@ public class DJISampleApplication extends Application {
         }
         return product;
     }
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
     public static synchronized BluetoothProductConnector getBluetoothProductConnector() {
         if (null == bluetoothConnector) {
@@ -77,9 +86,12 @@ public class DJISampleApplication extends Application {
          * handles SDK Registration using the API_KEY
          */
 
-        int permissionCheck = ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE);
-        if (permissionCheck == 0 || Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+        int permissionCheck = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permissionCheck2 = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M || (permissionCheck == 0 && permissionCheck2 == 0)) {
             DJISDKManager.getInstance().registerApp(this, mDJISDKManagerCallback);
+        } else {
+            ToastUtils.setResultToToast("Please check the permission first!");
         }
         instance = this;
     }

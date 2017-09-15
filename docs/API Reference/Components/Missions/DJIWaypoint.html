@@ -174,6 +174,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlightController/DJIFlightController_Limits.html">Limits</a>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -480,7 +482,7 @@
                     <ul class="sub-menu">
                             <dd><a href="DJIHotPointMission.html">HotpointMission</a>
                             </dd>
-                            <dd><a data-href="DJIHotpointMissionEvent.html" class="sub-toggle">HotpoinMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href="DJIHotpointMissionEvent.html" class="sub-toggle">HotpointMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="DJIHotpointMissionState.html">HotpointMissionState</a>
                                       </dd>
@@ -615,7 +617,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@FloatRange</span>(from = MIN_CORNER_RADIUS, to = MAX_CORNER_RADIUS) <span class="keyword">float</span> cornerRadiusInMeters = <span class="number">0.2f</span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypoint</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">Corner radius of the waypoint. When the flight path mode  is <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode_curved">CURVED</a></code> the flight path near a waypoint will be  a curve (rounded corner) with radius [0.2,1000]. When there is a corner radius, the aircraft will never  go through the waypoint. By default, the radius is 0.2 m. The radius should not be larger than the three  dimensional distance between any two of the three waypoints that comprise the corner.</font></p>
+<p><font color="#666">Corner radius of the waypoint. When the flight path mode  is <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionflightpathmode_curved">CURVED</a></code> the flight path near a waypoint will be  a curve (rounded corner) with radius [0.2,1000]. When there is a corner radius, the aircraft will never  go through the waypoint. By default, the radius is 0.2 m. If the corner is made of three adjacent waypoints (Short for A,B,C)  . Then the radius of A(short for Ra) plus radius of B(short for Rb) must be smaller than the distance between  A and B. Radius of the first and the last waypoint in a mission does not affect the flight path and it should keep the default value (0.2m).</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_cornerradiusinmeters">cornerRadiusInMeters</a></code></font></p>
 </div>

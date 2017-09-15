@@ -174,6 +174,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlightController/DJIFlightController_Limits.html">Limits</a>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -480,7 +482,7 @@
                     <ul class="sub-menu">
                             <dd><a href="DJIHotPointMission.html">HotpointMission</a>
                             </dd>
-                            <dd><a data-href="DJIHotpointMissionEvent.html" class="sub-toggle">HotpoinMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href="DJIHotpointMissionEvent.html" class="sub-toggle">HotpointMissionEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="DJIHotpointMissionState.html">HotpointMissionState</a>
                                       </dd>
@@ -649,12 +651,12 @@ is paused successfully, the <code><a href="../../Components/Missions/DJIHotpoint
 <div class="api-row" id="djihotpointmissionoperator_getexecutingmission"><div class="api-col left">Get Executing Mission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmissionoperator_getexecutingmission_inline">getExecutingMission</a></div></div><div class="inline-doc" id="djihotpointmissionoperator_getexecutingmission_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getExecutingMission</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getExecutingMission</span><span class="params">(@NonNull HotpointMission mission, @Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getExecutingMission</span><span class="params">(@NonNull HotpointMission mission, @NonNull CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Gets the executing mission from the aircraft. It can only be called when  <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator_currentstate">getCurrentState</a></code> is one of the following:  <ul> <li><code><a href="../../Components/Missions/DJIHotpointMissionState.html#djihotpointmissionstate_initialphase">INITIAL_PHASE</a></code> </li> <li><code><a href="../../Components/Missions/DJIHotpointMissionState.html#djihotpointmissionstate_executing">EXECUTING</a></code> </li> <li><code><a href="../../Components/Missions/DJIHotpointMissionState.html#djihotpointmissionstate_executionpaused">EXECUTION_PAUSED</a></code></li> </ul></font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission">HotpointMission</a> <font color="#000">mission</font></font></td><td><font color="#666"><i>Detailed information of the mission being executed. <code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_altitude">setAltitude</a></code>  and <code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_radius">setRadius</a></code> may be different from the initial settings when  starting the mission. It is <code>null</code> if there is an error encountered when trying to get  the mission.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the execution result returned.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission">HotpointMission</a> <font color="#000">mission</font></font></td><td><font color="#666"><i>Detailed information of the mission being executed. <code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_altitude">setAltitude</a></code>  and <code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_radius">setRadius</a></code> may be different from the initial settings when  starting the mission. It is <code>null</code> if there is an error encountered when trying to get  the mission.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the execution result returned.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djihotpointmissionoperator_setangularvelocity"><div class="api-col left">Set Angular Velocity</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmissionoperator_setangularvelocity_inline">setAngularVelocity</a></div></div><div class="inline-doc" id="djihotpointmissionoperator_setangularvelocity_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setAngularVelocity</h6></div>
 
@@ -706,12 +708,12 @@ is paused successfully, the <code><a href="../../Components/Missions/DJIHotpoint
 <div class="api-row" id="djihotpointmissionoperatorlistener_onexecutionupdate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmissionoperatorlistener_onexecutionupdate_inline">onExecutionUpdate</a></div></div><div class="inline-doc" id="djihotpointmissionoperatorlistener_onexecutionupdate_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onExecutionUpdate</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onExecutionUpdate</span><span class="params">(@NonNull HotpoinMissionEvent event)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onExecutionUpdate</span><span class="params">(@NonNull HotpointMissionEvent event)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Called when a new Hotpoint mission event occurs.</font></p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIHotpointMissionEvent.html#djihotpointmissionevent">HotpoinMissionEvent</a> <font color="#000">event</font></font></td><td><font color="#666"><i>Updated event.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIHotpointMissionEvent.html#djihotpointmissionevent">HotpointMissionEvent</a> <font color="#000">event</font></font></td><td><font color="#666"><i>Updated event.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djihotpointmissionoperatorlistener_onexecutionstart"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmissionoperatorlistener_onexecutionstart_inline">onExecutionStart</a></div></div><div class="inline-doc" id="djihotpointmissionoperatorlistener_onexecutionstart_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onExecutionStart</h6></div>
 
@@ -730,7 +732,7 @@ is paused successfully, the <code><a href="../../Components/Missions/DJIHotpoint
 <h5 id="input-parameters-v13">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>Used when mission is finishes in an unexpected way.</i></font></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djihotpointmissionevent"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIHotpointMissionEvent.html">HotpoinMissionEvent</a></div></div>
+<div class="api-row" id="djihotpointmissionevent"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIHotpointMissionEvent.html">HotpointMissionEvent</a></div></div>
 
         </div>
       </div>

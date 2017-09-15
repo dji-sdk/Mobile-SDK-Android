@@ -54,26 +54,31 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int permissionCheck = ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE);
+        int permissionCheck = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permissionCheck2 = ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION);
+        int permissionCheck3 = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
 
         // When the compile and target version is higher than 22, please request the following permissions at runtime to ensure the SDK work well.
-        if (permissionCheck != 0 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if ((permissionCheck != 0 || permissionCheck2 != 0 || permissionCheck3 != 0) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             ActivityCompat.requestPermissions(this, new String[] {
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.VIBRATE,
-                Manifest.permission.INTERNET,
-                Manifest.permission.ACCESS_WIFI_STATE,
-                Manifest.permission.WAKE_LOCK,
-                Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.ACCESS_NETWORK_STATE,
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.CHANGE_WIFI_STATE,
-                Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS,
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.SYSTEM_ALERT_WINDOW,
-                Manifest.permission.READ_PHONE_STATE,
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                android.Manifest.permission.VIBRATE,
+                android.Manifest.permission.INTERNET,
+                android.Manifest.permission.ACCESS_WIFI_STATE,
+                android.Manifest.permission.WAKE_LOCK,
+                android.Manifest.permission.ACCESS_COARSE_LOCATION,
+                android.Manifest.permission.ACCESS_NETWORK_STATE,
+                android.Manifest.permission.ACCESS_FINE_LOCATION,
+                android.Manifest.permission.CHANGE_WIFI_STATE,
+                android.Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS,
+                android.Manifest.permission.READ_EXTERNAL_STORAGE,
+                android.Manifest.permission.SYSTEM_ALERT_WINDOW,
+                android.Manifest.permission.READ_PHONE_STATE,
+                android.Manifest.permission.READ_EXTERNAL_STORAGE,
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
             }, 1);
         }
+
 
         DJISampleApplication.getEventBus().register(this);
 
