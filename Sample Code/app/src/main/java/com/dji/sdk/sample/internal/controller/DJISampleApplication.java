@@ -86,9 +86,11 @@ public class DJISampleApplication extends Application {
          * handles SDK Registration using the API_KEY
          */
 
-        int permissionCheck = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        int permissionCheck2 = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M || (permissionCheck == 0 && permissionCheck2 == 0)) {
+        int writeExternalPermission =
+            ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int readPhoneStatePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M || (writeExternalPermission == 0
+            && readPhoneStatePermission == 0)) {
             DJISDKManager.getInstance().registerApp(this, mDJISDKManagerCallback);
         } else {
             ToastUtils.setResultToToast("Please check the permission first!");

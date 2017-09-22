@@ -31,6 +31,7 @@ import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -106,8 +107,7 @@ public class OnScreenJoystick extends SurfaceView implements
 		return mAutoCentering;
 	}
 
-	public void setJoystickListener(
-			final OnScreenJoystickListener pJoystickListener) {
+	public void setJoystickListener(@Nullable final OnScreenJoystickListener pJoystickListener) {
 		mJoystickListener = pJoystickListener;
 	}
 
@@ -210,7 +210,7 @@ public class OnScreenJoystick extends SurfaceView implements
 
 		@Override
 		public synchronized void start() {
-			if(!running) {
+			if (!running && this.getState() == Thread.State.NEW) {
 				running = true;
 				super.start();
 			}

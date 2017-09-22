@@ -3,6 +3,9 @@ package com.dji.sdk.sample.internal.utils;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
 
+/**
+ * The Class used to deal with the CommonCallbacks
+ */
 public class CallbackHandlers {
 
     public static class CallbackToastHandler implements CommonCallbacks.CompletionCallback {

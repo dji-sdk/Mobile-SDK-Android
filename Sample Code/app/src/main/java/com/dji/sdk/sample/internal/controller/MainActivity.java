@@ -54,12 +54,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int permissionCheck = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        int permissionCheck2 = ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION);
-        int permissionCheck3 = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+        int writeExternalPermission =
+            ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int accessFineLocationPermission =
+            ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION);
+        int readPhoneStatepermission = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
 
         // When the compile and target version is higher than 22, please request the following permissions at runtime to ensure the SDK work well.
-        if ((permissionCheck != 0 || permissionCheck2 != 0 || permissionCheck3 != 0) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if ((writeExternalPermission != 0 || accessFineLocationPermission != 0 || readPhoneStatepermission != 0)
+            && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             ActivityCompat.requestPermissions(this, new String[] {
                 android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 android.Manifest.permission.VIBRATE,
@@ -74,8 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 android.Manifest.permission.READ_EXTERNAL_STORAGE,
                 android.Manifest.permission.SYSTEM_ALERT_WINDOW,
                 android.Manifest.permission.READ_PHONE_STATE,
-                android.Manifest.permission.READ_EXTERNAL_STORAGE,
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
             }, 1);
         }
 

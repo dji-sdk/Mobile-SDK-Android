@@ -3,20 +3,18 @@ package com.dji.sdk.sample.demo.gimbal;
 import android.app.Service;
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 import com.dji.sdk.sample.R;
+import com.dji.sdk.sample.internal.utils.CallbackHandlers;
+import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
-import dji.common.error.DJIError;
 import dji.common.gimbal.CapabilityKey;
 import dji.common.gimbal.GimbalMode;
 import dji.common.gimbal.Rotation;
 import dji.common.gimbal.RotationMode;
-import dji.common.util.CommonCallbacks;
 import dji.common.util.DJIParamCapability;
 import dji.common.util.DJIParamMinMaxCapability;
 import dji.sdk.base.BaseProduct;
@@ -50,23 +48,9 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         setupButtonsState();
         enablePitchExtensionIfPossible();
         if (getGimbalInstance() != null) {
-            getGimbalInstance().setMode(GimbalMode.YAW_FOLLOW, new CommonCallbacks.CompletionCallback() {
-                @Override
-                public void onResult(DJIError error) {
-                    if (error == null) {
-                        Log.d("Gimbal", "Set Gimbal Work Mode success");
-                    } else {
-                        Log.d("Gimbal", "Set Gimbal Work Mode failed" + error);
-                    }
-                }
-            });
+            getGimbalInstance().setMode(GimbalMode.YAW_FOLLOW, new CallbackHandlers.CallbackToastHandler());
         } else {
-            post(new Runnable() {
-                @Override
-                public void run() {
-                    Toast.makeText(getContext(), "Product disconnected", Toast.LENGTH_SHORT).show();
-                }
-            });
+            ToastUtils.setResultToToast("Product disconnected");
         }
     }
 
@@ -101,7 +85,11 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
             return false;
         }
 
-        DJIParamCapability capability = gimbal.getCapabilities().get(key);
+        DJIParamCapability capability = null;
+        if (gimbal.getCapabilities() != null) {
+            capability = gimbal.getCapabilities().get(key);
+        }
+
         if (capability != null) {
             return capability.isSupported();
         }
@@ -116,18 +104,7 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         }
         boolean ifPossible = isFeatureSupported(CapabilityKey.PITCH_RANGE_EXTENSION);
         if (ifPossible) {
-            gimbal.setPitchRangeExtensionEnabled(true, new CommonCallbacks.CompletionCallback() {
-                                                     @Override
-                                                     public void onResult(DJIError djiError) {
-                                                         if (djiError == null) {
-                                                             Log.d("PitchRangeExtension", "set PitchRangeExtension successfully");
-                                                         } else {
-                                                             Log.d("PitchRangeExtension", "set PitchRangeExtension failed");
-                                                         }
-                                                     }
-                                                 }
-
-            );
+            gimbal.setPitchRangeExtensionEnabled(true, new CallbackHandlers.CallbackToastHandler());
         }
     }
 
@@ -138,16 +115,7 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
             return;
         }
 
-        gimbal.rotate(rotation, new CommonCallbacks.CompletionCallback() {
-            @Override
-            public void onResult(DJIError djiError) {
-                if (djiError == null) {
-                    Log.d("RotateGimbal", "RotateGimbal successfully");
-                } else {
-                    Log.d("PitchRangeExtension", "RotateGimbal failed");
-                }
-            }
-        });
+        gimbal.rotate(rotation, new CallbackHandlers.CallbackToastHandler());
     }
 
     private Object getCorrespondingKeyWithButton(Button button) {

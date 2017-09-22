@@ -23,6 +23,9 @@ import dji.sdk.sdkmanager.DJISDKManager;
 import dji.sdk.useraccount.UserAccountManager;
 import dji.common.useraccount.UserAccountState;
 
+/**
+ * Class for determining whether the App is Activated.
+ */
 public class AppActivationView  extends BaseAppActivationView {
 
     private static final String TAG = AppActivationView.class.getSimpleName();
@@ -141,7 +144,7 @@ public class AppActivationView  extends BaseAppActivationView {
     }
     //endregion
 
-    //region Not important stuff
+    //region
     private void setUpListener() {
         // Example of Listener
         activationStatelistener = new AppActivationStateListener() {

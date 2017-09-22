@@ -47,7 +47,7 @@ public class FetchMediaView extends BaseThreeBtnView {
 
                 if(taskScheduler == null) {
                     taskScheduler = mediaManager.getScheduler();
-                    if (taskScheduler.getState()== FetchMediaTaskSchedulerState.SUSPENDED) {
+                    if (taskScheduler != null && taskScheduler.getState()== FetchMediaTaskSchedulerState.SUSPENDED) {
                         taskScheduler.resume(new CommonCallbacks.CompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {
@@ -84,7 +84,9 @@ public class FetchMediaView extends BaseThreeBtnView {
                                 .getCamera()
                                 .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO, null);
         }
-        taskScheduler.suspend(null);
+        if (taskScheduler!=null) {
+            taskScheduler.suspend(null);
+        }
     }
 
     @Override

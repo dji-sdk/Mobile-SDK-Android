@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/vidoe_feeder_btns"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/vidoe_feeder_btns"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/single_camera_produdcts"
+                style="@style/test_text"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:text="@string/video_feeder_single_camera_product_title"/>
+
+            <TextView
+                android:id="@+id/lb2_products"
+                style="@style/test_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_below="@+id/single_camera_products"
+                android:text="@string/video_feeder_m600_lb2_title"/>
+
+            <Switch
+                android:id="@+id/single_toggle_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:textAlignment="viewStart"
+                android:text="@string/video_feeder_enable_single"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/video_feeder_lb_only"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_lb_only"/>
+
+                <Button
+                    android:id="@+id/video_feeder_ext_only"
+                    android:layout_marginLeft="10dp"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_ext_only"/>
+
+                <Button
+                    android:id="@+id/video_feeder_both_lb_ext"
+                    android:layout_marginLeft="10dp"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_both_lb_ext"/>
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/dual_toggle_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:textAlignment="viewStart"
+                android:text="@string/video_feeder_disable_single"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/video_feeder_hdmi_only"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_hdmi_only"/>
+
+                <Button
+                    android:id="@+id/video_feeder_av_only"
+                    android:layout_marginLeft="10dp"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_av_only"/>
+
+                <Button
+                    android:id="@+id/video_feeder_both_hdmi_av"
+                    android:layout_marginLeft="10dp"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_both_hdmi_av"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/m210_two_cameras_products"
+                style="@style/test_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/video_feeder_m210_two_camera_title"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/video_feeder_left_fpv"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_left_fpv"/>
+
+                <Button
+                    android:id="@+id/video_feeder_right_fpv"
+                    android:layout_marginLeft="10dp"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_right_fpv"/>
+
+                <Button
+                    android:id="@+id/video_feeder_left_right"
+                    android:layout_marginLeft="10dp"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_left_right"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/camera_index_title"
+                style="@style/test_text"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Camera List"/>
+
+            <TextView
+                android:id="@+id/primary_video_feed_title"
+                style="@style/test_text"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Primary Camera"/>
+
+            <FrameLayout
+                android:layout_width="240dp"
+                android:layout_height="140dp">
+
+                <com.dji.sdk.sample.internal.utils.VideoFeedView
+                    android:id="@+id/primary_video_feed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"/>
+
+                <View
+                    android:id="@+id/primary_cover_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:visibility="visible"/>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/fpv_video_feed_title"
+                style="@style/test_text"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Fpv camera source"/>
+
+            <FrameLayout
+                android:layout_width="240dp"
+                android:layout_height="140dp">
+
+                <com.dji.sdk.sample.internal.utils.VideoFeedView
+                    android:id="@+id/fpv_video_feed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"/>
+
+                <View
+                    android:id="@+id/fpv_cover_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:visibility="visible"/>
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</merge>

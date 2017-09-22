@@ -1,6 +1,9 @@
 package com.dji.sdk.sample.internal.utils;
 
+import android.support.annotation.Nullable;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
+import dji.sdk.flightcontroller.FlightController;
+import dji.sdk.flightcontroller.Simulator;
 import dji.sdk.products.Aircraft;
 import dji.sdk.products.HandHeld;
 
@@ -73,4 +76,26 @@ public class ModuleVerificationUtil {
                                                                     .getAirLink()
                                                                     .getLightbridgeLink());
     }
+
+    @Nullable
+    public static Simulator getSimulator() {
+        Aircraft aircraft = DJISampleApplication.getAircraftInstance();
+        if (aircraft != null) {
+            FlightController flightController = aircraft.getFlightController();
+            if (flightController != null) {
+                return flightController.getSimulator();
+            }
+        }
+        return null;
+    }
+
+    @Nullable
+    public static FlightController getFlightController() {
+        Aircraft aircraft = DJISampleApplication.getAircraftInstance();
+        if (aircraft != null) {
+            return aircraft.getFlightController();
+        }
+        return null;
+    }
+
 }

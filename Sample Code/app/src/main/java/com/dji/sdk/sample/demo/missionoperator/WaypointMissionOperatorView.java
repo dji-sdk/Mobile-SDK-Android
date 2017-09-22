@@ -63,6 +63,22 @@ public class WaypointMissionOperatorView extends MissionBaseView {
             waypointMissionOperator = MissionControl.getInstance().getWaypointMissionOperator();
         }
         switch (v.getId()) {
+            case R.id.btn_simulator:
+                BaseProduct product = DJISampleApplication.getProductInstance();
+                if (product != null && product instanceof Aircraft) {
+                    flightController = ((Aircraft) product).getFlightController();
+                    flightController.getSimulator()
+                                    .start(InitializationData.createInstance(new LocationCoordinate2D(22, 113), 10, 10),
+                                           new CommonCallbacks.CompletionCallback() {
+                                               @Override
+                                               public void onResult(DJIError djiError) {
+                                                   showResultToast(djiError);
+                                               }
+                                           });
+                } else {
+                    ToastUtils.setResultToToast("Product is disconnected!");
+                }
+                break;
             case R.id.btn_load:
                 // Example of loading a Mission
                 mission = createRandomWaypointMission(WAYPOINT_COUNT, 1);
@@ -189,9 +205,6 @@ public class WaypointMissionOperatorView extends MissionBaseView {
                     }
                 });
 
-                flightController.getSimulator()
-                                .start(InitializationData.createInstance(new LocationCoordinate2D(22, 113), 10, 10),
-                                       null);
             }
         }
         waypointMissionOperator = MissionControl.getInstance().getWaypointMissionOperator();
@@ -221,17 +234,14 @@ public class WaypointMissionOperatorView extends MissionBaseView {
         WaypointMission.Builder builder = new WaypointMission.Builder();
         double baseLatitude = 22;
         double baseLongitude = 113;
-        if (KeyManager.getInstance().getValue((FlightControllerKey.create(HOME_LOCATION_LATITUDE))) != null
-            && KeyManager.getInstance()
-                         .getValue((FlightControllerKey.create(HOME_LOCATION_LATITUDE))) instanceof Double) {
-            baseLatitude =
-                (double) KeyManager.getInstance().getValue((FlightControllerKey.create(HOME_LOCATION_LATITUDE)));
+        Object latitudeValue = KeyManager.getInstance().getValue((FlightControllerKey.create(HOME_LOCATION_LATITUDE)));
+        Object longitudeValue =
+            KeyManager.getInstance().getValue((FlightControllerKey.create(HOME_LOCATION_LONGITUDE)));
+        if (latitudeValue != null && latitudeValue instanceof Double) {
+            baseLatitude = (double) latitudeValue;
         }
-        if (KeyManager.getInstance().getValue((FlightControllerKey.create(HOME_LOCATION_LONGITUDE))) != null
-            && KeyManager.getInstance()
-                         .getValue((FlightControllerKey.create(HOME_LOCATION_LONGITUDE))) instanceof Double) {
-            baseLongitude =
-                (double) KeyManager.getInstance().getValue((FlightControllerKey.create(HOME_LOCATION_LONGITUDE)));
+        if (longitudeValue != null && longitudeValue instanceof Double) {
+            baseLongitude = (double) longitudeValue;
         }
 
         final float baseAltitude = 50.0f;
@@ -335,10 +345,15 @@ public class WaypointMissionOperatorView extends MissionBaseView {
                 ToastUtils.setResultToToast("Execution finished!");
             }
         };
+
+        if (waypointMissionOperator != null && listener != null) {
+            // Example of adding listeners
+            waypointMissionOperator.addListener(listener);
+        }
     }
 
     private void tearDownListener() {
-        if (waypointMissionOperator != null) {
+        if (waypointMissionOperator != null && listener != null) {
             // Example of removing listeners
             waypointMissionOperator.removeListener(listener);
         }

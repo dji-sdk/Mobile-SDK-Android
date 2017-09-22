@@ -26,6 +26,7 @@ public abstract class MissionBaseView extends RelativeLayout implements View.OnC
 
     protected FlightController flightController;
 
+    protected Button simulatorBtn;
     protected Button loadBtn;
     protected Button uploadBtn;
     protected Button startBtn;
@@ -50,30 +51,6 @@ public abstract class MissionBaseView extends RelativeLayout implements View.OnC
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        BaseProduct product = DJISampleApplication.getProductInstance();
-
-        if (product == null || !product.isConnected()) {
-            ToastUtils.setResultToToast("Disconnect");
-            flightController = null;
-        } else {
-            if (product instanceof Aircraft) {
-                flightController = ((Aircraft) product).getFlightController();
-            }
-
-            if (flightController != null) {
-
-                flightController.setStateCallback(new FlightControllerState.Callback() {
-                    @Override
-                    public void onUpdate(@NonNull FlightControllerState flightControllerState) {
-                        homeLatitude = flightControllerState.getHomeLocation().getLatitude();
-                        homeLongitude = flightControllerState.getHomeLocation().getLongitude();
-                        flightState = flightControllerState.getFlightMode();
-
-                        showLongitudeLatitude();
-                    }
-                });
-            }
-        }
     }
 
     private void showLongitudeLatitude() {
@@ -104,6 +81,7 @@ public abstract class MissionBaseView extends RelativeLayout implements View.OnC
         resumeBtn = (Button) findViewById(R.id.btn_resume);
         downloadBtn = (Button) findViewById(R.id.btn_download);
         progressBar = (ProgressBar) findViewById(R.id.pb_mission);
+        simulatorBtn = (Button) findViewById(R.id.btn_simulator);
 
         loadBtn.setOnClickListener(this);
         uploadBtn.setOnClickListener(this);
@@ -112,6 +90,7 @@ public abstract class MissionBaseView extends RelativeLayout implements View.OnC
         pauseBtn.setOnClickListener(this);
         resumeBtn.setOnClickListener(this);
         downloadBtn.setOnClickListener(this);
+        simulatorBtn.setOnClickListener(this);
     }
 
     @NonNull
