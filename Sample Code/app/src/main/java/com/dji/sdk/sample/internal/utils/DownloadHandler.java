@@ -27,7 +27,7 @@ public class DownloadHandler<B> implements DownloadListener<B> {
             Bitmap bitmap = (Bitmap) obj;
             ToastUtils.setResultToToast("Success! The bitmap's byte count is: " + bitmap.getByteCount());
         } else if (obj instanceof String) {
-            ToastUtils.setResultToToast("The file has been store, its path is " + obj.toString());
+            ToastUtils.setResultToToast("The file has been stored, its path is " + obj.toString());
         }
     }
 
