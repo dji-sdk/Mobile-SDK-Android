@@ -1,3 +1,30 @@
+-keepclassmembers class * extends android.app.Service
+-keepclassmembers public class * extends android.view.View {
+    void set*(***);
+    *** get*();
+}
+-keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+}
+-keep,allowshrinking class android.support.** {
+    <fields>;
+    <methods>;
+}
+-keep,allowshrinking class android.media.** {
+    <fields>;
+    <methods>;
+}
+-keep,allowshrinking class * extends dji.publics.DJIUI.** {
+    public <methods>;
+}
+-keepclassmembers enum  * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+-keepclassmembers enum * {
+    public static <methods>;
+}
+
 -keep class net.sqlcipher.** { *; }
 -keep class net.sqlcipher.database.* { *; }
 -keepattributes *Annotation*

@@ -5,18 +5,23 @@
 The DJI Mobile SDK enables you to automate your DJI Product. You can control flight, and many subsystems of the product including the camera and gimbal. Using the Mobile SDK, create a customized mobile app to unlock the full potential of your DJI aerial platform.
 
 ## Integration
+
 Declare dependency via Maven:
-```xml
+
+~~~xml
 <dependency>
     <groupId>com.dji</groupId>
     <artifactId>dji-sdk</artifactId>
     <version>4.3.2</version>
 </dependency>
-```
+~~~
+
 or Gradle:
-```groovy
+
+~~~groovy
 compile 'com.dji:dji-sdk:4.3.2'
-```
+~~~
+
 For further detail on how to integrate the DJI Android SDK into your Android Studio project, please check the [Integrate SDK into Application](http://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-integrate.html#import-maven-dependency) tutorial.
 
 ## Running the SDK Sample Code
