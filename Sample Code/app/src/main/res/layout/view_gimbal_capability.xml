@@ -3,127 +3,247 @@
        android:layout_width="match_parent"
        android:layout_height="match_parent"
 >
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rotate Gimbal&apos;s Pitch"
-        android:gravity="center"
-        android:id="@+id/textView"
-        android:layout_marginTop="80dp"
-        android:textColor="#040404"/>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="341dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_gravity="center_horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Min"
-            android:id="@+id/btn_pitchMin"
-            android:layout_marginLeft="70dp"
-            android:enabled="false"
-            style="@style/common_button"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Max"
-            android:id="@+id/btn_pitchMax"
-            android:layout_marginLeft="30dp"
-            android:enabled="false"
-            style="@style/common_button"/>
-
-    </LinearLayout>
-
-    <TextView
+    <ScrollView
+        android:id="@+id/vidoe_feeder_btns"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rotate Gimbal&apos;s Yaw"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:textColor="#000000"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/vidoe_feeder_btns"
+        android:scrollbars="vertical">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="341dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="Min"
-            android:id="@+id/btn_yawMin"
-            android:enabled="false"
-            android:layout_marginLeft="70dp"
-            style="@style/common_button"/>
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Max"
-            android:id="@+id/btn_yawMax"
-            android:enabled="false"
-            android:layout_marginLeft="30dp"
-            style="@style/common_button"/>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/m210_two_cameras_products"
+                style="@style/test_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/video_feeder_m210_two_camera_title"/>
 
-    <TextView
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/video_feeder_left_fpv"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_left_fpv"/>
+
+                <Button
+                    android:id="@+id/video_feeder_right_fpv"
+                    android:layout_marginLeft="10dp"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_right_fpv"/>
+
+                <Button
+                    android:id="@+id/video_feeder_left_right"
+                    android:layout_marginLeft="10dp"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_left_right"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/multiple_gimbals_products"
+                style="@style/test_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/product_with_multiple_gimbals"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/title_set"
+                    style="@style/test_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Select"
+                    android:textColor="@android:color/black"
+                />
+
+                <Spinner
+                    android:id="@+id/spinner_set"
+                    android:layout_width="120dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/title_set"
+                    android:textSize="14sp"/>
+
+                <Button
+                    android:id="@+id/btn_set"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/spinner_set"
+                    android:text="Set"
+                    style="@style/common_button"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/rotate_pitch_tv"
+                style="@style/test_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*Rotate Gimbal&apos;s Pitch"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_pitchMin"
+                    style="@style/common_button"
+                    android:text="Min"/>
+
+                <Button
+                    android:id="@+id/btn_pitchMax"
+                    android:layout_marginLeft="10dp"
+                    style="@style/common_button"
+                    android:text="Max"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/rotate_yaw_tv"
+                style="@style/test_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*Rotate Gimbal&apos;s Yaw"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_yawMin"
+                    style="@style/common_button"
+                    android:text="Min"/>
+
+                <Button
+                    android:id="@+id/btn_yawMax"
+                    android:layout_marginLeft="10dp"
+                    style="@style/common_button"
+                    android:text="Max"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/rotate_roll_tv"
+                style="@style/test_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*Rotate Gimbal&apos;s Roll"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:text="Min"
+                    android:id="@+id/btn_rollMin"
+                    android:enabled="false"
+                    style="@style/common_button"/>
+
+                <Button
+                    android:text="Max"
+                    android:id="@+id/btn_rollMax"
+                    android:layout_marginLeft="10dp"
+                    android:enabled="false"
+                    style="@style/common_button"/>
+
+            </LinearLayout>
+
+            <Button
+                android:text="Reset"
+                android:id="@+id/btn_reset"
+                style="@style/common_button"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rotate Gimbal&apos;s Roll"
-        android:id="@+id/textView3"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:textColor="#000000"/>
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:scrollbars="vertical">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="341dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-
-        <Button
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Min"
-            android:id="@+id/btn_rollMin"
-            android:layout_marginLeft="70dp"
-            android:enabled="false"
-            style="@style/common_button"/>
+            android:orientation="vertical">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Max"
-            android:id="@+id/btn_rollMax"
-            android:layout_marginLeft="30dp"
-            android:enabled="false"
-            style="@style/common_button"/>
+            <TextView
+                android:id="@+id/camera_index_title"
+                style="@style/test_text"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Camera List"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/primary_video_feed_title"
+                style="@style/test_text"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Primary Camera"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset"
-        android:id="@+id/btn_reset"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        style="@style/common_button"/>
+            <FrameLayout
+                android:layout_width="240dp"
+                android:layout_height="140dp">
+
+                <com.dji.sdk.sample.internal.utils.VideoFeedView
+                    android:id="@+id/primary_video_feed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"/>
+
+                <View
+                    android:id="@+id/primary_cover_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:visibility="visible"/>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/fpv_video_feed_title"
+                style="@style/test_text"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Fpv camera source"/>
+
+            <FrameLayout
+                android:layout_width="240dp"
+                android:layout_height="140dp">
+
+                <com.dji.sdk.sample.internal.utils.VideoFeedView
+                    android:id="@+id/fpv_video_feed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"/>
+
+                <View
+                    android:id="@+id/fpv_cover_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:visibility="visible"/>
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </merge>
