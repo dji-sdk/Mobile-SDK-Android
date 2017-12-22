@@ -27,19 +27,19 @@ public class BluetoothView extends LinearLayout implements View.OnClickListener 
     private List<String> strDevicesList = new ArrayList<String>();
     private ArrayAdapter<String> adapter;
     private BluetoothProductConnector connector = null;
-    private ArrayList<BluetoothDevice> devicesList = null;
+    private List<BluetoothDevice> devicesList = null;
     private BluetoothProductConnector.BluetoothDevicesListCallback bluetoothProductCallback =
         new BluetoothProductConnector.BluetoothDevicesListCallback() {
 
             @Override
             public void onUpdate(List<BluetoothDevice> list) {
                 if (devicesList == null) {
-                    devicesList = (ArrayList<BluetoothDevice>) list;
-                    updateTextTV((ArrayList<BluetoothDevice>)list);
+                    devicesList = list;
+                    updateTextTV(list);
                     updateList(devicesList);
-                } else if (!compareDevice(devicesList, (ArrayList<BluetoothDevice>)list)) {
-                    devicesList = (ArrayList<BluetoothDevice>)list;
-                    updateTextTV((ArrayList<BluetoothDevice>)list);
+                } else if (!compareDevice(devicesList, list)) {
+                    devicesList = list;
+                    updateTextTV(list);
                     updateList(devicesList);
                 }
             }
@@ -77,7 +77,7 @@ public class BluetoothView extends LinearLayout implements View.OnClickListener 
 
         connector = DJISampleApplication.getBluetoothProductConnector();
         if (connector == null) {
-            DialogUtils.showDialog(getContext(), "connect is null");
+            ToastUtils.setResultToToast("connect is null!");
             return;
         } else {
             connector.setBluetoothDevicesListCallback(this.bluetoothProductCallback);
@@ -164,7 +164,7 @@ public class BluetoothView extends LinearLayout implements View.OnClickListener 
               append("\n");
     }
 
-    private void updateTextTV(ArrayList<BluetoothDevice> devices) {
+    private void updateTextTV(List<BluetoothDevice> devices) {
         if (devices == null) {
             return;
         }
@@ -180,7 +180,7 @@ public class BluetoothView extends LinearLayout implements View.OnClickListener 
         ToastUtils.setResultToText(mTextDevicesInformation, sb.toString());
     }
 
-    private void updateList(ArrayList<BluetoothDevice> devices) {
+    private void updateList(List<BluetoothDevice> devices) {
         if (devices == null) {
             return;
         }
@@ -202,7 +202,7 @@ public class BluetoothView extends LinearLayout implements View.OnClickListener 
         });
     }
 
-    private boolean compareDevice(ArrayList<BluetoothDevice> ar1, ArrayList<BluetoothDevice> ar2) {
+    private boolean compareDevice(List<BluetoothDevice> ar1, List<BluetoothDevice> ar2) {
         if (ar1.size() != ar2.size()) {
             return false;
         }

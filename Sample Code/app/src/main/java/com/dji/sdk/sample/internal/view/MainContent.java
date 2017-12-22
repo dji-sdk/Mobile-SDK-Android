@@ -52,8 +52,7 @@ public class MainContent extends RelativeLayout {
     private Button mBtnBluetooth;
     private ViewWrapper componentList =
             new ViewWrapper(new DemoListView(getContext()), R.string.activity_component_list);
-    private ViewWrapper bluetoothView =
-            new ViewWrapper(new BluetoothView(getContext()), R.string.component_listview_bluetooth);
+    private ViewWrapper bluetoothView;
     private EditText mBridgeModeEditText;
     private Handler mHandler;
     private Handler mHandlerUI;
@@ -85,7 +84,7 @@ public class MainContent extends RelativeLayout {
         mBtnOpen = (Button) findViewById(R.id.btn_open);
         mBridgeModeEditText = (EditText) findViewById(R.id.edittext_bridge_ip);
         mBtnBluetooth = (Button) findViewById(R.id.btn_bluetooth);
-        mBtnBluetooth.setEnabled(false);
+        //mBtnBluetooth.setEnabled(false);
 
         mBtnOpen.setOnClickListener(new OnClickListener() {
             @Override
@@ -102,6 +101,12 @@ public class MainContent extends RelativeLayout {
                 if (GeneralUtils.isFastDoubleClick()) {
                     return;
                 }
+                if (DJISampleApplication.getBluetoothProductConnector() == null) {
+                    ToastUtils.setResultToToast("pls wait the sdk initiation finished");
+                    return;
+                }
+                bluetoothView =
+                        new ViewWrapper(new BluetoothView(getContext()), R.string.component_listview_bluetooth);
                 DJISampleApplication.getEventBus().post(bluetoothView);
             }
         });
@@ -196,7 +201,6 @@ public class MainContent extends RelativeLayout {
                 }
             }
         };
-        mHandler.sendEmptyMessage(0);
 
         mHandlerUI = new Handler(Looper.getMainLooper());
         super.onAttachedToWindow();
