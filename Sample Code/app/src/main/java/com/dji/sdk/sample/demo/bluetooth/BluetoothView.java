@@ -89,6 +89,10 @@ public class BluetoothView extends LinearLayout implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
+        if (connector == null) {
+            ToastUtils.setResultToToast("can't get connector");
+            return;
+        }
         switch (v.getId()) {
             case R.id.btn_SearchBluetooth:
                 connector.searchBluetoothProducts(new CommonCallbacks.CompletionCallback() {

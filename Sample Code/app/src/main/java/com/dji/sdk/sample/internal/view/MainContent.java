@@ -29,6 +29,10 @@ import com.dji.sdk.sample.internal.utils.GeneralUtils;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.squareup.otto.Subscribe;
 
+import dji.keysdk.DJIKey;
+import dji.keysdk.KeyManager;
+import dji.keysdk.ProductKey;
+import dji.keysdk.callback.KeyListener;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.products.Aircraft;
 import dji.sdk.sdkmanager.BluetoothProductConnector;
@@ -57,6 +61,10 @@ public class MainContent extends RelativeLayout {
 
     private BaseProduct mProduct;
 
+
+    private DJIKey firmwareKey;
+    private KeyListener firmwareVersionUpdater;
+    private boolean hasStartedFirmVersionListener = false;
     public MainContent(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
@@ -196,6 +204,7 @@ public class MainContent extends RelativeLayout {
 
     @Override
     protected void onDetachedFromWindow() {
+        removeFirmwareVersionListener();
         mHandler.removeCallbacksAndMessages(null);
         mHandlerUI.removeCallbacksAndMessages(null);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
@@ -214,10 +223,12 @@ public class MainContent extends RelativeLayout {
             version = mProduct.getFirmwarePackageVersion();
         }
 
-        if (version == null) {
-            mTextModelAvailable.setText("N/A"); //Firmware version:
+        if (TextUtils.isEmpty(version)) {
+            mTextModelAvailable.setText("Firmware version:N/A"); //Firmware version:
         } else {
-            mTextModelAvailable.setText(version); //"Firmware version: " +
+            mTextModelAvailable.setText("Firmware version:"+version); //"Firmware version: " +
+            removeFirmwareVersionListener();
+
         }
     }
 
@@ -242,6 +253,7 @@ public class MainContent extends RelativeLayout {
             String str = mProduct instanceof Aircraft ? "DJIAircraft" : "DJIHandHeld";
             mTextConnectionStatus.setText("Status: " + str + " connected");
             updateVersion();
+            tryUpdateFirmwareVersionWithListener();
 
             if (null != mProduct.getModel()) {
                 mTextProduct.setText("" + mProduct.getModel().getDisplayName());
@@ -255,4 +267,35 @@ public class MainContent extends RelativeLayout {
             mTextConnectionStatus.setText(R.string.connection_loose);
         }
     }
+
+    private void tryUpdateFirmwareVersionWithListener() {
+        if (!hasStartedFirmVersionListener) {
+            firmwareVersionUpdater = new KeyListener() {
+                @Override
+                public void onValueChange(final Object o, final Object o1) {
+                    mHandlerUI.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            updateVersion();
+                        }
+                    });
+                }
+            };
+            firmwareKey = ProductKey.create(ProductKey.FIRMWARE_PACKAGE_VERSION);
+            if (KeyManager.getInstance() != null) {
+                KeyManager.getInstance().addListener(firmwareKey, firmwareVersionUpdater );
+            }
+            hasStartedFirmVersionListener = true;
+        }
+        updateVersion();
+    }
+    private void removeFirmwareVersionListener() {
+        if (hasStartedFirmVersionListener) {
+            if (KeyManager.getInstance() != null) {
+                KeyManager.getInstance().removeListener(firmwareVersionUpdater);
+            }
+        }
+        hasStartedFirmVersionListener = false;
+    }
+
 }
