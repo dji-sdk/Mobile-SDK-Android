@@ -10,6 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.DialogUtils;
@@ -18,6 +19,10 @@ import com.dji.sdk.sample.internal.utils.OnScreenJoystick;
 import com.dji.sdk.sample.internal.utils.OnScreenJoystickListener;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
 import dji.common.error.DJIError;
 import dji.common.flightcontroller.simulator.InitializationData;
 import dji.common.flightcontroller.simulator.SimulatorState;
@@ -32,15 +37,14 @@ import dji.keysdk.FlightControllerKey;
 import dji.keysdk.KeyManager;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.flightcontroller.Simulator;
-import java.util.Timer;
-import java.util.TimerTask;
 
 //TODO: Refactor needed
+
 /**
  * Class for virtual stick.
  */
 public class VirtualStickView extends RelativeLayout
-    implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, PresentableView {
+        implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, PresentableView {
 
     private boolean yawControlModeFlag = true;
     private boolean rollPitchControlModeFlag = true;
@@ -90,11 +94,14 @@ public class VirtualStickView extends RelativeLayout
     @Override
     protected void onDetachedFromWindow() {
         if (null != sendVirtualStickDataTimer) {
-            sendVirtualStickDataTask.cancel();
-            sendVirtualStickDataTask = null;
+            if (sendVirtualStickDataTask != null) {
+                sendVirtualStickDataTask.cancel();
+
+            }
             sendVirtualStickDataTimer.cancel();
             sendVirtualStickDataTimer.purge();
             sendVirtualStickDataTimer = null;
+            sendVirtualStickDataTask = null;
         }
         tearDownListeners();
         super.onDetachedFromWindow();
@@ -146,22 +153,22 @@ public class VirtualStickView extends RelativeLayout
 
     private void setUpListeners() {
         Simulator simulator = ModuleVerificationUtil.getSimulator();
-        if (simulator!=null) {
+        if (simulator != null) {
             simulator.setStateCallback(new SimulatorState.Callback() {
                 @Override
                 public void onUpdate(@NonNull final SimulatorState simulatorState) {
                     ToastUtils.setResultToText(textView,
-                                               "Yaw : "
-                                                   + simulatorState.getYaw()
-                                                   + ","
-                                                   + "X : "
-                                                   + simulatorState.getPositionX()
-                                                   + "\n"
-                                                   + "Y : "
-                                                   + simulatorState.getPositionY()
-                                                   + ","
-                                                   + "Z : "
-                                                   + simulatorState.getPositionZ());
+                            "Yaw : "
+                                    + simulatorState.getYaw()
+                                    + ","
+                                    + "X : "
+                                    + simulatorState.getPositionX()
+                                    + "\n"
+                                    + "Y : "
+                                    + simulatorState.getPositionY()
+                                    + ","
+                                    + "Z : "
+                                    + simulatorState.getPositionZ());
                 }
             });
         } else {
@@ -351,12 +358,12 @@ public class VirtualStickView extends RelativeLayout
             textView.setVisibility(VISIBLE);
 
             simulator.start(InitializationData.createInstance(new LocationCoordinate2D(23, 113), 10, 10),
-                            new CommonCallbacks.CompletionCallback() {
-                                @Override
-                                public void onResult(DJIError djiError) {
+                    new CommonCallbacks.CompletionCallback() {
+                        @Override
+                        public void onResult(DJIError djiError) {
 
-                                }
-                            });
+                        }
+                    });
         } else {
 
             textView.setVisibility(INVISIBLE);
@@ -381,17 +388,17 @@ public class VirtualStickView extends RelativeLayout
         public void run() {
             if (ModuleVerificationUtil.isFlightControllerAvailable()) {
                 DJISampleApplication.getAircraftInstance()
-                                    .getFlightController()
-                                    .sendVirtualStickFlightControlData(new FlightControlData(pitch,
-                                                                                             roll,
-                                                                                             yaw,
-                                                                                             throttle),
-                                                                       new CommonCallbacks.CompletionCallback() {
-                                                                           @Override
-                                                                           public void onResult(DJIError djiError) {
+                        .getFlightController()
+                        .sendVirtualStickFlightControlData(new FlightControlData(pitch,
+                                        roll,
+                                        yaw,
+                                        throttle),
+                                new CommonCallbacks.CompletionCallback() {
+                                    @Override
+                                    public void onResult(DJIError djiError) {
 
-                                                                           }
-                                                                       });
+                                    }
+                                });
             }
         }
     }

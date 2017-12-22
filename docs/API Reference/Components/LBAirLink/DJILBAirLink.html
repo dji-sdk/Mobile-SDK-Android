@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -242,6 +244,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
@@ -344,6 +348,16 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
                             </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_ProfessionalRC.html" class="sub-toggle">ProfessionalRC<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_Event.html">Event</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration.html">ButtonConfiguration</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration_Builder.html">ButtonConfigurationBuilder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
@@ -414,9 +428,19 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Missions/DJILandAction.html">LandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../Missions/DJIMissionTrigger.html">Trigger</a>
+                  <dd><a data-href="../Missions/DJIMissionTrigger.html" class="sub-toggle">Trigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">BatteryPowerLevelTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">WaypointReachedTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">AircraftLandedTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -554,7 +578,7 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIFlySafeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
                             </dd>
@@ -581,7 +605,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setChannelSelectionMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setChannelSelectionMode</span><span class="params">(ChannelSelectionMode mode, @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_selection_mode_inline">AirLinkKey.CHANNEL_SELECTION_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_selection_mode_key">AirLinkKey.CHANNEL_SELECTION_MODE</a></font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Sets the downlink channel selection mode (automatic or manual).</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -590,7 +614,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getChannelSelectionMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getChannelSelectionMode</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;ChannelSelectionMode&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_selection_mode_inline">AirLinkKey.CHANNEL_SELECTION_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_selection_mode_key">AirLinkKey.CHANNEL_SELECTION_MODE</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Gets the downlink channel selection mode.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -599,7 +623,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getChannelRange</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getChannelRange</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Integer[]&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_range_inline">AirLinkKey.CHANNEL_RANGE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_range_key">AirLinkKey.CHANNEL_RANGE</a></font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Gets the channels available for the current frequency band.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -608,7 +632,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setChannelNumber</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setChannelNumber</span><span class="params">(<span class="keyword">int</span> channelNumber, @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_number_inline">AirLinkKey.CHANNEL_NUMBER</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_number_key">AirLinkKey.CHANNEL_NUMBER</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Sets the fixed downlink channel. Channel selection mode should be set  to <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_djilbairlinkchannelselectionmode_manual">MANUAL</a></code>. The valid range  of channel can be obtained from <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_getchannelrange">getChannelRange</a></code>.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -617,7 +641,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getChannelNumber</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getChannelNumber</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Integer&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_number_inline">AirLinkKey.CHANNEL_NUMBER</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_number_key">AirLinkKey.CHANNEL_NUMBER</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Gets current downlink channel of air link.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -644,7 +668,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setTransmissionMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTransmissionMode</span><span class="params">(@NonNull LightbridgeTransmissionMode mode, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_transmission_mode_inline">AirLinkKey.TRANSMISSION_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_transmission_mode_key">AirLinkKey.TRANSMISSION_MODE</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Sets FPV video quality vs latency preference. This mode only effects the FPV camera and not the camera on the HD Gimbal.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
@@ -653,7 +677,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getTransmissionMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getTransmissionMode</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;LightbridgeTransmissionMode&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_transmission_mode_inline">AirLinkKey.TRANSMISSION_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_transmission_mode_key">AirLinkKey.TRANSMISSION_MODE</a></font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Gets FPV video quality vs latency preference. This mode only effects the FPV camera and not the camera on the HD Gimbal.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
@@ -662,7 +686,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setBandwidthAllocationForLBVideoInputPort</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setBandwidthAllocationForLBVideoInputPort</span><span class="params">(@FloatRange(from = <span class="number">0.0</span>f, to = <span class="number">1.0</span>f)</span> <span class="keyword">float</span> percent,</span></div><div class="line">                                                         <span class="keyword">final</span> CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_bandwidth_allocation_for_lb_video_input_port_inline">AirLinkKey.BANDWIDTH_ALLOCATION_FOR_LB_VIDEO_INPUT_PORT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_bandwidth_allocation_for_lb_video_input_port_key">AirLinkKey.BANDWIDTH_ALLOCATION_FOR_LB_VIDEO_INPUT_PORT</a></font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Sets the percentage downlink video bandwidth dedicated to the video  feed from one of the LB input ports. The remaining percentage is dedicated  to the video feed from EXT input port. Setting 100% dedicates all the video bandwidth to LB.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
@@ -671,7 +695,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getBandwidthAllocationForLBVideoInputPort</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getBandwidthAllocationForLBVideoInputPort</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Float&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_bandwidth_allocation_for_lb_video_input_port_inline">AirLinkKey.BANDWIDTH_ALLOCATION_FOR_LB_VIDEO_INPUT_PORT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_bandwidth_allocation_for_lb_video_input_port_key">AirLinkKey.BANDWIDTH_ALLOCATION_FOR_LB_VIDEO_INPUT_PORT</a></font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Gets the percentage downlink video bandwidth dedicated to the video feed from one of  the LB input ports. The remaining percentage is dedicated to the video feed from EXT input port.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
@@ -700,7 +724,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setBandwidthAllocationForLeftCamera</span><span class="params">(@FloatRange(from = <span class="number">0.0</span>f, to = <span class="number">1.0</span>f)</span> <span class="keyword">float</span> percent,</span></div><div class="line">                                                   @Nullable <span class="keyword">final</span> CommonCallbacks.CompletionCallback callback)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">Sets the percentage of the main cameras' bandwidth dedicated to the left camera. The remaining percentage  is dedicated to the right camera. The main cameras' bandwidth is determined by  <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_setbandwidthallocationformaincamera">setBandwidthAllocationForMainCamera</a></code>. <br> This setting will influnce the physical sources  of video feeds (<code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_primaryvideofeed">getPrimaryVideoFeed</a></code> and <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_secondaryvideofeed">getSecondaryVideoFeed</a></code>): <br><br> - When  bandwidth is 100% on the left camera, the primary source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code>  and the secondary source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth 0% on  the left camera, the primary source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code> and the secondary  source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth is neither 0% nor 100% on  the left camera, the primary source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the secondary  source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>. It is only supported by M210 and M210 RTK.</font></p>
+<p><font color="#666">Sets the percentage of the main cameras' bandwidth dedicated to the left camera. The remaining percentage  is dedicated to the right camera. The main cameras' bandwidth is determined by  <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_setbandwidthallocationformaincamera">setBandwidthAllocationForMainCamera</a></code>. <br> This setting will influence the physical sources  of video feeds (<code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_primaryvideofeed">getPrimaryVideoFeed</a></code> and <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_secondaryvideofeed">getSecondaryVideoFeed</a></code>): <br><br> - When  bandwidth is 100% on the left camera, the primary source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code>  and the secondary source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth 0% on  the left camera, the primary source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code> and the secondary  source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth is neither 0% nor 100% on  the left camera, the primary source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the secondary  source is <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>. It is only supported by M210 and M210 RTK.</font></p>
 <h5 id="input-parameters-v14">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@FloatRange(from = 0.0f, to = 1.0f) float <font color="#000">percent</font></font></td><td><font color="#666"><i>Percentage downlink bandwidth for FPV camera.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilbairlink_getbandwidthallocationforleftcamera"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilbairlink_getbandwidthallocationforleftcamera_inline">getBandwidthAllocationForLeftCamera</a></div></div><div class="inline-doc" id="djilbairlink_getbandwidthallocationforleftcamera_inline" <blockquote="">
@@ -725,7 +749,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSecondaryVideoOutputEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecondaryVideoOutputEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_output_enabled_inline">AirLinkKey.SECONDARY_VIDEO_OUTPUT_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_output_enabled_key">AirLinkKey.SECONDARY_VIDEO_OUTPUT_ENABLED</a></font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Enable secondary video output on Remote Controller. The remote controller outputs video to the Mobile Device by  default. This will enable a secondary video stream to one of the Remote Controller's physical HDMI and SDI ports.</font></p>
 <h5 id="input-parameters-v16">Input Parameters:</h5>
@@ -734,7 +758,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoOutputEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSecondaryVideoOutputEnabled</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_output_enabled_inline">AirLinkKey.SECONDARY_VIDEO_OUTPUT_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_output_enabled_key">AirLinkKey.SECONDARY_VIDEO_OUTPUT_ENABLED</a></font></td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
 <p><font color="#666">Gets whether secondary video output on Remote Controller is enabled. The Remote Controller outputs video to the  Mobile Device by default, but a secondary video can be routed to its HDMI or SDI port.  Use <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_setsecondaryvideooutputenabled">setSecondaryVideoOutputEnabled</a></code> to enable or disable,  and <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_setsecondaryvideooutputport">setSecondaryVideoOutputPort</a></code> to choose the port.</font></p>
 <h5 id="input-parameters-v17">Input Parameters:</h5>
@@ -743,7 +767,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSecondaryVideoOutputPort</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecondaryVideoOutputPort</span><span class="params">(LightbridgeSecondaryVideoOutputPort port,</span></span></div><div class="line">                                           <span class="keyword">final</span> CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_output_port_inline">AirLinkKey.SECONDARY_VIDEO_OUTPUT_PORT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_output_port_key">AirLinkKey.SECONDARY_VIDEO_OUTPUT_PORT</a></font></td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
 <p><font color="#666">Sets secondary video output port on Remote Controller. HDMI or SDI are possible. Only one port can be active at once.</font></p>
 <h5 id="input-parameters-v18">Input Parameters:</h5>
@@ -752,7 +776,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoOutputPort</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSecondaryVideoOutputPort</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;LightbridgeSecondaryVideoOutputPort&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_output_port_inline">AirLinkKey.SECONDARY_VIDEO_OUTPUT_PORT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_output_port_key">AirLinkKey.SECONDARY_VIDEO_OUTPUT_PORT</a></font></td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
 <p><font color="#666">Gets the secondary video output port on Remote Controller. HDMI or SDI are possible. Only one port can be active at once.</font></p>
 <h5 id="input-parameters-v19">Input Parameters:</h5>
@@ -761,7 +785,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSecondaryVideoDisplay</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecondaryVideoDisplay</span><span class="params">(LightbridgeSecondaryVideoDisplayMode mode, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_display_mode_inline">AirLinkKey.SECONDARY_VIDEO_DISPLAY_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_display_mode_key">AirLinkKey.SECONDARY_VIDEO_DISPLAY_MODE</a></font></td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
 <p><font color="#666">Sets the secondary video output Picture in Picture (PIP) display mode. The air link module can connect to both  an FPV camera (through the HDMI and AV ports) and a camera mounted on the HD Gimbal (through the Gimbal port).  The output video can then be a combination of the two video sources. Either a single video source can be  displayed, or one can be displayed within the other (as a Picture in Picture, or PIP). If the mode is set  incorrectly,  then no output video will be displayed.</font></p>
 <h5 id="input-parameters-v20">Input Parameters:</h5>
@@ -770,7 +794,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoDisplay</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSecondaryVideoDisplay</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;LightbridgeSecondaryVideoDisplayMode&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_display_mode_inline">AirLinkKey.SECONDARY_VIDEO_DISPLAY_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_display_mode_key">AirLinkKey.SECONDARY_VIDEO_DISPLAY_MODE</a></font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
 <p><font color="#666">Gets the secondary video output Picture in Picture (PIP) display mode. The air link module can connect to both an  FPV camera (through the HDMI and AV ports) and a camera mounted on the HD Gimbal (through the Gimbal port). The  output video can then be a combination of the two video sources. Either a single video source can be displayed, or  one can be displayed within the other (as a Picture in Picture, or PIP).</font></p>
 <h5 id="input-parameters-v21">Input Parameters:</h5>
@@ -779,7 +803,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSecondaryVideoOSDEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecondaryVideoOSDEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_enabled_inline">AirLinkKey.SECONDARY_VIDEO_OSD_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_enabled_key">AirLinkKey.SECONDARY_VIDEO_OSD_ENABLED</a></font></td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
 <p><font color="#666">Enables and disables On Screen Display (OSD) overlay on the secondary video. OSD is flight data like altitude,  attitude etc. and can be overlayed on the PIP video.</font></p>
 <h5 id="input-parameters-v22">Input Parameters:</h5>
@@ -788,7 +812,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoOSDEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSecondaryVideoOSDEnabled</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_enabled_inline">AirLinkKey.SECONDARY_VIDEO_OSD_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_enabled_key">AirLinkKey.SECONDARY_VIDEO_OSD_ENABLED</a></font></td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
 <p><font color="#666">Determines whether On Screen Display (OSD) is overlayed on the video feed.</font></p>
 <h5 id="input-parameters-v23">Input Parameters:</h5>
@@ -797,7 +821,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSecondaryVideoOSDTopMargin</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecondaryVideoOSDTopMargin</span><span class="params">(<span class="keyword">int</span> margin, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_top_margin_inline">AirLinkKey.SECONDARY_VIDEO_OSD_TOP_MARGIN</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_top_margin_key">AirLinkKey.SECONDARY_VIDEO_OSD_TOP_MARGIN</a></font></td></tr></table></html>
 <h5 id="description-v26">Description:</h5>
 <p><font color="#666">Sets the OSD top margin in video pixels.</font></p>
 <h5 id="input-parameters-v24">Input Parameters:</h5>
@@ -806,7 +830,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoOSDTopMargin</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSecondaryVideoOSDTopMargin</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Integer&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_top_margin_inline">AirLinkKey.SECONDARY_VIDEO_OSD_TOP_MARGIN</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_top_margin_key">AirLinkKey.SECONDARY_VIDEO_OSD_TOP_MARGIN</a></font></td></tr></table></html>
 <h5 id="description-v27">Description:</h5>
 <p><font color="#666">Gets the OSD top margin in video pixels.</font></p>
 <h5 id="input-parameters-v25">Input Parameters:</h5>
@@ -815,7 +839,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSecondaryVideoOSDLeftMargin</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecondaryVideoOSDLeftMargin</span><span class="params">(<span class="keyword">int</span> margin, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_left_margin_inline">AirLinkKey.SECONDARY_VIDEO_OSD_LEFT_MARGIN</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_left_margin_key">AirLinkKey.SECONDARY_VIDEO_OSD_LEFT_MARGIN</a></font></td></tr></table></html>
 <h5 id="description-v28">Description:</h5>
 <p><font color="#666">Sets the OSD left margin in video pixels.</font></p>
 <h5 id="input-parameters-v26">Input Parameters:</h5>
@@ -824,7 +848,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoOSDLeftMargin</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSecondaryVideoOSDLeftMargin</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Integer&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_left_margin_inline">AirLinkKey.SECONDARY_VIDEO_OSD_LEFT_MARGIN</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_left_margin_key">AirLinkKey.SECONDARY_VIDEO_OSD_LEFT_MARGIN</a></font></td></tr></table></html>
 <h5 id="description-v29">Description:</h5>
 <p><font color="#666">Gets the OSD left margin in video pixels.</font></p>
 <h5 id="input-parameters-v27">Input Parameters:</h5>
@@ -833,7 +857,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSecondaryVideoOSDBottomMargin</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecondaryVideoOSDBottomMargin</span><span class="params">(<span class="keyword">int</span> margin, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_bottom_margin_inline">AirLinkKey.SECONDARY_VIDEO_OSD_BOTTOM_MARGIN</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_bottom_margin_key">AirLinkKey.SECONDARY_VIDEO_OSD_BOTTOM_MARGIN</a></font></td></tr></table></html>
 <h5 id="description-v30">Description:</h5>
 <p><font color="#666">Sets the OSD bottom margin in video pixels.</font></p>
 <h5 id="input-parameters-v28">Input Parameters:</h5>
@@ -842,7 +866,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoOSDBottomMargin</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSecondaryVideoOSDBottomMargin</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Integer&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_bottom_margin_inline">AirLinkKey.SECONDARY_VIDEO_OSD_BOTTOM_MARGIN</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_bottom_margin_key">AirLinkKey.SECONDARY_VIDEO_OSD_BOTTOM_MARGIN</a></font></td></tr></table></html>
 <h5 id="description-v31">Description:</h5>
 <p><font color="#666">Gets the OSD bottom margin in video pixels.</font></p>
 <h5 id="input-parameters-v29">Input Parameters:</h5>
@@ -851,7 +875,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSecondaryVideoOSDRightMargin</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecondaryVideoOSDRightMargin</span><span class="params">(<span class="keyword">int</span> margin, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_right_margin_inline">AirLinkKey.SECONDARY_VIDEO_OSD_RIGHT_MARGIN</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_right_margin_key">AirLinkKey.SECONDARY_VIDEO_OSD_RIGHT_MARGIN</a></font></td></tr></table></html>
 <h5 id="description-v32">Description:</h5>
 <p><font color="#666">Sets the OSD right margin in video pixels.</font></p>
 <h5 id="input-parameters-v30">Input Parameters:</h5>
@@ -860,7 +884,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoOSDRightMargin</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSecondaryVideoOSDRightMargin</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Integer&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_right_margin_inline">AirLinkKey.SECONDARY_VIDEO_OSD_RIGHT_MARGIN</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_right_margin_key">AirLinkKey.SECONDARY_VIDEO_OSD_RIGHT_MARGIN</a></font></td></tr></table></html>
 <h5 id="description-v33">Description:</h5>
 <p><font color="#666">Gets the OSD right margin in video pixels.</font></p>
 <h5 id="input-parameters-v31">Input Parameters:</h5>
@@ -869,7 +893,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSecondaryVideoOSDUnit</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecondaryVideoOSDUnit</span><span class="params">(LightbridgeUnit unit, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_unit_inline">AirLinkKey.SECONDARY_VIDEO_OSD_UNIT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_unit_key">AirLinkKey.SECONDARY_VIDEO_OSD_UNIT</a></font></td></tr></table></html>
 <h5 id="description-v34">Description:</h5>
 <p><font color="#666">Sets the OSD units to either metric or imperial.</font></p>
 <h5 id="input-parameters-v32">Input Parameters:</h5>
@@ -878,7 +902,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoOSDUnit</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSecondaryVideoOSDUnit</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;LightbridgeUnit&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_unit_inline">AirLinkKey.SECONDARY_VIDEO_OSD_UNIT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_unit_key">AirLinkKey.SECONDARY_VIDEO_OSD_UNIT</a></font></td></tr></table></html>
 <h5 id="description-v35">Description:</h5>
 <p><font color="#666">Gets the OSD units (metric or imperial).</font></p>
 <h5 id="input-parameters-v33">Input Parameters:</h5>
@@ -887,7 +911,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSecondaryVideoOutputFormat</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecondaryVideoOutputFormat</span><span class="params">(LightbridgeSecondaryVideoFormat format,</span></span></div><div class="line">                                             LightbridgeSecondaryVideoOutputPort port,</div><div class="line">                                             <span class="keyword">final</span> CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_hdmi_output_format_inline">AirLinkKey.HDMI_OUTPUT_FORMAT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_hdmi_output_format_key">AirLinkKey.HDMI_OUTPUT_FORMAT</a></font></td></tr></table></html>
 <h5 id="description-v36">Description:</h5>
 <p><font color="#666">Sets the Remote Controller HDMI video port output video format.</font></p>
 <h5 id="input-parameters-v34">Input Parameters:</h5>
@@ -896,7 +920,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoOutputFormatForPort</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSecondaryVideoOutputFormatForPort</span><span class="params">(LightbridgeSecondaryVideoOutputPort port,</span></span></div><div class="line">                                                    <span class="keyword">final</span> CompletionCallbackWith&lt;LightbridgeSecondaryVideoFormat&gt; callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_hdmi_output_format_inline">AirLinkKey.HDMI_OUTPUT_FORMAT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_hdmi_output_format_key">AirLinkKey.HDMI_OUTPUT_FORMAT</a></font></td></tr></table></html>
 <h5 id="description-v37">Description:</h5>
 <p><font color="#666">Gets the Remote Controller HDMI video port output video format.</font></p>
 <h5 id="input-parameters-v35">Input Parameters:</h5>
@@ -905,7 +929,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSecondaryVideoPIPPosition</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSecondaryVideoPIPPosition</span><span class="params">(LightbridgePIPPosition position, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_pip_position_inline">AirLinkKey.PIP_POSITION</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_pip_position_key">AirLinkKey.PIP_POSITION</a></font></td></tr></table></html>
 <h5 id="description-v38">Description:</h5>
 <p><font color="#666">Sets the PIP (Picture In Picture) position relative to the top left corner of the main subject video feed.</font></p>
 <h5 id="input-parameters-v36">Input Parameters:</h5>
@@ -914,7 +938,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoPIPPosition</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSecondaryVideoPIPPosition</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;LightbridgePIPPosition&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_pip_position_inline">AirLinkKey.PIP_POSITION</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_pip_position_key">AirLinkKey.PIP_POSITION</a></font></td></tr></table></html>
 <h5 id="description-v39">Description:</h5>
 <p><font color="#666">Gets the PIP (Picture In Picture) position relative to the top left corner of the main subject video feed.</font></p>
 <h5 id="input-parameters-v37">Input Parameters:</h5>
@@ -932,7 +956,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setEXTVideoInputPortEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setEXTVideoInputPortEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_is_ext_video_input_port_enabled_inline">AirLinkKey.IS_EXT_VIDEO_INPUT_PORT_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_is_ext_video_input_port_enabled_key">AirLinkKey.IS_EXT_VIDEO_INPUT_PORT_ENABLED</a></font></td></tr></table></html>
 <h5 id="description-v41">Description:</h5>
 <p><font color="#666">Sets Lightbridge 2 encode mode. It is only available when  <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_isdualencodemodesupported">isDualEncodeModeSupported</a></code> returns  <code>true</code>. For Lightbridge 2 modules that don't support dual encode mode, the encode mode is  always single.</font></p>
 <h5 id="input-parameters-v38">Input Parameters:</h5>
@@ -941,7 +965,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getEXTVideoInputPortEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getEXTVideoInputPortEnabled</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_is_ext_video_input_port_enabled_inline">AirLinkKey.IS_EXT_VIDEO_INPUT_PORT_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_is_ext_video_input_port_enabled_key">AirLinkKey.IS_EXT_VIDEO_INPUT_PORT_ENABLED</a></font></td></tr></table></html>
 <h5 id="description-v42">Description:</h5>
 <p><font color="#666">Gets Lightbridge 2 encode mode. It is only available when <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_isdualencodemodesupported">isDualEncodeModeSupported</a></code> returns  <code>true</code>. For Lightbridge 2 modules that don't support dual encode mode, the encode mode is  always single.</font></p>
 <h5 id="input-parameters-v39">Input Parameters:</h5>
@@ -950,7 +974,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getBandwidthAllocationForHDMIVideoInputPort</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getBandwidthAllocationForHDMIVideoInputPort</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Float&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_bandwidth_allocation_for_hdmi_video_input_port_inline">AirLinkKey.BANDWIDTH_ALLOCATION_FOR_HDMI_VIDEO_INPUT_PORT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_bandwidth_allocation_for_hdmi_video_input_port_key">AirLinkKey.BANDWIDTH_ALLOCATION_FOR_HDMI_VIDEO_INPUT_PORT</a></font></td></tr></table></html>
 <h5 id="description-v43">Description:</h5>
 <p><font color="#666">Gets the computational power and bandwidth balance between AV and HDMI inputs on the Lightbridge 2 module when  dual encode mode is enabled. It is only available when <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_isdualencodemodesupported">isDualEncodeModeSupported</a></code> returns  <code>true</code>. When <code>percent</code> is 0.0, all resources are allocated for video data from AV  port. When <code>percent</code> is 1.0, all resources are allocated for video data from HDMI port.</font></p>
 <h5 id="input-parameters-v40">Input Parameters:</h5>
@@ -959,7 +983,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setBandwidthAllocationForHDMIVideoInputPort</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setBandwidthAllocationForHDMIVideoInputPort</span><span class="params">(<span class="keyword">float</span> percent, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_bandwidth_allocation_for_hdmi_video_input_port_inline">AirLinkKey.BANDWIDTH_ALLOCATION_FOR_HDMI_VIDEO_INPUT_PORT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_bandwidth_allocation_for_hdmi_video_input_port_key">AirLinkKey.BANDWIDTH_ALLOCATION_FOR_HDMI_VIDEO_INPUT_PORT</a></font></td></tr></table></html>
 <h5 id="description-v44">Description:</h5>
 <p><font color="#666">Sets the computational power and bandwidth balance between AV and HDMI inputs on the Lightbridge 2 module when  dual encode mode is enabled. Balance is in percent [0.0,  1.0]. It is only available  when <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_isdualencodemodesupported">isDualEncodeModeSupported</a></code> returns <code>true</code>. When <code>percent</code> is 0.0,  all resources are allocated for video data from AV port. When <code>percent</code> is 1.0, all resources are  allocated for video data from HDMI port.</font></p>
 <h5 id="input-parameters-v41">Input Parameters:</h5>
@@ -968,7 +992,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSupportedFrequencyBands</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSupportedFrequencyBands</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;LightbridgeFrequencyBand[]&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_supported_frequency_bands_inline">AirLinkKey.SUPPORTED_FREQUENCY_BANDS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_supported_frequency_bands_key">AirLinkKey.SUPPORTED_FREQUENCY_BANDS</a></font></td></tr></table></html>
 <h5 id="description-v45">Description:</h5>
 <p><font color="#666">Gets the frequency bands supported by the product in the current area. It is only supported by Inspire 2 and  Phantom 4 Pro. For the other products with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <h5 id="input-parameters-v42">Input Parameters:</h5>
@@ -977,7 +1001,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setFrequencyBand</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFrequencyBand</span><span class="params">(LightbridgeFrequencyBand frequencyBand, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_lb_frequency_band_inline">AirLinkKey.LB_FREQUENCY_BAND</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_lb_frequency_band_key">AirLinkKey.LB_FREQUENCY_BAND</a></font></td></tr></table></html>
 <h5 id="description-v46">Description:</h5>
 <p><font color="#666">Sets the LB air link frequency band. It is only supported by Inspire 2 and Phantom 4 Pro. For the other products
 with LB air link, the frequency band is always 2.4 GHz.</font></p>
@@ -987,7 +1011,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">method </font>getFrequencyBand</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFrequencyBand</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;LightbridgeFrequencyBand&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_lb_frequency_band_inline">AirLinkKey.LB_FREQUENCY_BAND</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_lb_frequency_band_key">AirLinkKey.LB_FREQUENCY_BAND</a></font></td></tr></table></html>
 <h5 id="description-v47">Description:</h5>
 <p><font color="#666">Gets the LB air link frequency band. It is only supported by Inspire 2 and Phantom 4 Pro. For the other products  with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <h5 id="input-parameters-v44">Input Parameters:</h5>
@@ -998,7 +1022,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">enum </font>LightbridgeFrequencyBand</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> LightbridgeFrequencyBand</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_lb_frequency_band_inline">AirLinkKey.LB_FREQUENCY_BAND</a>, <a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_supported_frequency_bands_inline">AirLinkKey.SUPPORTED_FREQUENCY_BANDS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_lb_frequency_band_key">AirLinkKey.LB_FREQUENCY_BAND</a>, <a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_supported_frequency_bands_key">AirLinkKey.SUPPORTED_FREQUENCY_BANDS</a></font></td></tr></table></html>
 <h5 id="description-v48">Description:</h5>
 <p><font color="#666">LBAirLink frequency band. Supported only by Phantom 4 Professional.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
@@ -1009,7 +1033,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">enum </font>ChannelSelectionMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> ChannelSelectionMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_selection_mode_inline">AirLinkKey.CHANNEL_SELECTION_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_selection_mode_key">AirLinkKey.CHANNEL_SELECTION_MODE</a></font></td></tr></table></html>
 <h5 id="description-v49">Description:</h5>
 <p><font color="#666">Downlink channel selection mode (manual or automatic) for the wireless link.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
@@ -1020,7 +1044,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">enum </font>LightbridgeUnit</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> LightbridgeUnit</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_unit_inline">AirLinkKey.SECONDARY_VIDEO_OSD_UNIT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_osd_unit_key">AirLinkKey.SECONDARY_VIDEO_OSD_UNIT</a></font></td></tr></table></html>
 <h5 id="description-v50">Description:</h5>
 <p><font color="#666">OSD data units.</font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>
@@ -1031,7 +1055,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">enum </font>LightbridgeSecondaryVideoOutputPort</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> LightbridgeSecondaryVideoOutputPort</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_output_port_inline">AirLinkKey.SECONDARY_VIDEO_OUTPUT_PORT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_output_port_key">AirLinkKey.SECONDARY_VIDEO_OUTPUT_PORT</a></font></td></tr></table></html>
 <h5 id="description-v51">Description:</h5>
 <p><font color="#666">Remote Controller port to which to send secondary video (in addition to USB video sent to the Mobile Device).</font></p>
 <h5 id="enum-members-v4">Enum Members:</h5>
@@ -1042,7 +1066,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">enum </font>LightbridgeSecondaryVideoDisplayMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> LightbridgeSecondaryVideoDisplayMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_display_mode_inline">AirLinkKey.SECONDARY_VIDEO_DISPLAY_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_secondary_video_display_mode_key">AirLinkKey.SECONDARY_VIDEO_DISPLAY_MODE</a></font></td></tr></table></html>
 <h5 id="description-v52">Description:</h5>
 <p><font color="#666">Defines the combination of video sources to form the secondary output video. The secondary output can display  video streams from one or two input sources. When the encode mode is single:<br> Source 1 represents video from  one of the Source1Only input ports (HDMI or AV).<br> Source 2 represents video from EXT input port  (HD Gimbal Camera).<br> When the encode mode is dual:<br> Source 1 represents video from HDMI input port.<br>  Source 2 represents video from AV input port.</font></p>
 <h5 id="enum-members-v5">Enum Members:</h5>
@@ -1053,7 +1077,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">enum </font>LightbridgeSecondaryVideoFormat</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> LightbridgeSecondaryVideoFormat</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_hdmi_output_format_inline">AirLinkKey.HDMI_OUTPUT_FORMAT</a>, <a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_sdi_output_format_inline">AirLinkKey.SDI_OUTPUT_FORMAT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_hdmi_output_format_key">AirLinkKey.HDMI_OUTPUT_FORMAT</a>, <a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_sdi_output_format_key">AirLinkKey.SDI_OUTPUT_FORMAT</a></font></td></tr></table></html>
 <h5 id="description-v53">Description:</h5>
 <p><font color="#666">Secondary output video resolution and frame rate.</font></p>
 <h5 id="enum-members-v6">Enum Members:</h5>
@@ -1064,7 +1088,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">enum </font>LightbridgePIPPosition</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> LightbridgePIPPosition</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_pip_position_inline">AirLinkKey.PIP_POSITION</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_pip_position_key">AirLinkKey.PIP_POSITION</a></font></td></tr></table></html>
 <h5 id="description-v54">Description:</h5>
 <p><font color="#666">PIP (Picture In Picture) position on the screen relative to the main subject video.</font></p>
 <h5 id="enum-members-v7">Enum Members:</h5>
@@ -1075,7 +1099,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">enum </font>LightbridgeTransmissionMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> LightbridgeTransmissionMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_transmission_mode_inline">AirLinkKey.TRANSMISSION_MODE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_transmission_mode_key">AirLinkKey.TRANSMISSION_MODE</a></font></td></tr></table></html>
 <h5 id="description-v55">Description:</h5>
 <p><font color="#666">FPV(First-person view) Video can prioritize either quality or latency.</font></p>
 <h5 id="enum-members-v8">Enum Members:</h5>
@@ -1137,7 +1161,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">method </font>setAircraftAntennaRSSICallback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAircraftAntennaRSSICallback</span><span class="params">(AntennaRSSICallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_aircraft_antenna_rssi_inline">AirLinkKey.AIRCRAFT_ANTENNA_RSSI</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_aircraft_antenna_rssi_key">AirLinkKey.AIRCRAFT_ANTENNA_RSSI</a></font></td></tr></table></html>
 <h5 id="description-v61">Description:</h5>
 <p><font color="#666">Set callback to receive RSSI information on each antenna of aircraft.</font></p>
 <h5 id="input-parameters-v47">Input Parameters:</h5>
@@ -1146,7 +1170,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">method </font>setRemoteControllerAntennaRSSICallback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setRemoteControllerAntennaRSSICallback</span><span class="params">(AntennaRSSICallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_remote_controller_antenna_rssi_inline">AirLinkKey.REMOTE_CONTROLLER_ANTENNA_RSSI</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_remote_controller_antenna_rssi_key">AirLinkKey.REMOTE_CONTROLLER_ANTENNA_RSSI</a></font></td></tr></table></html>
 <h5 id="description-v62">Description:</h5>
 <p><font color="#666">Set callback to receive RSSI information on each antenna of remote controller.</font></p>
 <h5 id="input-parameters-v48">Input Parameters:</h5>

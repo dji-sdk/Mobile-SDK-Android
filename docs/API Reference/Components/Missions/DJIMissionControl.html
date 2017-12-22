@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -242,6 +244,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
@@ -344,6 +348,16 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
                             </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_ProfessionalRC.html" class="sub-toggle">ProfessionalRC<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_Event.html">Event</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration.html">ButtonConfiguration</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration_Builder.html">ButtonConfigurationBuilder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
@@ -414,9 +428,19 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="DJILandAction.html">LandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="DJIMissionTrigger.html">Trigger</a>
+                  <dd><a data-href="DJIMissionTrigger.html" class="sub-toggle">Trigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">BatteryPowerLevelTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">WaypointReachedTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">AircraftLandedTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -554,7 +578,7 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIFlySafeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
                             </dd>
@@ -571,7 +595,7 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>MissionControl</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MissionControl</span> <span class="keyword">implements</span> <span class="title">TimelineElementFeedback</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MissionControl</span> <span class="keyword">implements</span> <span class="title">TimelineElementFeedback</span>, <span class="title">Triggerable</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Mission Control handles execution of missions. Either single missions can be run through dedicated mission operators, or a series of missions and actions can be run serially using the Timeline. <br><br> Mission operators look after execution of a single mission. A mission operator has APIs to control the mission (e.g. start, stop, pause etc.) and provides mission state through listeners. <br><br> Mission Control's Timeline is made up of a series of Timeline elements which can be Waypoint missions,  Hotpoint missions (through the Hotpoint action <code><a href="../../Components/Missions/DJIHotpointAction.html#djihotpointaction">HotpointAction</a></code>) or objects that follow the  <code><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a></code> protocol. <code><a href="../../Components/Missions/DJIMissionAction.html#djimissionaction">MissionAction</a></code> is a Timeline element, with  <code><a href="../../Components/Missions/DJIAircraftYawAction.html#djiaircraftyawaction">AircraftYawAction</a></code> and <code><a href="../../Components/Missions/DJIGimbalAttitudeAction.html#djigimbalattitudeaction">GimbalAttitudeAction</a></code> subclasses being examples of specific actions.  If a mission is being executed in a Timeline, the mission operator can still be used to get state  information of the mission as well as change mission execution parameters. <br><br> Timeline elements can also have triggers (<code><a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a></code>) associated with them. Triggers are separate objects that are run in parallel with a Timeline element. The trigger object is used to initiate actions if a set of criteria are met. For example, a trigger could be used to monitor battery level, and then initiate an action once a threshold is passed. <br><br> &gt; Mission Control is accessed from <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_missioncontrol">getMissionControl</a></code> in <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code>.</font></p>
@@ -712,12 +736,30 @@
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Clears the Timeline, removing all elements.</font></p>
 </div>
+<div class="api-row" id="djimissioncontrol_scheduletriggers"><div class="api-col left">Schedule Trigger</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_scheduletriggers_inline">setTriggers</a></div></div><div class="inline-doc" id="djimissioncontrol_scheduletriggers_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setTriggers</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTriggers</span><span class="params">(List&lt;Trigger&gt; triggers)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<h5 id="description-v16">Description:</h5>
+<p><font color="#666">Set the triggers for the Timeline.</font></p>
+<h5 id="input-parameters-v7">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a>&gt; <font color="#000">triggers</font></font></td><td><font color="#666"><i>List of <code><a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a></code> objects.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimissioncontrol_getscheduletriggers"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_getscheduletriggers_inline">getTriggers</a></div></div><div class="inline-doc" id="djimissioncontrol_getscheduletriggers_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getTriggers</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">List&lt;Trigger&gt; <span class="title">getTriggers</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<h5 id="description-v17">Description:</h5>
+<p><font color="#666">Returns the list of triggers which are dependents of the Timeline.</font></p>
+<h5 id="return-v12">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a>&gt;</font></td><td><font color="#666"><i><code><a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a></code> list.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontrol_starttimeline"><div class="api-col left">Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_starttimeline_inline">startTimeline</a></div></div><div class="inline-doc" id="djimissioncontrol_starttimeline_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>startTimeline</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">startTimeline</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">Start Timeline execution from the current element index <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol_currenttimelinemarker">getCurrentTimelineMarker</a></code>.</font></p>
 </div>
 <div class="api-row" id="djimissioncontrol_pausetimeline"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_pausetimeline_inline">pauseTimeline</a></div></div><div class="inline-doc" id="djimissioncontrol_pausetimeline_inline" <blockquote="">
@@ -725,7 +767,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pauseTimeline</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">Pause execution of the Timeline, and current element (if pausible). If the current element is not pausible then this method will do nothing.</font></p>
 </div>
 <div class="api-row" id="djimissioncontrol_resumetimeline"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_resumetimeline_inline">resumeTimeline</a></div></div><div class="inline-doc" id="djimissioncontrol_resumetimeline_inline" <blockquote="">
@@ -733,7 +775,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">resumeTimeline</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">Resume element and Timeline execution.</font></p>
 </div>
 <div class="api-row" id="djimissioncontrol_stoptimeline"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_stoptimeline_inline">stopTimeline</a></div></div><div class="inline-doc" id="djimissioncontrol_stoptimeline_inline" <blockquote="">
@@ -741,99 +783,126 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">stopTimeline</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
-<p><font color="#666">Stops the execution of the Timeline, resets the marker index to 0.</font></p>
+<h5 id="description-v21">Description:</h5>
+<p><font color="#666">Stops the execution of the Timeline, resets the marker index to 0.  Release thread resources of timeline.</font></p>
 </div>
 <div class="api-row" id="djimissioncontrol_istimelinerunning"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_istimelinerunning_inline">isTimelineRunning</a></div></div><div class="inline-doc" id="djimissioncontrol_istimelinerunning_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>isTimelineRunning</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isTimelineRunning</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666"><code>true</code> if the Timeline is running.</font></p>
-<h5 id="return-v12">Return:</h5>
+<h5 id="return-v13">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value that is <code>true</code> if Timeline is running.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontrol_currenttimelinemarker"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_currenttimelinemarker_inline">getCurrentTimelineMarker</a></div></div><div class="inline-doc" id="djimissioncontrol_currenttimelinemarker_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getCurrentTimelineMarker</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getCurrentTimelineMarker</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">Tells the index in the timeline array that marks where the timeline is currently at.  Changing this value will reposition where the timeline will resume/start work.</font></p>
-<h5 id="return-v13">Return:</h5>
+<h5 id="return-v14">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Timeline element index.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontrol_setcurrenttimelinemarker"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_setcurrenttimelinemarker_inline">setCurrentTimelineMarker</a></div></div><div class="inline-doc" id="djimissioncontrol_setcurrenttimelinemarker_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setCurrentTimelineMarker</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCurrentTimelineMarker</span><span class="params">(<span class="keyword">int</span> currentTimelineMaker)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">Sets the element index within the Timeline to start execution.  This value can be set only when a Timeline is stopped (not executing or paused).</font></p>
-<h5 id="input-parameters-v7">Input Parameters:</h5>
+<h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">currentTimelineMaker</font></font></td><td><font color="#666"><i>Timeline element index.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontrol_istimelinepaused"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_istimelinepaused_inline">isTimelinePaused</a></div></div><div class="inline-doc" id="djimissioncontrol_istimelinepaused_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>isTimelinePaused</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isTimelinePaused</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666"><code>true</code> if Timeline is paused.</font></p>
-<h5 id="return-v14">Return:</h5>
+<h5 id="return-v15">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if Timeline is paused.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontrol_runningelement"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_runningelement_inline">getRunningElement</a></div></div><div class="inline-doc" id="djimissioncontrol_runningelement_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getRunningElement</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line"> <span class="function">TimelineElement <span class="title">getRunningElement</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666">The current element that is running in the Timeline. If the Timeline is not running, then this is <code>null</code>.</font></p>
-<h5 id="return-v15">Return:</h5>
+<h5 id="return-v16">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a></font></td><td><font color="#666"><i>Timeline element</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontrol_addlistenertotimelineprogresswithblock"><div class="api-col left">Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_addlistenertotimelineprogresswithblock_inline">addListener</a></div></div><div class="inline-doc" id="djimissioncontrol_addlistenertotimelineprogresswithblock_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>addListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addListener</span><span class="params">(Listener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666">Adds a listener to all Timeline events.</font></p>
-<h5 id="input-parameters-v8">Input Parameters:</h5>
+<h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Listener <font color="#000">listener</font></font></td><td><font color="#666"><i>A listener object.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontrol_removelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_removelistener_inline">removeListener</a></div></div><div class="inline-doc" id="djimissioncontrol_removelistener_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>removeListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeListener</span><span class="params">(Listener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666">Removes the listener from the Timeline events listeners pool.</font></p>
-<h5 id="input-parameters-v9">Input Parameters:</h5>
+<h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Listener <font color="#000">listener</font></font></td><td><font color="#666"><i>A previously added listener object.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontrol_removealllisteners"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_removealllisteners_inline">removeAllListeners</a></div></div><div class="inline-doc" id="djimissioncontrol_removealllisteners_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>removeAllListeners</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeAllListeners</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
+<h5 id="description-v29">Description:</h5>
 <p><font color="#666">Removes all listeners from the Timeline events listeners pool.</font></p>
 </div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
+<div class="api-row" id="djitriggerable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djitriggerable_inline">Triggerable</a></div></div><div class="inline-doc" id="djitriggerable_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">interface </font>Triggerable</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Triggerable</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<h5 id="description-v30">Description:</h5>
+<p><font color="#666">Interface for object which support triggers.</font></p>
+<h5 id="interface-methods">Interface Methods:</h5>
+<div class="api-row" id="djitriggerable_gettriggers"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djitriggerable_gettriggers_inline">getTriggers</a></div></div><div class="inline-doc" id="djitriggerable_gettriggers_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getTriggers</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">List&lt;Trigger&gt; <span class="title">getTriggers</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<h5 id="description-v31">Description:</h5>
+<p><font color="#666">Get List of <code><a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a></code> objects.</font></p>
+<h5 id="return-v17">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a>&gt;</font></td><td><font color="#666"><i>A list of <code><a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a></code> objects.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djitriggerable_settriggers"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djitriggerable_settriggers_inline">setTriggers</a></div></div><div class="inline-doc" id="djitriggerable_settriggers_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setTriggers</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTriggers</span><span class="params">(List&lt;Trigger&gt; triggers)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<h5 id="description-v32">Description:</h5>
+<p><font color="#666">Set the <code><a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a></code> objects list.</font></p>
+<h5 id="input-parameters-v11">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a>&gt; <font color="#000">triggers</font></font></td><td><font color="#666"><i>List of <code><a href="../../Components/Missions/DJIMissionTrigger.html#djimissiontrigger">Trigger</a></code> objects to set.</i></font></td></tr></table></html></div>
+</div>
 <div class="api-row" id="djimissioncontroltimelineelement"><div class="api-col left">Timeline Element</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html">TimelineElement</a></div></div><div class="api-row" id="djimissioncontrol_djimissioncontroltimelineeventblockinterface"><div class="api-col left">Timeline Event</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_djimissioncontroltimelineeventblockinterface_inline">Listener</a></div></div><div class="inline-doc" id="djimissioncontrol_djimissioncontroltimelineeventblockinterface_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">interface </font>Listener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Listener</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
+<h5 id="description-v33">Description:</h5>
 <p><font color="#666">Listener used to process Timeline events.</font></p>
-<h5 id="interface-methods">Interface Methods:</h5>
+<h5 id="interface-methods-v2">Interface Methods:</h5>
 <h4 id="callback-method">Callback Method</h4>
 <div class="api-row" id="djimissioncontrol_djimissioncontroltimelineeventblock"><div class="api-col left">On Event</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_djimissioncontroltimelineeventblock_inline">onEvent</a></div></div><div class="inline-doc" id="djimissioncontrol_djimissioncontroltimelineeventblock_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onEvent</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onEvent</span><span class="params">(@Nullable TimelineElement element, TimelineEvent event, @Nullable DJIError error)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
+<h5 id="description-v34">Description:</h5>
 <p><font color="#666">Listener used to process Timeline events.</font></p>
-<h5 id="input-parameters-v10">Input Parameters:</h5>
+<h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>The Timeline element associated with the event, or <code>null</code> if the  event is global to the whole Timeline (e.g. start, finish the  Timeline).</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol_djimissioncontroltimelineevent">TimelineEvent</a> <font color="#000">event</font></font></td><td><font color="#666"><i>Event.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>The optional error if the event was error-related.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djimissioncontrol_djimissioncontroltimelineevent"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djimissioncontrol_djimissioncontroltimelineevent_inline">TimelineEvent</a></div></div><div class="inline-doc" id="djimissioncontrol_djimissioncontroltimelineevent_inline" <blockquote="">
@@ -841,7 +910,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> TimelineEvent</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
+<h5 id="description-v35">Description:</h5>
 <p><font color="#666">Events that can initiate a call to the Mission Control listener.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djimissioncontrol_djimissioncontroltimelineevent_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown event type. This is a default value if no other event is matching.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimissioncontrol_djimissioncontroltimelineevent_started_inline"></a>STARTED</font></td><td><font color="#666">Timeline successfully started.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimissioncontrol_djimissioncontroltimelineevent_starterror_inline"></a>START_ERROR</font></td><td><font color="#666">Timeline failed to start.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimissioncontrol_djimissioncontroltimelineevent_progressed_inline"></a>PROGRESSED</font></td><td><font color="#666">Timeline element progressed.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimissioncontrol_djimissioncontroltimelineevent_paused_inline"></a>PAUSED</font></td><td><font color="#666">Timeline successfully paused.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimissioncontrol_djimissioncontroltimelineevent_pauseerror_inline"></a>PAUSE_ERROR</font></td><td><font color="#666">Timeline failed to be paused.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimissioncontrol_djimissioncontroltimelineevent_resumed_inline"></a>RESUMED</font></td><td><font color="#666">Timeline successfully resumed.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimissioncontrol_djimissioncontroltimelineevent_resumeerror_inline"></a>RESUME_ERROR</font></td><td><font color="#666">Timeline failed to resume.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimissioncontrol_djimissioncontroltimelineevent_stopped_inline"></a>STOPPED</font></td><td><font color="#666">Timeline Stopped successfully.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimissioncontrol_djimissioncontroltimelineevent_stoperror_inline"></a>STOP_ERROR</font></td><td><font color="#666">Timeline failed to stop and is still continuing in its previous state.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimissioncontrol_djimissioncontroltimelineevent_finished_inline"></a>FINISHED</font></td><td><font color="#666">Timeline completed its execution normally.</font></td></tr></table></html>
@@ -852,90 +921,90 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">TimelineElementFeedback</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline</font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
+<h5 id="description-v36">Description:</h5>
 <p><font color="#666">This protocol defines how the timeline element may contact mission control  to notify it of its own execution. This protocol is not intended to be  implemented by any other object and the use of a protocol is primarily  organizational.</font></p>
-<h5 id="interface-methods-v2">Interface Methods:</h5>
+<h5 id="interface-methods-v3">Interface Methods:</h5>
 <h4 id="callback-method-v2">Callback Method</h4>
 <div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidstartrunning"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidstartrunning_inline">onStart</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidstartrunning_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onStart</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStart</span><span class="params">(TimelineElement element)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
+<h5 id="description-v37">Description:</h5>
 <p><font color="#666">Used by elements to notify Mission Control of their successful start.</font></p>
-<h5 id="input-parameters-v11">Input Parameters:</h5>
+<h5 id="input-parameters-v13">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedstartingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedstartingwitherror_inline">onStartWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedstartingwitherror_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onStartWithError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStartWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
+<h5 id="description-v38">Description:</h5>
 <p><font color="#666">Used by elements to notify Mission Control of a failure preventing to start.</font></p>
-<h5 id="input-parameters-v12">Input Parameters:</h5>
+<h5 id="input-parameters-v14">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>A valid error object.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontroltimelineelementfeedback_elementprogressedwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementprogressedwitherror_inline">onProgressWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementprogressedwitherror_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onProgressWithError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onProgressWithError</span><span class="params">(TimelineElement element, @Nullable DJIError error)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v34">Description:</h5>
+<h5 id="description-v39">Description:</h5>
 <p><font color="#666">Used by elements to notify Mission Control of a progress in the execution. Additional information may be pulled by mission control depending on the element. Calling this method with an error means the element is still running  and the error did not cause it to stop.</font></p>
-<h5 id="input-parameters-v13">Input Parameters:</h5>
+<h5 id="input-parameters-v15">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>An optional error if something went wrong.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidpause"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidpause_inline">onPause</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidpause_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onPause</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onPause</span><span class="params">(TimelineElement element)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v35">Description:</h5>
+<h5 id="description-v40">Description:</h5>
 <p><font color="#666">Used by elements to notify Mission Control of a successful pausing.</font></p>
-<h5 id="input-parameters-v14">Input Parameters:</h5>
+<h5 id="input-parameters-v16">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedpausingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedpausingwitherror_inline">onPauseWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedpausingwitherror_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onPauseWithError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onPauseWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v36">Description:</h5>
+<h5 id="description-v41">Description:</h5>
 <p><font color="#666">Used by elements to notify Mission Control of a failure to pause. The element is expected to be still running.</font></p>
-<h5 id="input-parameters-v15">Input Parameters:</h5>
+<h5 id="input-parameters-v17">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>A valid error object.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidresume"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidresume_inline">onResume</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidresume_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onResume</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onResume</span><span class="params">(TimelineElement element)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v37">Description:</h5>
+<h5 id="description-v42">Description:</h5>
 <p><font color="#666">Used by elements to notify Mission Control of a successful resuming of a previously paused element.</font></p>
-<h5 id="input-parameters-v16">Input Parameters:</h5>
+<h5 id="input-parameters-v18">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedresumingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedresumingwitherror_inline">onResumeWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedresumingwitherror_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onResumeWithError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onResumeWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v38">Description:</h5>
+<h5 id="description-v43">Description:</h5>
 <p><font color="#666">Used by elements to notify Mission Control of a failure to resume. The element is expected to be still paused.</font></p>
-<h5 id="input-parameters-v17">Input Parameters:</h5>
+<h5 id="input-parameters-v19">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>A valid error object.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidfinishrunningwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidfinishrunningwitherror_inline">onFinishWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidfinishrunningwitherror_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onFinishWithError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onFinishWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v39">Description:</h5>
+<h5 id="description-v44">Description:</h5>
 <p><font color="#666">Used by elements to notify Mission Control of the end of the execution of it.</font></p>
-<h5 id="input-parameters-v18">Input Parameters:</h5>
+<h5 id="input-parameters-v20">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>An optional error if the execution end was the result of it.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedstoppingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedstoppingwitherror_inline">onStopWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedstoppingwitherror_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onStopWithError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStopWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
-<h5 id="description-v40">Description:</h5>
+<h5 id="description-v45">Description:</h5>
 <p><font color="#666">Used by elements to notify Mission Control of a failure to stop the execution of the element. This should only be used to handle error after stopRun is called.</font></p>
-<h5 id="input-parameters-v19">Input Parameters:</h5>
+<h5 id="input-parameters-v21">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>A valid error object.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djimissioncontrolerror"><div class="api-col left">Error</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIMissionControlError.html">MissionControlError</a></div></div>

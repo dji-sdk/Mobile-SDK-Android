@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -242,6 +244,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
@@ -344,6 +348,16 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
                             </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_ProfessionalRC.html" class="sub-toggle">ProfessionalRC<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_Event.html">Event</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration.html">ButtonConfiguration</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration_Builder.html">ButtonConfigurationBuilder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
@@ -414,9 +428,19 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Missions/DJILandAction.html">LandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../Missions/DJIMissionTrigger.html">Trigger</a>
+                  <dd><a data-href="../Missions/DJIMissionTrigger.html" class="sub-toggle">Trigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">BatteryPowerLevelTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">WaypointReachedTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">AircraftLandedTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -554,7 +578,7 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIFlySafeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
                             </dd>
@@ -591,7 +615,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indeces  0 and 1, and two camera components with indeces 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210 and M210 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft.</font></p>
+<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210 and M210 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft.</font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of index.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibasecomponent_connected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_connected_inline">isConnected</a></div></div><div class="inline-doc" id="djibasecomponent_connected_inline" <blockquote="">

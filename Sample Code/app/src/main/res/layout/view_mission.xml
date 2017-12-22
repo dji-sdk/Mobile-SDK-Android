@@ -26,60 +26,76 @@
     <Button
         android:id="@+id/btn_simulator"
         android:layout_below="@id/tv_mission_info"
-        android:layout_toLeftOf="@+id/btn_load"
+        android:layout_toLeftOf="@+id/btn_set_maximum_altitude"
         android:text="Start Simulator"
         style="@style/common_button"/>
 
     <Button
-        android:id="@+id/btn_load"
+        android:id="@+id/btn_set_maximum_altitude"
         android:layout_below="@id/tv_mission_info"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:text="Set Max Altitude"
+        style="@style/common_button"/>
+
+    <Button
+        android:id="@+id/btn_set_maximum_radius"
+        android:layout_below="@id/tv_mission_info"
+        android:layout_toRightOf="@+id/btn_set_maximum_altitude"
+        android:text="Set Max Radius"
+        style="@style/common_button"/>
+
+    <Button
+        android:id="@+id/btn_load"
+        android:layout_below="@id/btn_simulator"
+        android:layout_toLeftOf="@+id/btn_upload"
         android:text="Load"
         style="@style/common_button"/>
 
     <Button
         android:id="@+id/btn_upload"
-        android:layout_below="@id/tv_mission_info"
-        android:layout_toRightOf="@+id/btn_load"
+        android:layout_below="@id/btn_simulator"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:text="Upload"
         style="@style/common_button"/>
 
     <Button
         android:id="@+id/btn_start"
         android:layout_below="@id/btn_simulator"
-        android:layout_toLeftOf="@+id/btn_pause"
+        android:layout_toRightOf="@+id/btn_upload"
         android:text="Start"
         style="@style/common_button"/>
 
     <Button
         android:id="@+id/btn_pause"
-        android:layout_below="@id/btn_simulator"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
+        android:layout_below="@id/btn_load"
+        android:layout_toLeftOf="@+id/btn_resume"
         android:text="Pause"
         style="@style/common_button"/>
 
     <Button
         android:id="@+id/btn_resume"
-        android:layout_below="@id/btn_simulator"
-        android:layout_toRightOf="@+id/btn_pause"
+        android:layout_below="@id/btn_load"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
         android:text="Resume"
         style="@style/common_button"/>
 
 
     <Button
         android:id="@+id/btn_stop"
-        android:layout_below="@id/btn_start"
-        android:layout_toLeftOf="@+id/btn_download"
+        android:layout_below="@id/btn_load"
+        android:layout_toRightOf="@+id/btn_resume"
         android:text="Stop"
         style="@style/common_button"/>
 
 
     <Button
         android:id="@+id/btn_download"
-        android:layout_below="@id/btn_start"
+        android:layout_below="@id/btn_pause"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
         android:text="Download"

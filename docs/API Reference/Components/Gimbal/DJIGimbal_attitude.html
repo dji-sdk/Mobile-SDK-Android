@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -242,6 +244,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
@@ -344,6 +348,16 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
                             </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_ProfessionalRC.html" class="sub-toggle">ProfessionalRC<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_Event.html">Event</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration.html">ButtonConfiguration</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration_Builder.html">ButtonConfigurationBuilder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
@@ -414,9 +428,19 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Missions/DJILandAction.html">LandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../Missions/DJIMissionTrigger.html">Trigger</a>
+                  <dd><a data-href="../Missions/DJIMissionTrigger.html" class="sub-toggle">Trigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">BatteryPowerLevelTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">WaypointReachedTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">AircraftLandedTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -554,7 +578,7 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIFlySafeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
                             </dd>
@@ -572,9 +596,9 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>Attitude</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Attitude</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_attitude_in_degrees_inline">GimbalKey.ATTITUDE_IN_DEGREES</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.gimbal</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#gimbalkey_attitude_in_degrees_key">GimbalKey.ATTITUDE_IN_DEGREES</a></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">The gimbal's attitude in degrees relative to the aircraft.          If you don't want a specific axis to get rotated, invoke the <code><a href="../../Components/Missions/DJIGimbalAttitudeAction.html#djigimbalattitudeaction_initwithattitude">GimbalAttitudeAction</a></code> method and set the value of the axis to <code>NO_ROTATION</code> in the <code><a href="../../Components/Gimbal/DJIGimbal_attitude.html#djigimbal_attitude">Attitude</a></code> object. By default, the values of pitch, roll, and yaw in the <code><a href="../../Components/Gimbal/DJIGimbal_attitude.html#djigimbal_attitude">Attitude</a></code> are set to <code>NO_ROTATION</code>.</font></p>
+<p><font color="#666">The gimbal's attitude in degrees relative to the aircraft.  If you don't want a specific axis to get rotated, invoke the <code><a href="../../Components/Missions/DJIGimbalAttitudeAction.html#djigimbalattitudeaction_initwithattitude">GimbalAttitudeAction</a></code> method and set the value of the axis to <code>NO_ROTATION</code> in the <code><a href="../../Components/Gimbal/DJIGimbal_attitude.html#djigimbal_attitude">Attitude</a></code> object. By default, the values of pitch, roll, and yaw in the <code><a href="../../Components/Gimbal/DJIGimbal_attitude.html#djigimbal_attitude">Attitude</a></code> are set to <code>NO_ROTATION</code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <div class="api-row" id="djigimbal_attitude_pitch"><div class="api-col left">Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djigimbal_attitude_pitch_inline">getPitch</a></div></div><div class="inline-doc" id="djigimbal_attitude_pitch_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getPitch</h6></div>

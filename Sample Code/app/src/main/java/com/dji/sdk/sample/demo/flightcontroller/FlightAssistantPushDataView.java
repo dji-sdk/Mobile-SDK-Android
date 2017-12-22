@@ -74,6 +74,12 @@ public class FlightAssistantPushDataView extends BaseThreeBtnView {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+        if (ModuleVerificationUtil.isFlightControllerAvailable()) {
+            FlightAssistant intelligentFlightAssistant = ((Aircraft) DJISampleApplication.getProductInstance()).getFlightController().getFlightAssistant();
+            if(intelligentFlightAssistant != null) {
+                intelligentFlightAssistant.setVisionDetectionStateUpdatedCallback(null);
+            }
+        }
     }
 
     @Override

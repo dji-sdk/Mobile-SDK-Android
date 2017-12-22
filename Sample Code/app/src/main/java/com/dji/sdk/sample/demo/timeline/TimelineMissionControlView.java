@@ -1,6 +1,5 @@
 package com.dji.sdk.sample.demo.timeline;
 
-import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -38,6 +37,7 @@ import dji.common.util.CommonCallbacks;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.mission.MissionControl;
+import dji.sdk.mission.Triggerable;
 import dji.sdk.mission.timeline.TimelineElement;
 import dji.sdk.mission.timeline.TimelineEvent;
 import dji.sdk.mission.timeline.Mission;
@@ -48,6 +48,11 @@ import dji.sdk.mission.timeline.actions.HotpointAction;
 import dji.sdk.mission.timeline.actions.RecordVideoAction;
 import dji.sdk.mission.timeline.actions.ShootPhotoAction;
 import dji.sdk.mission.timeline.actions.TakeOffAction;
+import dji.sdk.mission.timeline.triggers.AircraftLandedTrigger;
+import dji.sdk.mission.timeline.triggers.BatteryPowerLevelTrigger;
+import dji.sdk.mission.timeline.triggers.Trigger;
+import dji.sdk.mission.timeline.triggers.TriggerEvent;
+import dji.sdk.mission.timeline.triggers.WaypointReachedTrigger;
 import dji.sdk.products.Aircraft;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -62,7 +67,11 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
 
     private MissionControl missionControl;
     private FlightController flightController;
+    private TimelineEvent preEvent;
+    private TimelineElement preElement;
+    private DJIError preError;
 
+    protected Button getHomeBtn;
     protected Button prepareBtn;
     protected Button startBtn;
     protected Button stopBtn;
@@ -119,6 +128,82 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         });
     }
 
+    /**
+     * Demo on BatteryPowerLevelTrigger.  Once the batter remaining power is equal or less than the value,
+     * the trigger's action will be called.
+     *
+     * @param triggerTarget which can be any action object or timeline object.
+     */
+    private void addBatteryPowerLevelTrigger(Triggerable triggerTarget) {
+        float value = 20f;
+        BatteryPowerLevelTrigger trigger = new BatteryPowerLevelTrigger();
+        trigger.setPowerPercentageTriggerValue(value);
+        addTrigger(trigger, triggerTarget, " at level " + value);
+    }
+
+    /**
+     * Demo on WaypointReachedTrigger.  Once the expected waypoint is reached in the waypoint mission execution process,
+     * this trigger's action will be called. If user has some special things to do for this waypoint, the code can be put
+     * in this trigger action method.
+     *
+     * @param triggerTarget
+     */
+    private void addWaypointReachedTrigger(Triggerable triggerTarget) {
+        int value = 1;
+        WaypointReachedTrigger trigger = new WaypointReachedTrigger();
+        trigger.setWaypointIndex(value);
+        addTrigger(trigger, triggerTarget, " at index " + value);
+    }
+
+    /**
+     * Demo on AircraftLandedTrigger. Once the aircraft is landed, this trigger action will be called if the timeline is
+     * not finished yet.
+     * @param triggerTarget
+     */
+    private void addAircraftLandedTrigger(Triggerable triggerTarget) {
+        AircraftLandedTrigger trigger = new AircraftLandedTrigger();
+        addTrigger(trigger, triggerTarget, "");
+    }
+
+    private Trigger.Listener triggerListener = new Trigger.Listener() {
+        @Override
+        public void onEvent(Trigger trigger, TriggerEvent event, @Nullable DJIError error) {
+            setRunningResultToText("Trigger " + trigger.getClass().getSimpleName() + " event is " + event.name() + (error==null? " ":error.getDescription()));
+        }
+    };
+
+    private void initTrigger(final Trigger trigger) {
+        trigger.addListener(triggerListener);
+        trigger.setAction(new Trigger.Action() {
+            @Override
+            public void onCall() {
+                setRunningResultToText("Trigger " + trigger.getClass().getSimpleName() + " Action method onCall() is invoked");
+            }
+        });
+    }
+
+    private void addTrigger(Trigger trigger, Triggerable triggerTarget, String additionalComment) {
+
+        if (triggerTarget != null) {
+
+            initTrigger(trigger);
+            List<Trigger> triggers = triggerTarget.getTriggers();
+            if (triggers == null) {
+                triggers = new ArrayList<>();
+            }
+
+            triggers.add(trigger);
+            triggerTarget.setTriggers(triggers);
+
+            setTimelinePlanToText(triggerTarget.getClass().getSimpleName()
+                                              + " Trigger "
+                                              + triggerTarget.getTriggers().size()
+                                              + ") "
+                                              + trigger.getClass().getSimpleName()
+                                              + additionalComment);
+        }
+    }
+
     private void initTimeline() {
         if (!GeneralUtils.checkGpsCoordinate(homeLatitude, homeLongitude)) {
             ToastUtils.setResultToToast("No home point!!!");
@@ -141,46 +226,48 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         elements.add(new TakeOffAction());
 
         //Step 2: reset the gimbal to horizontal angle in 2 seconds.
-        //setTimelinePlanToText("Step 2: reset the gimbal to horizontal angle in 2 seconds");
-        //Attitude attitude = new Attitude(0, Rotation.NO_ROTATION, Rotation.NO_ROTATION);
-        //GimbalAttitudeAction gimbalAction = new GimbalAttitudeAction(attitude);
-        //gimbalAction.setCompletionTime(2);
-        //elements.add(gimbalAction);
+        setTimelinePlanToText("Step 2: set the gimbal pitch -30 angle in 2 seconds");
+        Attitude attitude = new Attitude(-30, Rotation.NO_ROTATION, Rotation.NO_ROTATION);
+        GimbalAttitudeAction gimbalAction = new GimbalAttitudeAction(attitude);
+        gimbalAction.setCompletionTime(2);
+        elements.add(gimbalAction);
 
         //Step 3: Go 10 meters from home point
-        //setTimelinePlanToText("Step 3: Go 10 meters from home point");
-        //elements.add(new GoToAction(new LocationCoordinate2D(homeLatitude, homeLongitude), 10));
+        setTimelinePlanToText("Step 3: Go 10 meters from home point");
+        elements.add(new GoToAction(new LocationCoordinate2D(homeLatitude, homeLongitude), 10));
 
         //Step 4: shoot 3 photos with 2 seconds interval between each
-        //setTimelinePlanToText("Step 4: shoot 3 photos with 2 seconds interval between each");
-        //elements.add(new ShootPhotoAction(3, 2));
+        setTimelinePlanToText("Step 4: shoot 3 photos with 2 seconds interval between each");
+        elements.add(new ShootPhotoAction(3, 2));
 
         //Step 5: shoot a single photo
-        //setTimelinePlanToText("Step 5: shoot a single photo");
-        //elements.add(new ShootPhotoAction());
+        setTimelinePlanToText("Step 5: shoot a single photo");
+        elements.add(new ShootPhotoAction());
 
         //Step 6: start recording video
-        setTimelinePlanToText("Step 2: start recording video");
+        setTimelinePlanToText("Step 6: start recording video");
         elements.add(new RecordVideoAction(true));
 
 
         //Step 7: start a waypoint mission while the aircraft is still recording the video
-        setTimelinePlanToText("Step 3: start a waypoint mission while the aircraft is still recording the video");
-        elements.add(Mission.elementFromWaypointMission(initTestingWaypointMission()));
+        setTimelinePlanToText("Step 7: start a waypoint mission while the aircraft is still recording the video");
+        TimelineElement waypointMission = Mission.elementFromWaypointMission(initTestingWaypointMission());
+        elements.add(waypointMission);
+        addWaypointReachedTrigger(waypointMission);
 
         //Step 8: stop the recording when the waypoint mission is finished
-        setTimelinePlanToText("Step 4: stop the recording when the waypoint mission is finished");
+        setTimelinePlanToText("Step 8: stop the recording when the waypoint mission is finished");
         elements.add(new RecordVideoAction(false));
 
         //Step 9: shoot a single photo
-        //setTimelinePlanToText("Step 9: shoot a single photo");
-        //elements.add(new ShootPhotoAction());
+        setTimelinePlanToText("Step 9: shoot a single photo");
+        elements.add(new ShootPhotoAction());
 
         //Step 10: start a hotpoint mission
-        setTimelinePlanToText("Step 5: start a hotpoint mission to surround 360 degree");
+        setTimelinePlanToText("Step 10: start a hotpoint mission to surround 360 degree");
         HotpointMission hotpointMission = new HotpointMission();
         hotpointMission.setHotpoint(new LocationCoordinate2D(homeLatitude, homeLongitude));
-        hotpointMission.setAltitude(40);
+        hotpointMission.setAltitude(10);
         hotpointMission.setRadius(10);
         hotpointMission.setAngularVelocity(10);
         HotpointStartPoint startPoint = HotpointStartPoint.NEAREST;
@@ -190,8 +277,20 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         elements.add(new HotpointAction(hotpointMission, 360));
 
         //Step 11: go back home
-        setTimelinePlanToText("Step 6: go back home");
+        setTimelinePlanToText("Step 11: go back home");
         elements.add(new GoHomeAction());
+
+        //Step 12: restore gimbal attitude
+        //This last action will delay the timeline to finish after land on ground, which will
+        //make sure the AircraftLandedTrigger will be triggered.
+        setTimelinePlanToText("Step 2: set the gimbal pitch -30 angle in 2 seconds");
+        attitude = new Attitude(0, Rotation.NO_ROTATION, Rotation.NO_ROTATION);
+        gimbalAction = new GimbalAttitudeAction(attitude);
+        gimbalAction.setCompletionTime(2);
+        elements.add(gimbalAction);
+
+        addAircraftLandedTrigger(missionControl);
+        addBatteryPowerLevelTrigger(missionControl);
 
         if (missionControl.scheduledCount() > 0) {
             missionControl.unscheduleEverything();
@@ -203,6 +302,10 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
     }
 
     private void updateTimelineStatus(@Nullable TimelineElement element, TimelineEvent event, DJIError error) {
+
+        if (element == preElement && event == preEvent && error == preError) {
+            return;
+        }
 
         if (element != null) {
             if (element instanceof Mission) {
@@ -225,6 +328,9 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
                                                                                              + error.getDescription()));
         }
 
+        preEvent = event;
+        preElement = element;
+        preError = error;
     }
 
     private WaypointMission initTestingWaypointMission() {
@@ -245,10 +351,10 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
 
         Waypoint northPoint = new Waypoint(homeLatitude + 10 * GeneralUtils.ONE_METER_OFFSET, homeLongitude, 10f);
         Waypoint eastPoint =
-            new Waypoint(homeLatitude, homeLongitude + 10 * GeneralUtils.calcLongitudeOffset(homeLatitude), 20f);
-        Waypoint southPoint = new Waypoint(homeLatitude - 10 * GeneralUtils.ONE_METER_OFFSET, homeLongitude, 30f);
+            new Waypoint(homeLatitude, homeLongitude + 10 * GeneralUtils.calcLongitudeOffset(homeLatitude), 15f);
+        Waypoint southPoint = new Waypoint(homeLatitude - 10 * GeneralUtils.ONE_METER_OFFSET, homeLongitude, 10f);
         Waypoint westPoint =
-            new Waypoint(homeLatitude, homeLongitude - 10 * GeneralUtils.calcLongitudeOffset(homeLatitude), 40f);
+            new Waypoint(homeLatitude, homeLongitude - 10 * GeneralUtils.calcLongitudeOffset(homeLatitude), 15f);
 
         northPoint.addAction(new WaypointAction(WaypointActionType.GIMBAL_PITCH, -60));
         southPoint.addAction(new WaypointAction(WaypointActionType.ROTATE_AIRCRAFT, 60));
@@ -311,6 +417,15 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         }
     }
 
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (missionControl != null && missionControl.scheduledCount() > 0) {
+            missionControl.unscheduleEverything();
+            missionControl.removeAllListeners();
+        }
+    }
+
     private void initUI(Context context) {
         setClickable(true);
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
@@ -318,6 +433,7 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
 
         timelineInfoTV = (TextView) findViewById(R.id.tv_timeline_info);
         runningInfoTV = (TextView) findViewById(R.id.tv_running_info);
+        getHomeBtn = (Button) findViewById(R.id.btn_get_homepoint);
         prepareBtn = (Button) findViewById(R.id.btn_timeline_init);
         startBtn = (Button) findViewById(R.id.btn_timeline_start);
         stopBtn = (Button) findViewById(R.id.btn_timeline_stop);
@@ -325,6 +441,7 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         resumeBtn = (Button) findViewById(R.id.btn_timeline_resume);
         cleanBtn = (Button) findViewById(R.id.btn_timeline_clean);
 
+        getHomeBtn.setOnClickListener(this);
         prepareBtn.setOnClickListener(this);
         startBtn.setOnClickListener(this);
         stopBtn.setOnClickListener(this);
@@ -336,37 +453,36 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
     @Override
     public void onClick(View v) {
 
-        if (DJISampleApplication.getProductInstance() instanceof Aircraft && !GeneralUtils.checkGpsCoordinate(
-            homeLatitude,
-            homeLongitude) && flightController != null) {
-            final CountDownLatch cdl = new CountDownLatch(1);
-            flightController.getHomeLocation(new CommonCallbacks.CompletionCallbackWith<LocationCoordinate2D>() {
-                @Override
-                public void onSuccess(LocationCoordinate2D locationCoordinate2D) {
-                    homeLatitude = locationCoordinate2D.getLatitude();
-                    homeLongitude = locationCoordinate2D.getLongitude();
-                    setTimelinePlanToText("home point latitude: "
-                                                   + homeLatitude
-                                                   + "\nhome point longitude: "
-                                                   + homeLongitude);
-                }
+        if (v.getId() == R.id.btn_get_homepoint) {
+            if (DJISampleApplication.getProductInstance() instanceof Aircraft && !GeneralUtils.checkGpsCoordinate(
+                homeLatitude,
+                homeLongitude) && flightController != null) {
+                flightController.getHomeLocation(new CommonCallbacks.CompletionCallbackWith<LocationCoordinate2D>() {
+                    @Override
+                    public void onSuccess(LocationCoordinate2D locationCoordinate2D) {
+                        homeLatitude = locationCoordinate2D.getLatitude();
+                        homeLongitude = locationCoordinate2D.getLongitude();
+                        if (GeneralUtils.checkGpsCoordinate(homeLatitude, homeLongitude)) {
+                            setTimelinePlanToText("home point latitude: " + homeLatitude + "\nhome point longitude: " + homeLongitude);
+                        } else {
+                            ToastUtils.setResultToToast("Failed to get home coordinates: Invalid GPS coordinate");
+                        }
+                    }
 
-                @Override
-                public void onFailure(DJIError djiError) {
-                    cdl.countDown();
-                }
-            });
-            try {
-                cdl.await(500, TimeUnit.MILLISECONDS);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                    @Override
+                    public void onFailure(DJIError djiError) {
+                        ToastUtils.setResultToToast("Failed to get home coordinates: " + djiError.getDescription());
+                    }
+                });
             }
-
-            if (!GeneralUtils.checkGpsCoordinate(homeLatitude, homeLongitude)) {
-                ToastUtils.setResultToToast("Home coordinates not yet set...");
-                return;
-            }
+            return;
         }
+
+        if (!GeneralUtils.checkGpsCoordinate(homeLatitude, homeLongitude)) {
+            ToastUtils.setResultToToast("Home coordinates not yet set...");
+            return;
+        }
+
         switch (v.getId()) {
             case R.id.btn_timeline_init:
                 initTimeline();

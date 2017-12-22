@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -242,6 +244,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
@@ -344,6 +348,16 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
                             </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_ProfessionalRC.html" class="sub-toggle">ProfessionalRC<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_Event.html">Event</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration.html">ButtonConfiguration</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration_Builder.html">ButtonConfigurationBuilder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
@@ -414,9 +428,19 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Missions/DJILandAction.html">LandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../Missions/DJIMissionTrigger.html">Trigger</a>
+                  <dd><a data-href="../Missions/DJIMissionTrigger.html" class="sub-toggle">Trigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">BatteryPowerLevelTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">WaypointReachedTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">AircraftLandedTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -554,7 +578,7 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIFlySafeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
                             </dd>
@@ -589,12 +613,12 @@
 <div class="api-row" id="djisdkmanager_registerapp"><div class="api-col left">App Registration</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_registerapp_inline">registerApp</a></div></div><div class="inline-doc" id="djisdkmanager_registerapp_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>registerApp</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">registerApp</span><span class="params">(Context context, SDKManagerCallback callback)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">registerApp</span><span class="params">(<span class="keyword">final</span> Context context, SDKManagerCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The first time the app is initialized after installation, the app connects to a DJI Server through the  internet to verify the Application Key. Subsequent app starts will use locally cached verification  information to register the app.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Context <font color="#000">context</font></font></td><td><font color="#666"><i>Android context.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_djisdkmanagercallbackinterface">SDKManagerCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Callback used for both the registration result, and when the products changes.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final Context <font color="#000">context</font></font></td><td><font color="#666"><i>Android context.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_djisdkmanagercallbackinterface">SDKManagerCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Callback used for both the registration result, and when the products changes.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djisdkmanager_hassdkregistered"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_hassdkregistered_inline">hasSDKRegistered</a></div></div><div class="inline-doc" id="djisdkmanager_hassdkregistered_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>hasSDKRegistered</h6></div>
 
@@ -712,26 +736,17 @@
 <p><font color="#666">Enter debug mode with debug IP.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">bridgeAppIP</font></font></td><td><font color="#666"><i>Debug IP of the DJI Bridge App.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_archivelogs"><div class="api-col left">SDK Logs</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_archivelogs_inline">archiveLogs</a></div></div><div class="inline-doc" id="djisdkmanager_archivelogs_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>archiveLogs</h6></div>
+<html><p><br></p></html>
+<h4 id="get-log-path">Get Log Path</h4>
+<div class="api-row" id="djisdkmanager_getlogpath"><div class="api-col left">Log Path</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_getlogpath_inline">getLogPath</a></div></div><div class="inline-doc" id="djisdkmanager_getlogpath_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getLogPath</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">String <span class="title">archiveLogs</span><span class="params">(<span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@NonNull</span></div><div class="line"> <span class="function">String <span class="title">getLogPath</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
-<p><font color="#666">The DJI Mobile SDK collects logs that are related to flight. These logs can be used to help diagnose the cause  of a product's flight failure at the SDK and mobile application layers. They are predominantly used by a DJI  service facility, who will combine them with the product's flight logs (stored on the product) to better  understand the root cause of a crash and determine whether the incident is covered under warranty. They can  also be used by developers to debug their application. SDK Logs record commands from the application to the  SDK, and information from the SDK to the application that are related to flight. Logs are cached to the mobile  device, and will overwrite themselves to limit storage footprint. <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_archivelogs">archiveLogs</a></code> will move the logs to an archive  folder. Logs in the archive, will only be overwritten by newer archives that go beyond the storage limit and not  normal log generation. The storage limit for normal log generation is 400 MB (about 500 minutes of flight). The  storage limit for the archive is an additional 400 MB. The logs have an encrypted and unencrypted portion. The  unencrypted portion can be used by developers to see all commands and information sent to and received from the  SDK by the mobile application that is related to flight. The encrypted portion can only be used by a DJI service  facility as it includes proprietary hardware protocols and is used to tie the SDK logs and product flight logs  together. Logs can be transferred to the DJI service facility either by manually downloading from the mobile  device using iTunes, or the application can send archived logs to a DJI endpoint using <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_uploadarchivedlogs">uploadArchivedLogs</a></code>.  Developers should be careful to upload logs directly when the user is on a cellular connection as the archive  can be up to 400 MB. Return path of archived logs, nil if a problem occurred.</font></p>
-<h5 id="input-parameters-v5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback.</i></font></td></tr></table></html>
+<p><font color="#666">Gets the path that flight logs are stored to. Flight logs are automatically generated and  stored on the mobile device. The SDK does nothing with these logs, and they are provided  only as a convenience for developers and users. Users can use these flight logs with DJI  service centers if they are making a warranty claim. Only developers using the SDK, and  users of the mobile device can access these logs. Older flight logs are overwritten by  newer flight logs over time, so the flight log path is given in case an application needs  to store all logs.</font></p>
 <h5 id="return-v8">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>A String instance for the archive logs.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_uploadarchivedlogs"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_uploadarchivedlogs_inline">uploadArchivedLogs</a></div></div><div class="inline-doc" id="djisdkmanager_uploadarchivedlogs_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>uploadArchivedLogs</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">uploadArchivedLogs</span><span class="params">(<span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
-<p><font color="#666">Upload the archive to DJI. The archive will not be deleted when calling this method.</font></p>
-<h5 id="input-parameters-v6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the execution result returned.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>An NSString object of the flight log path.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="managers">Managers</h4>
 <div class="api-row" id="djisdkmanager_flyzonemanager"><div class="api-col left">Fly Zones</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_flyzonemanager_inline">getFlyZoneManager</a></div></div><div class="inline-doc" id="djisdkmanager_flyzonemanager_inline" <blockquote="">
@@ -739,7 +754,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">FlyZoneManager <span class="title">getFlyZoneManager</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">Provide access to <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">FlyZoneManager</a></code> used to manage DJI's GEO system for no fly zones.</font></p>
 <h5 id="return-v9">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">FlyZoneManager</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">FlyZoneManager</a></code>.</i></font></td></tr></table></html></div>
@@ -748,7 +763,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line"> <span class="function">KeyManager <span class="title">getKeyManager</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">Provide access to the SDK Key interface.</font></p>
 <h5 id="return-v10">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">KeyManager</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">KeyManager</a></code>.</i></font></td></tr></table></html></div>
@@ -757,10 +772,21 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">MissionControl <span class="title">getMissionControl</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">Provide access to <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></code> used to manage missions.</font></p>
 <h5 id="return-v11">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></code>.</i></font></td></tr></table></html></div>
+<html><p><br></p></html>
+<h4 id="ldm">LDM</h4>
+<div class="api-row" id="djisdkmanager_getldmmanager"><div class="api-col left">Local Data Mode</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_getldmmanager_inline">getLDMManager</a></div></div><div class="inline-doc" id="djisdkmanager_getldmmanager_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getLDMManager</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">LDMManager <span class="title">getLDMManager</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<h5 id="description-v21">Description:</h5>
+<p><font color="#666">Manages Local Data Mode (LDM) functionality. Local data mode gives the developer  the option to put the SDK into airplane mode, restricting its access to the internet.  See <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager">LDMManager</a></code> for details on when and where this is possible, and what is restricted.</font></p>
+<h5 id="return-v12">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager">LDMManager</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager">LDMManager</a></code>.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djisdkmanager_djisdkmanagercallbackinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_djisdkmanagercallbackinterface_inline">SDKManagerCallback</a></div></div><div class="inline-doc" id="djisdkmanager_djisdkmanagercallbackinterface_inline" <blockquote="">
@@ -778,7 +804,7 @@
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
 <p><font color="#666">Callback method after the application attempts to register.</font></p>
-<h5 id="input-parameters-v7">Input Parameters:</h5>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i><code><a href="../../Components/SDKError/DJIError.html#djierror_djisdkerror_registration_success">REGISTRATION_SUCCESS</a></code> if registration is successful.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djisdkmanager_productdidchangefromto"><div class="api-col left">Product Change</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_productdidchangefromto_inline">onProductChange</a></div></div><div class="inline-doc" id="djisdkmanager_productdidchangefromto_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onProductChange</h6></div>
@@ -787,7 +813,7 @@
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
 <p><font color="#666">Called when the connected product changes, or connectivity changes.</font></p>
-<h5 id="input-parameters-v8">Input Parameters:</h5>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a> <font color="#000">oldProduct</font></font></td><td><font color="#666"><i>Old product object. <code>null</code> if starting up.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a> <font color="#000">newProduct</font></font></td><td><font color="#666"><i>New product object. <code>null</code> if the USB link or WiFi link between the product and mobile device is disconnected.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djibluetoothproductconnector"><div class="api-col left">Bluetooth</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html">BluetoothProductConnector</a></div></div>

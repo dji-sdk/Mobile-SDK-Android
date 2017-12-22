@@ -22,11 +22,6 @@ import java.util.List;
 
 public class BluetoothView extends LinearLayout implements View.OnClickListener {
 
-    public BluetoothView(Context context) {
-        super(context);
-        initUI(context);
-    }
-
     private Spinner mSpinnerSelection;
     private TextView mTextDevicesInformation;
     private List<String> strDevicesList = new ArrayList<String>();
@@ -37,19 +32,34 @@ public class BluetoothView extends LinearLayout implements View.OnClickListener 
         new BluetoothProductConnector.BluetoothDevicesListCallback() {
 
             @Override
-            public void onUpdate(ArrayList<BluetoothDevice> devices) {
-
+            public void onUpdate(List<BluetoothDevice> list) {
                 if (devicesList == null) {
-                    devicesList = devices;
-                    updateTextTV(devices);
+                    devicesList = (ArrayList<BluetoothDevice>) list;
+                    updateTextTV((ArrayList<BluetoothDevice>)list);
                     updateList(devicesList);
-                } else if (!compareDevice(devicesList, devices)) {
-                    devicesList = devices;
-                    updateTextTV(devices);
+                } else if (!compareDevice(devicesList, (ArrayList<BluetoothDevice>)list)) {
+                    devicesList = (ArrayList<BluetoothDevice>)list;
+                    updateTextTV((ArrayList<BluetoothDevice>)list);
                     updateList(devicesList);
                 }
             }
         };
+
+
+    public BluetoothView(Context context) {
+        super(context);
+        initUI(context);
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (connector != null) {
+            connector.setBluetoothDevicesListCallback(null);
+        }
+
+    }
+
 
     private void initUI(Context context) {
         setOrientation(VERTICAL);

@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -242,6 +244,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
@@ -344,6 +348,16 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
                             </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_ProfessionalRC.html" class="sub-toggle">ProfessionalRC<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_Event.html">Event</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration.html">ButtonConfiguration</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration_Builder.html">ButtonConfigurationBuilder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
@@ -414,9 +428,19 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Missions/DJILandAction.html">LandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../Missions/DJIMissionTrigger.html">Trigger</a>
+                  <dd><a data-href="../Missions/DJIMissionTrigger.html" class="sub-toggle">Trigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">BatteryPowerLevelTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">WaypointReachedTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">AircraftLandedTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -554,7 +578,7 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIFlySafeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
                             </dd>
@@ -581,7 +605,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isRTKEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isRTKEnabled</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_enabled_inline">FlightControllerKey.RTK_ENABLED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_enabled_key">FlightControllerKey.RTK_ENABLED</a></font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Returns state of RTK (enabled/disabled).</font></p>
 <h5 id="return">Return:</h5>
@@ -590,7 +614,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isRTKBeingUsed</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isRTKBeingUsed</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerParamIsRTKBeingUsed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Whether the RTK is being used.</font></p>
 <h5 id="return-v2">Return:</h5>
@@ -608,7 +632,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIError <span class="title">getError</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_error_inline">FlightControllerKey.RTK_ERROR</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_error_key">FlightControllerKey.RTK_ERROR</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Gets RTK errors, if any. Returns <code>null</code> when RTK is normal.</font></p>
 <h5 id="return-v4">Return:</h5>
@@ -617,34 +641,34 @@
 <div class="article"><h6><font color="#AAA">method </font>isHeadingValid</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isHeadingValid</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_is_heading_valid_inline">FlightControllerKey.RTK_IS_HEADING_VALID</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_is_heading_valid_key">FlightControllerKey.RTK_IS_HEADING_VALID</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666"><code>true</code> if heading value is valid. Heading is invalid when a satellite fix hasn't  been obtained.</font></p>
+<p><font color="#666"><code>true</code> if heading value is valid. Heading is invalid when a satellite fix hasn't been obtained.</font></p>
 <h5 id="return-v5">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djirtk_djirtkstate_heading"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_heading_inline">getHeading</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_heading_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getHeading</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getHeading</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_direct_angle_inline">FlightControllerKey.RTK_DIRECT_ANGLE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_direct_angle_key">FlightControllerKey.RTK_DIRECT_ANGLE</a></font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">Heading relative to True North as defined by the vector formed from Antenna 2 to Antenna 1 on the mobile station.  Unit is degrees.</font></p>
+<p><font color="#666">Heading relative to True North as defined by the vector formed from Antenna 2 to Antenna 1 on the mobile station. Unit is degrees.</font></p>
 <h5 id="return-v6">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djirtk_djirtkstate_mobilestationantenna1location"><div class="api-col left">Mobile Station Position</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_mobilestationantenna1location_inline">getMobileStationLocation</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_mobilestationantenna1location_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getMobileStationLocation</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">LocationCoordinate2D <span class="title">getMobileStationLocation</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_air_latitude_inline">FlightControllerKey.RTK_AIR_LATITUDE</a>, <a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_air_longitude_inline">FlightControllerKey.RTK_AIR_LONGITUDE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_air_latitude_key">FlightControllerKey.RTK_AIR_LATITUDE</a>, <a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_air_longitude_key">FlightControllerKey.RTK_AIR_LONGITUDE</a></font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Location information of the mobile station's receiver 1 antenna. This location information is relative to the  base station location and is in degrees.</font></p>
+<p><font color="#666">Location information of the mobile station's receiver 1 antenna. This location information is relative to the base station location and is in degrees.</font></p>
 <h5 id="return-v7">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djirtk_djirtkstate_mobilestationantenna1altitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_mobilestationantenna1altitude_inline">getMobileStationAltitude</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_mobilestationantenna1altitude_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getMobileStationAltitude</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getMobileStationAltitude</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_air_altitude_inline">FlightControllerKey.RTK_AIR_ALTITUDE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_air_altitude_key">FlightControllerKey.RTK_AIR_ALTITUDE</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Altitude of the mobile station's receiver 1 antenna relative, to the base station location. Units are meters.</font></p>
 <h5 id="return-v8">Return:</h5>
@@ -653,7 +677,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getBaseStationLocation</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">LocationCoordinate2D <span class="title">getBaseStationLocation</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_ground_latitude_inline">FlightControllerKey.RTK_GROUND_LATITUDE</a>, <a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_ground_longitude_inline">FlightControllerKey.RTK_GROUND_LONGITUDE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_ground_latitude_key">FlightControllerKey.RTK_GROUND_LATITUDE</a>, <a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_ground_longitude_key">FlightControllerKey.RTK_GROUND_LONGITUDE</a></font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Base station's location coordinates, in degrees.</font></p>
 <h5 id="return-v9">Return:</h5>
@@ -662,7 +686,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getBaseStationAltitude</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getBaseStationAltitude</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_ground_altitude_inline">FlightControllerKey.RTK_GROUND_ALTITUDE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_rtk_ground_altitude_key">FlightControllerKey.RTK_GROUND_ALTITUDE</a></font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Altitude of the base station above sea level, in meters.</font></p>
 <h5 id="return-v10">Return:</h5>
@@ -774,11 +798,11 @@
 <div class="article"><h6><font color="#AAA">enum </font>PositioningSolution</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> PositioningSolution</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_positioning_solution_inline">FlightControllerKey.POSITIONING_SOLUTION</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_positioning_solution_key">FlightControllerKey.POSITIONING_SOLUTION</a></font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
 <p><font color="#666">This enum defines the positioning solution currently being used.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_none_inline"></a>NONE</font></td><td><font color="#666">No positioning solution. This can be caused by an insufficient number of satellites in view, insufficient  time to lock onto the satellites, or a loss in communication link between the mobile station and base station.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_singlepoint_inline"></a>SINGLE_POINT</font></td><td><font color="#666">RTK point positioning.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_float_inline"></a>FLOAT</font></td><td><font color="#666">Float solution positioning.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_fixedpoint_inline"></a>FIXED_POINT</font></td><td><font color="#666">Fixed-point solution positioning (most accurate).</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_none_inline"></a>NONE</font></td><td><font color="#666">No positioning solution. This can be caused by an insufficient number of satellites in view, insufficient time to lock onto the satellites, or a loss in communication link between the mobile station and base station.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_singlepoint_inline"></a>SINGLE_POINT</font></td><td><font color="#666">RTK point positioning.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_float_inline"></a>FLOAT</font></td><td><font color="#666">Float solution positioning.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_fixedpoint_inline"></a>FIXED_POINT</font></td><td><font color="#666">Fixed-point solution positioning (most accurate).</font></td></tr></table></html>
 <h5 id="class-members-v2">Class Members:</h5>
 </div>
 <div class="api-row" id="djirtk_djirtkreceiverinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html">ReceiverInfo</a></div></div>

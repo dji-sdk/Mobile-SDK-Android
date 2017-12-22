@@ -1,12 +1,14 @@
 package com.dji.sdk.sample.demo.flightcontroller;
 
 import android.content.Context;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.DialogUtils;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
+
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
 
@@ -44,15 +46,15 @@ public class FlightLimitationView extends BaseThreeBtnView {
     protected void handleMiddleBtnClick() {
         if (ModuleVerificationUtil.isFlightLimitationAvailable()) {
             DJISampleApplication.getAircraftInstance()
-                                .getFlightController()
-                                .setMaxFlightHeight(100, new CommonCallbacks.CompletionCallback() {
-                                    @Override
-                                    public void onResult(DJIError djiError) {
-                                        ToastUtils.setResultToToast("Result: " + (djiError == null
-                                                                             ? "Success"
-                                                                             : djiError.getDescription()));
-                                    }
-                                });
+                    .getFlightController()
+                    .setMaxFlightHeight(100, new CommonCallbacks.CompletionCallback() {
+                        @Override
+                        public void onResult(DJIError djiError) {
+                            ToastUtils.setResultToToast("Result: " + (djiError == null
+                                    ? "Success"
+                                    : djiError.getDescription()));
+                        }
+                    });
         }
     }
 
@@ -60,17 +62,17 @@ public class FlightLimitationView extends BaseThreeBtnView {
     protected void handleLeftBtnClick() {
         if (ModuleVerificationUtil.isFlightLimitationAvailable()) {
             DJISampleApplication.getAircraftInstance()
-                                .getFlightController()
-                                .setMaxFlightRadiusLimitationEnabled(mRadiusLimitaionToggleFlag,
-                                                                     new CommonCallbacks.CompletionCallback() {
-                                                                         @Override
-                                                                         public void onResult(DJIError djiError) {
-                                                                             DialogUtils.showDialogBasedOnError(getContext(),
-                                                                                                                djiError);
-                                                                             mRadiusLimitaionToggleFlag =
-                                                                                 mRadiusLimitaionToggleFlag ^ true;
-                                                                         }
-                                                                     });
+                    .getFlightController()
+                    .setMaxFlightRadiusLimitationEnabled(mRadiusLimitaionToggleFlag,
+                            new CommonCallbacks.CompletionCallback() {
+                                @Override
+                                public void onResult(DJIError djiError) {
+                                    DialogUtils.showDialogBasedOnError(getContext(),
+                                            djiError);
+                                    mRadiusLimitaionToggleFlag =
+                                            mRadiusLimitaionToggleFlag ^ true;
+                                }
+                            });
         }
     }
 
@@ -78,15 +80,15 @@ public class FlightLimitationView extends BaseThreeBtnView {
     protected void handleRightBtnClick() {
         if (ModuleVerificationUtil.isFlightLimitationAvailable()) {
             DJISampleApplication.getAircraftInstance()
-                                .getFlightController()
-                                .setMaxFlightRadius(40, new CommonCallbacks.CompletionCallback() {
-                                    @Override
-                                    public void onResult(DJIError djiError) {
-                                        ToastUtils.setResultToToast("Result: " + (djiError == null
-                                                                             ? "Success"
-                                                                             : djiError.getDescription()));
-                                    }
-                                });
+                    .getFlightController()
+                    .setMaxFlightRadius(40, new CommonCallbacks.CompletionCallback() {
+                        @Override
+                        public void onResult(DJIError djiError) {
+                            ToastUtils.setResultToToast("Result: " + (djiError == null
+                                    ? "Success"
+                                    : djiError.getDescription()));
+                        }
+                    });
         }
     }
 

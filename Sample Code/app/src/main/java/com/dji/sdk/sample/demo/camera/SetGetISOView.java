@@ -4,10 +4,12 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.ArrayAdapter;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.DialogUtils;
 import com.dji.sdk.sample.internal.view.BaseSetGetView;
+
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
@@ -18,7 +20,12 @@ import dji.common.util.CommonCallbacks;
 public class SetGetISOView extends BaseSetGetView {
 
     private static final int SHOW_GET_RESULT = 0;
-
+    private final Runnable runSetCameraISO = new Runnable() {
+        @Override
+        public void run() {
+            setCameraISO();
+        }
+    };
     private Handler mHandler = new Handler(new Handler.Callback() {
 
         @Override
@@ -34,25 +41,16 @@ public class SetGetISOView extends BaseSetGetView {
             return false;
         }
     });
-
-    private final Runnable runSetShootPhotoCameraMode = new Runnable() {
-        @Override
-        public void run() {
-            setShootPhotoCameraMode();
-        }
-    };
-
-    private final Runnable runSetCameraISO = new Runnable() {
-        @Override
-        public void run() {
-            setCameraISO();
-        }
-    };
-
     private final Runnable runSetManaualExposureMode = new Runnable() {
         @Override
         public void run() {
             setManualExposureMode();
+        }
+    };
+    private final Runnable runSetShootPhotoCameraMode = new Runnable() {
+        @Override
+        public void run() {
+            setShootPhotoCameraMode();
         }
     };
 
@@ -71,28 +69,30 @@ public class SetGetISOView extends BaseSetGetView {
 
     private void setShootPhotoCameraMode() {
         DJISampleApplication.getProductInstance()
-                            .getCamera()
-                            .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO,
-                                     new CommonCallbacks.CompletionCallback() {
-                                         @Override
-                                         public void onResult(DJIError djiError) {
-                                             if (null == djiError) {
-                                                 mHandler.post(runSetManaualExposureMode);
-                                             }
-                                         }
-                                     });
+                .getCamera()
+                .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO,
+                        new CommonCallbacks.CompletionCallback() {
+                            @Override
+                            public void onResult(DJIError djiError) {
+                                if (null == djiError) {
+                                    mHandler.post(runSetManaualExposureMode);
+                                }
+                            }
+                        });
     }
 
     private void setManualExposureMode() {
         DJISampleApplication.getProductInstance()
-                            .getCamera()
-                            .setExposureMode(SettingsDefinitions.ExposureMode.MANUAL,
-                                             new CommonCallbacks.CompletionCallback() {
-                                                 @Override
-                                                 public void onResult(DJIError djiError) {
-                                                     if (null == djiError) mHandler.post(runSetCameraISO);
-                                                 }
-                                             });
+                .getCamera()
+                .setExposureMode(SettingsDefinitions.ExposureMode.MANUAL,
+                        new CommonCallbacks.CompletionCallback() {
+                            @Override
+                            public void onResult(DJIError djiError) {
+                                if (null == djiError) {
+                                    mHandler.post(runSetCameraISO);
+                                }
+                            }
+                        });
     }
 
     private void setCameraISO() {
@@ -102,30 +102,30 @@ public class SetGetISOView extends BaseSetGetView {
             cameraISO = isoArray[mSpinnerSet.getSelectedItemPosition()];
         }
         DJISampleApplication.getProductInstance()
-                            .getCamera()
-                            .setISO(cameraISO, new CommonCallbacks.CompletionCallback() {
-                                @Override
-                                public void onResult(DJIError djiError) {
-                                    DialogUtils.showDialogBasedOnError(getContext(), djiError);
-                                }
-                            });
+                .getCamera()
+                .setISO(cameraISO, new CommonCallbacks.CompletionCallback() {
+                    @Override
+                    public void onResult(DJIError djiError) {
+                        DialogUtils.showDialogBasedOnError(getContext(), djiError);
+                    }
+                });
     }
 
     @Override
     protected void getMethod() {
         DJISampleApplication.getProductInstance()
-                            .getCamera()
-                            .getISO(new CommonCallbacks.CompletionCallbackWith<SettingsDefinitions.ISO>() {
-                                @Override
-                                public void onSuccess(SettingsDefinitions.ISO cameraISO) {
-                                    mHandler.sendMessage(mHandler.obtainMessage(SHOW_GET_RESULT, cameraISO.name()));
-                                }
+                .getCamera()
+                .getISO(new CommonCallbacks.CompletionCallbackWith<SettingsDefinitions.ISO>() {
+                    @Override
+                    public void onSuccess(SettingsDefinitions.ISO cameraISO) {
+                        mHandler.sendMessage(mHandler.obtainMessage(SHOW_GET_RESULT, cameraISO.name()));
+                    }
 
-                                @Override
-                                public void onFailure(DJIError djiError) {
-                                    mHandler.sendMessage(mHandler.obtainMessage(SHOW_GET_RESULT, "GetResultFail"));
-                                }
-                            });
+                    @Override
+                    public void onFailure(DJIError djiError) {
+                        mHandler.sendMessage(mHandler.obtainMessage(SHOW_GET_RESULT, "GetResultFail"));
+                    }
+                });
     }
 
     @Override

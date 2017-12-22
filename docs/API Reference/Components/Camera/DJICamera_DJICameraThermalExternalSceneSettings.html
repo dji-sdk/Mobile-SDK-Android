@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -242,6 +244,8 @@
                             </dd>
                             <dd><a href="DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
+                            <dd><a href="DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
                             <dd><a href="DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
                             <dd><a href="DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
@@ -344,6 +348,16 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
                             </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_ProfessionalRC.html" class="sub-toggle">ProfessionalRC<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_Event.html">Event</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration.html">ButtonConfiguration</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration_Builder.html">ButtonConfigurationBuilder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
@@ -414,9 +428,19 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Missions/DJILandAction.html">LandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../Missions/DJIMissionTrigger.html">Trigger</a>
+                  <dd><a data-href="../Missions/DJIMissionTrigger.html" class="sub-toggle">Trigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">BatteryPowerLevelTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">WaypointReachedTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">AircraftLandedTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -554,7 +578,7 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIFlySafeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
                             </dd>
@@ -574,7 +598,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThermalExternalSceneSettings</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">Thermal cameras measure the apparent surface temperature of a given object. This is done by taking the amount of infrared  radiation an object emits and calculating the surface temperature by applying a formula that adjusts for external factors.   This struct includes all of the external scene parameters that the thermal camera firmware allows  to be customized.  There are two types of parameters, optical parameters which specify how much infrared  radiation is transmitted from the  surface to the thermal sensor, as well as parameters that specify sources of thermal radiance other than the object.   For a more in-depth overview of the physics behind thermal imaging, see https://en.wikipedia.org/wiki/Thermography.</font></p>
+<p><font color="#666">Thermal cameras measure the apparent surface temperature of a given object. This is done by taking the amount of infrared radiation an object emits and calculating the surface temperature by applying a formula that adjusts for external factors. This struct includes all of the external scene parameters that the thermal camera firmware allows  to be customized. There are two types of parameters, optical parameters which specify how much infrared  radiation is transmitted from the surface to the thermal sensor, as well as parameters that specify sources of thermal radiance other than the object. For a more in-depth overview of the physics behind thermal imaging, see https://en.wikipedia.org/wiki/Thermography.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djicamera_thermalcameraexternalscenesettingsupdatedcallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djicamera_thermalcameraexternalscenesettingsupdatedcallbackinterface_inline">Callback</a></div></div><div class="inline-doc" id="djicamera_thermalcameraexternalscenesettingsupdatedcallbackinterface_inline" <blockquote="">
@@ -600,7 +624,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getAtmosphericTemperature</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getAtmosphericTemperature</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_atmospheric_temperature_inline">CameraKey.THERMAL_ATMOSPHERIC_TEMPERATURE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_atmospheric_temperature_key">CameraKey.THERMAL_ATMOSPHERIC_TEMPERATURE</a></font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Atmospheric temperature, can be between -50 and 327.67 degrees Celsius.</font></p>
 <h5 id="return">Return:</h5>
@@ -609,7 +633,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getAtmosphericTransmissionCoefficient</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getAtmosphericTransmissionCoefficient</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_atmospheric_transmission_coefficient_inline">CameraKey.THERMAL_ATMOSPHERIC_TRANSMISSION_COEFFICIENT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_atmospheric_transmission_coefficient_key">CameraKey.THERMAL_ATMOSPHERIC_TRANSMISSION_COEFFICIENT</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Transmission coefficient of the atmosphere between the scene and the camera, can be between 50 and 100.</font></p>
 <h5 id="return-v2">Return:</h5>
@@ -618,7 +642,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getBackgroundTemperature</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getBackgroundTemperature</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_background_temperature_inline">CameraKey.THERMAL_BACKGROUND_TEMPERATURE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_background_temperature_key">CameraKey.THERMAL_BACKGROUND_TEMPERATURE</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Background temperature (reflected by the scene), can be between -50 and 327.67 degrees Celsius.</font></p>
 <h5 id="return-v3">Return:</h5>
@@ -627,7 +651,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSceneEmissivity</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getSceneEmissivity</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_scene_emissivity_inline">CameraKey.THERMAL_SCENE_EMISSIVITY</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_scene_emissivity_key">CameraKey.THERMAL_SCENE_EMISSIVITY</a></font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Emissivity of the scene, can be between 50 and 100.</font></p>
 <h5 id="return-v4">Return:</h5>
@@ -636,7 +660,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getWindowReflection</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getWindowReflection</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_window_reflection_inline">CameraKey.THERMAL_WINDOW_REFLECTION</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_window_reflection_key">CameraKey.THERMAL_WINDOW_REFLECTION</a></font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Window reflection, can be between 50 and 100-X where X is the window transmission coefficient parameter.</font></p>
 <h5 id="return-v5">Return:</h5>
@@ -645,7 +669,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getWindowReflectedTemperature</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getWindowReflectedTemperature</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_window_reflected_temperature_inline">CameraKey.THERMAL_WINDOW_REFLECTED_TEMPERATURE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_window_reflected_temperature_key">CameraKey.THERMAL_WINDOW_REFLECTED_TEMPERATURE</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Temperature reflected in the window, can be between -50 and 327.67 degrees Celsius.</font></p>
 <h5 id="return-v6">Return:</h5>
@@ -654,7 +678,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getWindowTemperature</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getWindowTemperature</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_window_temperature_inline">CameraKey.THERMAL_WINDOW_TEMPERATURE</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_window_temperature_key">CameraKey.THERMAL_WINDOW_TEMPERATURE</a></font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Window temperature, can be between -50 and 327.67 degrees Celsius.</font></p>
 <h5 id="return-v7">Return:</h5>
@@ -663,7 +687,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getWindowTransmissionCoefficient</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getWindowTransmissionCoefficient</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_window_transmission_coefficient_inline">CameraKey.THERMAL_WINDOW_TRANSMISSION_COEFFICIENT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_window_transmission_coefficient_key">CameraKey.THERMAL_WINDOW_TRANSMISSION_COEFFICIENT</a></font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Transmission coefficient of the window, can be between 50 and 100-X where X is the window reflection.</font></p>
 <h5 id="return-v8">Return:</h5>

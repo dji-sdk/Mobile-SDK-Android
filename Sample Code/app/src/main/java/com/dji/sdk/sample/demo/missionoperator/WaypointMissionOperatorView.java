@@ -29,6 +29,7 @@ import dji.common.util.CommonCallbacks;
 import dji.sdk.base.BaseProduct;
 import dji.keysdk.FlightControllerKey;
 import dji.keysdk.KeyManager;
+import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.mission.MissionControl;
 import dji.sdk.mission.waypoint.WaypointMissionOperator;
 import dji.sdk.mission.waypoint.WaypointMissionOperatorListener;
@@ -64,19 +65,36 @@ public class WaypointMissionOperatorView extends MissionBaseView {
         }
         switch (v.getId()) {
             case R.id.btn_simulator:
-                BaseProduct product = DJISampleApplication.getProductInstance();
-                if (product != null && product instanceof Aircraft) {
-                    flightController = ((Aircraft) product).getFlightController();
-                    flightController.getSimulator()
-                                    .start(InitializationData.createInstance(new LocationCoordinate2D(22, 113), 10, 10),
-                                           new CommonCallbacks.CompletionCallback() {
-                                               @Override
-                                               public void onResult(DJIError djiError) {
-                                                   showResultToast(djiError);
-                                               }
-                                           });
-                } else {
-                    ToastUtils.setResultToToast("Product is disconnected!");
+               if (getFlightController() != null) {
+                   flightController.getSimulator()
+                                   .start(InitializationData.createInstance(new LocationCoordinate2D(22, 113), 10, 10),
+                                          new CommonCallbacks.CompletionCallback() {
+                                              @Override
+                                              public void onResult(DJIError djiError) {
+                                                  showResultToast(djiError);
+                                              }
+                                          });
+               }
+                break;
+            case R.id.btn_set_maximum_altitude:
+                if (getFlightController() != null) {
+                    flightController.setMaxFlightHeight(500, new CommonCallbacks.CompletionCallback() {
+                        @Override
+                        public void onResult(DJIError djiError) {
+                            ToastUtils.setResultToToast(djiError == null ? "Max Flight Height is set to 500m!" : djiError.getDescription());
+                        }
+                    });
+                }
+                break;
+
+            case R.id.btn_set_maximum_radius:
+                if (getFlightController() != null) {
+                    flightController.setMaxFlightRadius(500, new CommonCallbacks.CompletionCallback() {
+                        @Override
+                        public void onResult(DJIError djiError) {
+                            ToastUtils.setResultToToast(djiError == null ? "Max Flight Radius is set to 500m!" : djiError.getDescription());
+                        }
+                    });
                 }
                 break;
             case R.id.btn_load:
@@ -143,7 +161,8 @@ public class WaypointMissionOperatorView extends MissionBaseView {
                 break;
             case R.id.btn_download:
                 // Example of downloading an executing Mission
-                if (WaypointMissionState.EXECUTING.equals(waypointMissionOperator.getCurrentState())) {
+                if (WaypointMissionState.EXECUTING.equals(waypointMissionOperator.getCurrentState()) ||
+                    WaypointMissionState.EXECUTION_PAUSED.equals(waypointMissionOperator.getCurrentState())) {
                     waypointMissionOperator.downloadMission(new CommonCallbacks.CompletionCallback() {
                         @Override
                         public void onResult(DJIError djiError) {
@@ -151,7 +170,7 @@ public class WaypointMissionOperatorView extends MissionBaseView {
                         }
                     });
                 } else {
-                    ToastUtils.setResultToToast("Start Mission First!");
+                    ToastUtils.setResultToToast("Mission can be downloaded when the mission state is EXECUTING or EXECUTION_PAUSED!");
                 }
                 break;
             default:
@@ -183,32 +202,13 @@ public class WaypointMissionOperatorView extends MissionBaseView {
                         homeLongitude = flightControllerState.getHomeLocation().getLongitude();
                         flightState = flightControllerState.getFlightMode();
 
-                        if (waypointMissionOperator != null && waypointMissionOperator.getCurrentState() != null) {
-                            ToastUtils.setResultToText(FCPushInfoTV,
-                                                       "home point latitude: "
-                                                           + homeLatitude
-                                                           + "\nhome point longitude: "
-                                                           + homeLongitude
-                                                           + "\nFlight state: "
-                                                           + flightState.name()
-                                                           + "\nCurrent Waypointmission state"
-                                                           + waypointMissionOperator.getCurrentState().getName());
-                        } else {
-                            ToastUtils.setResultToText(FCPushInfoTV,
-                                                       "home point latitude: "
-                                                           + homeLatitude
-                                                           + "\nhome point longitude: "
-                                                           + homeLongitude
-                                                           + "\nFlight state: "
-                                                           + flightState.name());
-                        }
+                        updateWaypointMissionState();
                     }
                 });
 
             }
         }
         waypointMissionOperator = MissionControl.getInstance().getWaypointMissionOperator();
-
         setUpListener();
     }
 
@@ -217,8 +217,45 @@ public class WaypointMissionOperatorView extends MissionBaseView {
         tearDownListener();
         if (flightController != null) {
             flightController.getSimulator().stop(null);
+            flightController.setStateCallback(null);
         }
         super.onDetachedFromWindow();
+    }
+    //endregion
+
+    //region Internal Helper Methods
+    private FlightController getFlightController(){
+        if (flightController == null) {
+            BaseProduct product = DJISampleApplication.getProductInstance();
+            if (product != null && product instanceof Aircraft) {
+                flightController = ((Aircraft) product).getFlightController();
+            } else {
+                ToastUtils.setResultToToast("Product is disconnected!");
+            }
+        }
+
+        return flightController;
+    }
+    private void updateWaypointMissionState(){
+        if (waypointMissionOperator != null && waypointMissionOperator.getCurrentState() != null) {
+            ToastUtils.setResultToText(FCPushInfoTV,
+                                       "home point latitude: "
+                                           + homeLatitude
+                                           + "\nhome point longitude: "
+                                           + homeLongitude
+                                           + "\nFlight state: "
+                                           + flightState.name()
+                                           + "\nCurrent Waypointmission state : "
+                                           + waypointMissionOperator.getCurrentState().getName());
+        } else {
+            ToastUtils.setResultToText(FCPushInfoTV,
+                                       "home point latitude: "
+                                           + homeLatitude
+                                           + "\nhome point longitude: "
+                                           + homeLongitude
+                                           + "\nFlight state: "
+                                           + flightState.name());
+        }
     }
     //endregion
 
@@ -244,7 +281,7 @@ public class WaypointMissionOperatorView extends MissionBaseView {
             baseLongitude = (double) longitudeValue;
         }
 
-        final float baseAltitude = 50.0f;
+        final float baseAltitude = 20.0f;
         builder.autoFlightSpeed(5f);
         builder.maxFlightSpeed(10f);
         builder.setExitMissionOnRCSignalLostEnabled(false);
@@ -257,12 +294,9 @@ public class WaypointMissionOperatorView extends MissionBaseView {
         List<Waypoint> waypointList = new ArrayList<>();
         for (int i = 0; i < numberOfWaypoint; i++) {
             final double variation = (Math.floor(i / 4) + 1) * 2 * ONE_METER_OFFSET;
-            final float variationFloat = (float) (baseAltitude + (i + 1) * 2 * ONE_METER_OFFSET);
+            final float variationFloat = (baseAltitude + (i + 1) * 2);
             final Waypoint eachWaypoint = new Waypoint(baseLatitude + variation * Math.pow(-1, i) * Math.pow(0, i % 2),
-                                                       baseLongitude + variation * Math.pow(-1, (i + 1)) * Math.pow(0,
-                                                                                                                    (i
-                                                                                                                        + 1)
-                                                                                                                        % 2),
+                                                       baseLongitude + variation * Math.pow(-1, (i + 1)) * Math.pow(0, (i + 1) % 2),
                                                        variationFloat);
             for (int j = 0; j < numberOfAction; j++) {
                 final int randomNumber = randomGenerator.nextInt() % 6;
@@ -309,6 +343,7 @@ public class WaypointMissionOperatorView extends MissionBaseView {
                     && waypointMissionDownloadEvent.getProgress().downloadedWaypointIndex == (WAYPOINT_COUNT - 1)) {
                     ToastUtils.setResultToToast("Download successful!");
                 }
+                updateWaypointMissionState();
             }
 
             @Override
@@ -319,6 +354,7 @@ public class WaypointMissionOperatorView extends MissionBaseView {
                     && waypointMissionUploadEvent.getProgress().uploadedWaypointIndex == (WAYPOINT_COUNT - 1)) {
                     ToastUtils.setResultToToast("Upload successful!");
                 }
+                updateWaypointMissionState();
             }
 
             @Override
@@ -333,16 +369,19 @@ public class WaypointMissionOperatorView extends MissionBaseView {
                           + (waypointMissionExecutionEvent.getProgress() == null
                              ? ""
                              : waypointMissionExecutionEvent.getProgress().targetWaypointIndex));
+                updateWaypointMissionState();
             }
 
             @Override
             public void onExecutionStart() {
                 ToastUtils.setResultToToast("Execution started!");
+                updateWaypointMissionState();
             }
 
             @Override
             public void onExecutionFinish(@Nullable DJIError djiError) {
                 ToastUtils.setResultToToast("Execution finished!");
+                updateWaypointMissionState();
             }
         };
 

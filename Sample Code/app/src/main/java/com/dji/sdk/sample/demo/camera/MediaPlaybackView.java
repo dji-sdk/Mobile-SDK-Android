@@ -20,46 +20,44 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.controller.MainActivity;
+import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.camera.MediaFile;
 import dji.sdk.camera.MediaManager;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MediaPlaybackView extends LinearLayout
-    implements MediaManager.VideoPlaybackStateListener, PresentableView {
+        implements MediaManager.VideoPlaybackStateListener, PresentableView {
     private static final String TAG = MediaPlaybackView.class.getName();
-
-    private MediaManager mediaManager;
-    private List<MediaFile> DJIMediaList = new ArrayList<>();
-
-    private boolean isDialogAllowable = false;
-
-    private FileListAdapter listAdapter;
-    private ProgressDialog dialog;
-
-    public TextView tv_playbackInfo;
-    public Button btnResume;
-    public Button btnPause;
-    public Button btnStop;
-    public Button btnSkip;
-    public Button btnStatus;
-
     private final int SHOW_TOAST = 1;
     private final int SHOW_PROGRESS_DIALOG = 2;
     private final int HIDE_PROGRESS_DIALOG = 3;
     private final int FETCH_FILE_LIST = 6;
     private final int NEED_REFRESH_FILE_LIST = 7;
     private final int GET_THUMBNAILS = 8;
-
+    public TextView tv_playbackInfo;
+    public Button btnResume;
+    public Button btnPause;
+    public Button btnStop;
+    public Button btnSkip;
+    public Button btnStatus;
+    private MediaManager mediaManager;
+    private List<MediaFile> DJIMediaList = new ArrayList<>();
+    private boolean isDialogAllowable = false;
+    private FileListAdapter listAdapter;
+    private ProgressDialog dialog;
     private Handler handler = new Handler(new Handler.Callback() {
 
         @Override
@@ -87,6 +85,18 @@ public class MediaPlaybackView extends LinearLayout
             return false;
         }
     });
+
+    public MediaPlaybackView(Context context) {
+        super(context);
+        initUI(context);
+        initDJIMedia();
+    }
+
+    private static void addLineToSB(StringBuilder sb, String name, Object value) {
+        sb.append(name + ": ").
+                append(value == null ? "" : value + "").
+                append("\n");
+    }
 
     private void createProgressDialog() {
 
@@ -244,6 +254,7 @@ public class MediaPlaybackView extends LinearLayout
 
                 // set dialog message
                 alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
                     public void onClick(DialogInterface dialog, int id) {
                         String ms = userInput.getText().toString();
                         mediaManager.moveToPosition(Integer.parseInt(ms), new CommonCallbacks.CompletionCallback() {
@@ -256,6 +267,7 @@ public class MediaPlaybackView extends LinearLayout
                         });
                     }
                 }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                     }
@@ -284,7 +296,7 @@ public class MediaPlaybackView extends LinearLayout
             return false;
         } else {
             if (null != DJISampleApplication.getProductInstance().getCamera()
-                && DJISampleApplication.getProductInstance().getCamera().isMediaDownloadModeSupported()) {
+                    && DJISampleApplication.getProductInstance().getCamera().isMediaDownloadModeSupported()) {
                 mediaManager = DJISampleApplication.getProductInstance().getCamera().getMediaManager();
 
                 if (null != mediaManager) {
@@ -297,25 +309,25 @@ public class MediaPlaybackView extends LinearLayout
 
                 Log.e(TAG, "Media Test set Camera Mode " + mode);
                 DJISampleApplication.getProductInstance()
-                                    .getCamera()
-                                    .setMode(mode, new CommonCallbacks.CompletionCallback() {
-                                        @Override
-                                        public void onResult(DJIError error) {
+                        .getCamera()
+                        .setMode(mode, new CommonCallbacks.CompletionCallback() {
+                            @Override
+                            public void onResult(DJIError error) {
 
-                                            if (error == null) {
-                                                Log.e(TAG, "Media Test set Camera Mode success");
-                                                handler.sendMessage(handler.obtainMessage(SHOW_PROGRESS_DIALOG, null));
-                                                handler.sendMessageDelayed(handler.obtainMessage(FETCH_FILE_LIST, null),
-                                                                           2000);
-                                            } else {
-                                                Log.e(TAG, "Media Test set Camera Mode failure");
-                                                handler.sendMessage(handler.obtainMessage(SHOW_TOAST,
-                                                                                          error.getDescription()));
-                                            }
-                                        }
-                                    });
+                                if (error == null) {
+                                    Log.e(TAG, "Media Test set Camera Mode success");
+                                    handler.sendMessage(handler.obtainMessage(SHOW_PROGRESS_DIALOG, null));
+                                    handler.sendMessageDelayed(handler.obtainMessage(FETCH_FILE_LIST, null),
+                                            2000);
+                                } else {
+                                    Log.e(TAG, "Media Test set Camera Mode failure");
+                                    handler.sendMessage(handler.obtainMessage(SHOW_TOAST,
+                                            error.getDescription()));
+                                }
+                            }
+                        });
             } else if (null != DJISampleApplication.getProductInstance().getCamera()
-                && !DJISampleApplication.getProductInstance().getCamera().isMediaDownloadModeSupported()) {
+                    && !DJISampleApplication.getProductInstance().getCamera().isMediaDownloadModeSupported()) {
                 ToastUtils.setResultToToast("Do not support Media list function");
                 return false;
             } else {
@@ -324,12 +336,6 @@ public class MediaPlaybackView extends LinearLayout
             }
         }
         return true;
-    }
-
-    public MediaPlaybackView(Context context) {
-        super(context);
-        initUI(context);
-        initDJIMedia();
     }
 
     @Override
@@ -355,8 +361,8 @@ public class MediaPlaybackView extends LinearLayout
         DJISampleApplication.getEventBus().post(new MainActivity.RequestEndFullScreenEvent());
         try {
             DJISampleApplication.getProductInstance()
-                                .getCamera()
-                                .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO, null);
+                    .getCamera()
+                    .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -364,6 +370,16 @@ public class MediaPlaybackView extends LinearLayout
             DJIMediaList.clear();
         }
 
+
+        if (ModuleVerificationUtil.isCameraModuleAvailable() && DJISampleApplication.getProductInstance().getCamera().isMediaDownloadModeSupported()) {
+            mediaManager = DJISampleApplication.getProductInstance().getCamera().getMediaManager();
+
+            if (null != mediaManager) {
+                if (mediaManager.isVideoPlaybackSupported()) {
+                    mediaManager.removeMediaUpdatedVideoPlaybackStateListener(this);
+                }
+            }
+        }
         super.onDetachedFromWindow();
     }
 
@@ -377,12 +393,55 @@ public class MediaPlaybackView extends LinearLayout
         return R.string.camera_listview_media_playback;
     }
 
-    private class FileListAdapter extends BaseAdapter {
+    private void updateTextView(MediaManager.VideoPlaybackState currentVideoPlaybackState) {
+        final StringBuilder pushInfo = new StringBuilder();
 
-        class ItemHolder {
-            TextView file_name;
-            Button btnPlayVideo;
+        addLineToSB(pushInfo, "Video Playback State", null);
+        if (currentVideoPlaybackState != null) {
+            if (currentVideoPlaybackState.getPlayingMediaFile() != null) {
+                addLineToSB(pushInfo, "media index", currentVideoPlaybackState.getPlayingMediaFile().getIndex());
+                addLineToSB(pushInfo, "media size", currentVideoPlaybackState.getPlayingMediaFile().getFileSize());
+                addLineToSB(pushInfo,
+                        "media duration",
+                        currentVideoPlaybackState.getPlayingMediaFile().getDurationInSeconds());
+                addLineToSB(pushInfo,
+                        "media created date",
+                        currentVideoPlaybackState.getPlayingMediaFile().getDateCreated());
+                addLineToSB(pushInfo,
+                        "media orientation",
+                        currentVideoPlaybackState.getPlayingMediaFile().getVideoOrientation());
+            } else {
+                addLineToSB(pushInfo, "media index", "None");
+            }
+            addLineToSB(pushInfo, "media current position", currentVideoPlaybackState.getPlayingPosition());
+            addLineToSB(pushInfo, "media current status", currentVideoPlaybackState.getPlaybackStatus());
+            pushInfo.append("\n");
+            setResultToText(pushInfo.toString());
+        } else {
+            setResultToText("playbackState is null");
         }
+    }
+
+    private void setResultToText(String s) {
+        final String str = s;
+        post(new Runnable() {
+            @Override
+            public void run() {
+                if (tv_playbackInfo == null) {
+                    Log.e(TAG, "tv_playbackInfo = null");
+                } else {
+                    tv_playbackInfo.setText(str);
+                }
+            }
+        });
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    private class FileListAdapter extends BaseAdapter {
 
         public FileListAdapter() {
             super();
@@ -409,7 +468,7 @@ public class MediaPlaybackView extends LinearLayout
                 final MediaFile media = DJIMediaList.get(index);
 
                 if (media.getMediaType() != MediaFile.MediaType.MOV
-                    && media.getMediaType() != MediaFile.MediaType.MP4) {
+                        && media.getMediaType() != MediaFile.MediaType.MP4) {
                     mItemHolder.btnPlayVideo.setVisibility(View.GONE);
                 } else {
                     mItemHolder.btnPlayVideo.setVisibility(View.VISIBLE);
@@ -421,17 +480,17 @@ public class MediaPlaybackView extends LinearLayout
                     @Override
                     public void onClick(View v) {
                         mediaManager.playVideoMediaFile(DJIMediaList.get(index),
-                                                        new CommonCallbacks.CompletionCallback() {
-                                                            @Override
-                                                            public void onResult(DJIError error) {
-                                                                if (null != error) {
-                                                                    handler.sendMessage(handler.obtainMessage(SHOW_TOAST,
-                                                                                                              error.getDescription()));
-                                                                } else {
-                                                                    Log.e(TAG, "Play Video");
-                                                                }
-                                                            }
-                                                        });
+                                new CommonCallbacks.CompletionCallback() {
+                                    @Override
+                                    public void onResult(DJIError error) {
+                                        if (null != error) {
+                                            handler.sendMessage(handler.obtainMessage(SHOW_TOAST,
+                                                    error.getDescription()));
+                                        } else {
+                                            Log.e(TAG, "Play Video");
+                                        }
+                                    }
+                                });
                     }
                 });
             } else {
@@ -460,59 +519,10 @@ public class MediaPlaybackView extends LinearLayout
         public long getItemId(int id) {
             return id;
         }
-    }
 
-    private void updateTextView(MediaManager.VideoPlaybackState currentVideoPlaybackState) {
-        final StringBuilder pushInfo = new StringBuilder();
-
-        addLineToSB(pushInfo, "Video Playback State", null);
-        if (currentVideoPlaybackState != null) {
-            if (currentVideoPlaybackState.getPlayingMediaFile() != null) {
-                addLineToSB(pushInfo, "media index", currentVideoPlaybackState.getPlayingMediaFile().getIndex());
-                addLineToSB(pushInfo, "media size", currentVideoPlaybackState.getPlayingMediaFile().getFileSize());
-                addLineToSB(pushInfo,
-                            "media duration",
-                            currentVideoPlaybackState.getPlayingMediaFile().getDurationInSeconds());
-                addLineToSB(pushInfo,
-                            "media created date",
-                            currentVideoPlaybackState.getPlayingMediaFile().getDateCreated());
-                addLineToSB(pushInfo,
-                            "media orientation",
-                            currentVideoPlaybackState.getPlayingMediaFile().getVideoOrientation());
-            } else {
-                addLineToSB(pushInfo, "media index", "None");
-            }
-            addLineToSB(pushInfo, "media current position", currentVideoPlaybackState.getPlayingPosition());
-            addLineToSB(pushInfo, "media current status", currentVideoPlaybackState.getPlaybackStatus());
-            pushInfo.append("\n");
-            setResultToText(pushInfo.toString());
-        } else {
-            setResultToText("playbackState is null");
+        class ItemHolder {
+            TextView file_name;
+            Button btnPlayVideo;
         }
-    }
-
-    private static void addLineToSB(StringBuilder sb, String name, Object value) {
-        sb.append(name + ": ").
-              append(value == null ? "" : value + "").
-              append("\n");
-    }
-
-    private void setResultToText(String s) {
-        final String str = s;
-        post(new Runnable() {
-            @Override
-            public void run() {
-                if (tv_playbackInfo == null) {
-                    Log.e(TAG, "tv_playbackInfo = null");
-                } else {
-                    tv_playbackInfo.setText(str);
-                }
-            }
-        });
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
     }
 }

@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -242,6 +244,8 @@
                             </dd>
                             <dd><a href="DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
+                            <dd><a href="DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
                             <dd><a href="DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
                             <dd><a href="DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
@@ -344,6 +348,16 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
                             </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_ProfessionalRC.html" class="sub-toggle">ProfessionalRC<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_Event.html">Event</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration.html">ButtonConfiguration</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration_Builder.html">ButtonConfigurationBuilder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
@@ -414,9 +428,19 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Missions/DJILandAction.html">LandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../Missions/DJIMissionTrigger.html">Trigger</a>
+                  <dd><a data-href="../Missions/DJIMissionTrigger.html" class="sub-toggle">Trigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">BatteryPowerLevelTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">WaypointReachedTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">AircraftLandedTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -554,7 +578,7 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIFlySafeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
                             </dd>
@@ -599,7 +623,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isInserted</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isInserted</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_inserted_inline">CameraKey.SDCARD_IS_INSERTED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_inserted_key">CameraKey.SDCARD_IS_INSERTED</a></font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666"><code>true</code> if the SD card is inserted in the camera.</font></p>
 <h5 id="return">Return:</h5>
@@ -608,7 +632,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isInitializing</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isInitializing</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_initializing_inline">CameraKey.SDCARD_IS_INITIALIZING</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_initializing_key">CameraKey.SDCARD_IS_INITIALIZING</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666"><code>true</code> if SD card is initializing. Note that if the SD card is  initializing, the value for other properties  in <code><a href="../../Components/Camera/DJICamera_DJICameraSDCardState.html#djicamera_djicamerasdcardstate">SDCardState</a></code> is undefined.</font></p>
 <h5 id="return-v2">Return:</h5>
@@ -617,7 +641,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isReadOnly</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isReadOnly</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_read_only_inline">CameraKey.SDCARD_IS_READ_ONLY</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_read_only_key">CameraKey.SDCARD_IS_READ_ONLY</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666"><code>true</code> if the SD card is read-only.</font></p>
 <h5 id="return-v3">Return:</h5>
@@ -626,7 +650,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isFormatted</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isFormatted</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_formatted_inline">CameraKey.SDCARD_IS_FORMATTED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_formatted_key">CameraKey.SDCARD_IS_FORMATTED</a></font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666"><code>true</code> if the SD card is formatted.</font></p>
 <h5 id="return-v4">Return:</h5>
@@ -635,7 +659,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isFormatting</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isFormatting</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_formatting_inline">CameraKey.SDCARD_IS_FORMATTING</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_formatting_key">CameraKey.SDCARD_IS_FORMATTING</a></font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666"><code>true</code> if the SD card is formatting.</font></p>
 <h5 id="return-v5">Return:</h5>
@@ -644,7 +668,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isFull</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_full_inline">CameraKey.SDCARD_IS_FULL</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_full_key">CameraKey.SDCARD_IS_FULL</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666"><code>true</code> if the SD card cannot save any more media.</font></p>
 <h5 id="return-v6">Return:</h5>
@@ -653,7 +677,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isVerified</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isVerified</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_verified_inline">CameraKey.SDCARD_IS_VERIFIED</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_verified_key">CameraKey.SDCARD_IS_VERIFIED</a></font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666"><code>true</code> if the SD card is verified as genuine. The SD card is not valid if it is fake,  which can be a problem if the SD card was purchased by a non-reputable retailer.</font></p>
 <h5 id="return-v7">Return:</h5>
@@ -662,7 +686,7 @@
 <div class="article"><h6><font color="#AAA">method </font>isInvalidFormat</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isInvalidFormat</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_invalid_format_inline">CameraKey.SDCARD_IS_INVALID_FORMAT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_is_invalid_format_key">CameraKey.SDCARD_IS_INVALID_FORMAT</a></font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666"><code>true</code> if SD card filesystem format is invalid.</font></p>
 <h5 id="return-v8">Return:</h5>
@@ -671,7 +695,7 @@
 <div class="article"><h6><font color="#AAA">method </font>hasError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">hasError</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_has_error_inline">CameraKey.SDCARD_HAS_ERROR</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_has_error_key">CameraKey.SDCARD_HAS_ERROR</a></font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666"><code>true</code> if there is an SD card error.</font></p>
 <h5 id="return-v9">Return:</h5>
@@ -680,7 +704,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getTotalSpaceInMB</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getTotalSpaceInMB</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_total_space_in_mb_inline">CameraKey.SDCARD_TOTAL_SPACE_IN_MB</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_total_space_in_mb_key">CameraKey.SDCARD_TOTAL_SPACE_IN_MB</a></font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Total space in Megabytes (MB) available on the SD card.</font></p>
 <h5 id="return-v10">Return:</h5>
@@ -689,7 +713,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getRemainingSpaceInMB</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getRemainingSpaceInMB</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_remaining_space_in_mb_inline">CameraKey.SDCARD_REMAINING_SPACE_IN_MB</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_remaining_space_in_mb_key">CameraKey.SDCARD_REMAINING_SPACE_IN_MB</a></font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Remaining space in Megabytes (MB) on the SD card.</font></p>
 <h5 id="return-v11">Return:</h5>
@@ -698,7 +722,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getAvailableCaptureCount</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">long</span> <span class="title">getAvailableCaptureCount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_available_capture_count_inline">CameraKey.SDCARD_AVAILABLE_CAPTURE_COUNT</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_available_capture_count_key">CameraKey.SDCARD_AVAILABLE_CAPTURE_COUNT</a></font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Returns the number of pictures that can be taken with the remaining space available on the SD card.</font></p>
 <h5 id="return-v12">Return:</h5>
@@ -707,7 +731,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getAvailableRecordingTimeInSeconds</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getAvailableRecordingTimeInSeconds</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_available_recording_time_in_seconds_inline">CameraKey.SDCARD_AVAILABLE_RECORDING_TIME_IN_SECONDS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_sdcard_available_recording_time_in_seconds_key">CameraKey.SDCARD_AVAILABLE_RECORDING_TIME_IN_SECONDS</a></font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Returns the number of seconds available for recording with the remaining space available on the SD card.</font></p>
 <h5 id="return-v13">Return:</h5>

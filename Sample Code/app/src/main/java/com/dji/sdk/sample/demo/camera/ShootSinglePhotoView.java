@@ -2,10 +2,12 @@ package com.dji.sdk.sample.demo.camera;
 
 import android.content.Context;
 import android.util.Log;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
+
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
@@ -34,20 +36,20 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
         if (isModuleAvailable()) {
 
             DJISampleApplication.getProductInstance()
-                                .getCamera()
-                                .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO,
-                                         new CommonCallbacks.CompletionCallback() {
-                                             @Override
-                                             public void onResult(DJIError djiError) {
+                    .getCamera()
+                    .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO,
+                            new CommonCallbacks.CompletionCallback() {
+                                @Override
+                                public void onResult(DJIError djiError) {
 
-                                             }
-                                         });
+                                }
+                            });
         }
     }
 
     private boolean isModuleAvailable() {
         return (null != DJISampleApplication.getProductInstance()) && (null != DJISampleApplication.getProductInstance()
-                                                                                                   .getCamera());
+                .getCamera());
     }
 
     @Override
@@ -70,23 +72,23 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
         //Shoot Photo Button
         if (isModuleAvailable()) {
             DJISampleApplication.getProductInstance()
-                                .getCamera()
-                                .startShootPhoto(new CommonCallbacks.CompletionCallback() {
-                                    @Override
-                                    public void onResult(DJIError djiError) {
-                                        if (null == djiError) {
-                                            ToastUtils.setResultToToast(getContext().getString(R.string.success));
-                                        } else {
-                                            ToastUtils.setResultToToast(djiError.getDescription());
-                                        }
-                                        post(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                setEnabled(true);
-                                            }
-                                        });
-                                    }
-                                });
+                    .getCamera()
+                    .startShootPhoto(new CommonCallbacks.CompletionCallback() {
+                        @Override
+                        public void onResult(DJIError djiError) {
+                            if (null == djiError) {
+                                ToastUtils.setResultToToast(getContext().getString(R.string.success));
+                            } else {
+                                ToastUtils.setResultToToast(djiError.getDescription());
+                            }
+                            post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    setEnabled(true);
+                                }
+                            });
+                        }
+                    });
             post(new Runnable() {
                 @Override
                 public void run() {

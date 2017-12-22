@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -242,6 +244,8 @@
                             </dd>
                             <dd><a href="DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
+                            <dd><a href="DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
                             <dd><a href="DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
                             <dd><a href="DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
@@ -344,6 +348,16 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
                             </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_ProfessionalRC.html" class="sub-toggle">ProfessionalRC<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_Event.html">Event</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration.html">ButtonConfiguration</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration_Builder.html">ButtonConfigurationBuilder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
@@ -414,9 +428,19 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Missions/DJILandAction.html">LandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../Missions/DJIMissionTrigger.html">Trigger</a>
+                  <dd><a data-href="../Missions/DJIMissionTrigger.html" class="sub-toggle">Trigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">BatteryPowerLevelTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">WaypointReachedTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">AircraftLandedTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -554,7 +578,7 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIFlySafeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
                             </dd>
@@ -572,27 +596,27 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>ExposureSettings</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExposureSettings</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_exposure_settings_inline">CameraKey.EXPOSURE_SETTINGS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_exposure_settings_key">CameraKey.EXPOSURE_SETTINGS</a></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">This class contains current values for some camera parameters related to exposure, which determines how sensitive  the picture is to light and depends on the balance of the ISO value, the shutter speed, and the aperture value.  When the camera is in different exposure modes, different parameters are automatically changed by the camera to  either get the correct exposure (in  Program, Shutter Priority and Aperture Priority modes), or report back the  current exposure (in Manual mode). The current values of these parameters used by the camera are contained in this  class.</font></p>
+<p><font color="#666">This class contains current values for some camera parameters related to exposure, which determines how sensitive the picture is to light and depends on the balance of the ISO value, the shutter speed, and the aperture value. When the camera is in different exposure modes, different parameters are automatically changed by the camera to either get the correct exposure (in  Program, Shutter Priority and Aperture Priority modes), or report back the current exposure (in Manual mode). The current values of these parameters used by the camera are contained in this class.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djicamera_cameraupdatedcurrentexposurevaluescallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djicamera_cameraupdatedcurrentexposurevaluescallbackinterface_inline">Callback</a></div></div><div class="inline-doc" id="djicamera_cameraupdatedcurrentexposurevaluescallbackinterface_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">interface </font>Callback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Callback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_exposure_settings_inline">CameraKey.EXPOSURE_SETTINGS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_exposure_settings_key">CameraKey.EXPOSURE_SETTINGS</a></font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">Called whenever the camera parameters change. In automatic exposure modes (Program, Shutter Priority and  Aperture Priority) the camera may be automatically changing aperture, shutter speed and ISO (depending on  the mode and camera) when lighting conditions change. In Manual mode, the exposure compensation is automatically  updated to let the user know how much compensation the exposure needs to get to an exposure the camera calculates as correct.</font></p>
+<p><font color="#666">Called whenever the camera parameters change. In automatic exposure modes (Program, Shutter Priority and Aperture Priority) the camera may be automatically changing aperture, shutter speed and ISO (depending on the mode and camera) when lighting conditions change. In Manual mode, the exposure compensation is automatically updated to let the user know how much compensation the exposure needs to get to an exposure the camera calculates as correct.</font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
 <h4 id="callback-method">Callback Method</h4>
 <div class="api-row" id="djicamera_didupdatecurrentexposureparameters"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_didupdatecurrentexposureparameters_inline">onUpdate</a></div></div><div class="inline-doc" id="djicamera_didupdatecurrentexposureparameters_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onUpdate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(@NonNull ExposureSettings values)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_exposure_settings_inline">CameraKey.EXPOSURE_SETTINGS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_exposure_settings_key">CameraKey.EXPOSURE_SETTINGS</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">Called whenever the camera parameters change. In automatic exposure modes (Program, Shutter Priority and  Aperture Priority) the camera may be automatically changing aperture, shutter speed and ISO (depending on  the mode and camera) when lighting conditions change. In Manual mode, the exposure compensation is  automatically updated to let the user know how much compensation the exposure needs to get to an exposure  the camera calculates as correct.</font></p>
+<p><font color="#666">Called whenever the camera parameters change. In automatic exposure modes (Program, Shutter Priority and Aperture Priority) the camera may be automatically changing aperture, shutter speed and ISO (depending on the mode and camera) when lighting conditions change. In Manual mode, the exposure compensation is automatically updated to let the user know how much compensation the exposure needs to get to an exposure the camera calculates as correct.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Camera/DJICamera_DJICameraExposureParameters.html#djicamera_djicameraexposureparameters">ExposureSettings</a> <font color="#000">values</font></font></td><td><font color="#666"><i>The updated values for parameters.</i></font></td></tr></table></html></div>
 </div>
@@ -617,12 +641,12 @@
 <div class="api-row" id="djicamera_djicameraexposureparameters_iso"><div class="api-col left">ISO</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraexposureparameters_iso_inline">getISO</a></div></div><div class="inline-doc" id="djicamera_djicameraexposureparameters_iso_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getISO</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">ISO <span class="title">getISO</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getISO</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">Returns the current ISO value being used by the camera. <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraiso">ISO</a></code> defines a  number ISO values separated by one exposure stop. However, when the ISO is in automatic mode, the camera can select  ISO values less than one stop apart, and therefore this property is the actual ISO value being used by the camera.  A higher ISO results in a higher exposure, and more noise in the resulting image.</font></p>
+<p><font color="#666">Returns the current ISO value being used by the camera. <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraiso">ISO</a></code> defines the number of the ISO values separated by one exposure stop. However, when the ISO is in automatic mode, the camera can select ISO values less than one stop apart, and therefore this property is the actual ISO value being used by the camera. A higher ISO results in a higher exposure, and more noise in the resulting image.</font></p>
 <h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraiso">ISO</a></font></td><td><font color="#666"><i>The enum value of <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraiso">ISO</a></code></i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>The enum value of <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraiso">ISO</a></code></i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraexposureparameters_exposurecompensation"><div class="api-col left">Exposure Compensation</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraexposureparameters_exposurecompensation_inline">getExposureCompensation</a></div></div><div class="inline-doc" id="djicamera_djicameraexposureparameters_exposurecompensation_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getExposureCompensation</h6></div>
 

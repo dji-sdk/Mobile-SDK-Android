@@ -4,13 +4,16 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.ArrayAdapter;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.DialogUtils;
 import com.dji.sdk.sample.internal.view.BaseSetGetView;
+
+import java.util.ArrayList;
+
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
-import java.util.ArrayList;
 
 /**
  * Class for setting and getting dischage day in battery.
@@ -42,14 +45,14 @@ public class SetGetDischargeDayView extends BaseSetGetView {
     protected void setMethod() {
         try {
             DJISampleApplication.getProductInstance()
-                                .getBattery()
-                                .setSelfDischargeInDays((short) (mSpinnerSet.getSelectedItemPosition() + 1),
-                                                        new CommonCallbacks.CompletionCallback() {
-                                                            @Override
-                                                            public void onResult(DJIError djiError) {
-                                                                DialogUtils.showDialogBasedOnError(getContext(), djiError);
-                                                            }
-                                                        });
+                    .getBattery()
+                    .setSelfDischargeInDays((short) (mSpinnerSet.getSelectedItemPosition() + 1),
+                            new CommonCallbacks.CompletionCallback() {
+                                @Override
+                                public void onResult(DJIError djiError) {
+                                    DialogUtils.showDialogBasedOnError(getContext(), djiError);
+                                }
+                            });
         } catch (Exception ignored) {
 
         }
@@ -59,19 +62,19 @@ public class SetGetDischargeDayView extends BaseSetGetView {
     protected void getMethod() {
         try {
             DJISampleApplication.getProductInstance()
-                                .getBattery()
-                                .getSelfDischargeInDays(new CommonCallbacks.CompletionCallbackWith<Integer>() {
-                                    @Override
-                                    public void onSuccess(Integer aShort) {
-                                        mHandler.sendMessage(mHandler.obtainMessage(SHOW_GET_RESULT,
-                                                                                    aShort.toString()));
-                                    }
+                    .getBattery()
+                    .getSelfDischargeInDays(new CommonCallbacks.CompletionCallbackWith<Integer>() {
+                        @Override
+                        public void onSuccess(Integer aShort) {
+                            mHandler.sendMessage(mHandler.obtainMessage(SHOW_GET_RESULT,
+                                    aShort.toString()));
+                        }
 
-                                    @Override
-                                    public void onFailure(DJIError djiError) {
+                        @Override
+                        public void onFailure(DJIError djiError) {
 
-                                    }
-                                });
+                        }
+                    });
         } catch (Exception ignored) {
 
         }

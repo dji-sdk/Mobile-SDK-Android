@@ -2,17 +2,20 @@ package com.dji.sdk.sample.demo.camera;
 
 import android.content.Context;
 import android.os.Environment;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
+
+import java.io.File;
+
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
 import dji.sdk.camera.Camera;
 import dji.sdk.camera.PlaybackManager;
-import java.io.File;
 
 /**
  * Created by dji on 16/1/6.
@@ -48,12 +51,12 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
                     @Override
                     public void onUpdate(PlaybackManager.PlaybackState djiCameraPlaybackState) {
                         if (djiCameraPlaybackState.getPlaybackMode()
-                                                  .equals(SettingsDefinitions.PlaybackMode.SINGLE_PHOTO_PREVIEW)) {
+                                .equals(SettingsDefinitions.PlaybackMode.SINGLE_PHOTO_PREVIEW)) {
                             playbackManager.enterMultiplePreviewMode();
                         }
 
                         if (djiCameraPlaybackState.getPlaybackMode()
-                                                  .equals(SettingsDefinitions.PlaybackMode.MULTIPLE_MEDIA_FILE_PREVIEW)) {
+                                .equals(SettingsDefinitions.PlaybackMode.MULTIPLE_MEDIA_FILE_PREVIEW)) {
                             playbackManager.enterMultipleEditMode();
                         }
                     }
@@ -62,6 +65,27 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
                 ToastUtils.setResultToToast("Not support");
             }
         }
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        if (ModuleVerificationUtil.isCameraModuleAvailable()) {
+            DJISampleApplication.getProductInstance()
+                    .getCamera()
+                    .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO,
+                            new CommonCallbacks.CompletionCallback() {
+                                @Override
+                                public void onResult(DJIError djiError) {
+
+                                }
+                            });
+
+            if (ModuleVerificationUtil.isPlaybackAvailable()) {
+                DJISampleApplication.getProductInstance().
+                        getCamera().getPlaybackManager().setPlaybackStateCallback(null);
+            }
+        }
+        super.onDetachedFromWindow();
     }
 
     @Override
@@ -113,7 +137,7 @@ public class PlaybackDownloadView extends BaseThreeBtnView {
             playbackManager = DJISampleApplication.getProductInstance().getCamera().getPlaybackManager();
 
             File destDir = new File(Environment.getExternalStorageDirectory().
-                getPath() + "/Dji_Sdk_Test/");
+                    getPath() + "/Dji_Sdk_Test/");
             playbackManager.downloadSelectedFiles(destDir, new PlaybackManager.FileDownloadCallback() {
 
                 @Override

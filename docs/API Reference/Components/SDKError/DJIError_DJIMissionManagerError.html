@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -242,6 +244,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
@@ -344,6 +348,16 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
                             </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_ProfessionalRC.html" class="sub-toggle">ProfessionalRC<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_Event.html">Event</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration.html">ButtonConfiguration</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration_Builder.html">ButtonConfigurationBuilder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
@@ -414,9 +428,19 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Missions/DJILandAction.html">LandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../Missions/DJIMissionTrigger.html">Trigger</a>
+                  <dd><a data-href="../Missions/DJIMissionTrigger.html" class="sub-toggle">Trigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">BatteryPowerLevelTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">WaypointReachedTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">AircraftLandedTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -554,7 +578,7 @@
                             </dd>
                             <dd><a href="DJIError_DJIBatteryError.html">DJIBatteryError</a>
                             </dd>
-                            <dd><a href="DJIError_DJIGeoError.html">DJIGeoError</a>
+                            <dd><a href="DJIError_DJIGeoError.html">DJIFlySafeError</a>
                             </dd>
                             <dd><a href="DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
                             </dd>
@@ -1226,12 +1250,20 @@
 <h5 id="description-v81">Description:</h5>
 <p><font color="#666">The quality of vision sensor is low.</font></p>
 </div>
+<div class="api-row" id="djierror_djimissionmanagererror_mission_result_z30_only_support_spotlight_pro"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djimissionmanagererror_mission_result_z30_only_support_spotlight_pro_inline">Z30_ONLY_SUPPORT_SPOTLIGHT_PRO</a></div></div><div class="inline-doc" id="djierror_djimissionmanagererror_mission_result_z30_only_support_spotlight_pro_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">final </font>Z30_ONLY_SUPPORT_SPOTLIGHT_PRO</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError Z30_ONLY_SUPPORT_SPOTLIGHT_PRO = <span class="keyword">new</span> DJIMissionError(<span class="string">"Current Camera only support spotlight pro mode!"</span>)</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v82">Description:</h5>
+<p><font color="#666">The camera only supports spotlight pro mode.</font></p>
+</div>
 <div class="api-row" id="djierror_djimissionmanagererror_mission_result_unknown"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djimissionmanagererror_mission_result_unknown_inline">UNKNOWN</a></div></div><div class="inline-doc" id="djierror_djimissionmanagererror_mission_result_unknown_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">final </font>UNKNOWN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError UNKNOWN = <span class="keyword">new</span> DJIMissionError(<span class="string">"Unknown result"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v82">Description:</h5>
+<h5 id="description-v83">Description:</h5>
 <p><font color="#666">Unknown result.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_modeerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_modeerror_inline">MODE_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_modeerror_inline" <blockquote="">
@@ -1239,7 +1271,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MODE_ERROR =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The control mode of the aircraft is not in the correct state"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v83">Description:</h5>
+<h5 id="description-v84">Description:</h5>
 <p><font color="#666">Cannot execute in the current mode. For products and flight controller firmware versions that support 'F'  mode (e.g. Phantom 3 Professional, Inspire 1, A3 with flight controller firmware version lower than  3.2.10.0, etc), please make sure the remote controller's mode switch is in 'F' mode. For the others,  please make sure the remote controller's mode switch is in 'P' mode.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftbadgps"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftbadgps_inline">GPS_SIGNAL_WEAK</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftbadgps_inline" <blockquote="">
@@ -1247,7 +1279,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError GPS_SIGNAL_WEAK = <span class="keyword">new</span> DJIMissionError(<span class="string">"The GPS signal of the aircraft is weak"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v84">Description:</h5>
+<h5 id="description-v85">Description:</h5>
 <p><font color="#666">The GPS signal of the aircraft is weak.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftlowbattery"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftlowbattery_inline">LOW_BATTERY</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftlowbattery_inline" <blockquote="">
@@ -1255,7 +1287,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError LOW_BATTERY = <span class="keyword">new</span> DJIMissionError(<span class="string">"Low battery level warning"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v85">Description:</h5>
+<h5 id="description-v86">Description:</h5>
 <p><font color="#666">Low battery level warning.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftnotintheair"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftnotintheair_inline">AIRCRAFT_NOT_IN_THE_AIR</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftnotintheair_inline" <blockquote="">
@@ -1263,7 +1295,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_NOT_IN_THE_AIR = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is not in the air"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v86">Description:</h5>
+<h5 id="description-v87">Description:</h5>
 <p><font color="#666">The aircraft is not in the air.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftaltitudetoohigh"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftaltitudetoohigh_inline">AIRCRAFT_ALTITUDE_TOO_HIGH</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftaltitudetoohigh_inline" <blockquote="">
@@ -1271,7 +1303,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_ALTITUDE_TOO_HIGH =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft's altitude is too high."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v87">Description:</h5>
+<h5 id="description-v88">Description:</h5>
 <p><font color="#666">The aircraft's altitude is too high.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftaltitudetoolow"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftaltitudetoolow_inline">AIRCRAFT_ALTITUDE_TOO_LOW</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftaltitudetoolow_inline" <blockquote="">
@@ -1279,7 +1311,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_ALTITUDE_TOO_LOW =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft's altitude is too low."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v88">Description:</h5>
+<h5 id="description-v89">Description:</h5>
 <p><font color="#666">The aircraft's altitude is too low.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircrafttakingoff"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircrafttakingoff_inline">AIRCRAFT_TAKING_OFF</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircrafttakingoff_inline" <blockquote="">
@@ -1287,7 +1319,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_TAKING_OFF = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is taking off"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v89">Description:</h5>
+<h5 id="description-v90">Description:</h5>
 <p><font color="#666">Aircraft is taking off.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftlanding"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftlanding_inline">AIRCRAFT_LANDING</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftlanding_inline" <blockquote="">
@@ -1295,7 +1327,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_LANDING = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is landing"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v90">Description:</h5>
+<h5 id="description-v91">Description:</h5>
 <p><font color="#666">Aircraft is landing.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftgoinghome"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftgoinghome_inline">AIRCRAFT_GOING_HOME</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftgoinghome_inline" <blockquote="">
@@ -1303,7 +1335,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_GOING_HOME = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is going home"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v91">Description:</h5>
+<h5 id="description-v92">Description:</h5>
 <p><font color="#666">Aircraft is going home.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircrafthomepointnotrecorded"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircrafthomepointnotrecorded_inline">HOME_POINT_NOT_RECORDED</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircrafthomepointnotrecorded_inline" <blockquote="">
@@ -1311,7 +1343,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError HOME_POINT_NOT_RECORDED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The home point of aircraft is not recorded"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v92">Description:</h5>
+<h5 id="description-v93">Description:</h5>
 <p><font color="#666">The home point of the aircraft is not recorded.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftinnovicemode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftinnovicemode_inline">IN_NOVICE_MODE</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftinnovicemode_inline" <blockquote="">
@@ -1319,7 +1351,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError IN_NOVICE_MODE = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is in novice mode now"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v93">Description:</h5>
+<h5 id="description-v94">Description:</h5>
 <p><font color="#666">Aircraft is in novice mode.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftinnoflyzone"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftinnoflyzone_inline">AIRCRAFT_IN_NO_FLY_ZONE</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftinnoflyzone_inline" <blockquote="">
@@ -1327,7 +1359,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError AIRCRAFT_IN_NO_FLY_ZONE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is in the no fly zone"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v94">Description:</h5>
+<h5 id="description-v95">Description:</h5>
 <p><font color="#666">Aircraft is in a no fly zone.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_reachflightlimitation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_reachflightlimitation_inline">REACH_FLIGHT_LIMITATION</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_reachflightlimitation_inline" <blockquote="">
@@ -1335,7 +1367,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError REACH_FLIGHT_LIMITATION =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft has reached the flight limitation."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v95">Description:</h5>
+<h5 id="description-v96">Description:</h5>
 <p><font color="#666">The aircraft has reached the flight limitation.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftrunningmission"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftrunningmission_inline">RUNNING_MISSION</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftrunningmission_inline" <blockquote="">
@@ -1343,7 +1375,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError RUNNING_MISSION = <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft is running a mission"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v96">Description:</h5>
+<h5 id="description-v97">Description:</h5>
 <p><font color="#666">The aircraft is running a mission.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_aircraftnearhomepoint"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_aircraftnearhomepoint_inline">TOO_CLOSE_TO_HOME_POINT</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_aircraftnearhomepoint_inline" <blockquote="">
@@ -1351,7 +1383,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TOO_CLOSE_TO_HOME_POINT =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"Aircraft is too close to home point"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v97">Description:</h5>
+<h5 id="description-v98">Description:</h5>
 <p><font color="#666">Aircraft is too close to the home point.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_missionparametersinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_missionparametersinvalid_inline">MISSION_PARAMETERS_INVALID</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_missionparametersinvalid_inline" <blockquote="">
@@ -1359,7 +1391,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_PARAMETERS_INVALID =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The parameters of the mission are invalid"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v98">Description:</h5>
+<h5 id="description-v99">Description:</h5>
 <p><font color="#666">The parameters of the mission are invalid.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_missionresumefailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_missionresumefailed_inline">MISSION_RESUME_FAILED</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_missionresumefailed_inline" <blockquote="">
@@ -1367,7 +1399,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_RESUME_FAILED = <span class="keyword">new</span> DJIMissionError(<span class="string">"Failed to resume the mission"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v99">Description:</h5>
+<h5 id="description-v100">Description:</h5>
 <p><font color="#666">Mission resume failed.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_trackingtargetlost"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_trackingtargetlost_inline">TRACKING_TARGET_LOST</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_trackingtargetlost_inline" <blockquote="">
@@ -1375,7 +1407,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_LOST = <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target is lost."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v100">Description:</h5>
+<h5 id="description-v101">Description:</h5>
 <p><font color="#666">The tracking target is lost.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_novideofeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_novideofeed_inline">NO_VIDEO_FEED</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_novideofeed_inline" <blockquote="">
@@ -1383,7 +1415,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError NO_VIDEO_FEED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"No live video feed is captured for the ActiveTrack Mission. "</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v101">Description:</h5>
+<h5 id="description-v102">Description:</h5>
 <p><font color="#666">No live video feed is captured for the ActiveTrack Mission.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_videoframeratetoolow"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_videoframeratetoolow_inline">VIDEO_FRAME_RATE_TOO_LOW</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_videoframeratetoolow_inline" <blockquote="">
@@ -1391,7 +1423,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VIDEO_FRAME_RATE_TOO_LOW =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The frame rate of the live video feed is too low."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v102">Description:</h5>
+<h5 id="description-v103">Description:</h5>
 <p><font color="#666">The frame rate of the live video feed is too low.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_visionsystemnotauthorized"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_visionsystemnotauthorized_inline">VISION_SYSTEM_NOT_AUTHORIZED</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_visionsystemnotauthorized_inline" <blockquote="">
@@ -1399,7 +1431,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_SYSTEM_NOT_AUTHORIZED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The vision system cannot get the authorization to control the aircraft. "</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v103">Description:</h5>
+<h5 id="description-v104">Description:</h5>
 <p><font color="#666">The vision system cannot get the authorization to control the aircraft.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_visionsystemerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_visionsystemerror_inline">VISION_SYSTEM_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_visionsystemerror_inline" <blockquote="">
@@ -1407,7 +1439,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_SYSTEM_ERROR =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The vision system encounters system error."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v104">Description:</h5>
+<h5 id="description-v105">Description:</h5>
 <p><font color="#666">The vision system encounters system error.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_cannotbypassobstacle"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_cannotbypassobstacle_inline">CANNOT_BYPASS_OBSTACLE</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_cannotbypassobstacle_inline" <blockquote="">
@@ -1415,7 +1447,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError CANNOT_BYPASS_OBSTACLE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft cannot bypass the obstacle."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v105">Description:</h5>
+<h5 id="description-v106">Description:</h5>
 <p><font color="#666">The aircraft cannot bypass the obstacle.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_stoppedbyuser"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_stoppedbyuser_inline">STOPPED_BY_USER</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_stoppedbyuser_inline" <blockquote="">
@@ -1423,7 +1455,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError STOPPED_BY_USER = <span class="keyword">new</span> DJIMissionError(<span class="string">"Mission was stopped by the user."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v106">Description:</h5>
+<h5 id="description-v107">Description:</h5>
 <p><font color="#666">Mission was stopped by the user.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_visionsystemneedcalibration"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_visionsystemneedcalibration_inline">VISION_SYSTEM_NEEDS_CALIBRATION</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_visionsystemneedcalibration_inline" <blockquote="">
@@ -1431,7 +1463,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_SYSTEM_NEEDS_CALIBRATION =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The vision system requires calibration."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v107">Description:</h5>
+<h5 id="description-v108">Description:</h5>
 <p><font color="#666">The vision system requires calibration.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_visionsensoroverexposed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_visionsensoroverexposed_inline">VISION_SENSOR_OVEREXPOSED</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_visionsensoroverexposed_inline" <blockquote="">
@@ -1439,7 +1471,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_SENSOR_OVEREXPOSED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The vision sensors are overexposed."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v108">Description:</h5>
+<h5 id="description-v109">Description:</h5>
 <p><font color="#666">The vision sensors are overexposed.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_visionsensorunderexposed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_visionsensorunderexposed_inline">VISION_SENSOR_UNDEREXPOSED</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_visionsensorunderexposed_inline" <blockquote="">
@@ -1447,7 +1479,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_SENSOR_UNDEREXPOSED =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The vision sensors are underexposed."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v109">Description:</h5>
+<h5 id="description-v110">Description:</h5>
 <p><font color="#666">The vision sensors are underexposed.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_visiondataabnormal"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_visiondataabnormal_inline">VISION_DATA_ABNORMAL</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_visiondataabnormal_inline" <blockquote="">
@@ -1455,7 +1487,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError VISION_DATA_ABNORMAL =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The data from the vision system is abnormal."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v110">Description:</h5>
+<h5 id="description-v111">Description:</h5>
 <p><font color="#666">The data from the vision system is abnormal.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_featurepointcannotmatch"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_featurepointcannotmatch_inline">FEATURE_POINT_CANNOT_MATCH</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_featurepointcannotmatch_inline" <blockquote="">
@@ -1463,7 +1495,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError FEATURE_POINT_CANNOT_MATCH =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The feature points found by both vision sensors cannot match."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v111">Description:</h5>
+<h5 id="description-v112">Description:</h5>
 <p><font color="#666">The feature points found by both vision sensors cannot match.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_trackingrecttoosmall"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_trackingrecttoosmall_inline">TRACKING_RECT_TOO_SMALL</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_trackingrecttoosmall_inline" <blockquote="">
@@ -1471,7 +1503,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_RECT_TOO_SMALL =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking rectangle is too small."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v112">Description:</h5>
+<h5 id="description-v113">Description:</h5>
 <p><font color="#666">The tracking rectangle is too small.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_trackingrecttoolarge"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_trackingrecttoolarge_inline">TRACKING_RECT_TOO_LARGE</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_trackingrecttoolarge_inline" <blockquote="">
@@ -1479,7 +1511,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_RECT_TOO_LARGE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking rectangle is too large."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v113">Description:</h5>
+<h5 id="description-v114">Description:</h5>
 <p><font color="#666">The tracking rectangle is too large.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_trackingtargetnotenoughfeature"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_trackingtargetnotenoughfeature_inline">TRACKING_TARGET_NOT_ENOUGH_FEATURES</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_trackingtargetnotenoughfeature_inline" <blockquote="">
@@ -1487,7 +1519,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_NOT_ENOUGH_FEATURES =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target doesn't have enough features to lock onto."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v114">Description:</h5>
+<h5 id="description-v115">Description:</h5>
 <p><font color="#666">The tracking target doesn't have enough features to lock onto.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_trackingtargettooclose"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_trackingtargettooclose_inline">TRACKING_TARGET_TOO_CLOSE</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_trackingtargettooclose_inline" <blockquote="">
@@ -1495,7 +1527,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_TOO_CLOSE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target is too close to the aircraft."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v115">Description:</h5>
+<h5 id="description-v116">Description:</h5>
 <p><font color="#666">The Tracking target is too close to the aircraft.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_trackingtargettoofar"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_trackingtargettoofar_inline">TRACKING_TARGET_TOO_FAR</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_trackingtargettoofar_inline" <blockquote="">
@@ -1503,7 +1535,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_TOO_FAR =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target is too far away from the aircraft."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v116">Description:</h5>
+<h5 id="description-v117">Description:</h5>
 <p><font color="#666">The tracking target is too far away from the aircraft.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_trackingtargettoohigh"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_trackingtargettoohigh_inline">TRACKING_TARGET_TOO_HIGH</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_trackingtargettoohigh_inline" <blockquote="">
@@ -1511,7 +1543,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_TOO_HIGH =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target is too high."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v117">Description:</h5>
+<h5 id="description-v118">Description:</h5>
 <p><font color="#666">The tracking target is too high.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_trackingtargetshaking"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_trackingtargetshaking_inline">TRACKING_TARGET_SHAKING</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_trackingtargetshaking_inline" <blockquote="">
@@ -1519,7 +1551,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_SHAKING =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The tracking target is shaking too much."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v118">Description:</h5>
+<h5 id="description-v119">Description:</h5>
 <p><font color="#666">The tracking target is shaking too much.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_trackingtargetlowconfidence"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_trackingtargetlowconfidence_inline">TRACKING_TARGET_LOW_CONFIDENCE</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_trackingtargetlowconfidence_inline" <blockquote="">
@@ -1527,7 +1559,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_TARGET_LOW_CONFIDENCE =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The ActiveTrack mission is too unsure the tracking object and confirmation is required."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v119">Description:</h5>
+<h5 id="description-v120">Description:</h5>
 <p><font color="#666">The ActiveTrack mission is too unsure the tracking object and confirmation is required.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_missionpausedbyuser"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_missionpausedbyuser_inline">TRACKING_PAUSED_BY_USER</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_missionpausedbyuser_inline" <blockquote="">
@@ -1535,7 +1567,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_PAUSED_BY_USER = <span class="keyword">new</span> DJIMissionError(<span class="string">"Mission is paused by user."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v120">Description:</h5>
+<h5 id="description-v121">Description:</h5>
 <p><font color="#666">Mission is paused by user.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_gimbalpitchtoolow"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_gimbalpitchtoolow_inline">TRACKING_GIMBAL_PITCH_TOO_LOW</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_gimbalpitchtoolow_inline" <blockquote="">
@@ -1543,7 +1575,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_GIMBAL_PITCH_TOO_LOW =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The gimbal pitch is too low."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v121">Description:</h5>
+<h5 id="description-v122">Description:</h5>
 <p><font color="#666">Gimbal pitch is too low.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_obstacledetected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_obstacledetected_inline">TRACKING_OBSTACLE_DETECTED</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_obstacledetected_inline" <blockquote="">
@@ -1551,7 +1583,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError TRACKING_OBSTACLE_DETECTED = <span class="keyword">new</span> DJIMissionError(<span class="string">"Obstacles are detected."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v122">Description:</h5>
+<h5 id="description-v123">Description:</h5>
 <p><font color="#666">Encounter an obstacle.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_reachaltitudelowerbound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_reachaltitudelowerbound_inline">REACH_ALTITUDE_LOWER_BOUND</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_reachaltitudelowerbound_inline" <blockquote="">
@@ -1559,7 +1591,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError REACH_ALTITUDE_LOWER_BOUND =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The aircraft reaches the altitude lower bound of the TapFly Mission."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v123">Description:</h5>
+<h5 id="description-v124">Description:</h5>
 <p><font color="#666">The aircraft reaches the altitude lower bound of the TapFly Mission.</font></p>
 </div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
@@ -1568,7 +1600,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">String <span class="title">getDescription</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v124">Description:</h5>
+<h5 id="description-v125">Description:</h5>
 <p><font color="#666">Returns the description of the error code.</font></p>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>The description of the error code.</i></font></td></tr></table></html></div>
@@ -1577,7 +1609,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String desc)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v125">Description:</h5>
+<h5 id="description-v126">Description:</h5>
 <p><font color="#666">Sets the description for the error code.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">desc</font></font></td><td><font color="#666"><i>Description string.</i></font></td></tr></table></html></div>

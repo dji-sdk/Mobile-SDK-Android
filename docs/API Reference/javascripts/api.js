@@ -9,7 +9,9 @@ var panel
   var w = $(window)
   var titles = sidebar.find('dl > dd > a')
 
-
+  var isCacheKey = function(hash){
+    return hash.lastIndexOf('_key') == (hash.length - 4)
+  }
   var initHashScroll = function () {
     // first time scroll
     var hash = window.location.hash.toLowerCase()
@@ -27,13 +29,21 @@ var panel
       var target = $(this)
       // if(!target.hasClass('trigger')){
         var hash = target.attr('href').toLowerCase()
-        scrollTo($(hash), function() {
+        var targetDom = null
+        if(isCacheKey(hash)){
+          targetDom = target
+        }else{
+          targetDom = $(hash)
+        }
+        scrollTo(targetDom, function() {
           window.history.pushState(null, null, hash)
         })
       // }
     })
     var openHashTag = function(hash, callback){
-      if(hash.indexOf('_inline') < 0){
+      if(isCacheKey(hash)){
+        // pass
+      }else if(hash.lastIndexOf('_inline') != (hash.length - 7)){
         hash += '_inline'
       }
       var targetModuleDom = $('a[href="' + hash + '"]')

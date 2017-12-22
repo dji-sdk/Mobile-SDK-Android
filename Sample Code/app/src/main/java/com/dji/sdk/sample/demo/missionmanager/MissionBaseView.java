@@ -10,14 +10,10 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.dji.sdk.sample.R;
-import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
-import dji.common.flightcontroller.FlightControllerState;
 import dji.common.flightcontroller.FlightMode;
-import dji.sdk.base.BaseProduct;
 import dji.sdk.flightcontroller.FlightController;
-import dji.sdk.products.Aircraft;
 
 /**
  * Class for basic manager view in mission manager
@@ -27,6 +23,9 @@ public abstract class MissionBaseView extends RelativeLayout implements View.OnC
     protected FlightController flightController;
 
     protected Button simulatorBtn;
+    protected Button maxAltitudeBtn;
+    protected Button maxRadiusBtn;
+
     protected Button loadBtn;
     protected Button uploadBtn;
     protected Button startBtn;
@@ -82,6 +81,8 @@ public abstract class MissionBaseView extends RelativeLayout implements View.OnC
         downloadBtn = (Button) findViewById(R.id.btn_download);
         progressBar = (ProgressBar) findViewById(R.id.pb_mission);
         simulatorBtn = (Button) findViewById(R.id.btn_simulator);
+        maxAltitudeBtn = (Button) findViewById(R.id.btn_set_maximum_altitude);
+        maxRadiusBtn = (Button) findViewById(R.id.btn_set_maximum_radius);
 
         loadBtn.setOnClickListener(this);
         uploadBtn.setOnClickListener(this);
@@ -91,6 +92,8 @@ public abstract class MissionBaseView extends RelativeLayout implements View.OnC
         resumeBtn.setOnClickListener(this);
         downloadBtn.setOnClickListener(this);
         simulatorBtn.setOnClickListener(this);
+        maxRadiusBtn.setOnClickListener(this);
+        maxAltitudeBtn.setOnClickListener(this);
     }
 
     @NonNull

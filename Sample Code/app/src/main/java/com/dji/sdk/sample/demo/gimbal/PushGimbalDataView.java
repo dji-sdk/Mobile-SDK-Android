@@ -2,10 +2,12 @@ package com.dji.sdk.sample.demo.gimbal;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+
 import com.dji.sdk.sample.R;
-import com.dji.sdk.sample.internal.view.BasePushDataView;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
+import com.dji.sdk.sample.internal.view.BasePushDataView;
+
 import dji.common.gimbal.GimbalState;
 
 /**
@@ -28,11 +30,11 @@ public class PushGimbalDataView extends BasePushDataView {
                     stringBuffer.delete(0, stringBuffer.length());
 
                     stringBuffer.append("PitchInDegrees: ").
-                        append(gimbalState.getAttitudeInDegrees().getPitch()).append("\n");
+                            append(gimbalState.getAttitudeInDegrees().getPitch()).append("\n");
                     stringBuffer.append("RollInDegrees: ").
-                        append(gimbalState.getAttitudeInDegrees().getRoll()).append("\n");
+                            append(gimbalState.getAttitudeInDegrees().getRoll()).append("\n");
                     stringBuffer.append("YawInDegrees: ").
-                        append(gimbalState.getAttitudeInDegrees().getYaw()).append("\n");
+                            append(gimbalState.getAttitudeInDegrees().getYaw()).append("\n");
 
                     showStringBufferResult();
                 }

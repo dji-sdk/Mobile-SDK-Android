@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
+
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
@@ -52,15 +54,15 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
             });
 
             DJISampleApplication.getProductInstance().
-                getCamera().getPlaybackManager().setPlaybackStateCallback(new PlaybackManager.PlaybackState.CallBack() {
+                    getCamera().getPlaybackManager().setPlaybackStateCallback(new PlaybackManager.PlaybackState.CallBack() {
                 @Override
                 public void onUpdate(PlaybackManager.PlaybackState playbackState) {
                     if (playbackState.getPlaybackMode().equals(SettingsDefinitions.
-                                                                   PlaybackMode.MULTIPLE_MEDIA_FILE_PREVIEW) ||
-                        playbackState.getPlaybackMode().equals(SettingsDefinitions.
-                                                                   PlaybackMode.MEDIA_FILE_DOWNLOAD) ||
-                        playbackState.getPlaybackMode().equals(SettingsDefinitions.
-                                                                   PlaybackMode.MULTIPLE_FILES_EDIT)) {
+                            PlaybackMode.MULTIPLE_MEDIA_FILE_PREVIEW) ||
+                            playbackState.getPlaybackMode().equals(SettingsDefinitions.
+                                    PlaybackMode.MEDIA_FILE_DOWNLOAD) ||
+                            playbackState.getPlaybackMode().equals(SettingsDefinitions.
+                                    PlaybackMode.MULTIPLE_FILES_EDIT)) {
                         isSinglePreview = false;
                     } else {
                         isSinglePreview = true;
@@ -69,14 +71,14 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
             });
 
             DJISampleApplication.getProductInstance()
-                                .getCamera()
-                                .setMode(SettingsDefinitions.CameraMode.PLAYBACK,
-                                         new CommonCallbacks.CompletionCallback() {
-                                             @Override
-                                             public void onResult(DJIError djiError) {
+                    .getCamera()
+                    .setMode(SettingsDefinitions.CameraMode.PLAYBACK,
+                            new CommonCallbacks.CompletionCallback() {
+                                @Override
+                                public void onResult(DJIError djiError) {
 
-                                             }
-                                         });
+                                }
+                            });
         } else {
             ToastUtils.setResultToToast("Not support");
         }
@@ -86,18 +88,19 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
     protected void onDetachedFromWindow() {
         if (ModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance()
-                                .getCamera()
-                                .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO,
-                                         new CommonCallbacks.CompletionCallback() {
-                                             @Override
-                                             public void onResult(DJIError djiError) {
+                    .getCamera()
+                    .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO,
 
-                                             }
-                                         });
+                            new CommonCallbacks.CompletionCallback() {
+                                @Override
+                                public void onResult(DJIError djiError) {
+
+                                }
+                            });
 
             if (ModuleVerificationUtil.isPlaybackAvailable()) {
                 DJISampleApplication.getProductInstance().
-                    getCamera().getPlaybackManager().setPlaybackStateCallback(null);
+                        getCamera().getPlaybackManager().setPlaybackStateCallback(null);
             }
         }
         super.onDetachedFromWindow();
@@ -128,39 +131,41 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        if (!ModuleVerificationUtil.isPlaybackAvailable()) return;
+        if (!ModuleVerificationUtil.isPlaybackAvailable()) {
+            return;
+        }
         switch (v.getId()) {
             case R.id.btn_previous:
                 if (isSinglePreview) {
                     DJISampleApplication.getProductInstance().getCamera().
-                        getPlaybackManager().proceedToPreviousSinglePreviewPage();
+                            getPlaybackManager().proceedToPreviousSinglePreviewPage();
                 } else {
                     DJISampleApplication.getProductInstance().getCamera().
-                        getPlaybackManager().enterMultiplePreviewMode();
+                            getPlaybackManager().enterMultiplePreviewMode();
                 }
                 break;
 
             case R.id.btn_next:
                 if (isSinglePreview) {
                     DJISampleApplication.getProductInstance().getCamera().
-                        getPlaybackManager().proceedToNextSinglePreviewPage();
+                            getPlaybackManager().proceedToNextSinglePreviewPage();
                 } else {
                     DJISampleApplication.getProductInstance().getCamera().
-                        getPlaybackManager().proceedToNextMultiplePreviewPage();
+                            getPlaybackManager().proceedToNextMultiplePreviewPage();
                 }
                 break;
 
             case R.id.btn_multiple:
                 if (isSinglePreview) {
                     DJISampleApplication.getProductInstance().getCamera().
-                        getPlaybackManager().enterMultiplePreviewMode();
+                            getPlaybackManager().enterMultiplePreviewMode();
                 }
                 break;
 
             case R.id.btn_single:
                 if (!isSinglePreview) {
                     DJISampleApplication.getProductInstance().
-                        getCamera().getPlaybackManager().enterSinglePreviewModeWithIndex(0);
+                            getCamera().getPlaybackManager().enterSinglePreviewModeWithIndex(0);
                 }
                 break;
 

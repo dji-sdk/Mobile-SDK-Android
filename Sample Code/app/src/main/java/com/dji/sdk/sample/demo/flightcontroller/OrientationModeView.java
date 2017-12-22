@@ -45,6 +45,16 @@ public class OrientationModeView extends BaseThreeBtnView {
     }
 
     @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+
+        if(ModuleVerificationUtil.isFlightControllerAvailable()) {
+            flightController = DJISampleApplication.getAircraftInstance().getFlightController();
+            flightController.setStateCallback(null);
+        }
+    }
+
+    @Override
     protected int getMiddleBtnTextResourceId() {
         return R.string.orientation_mode_home_lock;
     }

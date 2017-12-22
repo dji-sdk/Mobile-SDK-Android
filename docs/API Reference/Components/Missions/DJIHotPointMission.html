@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">IndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -242,6 +244,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraPhotoTimeLapseSettings.html">PhotoTimeLapseSettings</a>
@@ -344,6 +348,16 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_JoinedMasterNameAndPasswordResult.html">Credentials</a>
                             </dd>
+                            <dd><a data-href="../RemoteController/DJIRemoteController_ProfessionalRC.html" class="sub-toggle">ProfessionalRC<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_Event.html">Event</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration.html">ButtonConfiguration</a>
+                                      </dd>
+                                      <dd><a href="../RemoteController/DJIRemoteController_ProfessionalRC_ButtonConfiguration_Builder.html">ButtonConfigurationBuilder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
@@ -414,9 +428,19 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="DJILandAction.html">LandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="DJIMissionTrigger.html">Trigger</a>
+                  <dd><a data-href="DJIMissionTrigger.html" class="sub-toggle">Trigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">BatteryPowerLevelTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">WaypointReachedTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">AircraftLandedTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="DJIWaypointMissionOperator.html" class="sub-toggle">WaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -554,7 +578,7 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIBatteryError.html">DJIBatteryError</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIGeoError</a>
+                            <dd><a href="../SDKError/DJIError_DJIGeoError.html">DJIFlySafeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIRemoteControllerError.html">DJIRemoteControllerError</a>
                             </dd>
@@ -669,21 +693,21 @@
 <div class="api-row" id="djihotpointmission_angularvelocity"><div class="api-col left">Angular Velocity</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_angularvelocity_inline">setAngularVelocity</a></div></div><div class="inline-doc" id="djihotpointmission_angularvelocity_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setAngularVelocity</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAngularVelocity</span><span class="params">(<span class="keyword">float</span> angularVelocity)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAngularVelocity</span><span class="params">(<span class="keyword">int</span> angularVelocity)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Sets the angular velocity in degrees/s of the aircraft as it orbits the hot  point. The default value is 20 degrees/s. The maximum angular velocity allowed  is relative to the orbit radius.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">angularVelocity</font></font></td><td><font color="#666"><i>Angular velocity in degrees/s.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">angularVelocity</font></font></td><td><font color="#666"><i>Angular velocity in degrees/s.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djihotpointmission_getangularvelocity"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_getangularvelocity_inline">getAngularVelocity</a></div></div><div class="inline-doc" id="djihotpointmission_getangularvelocity_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getAngularVelocity</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getAngularVelocity</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getAngularVelocity</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Gets the angular velocity (in degrees/second) of the aircraft as it orbits the hot  point. The default value is 20 degrees/s. The angular velocity is relative to the  orbit radius.</font></p>
 <h5 id="return-v6">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value of angular velocity.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of angular velocity.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djihotpointmission_isclockwise"><div class="api-col left">Direction</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_isclockwise_inline">isClockwise</a></div></div><div class="inline-doc" id="djihotpointmission_isclockwise_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>isClockwise</h6></div>
 
@@ -705,12 +729,12 @@
 <div class="api-row" id="djihotpointmission_constructor"><div class="api-col left">Constructor</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_constructor_inline">HotpointMission</a></div></div><div class="inline-doc" id="djihotpointmission_constructor_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>HotpointMission</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">HotpointMission(LocationCoordinate2D hotpoint,</div><div class="line">                          <span class="keyword">double</span> altitude,</div><div class="line">                          <span class="keyword">double</span> radius,</div><div class="line">                          <span class="keyword">float</span> angularVelocity,</div><div class="line">                          <span class="keyword">boolean</span> isClockwise,</div><div class="line">                          HotpointStartPoint startPoint,</div><div class="line">                          HotpointHeading heading)</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">HotpointMission(LocationCoordinate2D hotpoint,</div><div class="line">                          <span class="keyword">double</span> altitude,</div><div class="line">                          <span class="keyword">double</span> radius,</div><div class="line">                          <span class="keyword">int</span> angularVelocity,</div><div class="line">                          <span class="keyword">boolean</span> isClockwise,</div><div class="line">                          HotpointStartPoint startPoint,</div><div class="line">                          HotpointHeading heading)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Constructor method for the DJIHotPointMission.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a> <font color="#000">hotpoint</font></font></td><td><font color="#666"><i>Location of the hot point.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">double <font color="#000">altitude</font></font></td><td><font color="#666"><i>Altitude of the orbit in meters</i></font></td></tr><tr valign="top"><td><font color="#70BF41">double <font color="#000">radius</font></font></td><td><font color="#666"><i>Radius of the orbit in meters</i></font></td></tr><tr valign="top"><td><font color="#70BF41">float <font color="#000">angularVelocity</font></font></td><td><font color="#666"><i>Angular velocity of the aircraft in degrees/s</i></font></td></tr><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isClockwise</font></font></td><td><font color="#666"><i><code>true</code> if the aircraft should move in a clockwise direction around the hot point.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_djihotpointstartpoint">HotpointStartPoint</a> <font color="#000">startPoint</font></font></td><td><font color="#666"><i>Initial location on the orbit to start</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_djihotpointheading">HotpointHeading</a> <font color="#000">heading</font></font></td><td><font color="#666"><i>Aircraft heading during the mission</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a> <font color="#000">hotpoint</font></font></td><td><font color="#666"><i>Location of the hot point.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">double <font color="#000">altitude</font></font></td><td><font color="#666"><i>Altitude of the orbit in meters</i></font></td></tr><tr valign="top"><td><font color="#70BF41">double <font color="#000">radius</font></font></td><td><font color="#666"><i>Radius of the orbit in meters</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">angularVelocity</font></font></td><td><font color="#666"><i>Angular velocity of the aircraft in degrees/s</i></font></td></tr><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isClockwise</font></font></td><td><font color="#666"><i><code>true</code> if the aircraft should move in a clockwise direction around the hot point.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_djihotpointstartpoint">HotpointStartPoint</a> <font color="#000">startPoint</font></font></td><td><font color="#666"><i>Initial location on the orbit to start</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_djihotpointheading">HotpointHeading</a> <font color="#000">heading</font></font></td><td><font color="#666"><i>Aircraft heading during the mission</i></font></td></tr></table></html></div>
 <div class="api-row" id="djihotpointmission_resetmissionwithdata"><div class="api-col left">Reset Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_resetmissionwithdata_inline">resetMissionWithData</a></div></div><div class="inline-doc" id="djihotpointmission_resetmissionwithdata_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>resetMissionWithData</h6></div>
 

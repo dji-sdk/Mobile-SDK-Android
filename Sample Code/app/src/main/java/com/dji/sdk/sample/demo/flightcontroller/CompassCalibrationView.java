@@ -3,8 +3,8 @@ package com.dji.sdk.sample.demo.flightcontroller;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import com.dji.sdk.sample.R;
-import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
+import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import dji.common.error.DJIError;
 import dji.common.flightcontroller.FlightControllerState;
@@ -54,6 +54,9 @@ public class CompassCalibrationView extends BaseThreeBtnView {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+        if(ModuleVerificationUtil.isFlightControllerAvailable()) {
+            ((Aircraft) DJISampleApplication.getProductInstance()).getFlightController().setStateCallback(null);
+        }
     }
 
     @Override

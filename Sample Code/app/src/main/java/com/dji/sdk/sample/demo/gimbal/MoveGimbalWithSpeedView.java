@@ -2,8 +2,8 @@ package com.dji.sdk.sample.demo.gimbal;
 
 import android.content.Context;
 import com.dji.sdk.sample.R;
-import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
+import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import dji.common.error.DJIError;
 import dji.common.gimbal.Rotation;
@@ -55,7 +55,9 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
     @Override
     protected void handleLeftBtnClick() {
         if (timer != null) {
-            gimbalRotationTimerTask.cancel();
+            if(gimbalRotationTimerTask != null) {
+                gimbalRotationTimerTask.cancel();
+            }
             timer.cancel();
             timer.purge();
             gimbalRotationTimerTask = null;
@@ -71,6 +73,19 @@ public class MoveGimbalWithSpeedView extends BaseThreeBtnView {
 
                     }
                 });
+        }
+    }
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (timer != null) {
+            if(gimbalRotationTimerTask != null) {
+                gimbalRotationTimerTask.cancel();
+            }
+            timer.cancel();
+            timer.purge();
+            gimbalRotationTimerTask = null;
+            timer = null;
         }
     }
 

@@ -1,7 +1,9 @@
 package com.dji.sdk.sample.internal.utils;
 
 import android.support.annotation.Nullable;
+
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
+
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.flightcontroller.Simulator;
 import dji.sdk.products.Aircraft;
@@ -29,30 +31,30 @@ public class ModuleVerificationUtil {
 
     public static boolean isPlaybackAvailable() {
         return isCameraModuleAvailable() && (null != DJISampleApplication.getProductInstance()
-                                                                         .getCamera()
-                                                                         .getPlaybackManager());
+                .getCamera()
+                .getPlaybackManager());
     }
 
     public static boolean isMediaManagerAvailable() {
         return isCameraModuleAvailable() && (null != DJISampleApplication.getProductInstance()
-                                                                         .getCamera()
-                                                                         .getMediaManager());
+                .getCamera()
+                .getMediaManager());
     }
 
     public static boolean isRemoteControllerAvailable() {
         return isProductModuleAvailable() && isAircraft() && (null != DJISampleApplication.getAircraftInstance()
-                                                                                          .getRemoteController());
+                .getRemoteController());
     }
 
     public static boolean isFlightControllerAvailable() {
         return isProductModuleAvailable() && isAircraft() && (null != DJISampleApplication.getAircraftInstance()
-                                                                                          .getFlightController());
+                .getFlightController());
     }
 
     public static boolean isCompassAvailable() {
         return isFlightControllerAvailable() && isAircraft() && (null != DJISampleApplication.getAircraftInstance()
-                                                                                             .getFlightController()
-                                                                                             .getCompass());
+                .getFlightController()
+                .getCompass());
     }
 
     public static boolean isFlightLimitationAvailable() {
@@ -73,8 +75,8 @@ public class ModuleVerificationUtil {
 
     public static boolean isLightbridgeLinkAvailable() {
         return isAirlinkAvailable() && (null != DJISampleApplication.getProductInstance()
-                                                                    .getAirLink()
-                                                                    .getLightbridgeLink());
+                .getAirLink()
+                .getLightbridgeLink());
     }
 
     @Nullable

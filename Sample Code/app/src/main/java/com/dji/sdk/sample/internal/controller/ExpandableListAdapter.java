@@ -8,12 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+
 import com.dji.sdk.sample.R;
-import com.dji.sdk.sample.internal.model.ViewWrapper;
 import com.dji.sdk.sample.internal.model.GroupHeader;
 import com.dji.sdk.sample.internal.model.GroupItem;
 import com.dji.sdk.sample.internal.model.SingleItem;
+import com.dji.sdk.sample.internal.model.ViewWrapper;
 import com.dji.sdk.sample.internal.view.PresentableView;
+
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +28,9 @@ import java.util.List;
 
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
-    private List<GroupHeader> itemList;
     private final List<GroupHeader> backupList;
     private final Context context;
+    private List<GroupHeader> itemList;
     private LayoutInflater layoutInflater;
 
     public ExpandableListAdapter(@NonNull Context context, @NonNull List<GroupHeader> itemList) {
@@ -100,14 +102,14 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                 public void onClick(View v) {
                     try {
                         Constructor<? extends PresentableView> cons =
-                            ((SingleItem) item).getLinkedViewClass().getConstructor(Context.class);
+                                ((SingleItem) item).getLinkedViewClass().getConstructor(Context.class);
                         PresentableView linkedView = cons.newInstance(context);
                         DJISampleApplication.getEventBus()
-                                            .post(new ViewWrapper((View) linkedView, item.getTitleStringId()));
+                                .post(new ViewWrapper((View) linkedView, item.getTitleStringId()));
                     } catch (Exception e) {
                         throw new RuntimeException("Class "
-                                                       + ((SingleItem) item).getLinkedViewClass().getSimpleName()
-                                                       + " is missing a constructor that takes Context");
+                                + ((SingleItem) item).getLinkedViewClass().getSimpleName()
+                                + " is missing a constructor that takes Context");
                     }
                 }
             });
@@ -148,14 +150,14 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                 public void onClick(View v) {
                     try {
                         Constructor<? extends PresentableView> cons =
-                            (item.getLinkedViewClass().getConstructor(Context.class));
+                                (item.getLinkedViewClass().getConstructor(Context.class));
                         PresentableView linkedView = cons.newInstance(context);
                         DJISampleApplication.getEventBus()
-                                            .post(new ViewWrapper((View) linkedView, item.getTitleStringId()));
+                                .post(new ViewWrapper((View) linkedView, item.getTitleStringId()));
                     } catch (Exception e) {
                         throw new RuntimeException("Class "
-                                                       + (item).getLinkedViewClass().getSimpleName()
-                                                       + " is missing a constructor that takes Context");
+                                + (item).getLinkedViewClass().getSimpleName()
+                                + " is missing a constructor that takes Context");
                     }
                 }
             });
@@ -196,7 +198,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                     }
                     if (!filteredItems.isEmpty()) {
                         final GroupHeader groupHeader = new GroupHeader(eachItem.getTitleStringId(),
-                                                                        filteredItems.toArray(new GroupItem[filteredItems.size()]));
+                                filteredItems.toArray(new GroupItem[filteredItems.size()]));
                         itemList.add(groupHeader);
                     }
                 }

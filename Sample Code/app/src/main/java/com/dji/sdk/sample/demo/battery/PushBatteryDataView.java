@@ -2,8 +2,8 @@ package com.dji.sdk.sample.demo.battery;
 
 import android.content.Context;
 import com.dji.sdk.sample.R;
-import com.dji.sdk.sample.internal.view.BasePushDataView;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
+import com.dji.sdk.sample.internal.view.BasePushDataView;
 import dji.common.battery.BatteryState;
 
 /**
