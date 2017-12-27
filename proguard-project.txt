@@ -1,3 +1,4 @@
+-keepattributes Exceptions,InnerClasses,*Annotation*,Signature,EnclosingMethod
 -keepclassmembers class * extends android.app.Service
 -keepclassmembers public class * extends android.view.View {
     void set*(***);
@@ -23,7 +24,7 @@
 
 -keep class net.sqlcipher.** { *; }
 -keep class net.sqlcipher.database.* { *; }
--keepattributes *Annotation*
+
 -keepclassmembers class ** {
     @dji.thirdparty.v3.eventbus.Subscribe <methods>;
 }
@@ -106,3 +107,10 @@
 -keepclasseswithmembers,allowshrinking class * {
     native <methods>;
 }
+
+
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+-keep class com.squareup.wire.** { *; }
+-keep class sun.misc.Unsafe { *; }
