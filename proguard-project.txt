@@ -1,37 +1,14 @@
 -keepattributes Exceptions,InnerClasses,*Annotation*,Signature,EnclosingMethod
--keepclassmembers class * extends android.app.Service
--keepclassmembers public class * extends android.view.View {
-    void set*(***);
-    *** get*();
-}
--keepclassmembers class * extends android.app.Activity {
-    public void *(android.view.View);
-}
--keep,allowshrinking class android.support.** {
-    <fields>;
-    <methods>;
-}
--keep,allowshrinking class android.media.** {
-    <fields>;
-    <methods>;
-}
--keep,allowshrinking class * extends dji.publics.DJIUI.** {
-    public <methods>;
-}
+
+-dontwarn okio.**
+-dontwarn org.bouncycastle.**
+-dontwarn dji.**
+-dontwarn com.dji.**
+
 -keepclassmembers enum * {
     public static <methods>;
 }
 
--keep class net.sqlcipher.** { *; }
--keep class net.sqlcipher.database.* { *; }
-
--keepclassmembers class ** {
-    @dji.thirdparty.v3.eventbus.Subscribe <methods>;
-}
--keep enum dji.thirdparty.v3.eventbus.ThreadMode { *; }
--keepclassmembers class * extends dji.thirdparty.v3.eventbus.util.ThrowableFailureEvent {
-    <init>(java.lang.Throwable);
-}
 -keepnames class * implements java.io.Serializable
 -keepclassmembers class * implements java.io.Serializable {
     static final long serialVersionUID;
@@ -46,71 +23,47 @@
     public static final android.os.Parcelable$Creator *;
 }
 
--keepclassmembers class dji.** {
-    <fields>;
-    <methods>;
+-keep,allowshrinking class * extends dji.publics.DJIUI.** {
+    public <methods>;
 }
 
--keepclassmembers class com.dji.** {
-    <fields>;
-    <methods>;
-}
+-keep class net.sqlcipher.** { *; }
 
--keep,allowshrinking class com.handmark.** {
-    <fields>;
-    <methods>;
-}
--keep,allowshrinking class com.google.** {
-    <fields>;
-    <methods>;
-}
+-keep class net.sqlcipher.database.* { *; }
 
--keep,allowshrinking class com.hp.hpl.** {
-    <fields>;
-    <methods>;
-}
+-keep class dji.** { *; }
 
--keep,allowshrinking class net.sourceforge.** {
-    <fields>;
-    <methods>;
-}
+-keep class com.dji.** { *; }
 
--keep,allowshrinking class org.bouncycastle.** {
-    <fields>;
-    <methods>;
-}
--keep,allowshrinking class org.** {
-    <fields>;
-    <methods>;
-}
+-keep class com.google.** { *; }
 
--keep,allowshrinking class com.trilead.** {
-    <fields>;
-    <methods>;
-}
+-keep,allowshrinking class org.bouncycastle.** { *; }
 
--keep,allowshrinking class com.jcraft.** {
-    <fields>;
-    <methods>;
-}
+-keep,allowshrinking class org.** { *; }
 
--keep,allowshrinking class de.mud.** {
-    <fields>;
-    <methods>;
-}
+-keep class com.squareup.wire.** { *; }
 
--keep,allowshrinking class net.sourceforge.** {
-    <fields>;
-    <methods>;
-}
+-keep class sun.misc.Unsafe { *; }
+
+-keep class com.secneo.** { *; }
 
 -keepclasseswithmembers,allowshrinking class * {
     native <methods>;
 }
 
-
 -keep class * implements com.google.gson.TypeAdapterFactory
 -keep class * implements com.google.gson.JsonSerializer
 -keep class * implements com.google.gson.JsonDeserializer
--keep class com.squareup.wire.** { *; }
--keep class sun.misc.Unsafe { *; }
+
+-keep class android.support.v7.widget.SearchView { *; }
+
+-keepclassmembers class * extends android.app.Service
+-keepclassmembers public class * extends android.view.View {
+    void set*(***);
+    *** get*();
+}
+-keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+}
+-keep class android.support.** { *; }
+-keep class android.media.** { *; }
