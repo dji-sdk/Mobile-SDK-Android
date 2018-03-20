@@ -29,7 +29,7 @@ DJISDKManager.getInstance().getProduct().getCamera().getISO(new CompletionCallba
 ~~~java
 DJIKey isoKey =  CameraKey.create(CameraKey.ISO);
 DJISDKManager.getInstance().getKeyManager().getValue(isoKey, new GetCallback() {
-    @Override public void onSuccess(@NonNull Object value) {
+    @Override public void onSuccess(@NonNull Object value) {vhjju
     
         if (value instanceof SettingsDefinitions.ISO)
         {
