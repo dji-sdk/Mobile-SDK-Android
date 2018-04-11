@@ -182,12 +182,12 @@ public class FetchMediaView extends BaseThreeBtnView {
     private void fetchMediaList() {
         if (ModuleVerificationUtil.isMediaManagerAvailable()) {
             if (mediaManager != null) {
-                mediaManager.refreshFileList(new CommonCallbacks.CompletionCallback() {
+                mediaManager.refreshFileListOfStorageLocation(SettingsDefinitions.StorageLocation.SDCARD, new CommonCallbacks.CompletionCallback() {
                     @Override
                     public void onResult(DJIError djiError) {
                         String str;
                         if (null == djiError) {
-                            List<MediaFile> djiMedias = mediaManager.getFileListSnapshot();
+                            List<MediaFile> djiMedias = mediaManager.getSDCardFileListSnapshot();
 
                             if (null != djiMedias) {
                                 if (!djiMedias.isEmpty()) {

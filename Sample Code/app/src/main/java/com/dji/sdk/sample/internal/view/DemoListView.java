@@ -23,6 +23,7 @@ import com.dji.sdk.sample.demo.camera.ShootSinglePhotoView;
 import com.dji.sdk.sample.demo.camera.VideoFeederView;
 import com.dji.sdk.sample.demo.flightcontroller.CompassCalibrationView;
 import com.dji.sdk.sample.demo.flightcontroller.FlightAssistantPushDataView;
+import com.dji.sdk.sample.demo.flightcontroller.FlightHubView;
 import com.dji.sdk.sample.demo.flightcontroller.FlightLimitationView;
 import com.dji.sdk.sample.demo.flightcontroller.OrientationModeView;
 import com.dji.sdk.sample.demo.flightcontroller.VirtualStickView;
@@ -72,6 +73,11 @@ public class DemoListView extends FrameLayout {
 
         // Build model for ListView
         ListBuilder builder = new ListBuilder();
+
+        builder.addGroup(R.string.component_listview_sdk_4_5,
+                         false,
+                         new GroupItem(R.string.component_listview_flight_hub,
+                                       FlightHubView.class));
 
         builder.addGroup(R.string.component_listview_sdk_4_1,
                          false,

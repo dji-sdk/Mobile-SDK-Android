@@ -2,31 +2,26 @@ package com.dji.sdk.sample.demo.appactivation;
 
 import android.content.Context;
 import android.util.Log;
-import android.view.View;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.BaseAppActivationView;
-import dji.common.error.DJIError;
 import dji.common.flightcontroller.adsb.AirSenseAirplaneState;
 import dji.common.flightcontroller.adsb.AirSenseSystemInformation;
 import dji.common.realname.AircraftBindingState;
 import dji.common.realname.AircraftBindingState.AircraftBindingStateListener;
 import dji.common.realname.AppActivationState;
 import dji.common.realname.AppActivationState.AppActivationStateListener;
-import dji.common.util.CommonCallbacks;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.products.Aircraft;
 import dji.sdk.realname.AppActivationManager;
 import dji.sdk.sdkmanager.DJISDKManager;
-import dji.sdk.useraccount.UserAccountManager;
-import dji.common.useraccount.UserAccountState;
 
 /**
  * Class for determining whether the App is Activated.
  */
-public class AppActivationView  extends BaseAppActivationView {
+public class AppActivationView extends BaseAppActivationView {
 
     private static final String TAG = AppActivationView.class.getSimpleName();
     private AppActivationManager appActivationManager= DJISDKManager.getInstance().getAppActivationManager();
@@ -37,51 +32,6 @@ public class AppActivationView  extends BaseAppActivationView {
         super(context);
     }
 
-    //region Mission Action Demo
-    @Override
-    public void onClick(View v) {
-
-        switch (v.getId()) {
-
-            case R.id.btn_login:
-
-                UserAccountManager.getInstance()
-                                  .logIntoDJIUserAccount(this.getContext(),
-                                                         new CommonCallbacks.CompletionCallbackWith<UserAccountState>() {
-                                                             @Override
-                                                             public void onSuccess(UserAccountState userAccountState) {
-                                                                 ToastUtils.setResultToText(accountStateTV,
-                                                                                            "Account State: "
-                                                                                                + userAccountState.name());
-                                                             }
-
-                                                             @Override
-                                                             public void onFailure(DJIError djiError) {
-                                                                 ToastUtils.setResultToToast("error:"
-                                                                                                 + djiError.getDescription());
-                                                             }
-                                                         });
-
-                break;
-            case R.id.btn_login_out:
-                UserAccountManager.getInstance().logoutOfDJIUserAccount(new CommonCallbacks.CompletionCallback() {
-                    @Override
-                    public void onResult(DJIError error) {
-                        if (null == error) {
-                            ToastUtils.setResultToToast("Success");
-                            ToastUtils.setResultToText(accountStateTV, "NotLoggedIn");
-                        } else {
-                            ToastUtils.setResultToToast("error:" + error.getDescription());
-                        }
-                    }
-                });
-                break;
-            default:
-                break;
-        }
-    }
-    //endregion
-
     //region View Life-Cycle
     @Override
     protected void onAttachedToWindow() {
@@ -91,12 +41,11 @@ public class AppActivationView  extends BaseAppActivationView {
         if (appActivationManager != null) {
             appActivationManager.addAppActivationStateListener(activationStatelistener);
 
-            appActivationStateTV.setText("Activation State:" + appActivationManager.getAppActivationState());
+            appActivationStateTV.setText("Activation State: " + appActivationManager.getAppActivationState());
 
             appActivationManager.addAircraftBindingStateListener(bindingStateListener);
-            bindingStateTV.setText("Binding State:" + appActivationManager.getAircraftBindingState());
+            bindingStateTV.setText("Binding State: " + appActivationManager.getAircraftBindingState());
         }
-        accountStateTV.setText("Account State: "+UserAccountManager.getInstance().getUserAccountState());
 
         if (ModuleVerificationUtil.isFlightControllerAvailable()) {
             FlightController flightController =

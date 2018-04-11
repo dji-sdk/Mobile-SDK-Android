@@ -40,7 +40,7 @@ import dji.sdk.mission.MissionControl;
 import dji.sdk.mission.Triggerable;
 import dji.sdk.mission.timeline.TimelineElement;
 import dji.sdk.mission.timeline.TimelineEvent;
-import dji.sdk.mission.timeline.Mission;
+import dji.sdk.mission.timeline.TimelineMission;
 import dji.sdk.mission.timeline.actions.GimbalAttitudeAction;
 import dji.sdk.mission.timeline.actions.GoHomeAction;
 import dji.sdk.mission.timeline.actions.GoToAction;
@@ -57,8 +57,6 @@ import dji.sdk.products.Aircraft;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Class for Timeline MissionControl.
@@ -251,7 +249,7 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
 
         //Step 7: start a waypoint mission while the aircraft is still recording the video
         setTimelinePlanToText("Step 7: start a waypoint mission while the aircraft is still recording the video");
-        TimelineElement waypointMission = Mission.elementFromWaypointMission(initTestingWaypointMission());
+        TimelineElement waypointMission = TimelineMission.elementFromWaypointMission(initTestingWaypointMission());
         elements.add(waypointMission);
         addWaypointReachedTrigger(waypointMission);
 
@@ -308,8 +306,8 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         }
 
         if (element != null) {
-            if (element instanceof Mission) {
-                setRunningResultToText(((Mission) element).getMissionObject().getClass().getSimpleName()
+            if (element instanceof TimelineMission) {
+                setRunningResultToText(((TimelineMission) element).getMissionObject().getClass().getSimpleName()
                                                 + " event is "
                                                 + event.toString()
                                                 + " "
@@ -342,10 +340,14 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         WaypointMission.Builder waypointMissionBuilder = new WaypointMission.Builder().autoFlightSpeed(5f)
                                                                                       .maxFlightSpeed(10f)
                                                                                       .setExitMissionOnRCSignalLostEnabled(false)
-                                                                                      .finishedAction(WaypointMissionFinishedAction.NO_ACTION)
-                                                                                      .flightPathMode(WaypointMissionFlightPathMode.NORMAL)
-                                                                                      .gotoFirstWaypointMode(WaypointMissionGotoWaypointMode.SAFELY)
-                                                                                      .headingMode(WaypointMissionHeadingMode.AUTO)
+                                                                                      .finishedAction(
+                                                                                          WaypointMissionFinishedAction.NO_ACTION)
+                                                                                      .flightPathMode(
+                                                                                          WaypointMissionFlightPathMode.NORMAL)
+                                                                                      .gotoFirstWaypointMode(
+                                                                                          WaypointMissionGotoWaypointMode.SAFELY)
+                                                                                      .headingMode(
+                                                                                          WaypointMissionHeadingMode.AUTO)
                                                                                       .repeatTimes(1);;
         List<Waypoint> waypoints = new LinkedList<>();
 

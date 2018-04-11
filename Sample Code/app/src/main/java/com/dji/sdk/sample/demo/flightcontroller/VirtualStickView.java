@@ -186,31 +186,6 @@ public class VirtualStickView extends RelativeLayout
                 if (Math.abs(pY) < 0.02) {
                     pY = 0;
                 }
-                float verticalJoyControlMaxSpeed = 5;
-                float yawJoyControlMaxSpeed = 10;
-
-                yaw = yawJoyControlMaxSpeed * pX;
-                throttle = verticalJoyControlMaxSpeed * pY;
-
-                if (null == sendVirtualStickDataTimer) {
-                    sendVirtualStickDataTask = new SendVirtualStickDataTask();
-                    sendVirtualStickDataTimer = new Timer();
-                    sendVirtualStickDataTimer.schedule(sendVirtualStickDataTask, 0, 200);
-                }
-            }
-        });
-
-        screenJoystickRight.setJoystickListener(new OnScreenJoystickListener() {
-
-            @Override
-            public void onTouch(OnScreenJoystick joystick, float pX, float pY) {
-                if (Math.abs(pX) < 0.02) {
-                    pX = 0;
-                }
-
-                if (Math.abs(pY) < 0.02) {
-                    pY = 0;
-                }
                 float pitchJoyControlMaxSpeed = 10;
                 float rollJoyControlMaxSpeed = 10;
 
@@ -234,6 +209,30 @@ public class VirtualStickView extends RelativeLayout
             }
         });
 
+        screenJoystickRight.setJoystickListener(new OnScreenJoystickListener() {
+
+            @Override
+            public void onTouch(OnScreenJoystick joystick, float pX, float pY) {
+                if (Math.abs(pX) < 0.02) {
+                    pX = 0;
+                }
+
+                if (Math.abs(pY) < 0.02) {
+                    pY = 0;
+                }
+                float verticalJoyControlMaxSpeed = 2;
+                float yawJoyControlMaxSpeed = 3;
+
+                yaw = yawJoyControlMaxSpeed * pX;
+                throttle = verticalJoyControlMaxSpeed * pY;
+
+                if (null == sendVirtualStickDataTimer) {
+                    sendVirtualStickDataTask = new SendVirtualStickDataTask();
+                    sendVirtualStickDataTimer = new Timer();
+                    sendVirtualStickDataTimer.schedule(sendVirtualStickDataTask, 0, 200);
+                }
+            }
+        });
     }
 
     private void tearDownListeners() {

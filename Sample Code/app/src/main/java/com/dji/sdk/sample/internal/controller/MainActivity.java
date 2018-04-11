@@ -11,8 +11,6 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -197,12 +195,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Hint click
-        hintItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                showHint();
-                return false;
-            }
+        hintItem.setOnMenuItemClickListener((item) -> {
+            showHint();
+            return false;
         });
         return true;
     }
@@ -266,6 +261,9 @@ public class MainActivity extends AppCompatActivity {
                         public void onProductChange(BaseProduct oldProduct, BaseProduct newProduct) {
                             Log.d(TAG, String.format("onProductChanged oldProduct:%s, newProduct:%s", oldProduct, newProduct));
                             notifyStatusChange();
+                            if (newProduct != null) {
+                                newProduct.setBaseProductListener(mDJIBaseProductListener);
+                            }
                         }
                     });
                 }

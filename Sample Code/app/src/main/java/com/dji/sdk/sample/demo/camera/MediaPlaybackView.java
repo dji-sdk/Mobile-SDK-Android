@@ -130,12 +130,12 @@ public class MediaPlaybackView extends LinearLayout
         mediaManager = DJISampleApplication.getProductInstance().getCamera().getMediaManager();
         if (mediaManager != null) {
 
-            mediaManager.refreshFileList(new CommonCallbacks.CompletionCallback() {
+            mediaManager.refreshFileListOfStorageLocation(SettingsDefinitions.StorageLocation.SDCARD, new CommonCallbacks.CompletionCallback() {
                 @Override
                 public void onResult(DJIError djiError) {
                     if (djiError == null) {
 
-                        List<MediaFile> medias = mediaManager.getFileListSnapshot();
+                        List<MediaFile> medias = mediaManager.getSDCardFileListSnapshot();
                         Log.d(TAG, "fetchMediaList onSuccess");
                         handler.sendMessage(handler.obtainMessage(HIDE_PROGRESS_DIALOG, null));
                         if (DJIMediaList != null) {

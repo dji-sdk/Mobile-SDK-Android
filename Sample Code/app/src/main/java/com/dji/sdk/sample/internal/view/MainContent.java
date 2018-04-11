@@ -59,8 +59,6 @@ public class MainContent extends RelativeLayout {
     private HandlerThread mHandlerThread = new HandlerThread("Bluetooth");
 
     private BaseProduct mProduct;
-
-
     private DJIKey firmwareKey;
     private KeyListener firmwareVersionUpdater;
     private boolean hasStartedFirmVersionListener = false;
@@ -106,7 +104,7 @@ public class MainContent extends RelativeLayout {
                     return;
                 }
                 bluetoothView =
-                        new ViewWrapper(new BluetoothView(getContext()), R.string.component_listview_bluetooth);
+                    new ViewWrapper(new BluetoothView(getContext()), R.string.component_listview_bluetooth);
                 DJISampleApplication.getEventBus().post(bluetoothView);
             }
         });
@@ -201,7 +199,6 @@ public class MainContent extends RelativeLayout {
                 }
             }
         };
-
         mHandlerUI = new Handler(Looper.getMainLooper());
         super.onAttachedToWindow();
     }
@@ -232,7 +229,6 @@ public class MainContent extends RelativeLayout {
         } else {
             mTextModelAvailable.setText("Firmware version:"+version); //"Firmware version: " +
             removeFirmwareVersionListener();
-
         }
     }
 
@@ -256,8 +252,8 @@ public class MainContent extends RelativeLayout {
 
             String str = mProduct instanceof Aircraft ? "DJIAircraft" : "DJIHandHeld";
             mTextConnectionStatus.setText("Status: " + str + " connected");
-            updateVersion();
             tryUpdateFirmwareVersionWithListener();
+
 
             if (null != mProduct.getModel()) {
                 mTextProduct.setText("" + mProduct.getModel().getDisplayName());
@@ -301,5 +297,4 @@ public class MainContent extends RelativeLayout {
         }
         hasStartedFirmVersionListener = false;
     }
-
 }

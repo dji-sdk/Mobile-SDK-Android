@@ -10,13 +10,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.dji.sdk.sample.R;
 
-public abstract class BaseAppActivationView extends FrameLayout implements View.OnClickListener,PresentableView{
+public abstract class BaseAppActivationView extends FrameLayout implements PresentableView{
 
-    protected Button userAccountStateBtn;
-    protected Button logOutBtn;
     protected TextView bindingStateTV;
     protected TextView appActivationStateTV;
-    protected TextView accountStateTV;
     protected TextView adsbStateTV;
 
     public BaseAppActivationView(Context context) {
@@ -43,12 +40,7 @@ public abstract class BaseAppActivationView extends FrameLayout implements View.
 
         appActivationStateTV = (TextView) findViewById(R.id.tv_activation_state_info);
         bindingStateTV = (TextView) findViewById(R.id.tv_binding_state_info);
-        accountStateTV = (TextView) findViewById(R.id.tv_account_state_info);
         adsbStateTV = (TextView) findViewById(R.id.tv_adsb_info);
-        userAccountStateBtn = (Button) findViewById(R.id.btn_login);
-        logOutBtn = (Button) findViewById(R.id.btn_login_out);
-        userAccountStateBtn.setOnClickListener(this);
-        logOutBtn.setOnClickListener(this);
     }
 
 }

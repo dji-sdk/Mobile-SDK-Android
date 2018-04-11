@@ -12,21 +12,21 @@ Declare dependency via Maven:
 <dependency>
     <groupId>com.dji</groupId>
     <artifactId>dji-sdk</artifactId>
-    <version>4.4.1</version>
+    <version>4.5</version>
 </dependency>
 
 <dependency>
     <groupId>com.dji</groupId>
     <artifactId>dji-sdk-provided</artifactId>
-    <version>4.4.1</version>
+    <version>4.5</version>
 </dependency>
 ~~~
 
 or Gradle:
 
 ~~~groovy
-compile 'com.dji:dji-sdk:4.4.1'
-provided 'com.dji:dji-sdk-provided:4.4.1'
+compile 'com.dji:dji-sdk:4.5'
+provided 'com.dji:dji-sdk-provided:4.5'
 ~~~
 
 For further detail on how to integrate the DJI Android SDK into your Android Studio project, please check the [Integrate SDK into Application](http://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-integrate.html#import-maven-dependency) tutorial.
@@ -53,7 +53,7 @@ From registering as a developer, to deploying an application, the following will
 Several Android tutorials are provided as examples on how to use different features of the Mobile SDK and debug tools includes:
 
 - [Application Activation and Aircraft Binding](http://developer.dji.com/mobile-sdk/documentation/android-tutorials/ActivationAndBinding.html)
-- [Getting Started with UI Library](http://developer.dji.com/mobile-sdk/documentation/android-tutorials/UILibraryDemo.html)
+- [Getting Started with UX SDK](http://developer.dji.com/mobile-sdk/documentation/android-tutorials/UXSDKDemo.html)
 - [Camera Application](https://developer.dji.com/mobile-sdk/documentation/android-tutorials/FPVDemo.html)
 - [MapView and Waypoint Application (GaodeMap)](https://developer.dji.com/mobile-sdk/documentation/android-tutorials/GSDemo-Gaode-Map.html)
 - [MapView and Waypoint Application (GoogleMap)](https://developer.dji.com/mobile-sdk/documentation/android-tutorials/GSDemo-Google-Map.html)
@@ -65,9 +65,9 @@ Several Android tutorials are provided as examples on how to use different featu
 
 Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk/documentation/introduction/index.html) for more details.
 
-## DJI Mobile UI Library
+## DJI Mobile UX SDK
 
-DJI Mobile UILibrary is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the DJI Mobile SDK. For more details, please check [here](https://github.com/dji-sdk/Mobile-UILibrary-Android).
+DJI Mobile UX SDK is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the DJI Mobile SDK. For more details, please check [here](https://github.com/dji-sdk/Mobile-UXSDK-Android).
 
 ## ProGuard
 

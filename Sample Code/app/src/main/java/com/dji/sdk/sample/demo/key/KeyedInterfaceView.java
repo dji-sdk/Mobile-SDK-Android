@@ -30,7 +30,7 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
 
     //region Battery
     // Example of creating a BatteryKey
-    BatteryKey batteryKey = BatteryKey.create(BatteryKey.CHARGE_REMAINING_IN_PERCENT);
+    private BatteryKey batteryKey = BatteryKey.create(BatteryKey.CHARGE_REMAINING_IN_PERCENT);
     private Button getBatteryBtn;
     private TextView batteryTV;
     //endregion
@@ -38,15 +38,15 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
     //region Camera
     private SettingsDefinitions.CameraMode cameraMode;
     // Example of creating a CameraKey
-    CameraKey cameraKey = CameraKey.create(CameraKey.MODE);
+    private CameraKey cameraKey = CameraKey.create(CameraKey.MODE);
     private Button cameraBtn;
     private TextView cameraTV;
     // Example of handling a listener
-    KeyListener cameraModeListener = new KeyListener() {
+    private KeyListener cameraModeListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object o, @Nullable Object o1) {
             if (o1 instanceof SettingsDefinitions.CameraMode) {
-                setText(cameraTV, "Current Mode: " + o1);
+                setText(cameraTV, getResources().getString(R.string.camera_value, o1));
             }
         }
     };
@@ -54,16 +54,33 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
 
     //region Gimbal
     // Example of creating a GimbalKey
-    GimbalKey startCalibrationKey = GimbalKey.create(GimbalKey.START_CALIBRATION);
-    GimbalKey calibrationProgress = GimbalKey.create(GimbalKey.CALIBRATION_PROGRESS);
+    private GimbalKey startCalibrationKey = GimbalKey.create(GimbalKey.START_CALIBRATION);
+    private GimbalKey calibrationProgress = GimbalKey.create(GimbalKey.CALIBRATION_PROGRESS);
     private Button calibrateBtn;
     private TextView calibrationTV;
     // Example of handling a listener
-    KeyListener calibrationListener = new KeyListener() {
+    private KeyListener calibrationListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object o, @Nullable Object o1) {
             if (o1 instanceof Integer) {
-                setText(calibrationTV, "Progress : " + o1 + "%");
+                setText(calibrationTV, getResources().getString(R.string.calibration_value, o1));
+            }
+        }
+    };
+    //endregion
+
+    //region Storage
+    private SettingsDefinitions.StorageLocation storageLocation;
+    // Example of changing the storage location for supported products
+    private CameraKey storageLocationKey = CameraKey.create(CameraKey.CAMERA_STORAGE_LOCATION);
+    private CameraKey isInternalStorageSupportedKey = CameraKey.create(CameraKey.IS_INTERNAL_STORAGE_SUPPORTED);
+    private Button storageLocationBtn;
+    private TextView storageLocationTV;
+    private KeyListener isInternalStorageSupportedListener = new KeyListener() {
+        @Override
+        public void onValueChange(@Nullable Object o, @Nullable Object o1) {
+            if (o1 instanceof Boolean) {
+                updateStorageLocationVisibility((boolean) o1);
             }
         }
     };
@@ -97,11 +114,13 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
     private void setUpKeys() {
         KeyManager.getInstance().addListener(cameraKey, cameraModeListener);
         KeyManager.getInstance().addListener(calibrationProgress, calibrationListener);
+        KeyManager.getInstance().addListener(isInternalStorageSupportedKey, isInternalStorageSupportedListener);
     }
 
     private void tearDownKeys() {
         KeyManager.getInstance().removeListener(cameraModeListener);
         KeyManager.getInstance().removeListener(calibrationListener);
+        KeyManager.getInstance().removeListener(isInternalStorageSupportedListener);
     }
     //endregion
 
@@ -111,20 +130,20 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
             public void onClick(View v) {
                 // Example of getting a value using Async interface
                 KeyManager.getInstance().getValue(batteryKey, new GetCallback() {
-                                                      @Override
-                                                      public void onSuccess(final @NonNull Object o) {
-                                                          if (o instanceof Integer) {
-                                                              setText(batteryTV, o.toString() + " %");
-                                                          }
-                                                      }
+                    @Override
+                    public void onSuccess(final @NonNull Object o) {
+                        if (o instanceof Integer) {
+                            ToastUtils.setResultToToast("Success!");
+                            setText(batteryTV, getResources().getString(R.string.battery_value, o.toString()));
+                        }
+                    }
 
-                                                      @Override
-                                                      public void onFailure(@NonNull DJIError djiError) {
-                                                          setText(batteryTV, "N/A %");
-                                                      }
-                                                  }
-
-                );
+                    @Override
+                    public void onFailure(@NonNull DJIError djiError) {
+                        ToastUtils.setResultToToast("Failed!" + djiError);
+                        setText(batteryTV, "N/A %");
+                    }
+                });
             }
         });
         cameraBtn.setOnClickListener(new OnClickListener() {
@@ -133,37 +152,25 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
                 if (cameraMode == null) {
                     // Example of getting a value using Synchronous interface
                     cameraMode = (SettingsDefinitions.CameraMode) KeyManager.getInstance().getValue(cameraKey);
-                    setText(cameraTV, "Current Mode: " + cameraMode);
+                    setText(cameraTV, getResources().getString(R.string.camera_value, cameraMode));
                 } else {
                     if (cameraMode == SettingsDefinitions.CameraMode.SHOOT_PHOTO) {
                         cameraMode = SettingsDefinitions.CameraMode.RECORD_VIDEO;
-                        // Example of setting a value
-                        KeyManager.getInstance().setValue(cameraKey, cameraMode, new SetCallback() {
-                            @Override
-                            public void onSuccess() {
-                                ToastUtils.setResultToToast("Success!");
-                            }
-
-                            @Override
-                            public void onFailure(@NonNull DJIError djiError) {
-                                ToastUtils.setResultToToast("Failed!" + djiError);
-                            }
-                        });
                     } else {
                         cameraMode = SettingsDefinitions.CameraMode.SHOOT_PHOTO;
-                        // Example of setting a value
-                        KeyManager.getInstance().setValue(cameraKey, cameraMode, new SetCallback() {
-                            @Override
-                            public void onSuccess() {
-                                ToastUtils.setResultToToast("Success!");
-                            }
-
-                            @Override
-                            public void onFailure(@NonNull DJIError djiError) {
-                                ToastUtils.setResultToToast("Failed!" + djiError);
-                            }
-                        });
                     }
+                    // Example of setting a value
+                    KeyManager.getInstance().setValue(cameraKey, cameraMode, new SetCallback() {
+                        @Override
+                        public void onSuccess() {
+                            ToastUtils.setResultToToast("Success!");
+                        }
+
+                        @Override
+                        public void onFailure(@NonNull DJIError djiError) {
+                            ToastUtils.setResultToToast("Failed!" + djiError);
+                        }
+                    });
                 }
             }
         });
@@ -184,6 +191,29 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
                 });
             }
         });
+        storageLocationBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (storageLocation == SettingsDefinitions.StorageLocation.INTERNAL_STORAGE) {
+                    storageLocation = SettingsDefinitions.StorageLocation.SDCARD;
+                } else {
+                    storageLocation = SettingsDefinitions.StorageLocation.INTERNAL_STORAGE;
+                }
+                // Example of setting a value
+                KeyManager.getInstance().setValue(storageLocationKey, storageLocation, new SetCallback() {
+                    @Override
+                    public void onSuccess() {
+                        ToastUtils.setResultToToast("Success!");
+                        updateStorageLocation();
+                    }
+
+                    @Override
+                    public void onFailure(@NonNull DJIError djiError) {
+                        ToastUtils.setResultToToast("Failed!" + djiError);
+                    }
+                });
+            }
+        });
     }
 
     //region Helper Method
@@ -199,6 +229,27 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
         cameraTV = (TextView) findViewById(R.id.tv_camera_value);
         calibrateBtn = (Button) findViewById(R.id.tv_calibrate_title);
         calibrationTV = (TextView) findViewById(R.id.tv_calibrate_value);
+        storageLocationBtn = (Button) findViewById(R.id.tv_storage_location_title);
+        storageLocationTV = (TextView) findViewById(R.id.tv_storage_location_value);
+
+        // Example of getting a value using Async interface
+        KeyManager.getInstance().getValue(isInternalStorageSupportedKey, new GetCallback() {
+
+            @Override
+            public void onSuccess(@NonNull Object o) {
+                if (o instanceof Boolean) {
+                    updateStorageLocationVisibility((boolean) o);
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull DJIError djiError) {
+                ToastUtils.setResultToToast("Failed!" + djiError);
+            }
+        });
+        // Example of getting a value using Synchronous interface
+        storageLocation = (SettingsDefinitions.StorageLocation) KeyManager.getInstance().getValue(storageLocationKey);
+        updateStorageLocation();
     }
 
     private void setText(final TextView tv, final String text) {
@@ -207,6 +258,24 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
             public void run() {
 
                 tv.setText(text);
+            }
+        });
+    }
+
+    private void updateStorageLocation() {
+        if (storageLocation == SettingsDefinitions.StorageLocation.INTERNAL_STORAGE) {
+            setText(storageLocationTV, getResources().getString(R.string.storage_location_value_internal));
+        } else {
+            setText(storageLocationTV, getResources().getString(R.string.storage_location_value_sd));
+        }
+    }
+
+    private void updateStorageLocationVisibility(final boolean isInternalStorageSupported) {
+        storageLocationBtn.post(new Runnable() {
+            @Override
+            public void run() {
+                storageLocationBtn.setVisibility(isInternalStorageSupported ? VISIBLE : GONE);
+                storageLocationTV.setVisibility(isInternalStorageSupported ? VISIBLE : GONE);
             }
         });
     }

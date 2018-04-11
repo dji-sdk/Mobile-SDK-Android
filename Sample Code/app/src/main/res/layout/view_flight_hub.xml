@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       tools:parentTag="android.widget.LinearLayout">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="16dp"
+            android:textSize="16sp"
+            android:text="Step 1: "/>
+
+        <com.dji.sdk.sample.demo.useraccount.LoginView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="16dp"
+            android:textSize="16sp"
+            android:text="Step 2: "/>
+
+        <Button
+            android:id="@+id/fh_auth"
+            style="@style/common_button"
+            android:text="@string/fh_get_authorization"/>
+
+        <TextView
+            android:id="@+id/tv_auth_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="16dp"
+            android:textColor="@color/black"
+            android:text="Authorized: unknown"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/button_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="15dp"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/fh_get_team_info"
+                    style="@style/common_button"
+                    android:text="@string/fh_get_team_info"/>
+
+                <Button
+                    android:id="@+id/fh_bind_aircraft"
+                    style="@style/common_button"
+                    android:text="@string/fh_bind_aircraft"/>
+
+                <Button
+                    android:id="@+id/fh_unbind_aircraft"
+                    style="@style/common_button"
+                    android:text="@string/fh_unbind_aircraft"/>
+
+                <Button
+                    android:id="@+id/fh_set_upload_interval"
+                    style="@style/common_button"
+                    android:text="@string/fh_set_upload_interval"/>
+
+                <Button
+                    android:id="@+id/fh_get_upload_interval"
+                    style="@style/common_button"
+                    android:text="@string/fh_get_upload_interval"/>
+
+                <Button
+                    android:id="@+id/fh_start_upload_flight_data"
+                    style="@style/common_button"
+                    android:text="@string/fh_start_upload_flight_data"/>
+
+                <Button
+                    android:id="@+id/fh_stop_upload_flight_data"
+                    style="@style/common_button"
+                    android:text="@string/fh_stop_upload_flight_data"/>
+
+                <Button
+                    android:id="@+id/fh_get_flight_path"
+                    style="@style/common_button"
+                    android:text="@string/fh_get_flight_path"/>
+
+                <Button
+                    android:id="@+id/fh_get_online_devices"
+                    style="@style/common_button"
+                    android:text="@string/fh_get_online_devices"/>
+
+                <Button
+                    android:id="@+id/fh_get_real_time_data"
+                    style="@style/common_button"
+                    android:text="@string/fh_get_real_time_data"/>
+
+                <Button
+                    android:id="@+id/fh_get_flight_statistics"
+                    style="@style/common_button"
+                    android:text="@string/fh_get_flight_statistics"/>
+
+                <Button
+                    android:id="@+id/fh_get_stream_source"
+                    style="@style/common_button"
+                    android:text="@string/fh_get_stream_source"/>
+
+                <Button
+                    android:id="@+id/fh_get_stream_destination"
+                    style="@style/common_button"
+                    android:text="@string/fh_get_stream_destination"/>
+
+                <Button
+                    android:id="@+id/fh_check_live_stream_stability"
+                    style="@style/common_button"
+                    android:text="@string/fh_check_live_stream_stability"/>
+
+                <Button
+                    android:id="@+id/fh_get_streaming_devices"
+                    style="@style/common_button"
+                    android:text="@string/fh_get_streaming_devices"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <EditText
+            android:id="@+id/fh_team_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_toRightOf="@id/button_container"
+            android:hint="@string/fh_team_id"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/fh_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/fh_team_id"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@id/button_container"
+            android:hint="@string/fh_account"
+            android:inputType="number" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@id/button_container"
+            android:layout_above="@id/fh_account"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_upload_status"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_alignParentRight="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/flight_hub_info_tv"/>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</merge>
