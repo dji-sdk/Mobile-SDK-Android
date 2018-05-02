@@ -76,6 +76,8 @@
                   </dd>
                   <dd><a data-href="../FlyZoneManager/DJIFlyZoneManager.html" class="sub-toggle">FlyZoneManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIUnlockedZoneGroup.html">UnlockedZoneGroup</a>
+                            </dd>
                             <dd><a data-href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyZoneInformation.html" class="sub-toggle">FlyZoneInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJISubFlyZoneInformation.html">SubFlyZoneInformation</a>
@@ -287,6 +289,8 @@
                             <dd><a href="../Camera/DJICamera_CameraLiveView.html">CameraLiveView</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_ColorWaveformSettings.html">ColorWaveformSettings</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_StabilizationState.html">StabilizationState</a>
                             </dd>
                     </ul>
                   </dd>
@@ -1392,124 +1396,167 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <h5 id="input-parameters-v64">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">data</font></font></td><td><font color="#666"><i>Data received from an external device. The size of the data will not be larger than 100 bytes.</i></font></td></tr></table></html></div>
 </div>
+<div class="api-row" id="djiflightcontroller_visiondrawheadingmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_visiondrawheadingmode_inline">VisionDrawHeadingMode</a></div></div><div class="inline-doc" id="djiflightcontroller_visiondrawheadingmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>VisionDrawHeadingMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> VisionDrawHeadingMode</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
+<h5 id="description-v83">Description:</h5>
+<p><font color="#666">The heading mode of the camera used in the vision drawing the 3D orbit data.</font></p>
+<h5 id="enum-members">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_visiondrawheadingmode_free_inline"></a>FREE</font></td><td><font color="#666">Free mode - Camera direction can be freely adjusted in flight.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_visiondrawheadingmode_forward_inline"></a>FORWARD</font></td><td><font color="#666">Regular mode - camera direction consistent with course direction.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_visiondrawheadingmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
+<h5 id="class-members-v2">Class Members:</h5>
+</div>
+<div class="api-row" id="djiflightcontroller_visiondrawstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_visiondrawstatus_inline">VisionDrawStatus</a></div></div><div class="inline-doc" id="djiflightcontroller_visiondrawstatus_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>VisionDrawStatus</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> VisionDrawStatus</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
+<h5 id="description-v84">Description:</h5>
+<p><font color="#666">State of the vision drawing the 3D orbit data.</font></p>
+<h5 id="enum-members-v2">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_visiondrawstatus_init_inline"></a>INIT</font></td><td><font color="#666">Initializing.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_visiondrawstatus_prepare_inline"></a>PREPARE</font></td><td><font color="#666">Vision got the orbit data, and preparing to calculate the 3D orbit.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_visiondrawstatus_ready_to_go_inline"></a>READY_TO_GO</font></td><td><font color="#666">Vision has generated the 3D orbit data, and start to download.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_visiondrawstatus_start_auto_inline"></a>START_AUTO</font></td><td><font color="#666">Starting State (Auto mode).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_visiondrawstatus_start_manual_inline"></a>START_MANUAL</font></td><td><font color="#666">Staring State (Manual mode).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_visiondrawstatus_pause_inline"></a>PAUSE</font></td><td><font color="#666">Pause state.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_visiondrawstatus_other_inline"></a>OTHER</font></td><td><font color="#666">Other unknown state.</font></td></tr></table></html>
+<h5 id="class-members-v3">Class Members:</h5>
+</div>
+<div class="api-row" id="djiflightcontroller_urgentstopmotormode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_urgentstopmotormode_inline">UrgentStopMotorMode</a></div></div><div class="inline-doc" id="djiflightcontroller_urgentstopmotormode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>UrgentStopMotorMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> UrgentStopMotorMode</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
+<h5 id="description-v85">Description:</h5>
+<p><font color="#666">The Mode enum to urgent stop motor.</font></p>
+<h5 id="enum-members-v3">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_urgentstopmotormode_csc_inline"></a>CSC</font></td><td><font color="#666">Command only for Inspire 2, Phantom 4, Phantom 4 Professional,  Phantom 4 Advanced and M200 series.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_urgentstopmotormode_never_inline"></a>NEVER</font></td><td><font color="#666">Command only for Inspire 2, Phantom 4, Phantom 4 Professional,  Phantom 4 Advanced and M200 series.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_urgentstopmotormode_in_out_always_inline"></a>IN_OUT_ALWAYS</font></td><td><font color="#666">Command only for DJI Mavic Pro and Mavic Air.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_urgentstopmotormode_in_out_when_breakdown_inline"></a>IN_OUT_WHEN_BREAKDOWN</font></td><td><font color="#666">Command only for DJI Mavic Pro and Mavic Air.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_urgentstopmotormode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
+<h5 id="class-members-v4">Class Members:</h5>
+</div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrectstate"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrectState.html">FlightControllerState</a></div></div><div class="api-row" id="djicompass"><div class="api-col left">Sensors</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Compass/DJICompass.html">Compass</a></div></div><div class="api-row" id="djirtk"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/RTK/DJIRTK.html">RTK</a></div></div><div class="api-row" id="djilandinggear"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/LandingGear/DJILandingGear.html">LandingGear</a></div></div><div class="api-row" id="djiintelligentflightassistant"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html">FlightAssistant</a></div></div><div class="api-row" id="djisimulator"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Simulator/DJISimulator.html">Simulator</a></div></div><div class="api-row" id="djiimustate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMUState/DJIIMUState.html">IMUState</a></div></div><div class="api-row" id="djiflightcontroller_djivirtualstickflightcontroldata"><div class="api-col left">Virtual Sticks</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/FlightController/DJIFlightController_DJIVirtualStickFlightControlData.html">FlightControlData</a></div></div><div class="api-row" id="djiflightcontroller_djivirtualstickverticalcontrolmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djivirtualstickverticalcontrolmode_inline">VerticalControlMode</a></div></div><div class="inline-doc" id="djiflightcontroller_djivirtualstickverticalcontrolmode_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>VerticalControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> VerticalControlMode</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr></table></html>
-<h5 id="description-v83">Description:</h5>
+<h5 id="description-v86">Description:</h5>
 <p><font color="#666">Defines how vertical control values are interpreted by the aircraft.</font></p>
-<h5 id="enum-members">Enum Members:</h5>
+<h5 id="enum-members-v4">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djivirtualstickverticalcontrolmode_velocity_inline"></a>VELOCITY</font></td><td><font color="#666">Sets the virtual stick vertical control values to be a vertical velocity. Positive and negative vertical velocity is for the aircraft ascending and descending respectively. Maximum vertical velocity is defined as 4 m/s. Minimum vertical velocity is defined as -4 m/s.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djivirtualstickverticalcontrolmode_position_inline"></a>POSITION</font></td><td><font color="#666">Sets the virtual stick vertical control values to be an altitude. Maximum position is defined as 500 m. Minimum position is defined as 0 m.</font></td></tr></table></html>
-<h5 id="class-members-v2">Class Members:</h5>
+<h5 id="class-members-v5">Class Members:</h5>
 </div>
 <div class="api-row" id="djiflightcontroller_djivirtualstickrollpitchcontrolmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djivirtualstickrollpitchcontrolmode_inline">RollPitchControlMode</a></div></div><div class="inline-doc" id="djiflightcontroller_djivirtualstickrollpitchcontrolmode_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>RollPitchControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> RollPitchControlMode</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr></table></html>
-<h5 id="description-v84">Description:</h5>
+<h5 id="description-v87">Description:</h5>
 <p><font color="#666">Defines how manual roll and pitch values are interpreted by the aircraft.</font></p>
-<h5 id="enum-members-v2">Enum Members:</h5>
+<h5 id="enum-members-v5">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djivirtualstickrollpitchcontrolmode_angle_inline"></a>ANGLE</font></td><td><font color="#666">Sets the roll and pitch values to be an angle relative to a level aircraft. In the body coordinate system, positive and negative pitch angle is for the aircraft rotating about the y-axis in the positive direction or negative direction, respectively. Positive and negative roll angle is the positive direction or negative direction rotation angle about the x-axis, respectively. However in the ground coordinate system, positive and negative pitch angle is the angle value for the aircraft moving south and north, respectively. Positive and negative roll angle is the angle when the aircraft is moving east and west, respectively. Maximum angle is defined as 30 degrees. Minimum angle is defined as -30 degrees.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djivirtualstickrollpitchcontrolmode_velocity_inline"></a>VELOCITY</font></td><td><font color="#666">Sets the roll and pitch values to be a velocity. In the body coordinate system, positive and negative pitch velocity is for the aircraft moving towards the positive direction or negative direction along the pitch axis and y-axis, respectively. Positive and negative roll velocity is when the aircraft is moving towards the positive direction or negative direction along the roll axis and x-axis, respectively. However, in the ground coordinate system, positive and negative pitch velocity is for the aircraft moving east and west, respectively.  Positive and negative roll velocity is when the aircraft is moving north and south, respectively. Maximum velocity is defined as 15 meters/s. Minimum velocity is defined as -15 meters/s.</font></td></tr></table></html>
-<h5 id="class-members-v3">Class Members:</h5>
+<h5 id="class-members-v6">Class Members:</h5>
 </div>
 <div class="api-row" id="djiflightcontroller_djivirtualstickyawcontrolmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djivirtualstickyawcontrolmode_inline">YawControlMode</a></div></div><div class="inline-doc" id="djiflightcontroller_djivirtualstickyawcontrolmode_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>YawControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> YawControlMode</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr></table></html>
-<h5 id="description-v85">Description:</h5>
+<h5 id="description-v88">Description:</h5>
 <p><font color="#666">Defines how manual yaw values are interpreted by the aircraft.</font></p>
-<h5 id="enum-members-v3">Enum Members:</h5>
+<h5 id="enum-members-v6">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djivirtualstickyawcontrolmode_angle_inline"></a>ANGLE</font></td><td><font color="#666">Sets the yaw values to be an angle relative to the front of the aircraft. Positive and negative yaw angle is for the aircraft rotating clockwise and counterclockwise, respectively. Maximum yaw angle is defined as 180 degrees. Minimum yaw angle is defined as -180 degrees.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djivirtualstickyawcontrolmode_angularvelocity_inline"></a>ANGULAR_VELOCITY</font></td><td><font color="#666">Sets the yaw values to be an angular velocity. Positive and negative angular velocity is for the aircraft rotating clockwise and counterclockwise, respectively. Maximum yaw angular velocity is defined as 100 degrees/s. Minimum yaw angular velocity is defined as -100 degrees/s.</font></td></tr></table></html>
-<h5 id="class-members-v4">Class Members:</h5>
+<h5 id="class-members-v7">Class Members:</h5>
 </div>
 <div class="api-row" id="djiflightcontroller_djivirtualstickflightcoordinatesystem"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djivirtualstickflightcoordinatesystem_inline">FlightCoordinateSystem</a></div></div><div class="inline-doc" id="djiflightcontroller_djivirtualstickflightcoordinatesystem_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>FlightCoordinateSystem</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> FlightCoordinateSystem</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.virtualstick</font></td></tr></table></html>
-<h5 id="description-v86">Description:</h5>
+<h5 id="description-v89">Description:</h5>
 <p><font color="#666">Flight control coordinate system.</font></p>
-<h5 id="enum-members-v4">Enum Members:</h5>
+<h5 id="enum-members-v7">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djivirtualstickflightcoordinatesystem_ground_inline"></a>GROUND</font></td><td><font color="#666">Ground coordinate system.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djivirtualstickflightcoordinatesystem_body_inline"></a>BODY</font></td><td><font color="#666">Body coordinate system.</font></td></tr></table></html>
-<h5 id="class-members-v5">Class Members:</h5>
+<h5 id="class-members-v8">Class Members:</h5>
 </div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercontrolmode"><div class="api-col left">Flight Assistance</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercontrolmode_inline">ControlMode</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercontrolmode_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>ControlMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> ControlMode</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_control_mode_key">FlightControllerKey.CONTROL_MODE</a></font></td></tr></table></html>
-<h5 id="description-v87">Description:</h5>
+<h5 id="description-v90">Description:</h5>
 <p><font color="#666">Control mode of the flight controller. It determines how the pilot can control the aircraft. By default, it is in smart control mode.</font></p>
-<h5 id="enum-members-v5">Enum Members:</h5>
+<h5 id="enum-members-v8">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollercontrolmode_smart_inline"></a>SMART</font></td><td><font color="#666">Smart control mode. The aircraft can stabilize its altitude and attitude in smart mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollercontrolmode_manual_inline"></a>MANUAL</font></td><td><font color="#666">Manual control mode. The aircraft will not stabilize its altitude and attitude in manual mode. This mode is for advanced pilots only, and should only be used when the pilot understands the risk of operating in this mode. Any damage to the product when operating in this mode will not be covered under warranty.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollercontrolmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown control mode.</font></td></tr></table></html>
-<h5 id="class-members-v6">Class Members:</h5>
+<h5 id="class-members-v9">Class Members:</h5>
 </div>
 <div class="api-row" id="djiflightcontroller_djiflightorientationmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightorientationmode_inline">FlightOrientationMode</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightorientationmode_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>FlightOrientationMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> FlightOrientationMode</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_orientation_mode_key">FlightControllerKey.ORIENTATION_MODE</a></font></td></tr></table></html>
-<h5 id="description-v88">Description:</h5>
+<h5 id="description-v91">Description:</h5>
 <p><font color="#666">Tells the aircraft how to interpret flight commands for forward, backward, left and right. See the <i>Flight Controller User Guide</i> for more information.</font></p>
-<h5 id="enum-members-v6">Enum Members:</h5>
+<h5 id="enum-members-v9">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightorientationmode_courselock_inline"></a>COURSE_LOCK</font></td><td><font color="#666">The aircraft should move relative to a locked course heading.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightorientationmode_homelock_inline"></a>HOME_LOCK</font></td><td><font color="#666">The aircraft should move relative radially to the Home Point.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightorientationmode_defaultaircraftheading_inline"></a>AIRCRAFT_HEADING</font></td><td><font color="#666">The aircraft should move relative to the front of the aircraft.</font></td></tr></table></html>
-<h5 id="class-members-v7">Class Members:</h5>
+<h5 id="class-members-v10">Class Members:</h5>
 </div>
 <div class="api-row" id="djiflightcontroller_djiflightwindwarning"><div class="api-col left">Flight Wind Warning</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightwindwarning_inline">FlightWindWarning</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightwindwarning_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>FlightWindWarning</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> FlightWindWarning</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_flight_wind_warning_key">FlightControllerKey.FLIGHT_WIND_WARNING</a></font></td></tr></table></html>
-<h5 id="description-v89">Description:</h5>
+<h5 id="description-v92">Description:</h5>
 <p><font color="#666">Warning caused by the strong wind.</font></p>
-<h5 id="enum-members-v7">Enum Members:</h5>
+<h5 id="enum-members-v10">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightwindwarning_level0_inline"></a>LEVEL_0</font></td><td><font color="#666">No wind warning.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightwindwarning_level1_inline"></a>LEVEL_1</font></td><td><font color="#666">The wind speed is high. Fly with caution and ensure the aircraft remains within the line of sight.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightwindwarning_level2_inline"></a>LEVEL_2</font></td><td><font color="#666">Strong Wind. Fly with caution and ensure the aircraft remains within line of sight. It is more serious than <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightwindwarning_level1">LEVEL_1</a></code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightwindwarning_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
-<h5 id="class-members-v8">Class Members:</h5>
+<h5 id="class-members-v11">Class Members:</h5>
 </div>
 <div class="api-row" id="djiflightcontroller_djilocationcoordinate2d"><div class="api-col left">Home</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html">LocationCoordinate2D</a></div></div><div class="api-row" id="djiflightcontroller_djiflightfailsafeoperation"><div class="api-col left">Fail Safe</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightfailsafeoperation_inline">ConnectionFailSafeBehavior</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightfailsafeoperation_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>ConnectionFailSafeBehavior</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> ConnectionFailSafeBehavior</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_connection_fail_safe_behavior_key">FlightControllerKey.CONNECTION_FAIL_SAFE_BEHAVIOR</a></font></td></tr></table></html>
-<h5 id="description-v90">Description:</h5>
+<h5 id="description-v93">Description:</h5>
 <p><font color="#666">Defines aircraft failsafe action when signal between the remote controller and the aircraft is lost.</font></p>
-<h5 id="enum-members-v8">Enum Members:</h5>
+<h5 id="enum-members-v11">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightfailsafeoperation_hover_inline"></a>HOVER</font></td><td><font color="#666">Hover.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightfailsafeoperation_landing_inline"></a>LANDING</font></td><td><font color="#666">Landing.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightfailsafeoperation_gohome_inline"></a>GO_HOME</font></td><td><font color="#666">Return-to-Home.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightfailsafeoperation_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
-<h5 id="class-members-v9">Class Members:</h5>
+<h5 id="class-members-v12">Class Members:</h5>
 </div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollerremotecontrollerflightmode"><div class="api-col left">Flight Mode</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollerremotecontrollerflightmode_inline">RemoteControllerFlightMode</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollerremotecontrollerflightmode_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>RemoteControllerFlightMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> RemoteControllerFlightMode</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v91">Description:</h5>
+<h5 id="description-v94">Description:</h5>
 <p><font color="#666">Flight modes that map to the flight mode switch on the remote controller.</font></p>
-<h5 id="enum-members-v9">Enum Members:</h5>
+<h5 id="enum-members-v12">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerremotecontrollerflightmode_p_inline"></a>P</font></td><td><font color="#666">Positioning mode. GNSS and Vision Positioning Systems are used for positioning if they are available. For products without F mode, intelligent functions such as missions and intelligent orientation control can be performed in P-mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerremotecontrollerflightmode_s_inline"></a>S</font></td><td><font color="#666">Sport mode. The maximum flight speed and responsiveness of the aircraft is increased in this mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerremotecontrollerflightmode_a_inline"></a>A</font></td><td><font color="#666">Attitude mode. The GNSS and Vision Positioning Systems are not used for positioning. The aircraft only uses the barometer to maintain altitude. If receiving a GNSS signal, the aircraft can automatically return home if the Remote Controller signal is lost and if the Home Point has been recorded successfully.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerremotecontrollerflightmode_g_inline"></a>G</font></td><td><font color="#666">Gentle mode. The sensitivity and speed of aircraft will be substantially decreased in gentle mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerremotecontrollerflightmode_m_inline"></a>M</font></td><td><font color="#666">Manual mode. The aircraft will not stabilize its altitude nor attitude in manual mode. This mode is for advanced pilots only, and should only be used when the pilot understands the risk of operating in this mode. Any damage to the product when operating in this mode will not be covered under warranty. It is supported by stand-alone A3 and N3 and can be enabled in Assistant 2.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerremotecontrollerflightmode_f_inline"></a>F</font></td><td><font color="#666">Function mode. Performs the same as Positioning mode with intelligent functions such as missions and intelligent orientation control enabled.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerremotecontrollerflightmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown mode.</font></td></tr></table></html>
-<h5 id="class-members-v10">Class Members:</h5>
+<h5 id="class-members-v13">Class Members:</h5>
 </div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollersmartrthstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollersmartrthstate_inline">SmartRTHState</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollersmartrthstate_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>SmartRTHState</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> SmartRTHState</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v92">Description:</h5>
+<h5 id="description-v95">Description:</h5>
 <p><font color="#666">State of Smart Return-To-Home (RTH). It is only used when Smart RTH is enabled.</font></p>
-<h5 id="enum-members-v10">Enum Members:</h5>
+<h5 id="enum-members-v13">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollersmartrthstate_idle_inline"></a>IDLE</font></td><td><font color="#666">Smart RTH is not triggered yet in the current flight. The Smart RTH state will be reset to this value when the aircraft lands.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollersmartrthstate_countingdown_inline"></a>COUNTING_DOWN</font></td><td><font color="#666">Smart RTH is triggered and the aircraft is counting down. If no response is received within 10 seconds or the user confirms the request, the aircraft will start to go home and the state will change to <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightcontrollersmartrthstate_executed">EXECUTED</a></code>. If user cancels the request, the state will change to <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightcontrollersmartrthstate_cancelled">CANCELLED</a></code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollersmartrthstate_executed_inline"></a>EXECUTED</font></td><td><font color="#666">Smart RTH is already executed in the current flight. The state will not be reset until the aircraft lands.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollersmartrthstate_cancelled_inline"></a>CANCELLED</font></td><td><font color="#666">Smart RTH request is cancelled by the user. The state will not be reset until the aircraft lands.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollersmartrthstate_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
-<h5 id="class-members-v11">Class Members:</h5>
+<h5 id="class-members-v14">Class Members:</h5>
 </div>
-<div class="api-row" id="djiairsensesysteminformation"><div class="api-col left">Air Sense System Info</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/FlightController/DJIAirSenseSystemInformation.html">AirSenseSystemInformation</a></div></div><div class="api-row" id="djiflightcontroller_limits"><div class="api-col left">Limits</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/FlightController/DJIFlightController_Limits.html">Limits</a></div></div>
+<div class="api-row" id="djiairsensesysteminformation"><div class="api-col left">Air Sense System Info</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/FlightController/DJIAirSenseSystemInformation.html">AirSenseSystemInformation</a></div></div><div class="api-row" id="djiflightcontroller_limits"><div class="api-col left">Limits</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/FlightController/DJIFlightController_Limits.html">Limits</a></div></div><div class="api-row" id="djiflightcontroller_fixedwingcontrol"><div class="api-col left">Fixed Wing Control</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_fixedwingcontrol_inline">FixedWingControl</a></div></div><div class="inline-doc" id="djiflightcontroller_fixedwingcontrol_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>FixedWingControl</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> FixedWingControl</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
+<h5 id="description-v96">Description:</h5>
+<p><font color="#666">The aircraft will fly forward automatically at a certain speed after entering Fixed-Wing Mode.  Push the left stick up to ascend and down to descend. Push either stick left or right to rotate  the aircraft. Push the right stick up to accelerate and pushing down will exit Fixed-Wing Mode.  See the <i>Flight  Controller User Guide</i> for more information.</font></p>
+<h5 id="enum-members-v14">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_fixedwingcontrol_ready_inline"></a>READY</font></td><td><font color="#666">Prepare fixed-wing mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_fixedwingcontrol_enter_inline"></a>ENTER</font></td><td><font color="#666">Enter fixed-wing mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_fixedwingcontrol_exit_inline"></a>EXIT</font></td><td><font color="#666">Exit fixed-wing mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_fixedwingcontrol_other_inline"></a>OTHER</font></td><td><font color="#666">Other reservations.</font></td></tr></table></html>
+<h5 id="class-members-v15">Class Members:</h5>
+</div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
 <div class="api-row" id="djibasecomponent_setdjicomponentlistener"><div class="api-col left">dji.sdk.base.BaseComponent</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_setdjicomponentlistener_inline">setComponentListener</a></div></div><div class="inline-doc" id="djibasecomponent_setdjicomponentlistener_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setComponentListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setComponentListener</span><span class="params">(ComponentListener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
-<h5 id="description-v93">Description:</h5>
+<h5 id="description-v97">Description:</h5>
 <p><font color="#666">Sets the listener for the DJI component.</font></p>
 <h5 id="input-parameters-v65">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The callback of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a></code>.</i></font></td></tr></table></html></div>
@@ -1518,7 +1565,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
-<h5 id="description-v94">Description:</h5>
+<h5 id="description-v98">Description:</h5>
 <p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210 and M210 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft.</font></p>
 <h5 id="return-v17">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of index.</i></font></td></tr></table></html></div>
@@ -1527,7 +1574,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isConnected</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
-<h5 id="description-v95">Description:</h5>
+<h5 id="description-v99">Description:</h5>
 <p><font color="#666"><code>true</code> if the component is connected.</font></p>
 <h5 id="return-v18">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the component is connected.</i></font></td></tr></table></html></div>
@@ -1536,7 +1583,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSerialNumber</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
-<h5 id="description-v96">Description:</h5>
+<h5 id="description-v100">Description:</h5>
 <p><font color="#666">Gets the serial number of the component. Depending on the component, this serial number might not match the serial number found  on the physical component.</font></p>
 <h5 id="input-parameters-v66">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value returned.</i></font></td></tr></table></html></div>
@@ -1545,7 +1592,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFirmwareVersion</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
-<h5 id="description-v97">Description:</h5>
+<h5 id="description-v101">Description:</h5>
 <p><font color="#666">Returns the firmware version of the component. Each component will  have a different firmware version, the combination of which will  form the package firmware version <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_getfirmwarepackageversion">getFirmwarePackageVersion</a></code> found in <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</font></p>
 <h5 id="input-parameters-v67">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>

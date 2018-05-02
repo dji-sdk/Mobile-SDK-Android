@@ -76,6 +76,8 @@
                   </dd>
                   <dd><a data-href="../FlyZoneManager/DJIFlyZoneManager.html" class="sub-toggle">FlyZoneManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIUnlockedZoneGroup.html">UnlockedZoneGroup</a>
+                            </dd>
                             <dd><a data-href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyZoneInformation.html" class="sub-toggle">FlyZoneInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJISubFlyZoneInformation.html">SubFlyZoneInformation</a>
@@ -287,6 +289,8 @@
                             <dd><a href="../Camera/DJICamera_CameraLiveView.html">CameraLiveView</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_ColorWaveformSettings.html">ColorWaveformSettings</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_StabilizationState.html">StabilizationState</a>
                             </dd>
                     </ul>
                   </dd>
@@ -644,7 +648,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLDMSupported</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666"><code>true</code> if LDM is supported in the current context. LDM is not supported in China. The SDK locally uses a combination of IP address, GPS location and MCC (mobile country code) to determine the country of operation.</font></p>
+<p><font color="#666"><code>true</code> if LDM is supported in the current context. LDM is not supported in China. The SDK locally uses GPS location and MCC (mobile country code) to determine the country  of operation. If LDM is not enabled and the internet is accessible, the IP address is also  used to determine the country of operation. The default value is <code>true</code> after the first installation.</font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A bool value to check if LDM is supported.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djildmmanager_isldmenabled"><div class="api-col left">Check LDM Enabled</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djildmmanager_isldmenabled_inline">isLDMEnabled</a></div></div><div class="inline-doc" id="djildmmanager_isldmenabled_inline" <blockquote="">
@@ -662,7 +666,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line">   <span class="function">DJIError <span class="title">enableLDM</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Enables LDM. Can only be enabled if <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager_isldmsupported">isLDMSupported</a></code> is <code>true</code>.</font></p>
+<p><font color="#666">Enables LDM. Can only be enabled if <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager_isldmsupported">isLDMSupported</a></code> is <code>true</code>. Call this method before  calling the other methods of SDK (including <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerApp</a></code>) to restrict the internet access  of SDK (SDK registration is unrestricted).</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable     <a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a></font></td><td><font color="#666"><i>The error occured. NULL if LDM is enabled successfully.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djildmmanager_disableldm"><div class="api-col left">Disable LDM</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djildmmanager_disableldm_inline">disableLDM</a></div></div><div class="inline-doc" id="djildmmanager_disableldm_inline" <blockquote="">
