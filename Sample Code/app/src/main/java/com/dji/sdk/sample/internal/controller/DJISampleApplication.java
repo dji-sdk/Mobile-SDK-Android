@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
-import com.secneo.sdk.Helper;
 import com.squareup.otto.Bus;
 import com.squareup.otto.ThreadEnforcer;
 
@@ -79,7 +78,7 @@ public class DJISampleApplication extends Application {
     protected void attachBaseContext(Context paramContext) {
         super.attachBaseContext(paramContext);
         MultiDex.install(this);
-        Helper.install(this);
+        com.secneo.sdk.Helper.install(this);
         app = this;
     }
 

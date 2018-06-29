@@ -236,15 +236,15 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
 
         //Step 4: shoot 3 photos with 2 seconds interval between each
         setTimelinePlanToText("Step 4: shoot 3 photos with 2 seconds interval between each");
-        elements.add(new ShootPhotoAction(3, 2));
+        elements.add(ShootPhotoAction.newShootIntervalPhotoAction(3,2));
 
         //Step 5: shoot a single photo
         setTimelinePlanToText("Step 5: shoot a single photo");
-        elements.add(new ShootPhotoAction());
+        elements.add(ShootPhotoAction.newShootSinglePhotoAction());
 
         //Step 6: start recording video
         setTimelinePlanToText("Step 6: start recording video");
-        elements.add(new RecordVideoAction(true));
+        elements.add(RecordVideoAction.newStartRecordVideoAction());
 
 
         //Step 7: start a waypoint mission while the aircraft is still recording the video
@@ -255,11 +255,11 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
 
         //Step 8: stop the recording when the waypoint mission is finished
         setTimelinePlanToText("Step 8: stop the recording when the waypoint mission is finished");
-        elements.add(new RecordVideoAction(false));
+        elements.add(RecordVideoAction.newStopRecordVideoAction());
 
         //Step 9: shoot a single photo
         setTimelinePlanToText("Step 9: shoot a single photo");
-        elements.add(new ShootPhotoAction());
+        elements.add(ShootPhotoAction.newShootSinglePhotoAction());
 
         //Step 10: start a hotpoint mission
         setTimelinePlanToText("Step 10: start a hotpoint mission to surround 360 degree");

@@ -58,7 +58,7 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
                                       </dd>
-                                      <dd><a href="../KeyManager/PayloadKey.html">PayloadKey</a>
+                                      <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIGimbalKey.html">GimbalKey</a>
                                       </dd>
@@ -91,6 +91,8 @@
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
@@ -414,6 +416,12 @@
                   </dd>
                   <dd><a href="../MobileRemoteController/DJIMobileRemoteController.html">MobileRemoteController</a>
                   </dd>
+                  <dd><a data-href="../Payload/DJIPayload.html" class="sub-toggle">Payload<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Payload/DJIPayload_PayloadWidget.html">PayloadWidget</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Mission Classes
@@ -603,6 +611,8 @@
                   <dd><a data-href="DJIError.html" class="sub-toggle">DJIError<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="DJIError_DJIGimbalError.html">DJIGimbalError</a>
+                            </dd>
+                            <dd><a href="DJIError_DataProtectionError.html">DataProtectionError</a>
                             </dd>
                             <dd><a href="DJIError_DJISDKFlightHubError.html">DJIFlightHubError</a>
                             </dd>
@@ -1043,7 +1053,7 @@
 <div class="api-row" id="djierror_djimissionmanagererror_mission_result_mission_radius_overlimited"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djimissionmanagererror_mission_result_mission_radius_overlimited_inline">MISSION_RADIUS_OVER_LIMIT</a></div></div><div class="inline-doc" id="djierror_djimissionmanagererror_mission_result_mission_radius_overlimited_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">final </font>MISSION_RADIUS_OVER_LIMIT</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_RADIUS_OVER_LIMIT =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The radius of mission is over the acceptable limit"</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError MISSION_RADIUS_OVER_LIMIT =</div><div class="line">       <span class="keyword">new</span> DJIMissionError(<span class="string">"The radius of mission is over the acceptable limit, pls try to login and check radius of waypoint"</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v51">Description:</h5>
 <p><font color="#666">The radius of the mission is over the acceptable limit.</font></p>

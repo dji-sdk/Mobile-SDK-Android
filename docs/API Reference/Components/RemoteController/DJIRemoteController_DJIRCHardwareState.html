@@ -58,7 +58,7 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
                                       </dd>
-                                      <dd><a href="../KeyManager/PayloadKey.html">PayloadKey</a>
+                                      <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIGimbalKey.html">GimbalKey</a>
                                       </dd>
@@ -91,6 +91,8 @@
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
@@ -414,6 +416,12 @@
                   </dd>
                   <dd><a href="../MobileRemoteController/DJIMobileRemoteController.html">MobileRemoteController</a>
                   </dd>
+                  <dd><a data-href="../Payload/DJIPayload.html" class="sub-toggle">Payload<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Payload/DJIPayload_PayloadWidget.html">PayloadWidget</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Mission Classes
@@ -604,6 +612,8 @@
                     <ul class="sub-menu">
                             <dd><a href="../SDKError/DJIError_DJIGimbalError.html">DJIGimbalError</a>
                             </dd>
+                            <dd><a href="../SDKError/DJIError_DataProtectionError.html">DataProtectionError</a>
+                            </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKFlightHubError.html">DJIFlightHubError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
@@ -747,7 +757,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Button <span class="title">getC1Button</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.remotecontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIRemoteControllerKey.html#remotecontrollerkey_custom_button_1_key">RemoteControllerKey.CUSTOM_BUTTON_1</a></font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">Current state of custom button 1 (left Back Button).</font></p>
+<p><font color="#666">Current state of custom button 1 (left Back Button). It is not supported by remote controllers  for Mavic Air or Spark.</font></p>
 <h5 id="return-v12">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html#djiremotecontroller_djirchardwarestate_button">Button</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html#djiremotecontroller_djirchardwarestate_button">Button</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiremotecontroller_djirchardwarestate_custombutton2"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djirchardwarestate_custombutton2_inline">getC2Button</a></div></div><div class="inline-doc" id="djiremotecontroller_djirchardwarestate_custombutton2_inline" <blockquote="">
@@ -756,7 +766,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Button <span class="title">getC2Button</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.remotecontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIRemoteControllerKey.html#remotecontrollerkey_custom_button_2_key">RemoteControllerKey.CUSTOM_BUTTON_2</a></font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
-<p><font color="#666">Current state of custom button 2 (right Back Button). It is not supported by remote controllers  for Mavic Pro, Spark or Mavic Air.</font></p>
+<p><font color="#666">Current state of custom button 2 (right Back Button).</font></p>
 <h5 id="return-v13">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html#djiremotecontroller_djirchardwarestate_button">Button</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html#djiremotecontroller_djirchardwarestate_button">Button</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiremotecontroller_djirchardwarestate_fnbutton"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djirchardwarestate_fnbutton_inline">getFunctionButton</a></div></div><div class="inline-doc" id="djiremotecontroller_djirchardwarestate_fnbutton_inline" <blockquote="">
@@ -765,7 +775,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Button <span class="title">getFunctionButton</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.remotecontroller</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">Current state of fn button. It is only supported by remote controllers for Mavic Pro, Spark  or Mavic Air.</font></p>
+<p><font color="#666">Current state of fn button. It is only supported by remote controllers for Spark  or Mavic Air.</font></p>
 <h5 id="return-v14">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html#djiremotecontroller_djirchardwarestate_button">Button</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html#djiremotecontroller_djirchardwarestate_button">Button</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiremotecontroller_djirchardwarestate_fivedbutton"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djirchardwarestate_fivedbutton_inline">getFiveDButton</a></div></div><div class="inline-doc" id="djiremotecontroller_djirchardwarestate_fivedbutton_inline" <blockquote="">

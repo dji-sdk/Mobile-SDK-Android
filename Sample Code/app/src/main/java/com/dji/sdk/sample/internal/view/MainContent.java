@@ -29,14 +29,21 @@ import com.dji.sdk.sample.internal.utils.GeneralUtils;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.squareup.otto.Subscribe;
 
+import dji.common.error.DJIError;
+import dji.common.realname.AppActivationState;
+import dji.common.useraccount.UserAccountState;
+import dji.common.util.CommonCallbacks;
 import dji.keysdk.DJIKey;
 import dji.keysdk.KeyManager;
 import dji.keysdk.ProductKey;
 import dji.keysdk.callback.KeyListener;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.products.Aircraft;
+import dji.sdk.realname.AppActivationManager;
 import dji.sdk.sdkmanager.BluetoothProductConnector;
 import dji.sdk.sdkmanager.DJISDKManager;
+import dji.sdk.useraccount.UserAccountManager;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Created by dji on 15/12/18.
@@ -62,6 +69,11 @@ public class MainContent extends RelativeLayout {
     private DJIKey firmwareKey;
     private KeyListener firmwareVersionUpdater;
     private boolean hasStartedFirmVersionListener = false;
+    private AtomicBoolean hasAppActivationListenerStarted = new AtomicBoolean(false);
+    private static final int MSG_UPDATE_BLUETOOTH_CONNECTOR = 0;
+    private static final int MSG_INFORM_ACTIVATION = 1;
+    private static final int ACTIVATION_DALAY_TIME = 1000;
+    private AppActivationState.AppActivationStateListener appActivationStateListener;
     public MainContent(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
@@ -172,7 +184,7 @@ public class MainContent extends RelativeLayout {
             @Override
             public void handleMessage(Message msg) {
                 switch (msg.what) {
-                    case 0:
+                    case MSG_UPDATE_BLUETOOTH_CONNECTOR:
                         //connected = DJISampleApplication.getBluetoothConnectStatus();
                         connector = DJISampleApplication.getBluetoothProductConnector();
 
@@ -189,12 +201,11 @@ public class MainContent extends RelativeLayout {
                                     "Fetch Connector failed, reboot if you want to connect the Bluetooth");
                             return;
                         } else if (connector == null) {
-                            sendEmptyMessageDelayed(0, 1000);
+                            sendDelayMsg(0, MSG_UPDATE_BLUETOOTH_CONNECTOR);
                         }
                         break;
-                    case 1:
-                        break;
-                    case 2:
+                    case MSG_INFORM_ACTIVATION:
+                        loginToActivationIfNeeded();
                         break;
                 }
             }
@@ -203,9 +214,16 @@ public class MainContent extends RelativeLayout {
         super.onAttachedToWindow();
     }
 
+    private void sendDelayMsg(int msg, long delayMillis) {
+        if (mHandler != null) {
+            mHandler.sendEmptyMessageDelayed(msg, delayMillis);
+        }
+    }
+
     @Override
     protected void onDetachedFromWindow() {
         removeFirmwareVersionListener();
+        removeAppActivationListenerIfNeeded();
         mHandler.removeCallbacksAndMessages(null);
         mHandlerUI.removeCallbacksAndMessages(null);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
@@ -253,7 +271,9 @@ public class MainContent extends RelativeLayout {
             String str = mProduct instanceof Aircraft ? "DJIAircraft" : "DJIHandHeld";
             mTextConnectionStatus.setText("Status: " + str + " connected");
             tryUpdateFirmwareVersionWithListener();
-
+            if (mProduct instanceof Aircraft) {
+                addAppActivationListenerIfNeeded();
+            }
 
             if (null != mProduct.getModel()) {
                 mTextProduct.setText("" + mProduct.getModel().getDisplayName());
@@ -289,6 +309,7 @@ public class MainContent extends RelativeLayout {
         }
         updateVersion();
     }
+
     private void removeFirmwareVersionListener() {
         if (hasStartedFirmVersionListener) {
             if (KeyManager.getInstance() != null) {
@@ -296,5 +317,50 @@ public class MainContent extends RelativeLayout {
             }
         }
         hasStartedFirmVersionListener = false;
+    }
+
+    private void addAppActivationListenerIfNeeded() {
+        if (AppActivationManager.getInstance().getAppActivationState() != AppActivationState.ACTIVATED) {
+            sendDelayMsg(MSG_INFORM_ACTIVATION, ACTIVATION_DALAY_TIME);
+            if (hasAppActivationListenerStarted.compareAndSet(false, true)) {
+                appActivationStateListener = new AppActivationState.AppActivationStateListener() {
+
+                    @Override
+                    public void onUpdate(AppActivationState appActivationState) {
+                        if (mHandler != null && mHandler.hasMessages(MSG_INFORM_ACTIVATION)) {
+                            mHandler.removeMessages(MSG_INFORM_ACTIVATION);
+                        }
+                        if (appActivationState != AppActivationState.ACTIVATED) {
+                            sendDelayMsg(MSG_INFORM_ACTIVATION, ACTIVATION_DALAY_TIME);
+                        }
+                    }
+                };
+                AppActivationManager.getInstance().addAppActivationStateListener(appActivationStateListener);
+            }
+        }
+    }
+
+    private void removeAppActivationListenerIfNeeded() {
+        if (hasAppActivationListenerStarted.compareAndSet(true, false)) {
+            AppActivationManager.getInstance().removeAppActivationStateListener(appActivationStateListener);
+        }
+    }
+
+    private void loginToActivationIfNeeded() {
+        if (AppActivationManager.getInstance().getAppActivationState() == AppActivationState.LOGIN_REQUIRED) {
+            UserAccountManager.getInstance()
+                              .logIntoDJIUserAccount(getContext(),
+                                                     new CommonCallbacks.CompletionCallbackWith<UserAccountState>() {
+                                                         @Override
+                                                         public void onSuccess(UserAccountState userAccountState) {
+                                                             ToastUtils.setResultToToast("Login Successed!");
+                                                         }
+
+                                                         @Override
+                                                         public void onFailure(DJIError djiError) {
+                                                             ToastUtils.setResultToToast("Login Failed!");
+                                                         }
+                                                     });
+        }
     }
 }

@@ -85,33 +85,6 @@ public class MainActivity extends AppCompatActivity {
             notifyStatusChange();
         }
     };
-    private BaseProduct.BaseProductListener mDJIBaseProductListener = new BaseProduct.BaseProductListener() {
-
-        @Override
-        public void onComponentChange(BaseProduct.ComponentKey key,
-                                      BaseComponent oldComponent,
-                                      BaseComponent newComponent) {
-
-            if (newComponent != null) {
-                newComponent.setComponentListener(mDJIComponentListener);
-            }
-            Log.d(TAG,
-                    String.format("onComponentChange key:%s, oldComponent:%s, newComponent:%s",
-                            key,
-                            oldComponent,
-                            newComponent));
-
-            notifyStatusChange();
-        }
-
-        @Override
-        public void onConnectivityChange(boolean isConnected) {
-
-            Log.d(TAG, "onProductConnectivityChanged: " + isConnected);
-
-            notifyStatusChange();
-        }
-    };
 
     //region Life-cycle
     @Override
@@ -195,9 +168,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Hint click
-        hintItem.setOnMenuItemClickListener((item) -> {
-            showHint();
-            return false;
+        hintItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                showHint();
+                return false;
+            }
         });
         return true;
     }
@@ -256,14 +232,30 @@ public class MainActivity extends AppCompatActivity {
                             }
                             Log.v(TAG, djiError.getDescription());
                         }
-
                         @Override
-                        public void onProductChange(BaseProduct oldProduct, BaseProduct newProduct) {
-                            Log.d(TAG, String.format("onProductChanged oldProduct:%s, newProduct:%s", oldProduct, newProduct));
+                        public void onProductDisconnect() {
+                            Log.d(TAG, "onProductDisconnect");
                             notifyStatusChange();
-                            if (newProduct != null) {
-                                newProduct.setBaseProductListener(mDJIBaseProductListener);
+                        }
+                        @Override
+                        public void onProductConnect(BaseProduct baseProduct) {
+                            Log.d(TAG, String.format("onProductConnect newProduct:%s", baseProduct));
+                            notifyStatusChange();
+                        }
+                        @Override
+                        public void onComponentChange(BaseProduct.ComponentKey componentKey,
+                                                      BaseComponent oldComponent,
+                                                      BaseComponent newComponent) {
+                            if (newComponent != null) {
+                                newComponent.setComponentListener(mDJIComponentListener);
                             }
+                            Log.d(TAG,
+                                  String.format("onComponentChange key:%s, oldComponent:%s, newComponent:%s",
+                                                componentKey,
+                                                oldComponent,
+                                                newComponent));
+
+                            notifyStatusChange();
                         }
                     });
                 }

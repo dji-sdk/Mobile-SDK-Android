@@ -58,7 +58,7 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
                                       </dd>
-                                      <dd><a href="../KeyManager/PayloadKey.html">PayloadKey</a>
+                                      <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIGimbalKey.html">GimbalKey</a>
                                       </dd>
@@ -91,6 +91,8 @@
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
@@ -414,6 +416,12 @@
                   </dd>
                   <dd><a href="../MobileRemoteController/DJIMobileRemoteController.html">MobileRemoteController</a>
                   </dd>
+                  <dd><a data-href="../Payload/DJIPayload.html" class="sub-toggle">Payload<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Payload/DJIPayload_PayloadWidget.html">PayloadWidget</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Mission Classes
@@ -604,6 +612,8 @@
                     <ul class="sub-menu">
                             <dd><a href="../SDKError/DJIError_DJIGimbalError.html">DJIGimbalError</a>
                             </dd>
+                            <dd><a href="../SDKError/DJIError_DataProtectionError.html">DataProtectionError</a>
+                            </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKFlightHubError.html">DJIFlightHubError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
@@ -723,50 +733,68 @@
 <p><font color="#666">Gets the current WiFi frequency band. It is not supported by Spark or Mavic Air.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;<a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwififrequencyband">WiFiFrequencyBand</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiwifilink_setchannelselectionmode"><div class="api-col left">Channel Selection Mode</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_setchannelselectionmode_inline">setSelectionMode</a></div></div><div class="inline-doc" id="djiwifilink_setchannelselectionmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setSelectionMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSelectionMode</span><span class="params">(WiFiSelectionMode mode, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<h5 id="description-v11">Description:</h5>
+<p><font color="#666">Sets the channel selection mode. Both channel number and bandwidth can be changed.  If the 5 GHz band is available,  then channels from that band can also be used. .</font></p>
+<h5 id="input-parameters-v10">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">WiFiSelectionMode <font color="#000">mode</font></font></td><td><font color="#666"><i>Selection mode to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiwifilink_getchannelselectionmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_getchannelselectionmode_inline">getSelectionMode</a></div></div><div class="inline-doc" id="djiwifilink_getchannelselectionmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getSelectionMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSelectionMode</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;WiFiSelectionMode&gt; callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<h5 id="description-v12">Description:</h5>
+<p><font color="#666">Gets the channel selection mode. .</font></p>
+<h5 id="input-parameters-v11">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;WiFiSelectionMode&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_setwifichannel"><div class="api-col left">WiFi Channel</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_setwifichannel_inline">setChannelNumber</a></div></div><div class="inline-doc" id="djiwifilink_setwifichannel_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setChannelNumber</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setChannelNumber</span><span class="params">(<span class="keyword">int</span> channelNumber, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_number_key">AirLinkKey.CHANNEL_NUMBER</a></font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Sets the WiFi channel. <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_getavailablechannels">getAvailableChannelNumbers</a></code> must be used to determine which channels are possible  to set. When a new channel is set, the WiFi on the product will reboot. The channel can only be changed when the  product is not flying. Supported only by Mavic Pro.</font></p>
-<h5 id="input-parameters-v10">Input Parameters:</h5>
+<h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">channelNumber</font></font></td><td><font color="#666"><i>Index of the channel to select.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_getwifichannel"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_getwifichannel_inline">getChannelNumber</a></div></div><div class="inline-doc" id="djiwifilink_getwifichannel_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getChannelNumber</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getChannelNumber</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Integer&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_number_key">AirLinkKey.CHANNEL_NUMBER</a></font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Gets the WiFi channel. Channels 1-13 are in the 2.4 GHz band. Other channels are in the 5 GHz band.</font></p>
-<h5 id="input-parameters-v11">Input Parameters:</h5>
+<h5 id="input-parameters-v13">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Integer&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_getavailablechannels"><div class="api-col left">Get Available Channels</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_getavailablechannels_inline">getAvailableChannelNumbers</a></div></div><div class="inline-doc" id="djiwifilink_getavailablechannels_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getAvailableChannelNumbers</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getAvailableChannelNumbers</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Integer[]&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_available_channel_numbers_key">AirLinkKey.AVAILABLE_CHANNEL_NUMBERS</a></font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">Gets the channels available for the current frequency band. When <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwififrequencyband_dualband">FREQUENCY_BAND_DUAL</a></code> is  selected, channels for both 2.4GHz and 5GHz are available. Supported only by Mavic Pro.</font></p>
-<h5 id="input-parameters-v12">Input Parameters:</h5>
+<h5 id="input-parameters-v14">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Integer[]&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The completion block with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_setdatarate"><div class="api-col left">WiFi Data Rate</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_setdatarate_inline">setDataRate</a></div></div><div class="inline-doc" id="djiwifilink_setdatarate_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setDataRate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDataRate</span><span class="params">(WifiDataRate rate, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_data_rate_key">AirLinkKey.DATA_RATE</a></font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666">Sets the WiFi data rate (throughput). Higher data rates increase the quality of video transmission, but can only be  used at shorter ranges. It is not supported by Spark or Mavic Air.</font></p>
-<h5 id="input-parameters-v13">Input Parameters:</h5>
+<h5 id="input-parameters-v15">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwifidatarate">WifiDataRate</a> <font color="#000">rate</font></font></td><td><font color="#666"><i>Data rate (throughput).</i></font></td></tr><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_getdatarate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_getdatarate_inline">getDataRate</a></div></div><div class="inline-doc" id="djiwifilink_getdatarate_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getDataRate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getDataRate</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;WifiDataRate&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_data_rate_key">AirLinkKey.DATA_RATE</a></font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666">Gets the current data rate (throughput). It is not supported by Spark or Mavic Air.</font></p>
-<h5 id="input-parameters-v14">Input Parameters:</h5>
+<h5 id="input-parameters-v16">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;<a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwifidatarate">WifiDataRate</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djiwifilink_djiwifisignalqualitychangedcallbackinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiwifilink_djiwifisignalqualitychangedcallbackinterface_inline">MagneticInterferenceCallback</a></div></div><div class="inline-doc" id="djiwifilink_djiwifisignalqualitychangedcallbackinterface_inline" <blockquote="">
@@ -774,7 +802,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">MagneticInterferenceCallback</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">This interface provides a method to receive the updated WiFi signal quality.</font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
 <h4 id="callback-method">Callback Method</h4>
@@ -783,9 +811,9 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onResult</span><span class="params">(WiFiMagneticInterferenceLevel level)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">Updates the WiFi Signal Quality.</font></p>
-<h5 id="input-parameters-v15">Input Parameters:</h5>
+<h5 id="input-parameters-v17">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwifisignalquality">WiFiMagneticInterferenceLevel</a> <font color="#000">level</font></font></td><td><font color="#666"><i>The WiFi magnetic interference level.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djiwifilink_rssicallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiwifilink_rssicallbackinterface_inline">ChannelInterferenceCallback</a></div></div><div class="inline-doc" id="djiwifilink_rssicallbackinterface_inline" <blockquote="">
@@ -793,7 +821,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ChannelInterferenceCallback</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">Callback to listen to any changes in interference levels for channels that are not being used for communication.</font></p>
 <h5 id="interface-methods-v2">Interface Methods:</h5>
 <h4 id="callback-method-v2">Callback Method</h4>
@@ -802,9 +830,9 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(<span class="keyword">final</span> WifiChannelInterference[] channelInterferences)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">This will be invoked when there is a change in RSSI. Interference power of the available channels.</font></p>
-<h5 id="input-parameters-v16">Input Parameters:</h5>
+<h5 id="input-parameters-v18">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Components/WiFiLink/DJIWiFiLink_DJIWiFiChannelInterference.html#djiwifilink_djiwifichannelinterference">WifiChannelInterference</a>[] <font color="#000">channelInterferences</font></font></td><td><font color="#666"><i>An array of all the current RSSIs.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djiwifilink_djiwififrequencyband"><div class="api-col left">Information</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwifilink_djiwififrequencyband_inline">WiFiFrequencyBand</a></div></div><div class="inline-doc" id="djiwifilink_djiwififrequencyband_inline" <blockquote="">
@@ -812,7 +840,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> WiFiFrequencyBand</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_wifi_frequency_band_key">AirLinkKey.WIFI_FREQUENCY_BAND</a></font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">WiFi frequency band.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwififrequencyband_2dot4g_inline"></a>FREQUENCY_BAND_ONLY_2_DOT_4</font></td><td><font color="#666">The WiFi Frequency band is 2.4 GHz.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwififrequencyband_5g_inline"></a>FREQUENCY_BAND_5_GHZ</font></td><td><font color="#666">The WiFi Frequency band is 5 GHz.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwififrequencyband_dualband_inline"></a>FREQUENCY_BAND_DUAL</font></td><td><font color="#666">Dual frequency band mode. The WiFi frequency band can be either 2.4 GHz or 5 GHz.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwififrequencyband_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The WiFi Frequency is unknown.</font></td></tr></table></html>
@@ -823,7 +851,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> WiFiMagneticInterferenceLevel</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_magnetic_interference_key">AirLinkKey.MAGNETIC_INTERFERENCE</a></font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">WiFi magnetic interference - as measured by Osmo, Phantom 3 4K and Phantom 3 Standard.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifisignalquality_good_inline"></a>LOW</font></td><td><font color="#666">WiFi magnetic interference is low.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifisignalquality_medium_inline"></a>MEDIUM</font></td><td><font color="#666">WiFi magnetic interference is medium. At this level, the video quality will be degraded compared to when the signal quality is low.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifisignalquality_bad_inline"></a>HIGH</font></td><td><font color="#666">WiFi magnetic interference is high. At this level, the video quality will be degraded compared to when the signal quality is medium.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifisignalquality_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">WiFi magnetic interference is Unknown.</font></td></tr></table></html>
@@ -834,7 +862,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> WifiDataRate</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_data_rate_key">AirLinkKey.DATA_RATE</a></font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">WiFi data rate. Lower rates are used for longer ranges, but will have lower video quality.</font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifidatarate_1mbps_inline"></a>RATE_1_MBPS</font></td><td><font color="#666">1 Mbps.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifidatarate_2mbps_inline"></a>RATE_2_MBPS</font></td><td><font color="#666">2 Mbps.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifidatarate_4mbps_inline"></a>RATE_4_MBPS</font></td><td><font color="#666">4 Mbps.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifidatarate_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
@@ -846,16 +874,16 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setComponentListener</span><span class="params">(ComponentListener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666">Sets the listener for the DJI component.</font></p>
-<h5 id="input-parameters-v17">Input Parameters:</h5>
+<h5 id="input-parameters-v19">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The callback of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibasecomponent_index"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_index_inline">getIndex</a></div></div><div class="inline-doc" id="djibasecomponent_index_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210 and M210 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft.</font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of index.</i></font></td></tr></table></html></div>
@@ -864,7 +892,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isConnected</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666"><code>true</code> if the component is connected.</font></p>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the component is connected.</i></font></td></tr></table></html></div>
@@ -873,18 +901,18 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSerialNumber</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666">Gets the serial number of the component. Depending on the component, this serial number might not match the serial number found  on the physical component.</font></p>
-<h5 id="input-parameters-v18">Input Parameters:</h5>
+<h5 id="input-parameters-v20">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value returned.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibasecomponent_getfirmwareversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getfirmwareversion_inline">getFirmwareVersion</a></div></div><div class="inline-doc" id="djibasecomponent_getfirmwareversion_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getFirmwareVersion</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFirmwareVersion</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
+<h5 id="description-v29">Description:</h5>
 <p><font color="#666">Returns the firmware version of the component. Each component will  have a different firmware version, the combination of which will  form the package firmware version <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_getfirmwarepackageversion">getFirmwarePackageVersion</a></code> found in <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</font></p>
-<h5 id="input-parameters-v19">Input Parameters:</h5>
+<h5 id="input-parameters-v21">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
 
         </div>

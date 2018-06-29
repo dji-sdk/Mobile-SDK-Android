@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_content_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true">
+    <TextureView
+        android:id="@+id/video_previewer_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"/>
+    <TextView
+        android:id="@+id/payload_name"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        style="@style/test_text"
+        android:textSize="18sp"
+        android:ellipsize="marquee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="Payload Name: N/A"
+        android:scrollbars="vertical"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/payload_name"
+        android:id="@+id/buttons"
+        android:layout_alignParentLeft="true"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <Button
+                style="@style/button_style"
+                android:id="@+id/login_sdk"
+                android:layout_width="200dip"
+                android:layout_height="45dp"
+                android:text="Login" />
+
+            <Button
+                style="@style/button_style"
+                android:visibility="gone"
+                android:id="@+id/set_index"
+                android:layout_width="200dip"
+                android:layout_height="45dp"
+                android:text="Index:0" />
+            <Button
+                style="@style/button_style"
+                android:visibility="gone"
+                android:id="@+id/show_all_widgets"
+                android:layout_width="200dip"
+                android:layout_height="45dp"
+                android:text="ShowAllWidgets" />
+            <Button
+                style="@style/button_style"
+                android:visibility="gone"
+                android:id="@+id/set_value_for_widget"
+                android:layout_width="200dip"
+                android:layout_height="45dp"
+                android:text="SetValueOfWidget" />
+            <Button
+                style="@style/button_style"
+                android:visibility="gone"
+                android:id="@+id/get_value_for_widget"
+                android:layout_width="200dip"
+                android:layout_height="45dp"
+                android:text="GetValueOfWidget" />
+            <Button
+                style="@style/button_style"
+                android:id="@+id/sent_data"
+                android:layout_width="200dip"
+                android:layout_height="45dp"
+                android:text="Send Data Activity" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            style="@style/test_text"
+            android:textSize="14sp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="UART/CAN Channel: "
+            android:scrollbars="vertical"/>
+        <TextView
+            android:id="@+id/push_info_text"
+            style="@style/test_text"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:maxLines="50"
+            android:scrollbars="vertical"/>
+        <TextView
+            style="@style/test_text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:text="Network Channel: "
+            android:scrollbars="vertical"/>
+        <TextView
+            android:id="@+id/push_info_text_usb"
+            style="@style/test_text"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:maxLines="50"
+            android:scrollbars="vertical"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+

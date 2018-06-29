@@ -73,7 +73,10 @@ public class DemoListView extends FrameLayout {
 
         // Build model for ListView
         ListBuilder builder = new ListBuilder();
-
+        builder.addGroup(R.string.component_listview_sdk_4_6,
+                         false,
+                         new GroupItem(R.string.component_listview_payload,
+                                       StartPayloadAcitivityView.class));
         builder.addGroup(R.string.component_listview_sdk_4_5,
                          false,
                          new GroupItem(R.string.component_listview_flight_hub,

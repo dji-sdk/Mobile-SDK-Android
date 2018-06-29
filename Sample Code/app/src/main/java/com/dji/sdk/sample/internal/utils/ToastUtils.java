@@ -43,7 +43,7 @@ public class ToastUtils {
         }
     }
 
-    private static void showToast(String msg) {
+    public static void showToast(String msg) {
         Toast.makeText(DJISampleApplication.getInstance(), msg, Toast.LENGTH_SHORT).show();
     }
 

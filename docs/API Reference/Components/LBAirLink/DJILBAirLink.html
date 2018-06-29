@@ -58,7 +58,7 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
                                       </dd>
-                                      <dd><a href="../KeyManager/PayloadKey.html">PayloadKey</a>
+                                      <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIGimbalKey.html">GimbalKey</a>
                                       </dd>
@@ -91,6 +91,8 @@
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">UserAccountManager</a>
+                  </dd>
+                  <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
                   </dd>
@@ -414,6 +416,12 @@
                   </dd>
                   <dd><a href="../MobileRemoteController/DJIMobileRemoteController.html">MobileRemoteController</a>
                   </dd>
+                  <dd><a data-href="../Payload/DJIPayload.html" class="sub-toggle">Payload<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Payload/DJIPayload_PayloadWidget.html">PayloadWidget</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Mission Classes
@@ -603,6 +611,8 @@
                   <dd><a data-href="../SDKError/DJIError.html" class="sub-toggle">DJIError<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../SDKError/DJIError_DJIGimbalError.html">DJIGimbalError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DataProtectionError.html">DataProtectionError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKFlightHubError.html">DJIFlightHubError</a>
                             </dd>
@@ -1034,7 +1044,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getSupportedFrequencyBands</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSupportedFrequencyBands</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;LightbridgeFrequencyBand[]&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_supported_frequency_bands_key">AirLinkKey.SUPPORTED_FREQUENCY_BANDS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999">SUPPORTED_FREQUENCY_BANDS</font></td></tr></table></html>
 <h5 id="description-v45">Description:</h5>
 <p><font color="#666">Gets the frequency bands supported by the product in the current area. It is only supported by Inspire 2 and  Phantom 4 Pro. For the other products with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <h5 id="input-parameters-v42">Input Parameters:</h5>
@@ -1064,7 +1074,7 @@ with LB air link, the frequency band is always 2.4 GHz.</font></p>
 <div class="article"><h6><font color="#AAA">enum </font>LightbridgeFrequencyBand</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> LightbridgeFrequencyBand</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_lb_frequency_band_key">AirLinkKey.LB_FREQUENCY_BAND</a>, <a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_supported_frequency_bands_key">AirLinkKey.SUPPORTED_FREQUENCY_BANDS</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_lb_frequency_band_key">AirLinkKey.LB_FREQUENCY_BAND</a></font></td></tr></table></html>
 <h5 id="description-v48">Description:</h5>
 <p><font color="#666">LBAirLink frequency band. Supported only by Phantom 4 Professional.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
