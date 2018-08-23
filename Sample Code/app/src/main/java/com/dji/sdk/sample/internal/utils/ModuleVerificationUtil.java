@@ -4,6 +4,8 @@ import android.support.annotation.Nullable;
 
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 
+import dji.common.product.Model;
+import dji.sdk.base.BaseProduct;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.flightcontroller.Simulator;
 import dji.sdk.products.Aircraft;
@@ -98,6 +100,15 @@ public class ModuleVerificationUtil {
             return aircraft.getFlightController();
         }
         return null;
+    }
+
+    @Nullable
+    public static boolean isMavic2Product() {
+        BaseProduct baseProduct = DJISampleApplication.getProductInstance();
+        if (baseProduct != null) {
+            return baseProduct.getModel() == Model.MAVIC_2_PRO || baseProduct.getModel() == Model.MAVIC_2_ZOOM;
+        }
+        return false;
     }
 
 }

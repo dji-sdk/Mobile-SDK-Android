@@ -4,6 +4,8 @@
 -dontwarn org.bouncycastle.**
 -dontwarn dji.**
 -dontwarn com.dji.**
+-dontwarn sun.**
+-dontwarn java.**
 
 -keepclassmembers enum * {
     public static <methods>;
@@ -68,3 +70,6 @@
 -keep class android.support.** { *; }
 -keep class android.media.** { *; }
 -keep class okio.** { *; }
+-keep class com.lmax.disruptor.** {
+    *;
+}

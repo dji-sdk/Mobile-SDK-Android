@@ -210,6 +210,12 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a data-href="../FlightController/DJIFlightController_DJIFlightControllerLEDsSettings.html" class="sub-toggle">LEDsSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerLEDsSettings_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../FlightController/DJIFlightController_Limits.html">Limits</a>
                             </dd>
                     </ul>
@@ -279,6 +285,8 @@
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraOriginalPhotoSettings.html">OriginalPhotoSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
@@ -739,7 +747,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setUnlockingEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flyzone</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">Disables the unlocked fly zones. This is useful if the aircraft is shared between users. It is not  supported by Inspire 1 series or Phatom 3 series. For the other products, it is supported  when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>true</code>.</font></p>
+<p><font color="#666">Disables the unlocked fly zones. This is useful if the aircraft is shared between users. It is not  supported by Inspire 1 series or Phantom 3 series. For the other products, it is supported  when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>true</code>.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> to enable the unlocked fly zone.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i><code>completion callback</code> to receive the result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflyzonemanager_djiflyzoneinformation_getunlockingenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiflyzoneinformation_getunlockingenabled_inline">getUnlockingEnabled</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiflyzoneinformation_getunlockingenabled_inline" <blockquote="">
@@ -748,7 +756,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getUnlockingEnabled</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flyzone</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666"><code>true</code> if the unlocked fly zone is enabled. It is not supported by Inspire 1 series or Phatom 3  series. For the other products, it is supported when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>true</code>.</font></p>
+<p><font color="#666"><code>true</code> if the unlocked fly zone is enabled. It is not supported by Inspire 1 series or Phantom 3  series. For the other products, it is supported when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>true</code>.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback that receives the execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflyzonemanager_djiflyzoneinformation_starttime"><div class="api-col left">Time</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiflyzoneinformation_starttime_inline">getStartTime</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiflyzoneinformation_starttime_inline" <blockquote="">

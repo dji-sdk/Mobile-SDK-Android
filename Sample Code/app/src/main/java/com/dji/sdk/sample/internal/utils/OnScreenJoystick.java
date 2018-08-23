@@ -40,6 +40,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 
 import com.dji.sdk.sample.R;
+import com.dji.sdk.sample.internal.OnScreenJoystickListener;
 
 public class OnScreenJoystick extends SurfaceView implements
 		SurfaceHolder.Callback, OnTouchListener {

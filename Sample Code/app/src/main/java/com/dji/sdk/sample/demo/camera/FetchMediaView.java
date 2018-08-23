@@ -11,18 +11,17 @@ import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
 
+import dji.sdk.media.FetchMediaTask;
+import dji.sdk.media.FetchMediaTaskContent;
+import dji.sdk.media.FetchMediaTaskScheduler;
+import dji.sdk.media.MediaFile;
+import dji.sdk.media.MediaManager;
 import java.io.File;
-import java.util.List;
 
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
-import dji.sdk.camera.FetchMediaTask;
-import dji.sdk.camera.FetchMediaTaskContent;
-import dji.sdk.camera.FetchMediaTaskScheduler;
-import dji.sdk.camera.FetchMediaTaskScheduler.FetchMediaTaskSchedulerState;
-import dji.sdk.camera.MediaFile;
-import dji.sdk.camera.MediaManager;
+import java.util.List;
 
 /**
  * Class for fetching the media.
@@ -50,7 +49,7 @@ public class FetchMediaView extends BaseThreeBtnView {
 
                 if (taskScheduler == null) {
                     taskScheduler = mediaManager.getScheduler();
-                    if (taskScheduler != null && taskScheduler.getState() == FetchMediaTaskSchedulerState.SUSPENDED) {
+                    if (taskScheduler != null && taskScheduler.getState() == FetchMediaTaskScheduler.FetchMediaTaskSchedulerState.SUSPENDED) {
                         taskScheduler.resume(new CommonCallbacks.CompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {

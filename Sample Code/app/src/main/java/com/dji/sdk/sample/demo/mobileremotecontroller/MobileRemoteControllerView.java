@@ -15,7 +15,7 @@ import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.DialogUtils;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.OnScreenJoystick;
-import com.dji.sdk.sample.internal.utils.OnScreenJoystickListener;
+import com.dji.sdk.sample.internal.OnScreenJoystickListener;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
 import dji.common.error.DJIError;

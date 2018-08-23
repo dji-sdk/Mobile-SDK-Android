@@ -83,7 +83,7 @@ public class VideoFeedView extends TextureView implements SurfaceTextureListener
                 final long now = System.currentTimeMillis();
                 final long ellapsedTime = now - lastReceivedFrameTime.get();
                 if (coverView != null) {
-                    if (ellapsedTime > WAIT_TIME) {
+                    if (ellapsedTime > WAIT_TIME && !ModuleVerificationUtil.isMavic2Product()) {
                         if (coverView.getVisibility() == INVISIBLE) {
                             coverView.setVisibility(VISIBLE);
                         }

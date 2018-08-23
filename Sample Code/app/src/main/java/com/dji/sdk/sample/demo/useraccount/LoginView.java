@@ -93,7 +93,7 @@ public class LoginView extends LinearLayout implements View.OnClickListener {
             @Override
             public void run() {
                 loginBtn.setEnabled(userAccountState != UserAccountState.AUTHORIZED);
-                logoutBtn.setEnabled(userAccountState == UserAccountState.AUTHORIZED);
+                logoutBtn.setEnabled(userAccountState != UserAccountState.NOT_LOGGED_IN);
             }
         });
     }

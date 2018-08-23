@@ -21,6 +21,7 @@ import com.dji.sdk.sample.demo.camera.RecordVideoView;
 import com.dji.sdk.sample.demo.camera.SetGetISOView;
 import com.dji.sdk.sample.demo.camera.ShootSinglePhotoView;
 import com.dji.sdk.sample.demo.camera.VideoFeederView;
+import com.dji.sdk.sample.demo.camera.XT2CameraView;
 import com.dji.sdk.sample.demo.flightcontroller.CompassCalibrationView;
 import com.dji.sdk.sample.demo.flightcontroller.FlightAssistantPushDataView;
 import com.dji.sdk.sample.demo.flightcontroller.FlightHubView;
@@ -107,7 +108,8 @@ public class DemoListView extends FrameLayout {
                          new GroupItem(R.string.camera_listview_playback_download, PlaybackDownloadView.class),
                          new GroupItem(R.string.camera_listview_download_media, FetchMediaView.class),
                          new GroupItem(R.string.camera_listview_media_playback, MediaPlaybackView.class),
-                         new GroupItem(R.string.component_listview_video_feeder, VideoFeederView.class));
+                         new GroupItem(R.string.component_listview_video_feeder, VideoFeederView.class),
+                        new GroupItem(R.string.component_xt2_camera_view, XT2CameraView.class));
 
         builder.addGroup(R.string.component_listview_gimbal,
                          false,

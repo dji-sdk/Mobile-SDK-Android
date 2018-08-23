@@ -71,6 +71,13 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
     protected void handleMiddleBtnClick() {
         //Shoot Photo Button
         if (isModuleAvailable()) {
+            post(new Runnable() {
+                @Override
+                public void run() {
+                    middleBtn.setEnabled(false);
+                }
+            });
+
             DJISampleApplication.getProductInstance()
                     .getCamera()
                     .startShootPhoto(new CommonCallbacks.CompletionCallback() {
@@ -84,17 +91,11 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
                             post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    setEnabled(true);
+                                    middleBtn.setEnabled(true);
                                 }
                             });
                         }
                     });
-            post(new Runnable() {
-                @Override
-                public void run() {
-                    middleBtn.setEnabled(false);
-                }
-            });
         }
     }
 

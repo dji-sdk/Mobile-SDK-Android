@@ -210,6 +210,12 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a data-href="../Components/FlightController/DJIFlightController_DJIFlightControllerLEDsSettings.html" class="sub-toggle">LEDsSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Components/FlightController/DJIFlightController_DJIFlightControllerLEDsSettings_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../Components/FlightController/DJIFlightController_Limits.html">Limits</a>
                             </dd>
                     </ul>
@@ -279,6 +285,8 @@
                             <dd><a href="../Components/Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
                             <dd><a href="../Components/Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
+                            <dd><a href="../Components/Camera/DJICamera_DJICameraOriginalPhotoSettings.html">OriginalPhotoSettings</a>
                             </dd>
                             <dd><a href="../Components/Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
@@ -697,13 +705,49 @@
 <p><font color="#666">The secondary video feed. <br> The possible physical sources for the secondary video feed include:  <br> - <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_ext">EXT</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_av">AV</a></code>  <br> - <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>. For M210 and M210 RTK, the physical  sources are controlled by the bandwidth allocation between the port (left) and starboard (right) main cameras  (<code><a href="../Components/LBAirLink/DJILBAirLink.html#djilbairlink_setbandwidthallocationforleftcamera">setBandwidthAllocationForLeftCamera</a></code>): <br> - When bandwidth is 100% on the left camera, the primary  source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the secondary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth is 0% on the left camera,  the primary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code> and the secondary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth is neither 0% nor 100% on  the left camera, the primary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the  secondary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></font></td><td><font color="#666"><i>A <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></code> object.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_providetranscodedvideofeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_providetranscodedvideofeed_inline">provideTranscodedVideoFeed</a></div></div><div class="inline-doc" id="djivideofeeder_providetranscodedvideofeed_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>provideTranscodedVideoFeed</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">VideoFeed <span class="title">provideTranscodedVideoFeed</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">Returns a new VideoFeed instance to receive the transcoded video feed from the  main camera. The original video feed from the main camera is transcoded (using MediaCodec)  to generate H.264 video feed for more general usages. The encoder will use the calibrated  decoded feed when lens distortion calibration is needed. Setting the callback of VideoFeed  to null can stop the transcoding.</font></p>
+<h5 id="return-v4">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></font></td><td><font color="#666"><i>A <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></code> object.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_settranscodingdatarate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_settranscodingdatarate_inline">setTranscodingDataRate</a></div></div><div class="inline-doc" id="djivideofeeder_settranscodingdatarate_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setTranscodingDataRate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTranscodingDataRate</span><span class="params">(<span class="keyword">float</span> rate)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v8">Description:</h5>
+<p><font color="#666">Sets the destination data rate for the transcoded video feed. The valid range is [2, 20] in Mbps.  CAUTION: Changing the data rate during transcoding may re-start the internal encoder. The  transcoded video feed will get interrupted for a few seconds.</font></p>
+<h5 id="input-parameters-v3">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">rate</font></font></td><td><font color="#666"><i>The destination data rate for the transcoded video feed.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_gettranscodingdatarate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_gettranscodingdatarate_inline">getTranscodingDataRate</a></div></div><div class="inline-doc" id="djivideofeeder_gettranscodingdatarate_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getTranscodingDataRate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getTranscodingDataRate</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v9">Description:</h5>
+<p><font color="#666">Gets the data rate of all transcoded video feeder, in Mbps.</font></p>
+<h5 id="return-v5">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value of the data rate of all transcoded video feeder.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_islensdistortioncalibrationneeded"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_islensdistortioncalibrationneeded_inline">isLensDistortionCalibrationNeeded</a></div></div><div class="inline-doc" id="djivideofeeder_islensdistortioncalibrationneeded_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>isLensDistortionCalibrationNeeded</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLensDistortionCalibrationNeeded</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<h5 id="description-v10">Description:</h5>
+<p><font color="#666">Determines if the original video feed requires lens distortion calibration. When calibration is  needed, it is not recommended to use the original video feed with the decoding  sample (https://github.com/DJI-Mobile-SDK-Tutorials/Android-VideoStreamDecodingSample). Use the  transcoded video feed instead.</font></p>
+<h5 id="return-v6">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>True if the video need anti-distortion feature</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djivideofeeder_djivideofeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_inline">VideoFeed</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">interface </font>VideoFeed</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">VideoFeed</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Video feed. Use it to receive video data from a physical source.</font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
 <h5 id="related-v2">Related:</h5>
@@ -712,7 +756,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> PhysicalSource</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">The physical source of a video feed.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_maincamera_inline"></a>MAIN_CAM</font></td><td><font color="#666">The video feed is from the main camera. It is the physical source used by most of DJI products.  For M210 and M210 RTK, <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code>  and <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code> are used instead.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera_inline"></a>FPV_CAM</font></td><td><font color="#666">The video feed is from the FPV camera on Inspire 2 or M200 series.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_ext_inline"></a>EXT</font></td><td><font color="#666">The video feed is from EXT port while EXT port is enabled. It is only used for  Lightbridge 2 or aircrafts with Lightbridge 2 (e.g. M600).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_lb_inline"></a>LB</font></td><td><font color="#666">The video feed is from one of the LB ports (AV or HDMI) while EXT Port is enabled.  It is only used for stand-alone Lightbridge 2 or aircraft with stand-alone Lightbridge 2 modules (e.g. M600).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_hdmi_inline"></a>HDMI</font></td><td><font color="#666">The video feed is from the HDMI port while EXT port is disabled.  It is only used for stand-alone Lightbridge 2 or aircraft with stand-alone Lightbridge 2 modules.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_av_inline"></a>AV</font></td><td><font color="#666">The video feed is from AV port while EXT port is disabled. It is only used for stand-alone Lightbridge 2 or aircraft with stand-alone Lightbridge 2 modules.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera_inline"></a>LEFT_CAM</font></td><td><font color="#666">The video feed is from the port (left) main camera. It is only used for M210 and M210 RTK.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera_inline"></a>RIGHT_CAM</font></td><td><font color="#666">The video feed is from the starboard (right) main camera. It is only used for M210 and M210 RTK.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown video physical source.</font></td></tr></table></html>
@@ -725,27 +769,27 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCallback</span><span class="params">(@Nullable VideoDataCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Start listening to video data.</font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
+<h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable VideoDataCallback <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djivideofeeder_djivideofeed_getcallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_getcallback_inline">getCallback</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_getcallback_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getCallback</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line">        <span class="function">VideoDataCallback <span class="title">getCallback</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Get the callback object.</font></p>
-<h5 id="return-v4">Return:</h5>
+<h5 id="return-v7">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">VideoDataCallback</font></td><td><font color="#666"><i>The <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_videodatacallback">VideoDataCallback</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djivideofeeder_djivideofeed_getvideosource"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_getvideosource_inline">getVideoSource</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_getvideosource_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getVideoSource</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">PhysicalSource <span class="title">getVideoSource</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">Gets the physical sources of the video data.</font></p>
-<h5 id="return-v5">Return:</h5>
+<h5 id="return-v8">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a></font></td><td><font color="#666"><i>An int value.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djivideofeeder_physicalsourcelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_physicalsourcelistener_inline">PhysicalSourceListener</a></div></div><div class="inline-doc" id="djivideofeeder_physicalsourcelistener_inline" <blockquote="">
@@ -753,7 +797,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">PhysicalSourceListener</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666">Physical source listener.</font></p>
 <h5 id="interface-methods-v2">Interface Methods:</h5>
 <h4 id="callback-method-v2">Callback Method</h4>
@@ -762,9 +806,9 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onChange</span><span class="params">(VideoFeed videoFeed, PhysicalSource newPhysicalSource)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666">Called when the physical source changes.</font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a> <font color="#000">videoFeed</font></font></td><td><font color="#666"><i>An interface of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a> <font color="#000">newPhysicalSource</font></font></td><td><font color="#666"><i>An int value.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djivideofeeder_videodatacallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_videodatacallback_inline">VideoDataCallback</a></div></div><div class="inline-doc" id="djivideofeeder_videodatacallback_inline" <blockquote="">
@@ -772,7 +816,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">VideoDataCallback</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">Video data callback.</font></p>
 <h5 id="interface-methods-v3">Interface Methods:</h5>
 <h4 id="callback-method-v3">Callback Method</h4>
@@ -781,9 +825,9 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(<span class="keyword">byte</span>[] videoBuffer, <span class="keyword">int</span> size)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
-<p><font color="#666">Callback that is called when video data is received</font></p>
-<h5 id="input-parameters-v5">Input Parameters:</h5>
+<h5 id="description-v19">Description:</h5>
+<p><font color="#666">Callback that is called when video data is received, but  if <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_islensdistortioncalibrationneeded">isLensDistortionCalibrationNeeded</a></code> return true,  the callback will never be called.</font></p>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">videoBuffer</font></font></td><td><font color="#666"><i>An array containing video buffer</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">size</font></font></td><td><font color="#666"><i>The size of the buffer that contains valid data</i></font></td></tr></table></html></div>
 </div>
 

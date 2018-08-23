@@ -28,6 +28,8 @@ import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
 
+import dji.sdk.media.MediaFile;
+import dji.sdk.media.MediaManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +37,6 @@ import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
 import dji.sdk.base.BaseProduct;
-import dji.sdk.camera.MediaFile;
-import dji.sdk.camera.MediaManager;
 
 public class MediaPlaybackView extends LinearLayout
         implements MediaManager.VideoPlaybackStateListener, PresentableView {

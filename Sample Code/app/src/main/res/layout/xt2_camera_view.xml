@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/vidoe_feeder_btns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/vidoe_feeder_btns"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_camera_display_visual"
+                style="@style/common_button"
+                android:text="@string/mode_visual" />
+
+            <Button
+                android:id="@+id/btn_camera_display_thermal"
+                style="@style/common_button"
+                android:text="@string/mode_thermal" />
+
+            <Button
+                android:id="@+id/btn_camera_display_msx"
+                style="@style/common_button"
+                android:text="@string/mode_msx" />
+
+            <Button
+                android:id="@+id/btn_camera_display_pip"
+                style="@style/common_button"
+                android:text="@string/mode_pip" />
+
+            <Button
+                android:id="@+id/btn_camera_display_msx_level"
+                style="@style/common_button"
+                android:text="@string/mode_msx_level" />
+
+            <Button
+                android:id="@+id/btn_camera_display_pip_position"
+                style="@style/common_button"
+                android:text="@string/mode_pip_position" />
+
+            <Button
+                android:id="@+id/btn_shoot_photo"
+                style="@style/common_button"
+                android:text="@string/photo_shoot" />
+
+
+            <Button
+                android:id="@+id/btn_get_storage_location"
+                style="@style/common_button"
+                android:text="@string/sdcard_present" />
+
+            <Button
+                android:id="@+id/btn_get_remaining_photo_count"
+                style="@style/common_button"
+                android:text="@string/photo_count" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/video_feed_title"
+            style="@style/test_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Primary Camera" />
+
+        <FrameLayout
+            android:layout_width="480dp"
+            android:layout_height="280dp">
+
+            <com.dji.sdk.sample.internal.utils.VideoFeedView
+                android:id="@+id/primary_video_feed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</merge>

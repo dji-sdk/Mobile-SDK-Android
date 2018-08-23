@@ -1,6 +1,3 @@
-plugins {
-    id "me.tatarka.retrolambda" version "3.5.0"
-}
 apply plugin: 'com.android.application'
 
 repositories {
@@ -17,6 +14,8 @@ android {
         targetSdkVersion 25
         multiDexEnabled true
         ndk {
+            // On x86 devices that run Android API 23 or above, if the application is targeted with API 23 or
+            // above, FFmpeg lib might lead to runtime crashes or warnings.
             abiFilters 'armeabi-v7a', 'x86', 'arm64-v8a'
         }
     }
@@ -49,10 +48,7 @@ android {
         doNotStrip "*/*/libFR.so"
         exclude 'META-INF/rxjava.properties'
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+
 }
 
 repositories {
@@ -61,12 +57,16 @@ repositories {
     }
 }
 
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.squareup:otto:1.3.8'
-    compile 'com.dji:dji-sdk:4.6'
-    provided 'com.dji:dji-sdk-provided:4.6'
-
+    compile ('com.dji:dji-sdk:4.7', {
+        // if your app needn't support Mavic 2 Pro and Mavic 2 Zoom, please exclude the library-anti-distortion module
+        // like following:
+        // exclude module: 'library-anti-distortion'
+    })
+    provided 'com.dji:dji-sdk-provided:4.7'
 }

@@ -210,6 +210,12 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a data-href="../FlightController/DJIFlightController_DJIFlightControllerLEDsSettings.html" class="sub-toggle">LEDsSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerLEDsSettings_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../FlightController/DJIFlightController_Limits.html">Limits</a>
                             </dd>
                     </ul>
@@ -279,6 +285,8 @@
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraOriginalPhotoSettings.html">OriginalPhotoSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
@@ -832,59 +840,113 @@
 <p><font color="#666">Determines whether the Advanced Pilot Assistance System (APAS) is enabled or not. When  APAS is enabled, the aircraft continues to respond to user commands and plans its path  according to both control stick inputs and the flight environment. APAS makes it easier  to avoid obstacles and obtain smoother footage, and gives a better fly experiences. It  is only supported by Mavic Air.</font></p>
 <h5 id="input-parameters-v19">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The completion callback with the returned execution result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiintelligentflightassistant_setrthobstacleavoidanceenabled"><div class="api-col left">RTH Obstacle Avoidance</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_setrthobstacleavoidanceenabled_inline">setRTHObstacleAvoidanceEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_setrthobstacleavoidanceenabled_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setRTHObstacleAvoidanceEnabled</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setRTHObstacleAvoidanceEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, @Nullable CommonCallbacks.CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<h5 id="description-v22">Description:</h5>
+<p><font color="#666">Enables Obstacle Avoidance during RTH. This is only active when the environment is bright  enough. It is not active when the aircraft is landing. CAUTION: If RTH Obstacle Avoidance is disabled, aircraft will not check obstacles during RTH or ascend to avoid obstacles, which  may cause great risks.</font></p>
+<h5 id="input-parameters-v20">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> to enable Obstacle Avoidance during RTH.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback that receives the setter result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiintelligentflightassistant_getrthobstacleavoidanceenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_getrthobstacleavoidanceenabled_inline">getRTHObstacleAvoidanceEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_getrthobstacleavoidanceenabled_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getRTHObstacleAvoidanceEnabled</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getRTHObstacleAvoidanceEnabled</span><span class="params">(@NonNull CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<h5 id="description-v23">Description:</h5>
+<p><font color="#666">Determines if Obstacle Avoidance is enabled during RTH. This is only active when the environment is bright enough. It is not active when the aircraft is landing. CAUTION: If RTH Obstacle Avoidance is disabled, aircraft will not check obstacles during RTH or ascend to avoid obstacles,  which may cause great risks.</font></p>
+<h5 id="input-parameters-v21">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback with the returned value(s).</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiintelligentflightassistant_setrthremoteobstacleavoidanceenabled"><div class="api-col left">RTH Remote Obstacle Avoidance</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_setrthremoteobstacleavoidanceenabled_inline">setRTHRemoteObstacleAvoidanceEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_setrthremoteobstacleavoidanceenabled_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setRTHRemoteObstacleAvoidanceEnabled</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setRTHRemoteObstacleAvoidanceEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled,</span></span></div><div class="line">                                                    @Nullable CommonCallbacks.CompletionCallback callback)</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<h5 id="description-v24">Description:</h5>
+<p><font color="#666">Enables Remote Obstacle Avoidance during RTH. Enabling this, the aircraft will adjust its RTH route  automatically to avoid obstacles in far distance. The gimbal will not respond to any commands from  the application or the remote controller.</font></p>
+<h5 id="input-parameters-v22">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> to enable Remote Obstacle Avoidance during RTH.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback that receives the setter result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiintelligentflightassistant_getrthremoteobstacleavoidanceenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_getrthremoteobstacleavoidanceenabled_inline">getRTHRemoteObstacleAvoidanceEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_getrthremoteobstacleavoidanceenabled_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getRTHRemoteObstacleAvoidanceEnabled</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getRTHRemoteObstacleAvoidanceEnabled</span><span class="params">(@NonNull CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<h5 id="description-v25">Description:</h5>
+<p><font color="#666">Determines if RTH Remote Obstacle Avoidance is enabled or not. When it is enabled, the aircraft will  adjust its RTH route automatically to avoid obstacles in far distance. The gimbal will not respond to  any commands from the application or the remote controller.</font></p>
+<h5 id="input-parameters-v23">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback with the returned value(s).</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiintelligentflightassistant_setbottomauxiliarylightmode"><div class="api-col left">Bottom Auxiliary Lighting</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_setbottomauxiliarylightmode_inline">setBottomAuxiliaryLightMode</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_setbottomauxiliarylightmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setBottomAuxiliaryLightMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setBottomAuxiliaryLightMode</span><span class="params">(@NonNull BottomAuxiliaryLightMode mode, @Nullable CommonCallbacks.CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<h5 id="description-v26">Description:</h5>
+<p><font color="#666">Sets the mode for the auxiliary light at the bottom of the aircraft. It is only supported by Mavic 2 series.</font></p>
+<h5 id="input-parameters-v24">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djibottomauxiliarylightmode">BottomAuxiliaryLightMode</a> <font color="#000">mode</font></font></td><td><font color="#666"><i>The lighting mode to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback that receives the setter result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiintelligentflightassistant_getbottomauxiliarylightmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_getbottomauxiliarylightmode_inline">getBottomAuxiliaryLightMode</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_getbottomauxiliarylightmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getBottomAuxiliaryLightMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getBottomAuxiliaryLightMode</span><span class="params">(</span></span></div><div class="line">       @NonNull CommonCallbacks.CompletionCallbackWith&lt;BottomAuxiliaryLightMode&gt; callback)</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
+<h5 id="description-v27">Description:</h5>
+<p><font color="#666">Gets the mode for the auxiliary light at the bottom of the aircraft. It is only supported by Mavic 2 series.</font></p>
+<h5 id="input-parameters-v25">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;<a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djibottomauxiliarylightmode">BottomAuxiliaryLightMode</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback with the returned value(s).</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiintelligentflightassistant_setvisionpositioningenabled"><div class="api-col left">Vision Positioning</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_setvisionpositioningenabled_inline">setVisionAssistedPositioningEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_setvisionpositioningenabled_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setVisionAssistedPositioningEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVisionAssistedPositioningEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_vision_assisted_positioning_enabled_key">FlightControllerKey.VISION_ASSISTED_POSITIONING_ENABLED</a></font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666">Enable vision positioning. Vision positioning is used to augment GPS to improve location accuracy when hovering and improve velocity calculation when flying.</font></p>
-<h5 id="input-parameters-v20">Input Parameters:</h5>
+<h5 id="input-parameters-v26">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> to enable vision assisted positioning.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiintelligentflightassistant_getvisionpositioningenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_getvisionpositioningenabled_inline">getVisionAssistedPositioningEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_getvisionpositioningenabled_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getVisionAssistedPositioningEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getVisionAssistedPositioningEnabled</span><span class="params">(@NonNull <span class="keyword">final</span> CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_vision_assisted_positioning_enabled_key">FlightControllerKey.VISION_ASSISTED_POSITIONING_ENABLED</a></font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v29">Description:</h5>
 <p><font color="#666">Gets vision positioning status (enabled/disabled).</font></p>
-<h5 id="input-parameters-v21">Input Parameters:</h5>
+<h5 id="input-parameters-v27">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiintelligentflightassistant_setprecisionlandingenabled"><div class="api-col left">Precision Landing</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_setprecisionlandingenabled_inline">setPrecisionLandingEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_setprecisionlandingenabled_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setPrecisionLandingEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setPrecisionLandingEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_precision_landing_enabled_key">FlightControllerKey.PRECISION_LANDING_ENABLED</a></font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v30">Description:</h5>
 <p><font color="#666">Enables/disables precision landing. When enabled, the aircraft will record its take-off location visually (as well as with GPS). On a Return-To-Home action the aircraft will attempt to perform a precision landing using the additional visual information. This method only works on a Return-To-Home action when the home location is successfully recorded during take-off, and not changed during flight.</font></p>
-<h5 id="input-parameters-v22">Input Parameters:</h5>
+<h5 id="input-parameters-v28">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> to enable the precise landing.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>callback block that receives the setter result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiintelligentflightassistant_getprecisionlandingenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_getprecisionlandingenabled_inline">getPrecisionLandingEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_getprecisionlandingenabled_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getPrecisionLandingEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getPrecisionLandingEnabled</span><span class="params">(@NonNull <span class="keyword">final</span> CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_precision_landing_enabled_key">FlightControllerKey.PRECISION_LANDING_ENABLED</a></font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
+<h5 id="description-v31">Description:</h5>
 <p><font color="#666">Gets precision landing status (enabled/disabled).</font></p>
-<h5 id="input-parameters-v23">Input Parameters:</h5>
+<h5 id="input-parameters-v29">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiintelligentflightassistant_setlandingprotectionenabled"><div class="api-col left">Landing Protection</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_setlandingprotectionenabled_inline">setLandingProtectionEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_setlandingprotectionenabled_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setLandingProtectionEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setLandingProtectionEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_landing_protection_enabled_key">FlightControllerKey.LANDING_PROTECTION_ENABLED</a></font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v32">Description:</h5>
 <p><font color="#666">Enables/disables landing protection. During auto-landing, the downwards facing vision sensor will check if the ground surface is flat enough for a safe landing. If it is not and landing protection is enabled, then landing will abort and need to be manually performed by the user.</font></p>
-<h5 id="input-parameters-v24">Input Parameters:</h5>
+<h5 id="input-parameters-v30">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> to enable the landing protection.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>&lt;&lt;&gt;android:Callback&gt; that receives the setter result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiintelligentflightassistant_getlandingprotectionenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_getlandingprotectionenabled_inline">getLandingProtectionEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_getlandingprotectionenabled_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getLandingProtectionEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getLandingProtectionEnabled</span><span class="params">(@NonNull <span class="keyword">final</span> CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_landing_protection_enabled_key">FlightControllerKey.LANDING_PROTECTION_ENABLED</a></font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
+<h5 id="description-v33">Description:</h5>
 <p><font color="#666">Gets landing protection status (enabled/disabled).</font></p>
-<h5 id="input-parameters-v25">Input Parameters:</h5>
+<h5 id="input-parameters-v31">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djiintelligentflightassistant_updatevisionfaceawarestatecallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_updatevisionfaceawarestatecallbackinterface_inline">Callback</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_updatevisionfaceawarestatecallbackinterface_inline" <blockquote="">
@@ -892,7 +954,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Callback</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flightassistant</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
+<h5 id="description-v34">Description:</h5>
 <p><font color="#666">Callback to update the FaceAwareState.</font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
 <h4 id="callback-method">Callback Method</h4>
@@ -901,9 +963,9 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(FaceAwareState state)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flightassistant</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
+<h5 id="description-v35">Description:</h5>
 <p><font color="#666">Callback function that updates the FaceAware state. When starting a PalmLaunch, the aircraft will  start FaceAware. If FaceAware activates successfully, the motors will start spinning and the  aircraft will hover after releasing it.</font></p>
-<h5 id="input-parameters-v26">Input Parameters:</h5>
+<h5 id="input-parameters-v32">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djivisiondetectionstate_djivisionfaceawarestate">FaceAwareState</a> <font color="#000">state</font></font></td><td><font color="#666"><i>The face sware state.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djiintelligentflightassistant_updatevisionpalmcontrolstatecallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_updatevisionpalmcontrolstatecallbackinterface_inline">Callback</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_updatevisionpalmcontrolstatecallbackinterface_inline" <blockquote="">
@@ -911,7 +973,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Callback</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flightassistant</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
+<h5 id="description-v36">Description:</h5>
 <p><font color="#666">Callback to update the PalmControlState.</font></p>
 <h5 id="interface-methods-v2">Interface Methods:</h5>
 <h4 id="callback-method-v2">Callback Method</h4>
@@ -920,9 +982,9 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(PalmControlState state)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flightassistant</font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
+<h5 id="description-v37">Description:</h5>
 <p><font color="#666">Callback function that updates the palm control state.</font></p>
-<h5 id="input-parameters-v27">Input Parameters:</h5>
+<h5 id="input-parameters-v33">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djivisiondetectionstate_djivisionpalmcontrolstate">PalmControlState</a> <font color="#000">state</font></font></td><td><font color="#666"><i>The palm control state.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djiintelligentflightassistant_updatevisionsmartcapturestatecallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_updatevisionsmartcapturestatecallbackinterface_inline">Callback</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_updatevisionsmartcapturestatecallbackinterface_inline" <blockquote="">
@@ -930,7 +992,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Callback</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flightassistant</font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
+<h5 id="description-v38">Description:</h5>
 <p><font color="#666">Callback to update the SmartCaptureState.</font></p>
 <h5 id="interface-methods-v3">Interface Methods:</h5>
 <h4 id="callback-method-v3">Callback Method</h4>
@@ -939,32 +1001,43 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(SmartCaptureState state)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flightassistant</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
+<h5 id="description-v39">Description:</h5>
 <p><font color="#666">Callback function that updates the SmartCapture state. It is only supported by Mavic Air.</font></p>
-<h5 id="input-parameters-v28">Input Parameters:</h5>
+<h5 id="input-parameters-v34">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate">SmartCaptureState</a> <font color="#000">state</font></font></td><td><font color="#666"><i>The SmartCapture state.</i></font></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djivisiondetectionstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/VisionDetectionState/DJIVisionDetectionState.html">VisionDetectionState</a></div></div><div class="api-row" id="djivisiondetectionstate_djivisioncontrolstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html">VisionControlState</a></div></div><div class="api-row" id="djismartcapturestate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html">SmartCaptureState</a></div></div><div class="api-row" id="djivisiondetectionstate_djivisionfaceawarestate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djivisiondetectionstate_djivisionfaceawarestate_inline">FaceAwareState</a></div></div><div class="inline-doc" id="djivisiondetectionstate_djivisionfaceawarestate_inline" <blockquote="">
+<div class="api-row" id="djivisiondetectionstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/VisionDetectionState/DJIVisionDetectionState.html">VisionDetectionState</a></div></div><div class="api-row" id="djivisiondetectionstate_djivisioncontrolstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html">VisionControlState</a></div></div><div class="api-row" id="djismartcapturestate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html">SmartCaptureState</a></div></div><div class="api-row" id="djibottomauxiliarylightmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djibottomauxiliarylightmode_inline">BottomAuxiliaryLightMode</a></div></div><div class="inline-doc" id="djibottomauxiliarylightmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>BottomAuxiliaryLightMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> BottomAuxiliaryLightMode</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flightassistant</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_bottom_auxiliary_light_mode_key">FlightControllerKey.BOTTOM_AUXILIARY_LIGHT_MODE</a></font></td></tr></table></html>
+<h5 id="description-v40">Description:</h5>
+<p><font color="#666">Modes for the auxiliary light at the bottom of the aircraft.</font></p>
+<h5 id="enum-members">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djibottomauxiliarylightmode_auto_inline"></a>AUTO</font></td><td><font color="#666">The auto mode. In this mode, the auxiliary light will be turned on automatically  when the downward vision system is active but the environment is too dark.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibottomauxiliarylightmode_on_inline"></a>ON</font></td><td><font color="#666">The auxiliary light is on.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibottomauxiliarylightmode_off_inline"></a>OFF</font></td><td><font color="#666">The auxiliary light is off.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibottomauxiliarylightmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
+<h5 id="class-members-v2">Class Members:</h5>
+</div>
+<div class="api-row" id="djivisiondetectionstate_djivisionfaceawarestate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djivisiondetectionstate_djivisionfaceawarestate_inline">FaceAwareState</a></div></div><div class="inline-doc" id="djivisiondetectionstate_djivisionfaceawarestate_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>FaceAwareState</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> FaceAwareState</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flightassistant</font></td></tr></table></html>
-<h5 id="description-v34">Description:</h5>
+<h5 id="description-v41">Description:</h5>
 <p><font color="#666">FaceAware states. FaceAware is a step of PalmLaunch. Tapping the battery battery power  button twice, FaceAware will start to work automatically. If FaceAware is activated successfully,  the aircraft will takeoff from the palm.</font></p>
-<h5 id="enum-members">Enum Members:</h5>
+<h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionfaceawarestate_idle_inline"></a>IDLE</font></td><td><font color="#666">The aircraft is not executing FaceAware.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionfaceawarestate_activating_inline"></a>ACTIVATING</font></td><td><font color="#666">The aircraft is in the process of detecting a human face in front of the camera.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionfaceawarestate_activated_inline"></a>ACTIVATED</font></td><td><font color="#666">FaceAware has been activated. The aircraft will beep twice and the motors will  start spinning.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionfaceawarestate_failednofacedetected_inline"></a>FAILED_NO_FACE_DETECTED</font></td><td><font color="#666">FaceAware has failed to activate because no face was detected.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionfaceawarestate_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
-<h5 id="class-members-v2">Class Members:</h5>
+<h5 id="class-members-v3">Class Members:</h5>
 </div>
 <div class="api-row" id="djivisiondetectionstate_djivisionpalmcontrolstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djivisiondetectionstate_djivisionpalmcontrolstate_inline">PalmControlState</a></div></div><div class="inline-doc" id="djivisiondetectionstate_djivisionpalmcontrolstate_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>PalmControlState</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> PalmControlState</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flightassistant</font></td></tr></table></html>
-<h5 id="description-v35">Description:</h5>
+<h5 id="description-v42">Description:</h5>
 <p><font color="#666">States of PalmControl.</font></p>
-<h5 id="enum-members-v2">Enum Members:</h5>
+<h5 id="enum-members-v3">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionpalmcontrolstate_initializing_inline"></a>INITIALIZING</font></td><td><font color="#666">The aircraft is initializing for PalmControl.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionpalmcontrolstate_recognizingpalm_inline"></a>RECOGNIZING_PALM</font></td><td><font color="#666">The aircraft is recognizing the palm.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionpalmcontrolstate_startingfollow_inline"></a>STARTING_FOLLOW</font></td><td><font color="#666">The aircraft is moving into position for the PalmControl Follow command. In this state, the  aircraft is ascending and flying backward to a position that is 3m horizontally away from  the user and 2.3m above the ground. Once it has reached this position, the state will move  to <code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djivisiondetectionstate_djivisionpalmcontrolstate_following">FOLLOWING</a></code> and the aircraft will then follow the user. The  Follow command can be initiated by raising one arm and quickly waving your hand at the camera.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionpalmcontrolstate_following_inline"></a>FOLLOWING</font></td><td><font color="#666">The aircraft is currently following the user. To reach this state, the user first raises  one arm and quickly waves their hand at the aircraft's camera. The aircraft will then move  into position (3m from the user and 2.3m above the ground), and reach this state.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionpalmcontrolstate_adjustingposition_inline"></a>ADJUSTING_POSITION</font></td><td><font color="#666">The aircraft's position is being adjusted by the moving palm.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionpalmcontrolstate_palmcontrolstopped_inline"></a>PALM_CONTROL_STOPPED</font></td><td><font color="#666">PalmControl is stopped. PalmControl can be stopped by moving the sticks on the physical remote  controller or sending commands through <code><a href="../../Components/MobileRemoteController/DJIMobileRemoteController.html#djimobileremotecontroller">MobileRemoteController</a></code> when the physical remote  controller is absent.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_djivisionpalmcontrolstate_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
-<h5 id="class-members-v3">Class Members:</h5>
+<h5 id="class-members-v4">Class Members:</h5>
 </div>
 
         </div>

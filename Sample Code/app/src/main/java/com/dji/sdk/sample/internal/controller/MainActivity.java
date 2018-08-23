@@ -6,8 +6,10 @@ import android.animation.LayoutTransition;
 import android.animation.ObjectAnimator;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.hardware.usb.UsbManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -179,6 +181,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onNewIntent(@NonNull Intent intent) {
+        String action = intent.getAction();
+        if (UsbManager.ACTION_USB_ACCESSORY_ATTACHED.equals(action)) {
+            Intent attachedIntent = new Intent();
+            attachedIntent.setAction(DJISDKManager.USB_ACCESSORY_ATTACHED);
+            sendBroadcast(attachedIntent);
+        }
+    }
+
+    @Override
     public void onBackPressed() {
         if (stack.size() > 1) {
             popView();
@@ -228,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
                                 DJISDKManager.getInstance().startConnectionToProduct();
                                 ToastUtils.setResultToToast(MainActivity.this.getString(R.string.sdk_registration_success_message));
                             } else {
-                                ToastUtils.setResultToToast(MainActivity.this.getString(R.string.sdk_registration_message));
+                                ToastUtils.setResultToToast(MainActivity.this.getString(R.string.sdk_registration_message) + djiError.getDescription());
                             }
                             Log.v(TAG, djiError.getDescription());
                         }
@@ -339,7 +351,7 @@ public class MainActivity extends AppCompatActivity {
             if (product != null && product.getModel() != null) {
                 titleTextView.setText("" + product.getModel().getDisplayName());
             } else {
-                titleTextView.setText(R.string.app_name);
+                titleTextView.setText(R.string.sample_app_name);
             }
         }
     }

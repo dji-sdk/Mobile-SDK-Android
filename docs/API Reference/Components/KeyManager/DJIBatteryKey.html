@@ -210,6 +210,12 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a data-href="../FlightController/DJIFlightController_DJIFlightControllerLEDsSettings.html" class="sub-toggle">LEDsSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerLEDsSettings_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../FlightController/DJIFlightController_Limits.html">Limits</a>
                             </dd>
                     </ul>
@@ -279,6 +285,8 @@
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">WhiteBalance</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">SSDClipFileName</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraOriginalPhotoSettings.html">OriginalPhotoSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraFocusAssistantSettings.html">FocusAssistantSettings</a>
                             </dd>
@@ -674,6 +682,17 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@BatteryParamKey @NonNull String <font color="#000">paramKey</font></font></td><td><font color="#666"><i>A valid paramKey</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@IntRange(from = 0, to = MAX_COMPONENT_INDEX) int <font color="#000">componentIndex</font></font></td><td><font color="#666"><i>The index of the Battery component.</i></font></td></tr></table></html>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static <a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey">BatteryKey</a></font></td><td><font color="#666"><i>Battery Key</i></font></td></tr></table></html></div>
+<div class="api-row" id="djibatterykey_create_batteryaggregationkey"><div class="api-col left">Battery AggregationKey</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibatterykey_create_batteryaggregationkey_inline">createBatteryAggregationKey</a></div></div><div class="inline-doc" id="djibatterykey_create_batteryaggregationkey_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>createBatteryAggregationKey</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span>  BatteryKey <span class="title">createBatteryAggregationKey</span><span class="params">(@BatteryAggregationParamKey @NonNull String paramKey)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.keysdk</font></td></tr></table></html>
+<h5 id="description-v4">Description:</h5>
+<p><font color="#666">Creates a Battery Aggregation key.</font></p>
+<h5 id="input-parameters-v3">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@BatteryAggregationParamKey @NonNull String <font color="#000">paramKey</font></font></td><td><font color="#666"><i>A valid paramKey</i></font></td></tr></table></html>
+<h5 id="return-v3">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static  <a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey">BatteryKey</a></font></td><td><font color="#666"><i>An object of <code><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey">BatteryKey</a></code>.</i></font></td></tr></table></html></div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
 <h5 id="class-keys">Class Keys:</h5>
 <html><table class="key_table"><tr><td colspan="2"><a href="#batterykey_self_discharge_in_days_key"></a><p class="key_table_key_string key_table_key_first_row">SELF_DISCHARGE_IN_DAYS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">SET, GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Integer</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
@@ -684,7 +703,7 @@
 </p><p><font color="#666"><code><a href="../../Components/Battery/DJIBattery_AggregationState.html#djibattery_aggregationstate_batteryoverviews">getBatteryOverviews</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Battery/DJIBattery_BatteryOverview.html#djibattery_batteryoverview">BatteryOverview</a></code></font></p>
-<p></p></td></tr><tr><td colspan="2"><a href="#batterykey_aggregation_state_key"></a><p class="key_table_key_string key_table_key_row">AGGREGATION_STATE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/Battery/DJIBattery_AggregationState.html#djibattery_aggregationstate">AggregationState</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+<p></p></td></tr><tr><td colspan="2"><a href="#batterykey_self_heating_state_key"></a><p class="key_table_key_string key_table_key_row">SELF_HEATING_STATE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>SelfHeatingState</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#batterykey_aggregation_state_key"></a><p class="key_table_key_string key_table_key_row">AGGREGATION_STATE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/Battery/DJIBattery_AggregationState.html#djibattery_aggregationstate">AggregationState</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Battery/DJIBattery.html#djibattery_aggregation_setstateupdatecallback">setAggregationStateCallback</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Battery/DJIBattery_AggregationState.html#djibattery_aggregationstate">AggregationState</a></code></font></p>
