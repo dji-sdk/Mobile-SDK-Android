@@ -77,7 +77,9 @@ public class DemoListView extends FrameLayout {
         builder.addGroup(R.string.component_listview_sdk_4_6,
                          false,
                          new GroupItem(R.string.component_listview_payload,
-                                       StartPayloadAcitivityView.class));
+                                       StartPayloadAcitivityView.class),
+                         new GroupItem(R.string.component_listview_redirect_to_djigo,
+                                       StartRedirectGoAcitivityView.class));
         builder.addGroup(R.string.component_listview_sdk_4_5,
                          false,
                          new GroupItem(R.string.component_listview_flight_hub,
