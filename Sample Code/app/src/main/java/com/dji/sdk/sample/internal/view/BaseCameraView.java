@@ -17,7 +17,7 @@ import dji.sdk.codec.DJICodecManager;
  */
 public class BaseCameraView extends FrameLayout implements TextureView.SurfaceTextureListener {
 
-    private VideoFeeder.VideoDataCallback receivedVideoDataCallback = null;
+    private VideoFeeder.VideoDataListener videoDataListener = null;
     private DJICodecManager codecManager = null;
 
     public BaseCameraView(Context context, AttributeSet attrs) {
@@ -40,7 +40,7 @@ public class BaseCameraView extends FrameLayout implements TextureView.SurfaceTe
 
             // This callback is for
 
-            receivedVideoDataCallback = new VideoFeeder.VideoDataCallback() {
+            videoDataListener = new VideoFeeder.VideoDataListener() {
                 @Override
                 public void onReceive(byte[] bytes, int size) {
                     if (null != codecManager) {
@@ -55,7 +55,7 @@ public class BaseCameraView extends FrameLayout implements TextureView.SurfaceTe
 
     private void initSDKCallback() {
         try {
-            VideoFeeder.getInstance().getPrimaryVideoFeed().setCallback(receivedVideoDataCallback);
+            VideoFeeder.getInstance().getPrimaryVideoFeed().addVideoDataListener(videoDataListener);
         } catch (Exception ignored) {
         }
     }

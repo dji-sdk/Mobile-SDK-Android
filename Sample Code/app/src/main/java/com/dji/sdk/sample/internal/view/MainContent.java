@@ -265,26 +265,35 @@ public class MainContent extends RelativeLayout {
     private void refreshSDKRelativeUI() {
         mProduct = DJISampleApplication.getProductInstance();
         Log.d(TAG, "mProduct: " + (mProduct == null ? "null" : "unnull"));
-        if (null != mProduct && mProduct.isConnected()) {
-            mBtnOpen.setEnabled(true);
+        if (null != mProduct ) {
+            if (mProduct.isConnected()) {
+                mBtnOpen.setEnabled(true);
+                String str = mProduct instanceof Aircraft ? "DJIAircraft" : "DJIHandHeld";
+                mTextConnectionStatus.setText("Status: " + str + " connected");
+                tryUpdateFirmwareVersionWithListener();
+                if (mProduct instanceof Aircraft) {
+                    addAppActivationListenerIfNeeded();
+                }
 
-            String str = mProduct instanceof Aircraft ? "DJIAircraft" : "DJIHandHeld";
-            mTextConnectionStatus.setText("Status: " + str + " connected");
-            tryUpdateFirmwareVersionWithListener();
-            if (mProduct instanceof Aircraft) {
-                addAppActivationListenerIfNeeded();
-            }
-
-            if (null != mProduct.getModel()) {
-                mTextProduct.setText("" + mProduct.getModel().getDisplayName());
-            } else {
-                mTextProduct.setText(R.string.product_information);
+                if (null != mProduct.getModel()) {
+                    mTextProduct.setText("" + mProduct.getModel().getDisplayName());
+                } else {
+                    mTextProduct.setText(R.string.product_information);
+                }
+            } else if (mProduct instanceof Aircraft){
+                Aircraft aircraft = (Aircraft) mProduct;
+                if (aircraft.getRemoteController() != null && aircraft.getRemoteController().isConnected()) {
+                    mTextConnectionStatus.setText(R.string.connection_only_rc);
+                    mTextProduct.setText(R.string.product_information);
+                    mBtnOpen.setEnabled(false);
+                    mTextModelAvailable.setText("Firmware version:N/A");
+                }
             }
         } else {
             mBtnOpen.setEnabled(false);
-
             mTextProduct.setText(R.string.product_information);
             mTextConnectionStatus.setText(R.string.connection_loose);
+            mTextModelAvailable.setText("Firmware version:N/A");
         }
     }
 

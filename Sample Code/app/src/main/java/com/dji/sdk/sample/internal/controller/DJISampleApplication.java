@@ -31,16 +31,12 @@ public class DJISampleApplication extends Application {
      * API_KEY has been added in the Manifest
      */
     public static synchronized BaseProduct getProductInstance() {
-        if (null == product) {
-            product = DJISDKManager.getInstance().getProduct();
-        }
+        product = DJISDKManager.getInstance().getProduct();
         return product;
     }
 
     public static synchronized BluetoothProductConnector getBluetoothProductConnector() {
-        if (null == bluetoothConnector) {
-            bluetoothConnector = DJISDKManager.getInstance().getBluetoothProductConnector();
-        }
+        bluetoothConnector = DJISDKManager.getInstance().getBluetoothProductConnector();
         return bluetoothConnector;
     }
 

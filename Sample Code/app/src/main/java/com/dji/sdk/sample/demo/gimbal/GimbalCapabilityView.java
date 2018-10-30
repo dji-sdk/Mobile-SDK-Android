@@ -443,22 +443,23 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         final BaseProduct product = DJISDKManager.getInstance().getProduct();
         updateM210Buttons();
         if (product != null) {
-
-            if (isOpen) {
+            VideoFeeder.VideoDataListener primaryVideoDataListener =
                 primaryVideoFeed.registerLiveVideo(VideoFeeder.getInstance().getPrimaryVideoFeed(), true);
+            VideoFeeder.VideoDataListener secondaryVideoDataListener =
+                fpvVideoFeed.registerLiveVideo(VideoFeeder.getInstance().getSecondaryVideoFeed(), false);
+            if (isOpen) {
                 String newText = "Primary Source: " + VideoFeeder.getInstance().getPrimaryVideoFeed().getVideoSource().name();
                 ToastUtils.setResultToText(primaryVideoFeedTitle,newText);
                 if (isMultiStreamPlatform()) {
-                    fpvVideoFeed.registerLiveVideo(VideoFeeder.getInstance().getSecondaryVideoFeed(), false);
                     String newTextFpv = "Secondary Source: " + VideoFeeder.getInstance().getSecondaryVideoFeed().getVideoSource().name();
                     ToastUtils.setResultToText(fpvVideoFeedTitle,newTextFpv);
                 }
                 VideoFeeder.getInstance().addPhysicalSourceListener(sourceListener);
             } else {
                 VideoFeeder.getInstance().removePhysicalSourceListener(sourceListener);
-                VideoFeeder.getInstance().getPrimaryVideoFeed().setCallback(null);
+                VideoFeeder.getInstance().getPrimaryVideoFeed().removeVideoDataListener(primaryVideoDataListener);
                 if (isMultiStreamPlatform()) {
-                    VideoFeeder.getInstance().getSecondaryVideoFeed().setCallback(null);
+                    VideoFeeder.getInstance().getSecondaryVideoFeed().removeVideoDataListener(secondaryVideoDataListener);
                 }
             }
         }

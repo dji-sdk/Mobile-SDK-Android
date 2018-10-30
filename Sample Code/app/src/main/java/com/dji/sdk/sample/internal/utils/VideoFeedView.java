@@ -23,7 +23,7 @@ public class VideoFeedView extends TextureView implements SurfaceTextureListener
     //region Properties
     private final static String TAG = "DULFpvWidget";
     private DJICodecManager codecManager = null;
-    private VideoFeeder.VideoDataCallback videoDataCallback = null;
+    private VideoFeeder.VideoDataListener videoDataListener = null;
     private int videoWidth;
     private int videoHeight;
     private boolean isPrimaryVideoFeed;
@@ -60,7 +60,7 @@ public class VideoFeedView extends TextureView implements SurfaceTextureListener
         }
 
         setSurfaceTextureListener(this);
-        videoDataCallback = new VideoFeeder.VideoDataCallback() {
+        videoDataListener = new VideoFeeder.VideoDataListener() {
 
             @Override
             public void onReceive(byte[] videoBuffer, int size) {
@@ -136,12 +136,14 @@ public class VideoFeedView extends TextureView implements SurfaceTextureListener
     //endregion
 
     //region Logic
-    public void registerLiveVideo(VideoFeeder.VideoFeed videoFeed, boolean isPrimary) {
+    public VideoFeeder.VideoDataListener registerLiveVideo(VideoFeeder.VideoFeed videoFeed, boolean isPrimary) {
         isPrimaryVideoFeed = isPrimary;
 
-        if (videoDataCallback != null && videoFeed != null) {
-            videoFeed.setCallback(videoDataCallback);
+        if (videoDataListener != null && videoFeed != null && !videoFeed.getListeners().contains(videoDataListener)) {
+            videoFeed.addVideoDataListener(videoDataListener);
+            return videoDataListener;
         }
+        return null;
     }
 
     public void changeSourceResetKeyFrame() {

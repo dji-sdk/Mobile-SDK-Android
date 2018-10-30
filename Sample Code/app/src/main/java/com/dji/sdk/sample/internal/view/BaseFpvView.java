@@ -16,7 +16,7 @@ import dji.sdk.codec.DJICodecManager;
  * This class is designed for showing the fpv video feed from the camera or Lightbridge 2.
  */
 public class BaseFpvView extends FrameLayout implements TextureView.SurfaceTextureListener{
-    private VideoFeeder.VideoDataCallback receivedVideoDataCallback = null;
+    private VideoFeeder.VideoDataListener videoDataListener = null;
     private DJICodecManager codecManager = null;
 
     public BaseFpvView(Context context, AttributeSet attrs) {
@@ -35,7 +35,7 @@ public class BaseFpvView extends FrameLayout implements TextureView.SurfaceTextu
         if (null != mVideoSurface) {
             mVideoSurface.setSurfaceTextureListener(this);
 
-            receivedVideoDataCallback = new VideoFeeder.VideoDataCallback() {
+            videoDataListener = new VideoFeeder.VideoDataListener() {
                 @Override
                 public void onReceive(byte[] bytes, int size) {
                     if (null != codecManager) {
@@ -52,7 +52,7 @@ public class BaseFpvView extends FrameLayout implements TextureView.SurfaceTextu
 
     private void initSDKCallback() {
         try {
-            VideoFeeder.getInstance().getSecondaryVideoFeed().setCallback(receivedVideoDataCallback);
+            VideoFeeder.getInstance().getSecondaryVideoFeed().addVideoDataListener(videoDataListener);
         } catch (Exception ignored) {
         }
     }

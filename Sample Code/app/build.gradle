@@ -5,13 +5,13 @@ repositories {
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "com.dji.sdk.sample"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 27
         multiDexEnabled true
         ndk {
             // On x86 devices that run Android API 23 or above, if the application is targeted with API 23 or
@@ -35,7 +35,6 @@ android {
     dexOptions {
         javaMaxHeapSize "4g"
     }
-
     packagingOptions{
         doNotStrip "*/*/libdjivideo.so"
         doNotStrip "*/*/libSDKRelativeJNI.so"
@@ -51,22 +50,14 @@ android {
 
 }
 
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-}
-
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.squareup:otto:1.3.8'
-    compile ('com.dji:dji-sdk:4.7.1', {
-        // Uncomment the following line if your app does not need Anti Distortion for
-        // Mavic 2 Pro and Mavic 2 Zoom. It will greatly reducing the size of the APK:
-        // exclude module: 'library-anti-distortion'
-    })
-    provided 'com.dji:dji-sdk-provided:4.7.1'
+    implementation 'com.android.support:multidex:1.0.2'
+    implementation 'com.squareup:otto:1.3.8'
+    implementation ('com.dji:dji-sdk:4.8', {
+            // Uncomment the following line if your app does not need Anti Distortion for
+            // Mavic 2 Pro and Mavic 2 Zoom. It will greatly reducing the size of the APK:
+            // exclude module: 'library-anti-distortion'
+        })
+    compileOnly 'com.dji:dji-sdk-provided:4.8'
 }
