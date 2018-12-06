@@ -5,6 +5,10 @@ import android.support.annotation.Nullable;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 
 import dji.common.product.Model;
+import dji.sdk.accessory.AccessoryAggregation;
+import dji.sdk.accessory.beacon.Beacon;
+import dji.sdk.accessory.speaker.Speaker;
+import dji.sdk.accessory.spotlight.Spotlight;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.flightcontroller.Simulator;
@@ -79,6 +83,42 @@ public class ModuleVerificationUtil {
         return isAirlinkAvailable() && (null != DJISampleApplication.getProductInstance()
                 .getAirLink()
                 .getLightbridgeLink());
+    }
+
+    public static AccessoryAggregation getAccessoryAggregation() {
+        Aircraft aircraft = (Aircraft) DJISampleApplication.getProductInstance();
+
+        if (aircraft != null && null != aircraft.getAccessoryAggregation()) {
+            return aircraft.getAccessoryAggregation();
+        }
+        return null;
+    }
+
+    public static Speaker getSpeaker() {
+        Aircraft aircraft = (Aircraft) DJISampleApplication.getProductInstance();
+
+        if (aircraft != null && null != aircraft.getAccessoryAggregation() && null != aircraft.getAccessoryAggregation().getSpeaker()) {
+            return aircraft.getAccessoryAggregation().getSpeaker();
+        }
+        return null;
+    }
+
+    public static Beacon getBeacon() {
+        Aircraft aircraft = (Aircraft) DJISampleApplication.getProductInstance();
+
+        if (aircraft != null && null != aircraft.getAccessoryAggregation() && null != aircraft.getAccessoryAggregation().getBeacon()) {
+            return aircraft.getAccessoryAggregation().getBeacon();
+        }
+        return null;
+    }
+
+    public static Spotlight getSpotlight() {
+        Aircraft aircraft = (Aircraft) DJISampleApplication.getProductInstance();
+
+        if (aircraft != null && null != aircraft.getAccessoryAggregation() && null != aircraft.getAccessoryAggregation().getSpotlight()) {
+            return aircraft.getAccessoryAggregation().getSpotlight();
+        }
+        return null;
     }
 
     @Nullable

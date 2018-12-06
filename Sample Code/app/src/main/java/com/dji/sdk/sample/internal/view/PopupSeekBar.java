@@ -59,6 +59,12 @@ public class PopupSeekBar extends PopupWindow {
 
     }
 
+    public void setProgress(int progress) {
+        if (this.seekBar != null) {
+            this.seekBar.setProgress(progress);
+        }
+    }
+
     class OnDJISeekBarChangeListener implements SeekBar.OnSeekBarChangeListener {
 
         @Override

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/component_spinner_title_tv"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="30dp"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="@string/key_manager_component_spinner_title"
+        android:textColor="@color/black" />
+
+    <Spinner
+        android:id="@+id/component_spinner"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/component_spinner_title_tv"
+        android:layout_alignLeft="@id/component_spinner_title_tv"
+        android:spinnerMode="dialog" />
+
+    <TextView
+        android:id="@+id/sub_component_spinner_title_tv"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="30dp"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="@string/key_manager_sub_component_spinner_title"
+        android:textColor="@color/black" />
+
+    <Spinner
+        android:id="@+id/sub_component_spinner"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/sub_component_spinner_title_tv"
+        android:layout_alignLeft="@id/sub_component_spinner_title_tv"
+        android:spinnerMode="dialog" />
+
+    <TextView
+        android:id="@+id/component_index_title_tv"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/component_spinner"
+        android:layout_alignLeft="@id/component_spinner"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="@string/key_manager_component_index_title"
+        android:textColor="@color/black" />
+
+    <Spinner
+        android:id="@+id/component_index_spinner"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/component_index_title_tv"
+        android:layout_alignLeft="@id/component_index_title_tv"
+        android:spinnerMode="dialog" />
+
+    <TextView
+        android:id="@+id/key_interface_title_tv"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/sub_component_spinner"
+        android:layout_alignLeft="@id/sub_component_spinner"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="@string/key_manager_key_interface_title"
+        android:textColor="@color/black" />
+
+    <Spinner
+        android:id="@+id/key_interface_spinner"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/key_interface_title_tv"
+        android:layout_alignLeft="@id/key_interface_title_tv"
+        android:spinnerMode="dialog" />
+
+    <TextView
+        android:id="@+id/get_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/component_index_spinner"
+        android:layout_alignTop="@id/get_value_tv"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="45dp"
+        android:text="Get" />
+
+    <TextView
+        android:id="@+id/get_value_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/key_interface_spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/get_tips"
+        android:text="Key" />
+
+    <Button
+        android:id="@+id/get_value_btn"
+        style="@style/common_button"
+        android:layout_below="@id/key_interface_spinner"
+        android:layout_alignRight="@id/key_interface_spinner"
+        android:layout_marginTop="20dp"
+        android:text="@string/key_manager_get_value_desc" />
+
+    <TextView
+        android:id="@+id/set_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/get_tips"
+        android:layout_alignLeft="@id/get_tips"
+        android:layout_alignTop="@id/set_value_spinner"
+        android:text="Set" />
+
+    <Spinner
+        android:id="@+id/set_value_spinner"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/get_value_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="35dp"
+        android:layout_toRightOf="@id/set_tips"
+        android:spinnerMode="dialog" />
+
+    <Button
+        android:id="@+id/set_value_btn"
+        style="@style/common_button"
+        android:layout_below="@id/get_value_btn"
+        android:layout_alignRight="@id/get_value_btn"
+        android:text="@string/key_manager_set_value_desc" />
+
+    <TextView
+        android:id="@+id/listen_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/set_tips"
+        android:layout_alignLeft="@id/set_tips"
+        android:layout_alignTop="@id/listen_key_tv"
+        android:text="Listen" />
+
+    <TextView
+        android:id="@+id/listen_key_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/set_value_spinner"
+        android:layout_alignLeft="@id/get_value_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:layout_toRightOf="@id/listen_tips"
+        android:text="KeyName" />
+
+    <Button
+        android:id="@+id/listen_key_btn"
+        style="@style/common_button"
+        android:layout_below="@id/set_value_btn"
+        android:layout_alignRight="@id/set_value_btn"
+        android:text="Listen" />
+
+    <TextView
+        android:id="@+id/key_vaule_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/listen_key_btn"
+        android:layout_alignLeft="@id/component_index_spinner"
+        android:layout_alignRight="@id/listen_key_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="false" />
+
+</RelativeLayout>

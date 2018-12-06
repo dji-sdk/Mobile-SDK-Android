@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btn_get_user_account"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:text="Get User Account"
+                android:layout_alignParentLeft="true"
+                style="@style/common_button" />
+            <Button
+                android:id="@+id/btn_get_version"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:text="Get Version"
+                android:layout_alignParentLeft="true"
+                style="@style/common_button" />
+            <Button
+                android:id="@+id/btn_set_up_user_account"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:text="Set Up User Account"
+                android:layout_alignParentLeft="true"
+                style="@style/common_button" />
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_marginLeft="5dp"
+                android:text="Login"
+                android:layout_alignParentLeft="true"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_reset_user_account"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:text="Reset User Account"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_modify_user_account"
+                android:layout_marginLeft="5dp"
+                android:text="Modify User Account"
+                android:layout_alignParentLeft="true"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_format"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentLeft="true"
+                android:text="Format"
+                style="@style/common_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_access_locker_state_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/btn_get_user_account"
+                android:textStyle="bold"
+                android:text="Access Locker State:" />
+
+            <ScrollView
+                android:id="@+id/tv_access_locker_state_sv"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/btn_get_user_account">
+                <TextView
+                    android:id="@+id/tv_access_locker_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_access_formatting_state_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_get_user_account"
+                android:textStyle="bold"
+                android:text="Formatting State:" />
+
+            <ScrollView
+                android:id="@+id/tv_access_formatting_state_sv"
+                android:layout_width="250dp"
+                android:layout_height="300dp"
+                android:layout_alignParentRight="true"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_get_user_account">
+
+                <TextView
+                    android:id="@+id/tv_access_formatting_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</merge>

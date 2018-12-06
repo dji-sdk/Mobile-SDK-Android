@@ -1,5 +1,8 @@
 package com.dji.sdk.sample.internal.utils;
 
+import dji.common.error.DJIError;
+import dji.common.util.CommonCallbacks;
+
 /**
  * Created by dji on 15/12/18.
  */
@@ -45,5 +48,14 @@ public class GeneralUtils {
               append(name == null ? "" : name + ": ").
               append(value == null ? "" : value + "").
               append("\n");
+    }
+
+    public static CommonCallbacks.CompletionCallback getCommonCompletionCallback() {
+        return new CommonCallbacks.CompletionCallback() {
+            @Override
+            public void onResult(DJIError djiError) {
+                ToastUtils.setResultToToast(djiError == null ? "Succeed!" : "failed!" + djiError.getDescription());
+            }
+        };
     }
 }

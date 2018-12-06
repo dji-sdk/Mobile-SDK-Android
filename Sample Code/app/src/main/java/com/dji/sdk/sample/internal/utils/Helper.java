@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.nio.charset.Charset;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -138,6 +140,16 @@ public class Helper {
             h = h + " " + temp;
         }
         return h;
+    }
+
+    public static String timeStamp2Date(String format) {
+
+        if (format == null || format.isEmpty()) {
+            format = "yyyy-MM-dd-HH-mm-ss";
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        long time = System.currentTimeMillis();
+        return sdf.format(new Date(time));
     }
 
 }

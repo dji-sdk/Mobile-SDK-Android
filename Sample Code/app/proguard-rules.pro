@@ -73,3 +73,6 @@
 -keep class com.lmax.disruptor.** {
     *;
 }
+
+-dontwarn com.mapbox.services.android.location.LostLocationEngine
+-dontwarn com.mapbox.services.android.location.MockLocationEngine

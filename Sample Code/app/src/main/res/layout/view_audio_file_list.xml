@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:id="@+id/sv_accessory_aggregation_btns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_start_record"
+                    android:layout_marginLeft="5dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/start_record"
+                    style="@style/common_button" />
+
+                <Button
+                    android:id="@+id/btn_stop_record"
+                    android:layout_marginLeft="5dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/stop_record"
+                    style="@style/common_button" />
+
+
+                <Button
+                    android:id="@+id/btn_upload_local_file"
+                    android:layout_marginLeft="5dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/transmit_local_file"
+                    style="@style/common_button" />
+
+                <Button
+                    android:id="@+id/btn_cancel_transmitting"
+                    android:layout_marginLeft="5dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/cancel_transmitting"
+                    style="@style/common_button" />
+
+                <Button
+                    android:id="@+id/btn_stop_playing"
+                    android:layout_marginLeft="5dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/stop_playing"
+                    style="@style/common_button" />
+
+                <Button
+                    android:id="@+id/btn_fetch_playlist"
+                    android:layout_marginLeft="5dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/fetch_file_list"
+                    style="@style/common_button" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/sv_accessory_aggregation_btns"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_recording_state_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled"
+                android:textStyle="bold"
+                android:text="@string/recording_state" />
+
+            <ScrollView
+                android:id="@+id/tv_recording_state_sv"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled">
+
+                <TextView
+                    android:id="@+id/tv_recording_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_transmitting_state_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled"
+                android:textStyle="bold"
+                android:text="@string/transmitting_state" />
+
+            <ScrollView
+                android:id="@+id/tv_transmitting_state_sv"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled">
+
+                <TextView
+                    android:id="@+id/tv_transmitting_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_speaker_state_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled"
+                android:textStyle="bold"
+                android:text="@string/speaker_state" />
+
+            <ScrollView
+                android:id="@+id/tv_speaker_state_sv"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled">
+
+                <TextView
+                    android:id="@+id/tv_speaker_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/filelistView">
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+</merge>

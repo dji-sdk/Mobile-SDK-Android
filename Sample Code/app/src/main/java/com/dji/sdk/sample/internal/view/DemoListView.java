@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.FrameLayout;
 import com.dji.sdk.sample.R;
+import com.dji.sdk.sample.demo.accessory.AccessoryAggregationView;
+import com.dji.sdk.sample.demo.accessory.AudioFileListManagerView;
 import com.dji.sdk.sample.demo.airlink.RebootWiFiAirlinkView;
 import com.dji.sdk.sample.demo.airlink.SetGetWiFiLinkSSIDView;
 import com.dji.sdk.sample.demo.battery.PushBatteryDataView;
@@ -22,6 +24,7 @@ import com.dji.sdk.sample.demo.camera.SetGetISOView;
 import com.dji.sdk.sample.demo.camera.ShootSinglePhotoView;
 import com.dji.sdk.sample.demo.camera.VideoFeederView;
 import com.dji.sdk.sample.demo.camera.XT2CameraView;
+import com.dji.sdk.sample.demo.datalocker.AccessLockerView;
 import com.dji.sdk.sample.demo.flightcontroller.CompassCalibrationView;
 import com.dji.sdk.sample.demo.flightcontroller.FlightAssistantPushDataView;
 import com.dji.sdk.sample.demo.flightcontroller.FlightHubView;
@@ -32,6 +35,7 @@ import com.dji.sdk.sample.demo.gimbal.GimbalCapabilityView;
 import com.dji.sdk.sample.demo.gimbal.MoveGimbalWithSpeedView;
 import com.dji.sdk.sample.demo.gimbal.PushGimbalDataView;
 import com.dji.sdk.sample.demo.key.KeyedInterfaceView;
+import com.dji.sdk.sample.demo.keymanager.KeyManagerView;
 import com.dji.sdk.sample.demo.missionoperator.WaypointMissionOperatorView;
 import com.dji.sdk.sample.demo.mobileremotecontroller.MobileRemoteControllerView;
 import com.dji.sdk.sample.demo.appactivation.AppActivationView;
@@ -74,6 +78,13 @@ public class DemoListView extends FrameLayout {
 
         // Build model for ListView
         ListBuilder builder = new ListBuilder();
+        builder.addGroup(R.string.component_listview_sdk_4_8,
+                         false,
+                         new GroupItem(R.string.component_listview_access_locker, AccessLockerView.class),
+                         new GroupItem(R.string.component_listview_accessory_aggregation,
+                                       AccessoryAggregationView.class),
+                         new GroupItem(R.string.component_listview_audio_file_list_manager,
+                                       AudioFileListManagerView.class));
         builder.addGroup(R.string.component_listview_sdk_4_6,
                          false,
                          new GroupItem(R.string.component_listview_payload,
@@ -98,6 +109,9 @@ public class DemoListView extends FrameLayout {
                          new GroupItem(R.string.component_listview_keyed_interface, KeyedInterfaceView.class),
                          new GroupItem(R.string.component_listview_timeline_mission_control,
                      TimelineMissionControlView.class));
+
+        builder.addGroup(R.string.component_listview_key_manager,false,
+                new GroupItem(R.string.key_manager_listview_key_Interface, KeyManagerView.class));
 
         builder.addGroup(R.string.component_listview_camera,
                          false,

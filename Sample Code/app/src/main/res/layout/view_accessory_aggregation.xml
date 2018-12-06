@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:id="@+id/sv_accessory_aggregation_btns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btn_beacon_enabled"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:text="@string/enable_beacon"
+                android:layout_alignParentLeft="true"
+                style="@style/common_button" />
+            <Button
+                android:id="@+id/btn_spotlight_enabled"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:text="@string/enable_spotlight"
+                android:layout_alignParentLeft="true"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_set_spotlight_brightness"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:text="Set Spotlight Brightness"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_set_speaker_volume"
+                android:layout_marginLeft="5dp"
+                android:text="Set Speaker Volume"
+                android:layout_alignParentLeft="true"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_set_speaker_play_mode"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentLeft="true"
+                android:text="@string/play_mode_single"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_stop_playing"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentLeft="true"
+                android:text="@string/stop_playing"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_start_record"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentLeft="true"
+                android:text="@string/start_record"
+                style="@style/common_button" />
+
+            <Button
+                android:id="@+id/btn_stop_record"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentLeft="true"
+                android:text="@string/stop_record"
+                style="@style/common_button" />
+
+        </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/sv_accessory_aggregation_btns"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_accessory_aggregation_state_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/btn_beacon_enabled"
+                android:textStyle="bold"
+                android:text="@string/accessory_aggragation_state" />
+
+            <ScrollView
+                android:id="@+id/tv_accessory_aggregation_state_sv"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/btn_beacon_enabled">
+                <TextView
+                    android:id="@+id/tv_accessory_aggregation_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_spot_light_state_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled"
+                android:textStyle="bold"
+                android:text="@string/spot_light_state" />
+
+            <ScrollView
+                android:id="@+id/tv_access_formatting_state_sv"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled">
+
+                <TextView
+                    android:id="@+id/tv_spot_light_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_transmitting_state_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled"
+                android:textStyle="bold"
+                android:text="@string/transmitting_state" />
+
+            <ScrollView
+                android:id="@+id/tv_transmitting_state_sv"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled">
+
+                <TextView
+                    android:id="@+id/tv_transmitting_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_speaker_state_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled"
+                android:textStyle="bold"
+                android:text="@string/speaker_state" />
+
+            <ScrollView
+                android:id="@+id/tv_speaker_state_sv"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/btn_beacon_enabled">
+
+                <TextView
+                    android:id="@+id/tv_speaker_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</merge>
