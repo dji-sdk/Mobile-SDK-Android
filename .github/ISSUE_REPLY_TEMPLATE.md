@@ -1,0 +1,1 @@
+Hi, have you resolved your issue with the latest DJI SDK version? If not, please help to report your issues to dev@dji.com, as it's our official channel for developers to request DJI SDK support now. Thanks!
