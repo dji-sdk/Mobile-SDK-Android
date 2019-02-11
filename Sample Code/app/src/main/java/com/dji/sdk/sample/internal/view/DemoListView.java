@@ -14,6 +14,7 @@ import com.dji.sdk.sample.demo.airlink.SetGetWiFiLinkSSIDView;
 import com.dji.sdk.sample.demo.battery.PushBatteryDataView;
 import com.dji.sdk.sample.demo.battery.SetGetDischargeDayView;
 import com.dji.sdk.sample.demo.camera.FetchMediaView;
+import com.dji.sdk.sample.demo.camera.LiveStreamView;
 import com.dji.sdk.sample.demo.camera.MediaPlaybackView;
 import com.dji.sdk.sample.demo.camera.PlaybackCommandsView;
 import com.dji.sdk.sample.demo.camera.PlaybackDownloadView;
@@ -78,6 +79,9 @@ public class DemoListView extends FrameLayout {
 
         // Build model for ListView
         ListBuilder builder = new ListBuilder();
+        builder.addGroup(R.string.component_listview_sdk_4_9,
+                false,
+                new GroupItem(R.string.component_listview_live_stream, LiveStreamView.class));
         builder.addGroup(R.string.component_listview_sdk_4_8,
                          false,
                          new GroupItem(R.string.component_listview_access_locker, AccessLockerView.class),

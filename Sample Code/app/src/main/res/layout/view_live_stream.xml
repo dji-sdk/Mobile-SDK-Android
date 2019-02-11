@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.dji.sdk.sample.internal.view.BaseCameraView
+        style="@style/main_camera_view"
+        android:layout_marginTop="30dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edit_live_show_url_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textUri" />
+
+            <Button
+                android:id="@+id/btn_start_live_show"
+                style="@style/common_button"
+                android:layout_below="@id/edit_live_show_url_input"
+                android:layout_toLeftOf="@+id/btn_enable_video_encode"
+                android:text="Start Live Show" />
+
+            <Button
+                android:id="@+id/btn_enable_video_encode"
+                style="@style/common_button"
+                android:layout_below="@id/edit_live_show_url_input"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Enable Video Encode" />
+
+            <Button
+                android:id="@+id/btn_disable_video_encode"
+                style="@style/common_button"
+                android:layout_below="@id/edit_live_show_url_input"
+                android:layout_toRightOf="@+id/btn_enable_video_encode"
+                android:text="Disable Video Encode" />
+
+            <Button
+                android:id="@+id/btn_stop_live_show"
+                style="@style/common_button"
+                android:layout_below="@id/btn_start_live_show"
+                android:layout_toLeftOf="@+id/btn_sound_on"
+                android:text="Stop Live Show" />
+
+            <Button
+                android:id="@+id/btn_sound_on"
+                style="@style/common_button"
+                android:layout_below="@id/btn_start_live_show"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Sound On" />
+
+            <Button
+                android:id="@+id/btn_sound_off"
+                style="@style/common_button"
+                android:layout_below="@id/btn_start_live_show"
+                android:layout_toRightOf="@+id/btn_sound_on"
+                android:text="Sound Off" />
+
+            <Button
+                android:id="@+id/btn_is_live_show_on"
+                style="@style/common_button"
+                android:layout_below="@id/btn_sound_on"
+                android:layout_toLeftOf="@+id/btn_show_info"
+                android:text="Is Live Show On" />
+
+            <Button
+                android:id="@+id/btn_show_info"
+                style="@style/common_button"
+                android:layout_below="@id/btn_sound_on"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Show Info" />
+
+            <Button
+                android:id="@+id/btn_show_live_start_time"
+                style="@style/common_button"
+                android:layout_below="@id/btn_sound_on"
+                android:layout_toRightOf="@+id/btn_show_info"
+                android:text="Live Start Time" />
+        </RelativeLayout>
+    </ScrollView>
+</merge>
