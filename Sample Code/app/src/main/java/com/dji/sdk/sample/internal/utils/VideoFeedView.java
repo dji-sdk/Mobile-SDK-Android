@@ -7,14 +7,16 @@ import android.util.AttributeSet;
 import android.view.TextureView;
 import android.view.TextureView.SurfaceTextureListener;
 import android.view.View;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
+
 import dji.midware.usb.P3.UsbAccessoryService;
 import dji.sdk.camera.VideoFeeder;
 import dji.sdk.codec.DJICodecManager;
 import dji.thirdparty.rx.Observable;
 import dji.thirdparty.rx.android.schedulers.AndroidSchedulers;
 import dji.thirdparty.rx.functions.Action1;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * VideoView will show the live video for the given video feed.

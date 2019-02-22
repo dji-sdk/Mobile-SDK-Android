@@ -3,12 +3,16 @@ package com.dji.sdk.sample.internal.utils;
 import android.app.Activity;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+
+import dji.common.product.Model;
+import dji.sdk.sdkmanager.DJISDKManager;
 
 public class Helper {
 	
@@ -152,4 +156,18 @@ public class Helper {
         return sdf.format(new Date(time));
     }
 
+    public static boolean isMultiStreamPlatform() {
+	    if (DJISDKManager.getInstance() == null){
+	        return false;
+        }
+        Model model = DJISDKManager.getInstance().getProduct().getModel();
+        return model != null && (model == Model.INSPIRE_2
+                || model == Model.MATRICE_200
+                || model == Model.MATRICE_210
+                || model == Model.MATRICE_210_RTK
+                || model == Model.MATRICE_600
+                || model == Model.MATRICE_600_PRO
+                || model == Model.A3
+                || model == Model.N3);
+    }
 }

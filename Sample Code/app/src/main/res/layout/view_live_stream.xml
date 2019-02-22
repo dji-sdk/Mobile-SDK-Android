@@ -3,10 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.dji.sdk.sample.internal.view.BaseCameraView
-        style="@style/main_camera_view"
-        android:layout_marginTop="30dp" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -16,8 +12,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <com.dji.sdk.sample.internal.utils.VideoFeedView
+                android:id="@+id/video_view_primary_video_feed"
+                style="@style/main_camera_view"
+                android:layout_alignParentBottom="false"
+                android:layout_marginTop="30dp" />
+
+            <com.dji.sdk.sample.internal.utils.VideoFeedView
+                android:id="@+id/video_view_fpv_video_feed"
+                android:visibility="gone"
+                style="@style/main_camera_view"
+                android:layout_alignParentBottom="false"
+                android:layout_below="@+id/video_view_primary_video_feed"
+                android:layout_marginTop="10dp" />
+
             <EditText
                 android:id="@+id/edit_live_show_url_input"
+                android:layout_below="@+id/video_view_fpv_video_feed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textUri" />
@@ -80,7 +91,8 @@
                 style="@style/common_button"
                 android:layout_below="@id/btn_sound_on"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:text="Show Info" />
 
             <Button
@@ -89,6 +101,23 @@
                 android:layout_below="@id/btn_sound_on"
                 android:layout_toRightOf="@+id/btn_show_info"
                 android:text="Live Start Time" />
+
+            <Button
+                android:id="@+id/btn_show_current_video_source"
+                style="@style/common_button"
+                android:layout_below="@id/btn_show_info"
+                android:layout_toLeftOf="@+id/btn_change_video_source"
+                android:text="Show Video Source" />
+
+            <Button
+                android:id="@+id/btn_change_video_source"
+                style="@style/common_button"
+                android:layout_below="@id/btn_show_info"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Change Video Source" />
+
         </RelativeLayout>
     </ScrollView>
 </merge>

@@ -10,13 +10,19 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.controller.MainActivity;
 import com.dji.sdk.sample.internal.utils.CallbackHandlers;
+import com.dji.sdk.sample.internal.utils.Helper;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.utils.VideoFeedView;
 import com.dji.sdk.sample.internal.view.PresentableView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import dji.common.error.DJIError;
 import dji.common.gimbal.CapabilityKey;
 import dji.common.gimbal.GimbalMode;
@@ -35,8 +41,6 @@ import dji.sdk.camera.VideoFeeder;
 import dji.sdk.gimbal.Gimbal;
 import dji.sdk.products.Aircraft;
 import dji.sdk.sdkmanager.DJISDKManager;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The class for rotating the gimbal, also give an example of the product with multiple gimbals.
@@ -450,7 +454,7 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
             if (isOpen) {
                 String newText = "Primary Source: " + VideoFeeder.getInstance().getPrimaryVideoFeed().getVideoSource().name();
                 ToastUtils.setResultToText(primaryVideoFeedTitle,newText);
-                if (isMultiStreamPlatform()) {
+                if (Helper.isMultiStreamPlatform()) {
                     String newTextFpv = "Secondary Source: " + VideoFeeder.getInstance().getSecondaryVideoFeed().getVideoSource().name();
                     ToastUtils.setResultToText(fpvVideoFeedTitle,newTextFpv);
                 }
@@ -458,7 +462,7 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
             } else {
                 VideoFeeder.getInstance().removePhysicalSourceListener(sourceListener);
                 VideoFeeder.getInstance().getPrimaryVideoFeed().removeVideoDataListener(primaryVideoDataListener);
-                if (isMultiStreamPlatform()) {
+                if (Helper.isMultiStreamPlatform()) {
                     VideoFeeder.getInstance().getSecondaryVideoFeed().removeVideoDataListener(secondaryVideoDataListener);
                 }
             }
@@ -516,20 +520,7 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
                 }
             }
         }
-
         return false;
-    }
-
-    private boolean isMultiStreamPlatform() {
-        Model model = DJISDKManager.getInstance().getProduct().getModel();
-        return model != null && (model == Model.INSPIRE_2
-            || model == Model.MATRICE_200
-            || model == Model.MATRICE_210
-            || model == Model.MATRICE_210_RTK
-            || model == Model.MATRICE_600
-            || model == Model.MATRICE_600_PRO
-            || model == Model.A3
-            || model == Model.N3);
     }
 
     @Override

@@ -13,7 +13,9 @@ import android.widget.LinearLayout;
 
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
+import com.dji.sdk.sample.internal.utils.Helper;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
+import com.dji.sdk.sample.internal.utils.VideoFeedView;
 import com.dji.sdk.sample.internal.view.PresentableView;
 
 import java.text.SimpleDateFormat;
@@ -21,6 +23,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import dji.sdk.base.BaseProduct;
+import dji.sdk.camera.VideoFeeder;
 import dji.sdk.sdkmanager.DJISDKManager;
 import dji.sdk.sdkmanager.LiveStreamManager;
 
@@ -35,6 +38,9 @@ import dji.sdk.sdkmanager.LiveStreamManager;
 public class LiveStreamView extends LinearLayout implements PresentableView, View.OnClickListener {
 
     private String liveShowUrl = "please input your live show url here";
+
+    private VideoFeedView primaryVideoFeedView;
+    private VideoFeedView fpvVideoFeedView;
     private EditText showUrlInputEdit;
 
     private Button startLiveShowBtn;
@@ -46,7 +52,11 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
     private Button isLiveShowOnBtn;
     private Button showInfoBtn;
     private Button showLiveStartTimeBtn;
+    private Button showCurrentVideoSourceBtn;
+    private Button changeVideoSourceBtn;
+
     private LiveStreamManager.OnLiveChangeListener listener;
+    private LiveStreamManager.LiveStreamVideoSource currentVideoSource = LiveStreamManager.LiveStreamVideoSource.Primary;
 
     public LiveStreamView(Context context) {
         super(context);
@@ -60,8 +70,18 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_live_stream, this, true);
 
+        primaryVideoFeedView = (VideoFeedView) findViewById(R.id.video_view_primary_video_feed);
+        primaryVideoFeedView.registerLiveVideo(VideoFeeder.getInstance().getPrimaryVideoFeed(), true);
+
+        fpvVideoFeedView = (VideoFeedView) findViewById(R.id.video_view_fpv_video_feed);
+        fpvVideoFeedView.registerLiveVideo(VideoFeeder.getInstance().getSecondaryVideoFeed(), false);
+        if (Helper.isMultiStreamPlatform()){
+            fpvVideoFeedView.setVisibility(VISIBLE);
+        }
+
         showUrlInputEdit = (EditText) findViewById(R.id.edit_live_show_url_input);
         showUrlInputEdit.setText(liveShowUrl);
+        showUrlInputEdit.setOnClickListener(this);
 
         startLiveShowBtn = (Button) findViewById(R.id.btn_start_live_show);
         enableVideoEncodingBtn = (Button) findViewById(R.id.btn_enable_video_encode);
@@ -72,6 +92,8 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         isLiveShowOnBtn = (Button) findViewById(R.id.btn_is_live_show_on);
         showInfoBtn = (Button) findViewById(R.id.btn_show_info);
         showLiveStartTimeBtn = (Button) findViewById(R.id.btn_show_live_start_time);
+        showCurrentVideoSourceBtn = (Button) findViewById(R.id.btn_show_current_video_source);
+        changeVideoSourceBtn = (Button) findViewById(R.id.btn_change_video_source);
 
         startLiveShowBtn.setOnClickListener(this);
         enableVideoEncodingBtn.setOnClickListener(this);
@@ -82,6 +104,9 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         isLiveShowOnBtn.setOnClickListener(this);
         showInfoBtn.setOnClickListener(this);
         showLiveStartTimeBtn.setOnClickListener(this);
+        showCurrentVideoSourceBtn.setOnClickListener(this);
+        changeVideoSourceBtn.setOnClickListener(this);
+
     }
 
     private void initListener() {
@@ -163,7 +188,7 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         }.start();
     }
 
-    void enableReEncoder() {
+    private void enableReEncoder() {
         if (!isLiveStreamManagerOn()) {
             return;
         }
@@ -171,7 +196,7 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         ToastUtils.setResultToToast("Force Re-Encoder Enabled!");
     }
 
-    void disableReEncoder() {
+    private void disableReEncoder() {
         if (!isLiveStreamManagerOn()) {
             return;
         }
@@ -179,7 +204,7 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         ToastUtils.setResultToToast("Disable Force Re-Encoder!");
     }
 
-    void stopLiveShow() {
+    private void stopLiveShow() {
         if (!isLiveStreamManagerOn()) {
             return;
         }
@@ -187,7 +212,7 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         ToastUtils.setResultToToast("Stop Live Show");
     }
 
-    void soundOn() {
+    private void soundOn() {
         if (!isLiveStreamManagerOn()) {
             return;
         }
@@ -195,7 +220,7 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         ToastUtils.setResultToToast("Sound On");
     }
 
-    void soundOff() {
+    private void soundOff() {
         if (!isLiveStreamManagerOn()) {
             return;
         }
@@ -203,14 +228,14 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         ToastUtils.setResultToToast("Sound Off");
     }
 
-    void isLiveShowOn() {
+    private void isLiveShowOn() {
         if (!isLiveStreamManagerOn()) {
             return;
         }
         ToastUtils.setResultToToast("Is Live Show On:" + DJISDKManager.getInstance().getLiveStreamManager().isStreaming());
     }
 
-    void showInfo() {
+    private void showInfo() {
         if (!isLiveStreamManagerOn()) {
             return;
         }
@@ -222,7 +247,7 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         ToastUtils.setResultToToast(sb.toString());
     }
 
-    void showLiveStartTime() {
+    private void showLiveStartTime() {
         if (!isLiveStreamManagerOn()) {
             return;
         }
@@ -236,9 +261,40 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         ToastUtils.setResultToToast("Live Start Time: " + sd);
     }
 
+    private void changeVideoSource() {
+        if (!isLiveStreamManagerOn()) {
+            return;
+        }
+        if (!isSupportSecondaryVideo()) {
+            return;
+        }
+        if (DJISDKManager.getInstance().getLiveStreamManager().isStreaming()) {
+            ToastUtils.setResultToToast("Before change live source, you should stop live stream!");
+            return;
+        }
+        currentVideoSource = (currentVideoSource == LiveStreamManager.LiveStreamVideoSource.Primary) ?
+                LiveStreamManager.LiveStreamVideoSource.Secoundary :
+                LiveStreamManager.LiveStreamVideoSource.Primary;
+        DJISDKManager.getInstance().getLiveStreamManager().setVideoSource(currentVideoSource);
+
+        ToastUtils.setResultToToast("Change Success ! Video Source : " + currentVideoSource.name());
+    }
+
+    private void showCurrentVideoSource(){
+        ToastUtils.setResultToToast("Video Source : " + currentVideoSource.name());
+    }
+
     private boolean isLiveStreamManagerOn() {
         if (DJISDKManager.getInstance().getLiveStreamManager() == null) {
-            ToastUtils.setResultToToast("no live stream manager!");
+            ToastUtils.setResultToToast("No live stream manager!");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean isSupportSecondaryVideo(){
+        if (!Helper.isMultiStreamPlatform()) {
+            ToastUtils.setResultToToast("No secondary video!");
             return false;
         }
         return true;
@@ -246,6 +302,7 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
             case R.id.btn_start_live_show:
                 startLiveShow();
@@ -273,6 +330,15 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
                 break;
             case R.id.btn_show_live_start_time:
                 showLiveStartTime();
+                break;
+            case R.id.btn_show_current_video_source:
+                showCurrentVideoSource();
+                break;
+            case R.id.btn_change_video_source:
+                changeVideoSource();
+                break;
+            case R.id.edit_live_show_url_input:
+                showUrlInputEdit.setText("");
                 break;
             default:
                 break;
