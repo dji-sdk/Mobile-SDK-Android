@@ -18,6 +18,7 @@ import com.dji.sdk.sample.internal.utils.VideoFeedView;
 import com.dji.sdk.sample.internal.view.PopupSeekBar;
 import com.dji.sdk.sample.internal.view.PresentableView;
 
+import dji.common.airlink.PhysicalSource;
 import java.util.Random;
 
 import dji.common.camera.SettingsDefinitions;
@@ -139,7 +140,7 @@ public class XT2CameraView extends LinearLayout implements View.OnClickListener,
     private void setUpListeners() {
         sourceListener = new VideoFeeder.PhysicalSourceListener() {
             @Override
-            public void onChange(VideoFeeder.VideoFeed videoFeed, VideoFeeder.PhysicalSource newPhysicalSource) {
+            public void onChange(VideoFeeder.VideoFeed videoFeed, PhysicalSource newPhysicalSource) {
                 if (videoFeed == VideoFeeder.getInstance().getPrimaryVideoFeed()) {
                     String newText = "Primary Source: " + newPhysicalSource.toString();
                     ToastUtils.setResultToText(primaryVideoFeedTitle, newText);

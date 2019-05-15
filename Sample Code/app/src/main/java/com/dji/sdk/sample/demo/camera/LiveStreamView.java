@@ -81,7 +81,6 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
 
         showUrlInputEdit = (EditText) findViewById(R.id.edit_live_show_url_input);
         showUrlInputEdit.setText(liveShowUrl);
-        showUrlInputEdit.setOnClickListener(this);
 
         startLiveShowBtn = (Button) findViewById(R.id.btn_start_live_show);
         enableVideoEncodingBtn = (Button) findViewById(R.id.btn_enable_video_encode);
@@ -106,7 +105,6 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         showLiveStartTimeBtn.setOnClickListener(this);
         showCurrentVideoSourceBtn.setOnClickListener(this);
         changeVideoSourceBtn.setOnClickListener(this);
-
     }
 
     private void initListener() {
@@ -302,7 +300,6 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
 
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             case R.id.btn_start_live_show:
                 startLiveShow();
@@ -336,9 +333,6 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
                 break;
             case R.id.btn_change_video_source:
                 changeVideoSource();
-                break;
-            case R.id.edit_live_show_url_input:
-                showUrlInputEdit.setText("");
                 break;
             default:
                 break;

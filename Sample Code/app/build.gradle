@@ -35,6 +35,7 @@ android {
     dexOptions {
         javaMaxHeapSize "4g"
     }
+
     packagingOptions{
         doNotStrip "*/*/libdjivideo.so"
         doNotStrip "*/*/libSDKRelativeJNI.so"
@@ -45,6 +46,9 @@ android {
         doNotStrip "*/*/libFRCorkscrew.so"
         doNotStrip "*/*/libUpgradeVerify.so"
         doNotStrip "*/*/libFR.so"
+        doNotStrip "*/*/libDJIFlySafeCore.so"
+        doNotStrip "*/*/libdjifs_jni.so"
+        doNotStrip "*/*/libsfjni.so"
         exclude 'META-INF/rxjava.properties'
     }
 
@@ -54,11 +58,13 @@ android {
 dependencies {
     implementation 'com.android.support:multidex:1.0.2'
     implementation 'com.squareup:otto:1.3.8'
-    implementation ('com.dji:dji-sdk:4.9', {
+    implementation ('com.dji:dji-sdk:4.10', {
 //             Uncomment the following line if your app does not need Anti Distortion for
 //             Mavic 2 Pro and Mavic 2 Zoom. It will greatly reducing the size of the APK:
              exclude module: 'library-anti-distortion'
+//             Uncomment the following line if your APP does not need network RTK
+             exclude module: 'library-networkrtk-helper'
         })
-    compileOnly 'com.dji:dji-sdk-provided:4.9'
+    compileOnly 'com.dji:dji-sdk-provided:4.10'
 
 }
