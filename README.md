@@ -67,7 +67,7 @@ Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk
 
 ## DJI Mobile UX SDK
 
-DJI Mobile UX SDK is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the DJI Mobile SDK. For more details, please check [here](https://github.com/dji-sdk/Mobile-UXSDK-Android).
+DJI Mobile UX SDK is a suite of product agnostic UI objects that fast tracks the development of Android applications using the DJI Mobile SDK. For more details, please check [here](https://github.com/dji-sdk/Mobile-UXSDK-Android).
 
 ## ProGuard
 
