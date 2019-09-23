@@ -2,12 +2,14 @@ package com.dji.sdk.sample.internal.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import androidx.annotation.NonNull;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.demo.payload.PayloadActivity;
 import com.dji.sdk.sample.demo.payload.PayloadSendGetDataActivity;

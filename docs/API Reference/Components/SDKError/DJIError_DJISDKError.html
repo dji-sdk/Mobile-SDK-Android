@@ -94,6 +94,16 @@
                             </dd>
                             <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyWarningInformation.html">FlySafeWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetySeriousWarningInformation.html">FlySafeSeriousWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyTip.html">FlySafeTipInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeReturnToHomeInformation.html">FlySafeReturnToHomeInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeNotification.html">FlySafeNotification</a>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
@@ -312,6 +322,8 @@
                                       </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraOpticalZoomSpec.html">OpticalZoomSpec</a>
                                       </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraHybridZoomSpec.html">HybridZoomSpec</a>
+                                      </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraPhotoIntervalParam.html">PhotoTimeIntervalSettings</a>
                                       </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraThermalProfile.html">ThermalProfile</a>
@@ -390,7 +402,7 @@
                     <ul class="sub-menu">
                             <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightWheel</a>
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
                                       </dd>
                                       <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareTransformationSwitch.html">TransformationSwitch</a>
                                       </dd>
@@ -582,6 +594,8 @@
                                                 </dd>
                                         </ul>
                                       </dd>
+                                      <dd><a href="../Missions/DJIWaypointMission_DJIWaypointMissionInterruption.html">WaypointMissionInterruption</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="../Missions/DJIWaypointMissionEvent.html">WaypointMissionEvent</a>
@@ -696,6 +710,10 @@
                   </dd>
                   <dd><a href="../../Utils/DJIWarningStatusItem.html">WarningStatusItem</a>
                   </dd>
+                  <dd><a href="../../Utils/DJIVideoSizeCalculatorUtil.html">VideoSizeCalculatorUtil</a>
+                  </dd>
+                  <dd><a href="../../Utils/DJILocationUtil.html">LocationUtil</a>
+                  </dd>
                   <dd><a data-href="../ParamCapability/DJIParamCapability.html" class="sub-toggle">DJIParamCapability<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../ParamCapability/DJIParamCapability_DJIParamCapabilityMinMax.html">DJIParamMinMaxCapability</a>
@@ -715,6 +733,8 @@
                             <dd><a href="DJIError_DJIAccessoryAggregationError.html">DJIAccessoryAggregationError</a>
                             </dd>
                             <dd><a href="DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
+                            </dd>
+                            <dd><a href="DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="" class="active">DJISDKError</a>
                             </dd>
@@ -1019,12 +1039,20 @@
 <h5 id="description-v34">Description:</h5>
 <p><font color="#666">The app key is invalid for this beta version.</font></p>
 </div>
+<div class="api-row" id="djierror_djisdkregistrationerror_downloadflysafedatabasefailedwithldmmodeon"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkregistrationerror_downloadflysafedatabasefailedwithldmmodeon_inline">DOWNLOAD_FLYSAFE_DATABASE_FAILED_WITH_LDM_ON</a></div></div><div class="inline-doc" id="djierror_djisdkregistrationerror_downloadflysafedatabasefailedwithldmmodeon_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">final </font>DOWNLOAD_FLYSAFE_DATABASE_FAILED_WITH_LDM_ON</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError DOWNLOAD_FLYSAFE_DATABASE_FAILED_WITH_LDM_ON =</div><div class="line">           <span class="keyword">new</span> DJISDKError(<span class="string">"Download fly safe database failed. Please disable LDM to retry to register "</span> +</div><div class="line">                   <span class="string">"\"or check if \"fly-safe-database\" is excluded in build.gradle\"."</span>)</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v35">Description:</h5>
+<p><font color="#666">Download flysafe database failed. You can close LDM model to retry register App or implementation &quot;FlySafeDataBase-release.aar&quot; in your app build.gradle before compile it.</font></p>
+</div>
 <div class="api-row" id="djierror_djisdkregistrationerror_can_not_execute"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkregistrationerror_can_not_execute_inline">CAN_NOT_EXECUTE</a></div></div><div class="inline-doc" id="djierror_djisdkregistrationerror_can_not_execute_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">final </font>CAN_NOT_EXECUTE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJISDKError CAN_NOT_EXECUTE = <span class="keyword">new</span> DJISDKError(<span class="string">"The operation can't be executed in current state."</span>)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v35">Description:</h5>
+<h5 id="description-v36">Description:</h5>
 <p><font color="#666">The operation can't be executed in current state.</font></p>
 </div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
@@ -1033,7 +1061,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(<span class="keyword">int</span> errorCode)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v36">Description:</h5>
+<h5 id="description-v37">Description:</h5>
 <p><font color="#666">Returns the specific error in the <code><a href="../../Components/SDKError/DJIError_DJISDKFlightHubError.html#djierror_djisdkflighthuberror">DJIFlightHubError</a></code> according to the error code.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">errorCode</font></font></td><td><font color="#666"><i>errorCode for <code><a href="../../Components/SDKError/DJIError_DJISDKFlightHubError.html#djierror_djisdkflighthuberror">DJIFlightHubError</a></code>.</i></font></td></tr></table></html>
@@ -1044,7 +1072,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">String <span class="title">getDescription</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v37">Description:</h5>
+<h5 id="description-v38">Description:</h5>
 <p><font color="#666">Returns the description of the error code.</font></p>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>The description of the error code.</i></font></td></tr></table></html></div>
@@ -1053,7 +1081,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String desc)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v38">Description:</h5>
+<h5 id="description-v39">Description:</h5>
 <p><font color="#666">Sets the description for the error code.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">desc</font></font></td><td><font color="#666"><i>Description string.</i></font></td></tr></table></html></div>
@@ -1065,7 +1093,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title"> Search Mobile SDK Document
+            <h2 class="title">Search Mobile SDK Document
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>

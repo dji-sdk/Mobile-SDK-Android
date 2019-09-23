@@ -4,23 +4,31 @@ import android.app.Service;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.SeekBarValueChangeListener;
+import com.dji.sdk.sample.internal.audiohandler.AudioRecorderHandler;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.controller.MainActivity;
-import com.dji.sdk.sample.internal.audiohandler.AudioRecorderHandler;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PopupSeekBar;
 import com.dji.sdk.sample.internal.view.PresentableView;
 import com.squareup.otto.Subscribe;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 import dji.common.accessory.AccessoryAggregationState;
 import dji.common.accessory.SettingsDefinitions;
 import dji.common.accessory.SettingsDefinitions.PlayMode;
@@ -38,10 +46,6 @@ import dji.sdk.accessory.speaker.Speaker;
 import dji.sdk.accessory.speaker.TransmissionListener;
 import dji.sdk.accessory.spotlight.Spotlight;
 import dji.sdk.products.Aircraft;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class AccessoryAggregationView extends LinearLayout implements View.OnClickListener, PresentableView {
 

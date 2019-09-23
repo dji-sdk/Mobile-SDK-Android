@@ -1,11 +1,14 @@
 package com.dji.sdk.sample.demo.remotecontroller;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.view.BasePushDataView;
+
 import dji.common.remotecontroller.HardwareState;
 import dji.sdk.products.Aircraft;
 import dji.sdk.remotecontroller.RemoteController;

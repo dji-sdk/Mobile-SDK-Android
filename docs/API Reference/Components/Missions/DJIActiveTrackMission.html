@@ -94,6 +94,16 @@
                             </dd>
                             <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyWarningInformation.html">FlySafeWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetySeriousWarningInformation.html">FlySafeSeriousWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyTip.html">FlySafeTipInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeReturnToHomeInformation.html">FlySafeReturnToHomeInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeNotification.html">FlySafeNotification</a>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
@@ -312,6 +322,8 @@
                                       </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraOpticalZoomSpec.html">OpticalZoomSpec</a>
                                       </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraHybridZoomSpec.html">HybridZoomSpec</a>
+                                      </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraPhotoIntervalParam.html">PhotoTimeIntervalSettings</a>
                                       </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraThermalProfile.html">ThermalProfile</a>
@@ -390,7 +402,7 @@
                     <ul class="sub-menu">
                             <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightWheel</a>
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
                                       </dd>
                                       <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareTransformationSwitch.html">TransformationSwitch</a>
                                       </dd>
@@ -582,6 +594,8 @@
                                                 </dd>
                                         </ul>
                                       </dd>
+                                      <dd><a href="DJIWaypointMission_DJIWaypointMissionInterruption.html">WaypointMissionInterruption</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="DJIWaypointMissionEvent.html">WaypointMissionEvent</a>
@@ -696,6 +710,10 @@
                   </dd>
                   <dd><a href="../../Utils/DJIWarningStatusItem.html">WarningStatusItem</a>
                   </dd>
+                  <dd><a href="../../Utils/DJIVideoSizeCalculatorUtil.html">VideoSizeCalculatorUtil</a>
+                  </dd>
+                  <dd><a href="../../Utils/DJILocationUtil.html">LocationUtil</a>
+                  </dd>
                   <dd><a data-href="../ParamCapability/DJIParamCapability.html" class="sub-toggle">DJIParamCapability<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../ParamCapability/DJIParamCapability_DJIParamCapabilityMinMax.html">DJIParamMinMaxCapability</a>
@@ -715,6 +733,8 @@
                             <dd><a href="../SDKError/DJIError_DJIAccessoryAggregationError.html">DJIAccessoryAggregationError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
                             </dd>
@@ -853,7 +873,7 @@
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">QuickShot modes, which define different preset path for a QuickShot mission.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_circle_inline"></a>CIRCLE</font></td><td><font color="#666">Aircraft will circle around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_dronie_inline"></a>DRONIE</font></td><td><font color="#666">Aircraft will fly backward and upward with camera locked on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_helix_inline"></a>HELIX</font></td><td><font color="#666">Aircraft will fly upward, spiraling around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_rocket_inline"></a>ROCKET</font></td><td><font color="#666">The aircraft will ascend with the camera pointing downward on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_boomerang_inline"></a>BOOMERANG</font></td><td><font color="#666">The aircraft will fly around the tracking object in an upwardly sloped oval with the  video finishing at the start point. Only supported by DJI Mavic Air.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_asteroid_inline"></a>ASTEROID</font></td><td><font color="#666">The aircraft will fly backward and upward while recording video, capture a sphere  panorama at the end of the flight path, then combine the footage and panorama into  a short video. Only supported by DJI Mavic Air.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_dollyzoom_inline"></a>DOLLY_ZOOM</font></td><td><font color="#666">The aircraft will fly backward and upward. It will adjust the zoom during flight to keep the selected subject the same while the background changes. Ensure there is sufficient space when using Dolly Zoom. Allow at least triple distance from aircraft to the subject behind the aircraft. Only supported by Mavic 2 Zoom.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_circle_inline"></a>CIRCLE</font></td><td><font color="#666">Aircraft will circle around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_dronie_inline"></a>DRONIE</font></td><td><font color="#666">Aircraft will fly backward and upward with camera locked on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_helix_inline"></a>HELIX</font></td><td><font color="#666">Aircraft will fly upward, spiraling around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_rocket_inline"></a>ROCKET</font></td><td><font color="#666">The aircraft will ascend with the camera pointing downward on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_boomerang_inline"></a>BOOMERANG</font></td><td><font color="#666">The aircraft will fly around the tracking object in an upwardly sloped oval with the video finishing  at the start point. Supported by DJI Mavic Air, Mavic 2 Zoom and Mavic 2 Pro.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_asteroid_inline"></a>ASTEROID</font></td><td><font color="#666">The aircraft will fly backward and upward while recording video, capture a sphere  panorama at the end of the flight path, then combine the footage and panorama into  a short video. Supported by DJI Mavic Air, Mavic 2 Zoom and Mavic 2 Pro.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_dollyzoom_inline"></a>DOLLY_ZOOM</font></td><td><font color="#666">The aircraft will fly backward and upward. It will adjust the zoom during flight to keep the selected subject the same while the background changes. Ensure there is sufficient space when using Dolly Zoom. Allow at least triple distance from aircraft to the subject behind the aircraft. Only supported by Mavic 2 Zoom.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
 <h5 id="class-members-v3">Class Members:</h5>
 </div>
 
@@ -864,7 +884,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title"> Search Mobile SDK Document
+            <h2 class="title">Search Mobile SDK Document
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>

@@ -2,12 +2,13 @@ package com.dji.sdk.sample.demo.camera;
 
 import android.app.Service;
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.SeekBarValueChangeListener;
@@ -18,9 +19,9 @@ import com.dji.sdk.sample.internal.utils.VideoFeedView;
 import com.dji.sdk.sample.internal.view.PopupSeekBar;
 import com.dji.sdk.sample.internal.view.PresentableView;
 
-import dji.common.airlink.PhysicalSource;
 import java.util.Random;
 
+import dji.common.airlink.PhysicalSource;
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.product.Model;

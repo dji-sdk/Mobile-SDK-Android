@@ -13,12 +13,7 @@ import android.hardware.usb.UsbManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,8 +21,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.model.ViewWrapper;
@@ -43,6 +46,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import dji.common.error.DJIError;
 import dji.common.error.DJISDKError;
+import dji.common.util.CommonCallbacks;
 import dji.log.DJILog;
 import dji.sdk.base.BaseComponent;
 import dji.sdk.base.BaseProduct;
@@ -53,20 +57,19 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String[] REQUIRED_PERMISSION_LIST = new String[] {
-        Manifest.permission.VIBRATE,
-        Manifest.permission.INTERNET,
-        Manifest.permission.ACCESS_WIFI_STATE,
-        Manifest.permission.WAKE_LOCK,
-        Manifest.permission.ACCESS_COARSE_LOCATION,
-        Manifest.permission.ACCESS_NETWORK_STATE,
-        Manifest.permission.ACCESS_FINE_LOCATION,
-        Manifest.permission.CHANGE_WIFI_STATE,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.BLUETOOTH,
-        Manifest.permission.BLUETOOTH_ADMIN,
-        Manifest.permission.READ_EXTERNAL_STORAGE,
-        Manifest.permission.READ_PHONE_STATE,
-        Manifest.permission.RECORD_AUDIO
+        Manifest.permission.VIBRATE, // Gimbal rotation
+        Manifest.permission.INTERNET, // API requests
+        Manifest.permission.ACCESS_WIFI_STATE, // WIFI connected products
+        Manifest.permission.ACCESS_COARSE_LOCATION, // Maps
+        Manifest.permission.ACCESS_NETWORK_STATE, // WIFI connected products
+        Manifest.permission.ACCESS_FINE_LOCATION, // Maps
+        Manifest.permission.CHANGE_WIFI_STATE, // Changing between WIFI and USB connection
+        Manifest.permission.WRITE_EXTERNAL_STORAGE, // Log files
+        Manifest.permission.BLUETOOTH, // Bluetooth connected products
+        Manifest.permission.BLUETOOTH_ADMIN, // Bluetooth connected products
+        Manifest.permission.READ_EXTERNAL_STORAGE, // Log files
+        Manifest.permission.READ_PHONE_STATE, // Device UUID accessed upon registration
+        Manifest.permission.RECORD_AUDIO // Speaker accessory
     };
     private static final int REQUEST_PERMISSION_CODE = 12345;
     private FrameLayout contentFrameLayout;
@@ -74,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     private ObjectAnimator pushOutAnimator;
     private ObjectAnimator popInAnimator;
     private LayoutTransition popOutTransition;
+    private ProgressBar progressBar;
     private Stack<ViewWrapper> stack;
     private TextView titleTextView;
     private SearchView searchView;
@@ -81,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem hintItem;
     private List<String> missingPermission = new ArrayList<>();
     private AtomicBoolean isRegistrationInProgress = new AtomicBoolean(false);
+    private int lastProcess = -1;
+    private Handler mHander = new Handler();
     private BaseComponent.ComponentListener mDJIComponentListener = new BaseComponent.ComponentListener() {
 
         @Override
@@ -96,12 +102,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         checkAndRequestPermissions();
         DJISampleApplication.getEventBus().register(this);
-
         setContentView(R.layout.activity_main);
-
         setupActionBar();
         contentFrameLayout = (FrameLayout) findViewById(R.id.framelayout_content);
-
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         initParams();
     }
 
@@ -241,10 +245,12 @@ public class MainActivity extends AppCompatActivity {
                                 DJILog.e("App registration", DJISDKError.REGISTRATION_SUCCESS.getDescription());
                                 DJISDKManager.getInstance().startConnectionToProduct();
                                 ToastUtils.setResultToToast(MainActivity.this.getString(R.string.sdk_registration_success_message));
+                                showDBVersion();
                             } else {
                                 ToastUtils.setResultToToast(MainActivity.this.getString(R.string.sdk_registration_message) + djiError.getDescription());
                             }
                             Log.v(TAG, djiError.getDescription());
+                            hideProcess();
                         }
                         @Override
                         public void onProductDisconnect() {
@@ -276,11 +282,66 @@ public class MainActivity extends AppCompatActivity {
                         public void onInitProcess(DJISDKInitEvent djisdkInitEvent, int i) {
 
                         }
+
+                        @Override
+                        public void onDatabaseDownloadProgress(long current, long total) {
+                            int process = (int) (100 * current / total);
+                            if (process == lastProcess) {
+                                return;
+                            }
+                            lastProcess = process;
+                            showProgress(process);
+                            if (process % 25 == 0){
+                                ToastUtils.setResultToToast("DB load process : " + process);
+                            }else if (process == 0){
+                                ToastUtils.setResultToToast("DB load begin");
+                            }
+                        }
                     });
                 }
             });
         }
     }
+
+    private void showProgress(final int process){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                progressBar.setVisibility(View.VISIBLE);
+                progressBar.setProgress(process);
+            }
+        });
+    }
+
+    private void showDBVersion(){
+        mHander.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                DJISDKManager.getInstance().getFlyZoneManager().getPreciseDatabaseVersion(new CommonCallbacks.CompletionCallbackWith<String>() {
+                    @Override
+                    public void onSuccess(String s) {
+                        ToastUtils.setResultToToast("db load success ! version : " + s);
+                    }
+
+                    @Override
+                    public void onFailure(DJIError djiError) {
+                        ToastUtils.setResultToToast("db load success ! get version error : " + djiError.getDescription());
+
+                    }
+                });
+            }
+        },1000);
+    }
+
+    private void hideProcess(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+    }
+
 
     private void notifyStatusChange() {
         DJISampleApplication.getEventBus().post(new ConnectivityChangeEvent());

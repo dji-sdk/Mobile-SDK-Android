@@ -15,6 +15,7 @@ import dji.midware.usb.P3.UsbAccessoryService;
 import dji.sdk.camera.VideoFeeder;
 import dji.sdk.codec.DJICodecManager;
 import dji.thirdparty.rx.Observable;
+import dji.thirdparty.rx.Subscription;
 import dji.thirdparty.rx.android.schedulers.AndroidSchedulers;
 import dji.thirdparty.rx.functions.Action1;
 
@@ -34,6 +35,7 @@ public class VideoFeedView extends TextureView implements SurfaceTextureListener
     private AtomicLong lastReceivedFrameTime = new AtomicLong(0);
     private Observable timer =
         Observable.timer(100, TimeUnit.MICROSECONDS).observeOn(AndroidSchedulers.mainThread()).repeat();
+    private Subscription subscription;
 
     //endregion
 
@@ -79,7 +81,7 @@ public class VideoFeedView extends TextureView implements SurfaceTextureListener
             }
         };
 
-        timer.subscribe(new Action1() {
+        subscription = timer.subscribe(new Action1() {
             @Override
             public void call(Object o) {
                 final long now = System.currentTimeMillis();
@@ -186,4 +188,13 @@ public class VideoFeedView extends TextureView implements SurfaceTextureListener
         this.setTransform(txform);
     }
     //endregion
+
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (subscription != null && !subscription.isUnsubscribed()) {
+            subscription.unsubscribe();
+        }
+    }
 }

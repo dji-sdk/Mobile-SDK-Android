@@ -29,6 +29,8 @@ import com.dji.sdk.sample.internal.utils.GeneralUtils;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.squareup.otto.Subscribe;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import dji.common.error.DJIError;
 import dji.common.realname.AppActivationState;
 import dji.common.useraccount.UserAccountState;
@@ -43,7 +45,6 @@ import dji.sdk.realname.AppActivationManager;
 import dji.sdk.sdkmanager.BluetoothProductConnector;
 import dji.sdk.sdkmanager.DJISDKManager;
 import dji.sdk.useraccount.UserAccountManager;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Created by dji on 15/12/18.

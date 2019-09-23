@@ -2,7 +2,8 @@ package com.dji.sdk.sample.internal.controller;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.multidex.MultiDex;
+
+import androidx.multidex.MultiDex;
 
 import com.squareup.otto.Bus;
 import com.squareup.otto.ThreadEnforcer;
@@ -77,6 +78,4 @@ public class DJISampleApplication extends Application {
         com.secneo.sdk.Helper.install(this);
         app = this;
     }
-
-
 }

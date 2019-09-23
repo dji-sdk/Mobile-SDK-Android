@@ -2,7 +2,6 @@ package com.dji.sdk.sample.demo.camera;
 
 import android.app.Service;
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -10,25 +9,32 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.controller.MainActivity;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.utils.VideoFeedView;
 import com.dji.sdk.sample.internal.view.PresentableView;
+
+import java.util.List;
+
 import dji.common.airlink.PhysicalSource;
 import dji.common.error.DJIError;
 import dji.common.product.Model;
 import dji.keysdk.AirLinkKey;
 import dji.keysdk.KeyManager;
 import dji.keysdk.ProductKey;
+import dji.keysdk.callback.ActionCallback;
 import dji.keysdk.callback.SetCallback;
+import dji.sdk.airlink.AirLink;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.camera.Camera;
 import dji.sdk.camera.VideoFeeder;
 import dji.sdk.products.Aircraft;
 import dji.sdk.sdkmanager.DJISDKManager;
-import java.util.List;
 
 /**
  * Class that manage live video feed from DJI products to the mobile device.
@@ -57,8 +63,12 @@ public class VideoFeederView extends LinearLayout
     private AirLinkKey lbBandwidthKey;
     private AirLinkKey hdmiBandwidthKey;
     private AirLinkKey mainCameraBandwidthKey;
+    private AirLinkKey assignSourceToPrimaryChannelKey;
+    private AirLinkKey primaryVideoBandwidthKey;
     private SetCallback setBandwidthCallback;
     private SetCallback setExtEnableCallback;
+    private ActionCallback allocSourceCallback;
+    private AirLink airLink;
     private View primaryCoverView;
     private View fpvCoverView;
     private TextView cameraListTitle;
@@ -75,6 +85,7 @@ public class VideoFeederView extends LinearLayout
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_video_feeder, this, true);
 
+        initAirLink();
         initAllKeys();
         initUI();
         initCallbacks();
@@ -122,13 +133,21 @@ public class VideoFeederView extends LinearLayout
         initEXTSwitch();
     }
 
+    private void initAirLink() {
+        BaseProduct baseProduct = DJISDKManager.getInstance().getProduct();
+        if (null != baseProduct && null != baseProduct.getAirLink()) {
+            airLink = baseProduct.getAirLink();
+        }
+    }
+
     private void initAllKeys() {
         extEnabledKey = AirLinkKey.createLightbridgeLinkKey(AirLinkKey.IS_EXT_VIDEO_INPUT_PORT_ENABLED);
         lbBandwidthKey = AirLinkKey.createLightbridgeLinkKey(AirLinkKey.BANDWIDTH_ALLOCATION_FOR_LB_VIDEO_INPUT_PORT);
         hdmiBandwidthKey =
             AirLinkKey.createLightbridgeLinkKey(AirLinkKey.BANDWIDTH_ALLOCATION_FOR_HDMI_VIDEO_INPUT_PORT);
         mainCameraBandwidthKey = AirLinkKey.createLightbridgeLinkKey(AirLinkKey.BANDWIDTH_ALLOCATION_FOR_LEFT_CAMERA);
-
+        assignSourceToPrimaryChannelKey = AirLinkKey.createOcuSyncLinkKey(AirLinkKey.ASSIGN_SOURCE_TO_PRIMARY_CHANNEL);
+        primaryVideoBandwidthKey = AirLinkKey.createOcuSyncLinkKey(AirLinkKey.BANDWIDTH_ALLOCATION_FOR_PRIMARY_VIDEO);
     }
 
     private void initCallbacks() {
@@ -159,6 +178,18 @@ public class VideoFeederView extends LinearLayout
             @Override
             public void onFailure(@NonNull DJIError error) {
                 updateExtSwitchValue(null);
+            }
+        };
+
+        allocSourceCallback = new ActionCallback() {
+            @Override
+            public void onSuccess() {
+                ToastUtils.setResultToToast("Perform action successfully");
+            }
+
+            @Override
+            public void onFailure(@NonNull DJIError error) {
+                ToastUtils.setResultToToast("Failed to action: " + error.getDescription());
             }
         };
     }
@@ -253,7 +284,7 @@ public class VideoFeederView extends LinearLayout
         if (VideoFeeder.getInstance() == null) return;
 
         final BaseProduct product = DJISDKManager.getInstance().getProduct();
-        updateM210Buttons();
+        updateM210SeriesButtons();
         if (product != null) {
             VideoFeeder.VideoDataListener primaryVideoDataListener =
                 primaryVideoFeed.registerLiveVideo(VideoFeeder.getInstance().getPrimaryVideoFeed(), true);
@@ -284,8 +315,8 @@ public class VideoFeederView extends LinearLayout
         }
     }
 
-    private void updateM210Buttons() {
-        if (isM210TwoCameraConnected()) {
+    private void updateM210SeriesButtons() {
+        if (isM210SeriesTwoCameraConnected()) {
 
             VideoFeederView.this.post(new Runnable() {
                 @Override
@@ -366,21 +397,45 @@ public class VideoFeederView extends LinearLayout
     }
 
     private void onClickLeftAndFpvBtn() {
-        KeyManager.getInstance().setValue(lbBandwidthKey, 0.8f, null);
-        KeyManager.getInstance().setValue(mainCameraBandwidthKey, 1.0f, setBandwidthCallback);
+        if (airLink != null) {
+            if (airLink.isOcuSyncLinkSupported()) {
+                KeyManager.getInstance().performAction(assignSourceToPrimaryChannelKey, allocSourceCallback, PhysicalSource.LEFT_CAM, PhysicalSource.FPV_CAM);
+                KeyManager.getInstance().setValue(primaryVideoBandwidthKey, 1.0f, setBandwidthCallback);
+
+            } else {
+                KeyManager.getInstance().setValue(lbBandwidthKey, 0.8f, null);
+                KeyManager.getInstance().setValue(mainCameraBandwidthKey, 1.0f, setBandwidthCallback);
+            }
+        }
     }
 
     private void onClickRightAndFpvBtn() {
-        KeyManager.getInstance().setValue(lbBandwidthKey, 0.8f, null);
-        KeyManager.getInstance().setValue(mainCameraBandwidthKey, 0.0f, setBandwidthCallback);
+        if (airLink != null) {
+            if (airLink.isOcuSyncLinkSupported()) {
+                KeyManager.getInstance().performAction(assignSourceToPrimaryChannelKey, allocSourceCallback, PhysicalSource.RIGHT_CAM, PhysicalSource.FPV_CAM);
+                KeyManager.getInstance().setValue(primaryVideoBandwidthKey, 0.0f, setBandwidthCallback);
+
+            } else {
+                KeyManager.getInstance().setValue(lbBandwidthKey, 0.8f, null);
+                KeyManager.getInstance().setValue(mainCameraBandwidthKey, 0.0f, setBandwidthCallback);
+            }
+        }
     }
 
     private void onClickLeftAndRightBtn() {
-        KeyManager.getInstance().setValue(lbBandwidthKey, 1.0f, null);
-        KeyManager.getInstance().setValue(mainCameraBandwidthKey, 0.5f, setBandwidthCallback);
+        if (airLink != null) {
+            if (airLink.isOcuSyncLinkSupported()) {
+                KeyManager.getInstance().performAction(assignSourceToPrimaryChannelKey, allocSourceCallback, PhysicalSource.LEFT_CAM, PhysicalSource.RIGHT_CAM);
+                KeyManager.getInstance().setValue(primaryVideoBandwidthKey, 0.5f, setBandwidthCallback);
+
+            } else {
+                KeyManager.getInstance().setValue(lbBandwidthKey, 1.0f, null);
+                KeyManager.getInstance().setValue(mainCameraBandwidthKey, 0.5f, setBandwidthCallback);
+            }
+        }
     }
 
-    private boolean isM210TwoCameraConnected() {
+    private boolean isM210SeriesTwoCameraConnected() {
 
         Object model = null;
         if (KeyManager.getInstance() != null) {
@@ -409,7 +464,10 @@ public class VideoFeederView extends LinearLayout
                     }
                 }
                 ToastUtils.setResultToText(cameraListTitle, cameraListStr);
-                if ((model == Model.MATRICE_210 || model == Model.MATRICE_210_RTK)) {
+                if ((model == Model.MATRICE_210
+                        || model == Model.MATRICE_210_RTK
+                        || model == Model.MATRICE_210_V2
+                        || model == Model.MATRICE_210_RTK_V2)) {
                     return (cameraList != null
                         && cameraList.size() == 2
                         && cameraList.get(0).isConnected()
@@ -427,6 +485,9 @@ public class VideoFeederView extends LinearLayout
             || model == Model.MATRICE_200
             || model == Model.MATRICE_210
             || model == Model.MATRICE_210_RTK
+            || model == Model.MATRICE_200_V2
+            || model == Model.MATRICE_210_V2
+            || model == Model.MATRICE_210_RTK_V2
             || model == Model.MATRICE_600
             || model == Model.MATRICE_600_PRO
             || model == Model.A3

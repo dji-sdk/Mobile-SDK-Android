@@ -2,12 +2,12 @@ package com.dji.sdk.sample.internal.view;
 
 import android.app.Service;
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+
 import com.dji.sdk.sample.R;
 
 public abstract class BaseAppActivationView extends FrameLayout implements PresentableView{

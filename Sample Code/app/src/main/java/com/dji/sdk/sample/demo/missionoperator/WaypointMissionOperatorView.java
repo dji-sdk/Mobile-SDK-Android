@@ -1,14 +1,21 @@
 package com.dji.sdk.sample.demo.missionoperator;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.demo.missionmanager.MissionBaseView;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import dji.common.error.DJIError;
 import dji.common.flightcontroller.FlightControllerState;
 import dji.common.flightcontroller.simulator.InitializationData;
@@ -26,17 +33,14 @@ import dji.common.mission.waypoint.WaypointMissionState;
 import dji.common.mission.waypoint.WaypointMissionUploadEvent;
 import dji.common.model.LocationCoordinate2D;
 import dji.common.util.CommonCallbacks;
-import dji.sdk.base.BaseProduct;
 import dji.keysdk.FlightControllerKey;
 import dji.keysdk.KeyManager;
+import dji.sdk.base.BaseProduct;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.mission.MissionControl;
 import dji.sdk.mission.waypoint.WaypointMissionOperator;
 import dji.sdk.mission.waypoint.WaypointMissionOperatorListener;
 import dji.sdk.products.Aircraft;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 import static dji.keysdk.FlightControllerKey.HOME_LOCATION_LATITUDE;
 import static dji.keysdk.FlightControllerKey.HOME_LOCATION_LONGITUDE;

@@ -1,8 +1,11 @@
 package com.dji.sdk.sample.internal.model;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
+
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
+
 import com.dji.sdk.sample.internal.view.PresentableView;
 
 /**
@@ -12,7 +15,8 @@ import com.dji.sdk.sample.internal.view.PresentableView;
 
 public class GroupItem extends ListItem {
 
-    private final @NonNull Class<? extends PresentableView> linkedViewClass;
+    private final @NonNull
+    Class<? extends PresentableView> linkedViewClass;
 
     public GroupItem(@StringRes int titleStringId, @NonNull Class<? extends PresentableView> linkedView) {
         super(titleStringId);

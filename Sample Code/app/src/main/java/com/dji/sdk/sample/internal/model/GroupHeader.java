@@ -1,7 +1,8 @@
 package com.dji.sdk.sample.internal.model;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 
 /**
  * List item that has at least one child.

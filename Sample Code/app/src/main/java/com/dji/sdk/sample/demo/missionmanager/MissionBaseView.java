@@ -2,16 +2,19 @@ package com.dji.sdk.sample.demo.missionmanager;
 
 import android.app.Service;
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
+
 import dji.common.flightcontroller.FlightMode;
 import dji.sdk.flightcontroller.FlightController;
 

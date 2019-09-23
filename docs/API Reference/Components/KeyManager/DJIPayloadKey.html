@@ -94,6 +94,16 @@
                             </dd>
                             <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyWarningInformation.html">FlySafeWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetySeriousWarningInformation.html">FlySafeSeriousWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyTip.html">FlySafeTipInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeReturnToHomeInformation.html">FlySafeReturnToHomeInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeNotification.html">FlySafeNotification</a>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
@@ -312,6 +322,8 @@
                                       </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraOpticalZoomSpec.html">OpticalZoomSpec</a>
                                       </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraHybridZoomSpec.html">HybridZoomSpec</a>
+                                      </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraPhotoIntervalParam.html">PhotoTimeIntervalSettings</a>
                                       </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraThermalProfile.html">ThermalProfile</a>
@@ -390,7 +402,7 @@
                     <ul class="sub-menu">
                             <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightWheel</a>
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
                                       </dd>
                                       <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareTransformationSwitch.html">TransformationSwitch</a>
                                       </dd>
@@ -582,6 +594,8 @@
                                                 </dd>
                                         </ul>
                                       </dd>
+                                      <dd><a href="../Missions/DJIWaypointMission_DJIWaypointMissionInterruption.html">WaypointMissionInterruption</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="../Missions/DJIWaypointMissionEvent.html">WaypointMissionEvent</a>
@@ -696,6 +710,10 @@
                   </dd>
                   <dd><a href="../../Utils/DJIWarningStatusItem.html">WarningStatusItem</a>
                   </dd>
+                  <dd><a href="../../Utils/DJIVideoSizeCalculatorUtil.html">VideoSizeCalculatorUtil</a>
+                  </dd>
+                  <dd><a href="../../Utils/DJILocationUtil.html">LocationUtil</a>
+                  </dd>
                   <dd><a data-href="../ParamCapability/DJIParamCapability.html" class="sub-toggle">DJIParamCapability<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../ParamCapability/DJIParamCapability_DJIParamCapabilityMinMax.html">DJIParamMinMaxCapability</a>
@@ -715,6 +733,8 @@
                             <dd><a href="../SDKError/DJIError_DJIAccessoryAggregationError.html">DJIAccessoryAggregationError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
                             </dd>
@@ -753,7 +773,7 @@
 <p><font color="#666"><code><a href="../../Components/KeyManager/DJIPayloadKey.html#djipayloadkey">PayloadKey</a></code> provides dedicated access to Flight  controller attributes.</font></p>
 <h5 id="inherited-methods">Inherited Methods:</h5>
 <h5 id="class-keys">Class Keys:</h5>
-<html><table class="key_table"><tr><td colspan="2"><a href="#payloadkey_send_data_to_payload_key"></a><p class="key_table_key_string key_table_key_first_row">SEND_DATA_TO_PAYLOAD</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>byte[]</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_connection_key"></a><p class="key_table_key_string key_table_key_row">CONNECTION</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_get_widgets_key"></a><p class="key_table_key_string key_table_key_row">GET_WIDGETS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>[]</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_get_widget_key"></a><p class="key_table_key_string key_table_key_row">GET_WIDGET</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_get_data_from_payload_key"></a><p class="key_table_key_string key_table_key_row">GET_DATA_FROM_PAYLOAD</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>byte[]</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_get_upstream_bandwidth_key"></a><p class="key_table_key_string key_table_key_row">GET_UPSTREAM_BANDWIDTH</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_configure_widget_value_key"></a><p class="key_table_key_string key_table_key_row">CONFIGURE_WIDGET_VALUE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_payload_product_name_key"></a><p class="key_table_key_string key_table_key_row">PAYLOAD_PRODUCT_NAME</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>String</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_hint_message_key"></a><p class="key_table_key_string key_table_key_row">HINT_MESSAGE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>String</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td></table></html>
+<html><table class="key_table"><tr><td colspan="2"><a href="#payloadkey_firmware_version_key"></a><p class="key_table_key_string key_table_key_first_row">FIRMWARE_VERSION</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>String</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_send_data_to_payload_key"></a><p class="key_table_key_string key_table_key_row">SEND_DATA_TO_PAYLOAD</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>byte[]</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_connection_key"></a><p class="key_table_key_string key_table_key_row">CONNECTION</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_get_widgets_key"></a><p class="key_table_key_string key_table_key_row">GET_WIDGETS</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>[]</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_get_widget_key"></a><p class="key_table_key_string key_table_key_row">GET_WIDGET</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_get_data_from_payload_key"></a><p class="key_table_key_string key_table_key_row">GET_DATA_FROM_PAYLOAD</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>byte[]</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_get_upstream_bandwidth_key"></a><p class="key_table_key_string key_table_key_row">GET_UPSTREAM_BANDWIDTH</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">GET</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Float</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_configure_widget_value_key"></a><p class="key_table_key_string key_table_key_row">CONFIGURE_WIDGET_VALUE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">ACTION</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>-</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_payload_product_name_key"></a><p class="key_table_key_string key_table_key_row">PAYLOAD_PRODUCT_NAME</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>String</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#payloadkey_hint_message_key"></a><p class="key_table_key_string key_table_key_row">HINT_MESSAGE</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">PUSH</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>String</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td></table></html>
 
         </div>
       </div>
@@ -762,7 +782,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title"> Search Mobile SDK Document
+            <h2 class="title">Search Mobile SDK Document
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>

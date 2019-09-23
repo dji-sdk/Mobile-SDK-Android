@@ -1,10 +1,12 @@
 package com.dji.sdk.sample.internal.model;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
+
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
+
 import com.dji.sdk.sample.internal.view.PresentableView;
-import java.util.ArrayList;
 
 /**
  * List item that has no children.
@@ -14,7 +16,8 @@ import java.util.ArrayList;
 
 public class SingleItem extends GroupHeader {
 
-    private final @NonNull Class<? extends PresentableView> linkedViewClass;
+    private final @NonNull
+    Class<? extends PresentableView> linkedViewClass;
 
     public SingleItem(@StringRes int titleStringId, @NonNull Class<? extends PresentableView> linkedViewClass) {
         super(titleStringId, new GroupItem[1]);

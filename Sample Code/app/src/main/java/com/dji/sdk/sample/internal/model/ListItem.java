@@ -1,8 +1,11 @@
 package com.dji.sdk.sample.internal.model;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
+
 import com.dji.sdk.sample.internal.view.PresentableView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +13,8 @@ import java.util.List;
  * A list item
  */
 public abstract class ListItem {
-    private @StringRes int titleStringId;
+    private @StringRes
+    int titleStringId;
 
     public ListItem(@StringRes int titleStringId) {
         this.titleStringId = titleStringId;

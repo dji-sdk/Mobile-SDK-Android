@@ -2,13 +2,15 @@ package com.dji.sdk.sample.internal.view;
 
 import android.app.Service;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
+
 import com.dji.sdk.sample.R;
 
 /**

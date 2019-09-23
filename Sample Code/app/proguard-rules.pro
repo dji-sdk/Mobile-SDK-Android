@@ -9,6 +9,10 @@
 -dontwarn sun.**
 -dontwarn java.**
 -dontwarn com.amap.api.**
+-dontwarn com.here.**
+-dontwarn com.mapbox.**
+-dontwarn okhttp3.**
+-dontwarn retrofit2.**
 
 -keepclassmembers enum * {
     public static <methods>;
@@ -52,6 +56,8 @@
 
 -keep class com.secneo.** { *; }
 
+-keep class org.greenrobot.eventbus.**{*;}
+
 -keepclasseswithmembers,allowshrinking class * {
     native <methods>;
 }
@@ -60,7 +66,7 @@
 -keep class * implements com.google.gson.JsonSerializer
 -keep class * implements com.google.gson.JsonDeserializer
 
--keep class android.support.v7.widget.SearchView { *; }
+-keep class androidx.appcompat.widget.SearchView { *; }
 
 -keepclassmembers class * extends android.app.Service
 -keepclassmembers public class * extends android.view.View {
@@ -70,7 +76,7 @@
 -keepclassmembers class * extends android.app.Activity {
     public void *(android.view.View);
 }
--keep class android.support.** { *; }
+-keep class androidx.** { *; }
 -keep class android.media.** { *; }
 -keep class okio.** { *; }
 -keep class com.lmax.disruptor.** {

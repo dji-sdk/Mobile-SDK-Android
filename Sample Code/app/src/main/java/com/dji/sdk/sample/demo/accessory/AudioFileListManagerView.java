@@ -10,10 +10,6 @@ import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -24,16 +20,26 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.dji.sdk.sample.R;
-import com.dji.sdk.sample.internal.controller.DJISampleApplication;
-import com.dji.sdk.sample.internal.controller.MainActivity;
 import com.dji.sdk.sample.internal.audiohandler.AudioDecoder;
-import com.dji.sdk.sample.internal.utils.GeneralUtils;
 import com.dji.sdk.sample.internal.audiohandler.MediaRecorderHandler;
 import com.dji.sdk.sample.internal.audiohandler.MediaRecorderOptions;
+import com.dji.sdk.sample.internal.controller.DJISampleApplication;
+import com.dji.sdk.sample.internal.controller.MainActivity;
+import com.dji.sdk.sample.internal.utils.GeneralUtils;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import dji.common.accessory.SettingsDefinitions;
 import dji.common.accessory.SettingsDefinitions.SpeakerDataTransmissionState;
 import dji.common.accessory.SpeakerState;
@@ -45,8 +51,6 @@ import dji.sdk.accessory.speaker.TransmissionListener;
 import dji.sdk.media.AudioMediaFile;
 import dji.sdk.media.MediaManager;
 import dji.sdk.media.MediaManager.FileListState;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AudioFileListManagerView extends LinearLayout implements View.OnClickListener, PresentableView {
 

@@ -1,6 +1,7 @@
 package com.dji.sdk.sample.internal.utils;
 
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 

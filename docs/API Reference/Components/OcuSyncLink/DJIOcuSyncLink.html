@@ -94,6 +94,16 @@
                             </dd>
                             <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">CustomUnlockZone</a>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyWarningInformation.html">FlySafeWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetySeriousWarningInformation.html">FlySafeSeriousWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyTip.html">FlySafeTipInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeReturnToHomeInformation.html">FlySafeReturnToHomeInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeNotification.html">FlySafeNotification</a>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">AppActivationManager</a>
@@ -312,6 +322,8 @@
                                       </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraOpticalZoomSpec.html">OpticalZoomSpec</a>
                                       </dd>
+                                      <dd><a href="../Camera/DJICamera_DJICameraHybridZoomSpec.html">HybridZoomSpec</a>
+                                      </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraPhotoIntervalParam.html">PhotoTimeIntervalSettings</a>
                                       </dd>
                                       <dd><a href="../Camera/DJICamera_DJICameraThermalProfile.html">ThermalProfile</a>
@@ -390,7 +402,7 @@
                     <ul class="sub-menu">
                             <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightWheel</a>
+                                      <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
                                       </dd>
                                       <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareTransformationSwitch.html">TransformationSwitch</a>
                                       </dd>
@@ -582,6 +594,8 @@
                                                 </dd>
                                         </ul>
                                       </dd>
+                                      <dd><a href="../Missions/DJIWaypointMission_DJIWaypointMissionInterruption.html">WaypointMissionInterruption</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="../Missions/DJIWaypointMissionEvent.html">WaypointMissionEvent</a>
@@ -696,6 +710,10 @@
                   </dd>
                   <dd><a href="../../Utils/DJIWarningStatusItem.html">WarningStatusItem</a>
                   </dd>
+                  <dd><a href="../../Utils/DJIVideoSizeCalculatorUtil.html">VideoSizeCalculatorUtil</a>
+                  </dd>
+                  <dd><a href="../../Utils/DJILocationUtil.html">LocationUtil</a>
+                  </dd>
                   <dd><a data-href="../ParamCapability/DJIParamCapability.html" class="sub-toggle">DJIParamCapability<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../ParamCapability/DJIParamCapability_DJIParamCapabilityMinMax.html">DJIParamMinMaxCapability</a>
@@ -715,6 +733,8 @@
                             <dd><a href="../SDKError/DJIError_DJIAccessoryAggregationError.html">DJIAccessoryAggregationError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
+                            </dd>
+                            <dd><a href="../SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
                             </dd>
@@ -797,104 +817,113 @@
 <p><font color="#666">Gets the channel selection mode.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;<a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_djilbairlinkchannelselectionmode">ChannelSelectionMode</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiocusynclink_setocusyncmagneticinterferencelevelcallback"><div class="api-col left">OcuSync Magnetic Interference</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_setocusyncmagneticinterferencelevelcallback_inline">setOcuSyncMagneticInterferenceLevelCallback</a></div></div><div class="inline-doc" id="djiocusynclink_setocusyncmagneticinterferencelevelcallback_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setOcuSyncMagneticInterferenceLevelCallback</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">setOcuSyncMagneticInterferenceLevelCallback</span><span class="params">(OcuSyncMagneticInterferenceLevel.Callback callback)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">Set the callback of <code><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_djiocusyncmagneticinterferencelevelcallbackinterface">Callback</a></code>.</font></p>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_djiocusyncmagneticinterferencelevel">OcuSyncMagneticInterferenceLevel</a>.Callback <font color="#000">callback</font></font></td><td><font color="#666"><i>Your implementation of <code><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_djiocusyncmagneticinterferencelevelcallbackinterface">Callback</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiocusynclink_setchannelbandwidth"><div class="api-col left">Channel Bandwidth</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_setchannelbandwidth_inline">setChannelBandwidth</a></div></div><div class="inline-doc" id="djiocusynclink_setchannelbandwidth_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setChannelBandwidth</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setChannelBandwidth</span><span class="params">(OcuSyncBandwidth bandwidth,</span></span></div><div class="line">                                   <span class="keyword">final</span> CompletionCallback callback)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_bandwidth_key">AirLinkKey.BANDWIDTH</a></font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666">Sets the channel bandwidth of the OcuSync link. It can be set only when the selection mode is  <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_djilbairlinkchannelselectionmode_manual">MANUAL</a></code>.</font></p>
-<h5 id="input-parameters-v6">Input Parameters:</h5>
+<h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_djiocusyncbandwidth">OcuSyncBandwidth</a> <font color="#000">bandwidth</font></font></td><td><font color="#666"><i>Bandwidth to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiocusynclink_getchannelbandwidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_getchannelbandwidth_inline">getChannelBandwidth</a></div></div><div class="inline-doc" id="djiocusynclink_getchannelbandwidth_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getChannelBandwidth</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getChannelBandwidth</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;OcuSyncBandwidth&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_bandwidth_key">AirLinkKey.BANDWIDTH</a></font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Gets the channel bandwidth of the OcuSync link.</font></p>
-<h5 id="input-parameters-v7">Input Parameters:</h5>
+<h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;<a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_djiocusyncbandwidth">OcuSyncBandwidth</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiocusynclink_setchannelnumber"><div class="api-col left">Channel Number</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_setchannelnumber_inline">setChannelNumber</a></div></div><div class="inline-doc" id="djiocusynclink_setchannelnumber_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setChannelNumber</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setChannelNumber</span><span class="params">(<span class="keyword">int</span> channelNumber, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_frequency_point_index_key">AirLinkKey.FREQUENCY_POINT_INDEX</a></font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Selects the channel number. The OcuSync link operates on a  10 MHz or 20 MHz channel between 2400.5 MHz and 2482.5 MHz. The channel can be centered at 1 MHz steps within the  band. Therefore for a 10 MHz bandwidth, the OcuSync channel can be centered at 2405.5 MHz, 2406.5 MHz and every 1  MHz to 2477.5 MHz. For a 20 MHz bandwidth, channel center can be at 2410.5 MHz to 2472.5 MHz in 1 MHz steps. The  channel location within the band is specified using the Channel Number. Channel Number is defined as the integer  of 0.5 MHz less than the channel center frequency. E.g. Channel Number 2406 represents the 10 MHz channel centered  at 2406.5 MHz (this is only for the 10 MHz bandwidth as 20 MHz bandwidth channels start at 2410.5 MHz). Channel  Number 2450 represents the channel centered at 2450.5 MHz (of any bandwidth).  Use <code><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_getchannelnumbervalidrange">getChannelNumberValidRange</a></code> to check the valid Channel Numbers for a given bandwidth. Channel  Number can only be set when the channel selection mode is <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_djilbairlinkchannelselectionmode_manual">MANUAL</a></code>.</font></p>
-<h5 id="input-parameters-v8">Input Parameters:</h5>
+<h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">channelNumber</font></font></td><td><font color="#666"><i>Channel number to set OcuSync channel to.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion block that receives the setter result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiocusynclink_getchannelnumber"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_getchannelnumber_inline">getChannelNumber</a></div></div><div class="inline-doc" id="djiocusynclink_getchannelnumber_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getChannelNumber</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getChannelNumber</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Integer&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_frequency_point_index_key">AirLinkKey.FREQUENCY_POINT_INDEX</a></font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Gets the current OcuSync Link Channel Number. The OcuSync link operates on a 10 MHz or 20 MHz channel between  2400.5 MHz and 2482.5 MHz. The channel can be centered at 1 MHz steps within the band. Therefore for a 10 MHz  bandwidth, the OcuSync channel can be centered at 2405.5 MHz, 2406.5 MHz and every 1 MHz to 2477.5 MHz. For a  20 MHz bandwidth, channel center can be at 2410.5 MHz to 2472.5 MHz in 1 MHz steps. The channel location within  the band is specified using the Channel Number. Channel Number is defined as the integer of 0.5 MHz less than the  channel center frequency. E.g. Channel Number 2406 represents the 10 MHz channel centered at 2406.5 MHz (this is  only for the 10 MHz bandwidth as 20 MHz bandwidth channels start at 2410.5 MHz). Channel Number 2450 represents  the channel centered at 2450.5 MHz (of any bandwidth).</font></p>
-<h5 id="input-parameters-v9">Input Parameters:</h5>
+<h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Integer&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion block that receives the getter result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiocusynclink_getchannelnumbervalidrange"><div class="api-col left">Get Channel Number Valid Range</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_getchannelnumbervalidrange_inline">getChannelNumberValidRange</a></div></div><div class="inline-doc" id="djiocusynclink_getchannelnumbervalidrange_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getChannelNumberValidRange</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getChannelNumberValidRange</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Integer[]&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_frequency_point_index_valid_range_key">AirLinkKey.FREQUENCY_POINT_INDEX_VALID_RANGE</a></font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Gets the valid range of Channel Numbers. The OcuSync link operates on a 10 MHz or 20 MHz channel between  2400.5 MHz and 2482.5 MHz. The channel can be centered at 1 MHz steps within the band. Therefore for a 10 MHz  bandwidth, the OcuSync channel can be centered at 2405.5 MHz, 2406.5 MHz and every 1 MHz to 2477.5 MHz. For a  20 MHz bandwidth, channel center can be at 2410.5 MHz to 2472.5 MHz in 1 MHz steps. The channel location within  the band is specified using the Channel Number. Channel Number is defined as the integer of 0.5 MHz less than the  channel center frequency. E.g. Channel Number 2406 represents the 10 MHz channel centered at 2406.5 MHz (this is  only for the 10 MHz bandwidth as 20 MHz bandwidth channels start at 2410.5 MHz). Channel Number 2450 represents  the channel centered at 2450.5 MHz (of any bandwidth). This method should be used to confirm the Channel Number  to be set with <code><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_setchannelnumber">setChannelNumber</a></code> is valid.</font></p>
-<h5 id="input-parameters-v10">Input Parameters:</h5>
+<h5 id="input-parameters-v11">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Integer[]&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiocusynclink_getsupportedfrequencybandswithcompletion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_getsupportedfrequencybandswithcompletion_inline">getSupportedFrequencyBands</a></div></div><div class="inline-doc" id="djiocusynclink_getsupportedfrequencybandswithcompletion_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getSupportedFrequencyBands</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSupportedFrequencyBands</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;OcuSyncFrequencyBand[]&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_ocusync_supported_frequency_bands_key">AirLinkKey.OCUSYNC_SUPPORTED_FREQUENCY_BANDS</a></font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Gets the frequency bands supported by the product in the current area. It is supported by P4P V2 and Mavic 2 Series. For  Mavic Pro, only 2.4GHz is supported.</font></p>
-<h5 id="input-parameters-v11">Input Parameters:</h5>
+<h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;<a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_djiocusyncfrequencyband">OcuSyncFrequencyBand</a>[]&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiocusynclink_setfrequencyband"><div class="api-col left">Set Frequency Band</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_setfrequencyband_inline">setFrequencyBand</a></div></div><div class="inline-doc" id="djiocusynclink_setfrequencyband_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setFrequencyBand</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFrequencyBand</span><span class="params">(OcuSyncFrequencyBand frequencyBand, <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Sets the OcuSync air link frequency band. It is only supported by Phantom 4 Pro V2 and Mavic 2 Series. For Mavic Pro,  the frequency band is always 2.4 GHz.</font></p>
-<h5 id="input-parameters-v12">Input Parameters:</h5>
+<h5 id="input-parameters-v13">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_djiocusyncfrequencyband">OcuSyncFrequencyBand</a> <font color="#000">frequencyBand</font></font></td><td><font color="#666"><i>Frequency band to change to.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiocusynclink_getfrequencybandwithcompletion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_getfrequencybandwithcompletion_inline">getFrequencyBand</a></div></div><div class="inline-doc" id="djiocusynclink_getfrequencybandwithcompletion_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getFrequencyBand</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFrequencyBand</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;OcuSyncFrequencyBand&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">Gets the OcuSync air link frequency band. It is only supported by Phantom 4 Pro V2 and Mavic 2 Series. For Mavic Pro, the frequency band is always 2.4 GHz.</font></p>
-<h5 id="input-parameters-v13">Input Parameters:</h5>
+<h5 id="input-parameters-v14">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;<a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_djiocusyncfrequencyband">OcuSyncFrequencyBand</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiocusynclink_setbandwidthallocationforprimaryvideo"><div class="api-col left">Set Bandwidth Allocation</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_setbandwidthallocationforprimaryvideo_inline">setBandwidthAllocationForPrimaryVideo</a></div></div><div class="inline-doc" id="djiocusynclink_setbandwidthallocationforprimaryvideo_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setBandwidthAllocationForPrimaryVideo</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setBandwidthAllocationForPrimaryVideo</span><span class="params">(@FloatRange(from = <span class="number">0.0</span>f, to = <span class="number">1.0</span>f)</span> <span class="keyword">float</span> percent,</span></div><div class="line">                                                   @Nullable <span class="keyword">final</span> CommonCallbacks.CompletionCallback callback)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
-<p><font color="#666">Sets the percentage of the primary video bandwidth. The remaining percentage is dedicated to the secondary video. The primary source only can  be <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> or <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>.  The secondary source can be <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code>, <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>  and <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. It is only supported by M200 series v2.</font></p>
-<h5 id="input-parameters-v14">Input Parameters:</h5>
+<h5 id="description-v16">Description:</h5>
+<p><font color="#666">Sets the percentage of the primary video bandwidth. The remaining percentage is dedicated to the secondary video. The primary source can only be <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> or <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>.  The secondary source can be <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code>, <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>  and <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. It is only supported by M200 series v2.</font></p>
+<h5 id="input-parameters-v15">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@FloatRange(from = 0.0f, to = 1.0f) float <font color="#000">percent</font></font></td><td><font color="#666"><i>Percentage downlink bandwidth for the primary video feed.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiocusynclink_getbandwidthallocationforprimaryvideo"><div class="api-col left">Get Bandwidth Allocation</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_getbandwidthallocationforprimaryvideo_inline">getBandwidthAllocationForPrimaryVideo</a></div></div><div class="inline-doc" id="djiocusynclink_getbandwidthallocationforprimaryvideo_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getBandwidthAllocationForPrimaryVideo</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getBandwidthAllocationForPrimaryVideo</span><span class="params">(@NonNull <span class="keyword">final</span> CommonCallbacks.CompletionCallbackWith&lt;Float&gt; callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666">When a product has multiple main cameras, this method gets the percentage bandwidth allocation dedicated to the primary video. The remaining percentage is dedicated  to the secondary video. It is only supported by M200 series v2.</font></p>
-<h5 id="input-parameters-v15">Input Parameters:</h5>
+<h5 id="input-parameters-v16">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Float&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiocusynclink_assignsourcetoprimarychannel"><div class="api-col left">Assign Source</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_assignsourcetoprimarychannel_inline">assignSourceToPrimaryChannel</a></div></div><div class="inline-doc" id="djiocusynclink_assignsourcetoprimarychannel_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>assignSourceToPrimaryChannel</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">assignSourceToPrimaryChannel</span><span class="params">(PhysicalSource primarySource, PhysicalSource secondarySource, @Nullable <span class="keyword">final</span> CommonCallbacks.CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
-<p><font color="#666">Assign the primary video and the secondary video source. The primary video source can be <code>DJIVideoFeedPhysicalSourceLeftCamera</code> or <code>DJIVideoFeedPhysicalSourceRightCamera</code>.  The secondary video source can be <code>DJIVideoFeedPhysicalSourceLeftCamera</code>, <code>DJIVideoFeedPhysicalSourceRightCamera</code> and <code>DJIVideoFeedPhysicalSourceFPVCamera</code>. The  primary video source and the secondary video source can't be same at the same time. Only supported by M210 V2 series.</font></p>
-<h5 id="input-parameters-v16">Input Parameters:</h5>
+<h5 id="description-v18">Description:</h5>
+<p><font color="#666">Assign the primary video and the secondary video source. The primary video source can be <code>DJIVideoFeedPhysicalSourceLeftCamera</code> or <code>DJIVideoFeedPhysicalSourceRightCamera</code>.  The secondary video source can be <code>DJIVideoFeedPhysicalSourceLeftCamera</code>, <code>DJIVideoFeedPhysicalSourceRightCamera</code> and <code>DJIVideoFeedPhysicalSourceFPVCamera</code>. The  primary video source and the secondary video source can't be same at the same time. Only supported by M200 V2 series.</font></p>
+<h5 id="input-parameters-v17">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a> <font color="#000">primarySource</font></font></td><td><font color="#666"><i>The primary video source.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a> <font color="#000">secondarySource</font></font></td><td><font color="#666"><i>The secondary video source.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djiocusynclink_videodatarateupdatedcallbackinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_videodatarateupdatedcallbackinterface_inline">VideoDataRateCallback</a></div></div><div class="inline-doc" id="djiocusynclink_videodatarateupdatedcallbackinterface_inline" <blockquote="">
@@ -902,7 +931,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">VideoDataRateCallback</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">Updated data rate in Mbps for the wireless downlink (from aircraft to remote controller). This link transfers all information from aircraft to remote controller, which is predominantly video information.</font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
 <h4 id="callback-method">Callback Method</h4>
@@ -911,9 +940,9 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(<span class="keyword">float</span> newValue)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">Updated data rate in Mbps for the wireless downlink (from aircraft to remote controller). This link transfers  all information from aircraft to remote controller, which is predominantly video information.</font></p>
-<h5 id="input-parameters-v17">Input Parameters:</h5>
+<h5 id="input-parameters-v18">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">newValue</font></font></td><td><font color="#666"><i>The data rate of the downlink in Mbps.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djiocusynclink_receivedwarningmessagecallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_receivedwarningmessagecallbackinterface_inline">WarningMessagesCallback</a></div></div><div class="inline-doc" id="djiocusynclink_receivedwarningmessagecallbackinterface_inline" <blockquote="">
@@ -921,7 +950,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">WarningMessagesCallback</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">Updated OcuSync link warning messages. This delegate method is called only when there are new warning messages on  the OcuSync link (either uplink or downlink). If the array has no elements, then all previous warning messages are  no longer in effect.</font></p>
 <h5 id="interface-methods-v2">Interface Methods:</h5>
 <h4 id="callback-method-v2">Callback Method</h4>
@@ -930,9 +959,9 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(OcuSyncWarningMessage[] messages)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">Updated OcuSync link warning messages. This delegate method is called only when there are new warning messages  on the OcuSync link (either uplink or downlink). If the array has no elements, then all previous warning  messages are no longer in effect.</font></p>
-<h5 id="input-parameters-v18">Input Parameters:</h5>
+<h5 id="input-parameters-v19">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_djiocusyncwarningmessage">OcuSyncWarningMessage</a>[] <font color="#000">messages</font></font></td><td><font color="#666"><i>The array of <code><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_djiocusyncwarningmessage">OcuSyncWarningMessage</a></code> representation of the current Warning Messages.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djiocusynclink_frequencyinterferenceupdatedcallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_frequencyinterferenceupdatedcallbackinterface_inline">ChannelInterferenceCallback</a></div></div><div class="inline-doc" id="djiocusynclink_frequencyinterferenceupdatedcallbackinterface_inline" <blockquote="">
@@ -940,7 +969,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ChannelInterferenceCallback</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">Updated power for interference signals with frequencies in the 2.4 GHz (2400MHz to 2482 MHz) frequency band incident  on the remote controller. Note, measuring the interference reduces effective data rate as the radio is spending time  listening to frequencies outside of the communication channel. Interference measurements will only be made if  the <code><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_setfrequencyinterferenceupdatedcallback">setChannelInterferenceCallback</a></code> property in OcuSyncLink is assigned to a method that  implements this callback.</font></p>
 <h5 id="interface-methods-v3">Interface Methods:</h5>
 <h4 id="callback-method-v3">Callback Method</h4>
@@ -949,9 +978,9 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(FrequencyInterference[] rssis)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">Updated power for interference signals with frequencies in the 2.4 GHz (2400MHz to 2482 MHz) frequency band  incident on the remote controller. Note, measuring the interference reduces effective data rate as the radio  is spending time listening to frequencies outside of the communication channel.</font></p>
-<h5 id="input-parameters-v19">Input Parameters:</h5>
+<h5 id="input-parameters-v20">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/OcuSyncLink/DJIOcuSyncLink_DJIOcuSyncFrequencyInterference.html#djiocusynclink_djiocusyncfrequencyinterference">FrequencyInterference</a>[] <font color="#000">rssis</font></font></td><td><font color="#666"><i>The updated interference information. The elements in the array  of <code><a href="../../Components/OcuSyncLink/DJIOcuSyncLink_DJIOcuSyncFrequencyInterference.html#djiocusynclink_djiocusyncfrequencyinterference">FrequencyInterference</a></code> objects each hold interference information about a small  part of the frequency band. Elements are sorted by increasing frequency.</i></font></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djiocusynclink_djiocusyncfrequencyinterference"><div class="api-col left">Information</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/OcuSyncLink/DJIOcuSyncLink_DJIOcuSyncFrequencyInterference.html">FrequencyInterference</a></div></div><div class="api-row" id="djiocusynclink_djiocusyncwarningmessage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_djiocusyncwarningmessage_inline">OcuSyncWarningMessage</a></div></div><div class="inline-doc" id="djiocusynclink_djiocusyncwarningmessage_inline" <blockquote="">
@@ -959,7 +988,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> OcuSyncWarningMessage</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_warning_messages_key">AirLinkKey.WARNING_MESSAGES</a></font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666">OcuSync link warning messages.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncwarningmessage_strongtakeoffinterference_inline"></a>STRONG_TAKE_OFF_INTERFERENCE</font></td><td><font color="#666">Warning that interference is high for take-off. When the signal gets weaker as separation between remote  controller and aircraft get larger, there is a change the link will fail.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncwarningmessage_strongdownlinkinterference_inline"></a>STRONG_DOWN_LINK_INTERFERENCE</font></td><td><font color="#666">There is strong interference on the downlink signal incident on the remote controller. If the channel selection  mode  <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_djilbairlinkchannelselectionmode_manual">MANUAL</a></code> is being used, consider changing to   <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink_djilbairlinkchannelselectionmode_auto">AUTO</a></code> as the OcuSync link can automatically select  Channel Numbers and bandwidth to mitigate interference on the fly.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncwarningmessage_stronguplinkinterference_inline"></a>STRONG_UP_LINK_INTERFERENCE</font></td><td><font color="#666">There is strong interference on the uplink signal incident on the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncwarningmessage_weaksignal_inline"></a>WEAK_SIGNAL</font></td><td><font color="#666">Weak OcuSync signal strength. Be aware of anything blocking the signal between the remote controller and aircraft,  adjust the orientation of the antennas on the remote controller, or reduce the distance between remote controller  and aircraft to increase signal strength.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncwarningmessage_aircraftlinkreboot_inline"></a>AIRCRAFT_LINK_REBOOT</font></td><td><font color="#666">The OcuSync link on the aircraft is rebooting.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncwarningmessage_uplinkbroken_inline"></a>UP_LINK_BROKEN</font></td><td><font color="#666">The uplink from the remote controller to the aircraft is broken. Usually if only the uplink disconnects, it is due  to interference on the aircraft's OcuSync antennas. Try changing the channel number if the interference source  cannot be removed.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncwarningmessage_downlinkbroken_inline"></a>DOWN_LINK_BROKEN</font></td><td><font color="#666">The downlink from the aircraft to the remote controller is broken. Usually if only the downlink disconnects, it is  due to interference on the remote controller's OcuSync antennas. Try changing channel number, or reducing the  bandwidth of the channel to make it more robust.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncwarningmessage_linkunusable_inline"></a>LINK_UNUSABLE</font></td><td><font color="#666">The link between the remote controller and the aircraft is unusable. It is determined to be unusable if signal is  too weak. Check to see if the antennas are setup correctly and the path from remote controller to aircraft is  unobstructed.</font></td></tr></table></html>
@@ -970,7 +999,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> OcuSyncFrequencyBand</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_ocusync_frequency_band_key">AirLinkKey.OCUSYNC_FREQUENCY_BAND</a>, <a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_ocusync_supported_frequency_bands_key">AirLinkKey.OCUSYNC_SUPPORTED_FREQUENCY_BANDS</a></font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666">The frequency bands for OcuSync.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncfrequencyband_2dot4ghz_inline"></a>FREQUENCY_BAND_2_DOT_4_GHZ</font></td><td><font color="#666">The Frequency band is 2.4 GHz.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncfrequencyband_5dot8ghz_inline"></a>FREQUENCY_BAND_5_DOT_8_GHZ</font></td><td><font color="#666">The Frequency band is 5.8 GHz.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncfrequencyband_dual_inline"></a>FREQUENCY_BAND_DUAL</font></td><td><font color="#666">Dual frequency band mode. The frequency band can be either 2.4 GHz or 5 GHz.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncfrequencyband_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
@@ -981,11 +1010,42 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> OcuSyncBandwidth</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_bandwidth_key">AirLinkKey.BANDWIDTH</a></font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666">The channel bandwidth for the OcuSync downlink (from the aircraft to the remote controller). Setting a smaller  bandwidth will reduce the data rate, but make the connection more robust.</font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncbandwidth_20mhz_inline"></a>Bandwidth20MHz</font></td><td><font color="#666">The frequency band of the OcuSync link is 20 MHz (up to 46 Mbps).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncbandwidth_10mhz_inline"></a>Bandwidth10MHz</font></td><td><font color="#666">The frequency band of the OcuSync link is 10 MHz (up to 23 Mbps).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncbandwidth_unknown_inline"></a>Unknown</font></td><td><font color="#666">Unknown frequency band.</font></td></tr></table></html>
 <h5 id="class-members-v4">Class Members:</h5>
+</div>
+<div class="api-row" id="djiocusynclink_djiocusyncmagneticinterferencelevel"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_djiocusyncmagneticinterferencelevel_inline">OcuSyncMagneticInterferenceLevel</a></div></div><div class="inline-doc" id="djiocusynclink_djiocusyncmagneticinterferencelevel_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>OcuSyncMagneticInterferenceLevel</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> OcuSyncMagneticInterferenceLevel</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr></table></html>
+<h5 id="description-v28">Description:</h5>
+<p><font color="#666">OcuSync link magnetic interference level.</font></p>
+<h5 id="enum-members-v4">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncmagneticinterferencelevel_none_inline"></a>NONE</font></td><td><font color="#666">There is no detected Ocusync link magnetic interference.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncmagneticinterferencelevel_low_inline"></a>LOW</font></td><td><font color="#666">There is a low level of detected Ocusync link magnetic interference.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncmagneticinterferencelevel_medium_inline"></a>MEDIUM</font></td><td><font color="#666">There is a medium level of detected Ocusync link magnetic interference.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncmagneticinterferencelevel_high_inline"></a>HIGH</font></td><td><font color="#666">There is a high level of detected Ocusync link magnetic interference.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiocusynclink_djiocusyncmagneticinterferencelevel_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The level of the detected OcuSync link magnetic interference is currently unknown.</font></td></tr></table></html>
+<h5 id="class-members-v5">Class Members:</h5>
+<h5 id="related-v2">Related:</h5>
+<div class="api-row" id="djiocusynclink_djiocusyncmagneticinterferencelevelcallbackinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_djiocusyncmagneticinterferencelevelcallbackinterface_inline">Callback</a></div></div><div class="inline-doc" id="djiocusynclink_djiocusyncmagneticinterferencelevelcallbackinterface_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">interface </font>Callback</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Callback</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr></table></html>
+<h5 id="description-v29">Description:</h5>
+<p><font color="#666">Callback interface for OcuSyncMagneticInterferenceLevel.</font></p>
+<h5 id="interface-methods-v4">Interface Methods:</h5>
+<h4 id="callback-method-v4">Callback Method</h4>
+<div class="api-row" id="djiocusynclink_djiocusyncmagneticinterferencelevel_onupdatecallback"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiocusynclink_djiocusyncmagneticinterferencelevel_onupdatecallback_inline">onUpdate</a></div></div><div class="inline-doc" id="djiocusynclink_djiocusyncmagneticinterferencelevel_onupdatecallback_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>onUpdate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(OcuSyncMagneticInterferenceLevel level)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr></table></html>
+<h5 id="description-v30">Description:</h5>
+<p><font color="#666">Updates the OcuSync Signal Quality. It is only supported by Mavic Pro, Mavic 2 Series.</font></p>
+<h5 id="input-parameters-v21">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink_djiocusyncmagneticinterferencelevel">OcuSyncMagneticInterferenceLevel</a> <font color="#000">level</font></font></td><td><font color="#666"><i>The level of ocu magnetic interference level.</i></font></td></tr></table></html></div>
+</div>
 </div>
 
         </div>
@@ -995,7 +1055,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title"> Search Mobile SDK Document
+            <h2 class="title">Search Mobile SDK Document
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>

@@ -1,36 +1,40 @@
 package com.dji.sdk.sample.demo.flightcontroller;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import dji.common.error.DJIError;
 import dji.common.error.DJIFlightHubError;
 import dji.common.util.CommonCallbacks;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.flighthub.FlightHubManager;
 import dji.sdk.flighthub.UploadState;
-import dji.sdk.flighthub.model.OnlineDevice;
 import dji.sdk.flighthub.model.FlightPathNode;
 import dji.sdk.flighthub.model.HistoricalFlight;
 import dji.sdk.flighthub.model.LiveStream;
+import dji.sdk.flighthub.model.OnlineDevice;
 import dji.sdk.flighthub.model.RealTimeFlightData;
 import dji.sdk.flighthub.model.Team;
 import dji.sdk.flighthub.model.UpStream;
 import dji.sdk.products.Aircraft;
 import dji.sdk.sdkmanager.DJISDKManager;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 /**
  * View that shows how to use the FlightHub feature. In order to access the FlightHub features, the user must first

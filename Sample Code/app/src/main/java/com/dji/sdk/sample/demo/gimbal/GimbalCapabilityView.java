@@ -2,7 +2,6 @@ package com.dji.sdk.sample.demo.gimbal;
 
 import android.app.Service;
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,6 +9,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
@@ -20,10 +21,10 @@ import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.utils.VideoFeedView;
 import com.dji.sdk.sample.internal.view.PresentableView;
 
-import dji.common.airlink.PhysicalSource;
 import java.util.ArrayList;
 import java.util.List;
 
+import dji.common.airlink.PhysicalSource;
 import dji.common.error.DJIError;
 import dji.common.gimbal.CapabilityKey;
 import dji.common.gimbal.GimbalMode;
