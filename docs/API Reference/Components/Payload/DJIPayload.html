@@ -1,12 +1,16 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
   <title>DJI Mobile SDK Documentation
-  </title><link rel="stylesheet" href="../../stylesheets/doc-vendor.css"><link rel="stylesheet" href="../../stylesheets/doc-app.css">
-</head>
+  </title>
+<link rel="stylesheet" href="../../stylesheets/doc-vendor.css">
+
+<link rel="stylesheet" href="../../stylesheets/doc-app.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
@@ -117,6 +121,12 @@
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
+                  </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">UTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">UTMISSParam</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">FlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -402,6 +412,10 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">RemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
+                            </dd>
                             <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
@@ -461,10 +475,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">MultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -736,6 +746,8 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
                             </dd>
+                            <dd><a href="../SDKError/DJIError_DJIUTMISSError.html">DJIUTMISSError</a>
+                            </dd>
                             <dd><a href="../SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
@@ -768,247 +780,272 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>Payload</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Payload</span> <span class="keyword">extends</span> <span class="title">BaseComponent</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code></font></td></tr></table></html>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>Payload</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Payload</span> <span class="keyword">extends</span> <span class="title">BaseComponent</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr><tr valign="top"><td width=15%><font color="#999"><i>Inherits From:</i></td><td width=85%><font color="#999"><code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">Class used to interact with the payload device mounted on DJI aircraft.</font></p>
+<p><font color="#666">Class used to interact with the payload device mounted on DJI aircraft.</p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djipayload_getupstreambandwidth"><div class="api-col left">Upstream Bandwidth</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getupstreambandwidth_inline">getUpstreamBandwidth</a></div></div><div class="inline-doc" id="djipayload_getupstreambandwidth_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getUpstreamBandwidth</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getUpstreamBandwidth</span><span class="params">(<span class="keyword">final</span> CommonCallbacks.CompletionCallbackWith&lt;Float&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<div class="api-row" id="djipayload_getupstreambandwidth"><div class="api-col left">Upstream Bandwidth</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getupstreambandwidth_inline">getUpstreamBandwidth</a></div></div><div class="inline-doc" id="djipayload_getupstreambandwidth_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getUpstreamBandwidth</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getUpstreamBandwidth</span><span class="params">(<span class="keyword">final</span> CommonCallbacks.CompletionCallbackWith&lt;Float&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">Gets the bandwidth of the upstream (from Mobile SDK to Payload). The unit is bytes/s.  The bandwidth is determined by the firmware and currently it is not larger than 500 bytes/s.</font></p>
+<p><font color="#666">Gets the bandwidth of the upstream (from Mobile SDK to Payload). The unit is bytes/s.  The bandwidth is determined by the firmware and currently it is not larger than 500 bytes/s.</p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Float&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_getpayloadproductname"><div class="api-col left">Product Name</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getpayloadproductname_inline">getPayloadProductName</a></div></div><div class="inline-doc" id="djipayload_getpayloadproductname_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getPayloadProductName</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">String <span class="title">getPayloadProductName</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;Float&gt; <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned value(s).</i></td></tr></table></html></div>
+<div class="api-row" id="djipayload_getpayloadproductname"><div class="api-col left">Product Name</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getpayloadproductname_inline">getPayloadProductName</a></div></div><div class="inline-doc" id="djipayload_getpayloadproductname_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getPayloadProductName</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getPayloadProductName</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">Gets the product name defined by the manufacturer of the payload device.</font></p>
+<p><font color="#666">Gets the product name defined by the manufacturer of the payload device.</p>
 <h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>The product name of the payload device.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_configurewidgetvalue"><div class="api-col left">Widget Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_configurewidgetvalue_inline">configureWidgetValue</a></div></div><div class="inline-doc" id="djipayload_configurewidgetvalue_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>configureWidgetValue</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">configureWidgetValue</span><span class="params">(<span class="keyword">int</span> index, PayloadWidget.PayloadWidgetType type, <span class="keyword">int</span> value, CommonCallbacks.CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>The product name of the payload device.</i></td></tr></table></html></div>
+<div class="api-row" id="djipayload_configurewidgetvalue"><div class="api-col left">Widget Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_configurewidgetvalue_inline">configureWidgetValue</a></div></div><div class="inline-doc" id="djipayload_configurewidgetvalue_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>configureWidgetValue</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">configureWidgetValue</span><span class="params">(<span class="keyword">int</span> index, PayloadWidget.PayloadWidgetType type, <span class="keyword">int</span> value, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Set the value for a widget of the payload device.</font></p>
+<p><font color="#666">Set the value for a widget of the payload device.</p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</font></font></td><td><font color="#666"><i>Index of the widget.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>.<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a> <font color="#000">type</font></font></td><td><font color="#666"><i>Type of the widget.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">value</font></font></td><td><font color="#666"><i>Value of the widget.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_getwidget"><div class="api-col left">Get Widget</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getwidget_inline">getWidget</a></div></div><div class="inline-doc" id="djipayload_getwidget_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getWidget</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">PayloadWidget <span class="title">getWidget</span><span class="params">(<span class="keyword">int</span> widgetIndex, PayloadWidget.PayloadWidgetType widgetType)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</td><td><font color="#666"><i>Index of the widget.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>.<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a> <font color="#000">type</td><td><font color="#666"><i>Type of the widget.</i></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">value</td><td><font color="#666"><i>Value of the widget.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned value(s).</i></td></tr></table></html></div>
+<div class="api-row" id="djipayload_getwidget"><div class="api-col left">Get Widget</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getwidget_inline">getWidget</a></div></div><div class="inline-doc" id="djipayload_getwidget_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getWidget</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">PayloadWidget <span class="title">getWidget</span><span class="params">(<span class="keyword">int</span> widgetIndex, PayloadWidget.PayloadWidgetType widgetType)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Gets a widget by specifying the widget type and the index.</font></p>
+<p><font color="#666">Gets a widget by specifying the widget type and the index.</p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">widgetIndex</font></font></td><td><font color="#666"><i>The index of the widget.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>.<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a> <font color="#000">widgetType</font></font></td><td><font color="#666"><i>The type of the widget.</i></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">widgetIndex</td><td><font color="#666"><i>The index of the widget.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>.<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a> <font color="#000">widgetType</td><td><font color="#666"><i>The type of the widget.</i></td></tr></table></html>
 <h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a></font></td><td><font color="#666"><i>The widget corresponding to the widget type and the index. <code>null</code> if the widgets are not ready or there is no widget corresponding  to the widget type and the index.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_getwidgets"><div class="api-col left">Get Widgets</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getwidgets_inline">getWidgets</a></div></div><div class="inline-doc" id="djipayload_getwidgets_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getWidgets</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">PayloadWidget[] getWidgets()</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a></td><td><font color="#666"><i>The widget corresponding to the widget type and the index. <code>null</code> if the widgets are not ready or there is no widget corresponding  to the widget type and the index.</i></td></tr></table></html></div>
+<div class="api-row" id="djipayload_getwidgets"><div class="api-col left">Get Widgets</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getwidgets_inline">getWidgets</a></div></div><div class="inline-doc" id="djipayload_getwidgets_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getWidgets</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PayloadWidget[] getWidgets()</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">Gets the full list of widgets on the payload device. A new instance of &quot;NSArray&quot; is returned when one of the widget is updated.</font></p>
+<p><font color="#666">Gets the full list of widgets on the payload device. A new instance of &quot;NSArray&quot; is returned when one of the widget is updated.</p>
 <h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>[]</font></td><td><font color="#666"><i>The full list of widgets. <code>null</code> if the widgets are not fetched yet.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_senddatatopayload"><div class="api-col left">Send Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_senddatatopayload_inline">sendDataToPayload</a></div></div><div class="inline-doc" id="djipayload_senddatatopayload_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>sendDataToPayload</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendDataToPayload</span><span class="params">(<span class="keyword">byte</span>[] data, CommonCallbacks.CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>[]</td><td><font color="#666"><i>The full list of widgets. <code>null</code> if the widgets are not fetched yet.</i></td></tr></table></html></div>
+<div class="api-row" id="djipayload_senddatatopayload"><div class="api-col left">Send Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_senddatatopayload_inline">sendDataToPayload</a></div></div><div class="inline-doc" id="djipayload_senddatatopayload_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>sendDataToPayload</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendDataToPayload</span><span class="params">(<span class="keyword">byte</span>[] data, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">Sends data to payload. <br> - The length of the data to send cannot exceed 32 bytes for Matrice 200 series. <br> - The length of the  data to send cannot exceed 128 bytes for Matrice 200 V2 series. The throughput cannot exceed the bandwidth returned by <code><a href="../../Components/Payload/DJIPayload.html#djipayload_getupstreambandwidth">getUpstreamBandwidth</a></code>.</font></p>
+<p><font color="#666">Sends data to payload. <br> - The length of the data to send cannot exceed 32 bytes for Matrice 200 series. <br> - The length of the  data to send cannot exceed 128 bytes for Matrice 200 V2 series. The throughput cannot exceed the bandwidth returned by <code><a href="../../Components/Payload/DJIPayload.html#djipayload_getupstreambandwidth">getUpstreamBandwidth</a></code>.</p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">data</font></font></td><td><font color="#666"><i>Data that will be sent to the payload device.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_addwidgetvaluechangedcallback"><div class="api-col left">Add Callback</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_addwidgetvaluechangedcallback_inline">addWidgetValueChangedCallback</a></div></div><div class="inline-doc" id="djipayload_addwidgetvaluechangedcallback_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>addWidgetValueChangedCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addWidgetValueChangedCallback</span><span class="params">(<span class="keyword">int</span> index, PayloadWidget.PayloadWidgetType type,WidgetValueChangedCallback callback )</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">data</td><td><font color="#666"><i>Data that will be sent to the payload device.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned value(s).</i></td></tr></table></html></div>
+<div class="api-row" id="djipayload_addwidgetvaluechangedcallback"><div class="api-col left">Add Callback</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_addwidgetvaluechangedcallback_inline">addWidgetValueChangedCallback</a></div></div><div class="inline-doc" id="djipayload_addwidgetvaluechangedcallback_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>addWidgetValueChangedCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addWidgetValueChangedCallback</span><span class="params">(<span class="keyword">int</span> index, PayloadWidget.PayloadWidgetType type,WidgetValueChangedCallback callback )</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Set a callback for the specific widget, if the value of the widget is changed, the callback will be called.</font></p>
+<p><font color="#666">Set a callback for the specific widget, if the value of the widget is changed, the callback will be called.</p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</font></font></td><td><font color="#666"><i>The index of the widget.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>.<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a> <font color="#000">type</font></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_removewidgetvaluechangedcallbackwithindexandtype"><div class="api-col left">Remove Callback</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_removewidgetvaluechangedcallbackwithindexandtype_inline">removeWidgetValueChangedCallback</a></div></div><div class="inline-doc" id="djipayload_removewidgetvaluechangedcallbackwithindexandtype_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>removeWidgetValueChangedCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeWidgetValueChangedCallback</span><span class="params">(<span class="keyword">int</span> index, PayloadWidget.PayloadWidgetType type, WidgetValueChangedCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</td><td><font color="#666"><i>The index of the widget.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>.<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a> <font color="#000">type</td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a></code>.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djipayload_removewidgetvaluechangedcallbackwithindexandtype"><div class="api-col left">Remove Callback</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_removewidgetvaluechangedcallbackwithindexandtype_inline">removeWidgetValueChangedCallback</a></div></div><div class="inline-doc" id="djipayload_removewidgetvaluechangedcallbackwithindexandtype_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>removeWidgetValueChangedCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeWidgetValueChangedCallback</span><span class="params">(<span class="keyword">int</span> index, PayloadWidget.PayloadWidgetType type, WidgetValueChangedCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">Remove a callback for the widget.</font></p>
+<p><font color="#666">Remove a callback for the widget.</p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</font></font></td><td><font color="#666"><i>The index of the widget.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>.<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a> <font color="#000">type</font></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_removewidgetvaluechangedcallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_removewidgetvaluechangedcallback_inline">removeWidgetValueChangedCallback</a></div></div><div class="inline-doc" id="djipayload_removewidgetvaluechangedcallback_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>removeWidgetValueChangedCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeWidgetValueChangedCallback</span><span class="params">(WidgetValueChangedCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</td><td><font color="#666"><i>The index of the widget.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>.<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a> <font color="#000">type</td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a></code>.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djipayload_removewidgetvaluechangedcallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_removewidgetvaluechangedcallback_inline">removeWidgetValueChangedCallback</a></div></div><div class="inline-doc" id="djipayload_removewidgetvaluechangedcallback_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>removeWidgetValueChangedCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeWidgetValueChangedCallback</span><span class="params">(WidgetValueChangedCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Remove a callback for the widget.</font></p>
+<p><font color="#666">Remove a callback for the widget.</p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a></code>.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_widgetvaluechangedcallbackinterface">WidgetValueChangedCallback</a></code>.</i></td></tr></table></html></div>
 <h4 id="state-updates">State Updates</h4>
-<div class="api-row" id="djipayload_setmessagecallback"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setmessagecallback_inline">setMessageCallback</a></div></div><div class="inline-doc" id="djipayload_setmessagecallback_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setMessageCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMessageCallback</span><span class="params">(HintMessageCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<div class="api-row" id="djipayload_setmessagecallback"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setmessagecallback_inline">setMessageCallback</a></div></div><div class="inline-doc" id="djipayload_setmessagecallback_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setMessageCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMessageCallback</span><span class="params">(HintMessageCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">Set the message callback, message is a string, the content of string is determined by firmware,  it could be changed dynamically.</font></p>
+<p><font color="#666">Set the message callback, message is a string, the content of string is determined by firmware,  it could be changed dynamically.</p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_hintmessagecallbackinterface">HintMessageCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_hintmessagecallbackinterface">HintMessageCallback</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_setcommanddatacallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setcommanddatacallback_inline">setCommandDataCallback</a></div></div><div class="inline-doc" id="djipayload_setcommanddatacallback_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setCommandDataCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCommandDataCallback</span><span class="params">(CommandDataCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_hintmessagecallbackinterface">HintMessageCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_hintmessagecallbackinterface">HintMessageCallback</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djipayload_setcommanddatacallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setcommanddatacallback_inline">setCommandDataCallback</a></div></div><div class="inline-doc" id="djipayload_setcommanddatacallback_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setCommandDataCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCommandDataCallback</span><span class="params">(CommandDataCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666">Set the command data callback, the command date typically send by payload in UART/CAN channel, the max bandwidth  of this channel is 3KBytes/s on M200</font></p>
+<p><font color="#666">Set the command data callback, the command date typically send by payload in UART/CAN channel, the max bandwidth  of this channel is 3KBytes/s on M200</p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_commanddatacallbackinterface">CommandDataCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_commanddatacallbackinterface">CommandDataCallback</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_setstreamdatacallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setstreamdatacallback_inline">setStreamDataCallback</a></div></div><div class="inline-doc" id="djipayload_setstreamdatacallback_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setStreamDataCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStreamDataCallback</span><span class="params">(StreamDataCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_commanddatacallbackinterface">CommandDataCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_commanddatacallbackinterface">CommandDataCallback</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djipayload_setstreamdatacallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setstreamdatacallback_inline">setStreamDataCallback</a></div></div><div class="inline-doc" id="djipayload_setstreamdatacallback_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setStreamDataCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStreamDataCallback</span><span class="params">(StreamDataCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">Set the UDP data callback, this callback is for receiving the Non-Video data in UDP channel, the max bandwidth of  this channel is 8Mbps in M200, 4Mbps in M210.</font></p>
+<p><font color="#666">Set the UDP data callback, this callback is for receiving the Non-Video data in UDP channel, the max bandwidth of  this channel is 8Mbps in M200, 4Mbps in M210.</p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_streamdatacallbackinterface">StreamDataCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_streamdatacallbackinterface">StreamDataCallback</a></code>.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_streamdatacallbackinterface">StreamDataCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The interface of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_streamdatacallbackinterface">StreamDataCallback</a></code>.</i></td></tr></table></html></div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djipayload_payloadwidget"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html">PayloadWidget</a></div></div><div class="api-row" id="djipayload_hintmessagecallbackinterface"><div class="api-col left">Callbacks</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djipayload_hintmessagecallbackinterface_inline">HintMessageCallback</a></div></div><div class="inline-doc" id="djipayload_hintmessagecallbackinterface_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>HintMessageCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">HintMessageCallback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<div class="api-row" id="djipayload_payloadwidget"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html">PayloadWidget</a></div></div><div class="api-row" id="djipayload_hintmessagecallbackinterface"><div class="api-col left">Callbacks</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djipayload_hintmessagecallbackinterface_inline">HintMessageCallback</a></div></div><div class="inline-doc" id="djipayload_hintmessagecallbackinterface_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>HintMessageCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">HintMessageCallback</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
-<p><font color="#666">This interface provides a callback to get messages sent from payload to the Mobile SDK.</font></p>
+<p><font color="#666">This interface provides a callback to get messages sent from payload to the Mobile SDK.</p>
 <h5 id="interface-methods">Interface Methods:</h5>
 <h4 id="callback-method">Callback Method</h4>
-<div class="api-row" id="djipayload_djipayloaddelegate_didreceivemessage"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivemessage_inline">onGetMessage</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivemessage_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onGetMessage</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onGetMessage</span><span class="params">(String str)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<div class="api-row" id="djipayload_djipayloaddelegate_didreceivemessage"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivemessage_inline">onGetMessage</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivemessage_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onGetMessage</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onGetMessage</span><span class="params">(String str)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">when the payload send some message string to the Mobile SDK, this method will be called.</font></p>
+<p><font color="#666">when the payload send some message string to the Mobile SDK, this method will be called.</p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">str</font></font></td><td><font color="#666"><i>Hint message string.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">str</td><td><font color="#666"><i>Hint message string.</i></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djipayload_commanddatacallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djipayload_commanddatacallbackinterface_inline">CommandDataCallback</a></div></div><div class="inline-doc" id="djipayload_commanddatacallbackinterface_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>CommandDataCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">CommandDataCallback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<div class="api-row" id="djipayload_commanddatacallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djipayload_commanddatacallbackinterface_inline">CommandDataCallback</a></div></div><div class="inline-doc" id="djipayload_commanddatacallbackinterface_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>CommandDataCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">CommandDataCallback</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
-<p><font color="#666">This interface provides a callback to get command data sent from payload to the Mobile SDK.</font></p>
+<p><font color="#666">This interface provides a callback to get command data sent from payload to the Mobile SDK.</p>
 <h5 id="interface-methods-v2">Interface Methods:</h5>
 <h4 id="callback-method-v2">Callback Method</h4>
-<div class="api-row" id="djipayload_djipayloaddelegate_didreceivecommanddata"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivecommanddata_inline">onGetCommandData</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivecommanddata_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onGetCommandData</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onGetCommandData</span><span class="params">(<span class="keyword">byte</span>[] data)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<div class="api-row" id="djipayload_djipayloaddelegate_didreceivecommanddata"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivecommanddata_inline">onGetCommandData</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivecommanddata_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onGetCommandData</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onGetCommandData</span><span class="params">(<span class="keyword">byte</span>[] data)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
-<p><font color="#666">When the payload send some command bytes to the Mobile SDK, this method will be called.</font></p>
+<p><font color="#666">When the payload send some command bytes to the Mobile SDK, this method will be called.</p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">data</font></font></td><td><font color="#666"><i>The received command data.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">data</td><td><font color="#666"><i>The received command data.</i></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djipayload_streamdatacallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djipayload_streamdatacallbackinterface_inline">StreamDataCallback</a></div></div><div class="inline-doc" id="djipayload_streamdatacallbackinterface_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>StreamDataCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">StreamDataCallback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<div class="api-row" id="djipayload_streamdatacallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djipayload_streamdatacallbackinterface_inline">StreamDataCallback</a></div></div><div class="inline-doc" id="djipayload_streamdatacallbackinterface_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>StreamDataCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">StreamDataCallback</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
-<p><font color="#666">This interface provides a callback to get stream data sent from payload to the Mobile SDK.</font></p>
+<p><font color="#666">This interface provides a callback to get stream data sent from payload to the Mobile SDK.</p>
 <h5 id="interface-methods-v3">Interface Methods:</h5>
 <h4 id="callback-method-v3">Callback Method</h4>
-<div class="api-row" id="djipayload_djipayloaddelegate_didreceivestreamdata"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivestreamdata_inline">onGetStreamData</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivestreamdata_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onGetStreamData</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onGetStreamData</span><span class="params">(<span class="keyword">byte</span>[] data, <span class="keyword">int</span> len)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<div class="api-row" id="djipayload_djipayloaddelegate_didreceivestreamdata"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivestreamdata_inline">onGetStreamData</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivestreamdata_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onGetStreamData</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onGetStreamData</span><span class="params">(<span class="keyword">byte</span>[] data, <span class="keyword">int</span> len)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
-<p><font color="#666">When the payload send the bytes to the Mobile SDK by UDP channel, this method will be called,  note that if dealing of the data block the data feeder, the byte might lost.</font></p>
+<p><font color="#666">When the payload send the bytes to the Mobile SDK by UDP channel, this method will be called,  note that if dealing of the data block the data feeder, the byte might lost.</p>
 <h5 id="input-parameters-v13">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">data</font></font></td><td><font color="#666"><i>The received stream data.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">len</font></font></td><td><font color="#666"><i>Valid length of the data.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">data</td><td><font color="#666"><i>The received stream data.</i></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">len</td><td><font color="#666"><i>Valid length of the data.</i></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djipayload_widgetvaluechangedcallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djipayload_widgetvaluechangedcallbackinterface_inline">WidgetValueChangedCallback</a></div></div><div class="inline-doc" id="djipayload_widgetvaluechangedcallbackinterface_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>WidgetValueChangedCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">WidgetValueChangedCallback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<div class="api-row" id="djipayload_widgetvaluechangedcallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djipayload_widgetvaluechangedcallbackinterface_inline">WidgetValueChangedCallback</a></div></div><div class="inline-doc" id="djipayload_widgetvaluechangedcallbackinterface_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>WidgetValueChangedCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">WidgetValueChangedCallback</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
-<p><font color="#666">This interface provides a callback to get value of the widget when changed.</font></p>
+<p><font color="#666">This interface provides a callback to get value of the widget when changed.</p>
 <h5 id="interface-methods-v4">Interface Methods:</h5>
 <h4 id="callback-method-v4">Callback Method</h4>
-<div class="api-row" id="djipayload_djipayloaddelegate_didupdatewidgets"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didupdatewidgets_inline">onWidgetValueChanged</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didupdatewidgets_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onWidgetValueChanged</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onWidgetValueChanged</span><span class="params">(PayloadWidget.PayloadWidgetType type, <span class="keyword">int</span> index, <span class="keyword">int</span> newValue)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
+<div class="api-row" id="djipayload_djipayloaddelegate_didupdatewidgets"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didupdatewidgets_inline">onWidgetValueChanged</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didupdatewidgets_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onWidgetValueChanged</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onWidgetValueChanged</span><span class="params">(PayloadWidget.PayloadWidgetType type, <span class="keyword">int</span> index, <span class="keyword">int</span> newValue)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.payload</td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
-<p><font color="#666">Called when the value of the widget is changed.</font></p>
+<p><font color="#666">Called when the value of the widget is changed.</p>
 <h5 id="input-parameters-v14">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>.<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a> <font color="#000">type</font></font></td><td><font color="#666"><i>The enum value of <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</font></font></td><td><font color="#666"><i>The index of the widget.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">newValue</font></font></td><td><font color="#666"><i>An int value.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">PayloadWidget</a>.<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a> <font color="#000">type</td><td><font color="#666"><i>The enum value of <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">PayloadWidgetType</a></code>.</i></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</td><td><font color="#666"><i>The index of the widget.</i></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">newValue</td><td><font color="#666"><i>An int value.</i></td></tr></table></html></div>
 </div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
-<div class="api-row" id="djibasecomponent_setdjicomponentlistener"><div class="api-col left">dji.sdk.base.BaseComponent</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_setdjicomponentlistener_inline">setComponentListener</a></div></div><div class="inline-doc" id="djibasecomponent_setdjicomponentlistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setComponentListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setComponentListener</span><span class="params">(ComponentListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<div class="api-row" id="djibasecomponent_setdjicomponentlistener"><div class="api-col left">dji.sdk.base.BaseComponent</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_setdjicomponentlistener_inline">setComponentListener</a></div></div><div class="inline-doc" id="djibasecomponent_setdjicomponentlistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setComponentListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setComponentListener</span><span class="params">(ComponentListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
-<p><font color="#666">Sets the listener for the DJI component.</font></p>
+<p><font color="#666">Sets the listener for the DJI component.</p>
 <h5 id="input-parameters-v15">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The callback of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_index"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_index_inline">getIndex</a></div></div><div class="inline-doc" id="djibasecomponent_index_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getIndex</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a> <font color="#000">listener</td><td><font color="#666"><i>The callback of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_index"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_index_inline">getIndex</a></div></div><div class="inline-doc" id="djibasecomponent_index_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getIndex</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
-<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210 and M210 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft.</font></p>
+<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210 and M210 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft.</p>
 <h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of index.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_connected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_connected_inline">isConnected</a></div></div><div class="inline-doc" id="djibasecomponent_connected_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>isConnected</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isConnected</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</td><td><font color="#666"><i>An int value of index.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_connected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_connected_inline">isConnected</a></div></div><div class="inline-doc" id="djibasecomponent_connected_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>isConnected</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isConnected</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
-<p><font color="#666"><code>true</code> if the component is connected.</font></p>
+<p><font color="#666"><code>true</code> if the component is connected.</p>
 <h5 id="return-v5">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the component is connected.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_getserialnumber"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getserialnumber_inline">getSerialNumber</a></div></div><div class="inline-doc" id="djibasecomponent_getserialnumber_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getSerialNumber</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSerialNumber</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i><code>true</code> if the component is connected.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_getserialnumber"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getserialnumber_inline">getSerialNumber</a></div></div><div class="inline-doc" id="djibasecomponent_getserialnumber_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getSerialNumber</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSerialNumber</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
-<p><font color="#666">Gets the serial number of the component. Depending on the component, this serial number might not match the serial number found  on the physical component.</font></p>
+<p><font color="#666">Gets the serial number of the component. Depending on the component, this serial number might not match the serial number found  on the physical component.</p>
 <h5 id="input-parameters-v16">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value returned.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_getfirmwareversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getfirmwareversion_inline">getFirmwareVersion</a></div></div><div class="inline-doc" id="djibasecomponent_getfirmwareversion_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getFirmwareVersion</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFirmwareVersion</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the value returned.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_getfirmwareversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getfirmwareversion_inline">getFirmwareVersion</a></div></div><div class="inline-doc" id="djibasecomponent_getfirmwareversion_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getFirmwareVersion</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFirmwareVersion</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v26">Description:</h5>
-<p><font color="#666">Returns the firmware version of the component. Each component will  have a different firmware version, the combination of which will  form the package firmware version <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_getfirmwarepackageversion">getFirmwarePackageVersion</a></code> found in <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</font></p>
+<p><font color="#666">Returns the firmware version of the component. Each component will  have a different firmware version, the combination of which will  form the package firmware version <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_getfirmwarepackageversion">getFirmwarePackageVersion</a></code> found in <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</p>
 <h5 id="input-parameters-v17">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></td></tr></table></html></div>
 
         </div>
       </div>

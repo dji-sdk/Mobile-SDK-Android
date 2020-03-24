@@ -1,0 +1,46 @@
+<html>
+<style>
+  table, th, td {
+     border: 1px solid rgb(200,200,200);
+     border-collapse: collapse;
+     }
+  table {
+     table-layout: fixed;
+     width: 1900px;
+     }
+  td {
+     overflow-x: auto;
+     }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    }
+  .comments {
+    color: #292;
+    }
+  .source-code {
+    color: #22F;
+    }
+  .interface-parent {
+    color: #AAA;
+    }
+  .interface-name {
+    color: #000;
+    }
+  .check-mark {
+    text-align: center;
+    }
+</style>
+<body>
+<br>
+
+<h1>DJI Mobile SDK 4.11 to 4.11.2 Differences</h1>
+
+<br>
+
+<h2>APIs added to 4.11.2</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">Parent and Name</font></td><td width=15%><font color="#000">Code</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.</span><span class="interface-name">DJIUTMISSError</span></td><td width=15%><span class="source-code">class DJIUTMISSError extends DJIError </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.DJIUTMISSError.</span><span class="interface-name">getDJIError</span></td><td width=15%><span class="source-code">static DJIError getDJIError(int errorCode) </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.DJIUTMISSError.</span><span class="interface-name">AREA_NOT_SUPPORTED</span></td><td width=15%><span class="source-code">static final DJIUTMISSError AREA_NOT_SUPPORTED = new DJIUTMISSError("Area is not supported!", -0xF0)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.DJIUTMISSError.</span><span class="interface-name">CACHE_FAILED</span></td><td width=15%><span class="source-code">static final DJIUTMISSError CACHE_FAILED = new DJIUTMISSError("Db insert failed!", -0x03)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.DJIUTMISSError.</span><span class="interface-name">EMPTY_DB</span></td><td width=15%><span class="source-code">static final DJIUTMISSError EMPTY_DB = new DJIUTMISSError("Db is empty!", -0x04)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.DJIUTMISSError.</span><span class="interface-name">INVALID_DB</span></td><td width=15%><span class="source-code">static final DJIUTMISSError INVALID_DB = new DJIUTMISSError("Db create failed!", -0x02)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.DJIUTMISSError.</span><span class="interface-name">UPLOAD_FAILED</span></td><td width=15%><span class="source-code">static final DJIUTMISSError UPLOAD_FAILED = new DJIUTMISSError("Upload failed!", -0x05)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.DJIUTMISSError.</span><span class="interface-name">ORDER_OF_FUNC</span></td><td width=15%><span class="source-code">static final DJIUTMISSError ORDER_OF_FUNC = new DJIUTMISSError("You need to call start first!",  -0x01)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.</span><span class="interface-name">UTMISSFlightDataUploadStatus</span></td><td width=15%><span class="source-code">enum UTMISSFlightDataUploadStatus </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSFlightDataUploadStatus.</span><span class="interface-name">CACHING</span></td><td width=15%><span class="source-code">    CACHING(0x2)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSFlightDataUploadStatus.</span><span class="interface-name">IDLE</span></td><td width=15%><span class="source-code">    IDLE(0x0)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSFlightDataUploadStatus.</span><span class="interface-name">OUT_OF_DATA_STORAGE_SPACE</span></td><td width=15%><span class="source-code">    OUT_OF_DATA_STORAGE_SPACE(0x3)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSFlightDataUploadStatus.</span><span class="interface-name">UNKNOWN</span></td><td width=15%><span class="source-code">    UNKNOWN(0xFFFF)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSFlightDataUploadStatus.</span><span class="interface-name">UPLOADING</span></td><td width=15%><span class="source-code">    UPLOADING(0x1)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.</span><span class="interface-name">UTMISSManager</span></td><td width=15%><span class="source-code">class UTMISSManager </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.</span><span class="interface-name">UTMISSParam</span></td><td width=15%><span class="source-code">class UTMISSParam </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSParam.</span><span class="interface-name">manufactureId</span></td><td width=15%><span class="source-code">    private String manufactureId</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSParam.</span><span class="interface-name">dbPath</span></td><td width=15%><span class="source-code">    private String dbPath</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSParam.</span><span class="interface-name">tokenKey</span></td><td width=15%><span class="source-code">    private String tokenKey</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSParam.</span><span class="interface-name">uasId</span></td><td width=15%><span class="source-code">    private String uasId</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSManager.</span><span class="interface-name">Callback</span></td><td width=15%><span class="source-code">interface Callback </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSManager.</span><span class="interface-name">getUploadStatus</span></td><td width=15%><span class="source-code">UTMISSFlightDataUploadStatus getUploadStatus() </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSManager.</span><span class="interface-name">onUpdate</span></td><td width=15%><span class="source-code">        void onUpdate(UTMISSFlightDataUploadStatus status)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSManager.</span><span class="interface-name">getUtmissLogPath</span></td><td width=15%><span class="source-code">String getUtmissLogPath() </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSManager.</span><span class="interface-name">setUTMISSFlightDataUpdatedUploadStatusCallback</span></td><td width=15%><span class="source-code">void setUTMISSFlightDataUpdatedUploadStatusCallback(Callback callback) </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSManager.</span><span class="interface-name">startToUpload</span></td><td width=15%><span class="source-code">DJIError startToUpload(UTMISSParam param) </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.utmiss.UTMISSManager.</span><span class="interface-name">stopToUpload</span></td><td width=15%><span class="source-code">void stopToUpload() </span></td></tr></table><p style="font-size:50%; color:white">47a50a3 a74636b ca88bcb 4421ba7 4f03703 ce6a1ae 8894402 1aba3c4 </p></body>
+</html>
+

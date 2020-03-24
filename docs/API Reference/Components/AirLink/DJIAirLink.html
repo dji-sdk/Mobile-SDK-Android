@@ -1,12 +1,16 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
   <title>DJI Mobile SDK Documentation
-  </title><link rel="stylesheet" href="../../stylesheets/doc-vendor.css"><link rel="stylesheet" href="../../stylesheets/doc-app.css">
-</head>
+  </title>
+<link rel="stylesheet" href="../../stylesheets/doc-vendor.css">
+
+<link rel="stylesheet" href="../../stylesheets/doc-app.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
@@ -117,6 +121,12 @@
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
+                  </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">UTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">UTMISSParam</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">FlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -402,6 +412,10 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">RemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
+                            </dd>
                             <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
@@ -461,10 +475,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">MultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -736,6 +746,8 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
                             </dd>
+                            <dd><a href="../SDKError/DJIError_DJIUTMISSError.html">DJIUTMISSError</a>
+                            </dd>
                             <dd><a href="../SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
@@ -768,248 +780,274 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>AirLink</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AirLink</span> <span class="keyword">extends</span> <span class="title">BaseComponent</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code></font></td></tr></table></html>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>AirLink</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AirLink</span> <span class="keyword">extends</span> <span class="title">BaseComponent</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr><tr valign="top"><td width=15%><font color="#999"><i>Inherits From:</i></td><td width=85%><font color="#999"><code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">This class contains information about the wireless link between the aircraft and the remote controller, the aircraft and the mobile device or the handheld product and the mobile device. To determine whether a particular wireless link is supported, check the isSupported flag. This object is available from the <code><a href="../../Products/Aircraft/DJIAircraft.html#djiaircraft">Aircraft</a></code> or <code><a href="../../Products/Handheld/DJIHandheld.html#djihandheld">HandHeld</a></code> object which is a subclass of <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</font></p>
+<p><font color="#666">This class contains information about the wireless link between the aircraft and the remote controller, the aircraft and the mobile device or the handheld product and the mobile device. To determine whether a particular wireless link is supported, check the isSupported flag. This object is available from the <code><a href="../../Products/Aircraft/DJIAircraft.html#djiaircraft">Aircraft</a></code> or <code><a href="../../Products/Handheld/DJIHandheld.html#djihandheld">HandHeld</a></code> object which is a subclass of <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djiairlink_setuplinksignalqualitycallback"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_setuplinksignalqualitycallback_inline">setUplinkSignalQualityCallback</a></div></div><div class="inline-doc" id="djiairlink_setuplinksignalqualitycallback_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setUplinkSignalQualityCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setUplinkSignalQualityCallback</span><span class="params">(SignalQualityCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<div class="api-row" id="djiairlink_setuplinksignalqualitycallback"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_setuplinksignalqualitycallback_inline">setUplinkSignalQualityCallback</a></div></div><div class="inline-doc" id="djiairlink_setuplinksignalqualitycallback_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setUplinkSignalQualityCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setUplinkSignalQualityCallback</span><span class="params">(SignalQualityCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">Define a callback to listen for updates on the uplink signal. This link transfers all information from the remote controller to the  aircraft, which is predominantly control information.</font></p>
+<p><font color="#666">Define a callback to listen for updates on the uplink signal. This link transfers all information from the remote controller to the  aircraft, which is predominantly control information.</p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_signalqualitycallbackinterface">SignalQualityCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_signalqualitycallbackinterface">SignalQualityCallback</a></code> interface.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_setdownlinksignalqualitycallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_setdownlinksignalqualitycallback_inline">setDownlinkSignalQualityCallback</a></div></div><div class="inline-doc" id="djiairlink_setdownlinksignalqualitycallback_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setDownlinkSignalQualityCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDownlinkSignalQualityCallback</span><span class="params">(SignalQualityCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_signalqualitycallbackinterface">SignalQualityCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_signalqualitycallbackinterface">SignalQualityCallback</a></code> interface.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_setdownlinksignalqualitycallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_setdownlinksignalqualitycallback_inline">setDownlinkSignalQualityCallback</a></div></div><div class="inline-doc" id="djiairlink_setdownlinksignalqualitycallback_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setDownlinkSignalQualityCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDownlinkSignalQualityCallback</span><span class="params">(SignalQualityCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">Define a callback to listen for updates on the downlink signal. This link transfers all information from aircraft to remote controller,  which is predominantly video information. Signal quality is a function of signal strength, interference and data rate. Signal quality  will be more susceptible to weak signal strengths or high interference when the data rate is high.</font></p>
+<p><font color="#666">Define a callback to listen for updates on the downlink signal. This link transfers all information from aircraft to remote controller,  which is predominantly video information. Signal quality is a function of signal strength, interference and data rate. Signal quality  will be more susceptible to weak signal strengths or high interference when the data rate is high.</p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_signalqualitycallbackinterface">SignalQualityCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_signalqualitycallbackinterface">SignalQualityCallback</a></code> interface.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_setcountrycodecallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_setcountrycodecallback_inline">setCountryCodeCallback</a></div></div><div class="inline-doc" id="djiairlink_setcountrycodecallback_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setCountryCodeCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCountryCodeCallback</span><span class="params">(CountryCodeCallback countryCodeCallback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_signalqualitycallbackinterface">SignalQualityCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_signalqualitycallbackinterface">SignalQualityCallback</a></code> interface.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_setcountrycodecallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_setcountrycodecallback_inline">setCountryCodeCallback</a></div></div><div class="inline-doc" id="djiairlink_setcountrycodecallback_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setCountryCodeCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCountryCodeCallback</span><span class="params">(CountryCodeCallback countryCodeCallback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Sets the Callback for CountryCode update.</font></p>
+<p><font color="#666">Sets the Callback for CountryCode update.</p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_countrycodecallbackinterface">CountryCodeCallback</a> <font color="#000">countryCodeCallback</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_countrycodecallbackinterface">CountryCodeCallback</a></code> interface.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_addbasestationsignalqualityupdatedcallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_addbasestationsignalqualityupdatedcallback_inline">addBaseStationSignalQualityUpdatedCallback</a></div></div><div class="inline-doc" id="djiairlink_addbasestationsignalqualityupdatedcallback_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>addBaseStationSignalQualityUpdatedCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addBaseStationSignalQualityUpdatedCallback</span><span class="params">(BaseStationSignalQualityUpdatedCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_countrycodecallbackinterface">CountryCodeCallback</a> <font color="#000">countryCodeCallback</td><td><font color="#666"><i>The <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_countrycodecallbackinterface">CountryCodeCallback</a></code> interface.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_addbasestationsignalqualityupdatedcallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_addbasestationsignalqualityupdatedcallback_inline">addBaseStationSignalQualityUpdatedCallback</a></div></div><div class="inline-doc" id="djiairlink_addbasestationsignalqualityupdatedcallback_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>addBaseStationSignalQualityUpdatedCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addBaseStationSignalQualityUpdatedCallback</span><span class="params">(BaseStationSignalQualityUpdatedCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Adds the Callback for base station signal quality update.</font></p>
+<p><font color="#666">Adds the Callback for base station signal quality update.</p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_basestationsignalqualityupdatedcallbackinterface">BaseStationSignalQualityUpdatedCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_basestationsignalqualityupdatedcallbackinterface">BaseStationSignalQualityUpdatedCallback</a></code> interface.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_removebasestationsignalqualityupdatedcallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_removebasestationsignalqualityupdatedcallback_inline">removeBaseStationSignalQualityUpdatedCallback</a></div></div><div class="inline-doc" id="djiairlink_removebasestationsignalqualityupdatedcallback_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>removeBaseStationSignalQualityUpdatedCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeBaseStationSignalQualityUpdatedCallback</span><span class="params">(BaseStationSignalQualityUpdatedCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_basestationsignalqualityupdatedcallbackinterface">BaseStationSignalQualityUpdatedCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_basestationsignalqualityupdatedcallbackinterface">BaseStationSignalQualityUpdatedCallback</a></code> interface.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_removebasestationsignalqualityupdatedcallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_removebasestationsignalqualityupdatedcallback_inline">removeBaseStationSignalQualityUpdatedCallback</a></div></div><div class="inline-doc" id="djiairlink_removebasestationsignalqualityupdatedcallback_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>removeBaseStationSignalQualityUpdatedCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeBaseStationSignalQualityUpdatedCallback</span><span class="params">(BaseStationSignalQualityUpdatedCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">Removes the Callback for base station signal quality update.</font></p>
+<p><font color="#666">Removes the Callback for base station signal quality update.</p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_basestationsignalqualityupdatedcallbackinterface">BaseStationSignalQualityUpdatedCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_basestationsignalqualityupdatedcallbackinterface">BaseStationSignalQualityUpdatedCallback</a></code> interface.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_islbairlinksupported"><div class="api-col left">Lightbridge</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_islbairlinksupported_inline">isLightbridgeLinkSupported</a></div></div><div class="inline-doc" id="djiairlink_islbairlinksupported_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>isLightbridgeLinkSupported</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLightbridgeLinkSupported</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_is_lightbridge_link_supported_key">AirLinkKey.IS_LIGHTBRIDGE_LINK_SUPPORTED</a></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_basestationsignalqualityupdatedcallbackinterface">BaseStationSignalQualityUpdatedCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_basestationsignalqualityupdatedcallbackinterface">BaseStationSignalQualityUpdatedCallback</a></code> interface.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_islbairlinksupported"><div class="api-col left">Lightbridge</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_islbairlinksupported_inline">isLightbridgeLinkSupported</a></div></div><div class="inline-doc" id="djiairlink_islbairlinksupported_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>isLightbridgeLinkSupported</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLightbridgeLinkSupported</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr><tr valign="top"><td width=15%><font color="#999"><i>SDK Key:</i></td><td width=85%><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_is_lightbridge_link_supported_key">AirLinkKey.IS_LIGHTBRIDGE_LINK_SUPPORTED</a></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666"><code>true</code> if Lightbridge Air Link is supported.</font></p>
+<p><font color="#666"><code>true</code> if Lightbridge Air Link is supported.</p>
 <h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_lbairlink"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_lbairlink_inline">getLightbridgeLink</a></div></div><div class="inline-doc" id="djiairlink_lbairlink_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getLightbridgeLink</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">LightbridgeLink <span class="title">getLightbridgeLink</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i>A boolean value.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_lbairlink"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_lbairlink_inline">getLightbridgeLink</a></div></div><div class="inline-doc" id="djiairlink_lbairlink_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getLightbridgeLink</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">LightbridgeLink <span class="title">getLightbridgeLink</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Returns the Lightbridge Air Link if it is available.</font></p>
+<p><font color="#666">Returns the Lightbridge Air Link if it is available.</p>
 <h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink">LightbridgeLink</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink">LightbridgeLink</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_isocusynclinksupported"><div class="api-col left">OcuSync</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_isocusynclinksupported_inline">isOcuSyncLinkSupported</a></div></div><div class="inline-doc" id="djiairlink_isocusynclinksupported_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>isOcuSyncLinkSupported</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isOcuSyncLinkSupported</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink">LightbridgeLink</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/LBAirLink/DJILBAirLink.html#djilbairlink">LightbridgeLink</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_isocusynclinksupported"><div class="api-col left">OcuSync</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_isocusynclinksupported_inline">isOcuSyncLinkSupported</a></div></div><div class="inline-doc" id="djiairlink_isocusynclinksupported_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>isOcuSyncLinkSupported</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isOcuSyncLinkSupported</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666"><code>true</code> if the OcuSync Link is supported. OcuSync Link is only supported by Mavic Pro.</font></p>
+<p><font color="#666"><code>true</code> if the OcuSync Link is supported. OcuSync Link is only supported by Mavic Pro.</p>
 <h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_ocusynclink"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_ocusynclink_inline">getOcuSyncLink</a></div></div><div class="inline-doc" id="djiairlink_ocusynclink_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getOcuSyncLink</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">OcuSyncLink <span class="title">getOcuSyncLink</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i>A boolean value.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_ocusynclink"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_ocusynclink_inline">getOcuSyncLink</a></div></div><div class="inline-doc" id="djiairlink_ocusynclink_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getOcuSyncLink</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">OcuSyncLink <span class="title">getOcuSyncLink</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Returns the OcuSync Link if it is available.</font></p>
+<p><font color="#666">Returns the OcuSync Link if it is available.</p>
 <h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink">OcuSyncLink</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink">OcuSyncLink</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_iswifilinksupported"><div class="api-col left">WiFi</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_iswifilinksupported_inline">isWiFiLinkSupported</a></div></div><div class="inline-doc" id="djiairlink_iswifilinksupported_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>isWiFiLinkSupported</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isWiFiLinkSupported</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_is_wifi_link_supported_key">AirLinkKey.IS_WIFI_LINK_SUPPORTED</a></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink">OcuSyncLink</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html#djiocusynclink">OcuSyncLink</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_iswifilinksupported"><div class="api-col left">WiFi</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_iswifilinksupported_inline">isWiFiLinkSupported</a></div></div><div class="inline-doc" id="djiairlink_iswifilinksupported_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>isWiFiLinkSupported</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isWiFiLinkSupported</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr><tr valign="top"><td width=15%><font color="#999"><i>SDK Key:</i></td><td width=85%><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_is_wifi_link_supported_key">AirLinkKey.IS_WIFI_LINK_SUPPORTED</a></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666"><code>true</code> if WiFi Air Link is supported.</font></p>
+<p><font color="#666"><code>true</code> if WiFi Air Link is supported.</p>
 <h5 id="return-v5">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_wifilink"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_wifilink_inline">getWiFiLink</a></div></div><div class="inline-doc" id="djiairlink_wifilink_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getWiFiLink</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">WiFiLink <span class="title">getWiFiLink</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i>A boolean value.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_wifilink"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_wifilink_inline">getWiFiLink</a></div></div><div class="inline-doc" id="djiairlink_wifilink_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getWiFiLink</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">WiFiLink <span class="title">getWiFiLink</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666">Returns the WiFi Air Link if it is available.</font></p>
+<p><font color="#666">Returns the WiFi Air Link if it is available.</p>
 <h5 id="return-v6">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink">WiFiLink</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink">WiFiLink</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_updatecountrycodewithcompletion"><div class="api-col left">Update Country Code</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_updatecountrycodewithcompletion_inline">updateCountryCode</a></div></div><div class="inline-doc" id="djiairlink_updatecountrycodewithcompletion_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>updateCountryCode</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">updateCountryCode</span><span class="params">(@Nullable CommonCallbacks.CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink">WiFiLink</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink">WiFiLink</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_updatecountrycodewithcompletion"><div class="api-col left">Update Country Code</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_updatecountrycodewithcompletion_inline">updateCountryCode</a></div></div><div class="inline-doc" id="djiairlink_updatecountrycodewithcompletion_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>updateCountryCode</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">updateCountryCode</span><span class="params">(@Nullable CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">Update/Sync the latest CountryCode to the DJI Product.</font></p>
+<p><font color="#666">Update/Sync the latest CountryCode to the DJI Product.</p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_isupdatecountrycoderequired"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_isupdatecountrycoderequired_inline">isUpdateCountryCodeRequired</a></div></div><div class="inline-doc" id="djiairlink_isupdatecountrycoderequired_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>isUpdateCountryCodeRequired</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isUpdateCountryCodeRequired</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned execution result.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_isupdatecountrycoderequired"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_isupdatecountrycoderequired_inline">isUpdateCountryCodeRequired</a></div></div><div class="inline-doc" id="djiairlink_isupdatecountrycoderequired_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>isUpdateCountryCodeRequired</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isUpdateCountryCodeRequired</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
-<p><font color="#666">Checks if we need to update country code to the DJI Product.</font></p>
+<p><font color="#666">Checks if we need to update country code to the DJI Product.</p>
 <h5 id="return-v7">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the country code is required to update.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_setautoupdatecountrycodeenabled"><div class="api-col left">Auto Update Country Code</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_setautoupdatecountrycodeenabled_inline">setAutoUpdateCountryCodeEnabled</a></div></div><div class="inline-doc" id="djiairlink_setautoupdatecountrycodeenabled_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setAutoUpdateCountryCodeEnabled</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setAutoUpdateCountryCodeEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i><code>true</code> if the country code is required to update.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_setautoupdatecountrycodeenabled"><div class="api-col left">Auto Update Country Code</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_setautoupdatecountrycodeenabled_inline">setAutoUpdateCountryCodeEnabled</a></div></div><div class="inline-doc" id="djiairlink_setautoupdatecountrycodeenabled_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setAutoUpdateCountryCodeEnabled</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setAutoUpdateCountryCodeEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">Enable/Disable automatic update CountryCode feature.</font></p>
+<p><font color="#666">Enable/Disable automatic update CountryCode feature.</p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> to enable auto update of the country code.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiairlink_getautoupdatecountrycodeenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_getautoupdatecountrycodeenabled_inline">getAutoUpdateCountryCodeEnabled</a></div></div><div class="inline-doc" id="djiairlink_getautoupdatecountrycodeenabled_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getAutoUpdateCountryCodeEnabled</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">getAutoUpdateCountryCodeEnabled</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</td><td><font color="#666"><i><code>true</code> to enable auto update of the country code.</i></td></tr></table></html></div>
+<div class="api-row" id="djiairlink_getautoupdatecountrycodeenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_getautoupdatecountrycodeenabled_inline">getAutoUpdateCountryCodeEnabled</a></div></div><div class="inline-doc" id="djiairlink_getautoupdatecountrycodeenabled_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getAutoUpdateCountryCodeEnabled</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">getAutoUpdateCountryCodeEnabled</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
-<p><font color="#666">Determines if auto update country code is enabled. When it is enabled, SDK will update the country  code to the aircraft automatically when it is required. It is enabled by default and the value is  stored persistently on the device.</font></p>
+<p><font color="#666">Determines if auto update country code is enabled. When it is enabled, SDK will update the country  code to the aircraft automatically when it is required. It is enabled by default and the value is  stored persistently on the device.</p>
 <h5 id="return-v8">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static boolean</font></td><td><font color="#666"><i><code>true</code> if auto update country code is enabled.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static boolean</td><td><font color="#666"><i><code>true</code> if auto update country code is enabled.</i></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djiairlink_signalqualitycallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiairlink_signalqualitycallbackinterface_inline">SignalQualityCallback</a></div></div><div class="inline-doc" id="djiairlink_signalqualitycallbackinterface_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>SignalQualityCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="class"><span class="keyword">interface</span> <span class="title">SignalQualityCallback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr></table></html>
+<div class="api-row" id="djiairlink_signalqualitycallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiairlink_signalqualitycallbackinterface_inline">SignalQualityCallback</a></div></div><div class="inline-doc" id="djiairlink_signalqualitycallbackinterface_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>SignalQualityCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EXClassNullAway</span></span><br><span class="line"> <span class="class"><span class="keyword">interface</span> <span class="title">SignalQualityCallback</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.airlink</td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
-<p><font color="#666">Updated signal quality in percent for the wireless link. Signal quality is a function of signal strength, interference and data rate. Signal  quality will be more susceptible to weak signal strengths or high  interference when the data rate is high.</font></p>
+<p><font color="#666">Updated signal quality in percent for the wireless link. Signal quality is a function of signal strength, interference and data rate. Signal  quality will be more susceptible to weak signal strengths or high  interference when the data rate is high.</p>
 <h5 id="interface-methods">Interface Methods:</h5>
-<div class="api-row" id="djiairlink_signalqualitycallbackupdate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_signalqualitycallbackupdate_inline">onUpdate</a></div></div><div class="inline-doc" id="djiairlink_signalqualitycallbackupdate_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onUpdate</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(<span class="keyword">int</span> quality)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr></table></html>
+<div class="api-row" id="djiairlink_signalqualitycallbackupdate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_signalqualitycallbackupdate_inline">onUpdate</a></div></div><div class="inline-doc" id="djiairlink_signalqualitycallbackupdate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onUpdate</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(<span class="keyword">int</span> quality)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.airlink</td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
-<p><font color="#666">Update signal quality.</font></p>
+<p><font color="#666">Update signal quality.</p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">quality</font></font></td><td><font color="#666"><i>The signal quality in percent with range [0, 100], where 100 is the best quality.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">quality</td><td><font color="#666"><i>The signal quality in percent with range [0, 100], where 100 is the best quality.</i></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djiairlink_countrycodecallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiairlink_countrycodecallbackinterface_inline">CountryCodeCallback</a></div></div><div class="inline-doc" id="djiairlink_countrycodecallbackinterface_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>CountryCodeCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">CountryCodeCallback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<div class="api-row" id="djiairlink_countrycodecallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiairlink_countrycodecallbackinterface_inline">CountryCodeCallback</a></div></div><div class="inline-doc" id="djiairlink_countrycodecallbackinterface_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>CountryCodeCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">CountryCodeCallback</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
-<p><font color="#666">Callback for CountryCode related features.</font></p>
+<p><font color="#666">Callback for CountryCode related features.</p>
 <h5 id="interface-methods-v2">Interface Methods:</h5>
-<div class="api-row" id="djiairlink_countrycodecallbackinterface_onrequireupdatecountrycode"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_countrycodecallbackinterface_onrequireupdatecountrycode_inline">onRequireUpdateCountryCode</a></div></div><div class="inline-doc" id="djiairlink_countrycodecallbackinterface_onrequireupdatecountrycode_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onRequireUpdateCountryCode</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onRequireUpdateCountryCode</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<div class="api-row" id="djiairlink_countrycodecallbackinterface_onrequireupdatecountrycode"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_countrycodecallbackinterface_onrequireupdatecountrycode_inline">onRequireUpdateCountryCode</a></div></div><div class="inline-doc" id="djiairlink_countrycodecallbackinterface_onrequireupdatecountrycode_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onRequireUpdateCountryCode</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onRequireUpdateCountryCode</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
-<p><font color="#666">Invokes when CountryCode changes and needs to be updated with DJI Product.</font></p>
+<p><font color="#666">Invokes when CountryCode changes and needs to be updated with DJI Product.</p>
 </div>
 </div>
-<div class="api-row" id="djiairlink_basestationsignalqualityupdatedcallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiairlink_basestationsignalqualityupdatedcallbackinterface_inline">BaseStationSignalQualityUpdatedCallback</a></div></div><div class="inline-doc" id="djiairlink_basestationsignalqualityupdatedcallbackinterface_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>BaseStationSignalQualityUpdatedCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">BaseStationSignalQualityUpdatedCallback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<div class="api-row" id="djiairlink_basestationsignalqualityupdatedcallbackinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiairlink_basestationsignalqualityupdatedcallbackinterface_inline">BaseStationSignalQualityUpdatedCallback</a></div></div><div class="inline-doc" id="djiairlink_basestationsignalqualityupdatedcallbackinterface_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>BaseStationSignalQualityUpdatedCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">BaseStationSignalQualityUpdatedCallback</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
-<p><font color="#666">Callback for updated signal quality in percent for the base station (from remote controller  to the base station). This link transfers all information between the remote controller and  the base station, which is predominantly positioning information.</font></p>
+<p><font color="#666">Callback for updated signal quality in percent for the base station (from remote controller  to the base station). This link transfers all information between the remote controller and  the base station, which is predominantly positioning information.</p>
 <h5 id="interface-methods-v3">Interface Methods:</h5>
-<div class="api-row" id="djiairlink_basestationsignalqualityupdatedcallbackinterface_onbasestationsignalqualityupdated"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_basestationsignalqualityupdatedcallbackinterface_onbasestationsignalqualityupdated_inline">onBaseStationSignalQualityUpdated</a></div></div><div class="inline-doc" id="djiairlink_basestationsignalqualityupdatedcallbackinterface_onbasestationsignalqualityupdated_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onBaseStationSignalQualityUpdated</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onBaseStationSignalQualityUpdated</span><span class="params">(<span class="keyword">int</span> quality)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr></table></html>
+<div class="api-row" id="djiairlink_basestationsignalqualityupdatedcallbackinterface_onbasestationsignalqualityupdated"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiairlink_basestationsignalqualityupdatedcallbackinterface_onbasestationsignalqualityupdated_inline">onBaseStationSignalQualityUpdated</a></div></div><div class="inline-doc" id="djiairlink_basestationsignalqualityupdatedcallbackinterface_onbasestationsignalqualityupdated_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onBaseStationSignalQualityUpdated</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onBaseStationSignalQualityUpdated</span><span class="params">(<span class="keyword">int</span> quality)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.airlink</td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
-<p><font color="#666">Invokes when base station signal quality changes.</font></p>
+<p><font color="#666">Invokes when base station signal quality changes.</p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">quality</font></font></td><td><font color="#666"><i>An int value of the signal quality.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">quality</td><td><font color="#666"><i>An int value of the signal quality.</i></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djilbairlink"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/LBAirLink/DJILBAirLink.html">LightbridgeLink</a></div></div><div class="api-row" id="djiocusynclink"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/OcuSyncLink/DJIOcuSyncLink.html">OcuSyncLink</a></div></div><div class="api-row" id="djiwifilink"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/WiFiLink/DJIWiFiLink.html">WiFiLink</a></div></div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
-<div class="api-row" id="djibasecomponent_setdjicomponentlistener"><div class="api-col left">dji.sdk.base.BaseComponent</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_setdjicomponentlistener_inline">setComponentListener</a></div></div><div class="inline-doc" id="djibasecomponent_setdjicomponentlistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setComponentListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setComponentListener</span><span class="params">(ComponentListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<div class="api-row" id="djibasecomponent_setdjicomponentlistener"><div class="api-col left">dji.sdk.base.BaseComponent</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_setdjicomponentlistener_inline">setComponentListener</a></div></div><div class="inline-doc" id="djibasecomponent_setdjicomponentlistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setComponentListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setComponentListener</span><span class="params">(ComponentListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
-<p><font color="#666">Sets the listener for the DJI component.</font></p>
+<p><font color="#666">Sets the listener for the DJI component.</p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The callback of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_index"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_index_inline">getIndex</a></div></div><div class="inline-doc" id="djibasecomponent_index_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getIndex</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a> <font color="#000">listener</td><td><font color="#666"><i>The callback of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_index"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_index_inline">getIndex</a></div></div><div class="inline-doc" id="djibasecomponent_index_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getIndex</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
-<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210 and M210 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft.</font></p>
+<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210 and M210 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft.</p>
 <h5 id="return-v9">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of index.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_connected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_connected_inline">isConnected</a></div></div><div class="inline-doc" id="djibasecomponent_connected_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>isConnected</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isConnected</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</td><td><font color="#666"><i>An int value of index.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_connected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_connected_inline">isConnected</a></div></div><div class="inline-doc" id="djibasecomponent_connected_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>isConnected</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isConnected</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
-<p><font color="#666"><code>true</code> if the component is connected.</font></p>
+<p><font color="#666"><code>true</code> if the component is connected.</p>
 <h5 id="return-v10">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the component is connected.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_getserialnumber"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getserialnumber_inline">getSerialNumber</a></div></div><div class="inline-doc" id="djibasecomponent_getserialnumber_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getSerialNumber</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSerialNumber</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i><code>true</code> if the component is connected.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_getserialnumber"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getserialnumber_inline">getSerialNumber</a></div></div><div class="inline-doc" id="djibasecomponent_getserialnumber_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getSerialNumber</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSerialNumber</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v26">Description:</h5>
-<p><font color="#666">Gets the serial number of the component. Depending on the component, this serial number might not match the serial number found  on the physical component.</font></p>
+<p><font color="#666">Gets the serial number of the component. Depending on the component, this serial number might not match the serial number found  on the physical component.</p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value returned.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_getfirmwareversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getfirmwareversion_inline">getFirmwareVersion</a></div></div><div class="inline-doc" id="djibasecomponent_getfirmwareversion_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getFirmwareVersion</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFirmwareVersion</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the value returned.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_getfirmwareversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getfirmwareversion_inline">getFirmwareVersion</a></div></div><div class="inline-doc" id="djibasecomponent_getfirmwareversion_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getFirmwareVersion</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFirmwareVersion</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v27">Description:</h5>
-<p><font color="#666">Returns the firmware version of the component. Each component will  have a different firmware version, the combination of which will  form the package firmware version <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_getfirmwarepackageversion">getFirmwarePackageVersion</a></code> found in <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</font></p>
+<p><font color="#666">Returns the firmware version of the component. Each component will  have a different firmware version, the combination of which will  form the package firmware version <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_getfirmwarepackageversion">getFirmwarePackageVersion</a></code> found in <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></td></tr></table></html></div>
 
         </div>
       </div>

@@ -1,12 +1,16 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
   <title>DJI Mobile SDK Documentation
-  </title><link rel="stylesheet" href="../../stylesheets/doc-vendor.css"><link rel="stylesheet" href="../../stylesheets/doc-app.css">
-</head>
+  </title>
+<link rel="stylesheet" href="../../stylesheets/doc-vendor.css">
+
+<link rel="stylesheet" href="../../stylesheets/doc-app.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
@@ -117,6 +121,12 @@
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
+                  </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">UTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">UTMISSParam</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">FlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -402,6 +412,10 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">RemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
+                            </dd>
                             <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
@@ -461,10 +475,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">MultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -736,6 +746,8 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
                             </dd>
+                            <dd><a href="../SDKError/DJIError_DJIUTMISSError.html">DJIUTMISSError</a>
+                            </dd>
                             <dd><a href="../SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
@@ -768,298 +780,329 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJISDKManager</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJISDKManager</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>DJISDKManager</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJISDKManager</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">This class is the entry point for using the SDK with a DJI product. Most importantly, this class is used to register the SDK, and to connect to and access the product. This class also provides access to important feature managers (such as <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_keymanager">getKeyManager</a></code>), debugging tools, and threading control of asynchronous callbacks. SDK Registration using <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerApp</a></code> must be successful before the SDK can be used with a DJI product.</font></p>
+<p><font color="#666">This class is the entry point for using the SDK with a DJI product. Most importantly, this class is used to register the SDK, and to connect to and access the product. This class also provides access to important feature managers (such as <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_keymanager">getKeyManager</a></code>), debugging tools, and threading control of asynchronous callbacks. SDK Registration using <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerApp</a></code> must be successful before the SDK can be used with a DJI product.</p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="sdk-admin">SDK Admin</h4>
-<div class="api-row" id="djisdkmanager_getsdkversion"><div class="api-col left">SDK Information</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_getsdkversion_inline">getSDKVersion</a></div></div><div class="inline-doc" id="djisdkmanager_getsdkversion_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getSDKVersion</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">String <span class="title">getSDKVersion</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_getsdkversion"><div class="api-col left">SDK Information</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_getsdkversion_inline">getSDKVersion</a></div></div><div class="inline-doc" id="djisdkmanager_getsdkversion_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getSDKVersion</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getSDKVersion</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">Gets the DJI Mobile SDK Version. Returns SDK version as a string.</font></p>
+<p><font color="#666">Gets the DJI Mobile SDK Version. Returns SDK version as a string.</p>
 <h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>A SDK version String instance.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_registerapp"><div class="api-col left">App Registration</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_registerapp_inline">registerApp</a></div></div><div class="inline-doc" id="djisdkmanager_registerapp_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>registerApp</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">registerApp</span><span class="params">(<span class="keyword">final</span> Context context, SDKManagerCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>A SDK version String instance.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_registerapp"><div class="api-col left">App Registration</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_registerapp_inline">registerApp</a></div></div><div class="inline-doc" id="djisdkmanager_registerapp_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>registerApp</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">registerApp</span><span class="params">(<span class="keyword">final</span> Context context, SDKManagerCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">The first time the app is initialized after installation, the app connects to a DJI  Server through the internet to verify the Application Key. The request will include  the following information: <br><br> - App key <br> - Bundle ID <br> - Device UUID  generated from hashed mobile device ID (<code>getDeviceID</code>), hashed SIM serial number (<code>getSIMSerialNumber</code>)  and hashed ANDROID ID (<code>Secure.ANDROID_ID</code>). If <code>READ_PHONE_STATE</code> permission is not permitted,  a random UUID is generated. <br> - System platform, version and name <br> - UUID generated by  platform's API (<code>[UIDevice</code>) <br> - Mobile device  model <br> Subsequent app starts will use locally cached verification information to  register the app when the cached information is still valid.</font></p>
+<p><font color="#666">The first time the app is initialized after installation, the app connects to a DJI  Server through the internet to verify the Application Key. The request will include  the following information: <br><br> - App key <br> - Bundle ID <br> - Device UUID  generated from hashed mobile device ID (<code>getDeviceID</code>), hashed SIM serial number (<code>getSIMSerialNumber</code>)  and hashed ANDROID ID (<code>Secure.ANDROID_ID</code>). If <code>READ_PHONE_STATE</code> permission is not permitted,  a random UUID is generated. <br> - System platform, version and name <br> - UUID generated by  platform's API (<code>[UIDevice</code>) <br> - Mobile device  model <br> Subsequent app starts will use locally cached verification information to  register the app when the cached information is still valid.</p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final Context <font color="#000">context</font></font></td><td><font color="#666"><i>Android context.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_djisdkmanagercallbackinterface">SDKManagerCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Callback used for both the registration result, and when the products changes.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_hassdkregistered"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_hassdkregistered_inline">hasSDKRegistered</a></div></div><div class="inline-doc" id="djisdkmanager_hassdkregistered_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>hasSDKRegistered</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">hasSDKRegistered</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final Context <font color="#000">context</td><td><font color="#666"><i>Android context.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_djisdkmanagercallbackinterface">SDKManagerCallback</a> <font color="#000">callback</td><td><font color="#666"><i>Callback used for both the registration result, and when the products changes.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_hassdkregistered"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_hassdkregistered_inline">hasSDKRegistered</a></div></div><div class="inline-doc" id="djisdkmanager_hassdkregistered_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>hasSDKRegistered</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">hasSDKRegistered</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Registration state.</font></p>
+<p><font color="#666">Registration state.</p>
 <h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if SDK is registered.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_usb_accessory_attached"><div class="api-col left">USB Accessory Attached</div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_usb_accessory_attached_inline">USB_ACCESSORY_ATTACHED</a></div></div><div class="inline-doc" id="djisdkmanager_usb_accessory_attached_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">final </font>USB_ACCESSORY_ATTACHED</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> String USB_ACCESSORY_ATTACHED = SDKRelativeJNI.native_getUsbAccessoryAttachedString()</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i><code>true</code> if SDK is registered.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_usb_accessory_attached"><div class="api-col left">USB Accessory Attached</div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_usb_accessory_attached_inline">USB_ACCESSORY_ATTACHED</a></div></div><div class="inline-doc" id="djisdkmanager_usb_accessory_attached_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">final </font>USB_ACCESSORY_ATTACHED</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> String USB_ACCESSORY_ATTACHED = SDKRelativeJNI.native_getUsbAccessoryAttachedString()</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">When this string is received in a broadcast, the SDK will attempt to connect to USB accessory.</font></p>
+<p><font color="#666">When this string is received in a broadcast, the SDK will attempt to connect to USB accessory.</p>
 </div>
-<div class="api-row" id="djisdkmanager_getinstance"><div class="api-col left">SDK Manager</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_getinstance_inline">getInstance</a></div></div><div class="inline-doc" id="djisdkmanager_getinstance_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getInstance</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">static</span> DJISDKManager <span class="title">getInstance</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_getinstance"><div class="api-col left">SDK Manager</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_getinstance_inline">getInstance</a></div></div><div class="inline-doc" id="djisdkmanager_getinstance_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getInstance</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">static</span> DJISDKManager <span class="title">getInstance</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">Accessor for <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code> object.</font></p>
+<p><font color="#666">Accessor for <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code> object.</p>
 <h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">synchronized static <a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_destroy"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_destroy_inline">destroy</a></div></div><div class="inline-doc" id="djisdkmanager_destroy_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>destroy</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">synchronized static <a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code> object.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_destroy"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_destroy_inline">destroy</a></div></div><div class="inline-doc" id="djisdkmanager_destroy_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>destroy</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">Releases the resources held by the DJISDKManager. This will unsubscribe the app from  any updates sent by the SDK.</font></p>
+<p><font color="#666">Releases the resources held by the DJISDKManager. This will unsubscribe the app from  any updates sent by the SDK.</p>
 </div>
-<div class="api-row" id="djisdkmanager_setcallbackruninuithread"><div class="api-col left">Threading</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_setcallbackruninuithread_inline">setCallbackRunInUIThread</a></div></div><div class="inline-doc" id="djisdkmanager_setcallbackruninuithread_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setCallbackRunInUIThread</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCallbackRunInUIThread</span><span class="params">(<span class="keyword">boolean</span> enable)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_setcallbackruninuithread"><div class="api-col left">Threading</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_setcallbackruninuithread_inline">setCallbackRunInUIThread</a></div></div><div class="inline-doc" id="djisdkmanager_setcallbackruninuithread_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setCallbackRunInUIThread</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCallbackRunInUIThread</span><span class="params">(<span class="keyword">boolean</span> enable)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Determines whether asynchronous getter and setter method callbacks  should be invoked in UIThread or BackgroundThread. This method is only  for setters and getters, as push data callbacks (typically state data)  always return in the BackgroundThread.</font></p>
+<p><font color="#666">Determines whether asynchronous getter and setter method callbacks  should be invoked in UIThread or BackgroundThread. This method is only  for setters and getters, as push data callbacks (typically state data)  always return in the BackgroundThread.</p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enable</font></font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_closeaoaconnection"><div class="api-col left">AOA Connection</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_closeaoaconnection_inline">closeAOAConnection</a></div></div><div class="inline-doc" id="djisdkmanager_closeaoaconnection_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>closeAOAConnection</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">closeAOAConnection</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enable</td><td><font color="#666"><i>A boolean value.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_closeaoaconnection"><div class="api-col left">AOA Connection</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_closeaoaconnection_inline">closeAOAConnection</a></div></div><div class="inline-doc" id="djisdkmanager_closeaoaconnection_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>closeAOAConnection</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">closeAOAConnection</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">This method is used to close the AOA connection during development and should not be used in the final application. When using AS or Eclipse to build and run the application, the AOA  connection is not properly closed if the application is terminated. As a result, the next time the application is run, the SDK will not  be able to connect to the product without first disconnecting and  reconnecting the USB cable. AS and Eclipse can be configured to  invoke this method before compiling the application, closing the link before the application is run, and overcoming this problem.</font></p>
+<p><font color="#666">This method is used to close the AOA connection during development and should not be used in the final application. When using AS or Eclipse to build and run the application, the AOA  connection is not properly closed if the application is terminated. As a result, the next time the application is run, the SDK will not  be able to connect to the product without first disconnecting and  reconnecting the USB cable. AS and Eclipse can be configured to  invoke this method before compiling the application, closing the link before the application is run, and overcoming this problem.</p>
 </div>
-<div class="api-row" id="djisdkmanager_appactivationmanager"><div class="api-col left">App Activation Manager</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_appactivationmanager_inline">getAppActivationManager</a></div></div><div class="inline-doc" id="djisdkmanager_appactivationmanager_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getAppActivationManager</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">AppActivationManager <span class="title">getAppActivationManager</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_appactivationmanager"><div class="api-col left">App Activation Manager</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_appactivationmanager_inline">getAppActivationManager</a></div></div><div class="inline-doc" id="djisdkmanager_appactivationmanager_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getAppActivationManager</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">AppActivationManager <span class="title">getAppActivationManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Used to check the states related to the App Activation.</font></p>
+<p><font color="#666">Used to check the states related to the App Activation.</p>
 <h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AppActivationManager/DJIAppActivationManager.html#djiappactivationmanager">AppActivationManager</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/AppActivationManager/DJIAppActivationManager.html#djiappactivationmanager">AppActivationManager</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_rtknetworkserviceprovider"><div class="api-col left">RTK Network Service Provider</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_rtknetworkserviceprovider_inline">getRTKNetworkServiceProvider</a></div></div><div class="inline-doc" id="djisdkmanager_rtknetworkserviceprovider_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getRTKNetworkServiceProvider</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">RTKNetworkServiceProvider <span class="title">getRTKNetworkServiceProvider</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AppActivationManager/DJIAppActivationManager.html#djiappactivationmanager">AppActivationManager</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/AppActivationManager/DJIAppActivationManager.html#djiappactivationmanager">AppActivationManager</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_rtknetworkserviceprovider"><div class="api-col left">RTK Network Service Provider</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_rtknetworkserviceprovider_inline">getRTKNetworkServiceProvider</a></div></div><div class="inline-doc" id="djisdkmanager_rtknetworkserviceprovider_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getRTKNetworkServiceProvider</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">RTKNetworkServiceProvider <span class="title">getRTKNetworkServiceProvider</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">Accesses the RTK network service provider.</font></p>
+<p><font color="#666">Accesses the RTK network service provider.</p>
 <h5 id="return-v5">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTKNetworkServiceProvider.html#djirtknetworkserviceprovider">RTKNetworkServiceProvider</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTKNetworkServiceProvider.html#djirtknetworkserviceprovider">RTKNetworkServiceProvider</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_upgrademanager"><div class="api-col left">Component Upgrade</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_upgrademanager_inline">getUpgradeManager</a></div></div><div class="inline-doc" id="djisdkmanager_upgrademanager_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getUpgradeManager</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">UpgradeManager <span class="title">getUpgradeManager</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTKNetworkServiceProvider.html#djirtknetworkserviceprovider">RTKNetworkServiceProvider</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTKNetworkServiceProvider.html#djirtknetworkserviceprovider">RTKNetworkServiceProvider</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_upgrademanager"><div class="api-col left">Component Upgrade</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_upgrademanager_inline">getUpgradeManager</a></div></div><div class="inline-doc" id="djisdkmanager_upgrademanager_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getUpgradeManager</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">UpgradeManager <span class="title">getUpgradeManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666">Provide access to UpgradeManager used to manage components upgrade.</font></p>
+<p><font color="#666">Provide access to UpgradeManager used to manage components upgrade.</p>
 <h5 id="return-v6">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Upgrade/DJIUpgradeManager.html#djiupgrademanager">UpgradeManager</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/Upgrade/DJIUpgradeManager.html#djiupgrademanager">UpgradeManager</a></code>.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Upgrade/DJIUpgradeManager.html#djiupgrademanager">UpgradeManager</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/Upgrade/DJIUpgradeManager.html#djiupgrademanager">UpgradeManager</a></code>.</i></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="product-connection">Product Connection</h4>
-<div class="api-row" id="djisdkmanager_product"><div class="api-col left">Product</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_product_inline">getProduct</a></div></div><div class="inline-doc" id="djisdkmanager_product_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getProduct</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">BaseProduct <span class="title">getProduct</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_product"><div class="api-col left">Product</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_product_inline">getProduct</a></div></div><div class="inline-doc" id="djisdkmanager_product_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getProduct</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">BaseProduct <span class="title">getProduct</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">The DJI product which is connected to the mobile device, only available after successful registration of the app.</font></p>
+<p><font color="#666">The DJI product which is connected to the mobile device, only available after successful registration of the app.</p>
 <h5 id="return-v7">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_bluetoothconnector"><div class="api-col left">Bluetooth</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_bluetoothconnector_inline">getBluetoothProductConnector</a></div></div><div class="inline-doc" id="djisdkmanager_bluetoothconnector_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getBluetoothProductConnector</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">BluetoothProductConnector <span class="title">getBluetoothProductConnector</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></td><td><font color="#666"><i>An instance of <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_bluetoothconnector"><div class="api-col left">Bluetooth</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_bluetoothconnector_inline">getBluetoothProductConnector</a></div></div><div class="inline-doc" id="djisdkmanager_bluetoothconnector_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getBluetoothProductConnector</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">BluetoothProductConnector <span class="title">getBluetoothProductConnector</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
-<p><font color="#666">Used to establish the Bluetooth connection between the mobile device and the DJI product. The Bluetooth connection needs to be established before a connection between the SDK and the DJI product can be made using <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_startconnectiontoproduct">startConnectionToProduct</a></code>.</font></p>
+<p><font color="#666">Used to establish the Bluetooth connection between the mobile device and the DJI product. The Bluetooth connection needs to be established before a connection between the SDK and the DJI product can be made using <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_startconnectiontoproduct">startConnectionToProduct</a></code>.</p>
 <h5 id="return-v8">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html#djibluetoothproductconnector">BluetoothProductConnector</a></font></td><td><font color="#666"><i>A <code><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html#djibluetoothproductconnector">BluetoothProductConnector</a></code> instance.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_setsupportonlyforbluetoothdevice"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_setsupportonlyforbluetoothdevice_inline">setSupportOnlyForBluetoothDevice</a></div></div><div class="inline-doc" id="djisdkmanager_setsupportonlyforbluetoothdevice_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setSupportOnlyForBluetoothDevice</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSupportOnlyForBluetoothDevice</span><span class="params">(<span class="keyword">boolean</span> isBluetoothDevice)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html#djibluetoothproductconnector">BluetoothProductConnector</a></td><td><font color="#666"><i>A <code><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html#djibluetoothproductconnector">BluetoothProductConnector</a></code> instance.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_setsupportonlyforbluetoothdevice"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_setsupportonlyforbluetoothdevice_inline">setSupportOnlyForBluetoothDevice</a></div></div><div class="inline-doc" id="djisdkmanager_setsupportonlyforbluetoothdevice_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setSupportOnlyForBluetoothDevice</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSupportOnlyForBluetoothDevice</span><span class="params">(<span class="keyword">boolean</span> isBluetoothDevice)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">If only Bluetooth devices will be connected, then this should be set to <code>true</code>.</font></p>
+<p><font color="#666">If only Bluetooth devices will be connected, then this should be set to <code>true</code>.</p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isBluetoothDevice</font></font></td><td><font color="#666"><i><code>true</code> if only Bluetooth devices will be connected.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_startconnectiontoproduct"><div class="api-col left">Connection</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_startconnectiontoproduct_inline">startConnectionToProduct</a></div></div><div class="inline-doc" id="djisdkmanager_startconnectiontoproduct_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>startConnectionToProduct</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">startConnectionToProduct</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isBluetoothDevice</td><td><font color="#666"><i><code>true</code> if only Bluetooth devices will be connected.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_startconnectiontoproduct"><div class="api-col left">Connection</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_startconnectiontoproduct_inline">startConnectionToProduct</a></div></div><div class="inline-doc" id="djisdkmanager_startconnectiontoproduct_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>startConnectionToProduct</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">startConnectionToProduct</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
-<p><font color="#666">Starts a connection between the SDK and the DJI product. This method should be called  after successful registration of the app and once there is a data connection between the mobile device and DJI product. This data connection is either a USB cable connection, a WiFi connection (that needs to be established outside of the SDK) or a Bluetooth connection (that needs to be established with <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_bluetoothconnector">getBluetoothProductConnector</a></code>). If the connection succeeds, <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_productconnectedupdate">onProductConnect</a></code> will be called if the  connection succeeded. Returns <code>true</code> if the connection is started successfully. For products which connect to the mobile device using Bluetooth, <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_bluetoothconnector">getBluetoothProductConnector</a></code> should be used to get a <code><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html#djibluetoothproductconnector">BluetoothProductConnector</a></code> object which can handle Bluetooth device connection.</font></p>
+<p><font color="#666">Starts a connection between the SDK and the DJI product. This method should be called  after successful registration of the app and once there is a data connection between the mobile device and DJI product. This data connection is either a USB cable connection, a WiFi connection (that needs to be established outside of the SDK) or a Bluetooth connection (that needs to be established with <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_bluetoothconnector">getBluetoothProductConnector</a></code>). If the connection succeeds, <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_productconnectedupdate">onProductConnect</a></code> will be called if the  connection succeeded. Returns <code>true</code> if the connection is started successfully. For products which connect to the mobile device using Bluetooth, <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_bluetoothconnector">getBluetoothProductConnector</a></code> should be used to get a <code><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html#djibluetoothproductconnector">BluetoothProductConnector</a></code> object which can handle Bluetooth device connection.</p>
 <h5 id="return-v9">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the connection is started successfully.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_stopconnectiontoproduct"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_stopconnectiontoproduct_inline">stopConnectionToProduct</a></div></div><div class="inline-doc" id="djisdkmanager_stopconnectiontoproduct_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>stopConnectionToProduct</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">stopConnectionToProduct</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i><code>true</code> if the connection is started successfully.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_stopconnectiontoproduct"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_stopconnectiontoproduct_inline">stopConnectionToProduct</a></div></div><div class="inline-doc" id="djisdkmanager_stopconnectiontoproduct_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>stopConnectionToProduct</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">stopConnectionToProduct</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
-<p><font color="#666">Disconnect from the connected DJI product.</font></p>
+<p><font color="#666">Disconnect from the connected DJI product.</p>
 </div>
 <html><p><br></p></html>
 <h4 id="debug-and-logging">Debug and Logging</h4>
-<div class="api-row" id="djisdkmanager_enterdebugmode"><div class="api-col left">Debug</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_enterdebugmode_inline">enableBridgeModeWithBridgeAppIP</a></div></div><div class="inline-doc" id="djisdkmanager_enterdebugmode_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>enableBridgeModeWithBridgeAppIP</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">enableBridgeModeWithBridgeAppIP</span><span class="params">(String bridgeAppIP)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_enterdebugmode"><div class="api-col left">Debug</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_enterdebugmode_inline">enableBridgeModeWithBridgeAppIP</a></div></div><div class="inline-doc" id="djisdkmanager_enterdebugmode_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>enableBridgeModeWithBridgeAppIP</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enableBridgeModeWithBridgeAppIP</span><span class="params">(String bridgeAppIP)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
-<p><font color="#666">Enter debug mode with debug IP.</font></p>
+<p><font color="#666">Enter debug mode with debug IP.</p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">bridgeAppIP</font></font></td><td><font color="#666"><i>Debug IP of the DJI Bridge App.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">bridgeAppIP</td><td><font color="#666"><i>Debug IP of the DJI Bridge App.</i></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="get-log-path">Get Log Path</h4>
-<div class="api-row" id="djisdkmanager_getlogpath"><div class="api-col left">Log Path</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_getlogpath_inline">getLogPath</a></div></div><div class="inline-doc" id="djisdkmanager_getlogpath_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getLogPath</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@NonNull</span></div><div class="line"> <span class="function">String <span class="title">getLogPath</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_getlogpath"><div class="api-col left">Log Path</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_getlogpath_inline">getLogPath</a></div></div><div class="inline-doc" id="djisdkmanager_getlogpath_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getLogPath</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@NonNull</span></span><br><span class="line"> <span class="function">String <span class="title">getLogPath</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
-<p><font color="#666">Gets the path that flight logs are stored to. Flight logs are automatically generated and  stored on the mobile device. The SDK does nothing with these logs, and they are provided  only as a convenience for developers and users. Users can use these flight logs with DJI  service centers if they are making a warranty claim. Only developers using the SDK, and  users of the mobile device can access these logs. Older flight logs are overwritten by  newer flight logs over time, so the flight log path is given in case an application needs  to store all logs.</font></p>
+<p><font color="#666">Gets the path that flight logs are stored to. Flight logs are automatically generated and  stored on the mobile device. The SDK does nothing with these logs, and they are provided  only as a convenience for developers and users. Users can use these flight logs with DJI  service centers if they are making a warranty claim. Only developers using the SDK, and  users of the mobile device can access these logs. Older flight logs are overwritten by  newer flight logs over time, so the flight log path is given in case an application needs  to store all logs.</p>
 <h5 id="return-v10">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>An NSString object of the flight log path.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>An NSString object of the flight log path.</i></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="managers">Managers</h4>
-<div class="api-row" id="djisdkmanager_flyzonemanager"><div class="api-col left">Fly Zones</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_flyzonemanager_inline">getFlyZoneManager</a></div></div><div class="inline-doc" id="djisdkmanager_flyzonemanager_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getFlyZoneManager</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">FlyZoneManager <span class="title">getFlyZoneManager</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_flyzonemanager"><div class="api-col left">Fly Zones</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_flyzonemanager_inline">getFlyZoneManager</a></div></div><div class="inline-doc" id="djisdkmanager_flyzonemanager_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getFlyZoneManager</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">FlyZoneManager <span class="title">getFlyZoneManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
-<p><font color="#666">Provide access to <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">FlyZoneManager</a></code> used to manage DJI's GEO system for no fly zones.</font></p>
+<p><font color="#666">Provide access to <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">FlyZoneManager</a></code> used to manage DJI's GEO system for no fly zones.</p>
 <h5 id="return-v11">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">FlyZoneManager</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">FlyZoneManager</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_keymanager"><div class="api-col left">SDK Keys</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_keymanager_inline">getKeyManager</a></div></div><div class="inline-doc" id="djisdkmanager_keymanager_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getKeyManager</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line"> <span class="function">KeyManager <span class="title">getKeyManager</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">FlyZoneManager</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">FlyZoneManager</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_keymanager"><div class="api-col left">SDK Keys</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_keymanager_inline">getKeyManager</a></div></div><div class="inline-doc" id="djisdkmanager_keymanager_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getKeyManager</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"> <span class="function">KeyManager <span class="title">getKeyManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
-<p><font color="#666">Provide access to the SDK Key interface.</font></p>
+<p><font color="#666">Provide access to the SDK Key interface.</p>
 <h5 id="return-v12">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">KeyManager</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">KeyManager</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_missioncontrol"><div class="api-col left">Mission Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_missioncontrol_inline">getMissionControl</a></div></div><div class="inline-doc" id="djisdkmanager_missioncontrol_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getMissionControl</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">MissionControl <span class="title">getMissionControl</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">KeyManager</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">KeyManager</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_missioncontrol"><div class="api-col left">Mission Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_missioncontrol_inline">getMissionControl</a></div></div><div class="inline-doc" id="djisdkmanager_missioncontrol_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getMissionControl</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">MissionControl <span class="title">getMissionControl</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
-<p><font color="#666">Provide access to <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></code> used to manage missions.</font></p>
+<p><font color="#666">Provide access to <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></code> used to manage missions.</p>
 <h5 id="return-v13">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_flighthubmanager"><div class="api-col left">Flighthub</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_flighthubmanager_inline">getFlightHubManager</a></div></div><div class="inline-doc" id="djisdkmanager_flighthubmanager_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getFlightHubManager</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">FlightHubManager <span class="title">getFlightHubManager</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_flighthubmanager"><div class="api-col left">Flighthub</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_flighthubmanager_inline">getFlightHubManager</a></div></div><div class="inline-doc" id="djisdkmanager_flighthubmanager_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getFlightHubManager</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">FlightHubManager <span class="title">getFlightHubManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
-<p><font color="#666">Provide access to <code><a href="../../Components/FlightHubManager/DJIFlightHubManager.html#djiflighthubmanager">FlightHubManager</a></code>. It can be used to interact with  DJI FlightHub (https://www.dji.com/flighthub).</font></p>
+<p><font color="#666">Provide access to <code><a href="../../Components/FlightHubManager/DJIFlightHubManager.html#djiflighthubmanager">FlightHubManager</a></code>. It can be used to interact with  DJI FlightHub (https://www.dji.com/flighthub).</p>
 <h5 id="return-v14">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightHubManager/DJIFlightHubManager.html#djiflighthubmanager">FlightHubManager</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlightHubManager/DJIFlightHubManager.html#djiflighthubmanager">FlightHubManager</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_livestreammanager"><div class="api-col left">Live Stream</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_livestreammanager_inline">getLiveStreamManager</a></div></div><div class="inline-doc" id="djisdkmanager_livestreammanager_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getLiveStreamManager</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">LiveStreamManager <span class="title">getLiveStreamManager</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightHubManager/DJIFlightHubManager.html#djiflighthubmanager">FlightHubManager</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlightHubManager/DJIFlightHubManager.html#djiflighthubmanager">FlightHubManager</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_livestreammanager"><div class="api-col left">Live Stream</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_livestreammanager_inline">getLiveStreamManager</a></div></div><div class="inline-doc" id="djisdkmanager_livestreammanager_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getLiveStreamManager</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">LiveStreamManager <span class="title">getLiveStreamManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
-<p><font color="#666">Provides access to <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_livestreammanager">getLiveStreamManager</a></code>. It can be used to stream the video  to a RTMP server to do live streaming with DJI products.</font></p>
+<p><font color="#666">Provides access to <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_livestreammanager">getLiveStreamManager</a></code>. It can be used to stream the video  to a RTMP server to do live streaming with DJI products.</p>
 <h5 id="return-v15">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager">LiveStreamManager</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_livestreammanager">getLiveStreamManager</a></code>.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager">LiveStreamManager</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_livestreammanager">getLiveStreamManager</a></code>.</i></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="ldm">LDM</h4>
-<div class="api-row" id="djisdkmanager_getldmmanager"><div class="api-col left">Local Data Mode</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_getldmmanager_inline">getLDMManager</a></div></div><div class="inline-doc" id="djisdkmanager_getldmmanager_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getLDMManager</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">LDMManager <span class="title">getLDMManager</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_getldmmanager"><div class="api-col left">Local Data Mode</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_getldmmanager_inline">getLDMManager</a></div></div><div class="inline-doc" id="djisdkmanager_getldmmanager_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getLDMManager</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">LDMManager <span class="title">getLDMManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
-<p><font color="#666">Manages Local Data Mode (LDM) functionality. Local data mode gives the developer  the option to put the SDK into airplane mode, restricting its access to the internet.  See <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager">LDMManager</a></code> for details on when and where this is possible, and what is restricted.</font></p>
+<p><font color="#666">Manages Local Data Mode (LDM) functionality. Local data mode gives the developer  the option to put the SDK into airplane mode, restricting its access to the internet.  See <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager">LDMManager</a></code> for details on when and where this is possible, and what is restricted.</p>
 <h5 id="return-v16">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager">LDMManager</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager">LDMManager</a></code>.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager">LDMManager</a></td><td><font color="#666"><i>An instance of <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager">LDMManager</a></code>.</i></td></tr></table></html></div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djisdkmanager_djisdkmanagercallbackinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_djisdkmanagercallbackinterface_inline">SDKManagerCallback</a></div></div><div class="inline-doc" id="djisdkmanager_djisdkmanagercallbackinterface_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>SDKManagerCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">SDKManagerCallback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_djisdkmanagercallbackinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_djisdkmanagercallbackinterface_inline">SDKManagerCallback</a></div></div><div class="inline-doc" id="djisdkmanager_djisdkmanagercallbackinterface_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>SDKManagerCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">SDKManagerCallback</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v26">Description:</h5>
-<p><font color="#666">Callback interface for SDK manager.</font></p>
+<p><font color="#666">Callback interface for SDK manager.</p>
 <h5 id="interface-methods">Interface Methods:</h5>
-<div class="api-row" id="djisdkmanager_didregisterappwitherror"><div class="api-col left">SDK Registration</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_didregisterappwitherror_inline">onRegister</a></div></div><div class="inline-doc" id="djisdkmanager_didregisterappwitherror_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onRegister</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onRegister</span><span class="params">(DJIError error)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_didregisterappwitherror"><div class="api-col left">SDK Registration</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_didregisterappwitherror_inline">onRegister</a></div></div><div class="inline-doc" id="djisdkmanager_didregisterappwitherror_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onRegister</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onRegister</span><span class="params">(DJIError error)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v27">Description:</h5>
-<p><font color="#666">Callback method after the application attempts to register.</font></p>
+<p><font color="#666">Callback method after the application attempts to register.</p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i><code><a href="../../Components/SDKError/DJIError.html#djierror_djisdkerror_registration_success">REGISTRATION_SUCCESS</a></code> if registration is successful.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_productconnectedupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_productconnectedupdate_inline">onProductConnect</a></div></div><div class="inline-doc" id="djisdkmanager_productconnectedupdate_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onProductConnect</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onProductConnect</span><span class="params">(BaseProduct product)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIProductKey.html#productkey_connection_key">ProductKey.CONNECTION</a></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</td><td><font color="#666"><i><code><a href="../../Components/SDKError/DJIError.html#djierror_djisdkerror_registration_success">REGISTRATION_SUCCESS</a></code> if registration is successful.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_productconnectedupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_productconnectedupdate_inline">onProductConnect</a></div></div><div class="inline-doc" id="djisdkmanager_productconnectedupdate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onProductConnect</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onProductConnect</span><span class="params">(BaseProduct product)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr><tr valign="top"><td width=15%><font color="#999"><i>SDK Key:</i></td><td width=85%><font color="#999"><a href="../../Components/KeyManager/DJIProductKey.html#productkey_connection_key">ProductKey.CONNECTION</a></td></tr></table></html>
 <h5 id="description-v28">Description:</h5>
-<p><font color="#666">Called when the &quot;product&quot; is connected.</font></p>
+<p><font color="#666">Called when the &quot;product&quot; is connected.</p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a> <font color="#000">product</font></font></td><td><font color="#666"><i>Product object. nil if the USB link or WiFi link between the product and phone is  disconnected.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_productdisconnectedupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_productdisconnectedupdate_inline">onProductDisconnect</a></div></div><div class="inline-doc" id="djisdkmanager_productdisconnectedupdate_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onProductDisconnect</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onProductDisconnect</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIProductKey.html#productkey_connection_key">ProductKey.CONNECTION</a></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a> <font color="#000">product</td><td><font color="#666"><i>Product object. nil if the USB link or WiFi link between the product and phone is  disconnected.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_productdisconnectedupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_productdisconnectedupdate_inline">onProductDisconnect</a></div></div><div class="inline-doc" id="djisdkmanager_productdisconnectedupdate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onProductDisconnect</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onProductDisconnect</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr><tr valign="top"><td width=15%><font color="#999"><i>SDK Key:</i></td><td width=85%><font color="#999"><a href="../../Components/KeyManager/DJIProductKey.html#productkey_connection_key">ProductKey.CONNECTION</a></td></tr></table></html>
 <h5 id="description-v29">Description:</h5>
-<p><font color="#666">Called when the &quot;product&quot; is disconnected.</font></p>
+<p><font color="#666">Called when the &quot;product&quot; is disconnected.</p>
 </div>
-<div class="api-row" id="djisdkmanager_oncomponentchange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_oncomponentchange_inline">onComponentChange</a></div></div><div class="inline-doc" id="djisdkmanager_oncomponentchange_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onComponentChange</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onComponentChange</span><span class="params">(BaseProduct.ComponentKey key, BaseComponent oldComponent, BaseComponent newComponent)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIProductKey.html#productkey_connection_key">ProductKey.CONNECTION</a></font></td></tr></table></html>
+<div class="api-row" id="djisdkmanager_oncomponentchange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_oncomponentchange_inline">onComponentChange</a></div></div><div class="inline-doc" id="djisdkmanager_oncomponentchange_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onComponentChange</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onComponentChange</span><span class="params">(BaseProduct.ComponentKey key, BaseComponent oldComponent, BaseComponent newComponent)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr><tr valign="top"><td width=15%><font color="#999"><i>SDK Key:</i></td><td width=85%><font color="#999"><a href="../../Components/KeyManager/DJIProductKey.html#productkey_connection_key">ProductKey.CONNECTION</a></td></tr></table></html>
 <h5 id="description-v30">Description:</h5>
-<p><font color="#666">Called when a component object changes. Note: if the component is disconnected,  this method will not be called, pls use ComponentListener to listen the disconnect  event of any component.</font></p>
+<p><font color="#666">Called when a component object changes. Note: if the component is disconnected,  this method will not be called, pls use ComponentListener to listen the disconnect  event of any component.</p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a>.<a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_componentkey">ComponentKey</a> <font color="#000">key</font></font></td><td><font color="#666"><i>An enum value of the <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_componentkey">ComponentKey</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a> <font color="#000">oldComponent</font></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a> <font color="#000">newComponent</font></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_oninitprocess"><div class="api-col left">Init Process</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_oninitprocess_inline">onInitProcess</a></div></div><div class="inline-doc" id="djisdkmanager_oninitprocess_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onInitProcess</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onInitProcess</span><span class="params">(DJISDKInitEvent event, <span class="keyword">int</span> totalProcess)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a>.<a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_componentkey">ComponentKey</a> <font color="#000">key</td><td><font color="#666"><i>An enum value of the <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_componentkey">ComponentKey</a></code>.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a> <font color="#000">oldComponent</td><td><font color="#666"><i>An instance of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code>.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a> <font color="#000">newComponent</td><td><font color="#666"><i>An instance of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_oninitprocess"><div class="api-col left">Init Process</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_oninitprocess_inline">onInitProcess</a></div></div><div class="inline-doc" id="djisdkmanager_oninitprocess_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onInitProcess</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onInitProcess</span><span class="params">(DJISDKInitEvent event, <span class="keyword">int</span> totalProcess)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v31">Description:</h5>
-<p><font color="#666">Called when load sdk resource.</font></p>
+<p><font color="#666">Called when load sdk resource.</p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/DJISDKManager_DJISDKInitEvent.html#djisdkmanager_djisdkinitevent">DJISDKInitEvent</a> <font color="#000">event</font></font></td><td><font color="#666"><i>An event that show what resource is loading.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">totalProcess</font></font></td><td><font color="#666"><i>The totalProcess of load resource, from 0 to 100.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djisdkmanager_ondatabasedownloadprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_ondatabasedownloadprogress_inline">onDatabaseDownloadProgress</a></div></div><div class="inline-doc" id="djisdkmanager_ondatabasedownloadprogress_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onDatabaseDownloadProgress</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onDatabaseDownloadProgress</span><span class="params">(<span class="keyword">long</span> current, <span class="keyword">long</span> total)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/DJISDKManager_DJISDKInitEvent.html#djisdkmanager_djisdkinitevent">DJISDKInitEvent</a> <font color="#000">event</td><td><font color="#666"><i>An event that show what resource is loading.</i></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">totalProcess</td><td><font color="#666"><i>The totalProcess of load resource, from 0 to 100.</i></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_ondatabasedownloadprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_ondatabasedownloadprogress_inline">onDatabaseDownloadProgress</a></div></div><div class="inline-doc" id="djisdkmanager_ondatabasedownloadprogress_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onDatabaseDownloadProgress</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onDatabaseDownloadProgress</span><span class="params">(<span class="keyword">long</span> current, <span class="keyword">long</span> total)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.sdkmanager</td></tr></table></html>
 <h5 id="description-v32">Description:</h5>
-<p><font color="#666">Called when Fly Safe database download progress is updated. If you excluded &quot;fly-safe-database&quot;  in build.gradle, mobile SDK will download the database when <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerApp</a></code> is invoked,  otherwise it will not be invoked. Please find <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_didregisterappwitherror">onRegister</a></code> for updated error.</font></p>
+<p><font color="#666">Called when Fly Safe database download progress is updated. Mobile SDK will download the  database when <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerApp</a></code>  is invoked, if &quot;fly-safe-database&quot; is excluded in build.gradle.  Please find <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_didregisterappwitherror">onRegister</a></code> for updated error.</p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long <font color="#000">current</font></font></td><td><font color="#666"><i>The current download data size.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">long <font color="#000">total</font></font></td><td><font color="#666"><i>The total size of the file being downloaded.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long <font color="#000">current</td><td><font color="#666"><i>The current download data size.</i></td></tr><tr valign="top"><td><font color="#70BF41">long <font color="#000">total</td><td><font color="#666"><i>The total size of the file being downloaded.</i></td></tr></table></html></div>
 </div>
 <div class="api-row" id="djibluetoothproductconnector"><div class="api-col left">Bluetooth</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html">BluetoothProductConnector</a></div></div><div class="api-row" id="djisdkmanager_djisdkinitevent"><div class="api-col left">SDK Init Event</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/SDKManager/DJISDKManager_DJISDKInitEvent.html">DJISDKInitEvent</a></div></div>
 

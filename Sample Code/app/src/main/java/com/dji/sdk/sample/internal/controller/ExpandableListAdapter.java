@@ -146,20 +146,17 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             final TextView titleText = (TextView) convertView.findViewById(R.id.expandable_item_title);
             titleText.setText(context.getResources().getString(item.getTitleStringId()));
 
-            convertView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        Constructor<? extends PresentableView> cons =
-                                (item.getLinkedViewClass().getConstructor(Context.class));
-                        PresentableView linkedView = cons.newInstance(context);
-                        DJISampleApplication.getEventBus()
-                                .post(new ViewWrapper((View) linkedView, item.getTitleStringId()));
-                    } catch (Exception e) {
-                        throw new RuntimeException("Class "
-                                + (item).getLinkedViewClass().getSimpleName()
-                                + " is missing a constructor that takes Context");
-                    }
+            convertView.setOnClickListener(v -> {
+                try {
+                    Constructor<? extends PresentableView> cons =
+                            (item.getLinkedViewClass().getConstructor(Context.class));
+                    PresentableView linkedView = cons.newInstance(context);
+                    DJISampleApplication.getEventBus()
+                            .post(new ViewWrapper((View) linkedView, item.getTitleStringId()));
+                } catch (Exception e) {
+                    throw new RuntimeException("Class "
+                            + (item).getLinkedViewClass().getSimpleName()
+                            + " is missing a constructor that takes Context");
                 }
             });
             return convertView;

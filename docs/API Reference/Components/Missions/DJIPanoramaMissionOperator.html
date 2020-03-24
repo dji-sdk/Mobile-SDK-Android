@@ -1,12 +1,16 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
   <title>DJI Mobile SDK Documentation
-  </title><link rel="stylesheet" href="../../stylesheets/doc-vendor.css"><link rel="stylesheet" href="../../stylesheets/doc-app.css">
-</head>
+  </title>
+<link rel="stylesheet" href="../../stylesheets/doc-vendor.css">
+
+<link rel="stylesheet" href="../../stylesheets/doc-app.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
@@ -117,6 +121,12 @@
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
+                  </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">UTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">UTMISSParam</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">FlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -402,6 +412,10 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">RemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
+                            </dd>
                             <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
@@ -461,10 +475,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">MultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -736,6 +746,8 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
                             </dd>
+                            <dd><a href="../SDKError/DJIError_DJIUTMISSError.html">DJIUTMISSError</a>
+                            </dd>
                             <dd><a href="../SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
@@ -768,112 +780,123 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>PanoramaMissionOperator</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PanoramaMissionOperator</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.panorama</font></td></tr></table></html>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>PanoramaMissionOperator</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PanoramaMissionOperator</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.panorama</td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">The panorama mission operator is the only object that controls, runs and monitors Panorama Missions. It can be accessed from <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></code>.</font></p>
+<p><font color="#666">The panorama mission operator is the only object that controls, runs and monitors Panorama Missions. It can be accessed from <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></code>.</p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djipanoramamissionoperator_currentstate"><div class="api-col left">Current State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_currentstate_inline">getCurrentState</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_currentstate_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getCurrentState</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@NonNull</span></div><div class="line"> <span class="function">PanoramaMissionState <span class="title">getCurrentState</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.panorama</font></td></tr></table></html>
+<div class="api-row" id="djipanoramamissionoperator_currentstate"><div class="api-col left">Current State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_currentstate_inline">getCurrentState</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_currentstate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getCurrentState</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@NonNull</span></span><br><span class="line"> <span class="function">PanoramaMissionState <span class="title">getCurrentState</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.panorama</td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">The current state of the operator.</font></p>
+<p><font color="#666">The current state of the operator.</p>
 <h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate">PanoramaMissionState</a></font></td><td><font color="#666"><i>An object of <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate">PanoramaMissionState</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipanoramamissionoperator_addlistenertoevents"><div class="api-col left">Add Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_addlistenertoevents_inline">addListener</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_addlistenertoevents_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>addListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addListener</span><span class="params">(@NonNull PanoramaMissionOperatorListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.panorama</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate">PanoramaMissionState</a></td><td><font color="#666"><i>An object of <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate">PanoramaMissionState</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djipanoramamissionoperator_addlistenertoevents"><div class="api-col left">Add Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_addlistenertoevents_inline">addListener</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_addlistenertoevents_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>addListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addListener</span><span class="params">(@NonNull PanoramaMissionOperatorListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.panorama</td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">Adds listener to receive all events of the Panorama mission operator.</font></p>
+<p><font color="#666">Adds listener to receive all events of the Panorama mission operator.</p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIPanoramaMissionOperator.html#panoramamissionoperatorlistener">PanoramaMissionOperatorListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>An interface of <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#panoramamissionoperatorlistener">PanoramaMissionOperatorListener</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipanoramamissionoperator_removelistener"><div class="api-col left">Remove Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_removelistener_inline">removeListener</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_removelistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>removeListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeListener</span><span class="params">(@NonNull PanoramaMissionOperatorListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.panorama</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIPanoramaMissionOperator.html#panoramamissionoperatorlistener">PanoramaMissionOperatorListener</a> <font color="#000">listener</td><td><font color="#666"><i>An interface of <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#panoramamissionoperatorlistener">PanoramaMissionOperatorListener</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djipanoramamissionoperator_removelistener"><div class="api-col left">Remove Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_removelistener_inline">removeListener</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_removelistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>removeListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeListener</span><span class="params">(@NonNull PanoramaMissionOperatorListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.panorama</td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Removes listener. The listener will not receive any update after calling this method.</font></p>
+<p><font color="#666">Removes listener. The listener will not receive any update after calling this method.</p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIPanoramaMissionOperator.html#panoramamissionoperatorlistener">PanoramaMissionOperatorListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be removed.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipanoramamissionoperator_removealllisteners"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_removealllisteners_inline">removeAllListeners</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_removealllisteners_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>removeAllListeners</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeAllListeners</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.panorama</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIPanoramaMissionOperator.html#panoramamissionoperatorlistener">PanoramaMissionOperatorListener</a> <font color="#000">listener</td><td><font color="#666"><i>Listener to be removed.</i></td></tr></table></html></div>
+<div class="api-row" id="djipanoramamissionoperator_removealllisteners"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_removealllisteners_inline">removeAllListeners</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_removealllisteners_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>removeAllListeners</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeAllListeners</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.panorama</td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Remove all listeners.</font></p>
+<p><font color="#666">Remove all listeners.</p>
 </div>
-<div class="api-row" id="djipanoramamissionoperator_setupwithmode"><div class="api-col left">Setup Mission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_setupwithmode_inline">setup</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_setupwithmode_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setup</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">(@NonNull PanoramaMode mode, @Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.panorama</font></td></tr></table></html>
+<div class="api-row" id="djipanoramamissionoperator_setupwithmode"><div class="api-col left">Setup Mission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_setupwithmode_inline">setup</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_setupwithmode_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setup</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">(@NonNull PanoramaMode mode, @Nullable CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.panorama</td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">Sets up the Panorama mission with the specific mode. It can only be called  when the <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> is one of the  following:  <ul> <li><code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_readytosetup">READY_TO_SETUP</a></code> </li> <li><code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_readytoexecute">READY_TO_EXECUTE</a></code> </li> </ul> If the setup starts  successfully, <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> will become  <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_settingup">SETTING_UP</a></code>. Normally, it will take seconds to  complete the setup. Once setup is completed successfully,  <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> will become  <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_readytoexecute">READY_TO_EXECUTE</a></code>.</font></p>
+<p><font color="#666">Sets up the Panorama mission with the specific mode. It can only be called  when the <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> is one of the  following:  <ul> <li><code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_readytosetup">READY_TO_SETUP</a></code> </li> <li><code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_readytoexecute">READY_TO_EXECUTE</a></code> </li> </ul> If the setup starts  successfully, <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> will become  <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_settingup">SETTING_UP</a></code>. Normally, it will take seconds to  complete the setup. Once setup is completed successfully,  <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> will become  <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_readytoexecute">READY_TO_EXECUTE</a></code>.</p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamission_djipanoramamode">PanoramaMode</a> <font color="#000">mode</font></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamission_djipanoramamode">PanoramaMode</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipanoramamissionoperator_startmission"><div class="api-col left">Start Mission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_startmission_inline">startMission</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_startmission_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>startMission</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">startMission</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.panorama</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamission_djipanoramamode">PanoramaMode</a> <font color="#000">mode</td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamission_djipanoramamode">PanoramaMode</a></code>.</i></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned execution result.</i></td></tr></table></html></div>
+<div class="api-row" id="djipanoramamissionoperator_startmission"><div class="api-col left">Start Mission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_startmission_inline">startMission</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_startmission_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>startMission</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">startMission</span><span class="params">(@Nullable CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.panorama</td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">Starts to execute the mission that has been setup. <br> It can only be called when  the <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> is <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_readytoexecute">READY_TO_EXECUTE</a></code>. <br> If the mission is started successfully, the  <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> will become  <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_executing">EXECUTING</a></code>.</font></p>
+<p><font color="#666">Starts to execute the mission that has been setup. <br> It can only be called when  the <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> is <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_readytoexecute">READY_TO_EXECUTE</a></code>. <br> If the mission is started successfully, the  <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> will become  <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_executing">EXECUTING</a></code>.</p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipanoramamissionoperator_stopmission"><div class="api-col left">Stop Mission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_stopmission_inline">stopMission</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_stopmission_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>stopMission</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">stopMission</span><span class="params">(@Nullable CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.panorama</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned execution result.</i></td></tr></table></html></div>
+<div class="api-row" id="djipanoramamissionoperator_stopmission"><div class="api-col left">Stop Mission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_stopmission_inline">stopMission</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_stopmission_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>stopMission</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">stopMission</span><span class="params">(@Nullable CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.panorama</td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Stops the executing mission. It can only be called when the  <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> is  <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_executing">EXECUTING</a></code>. After a mission is stopped successfully,  <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> will become  <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_readytoexecute">READY_TO_EXECUTE</a></code>.</font></p>
+<p><font color="#666">Stops the executing mission. It can only be called when the  <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> is  <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_executing">EXECUTING</a></code>. After a mission is stopped successfully,  <code><a href="../../Components/Missions/DJIPanoramaMissionOperator.html#djipanoramamissionoperator_currentstate">getCurrentState</a></code> will become  <code><a href="../../Components/Missions/DJIPanoramaMissionState.html#djipanoramamissionstate_readytoexecute">READY_TO_EXECUTE</a></code>.</p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipanoramamissionoperator_getpanoramamediafile"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_getpanoramamediafile_inline">getRecentPanoramaMediaFile</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_getpanoramamediafile_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getRecentPanoramaMediaFile</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getRecentPanoramaMediaFile</span><span class="params">(@NonNull <span class="keyword">final</span> CompletionCallbackWith&lt;MediaFile&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.panorama</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned execution result.</i></td></tr></table></html></div>
+<div class="api-row" id="djipanoramamissionoperator_getpanoramamediafile"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamissionoperator_getpanoramamediafile_inline">getRecentPanoramaMediaFile</a></div></div><div class="inline-doc" id="djipanoramamissionoperator_getpanoramamediafile_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getRecentPanoramaMediaFile</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getRecentPanoramaMediaFile</span><span class="params">(@NonNull <span class="keyword">final</span> CompletionCallbackWith&lt;MediaFile&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.panorama</td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">Retrieves the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a></code> object for the recently finished panorama  mission.</font></p>
+<p><font color="#666">Retrieves the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a></code> object for the recently finished panorama  mission.</p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;<a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;<a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a>&gt; <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned execution result.</i></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="panoramamissionoperatorlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#panoramamissionoperatorlistener_inline">PanoramaMissionOperatorListener</a></div></div><div class="inline-doc" id="panoramamissionoperatorlistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>PanoramaMissionOperatorListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">PanoramaMissionOperatorListener</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.panorama</font></td></tr></table></html>
+<div class="api-row" id="panoramamissionoperatorlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#panoramamissionoperatorlistener_inline">PanoramaMissionOperatorListener</a></div></div><div class="inline-doc" id="panoramamissionoperatorlistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>PanoramaMissionOperatorListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">PanoramaMissionOperatorListener</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.panorama</td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Listener interface for Panorama mission events.</font></p>
+<p><font color="#666">Listener interface for Panorama mission events.</p>
 <h5 id="interface-methods">Interface Methods:</h5>
 <h4 id="callback-method">Callback Method</h4>
-<div class="api-row" id="panoramamissionoperatorlistener_onreceive"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#panoramamissionoperatorlistener_onreceive_inline">onExecutionUpdate</a></div></div><div class="inline-doc" id="panoramamissionoperatorlistener_onreceive_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onExecutionUpdate</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onExecutionUpdate</span><span class="params">(@NonNull PanoramaMissionEvent event)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.panorama</font></td></tr></table></html>
+<div class="api-row" id="panoramamissionoperatorlistener_onreceive"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#panoramamissionoperatorlistener_onreceive_inline">onExecutionUpdate</a></div></div><div class="inline-doc" id="panoramamissionoperatorlistener_onreceive_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onExecutionUpdate</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onExecutionUpdate</span><span class="params">(@NonNull PanoramaMissionEvent event)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.panorama</td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">Called when received a new Panorama mission event.</font></p>
+<p><font color="#666">Called when received a new Panorama mission event.</p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIPanoramaMissionEvent.html#djipanoramamissionevent">PanoramaMissionEvent</a> <font color="#000">event</font></font></td><td><font color="#666"><i>An object of <code><a href="../../Components/Missions/DJIPanoramaMissionEvent.html#djipanoramamissionevent">PanoramaMissionEvent</a></code>.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Missions/DJIPanoramaMissionEvent.html#djipanoramamissionevent">PanoramaMissionEvent</a> <font color="#000">event</td><td><font color="#666"><i>An object of <code><a href="../../Components/Missions/DJIPanoramaMissionEvent.html#djipanoramamissionevent">PanoramaMissionEvent</a></code>.</i></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djipanoramamissionevent"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIPanoramaMissionEvent.html">PanoramaMissionEvent</a></div></div><div class="api-row" id="djipanoramamissionstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIPanoramaMissionState.html">PanoramaMissionState</a></div></div><div class="api-row" id="djipanoramamission_djipanoramamissionstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIPanoramaMission_DJIPanoramaMissionStatus.html">PanoramaMissionExecutionState</a></div></div><div class="api-row" id="djipanoramamission_djipanoramamode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djipanoramamission_djipanoramamode_inline">PanoramaMode</a></div></div><div class="inline-doc" id="djipanoramamission_djipanoramamode_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">enum </font>PanoramaMode</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> PanoramaMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.panorama</font></td></tr></table></html>
+<div class="api-row" id="djipanoramamissionevent"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIPanoramaMissionEvent.html">PanoramaMissionEvent</a></div></div><div class="api-row" id="djipanoramamissionstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIPanoramaMissionState.html">PanoramaMissionState</a></div></div><div class="api-row" id="djipanoramamission_djipanoramamissionstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIPanoramaMission_DJIPanoramaMissionStatus.html">PanoramaMissionExecutionState</a></div></div><div class="api-row" id="djipanoramamission_djipanoramamode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djipanoramamission_djipanoramamode_inline">PanoramaMode</a></div></div><div class="inline-doc" id="djipanoramamission_djipanoramamode_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">enum </font>PanoramaMode</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EXClassNullAway</span></span><br><span class="line"> <span class="keyword">enum</span> PanoramaMode</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.mission.panorama</td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666">Defines options for different types of modes for Panorama mission.</font></p>
+<p><font color="#666">Defines options for different types of modes for Panorama mission.</p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djipanoramamission_djipanoramamode_fullcircle_inline"></a>FULL_CIRCLE</font></td><td><font color="#666">360 Degree Panorama mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipanoramamission_djipanoramamode_halfcircle_inline"></a>HALF_CIRCLE</font></td><td><font color="#666">180 Degree Panorama mode. Also known as selfie mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipanoramamission_djipanoramamode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown mode.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djipanoramamission_djipanoramamode_fullcircle_inline"></a>FULL_CIRCLE</td><td><font color="#666">360 Degree Panorama mode.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipanoramamission_djipanoramamode_halfcircle_inline"></a>HALF_CIRCLE</td><td><font color="#666">180 Degree Panorama mode. Also known as selfie mode.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipanoramamission_djipanoramamode_unknown_inline"></a>UNKNOWN</td><td><font color="#666">Unknown mode.</td></tr></table></html>
 <h5 id="class-members-v2">Class Members:</h5>
 </div>
 

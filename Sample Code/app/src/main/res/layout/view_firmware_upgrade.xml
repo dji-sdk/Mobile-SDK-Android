@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btn_start_consistent_upgrade"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:text="Start Consistent Upgrade"
+                style="@style/common_button"
+                android:layout_marginStart="5dp" />
+            <Button
+                android:id="@+id/btn_stop_consistent_upgrade"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:text="Stop Consistent Upgrade"
+                style="@style/common_button"
+                android:layout_marginStart="5dp" />
+            <Button
+                android:id="@+id/btn_get_upgrade_state"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:text="Get Upgrade State"
+                style="@style/common_button"
+                android:layout_marginStart="5dp" />
+            <Button
+                android:id="@+id/btn_get_current_firmware_info"
+                android:layout_marginLeft="5dp"
+                android:text="Get Current Firmware Info"
+                style="@style/common_button"
+                android:layout_marginStart="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_ac_upgrade_state_title"
+                android:layout_width="240dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:text="Upgrade State" />
+
+            <ScrollView
+                android:id="@+id/tv_ac_upgrade_state_sv"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:id="@+id/tv_ac_upgrade_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/tv_rc_upgrade_state_sv"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/tv_rc_upgrade_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_ac_upgrade_progress_title"
+                android:layout_width="240dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:text="Upgrade Progress" />
+
+            <ScrollView
+                android:id="@+id/tv_ac_upgrade_progress_sv"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/tv_ac_upgrade_progress"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/tv_rc_upgrade_progress_sv"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/tv_rc_upgrade_progress"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_ac_consistent_state_title"
+                android:layout_width="240dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:text="Consistent State" />
+
+            <ScrollView
+                android:id="@+id/tv_ac_consistent_state_sv"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/tv_ac_consistent_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/tv_rc_consistent_state_sv"
+                android:layout_width="240dp"
+                android:layout_height="45dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/tv_rc_consistent_state"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_ac_firmware_info_title"
+                android:layout_width="240dp"
+                android:layout_height="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:text="Firmware Info" />
+
+            <ScrollView
+                android:id="@+id/tv_ac_firmware_info_sv"
+                android:layout_width="240dp"
+                android:layout_height="100dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/tv_ac_firmware_info"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/tv_rc_firmware_info_sv"
+                android:layout_width="240dp"
+                android:layout_height="100dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/tv_rc_firmware_info"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:scrollbars="vertical" />
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</merge>

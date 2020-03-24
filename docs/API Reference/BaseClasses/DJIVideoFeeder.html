@@ -1,12 +1,16 @@
-<script>window.pathPrefix="../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../images/favicon.png" rel="shortcut icon" type="image/png">
   <title>DJI Mobile SDK Documentation
-  </title><link rel="stylesheet" href="../stylesheets/doc-vendor.css"><link rel="stylesheet" href="../stylesheets/doc-app.css">
-</head>
+  </title>
+<link rel="stylesheet" href="../stylesheets/doc-vendor.css">
+
+<link rel="stylesheet" href="../stylesheets/doc-app.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
@@ -117,6 +121,12 @@
                   <dd><a href="../Components/DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../Components/LDMManager/DJILDMManager.html">LDMManager</a>
+                  </dd>
+                  <dd><a data-href="../Components/UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">UTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Components/UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">UTMISSParam</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Components/FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">FlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -402,6 +412,10 @@
                   </dd>
                   <dd><a data-href="../Components/RemoteController/DJIRemoteController.html" class="sub-toggle">RemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../Components/RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
+                            </dd>
+                            <dd><a href="../Components/RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
+                            </dd>
                             <dd><a data-href="../Components/RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Components/RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
@@ -461,10 +475,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../Components/RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">MultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../Components/RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
-                            </dd>
-                            <dd><a href="../Components/RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -736,6 +746,8 @@
                             </dd>
                             <dd><a href="../Components/SDKError/DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
                             </dd>
+                            <dd><a href="../Components/SDKError/DJIError_DJIUTMISSError.html">DJIUTMISSError</a>
+                            </dd>
                             <dd><a href="../Components/SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../Components/SDKError/DJIError_DJISDKError.html">DJISDKError</a>
@@ -768,230 +780,253 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>VideoFeeder</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">VideoFeeder</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>VideoFeeder</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VideoFeeder</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">Class that manages live video feed from DJI products to the mobile device.</font></p>
+<p><font color="#666">Class that manages live video feed from DJI products to the mobile device.</p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djivideofeeder_getinstance"><div class="api-col left">Get Instance</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_getinstance_inline">getInstance</a></div></div><div class="inline-doc" id="djivideofeeder_getinstance_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getInstance</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> VideoFeeder <span class="title">getInstance</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<div class="api-row" id="djivideofeeder_getinstance"><div class="api-col left">Get Instance</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_getinstance_inline">getInstance</a></div></div><div class="inline-doc" id="djivideofeeder_getinstance_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getInstance</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> VideoFeeder <span class="title">getInstance</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">The instance of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder">VideoFeeder</a></code>.</font></p>
+<p><font color="#666">The instance of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder">VideoFeeder</a></code>.</p>
 <h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static <a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder">VideoFeeder</a></font></td><td><font color="#666"><i>An object of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder">VideoFeeder</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_addphysicalsourcelistener"><div class="api-col left">Add Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_addphysicalsourcelistener_inline">addPhysicalSourceListener</a></div></div><div class="inline-doc" id="djivideofeeder_addphysicalsourcelistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>addPhysicalSourceListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addPhysicalSourceListener</span><span class="params">(PhysicalSourceListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static <a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder">VideoFeeder</a></td><td><font color="#666"><i>An object of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder">VideoFeeder</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_addphysicalsourcelistener"><div class="api-col left">Add Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_addphysicalsourcelistener_inline">addPhysicalSourceListener</a></div></div><div class="inline-doc" id="djivideofeeder_addphysicalsourcelistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>addPhysicalSourceListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addPhysicalSourceListener</span><span class="params">(PhysicalSourceListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">Add physical source listener.</font></p>
+<p><font color="#666">Add physical source listener.</p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_physicalsourcelistener">PhysicalSourceListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>An interface of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_physicalsourcelistener">PhysicalSourceListener</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_removephysicalsourcelistener"><div class="api-col left">Remove Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_removephysicalsourcelistener_inline">removePhysicalSourceListener</a></div></div><div class="inline-doc" id="djivideofeeder_removephysicalsourcelistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>removePhysicalSourceListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removePhysicalSourceListener</span><span class="params">(PhysicalSourceListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_physicalsourcelistener">PhysicalSourceListener</a> <font color="#000">listener</td><td><font color="#666"><i>An interface of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_physicalsourcelistener">PhysicalSourceListener</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_removephysicalsourcelistener"><div class="api-col left">Remove Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_removephysicalsourcelistener_inline">removePhysicalSourceListener</a></div></div><div class="inline-doc" id="djivideofeeder_removephysicalsourcelistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>removePhysicalSourceListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removePhysicalSourceListener</span><span class="params">(PhysicalSourceListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Remove physical source listener.</font></p>
+<p><font color="#666">Remove physical source listener.</p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_physicalsourcelistener">PhysicalSourceListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>An interface of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_physicalsourcelistener">PhysicalSourceListener</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_primaryvideofeed"><div class="api-col left">Primary Video Feed</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_primaryvideofeed_inline">getPrimaryVideoFeed</a></div></div><div class="inline-doc" id="djivideofeeder_primaryvideofeed_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getPrimaryVideoFeed</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@NonNull</span></div><div class="line"> <span class="function">VideoFeed <span class="title">getPrimaryVideoFeed</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_physicalsourcelistener">PhysicalSourceListener</a> <font color="#000">listener</td><td><font color="#666"><i>An interface of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_physicalsourcelistener">PhysicalSourceListener</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_primaryvideofeed"><div class="api-col left">Primary Video Feed</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_primaryvideofeed_inline">getPrimaryVideoFeed</a></div></div><div class="inline-doc" id="djivideofeeder_primaryvideofeed_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getPrimaryVideoFeed</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@NonNull</span></span><br><span class="line"> <span class="function">VideoFeed <span class="title">getPrimaryVideoFeed</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">The primary video feed. <br> The possible physical sources for the primary video feed include:  <br> - <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_maincamera">MAIN_CAM</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_lb">LB</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_hdmi">HDMI</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code> <br> For M210 and M210 RTK, the  physical sources are controlled by the bandwidth allocation between the port (left) and starboard  (right) main cameras (<code><a href="../Components/LBAirLink/DJILBAirLink.html#djilbairlink_setbandwidthallocationforleftcamera">setBandwidthAllocationForLeftCamera</a></code>): <br> - When bandwidth  is 100% on the left camera, the primary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the secondary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth is 0%  on the left camera, the primary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>  and the secondary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When  bandwidth is neither 0% nor 100% on the left camera, the primary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the secondary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>.</font></p>
+<p><font color="#666">The primary video feed. <br> The possible physical sources for the primary video feed include:  <br> - <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_maincamera">MAIN_CAM</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_lb">LB</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_hdmi">HDMI</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code> <br> For M210 and M210 RTK, the  physical sources are controlled by the bandwidth allocation between the port (left) and starboard  (right) main cameras (<code><a href="../Components/LBAirLink/DJILBAirLink.html#djilbairlink_setbandwidthallocationforleftcamera">setBandwidthAllocationForLeftCamera</a></code>): <br> - When bandwidth  is 100% on the left camera, the primary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the secondary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth is 0%  on the left camera, the primary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>  and the secondary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When  bandwidth is neither 0% nor 100% on the left camera, the primary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the secondary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>.</p>
 <h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></font></td><td><font color="#666"><i>A <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_secondaryvideofeed"><div class="api-col left">Secondary Video Feed</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_secondaryvideofeed_inline">getSecondaryVideoFeed</a></div></div><div class="inline-doc" id="djivideofeeder_secondaryvideofeed_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getSecondaryVideoFeed</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@NonNull</span></div><div class="line"> <span class="function">VideoFeed <span class="title">getSecondaryVideoFeed</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></td><td><font color="#666"><i>A <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></code> object.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_secondaryvideofeed"><div class="api-col left">Secondary Video Feed</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_secondaryvideofeed_inline">getSecondaryVideoFeed</a></div></div><div class="inline-doc" id="djivideofeeder_secondaryvideofeed_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getSecondaryVideoFeed</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@NonNull</span></span><br><span class="line"> <span class="function">VideoFeed <span class="title">getSecondaryVideoFeed</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">The secondary video feed. <br> The possible physical sources for the secondary video feed include:  <br> - <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_ext">EXT</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_av">AV</a></code>  <br> - <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>. For M210 and M210 RTK, the physical  sources are controlled by the bandwidth allocation between the port (left) and starboard (right) main cameras  (<code><a href="../Components/LBAirLink/DJILBAirLink.html#djilbairlink_setbandwidthallocationforleftcamera">setBandwidthAllocationForLeftCamera</a></code>): <br> - When bandwidth is 100% on the left camera, the primary  source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the secondary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth is 0% on the left camera,  the primary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code> and the secondary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth is neither 0% nor 100% on  the left camera, the primary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the  secondary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>.</font></p>
+<p><font color="#666">The secondary video feed. <br> The possible physical sources for the secondary video feed include:  <br> - <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_ext">EXT</a></code> <br> -  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_av">AV</a></code>  <br> - <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>. For M210 and M210 RTK, the physical  sources are controlled by the bandwidth allocation between the port (left) and starboard (right) main cameras  (<code><a href="../Components/LBAirLink/DJILBAirLink.html#djilbairlink_setbandwidthallocationforleftcamera">setBandwidthAllocationForLeftCamera</a></code>): <br> - When bandwidth is 100% on the left camera, the primary  source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the secondary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth is 0% on the left camera,  the primary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code> and the secondary source is  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera">FPV_CAM</a></code>. <br> - When bandwidth is neither 0% nor 100% on  the left camera, the primary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code> and the  secondary source is <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code>.</p>
 <h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></font></td><td><font color="#666"><i>A <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_providetranscodedvideofeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_providetranscodedvideofeed_inline">provideTranscodedVideoFeed</a></div></div><div class="inline-doc" id="djivideofeeder_providetranscodedvideofeed_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>provideTranscodedVideoFeed</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">VideoFeed <span class="title">provideTranscodedVideoFeed</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></td><td><font color="#666"><i>A <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></code> object.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_providetranscodedvideofeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_providetranscodedvideofeed_inline">provideTranscodedVideoFeed</a></div></div><div class="inline-doc" id="djivideofeeder_providetranscodedvideofeed_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>provideTranscodedVideoFeed</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">VideoFeed <span class="title">provideTranscodedVideoFeed</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">Returns a new VideoFeed instance to receive the transcoded video feed from the  main camera. The original video feed from the main camera is transcoded (using MediaCodec)  to generate H.264 video feed for more general usages. The encoder will use the calibrated  decoded feed when lens distortion calibration is needed. Setting the callback of VideoFeed  to null can stop the transcoding.</font></p>
+<p><font color="#666">Returns a new VideoFeed instance to receive the transcoded video feed from the  main camera. The original video feed from the main camera is transcoded (using MediaCodec)  to generate H.264 video feed for more general usages. The encoder will use the calibrated  decoded feed when lens distortion calibration is needed. Setting the callback of VideoFeed  to null can stop the transcoding.</p>
 <h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></font></td><td><font color="#666"><i>A <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_settranscodingdatarate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_settranscodingdatarate_inline">setTranscodingDataRate</a></div></div><div class="inline-doc" id="djivideofeeder_settranscodingdatarate_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setTranscodingDataRate</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTranscodingDataRate</span><span class="params">(<span class="keyword">float</span> rate)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></td><td><font color="#666"><i>A <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></code> object.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_settranscodingdatarate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_settranscodingdatarate_inline">setTranscodingDataRate</a></div></div><div class="inline-doc" id="djivideofeeder_settranscodingdatarate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setTranscodingDataRate</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTranscodingDataRate</span><span class="params">(<span class="keyword">float</span> rate)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Sets the destination data rate for the transcoded video feed. The valid range is [2, 20] in Mbps.  CAUTION: Changing the data rate during transcoding may re-start the internal encoder. The  transcoded video feed will get interrupted for a few seconds.</font></p>
+<p><font color="#666">Sets the destination data rate for the transcoded video feed. The valid range is [2, 20] in Mbps.  CAUTION: Changing the data rate during transcoding may re-start the internal encoder. The  transcoded video feed will get interrupted for a few seconds.</p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">rate</font></font></td><td><font color="#666"><i>The destination data rate for the transcoded video feed.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_gettranscodingdatarate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_gettranscodingdatarate_inline">getTranscodingDataRate</a></div></div><div class="inline-doc" id="djivideofeeder_gettranscodingdatarate_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getTranscodingDataRate</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getTranscodingDataRate</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">rate</td><td><font color="#666"><i>The destination data rate for the transcoded video feed.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_gettranscodingdatarate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_gettranscodingdatarate_inline">getTranscodingDataRate</a></div></div><div class="inline-doc" id="djivideofeeder_gettranscodingdatarate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getTranscodingDataRate</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getTranscodingDataRate</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">Gets the data rate of all transcoded video feeder, in Mbps.</font></p>
+<p><font color="#666">Gets the data rate of all transcoded video feeder, in Mbps.</p>
 <h5 id="return-v5">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value of the data rate of all transcoded video feeder.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_islensdistortioncalibrationneeded"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_islensdistortioncalibrationneeded_inline">isLensDistortionCalibrationNeeded</a></div></div><div class="inline-doc" id="djivideofeeder_islensdistortioncalibrationneeded_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>isLensDistortionCalibrationNeeded</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLensDistortionCalibrationNeeded</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</td><td><font color="#666"><i>A float value of the data rate of all transcoded video feeder.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_islensdistortioncalibrationneeded"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_islensdistortioncalibrationneeded_inline">isLensDistortionCalibrationNeeded</a></div></div><div class="inline-doc" id="djivideofeeder_islensdistortioncalibrationneeded_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>isLensDistortionCalibrationNeeded</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLensDistortionCalibrationNeeded</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Determines if the original video feed requires lens distortion calibration. When calibration is needed,  it is not recommended to use the original video feed with the decoding  sample (https://github.com/DJI-Mobile-SDK-Tutorials/Android-VideoStreamDecodingSample). Use the transcoded  video feed instead and also the module: 'library-anti-distortion' should be included.</font></p>
+<p><font color="#666">Determines if the original video feed requires lens distortion calibration. When calibration is needed,  it is not recommended to use the original video feed with the decoding  sample (https://github.com/DJI-Mobile-SDK-Tutorials/Android-VideoStreamDecodingSample). Use the transcoded  video feed instead and also the module: 'library-anti-distortion' should be included.</p>
 <h5 id="return-v6">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the video need anti-distortion feature.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_isfetchkeyframeneeded"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_isfetchkeyframeneeded_inline">isFetchKeyFrameNeeded</a></div></div><div class="inline-doc" id="djivideofeeder_isfetchkeyframeneeded_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>isFetchKeyFrameNeeded</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isFetchKeyFrameNeeded</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i><code>true</code> if the video need anti-distortion feature.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_isfetchkeyframeneeded"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_isfetchkeyframeneeded_inline">isFetchKeyFrameNeeded</a></div></div><div class="inline-doc" id="djivideofeeder_isfetchkeyframeneeded_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>isFetchKeyFrameNeeded</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isFetchKeyFrameNeeded</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">Determines if the original video feed requires SDK to fetch key frame. When fetch key frame is needed, it is  not recommended to use the original video feed with the decoding  sample (https://github.com/DJI-Mobile-SDK-Tutorials/Android-VideoStreamDecodingSample). Use the transcoded video feed instead.</font></p>
+<p><font color="#666">Determines if the original video feed requires SDK to fetch key frame. When fetch key frame is needed, it is  not recommended to use the original video feed with the decoding  sample (https://github.com/DJI-Mobile-SDK-Tutorials/Android-VideoStreamDecodingSample). Use the transcoded video feed instead.</p>
 <h5 id="return-v7">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the video need anti-distortion feature.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i><code>true</code> if the video need anti-distortion feature.</i></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djivideofeeder_videodatalistenerinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_videodatalistenerinterface_inline">VideoDataListener</a></div></div><div class="inline-doc" id="djivideofeeder_videodatalistenerinterface_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>VideoDataListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">VideoDataListener</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<div class="api-row" id="djivideofeeder_videodatalistenerinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_videodatalistenerinterface_inline">VideoDataListener</a></div></div><div class="inline-doc" id="djivideofeeder_videodatalistenerinterface_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>VideoDataListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">VideoDataListener</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666">Video data listener.</font></p>
+<p><font color="#666">Video data listener.</p>
 <h5 id="interface-methods">Interface Methods:</h5>
 <h4 id="callback-method">Callback Method</h4>
-<div class="api-row" id="djivideofeeder_videodatalistenerinterface_onreceive"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_videodatalistenerinterface_onreceive_inline">onReceive</a></div></div><div class="inline-doc" id="djivideofeeder_videodatalistenerinterface_onreceive_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onReceive</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(<span class="keyword">byte</span>[] videoBuffer, <span class="keyword">int</span> size)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<div class="api-row" id="djivideofeeder_videodatalistenerinterface_onreceive"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_videodatalistenerinterface_onreceive_inline">onReceive</a></div></div><div class="inline-doc" id="djivideofeeder_videodatalistenerinterface_onreceive_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onReceive</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(<span class="keyword">byte</span>[] videoBuffer, <span class="keyword">int</span> size)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">Listener that is called when video data is received, but  if <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_islensdistortioncalibrationneeded">isLensDistortionCalibrationNeeded</a></code> return true, the callback will never be called.</font></p>
+<p><font color="#666">Listener that is called when video data is received, but  if <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_islensdistortioncalibrationneeded">isLensDistortionCalibrationNeeded</a></code> return true, the callback will never be called.</p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">videoBuffer</font></font></td><td><font color="#666"><i>An array containing video buffer.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">size</font></font></td><td><font color="#666"><i>The size of the buffer that contains valid data.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">videoBuffer</td><td><font color="#666"><i>An array containing video buffer.</i></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">size</td><td><font color="#666"><i>The size of the buffer that contains valid data.</i></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djivideofeeder_djivideofeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_inline">VideoFeed</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>VideoFeed</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">VideoFeed</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<div class="api-row" id="djivideofeeder_djivideofeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_inline">VideoFeed</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>VideoFeed</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">VideoFeed</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
-<p><font color="#666">Video feed. Use it to receive video data from a physical source.</font></p>
+<p><font color="#666">Video feed. Use it to receive video data from a physical source.</p>
 <h5 id="interface-methods-v2">Interface Methods:</h5>
 <h5 id="related-v2">Related:</h5>
-<div class="api-row" id="djivideofeeder_djivideofeed_djivideofeedphysicalsource"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_inline">PhysicalSource</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_djivideofeedphysicalsource_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">enum </font>PhysicalSource</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@EXClassNullAway</span></div><div class="line"> <span class="keyword">enum</span> PhysicalSource</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr></table></html>
+<div class="api-row" id="djivideofeeder_djivideofeed_djivideofeedphysicalsource"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_inline">PhysicalSource</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_djivideofeedphysicalsource_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">enum </font>PhysicalSource</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EXClassNullAway</span></span><br><span class="line"> <span class="keyword">enum</span> PhysicalSource</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.airlink</td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">The physical source of a video feed.</font></p>
+<p><font color="#666">The physical source of a video feed.</p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_maincamera_inline"></a>MAIN_CAM</font></td><td><font color="#666">The video feed is from the main camera. It is the physical source used by most of DJI products.  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code>  and <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code> are used instead in  M210 series and M210 V2 series.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera_inline"></a>FPV_CAM</font></td><td><font color="#666">The video feed is from the FPV camera on Inspire 2, M200 series and M200 series v2.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_ext_inline"></a>EXT</font></td><td><font color="#666">The video feed is from EXT port while EXT port is enabled. It is only used for  Lightbridge 2 or aircrafts with Lightbridge 2 (e.g. M600).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_lb_inline"></a>LB</font></td><td><font color="#666">The video feed is from one of the LB ports (AV or HDMI) while EXT Port is enabled.  It is only used for stand-alone Lightbridge 2 or aircraft with stand-alone Lightbridge 2 modules (e.g. M600).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_hdmi_inline"></a>HDMI</font></td><td><font color="#666">The video feed is from the HDMI port while EXT port is disabled.  It is only used for stand-alone Lightbridge 2 or aircraft with stand-alone Lightbridge 2 modules.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_av_inline"></a>AV</font></td><td><font color="#666">The video feed is from AV port while EXT port is disabled. It is only used for stand-alone Lightbridge 2 or aircraft with stand-alone Lightbridge 2 modules.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera_inline"></a>LEFT_CAM</font></td><td><font color="#666">The video feed is from the port (left) main camera. It is only used for M210 series and M210 V2 series.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera_inline"></a>RIGHT_CAM</font></td><td><font color="#666">The video feed is from the starboard (right) main camera. It is only used for M210 series and M210 V2 series.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown video physical source.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_maincamera_inline"></a>MAIN_CAM</td><td><font color="#666">The video feed is from the main camera. It is the physical source used by most of DJI products.  <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">LEFT_CAM</a></code>  and <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera">RIGHT_CAM</a></code> are used instead in  M210 series and M210 V2 series.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_fpvcamera_inline"></a>FPV_CAM</td><td><font color="#666">The video feed is from the FPV camera on Inspire 2, M200 series and M200 series v2.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_ext_inline"></a>EXT</td><td><font color="#666">The video feed is from EXT port while EXT port is enabled. It is only used for  Lightbridge 2 or aircrafts with Lightbridge 2 (e.g. M600).</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_lb_inline"></a>LB</td><td><font color="#666">The video feed is from one of the LB ports (AV or HDMI) while EXT Port is enabled.  It is only used for stand-alone Lightbridge 2 or aircraft with stand-alone Lightbridge 2 modules (e.g. M600).</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_hdmi_inline"></a>HDMI</td><td><font color="#666">The video feed is from the HDMI port while EXT port is disabled.  It is only used for stand-alone Lightbridge 2 or aircraft with stand-alone Lightbridge 2 modules.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_av_inline"></a>AV</td><td><font color="#666">The video feed is from AV port while EXT port is disabled. It is only used for stand-alone Lightbridge 2 or aircraft with stand-alone Lightbridge 2 modules.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera_inline"></a>LEFT_CAM</td><td><font color="#666">The video feed is from the port (left) main camera. It is only used for M210 series and M210 V2 series.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_rightcamera_inline"></a>RIGHT_CAM</td><td><font color="#666">The video feed is from the starboard (right) main camera. It is only used for M210 series and M210 V2 series.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivideofeeder_djivideofeed_djivideofeedphysicalsource_unknown_inline"></a>UNKNOWN</td><td><font color="#666">Unknown video physical source.</td></tr></table></html>
 <h5 id="class-members-v2">Class Members:</h5>
 </div>
-<div class="api-row" id="djivideofeeder_djivideofeed_djivideofeedphysicalsourcecallbackinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_djivideofeedphysicalsourcecallbackinterface_inline">Callback</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_djivideofeedphysicalsourcecallbackinterface_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>Callback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Callback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr></table></html>
+<div class="api-row" id="djivideofeeder_djivideofeed_djivideofeedphysicalsourcecallbackinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_djivideofeedphysicalsourcecallbackinterface_inline">Callback</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_djivideofeedphysicalsourcecallbackinterface_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>Callback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Callback</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.airlink</td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
-<p><font color="#666">Callback Interface for image transmission source.</font></p>
+<p><font color="#666">Callback Interface for image transmission source.</p>
 <h5 id="interface-methods-v3">Interface Methods:</h5>
 <h4 id="callback-method-v2">Callback Method</h4>
-<div class="api-row" id="djivideofeeder_djivideofeed_djivideofeedphysicalsourceonupdate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_djivideofeedphysicalsourceonupdate_inline">onUpdate</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_djivideofeedphysicalsourceonupdate_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onUpdate</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(PhysicalSource source)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.airlink</font></td></tr></table></html>
+<div class="api-row" id="djivideofeeder_djivideofeed_djivideofeedphysicalsourceonupdate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_djivideofeedphysicalsourceonupdate_inline">onUpdate</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_djivideofeedphysicalsourceonupdate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onUpdate</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onUpdate</span><span class="params">(PhysicalSource source)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.airlink</td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
-<p><font color="#666">Callback function that updates the image transmission source.</font></p>
+<p><font color="#666">Callback function that updates the image transmission source.</p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a> <font color="#000">source</font></font></td><td><font color="#666"><i>Image transmission Source.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a> <font color="#000">source</td><td><font color="#666"><i>Image transmission Source.</i></td></tr></table></html></div>
 </div>
 <html><p><br></p></html>
 <h4 id="callback-method-v3">Callback Method</h4>
-<div class="api-row" id="djivideofeeder_djivideofeed_getvideosource"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_getvideosource_inline">getVideoSource</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_getvideosource_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getVideoSource</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">PhysicalSource <span class="title">getVideoSource</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<div class="api-row" id="djivideofeeder_djivideofeed_getvideosource"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_getvideosource_inline">getVideoSource</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_getvideosource_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getVideoSource</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">PhysicalSource <span class="title">getVideoSource</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
-<p><font color="#666">Gets the physical sources of the video data.</font></p>
+<p><font color="#666">Gets the physical sources of the video data.</p>
 <h5 id="return-v8">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_djivideofeed_addvideodatalistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_addvideodatalistener_inline">addVideoDataListener</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_addvideodatalistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>addVideoDataListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">addVideoDataListener</span><span class="params">(@NonNull <span class="keyword">final</span> VideoDataListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a></td><td><font color="#666"><i>An enum value of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_djivideofeed_addvideodatalistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_addvideodatalistener_inline">addVideoDataListener</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_addvideodatalistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>addVideoDataListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">addVideoDataListener</span><span class="params">(@NonNull <span class="keyword">final</span> VideoDataListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
-<p><font color="#666">Adds a listener to access the video data that is being shown by the VideoFeed.</font></p>
+<p><font color="#666">Adds a listener to access the video data that is being shown by the VideoFeed.</p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_videodatalistenerinterface">VideoDataListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener to be added to the VideoFeed.</i></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_videodatalistenerinterface">VideoDataListener</a> <font color="#000">listener</td><td><font color="#666"><i>The listener to be added to the VideoFeed.</i></td></tr></table></html>
 <h5 id="return-v9">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if listener was added successfully.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_djivideofeed_removevideodatalistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_removevideodatalistener_inline">removeVideoDataListener</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_removevideodatalistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>removeVideoDataListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">removeVideoDataListener</span><span class="params">(VideoDataListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i><code>true</code> if listener was added successfully.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_djivideofeed_removevideodatalistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_removevideodatalistener_inline">removeVideoDataListener</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_removevideodatalistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>removeVideoDataListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">removeVideoDataListener</span><span class="params">(VideoDataListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
-<p><font color="#666">Removes the specified listener from the VideoFeed, if it is present (optional  operation).  If this VideoFeed does not contain the listener, it is unchanged.</font></p>
+<p><font color="#666">Removes the specified listener from the VideoFeed, if it is present (optional  operation).  If this VideoFeed does not contain the listener, it is unchanged.</p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_videodatalistenerinterface">VideoDataListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener to be removed from the VideoFeed.</i></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_videodatalistenerinterface">VideoDataListener</a> <font color="#000">listener</td><td><font color="#666"><i>The listener to be removed from the VideoFeed.</i></td></tr></table></html>
 <h5 id="return-v10">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the listener was removed successfully.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_djivideofeed_getlisteners"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_getlisteners_inline">getListeners</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_getlisteners_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getListeners</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Set&lt;VideoDataListener&gt; <span class="title">getListeners</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i><code>true</code> if the listener was removed successfully.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_djivideofeed_getlisteners"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_getlisteners_inline">getListeners</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_getlisteners_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getListeners</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Set&lt;VideoDataListener&gt; <span class="title">getListeners</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
-<p><font color="#666">Returns the list of the existing video data listeners.</font></p>
+<p><font color="#666">Returns the list of the existing video data listeners.</p>
 <h5 id="return-v11">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Set&lt;<a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_videodatalistenerinterface">VideoDataListener</a>&gt;</font></td><td><font color="#666"><i>A list of existing <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_videodatalistenerinterface">VideoDataListener</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djivideofeeder_djivideofeed_destroy"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_destroy_inline">destroy</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_destroy_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>destroy</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Set&lt;<a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_videodatalistenerinterface">VideoDataListener</a>&gt;</td><td><font color="#666"><i>A list of existing <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_videodatalistenerinterface">VideoDataListener</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djivideofeeder_djivideofeed_destroy"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_djivideofeed_destroy_inline">destroy</a></div></div><div class="inline-doc" id="djivideofeeder_djivideofeed_destroy_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>destroy</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
-<p><font color="#666">Destroy all the listeners associated with this VideoFeed.</font></p>
+<p><font color="#666">Destroy all the listeners associated with this VideoFeed.</p>
 </div>
 </div>
-<div class="api-row" id="djivideofeeder_physicalsourcelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_physicalsourcelistener_inline">PhysicalSourceListener</a></div></div><div class="inline-doc" id="djivideofeeder_physicalsourcelistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>PhysicalSourceListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">PhysicalSourceListener</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<div class="api-row" id="djivideofeeder_physicalsourcelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_physicalsourcelistener_inline">PhysicalSourceListener</a></div></div><div class="inline-doc" id="djivideofeeder_physicalsourcelistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>PhysicalSourceListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">PhysicalSourceListener</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
-<p><font color="#666">Physical source listener.</font></p>
+<p><font color="#666">Physical source listener.</p>
 <h5 id="interface-methods-v4">Interface Methods:</h5>
 <h4 id="callback-method-v4">Callback Method</h4>
-<div class="api-row" id="djivideofeeder_physicalsourcelistener_onchange"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_physicalsourcelistener_onchange_inline">onChange</a></div></div><div class="inline-doc" id="djivideofeeder_physicalsourcelistener_onchange_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onChange</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onChange</span><span class="params">(VideoFeed videoFeed, PhysicalSource newPhysicalSource)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
+<div class="api-row" id="djivideofeeder_physicalsourcelistener_onchange"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djivideofeeder_physicalsourcelistener_onchange_inline">onChange</a></div></div><div class="inline-doc" id="djivideofeeder_physicalsourcelistener_onchange_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onChange</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onChange</span><span class="params">(VideoFeed videoFeed, PhysicalSource newPhysicalSource)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.camera</td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
-<p><font color="#666">Called when the physical source changes.</font></p>
+<p><font color="#666">Called when the physical source changes.</p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a> <font color="#000">videoFeed</font></font></td><td><font color="#666"><i>An interface of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a> <font color="#000">newPhysicalSource</font></font></td><td><font color="#666"><i>An int value.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a> <font color="#000">videoFeed</td><td><font color="#666"><i>An interface of <code><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed">VideoFeed</a></code>.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../BaseClasses/DJIVideoFeeder.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">PhysicalSource</a> <font color="#000">newPhysicalSource</td><td><font color="#666"><i>An int value.</i></td></tr></table></html></div>
 </div>
 
         </div>

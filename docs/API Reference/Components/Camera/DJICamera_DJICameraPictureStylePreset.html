@@ -1,12 +1,16 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
   <title>DJI Mobile SDK Documentation
-  </title><link rel="stylesheet" href="../../stylesheets/doc-vendor.css"><link rel="stylesheet" href="../../stylesheets/doc-app.css">
-</head>
+  </title>
+<link rel="stylesheet" href="../../stylesheets/doc-vendor.css">
+
+<link rel="stylesheet" href="../../stylesheets/doc-app.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
@@ -117,6 +121,12 @@
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
+                  </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">UTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">UTMISSParam</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">FlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -402,6 +412,10 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">RemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
+                            </dd>
                             <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
@@ -461,10 +475,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">MultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -736,6 +746,8 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
                             </dd>
+                            <dd><a href="../SDKError/DJIError_DJIUTMISSError.html">DJIUTMISSError</a>
+                            </dd>
                             <dd><a href="../SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
@@ -768,48 +780,52 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>PictureStylePreset</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">PictureStylePreset</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_picture_style_preset_key">CameraKey.PICTURE_STYLE_PRESET</a></font></td></tr></table></html>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>PictureStylePreset</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">PictureStylePreset</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.camera</td></tr><tr valign="top"><td width=15%><font color="#999"><i>SDK Key:</i></td><td width=85%><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_picture_style_preset_key">CameraKey.PICTURE_STYLE_PRESET</a></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">Camera preset type that stores saturation, contrast and sharpness</font></p>
+<p><font color="#666">Camera preset type that stores saturation, contrast and sharpness</p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djicamera_djicamerapicturestylepreset_saturation"><div class="api-col left">Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerapicturestylepreset_saturation_inline">getSaturation</a></div></div><div class="inline-doc" id="djicamera_djicamerapicturestylepreset_saturation_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getSaturation</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSaturation</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
+<div class="api-row" id="djicamera_djicamerapicturestylepreset_saturation"><div class="api-col left">Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerapicturestylepreset_saturation_inline">getSaturation</a></div></div><div class="inline-doc" id="djicamera_djicamerapicturestylepreset_saturation_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getSaturation</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSaturation</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.camera</td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">An NSInteger value of saturation.</font></p>
+<p><font color="#666">An NSInteger value of saturation.</p>
 <h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Saturation value of preset</i></font></td></tr></table></html></div>
-<div class="api-row" id="djicamera_djicamerapicturestylepreset_contrast"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerapicturestylepreset_contrast_inline">getContrast</a></div></div><div class="inline-doc" id="djicamera_djicamerapicturestylepreset_contrast_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getContrast</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getContrast</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</td><td><font color="#666"><i>Saturation value of preset</i></td></tr></table></html></div>
+<div class="api-row" id="djicamera_djicamerapicturestylepreset_contrast"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerapicturestylepreset_contrast_inline">getContrast</a></div></div><div class="inline-doc" id="djicamera_djicamerapicturestylepreset_contrast_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getContrast</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getContrast</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.camera</td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">An NSInteger value of contrast.</font></p>
+<p><font color="#666">An NSInteger value of contrast.</p>
 <h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Contrast value of preset</i></font></td></tr></table></html></div>
-<div class="api-row" id="djicamera_djicamerapicturestylepreset_sharpness"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerapicturestylepreset_sharpness_inline">getSharpness</a></div></div><div class="inline-doc" id="djicamera_djicamerapicturestylepreset_sharpness_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getSharpness</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSharpness</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</td><td><font color="#666"><i>Contrast value of preset</i></td></tr></table></html></div>
+<div class="api-row" id="djicamera_djicamerapicturestylepreset_sharpness"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerapicturestylepreset_sharpness_inline">getSharpness</a></div></div><div class="inline-doc" id="djicamera_djicamerapicturestylepreset_sharpness_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getSharpness</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSharpness</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.camera</td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">An NSInteger value of sharpness.</font></p>
+<p><font color="#666">An NSInteger value of sharpness.</p>
 <h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Sharpness value of preset</i></font></td></tr></table></html></div>
-<div class="api-row" id="djicamera_djicamerapicturestylepreset_presettype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerapicturestylepreset_presettype_inline">presetType</a></div></div><div class="inline-doc" id="djicamera_djicamerapicturestylepreset_presettype_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>presetType</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">PictureStylePresetType <span class="title">presetType</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</td><td><font color="#666"><i>Sharpness value of preset</i></td></tr></table></html></div>
+<div class="api-row" id="djicamera_djicamerapicturestylepreset_presettype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerapicturestylepreset_presettype_inline">presetType</a></div></div><div class="inline-doc" id="djicamera_djicamerapicturestylepreset_presettype_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>presetType</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">PictureStylePresetType <span class="title">presetType</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.camera</td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">An enum value of <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerapicturestylepresettype">PictureStylePresetType</a></code>.</font></p>
+<p><font color="#666">An enum value of <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerapicturestylepresettype">PictureStylePresetType</a></code>.</p>
 <h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerapicturestylepresettype">PictureStylePresetType</a></font></td><td><font color="#666"><i>Preset type</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerapicturestylepresettype">PictureStylePresetType</a></td><td><font color="#666"><i>Preset type</i></td></tr></table></html></div>
 
         </div>
       </div>

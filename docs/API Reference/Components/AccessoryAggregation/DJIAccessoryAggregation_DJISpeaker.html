@@ -1,12 +1,16 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
   <title>DJI Mobile SDK Documentation
-  </title><link rel="stylesheet" href="../../stylesheets/doc-vendor.css"><link rel="stylesheet" href="../../stylesheets/doc-app.css">
-</head>
+  </title>
+<link rel="stylesheet" href="../../stylesheets/doc-vendor.css">
+
+<link rel="stylesheet" href="../../stylesheets/doc-app.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
@@ -117,6 +121,12 @@
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
+                  </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">UTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">UTMISSParam</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">FlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -402,6 +412,10 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">RemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
+                            </dd>
                             <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
@@ -461,10 +475,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">MultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -736,6 +746,8 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
                             </dd>
+                            <dd><a href="../SDKError/DJIError_DJIUTMISSError.html">DJIUTMISSError</a>
+                            </dd>
                             <dd><a href="../SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
@@ -768,293 +780,323 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>Speaker</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Speaker</span> <span class="keyword">extends</span> <span class="title">BaseComponent</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code></font></td></tr></table></html>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>Speaker</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Speaker</span> <span class="keyword">extends</span> <span class="title">BaseComponent</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr><tr valign="top"><td width=15%><font color="#999"><i>Inherits From:</i></td><td width=85%><font color="#999"><code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">The class represents the speaker accessory on the aircraft. Used transmit audio  files and control the speaker.</font></p>
+<p><font color="#666">The class represents the speaker accessory on the aircraft. Used transmit audio  files and control the speaker.</p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_fileliststate"><div class="api-col left">File List State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_fileliststate_inline">getFileListState</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_fileliststate_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getFileListState</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">FileListState <span class="title">getFileListState</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_fileliststate"><div class="api-col left">File List State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_fileliststate_inline">getFileListState</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_fileliststate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getFileListState</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">FileListState <span class="title">getFileListState</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">Current file list state of the speaker.</font></p>
+<p><font color="#666">Current file list state of the speaker.</p>
 <h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate">FileListState</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate">FileListState</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_datatransmissionstate"><div class="api-col left">Data Transmission State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_datatransmissionstate_inline">getDataTransmissionState</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_datatransmissionstate_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getDataTransmissionState</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">SpeakerDataTransmissionState <span class="title">getDataTransmissionState</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate">FileListState</a></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate">FileListState</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_datatransmissionstate"><div class="api-col left">Data Transmission State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_datatransmissionstate_inline">getDataTransmissionState</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_datatransmissionstate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getDataTransmissionState</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">SpeakerDataTransmissionState <span class="title">getDataTransmissionState</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">The data transmission state of the speaker.</font></p>
+<p><font color="#666">The data transmission state of the speaker.</p>
 <h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate">SpeakerDataTransmissionState</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate">SpeakerDataTransmissionState</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_setvolume"><div class="api-col left">Set Volume</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_setvolume_inline">setVolume</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_setvolume_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setVolume</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVolume</span><span class="params">(@IntRange(from = MIN_VOLUME, to = MAX_VOLUME)</span> <span class="keyword">int</span> value,</span></div><div class="line">                         @Nullable <span class="keyword">final</span> CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate">SpeakerDataTransmissionState</a></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate">SpeakerDataTransmissionState</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_setvolume"><div class="api-col left">Set Volume</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_setvolume_inline">setVolume</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_setvolume_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setVolume</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVolume</span><span class="params">(@IntRange(from = MIN_VOLUME, to = MAX_VOLUME)</span> <span class="keyword">int</span> value,</span></span><br><span class="line"><span class="function">                         @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Sets the volume to play audio. The valid range is [0, 100]. 100 means loudest.</font></p>
+<p><font color="#666">Sets the volume to play audio. The valid range is [0, 100]. 100 means loudest.</p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@IntRange(from = MIN_VOLUME, to = MAX_VOLUME) int <font color="#000">value</font></font></td><td><font color="#666"><i>Volume value to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_setplaymode"><div class="api-col left">Set Play Mode</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_setplaymode_inline">setPlayMode</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_setplaymode_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setPlayMode</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setPlayMode</span><span class="params">(@NonNull SettingsDefinitions.PlayMode mode,</span></span></div><div class="line">                           @Nullable <span class="keyword">final</span> CompletionCallback callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@IntRange(from = MIN_VOLUME, to = MAX_VOLUME) int <font color="#000">value</td><td><font color="#666"><i>Volume value to set.</i></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned execution result.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_setplaymode"><div class="api-col left">Set Play Mode</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_setplaymode_inline">setPlayMode</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_setplaymode_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setPlayMode</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setPlayMode</span><span class="params">(@NonNull SettingsDefinitions.PlayMode mode,</span></span></span><br><span class="line"><span class="function"><span class="params">                           @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Sets the play mode of the speaker to control the behavior after finishing playing a file.</font></p>
+<p><font color="#666">Sets the play mode of the speaker to control the behavior after finishing playing a file.</p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerasettingsdef">SettingsDefinitions</a>.<a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerplaymode">PlayMode</a> <font color="#000">mode</font></font></td><td><font color="#666"><i>The play mode to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_starttransmission"><div class="api-col left">Start Transmission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_starttransmission_inline">startTransmission</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_starttransmission_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>startTransmission</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">startTransmission</span><span class="params">(@NonNull AudioFileInfo info, @Nullable <span class="keyword">final</span> TransmissionListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerasettingsdef">SettingsDefinitions</a>.<a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerplaymode">PlayMode</a> <font color="#000">mode</td><td><font color="#666"><i>The play mode to set.</i></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned execution result.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_starttransmission"><div class="api-col left">Start Transmission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_starttransmission_inline">startTransmission</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_starttransmission_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>startTransmission</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">startTransmission</span><span class="params">(@NonNull AudioFileInfo info, @Nullable <span class="keyword">final</span> TransmissionListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">Starts to send a complete audio file to the aircraft, which can be played by the speaker.  A transmission session can only be started when the transmission state is in <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_idle">IDLE</a></code>.  If the transmission is started successfully, the state will change  to <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_readytotransmit">READY_TO_TRANSMIT</a></code>. Then  call <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_pacedata">paceData</a></code> to send data to SDK.  Call <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_markeof">markEOF</a></code> when all data has been sent to SDK. SDK will maintain a  buffer to hold all the data and transmit it to the aircraft. For M2E Speaker, the audio file to transmit  should fulfill the following configurations: <br> - The speaker only receives raw PCM(Pulse-code modulation) data of an audio file,  if the audio file is compressed, PCM extraction is needed before the transmission. <br> - The audio channel is mono. <br> -  The audio sample rate is 44,100 Hz. <br> - The PCM (Pulse-code modulation) sample  depth is 16 bit per sample. <br> - The audio file is stored in the aircraft instead  of the speaker.</font></p>
+<p><font color="#666">Starts to send a complete audio file to the aircraft, which can be played by the speaker.  A transmission session can only be started when the transmission state is in <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_idle">IDLE</a></code>.  If the transmission is started successfully, the state will change  to <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_readytotransmit">READY_TO_TRANSMIT</a></code>. Then  call <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_pacedata">paceData</a></code> to send data to SDK.  Call <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_markeof">markEOF</a></code> when all data has been sent to SDK. SDK will maintain a  buffer to hold all the data and transmit it to the aircraft. For M2E Speaker, the audio file to transmit  should fulfill the following configurations: <br> - The speaker only receives raw PCM(Pulse-code modulation) data of an audio file,  if the audio file is compressed, PCM extraction is needed before the transmission. <br> - The audio channel is mono. <br> -  The audio sample rate is 44,100 Hz. <br> - The PCM (Pulse-code modulation) sample  depth is 16 bit per sample. <br> - The audio file is stored in the aircraft instead  of the speaker.</p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker_DJIAudioFileInfo.html#djiaccessoryaggregation_djispeaker_djiaudiofileinfo">AudioFileInfo</a> <font color="#000">info</font></font></td><td><font color="#666"><i>The information of the file to transmit. It is also used to determine the  location the file will be stored in the aircraft.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface">TransmissionListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>Inform the progress of the data transfer.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_pacedata"><div class="api-col left">Pace Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_pacedata_inline">paceData</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_pacedata_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>paceData</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">paceData</span><span class="params">(@NonNull @Size(MAX_INPUT_SIZE)</span> <span class="keyword">byte</span>[] data)</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker_DJIAudioFileInfo.html#djiaccessoryaggregation_djispeaker_djiaudiofileinfo">AudioFileInfo</a> <font color="#000">info</td><td><font color="#666"><i>The information of the file to transmit. It is also used to determine the  location the file will be stored in the aircraft.</i></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface">TransmissionListener</a> <font color="#000">listener</td><td><font color="#666"><i>Inform the progress of the data transfer.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_pacedata"><div class="api-col left">Pace Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_pacedata_inline">paceData</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_pacedata_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>paceData</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">paceData</span><span class="params">(@NonNull @Size(MAX_INPUT_SIZE)</span> <span class="keyword">byte</span>[] data)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">Sends raw PCM data of the audio file to SDK internal logic.  For Mavic 2 Enterprise, the transmission rate is limited to 80kB/s by sdk.  Therefore, SDK will cache the paced data to a local file when the rate of pacing data is over 80kB/s. The paced data will be appended  to the local file. Call <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_markeof">markEOF</a></code> when all data of the data has been paced to SDK.</font></p>
+<p><font color="#666">Sends raw PCM data of the audio file to SDK internal logic.  For Mavic 2 Enterprise, the transmission rate is limited to 80kB/s by sdk.  Therefore, SDK will cache the paced data to a local file when the rate of pacing data is over 80kB/s. The paced data will be appended  to the local file. Call <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_markeof">markEOF</a></code> when all data of the data has been paced to SDK.</p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull @Size(MAX_INPUT_SIZE) byte[] <font color="#000">data</font></font></td><td><font color="#666"><i>Raw PCM data stream in bytes.</i></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull @Size(MAX_INPUT_SIZE) byte[] <font color="#000">data</td><td><font color="#666"><i>Raw PCM data stream in bytes.</i></td></tr></table></html>
 <h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if data is paced successfully. Otherwise, pacing data is not in the current state or the data size is illegal.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_markeof"><div class="api-col left">Mark EOF</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_markeof_inline">markEOF</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_markeof_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>markEOF</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIError <span class="title">markEOF</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i><code>true</code> if data is paced successfully. Otherwise, pacing data is not in the current state or the data size is illegal.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_markeof"><div class="api-col left">Mark EOF</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_markeof_inline">markEOF</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_markeof_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>markEOF</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIError <span class="title">markEOF</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Marks EOF (end-of-file). It is used to inform SDK that all data of the file has been paced. SDK will continue  to transmit data to the aircraft. The state will change to <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_idle">IDLE</a></code> when all data is transmitted.  After calling this method, <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_pacedata">paceData</a></code> is invalid until a new transmission session starts. If no  data is paced before calling this method, the transmission session will end immediately.</font></p>
+<p><font color="#666">Marks EOF (end-of-file). It is used to inform SDK that all data of the file has been paced. SDK will continue  to transmit data to the aircraft. The state will change to <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_idle">IDLE</a></code> when all data is transmitted.  After calling this method, <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_pacedata">paceData</a></code> is invalid until a new transmission session starts. If no  data is paced before calling this method, the transmission session will end immediately.</p>
 <h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a></font></td><td><font color="#666"><i>The occurred error if any.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_canceltransmission"><div class="api-col left">Cancel Transmission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_canceltransmission_inline">cancelTransmission</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_canceltransmission_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>cancelTransmission</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">cancelTransmission</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a></td><td><font color="#666"><i>The occurred error if any.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_canceltransmission"><div class="api-col left">Cancel Transmission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_canceltransmission_inline">cancelTransmission</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_canceltransmission_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>cancelTransmission</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cancelTransmission</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">This will entirely stop the data transfer process and of course clean the transfer thread pool.</font></p>
+<p><font color="#666">This will entirely stop the data transfer process and of course clean the transfer thread pool.</p>
 </div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_play"><div class="api-col left">Play</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_play_inline">play</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_play_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>play</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">play</span><span class="params">(<span class="keyword">int</span> fileIndex, @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_play"><div class="api-col left">Play</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_play_inline">play</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_play_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>play</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">play</span><span class="params">(<span class="keyword">int</span> fileIndex, @Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Starts to play the audio file with the specific index.</font></p>
+<p><font color="#666">Starts to play the audio file with the specific index.</p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">fileIndex</font></font></td><td><font color="#666"><i>The file index of the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia_DJIMediaFile.html#djimediamanager_djimedia_djimediafile">AudioMediaFile</a></code> to play.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_stopaudioplaywithcompletion"><div class="api-col left">Stop Audio Play</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_stopaudioplaywithcompletion_inline">stop</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_stopaudioplaywithcompletion_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>stop</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">stop</span><span class="params">(@Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">fileIndex</td><td><font color="#666"><i>The file index of the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia_DJIMediaFile.html#djimediamanager_djimedia_djimediafile">AudioMediaFile</a></code> to play.</i></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned execution result.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_stopaudioplaywithcompletion"><div class="api-col left">Stop Audio Play</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_stopaudioplaywithcompletion_inline">stop</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_stopaudioplaywithcompletion_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>stop</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">stop</span><span class="params">(@Nullable <span class="keyword">final</span> CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">Stops the speaker from playing audio. The method is only valid when  the playing state is <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerplayingstate_playing">PLAYING</a></code>.</font></p>
+<p><font color="#666">Stops the speaker from playing audio. The method is only valid when  the playing state is <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_djispeakerplayingstate_playing">PLAYING</a></code>.</p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_rename"><div class="api-col left">Rename</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_rename_inline">rename</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_rename_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>rename</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">rename</span><span class="params">(<span class="keyword">int</span> index, String filename, <span class="keyword">final</span> CommonCallbacks.CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the returned execution result.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_rename"><div class="api-col left">Rename</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_rename_inline">rename</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_rename_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>rename</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">rename</span><span class="params">(<span class="keyword">int</span> index, String filename, <span class="keyword">final</span> CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666">Renames the audio file with the specific index. If the operation is started  successfully, FileListState will become <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_renaming">RENAMING</a></code>.</font></p>
+<p><font color="#666">Renames the audio file with the specific index. If the operation is started  successfully, FileListState will become <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_renaming">RENAMING</a></code>.</p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</font></font></td><td><font color="#666"><i>The index of the audio file to rename.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">String <font color="#000">filename</font></font></td><td><font color="#666"><i>The new file name of the audio file. The file name should not exceed 128 characters.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback to receive the result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_filelistsnapshot"><div class="api-col left">Get File List Snapshot</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_filelistsnapshot_inline">getFileListSnapshot</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_filelistsnapshot_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getFileListSnapshot</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Nullable</span></div><div class="line"> <span class="function">List&lt;AudioMediaFile&gt; <span class="title">getFileListSnapshot</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</td><td><font color="#666"><i>The index of the audio file to rename.</i></td></tr><tr valign="top"><td><font color="#70BF41">String <font color="#000">filename</td><td><font color="#666"><i>The new file name of the audio file. The file name should not exceed 128 characters.</i></td></tr><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>Completion callback to receive the result.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_filelistsnapshot"><div class="api-col left">Get File List Snapshot</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_filelistsnapshot_inline">getFileListSnapshot</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_filelistsnapshot_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getFileListSnapshot</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"> <span class="function">List&lt;AudioMediaFile&gt; <span class="title">getFileListSnapshot</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">Returns a copy of the current audio file list from the storage. Returns <code>null</code>  if <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_fileliststate">getFileListState</a></code> is reset.</font></p>
+<p><font color="#666">Returns a copy of the current audio file list from the storage. Returns <code>null</code>  if <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_fileliststate">getFileListState</a></code> is reset.</p>
 <h5 id="return-v5">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../../Components/Camera/DJIMediaManager_DJIMedia_DJIMediaFile.html#djimediamanager_djimedia_djimediafile">AudioMediaFile</a>&gt;</font></td><td><font color="#666"><i>An array of <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia_DJIMediaFile.html#djimediamanager_djimedia_djimediafile">AudioMediaFile</a></code> objects.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_refreshfilelist"><div class="api-col left">Refresh File List</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_refreshfilelist_inline">refreshFileList</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_refreshfilelist_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>refreshFileList</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">refreshFileList</span><span class="params">(<span class="keyword">final</span> CommonCallbacks.CompletionCallback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../../Components/Camera/DJIMediaManager_DJIMedia_DJIMediaFile.html#djimediamanager_djimedia_djimediafile">AudioMediaFile</a>&gt;</td><td><font color="#666"><i>An array of <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia_DJIMediaFile.html#djimediamanager_djimedia_djimediafile">AudioMediaFile</a></code> objects.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_refreshfilelist"><div class="api-col left">Refresh File List</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_refreshfilelist_inline">refreshFileList</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_refreshfilelist_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>refreshFileList</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">refreshFileList</span><span class="params">(<span class="keyword">final</span> CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
-<p><font color="#666">Refresh the audio file list in the aircraft. <br> - If the current state  is <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_reset">RESET</a></code>, SDK  will try to fetch the complete file list. <br> - If the current state is <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_incomplete">INCOMPLETE</a></code>, SDK  will only fetch the missing list of files. <br> - If the operation is started successfully,  the <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate">FileListState</a></code>  will become  <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_syncing">SYNCING</a></code>. <br> - When the  file list is refreshed successfully, the <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate">FileListState</a></code> will become <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_uptodate">UP_TO_DATE</a></code>.</font></p>
+<p><font color="#666">Refresh the audio file list in the aircraft. <br> - If the current state  is <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_reset">RESET</a></code>, SDK  will try to fetch the complete file list. <br> - If the current state is <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_incomplete">INCOMPLETE</a></code>, SDK  will only fetch the missing list of files. <br> - If the operation is started successfully,  the <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate">FileListState</a></code>  will become  <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_syncing">SYNCING</a></code>. <br> - When the  file list is refreshed successfully, the <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate">FileListState</a></code> will become <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_uptodate">UP_TO_DATE</a></code>.</p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback to receive the result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_deletefiles"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_deletefiles_inline">delete</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_deletefiles_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>delete</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">delete</span><span class="params">(@NonNull List&lt;Integer&gt; fileIndices,</span></span></div><div class="line">                      <span class="keyword">final</span> CommonCallbacks.CompletionCallbackWithTwoParam&lt;List&lt;Integer&gt;, DJIError&gt; callback)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallback_interface">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>Completion callback to receive the result.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_deletefiles"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_deletefiles_inline">delete</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_deletefiles_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>delete</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delete</span><span class="params">(@NonNull List&lt;Integer&gt; fileIndices,</span></span></span><br><span class="line"><span class="function"><span class="params">                      <span class="keyword">final</span> CommonCallbacks.CompletionCallbackWithTwoParam&lt;List&lt;Integer&gt;, DJIError&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">Deletes audio files in the aircraft. If the operation is started successfully, <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_fileliststate">getFileListState</a></code> will  become <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_deleting">DELETING</a></code>. If there is error or  &quot;failedFiles&quot; is not empty, <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_fileliststate">getFileListState</a></code>  will become <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_reset">RESET</a></code>.</font></p>
+<p><font color="#666">Deletes audio files in the aircraft. If the operation is started successfully, <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_fileliststate">getFileListState</a></code> will  become <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_deleting">DELETING</a></code>. If there is error or  &quot;failedFiles&quot; is not empty, <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_fileliststate">getFileListState</a></code>  will become <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_djimediafileliststate_reset">RESET</a></code>.</p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull List&lt;Integer&gt; <font color="#000">fileIndices</font></font></td><td><font color="#666"><i>A list of AudioMediaFile's index.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwithtwoparam_interface">CompletionCallbackWithTwoParam</a>&lt;List&lt;Integer&gt;, <a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion callback to receive the result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_addfileliststatelistener"><div class="api-col left">Add File List State Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_addfileliststatelistener_inline">addFileListStateListener</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_addfileliststatelistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>addFileListStateListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addFileListStateListener</span><span class="params">(FileListStateListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull List&lt;Integer&gt; <font color="#000">fileIndices</td><td><font color="#666"><i>A list of AudioMediaFile's index.</i></td></tr><tr valign="top"><td><font color="#70BF41">final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwithtwoparam_interface">CompletionCallbackWithTwoParam</a>&lt;List&lt;Integer&gt;, <a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a>&gt; <font color="#000">callback</td><td><font color="#666"><i>Completion callback to receive the result.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_addfileliststatelistener"><div class="api-col left">Add File List State Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_addfileliststatelistener_inline">addFileListStateListener</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_addfileliststatelistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>addFileListStateListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addFileListStateListener</span><span class="params">(FileListStateListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
-<p><font color="#666">Start listen to the update of <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_fileliststate">getFileListState</a></code>.</font></p>
+<p><font color="#666">Start listen to the update of <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_fileliststate">getFileListState</a></code>.</p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_fileliststatelistener">FileListStateListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>A <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_fileliststatelistener">FileListStateListener</a></code> interface.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_removefileliststatelistener"><div class="api-col left">Remove File List State Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_removefileliststatelistener_inline">removeFileListStateListener</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_removefileliststatelistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>removeFileListStateListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeFileListStateListener</span><span class="params">(FileListStateListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_fileliststatelistener">FileListStateListener</a> <font color="#000">listener</td><td><font color="#666"><i>A <code><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_fileliststatelistener">FileListStateListener</a></code> interface.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_removefileliststatelistener"><div class="api-col left">Remove File List State Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_removefileliststatelistener_inline">removeFileListStateListener</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_removefileliststatelistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>removeFileListStateListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeFileListStateListener</span><span class="params">(FileListStateListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
-<p><font color="#666">Stop listen to the update of <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_fileliststate">getFileListState</a></code>.</font></p>
+<p><font color="#666">Stop listen to the update of <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_fileliststate">getFileListState</a></code>.</p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_fileliststatelistener">FileListStateListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be removed.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJIMediaManager.html#djimediamanager_fileliststatelistener">FileListStateListener</a> <font color="#000">listener</td><td><font color="#666"><i>Listener to be removed.</i></td></tr></table></html></div>
 <h4 id="state-updates">State Updates</h4>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_setstatecallback"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_setstatecallback_inline">setStateCallback</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_setstatecallback_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setStateCallback</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStateCallback</span><span class="params">(@Nullable SpeakerState.Callback callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_setstatecallback"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_setstatecallback_inline">setStateCallback</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_setstatecallback_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setStateCallback</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStateCallback</span><span class="params">(@Nullable SpeakerState.Callback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
-<p><font color="#666">Sets the callback that updates speaker state.</font></p>
+<p><font color="#666">Sets the callback that updates speaker state.</p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker_DJISpeakerState.html#djiaccessoryaggregation_djispeaker_djispeakerstate">SpeakerState</a>.Callback <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the execution result returned.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker_DJISpeakerState.html#djiaccessoryaggregation_djispeaker_djispeakerstate">SpeakerState</a>.Callback <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the execution result returned.</i></td></tr></table></html></div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_djispeakerstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker_DJISpeakerState.html">SpeakerState</a></div></div><div class="api-row" id="djiaccessoryaggregation_djispeaker_djiaudiofileinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker_DJIAudioFileInfo.html">AudioFileInfo</a></div></div><div class="api-row" id="djiaccessoryaggregation_djispeaker_djispeakerplaymode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_djispeakerplaymode_inline">PlayMode</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_djispeakerplaymode_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">enum </font>PlayMode</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> PlayMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.accessory</font></td></tr></table></html>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_djispeakerstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker_DJISpeakerState.html">SpeakerState</a></div></div><div class="api-row" id="djiaccessoryaggregation_djispeaker_djiaudiofileinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker_DJIAudioFileInfo.html">AudioFileInfo</a></div></div><div class="api-row" id="djiaccessoryaggregation_djispeaker_djispeakerplaymode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_djispeakerplaymode_inline">PlayMode</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_djispeakerplaymode_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">enum </font>PlayMode</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> PlayMode</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.accessory</td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
-<p><font color="#666">The speaker's play mode. It determines the behavior of the speaker when it finishes playing a file.</font></p>
+<p><font color="#666">The speaker's play mode. It determines the behavior of the speaker when it finishes playing a file.</p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplaymode_singleonce_inline"></a>SINGLE_ONCE</font></td><td><font color="#666">The speaker will play the selected file once. The speaker will stop playing after  finishing playing the file.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplaymode_repeatsingle_inline"></a>REPEAT_SINGLE</font></td><td><font color="#666">The speaker will play the selected file repeatedly.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplaymode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplaymode_singleonce_inline"></a>SINGLE_ONCE</td><td><font color="#666">The speaker will play the selected file once. The speaker will stop playing after  finishing playing the file.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplaymode_repeatsingle_inline"></a>REPEAT_SINGLE</td><td><font color="#666">The speaker will play the selected file repeatedly.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplaymode_unknown_inline"></a>UNKNOWN</td><td><font color="#666">Unknown.</td></tr></table></html>
 <h5 id="class-members-v2">Class Members:</h5>
 </div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_djispeakerplayingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_djispeakerplayingstate_inline">SpeakerPlayingState</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_djispeakerplayingstate_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">enum </font>SpeakerPlayingState</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> SpeakerPlayingState</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.accessory</font></td></tr></table></html>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_djispeakerplayingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_djispeakerplayingstate_inline">SpeakerPlayingState</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_djispeakerplayingstate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">enum </font>SpeakerPlayingState</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> SpeakerPlayingState</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.accessory</td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
-<p><font color="#666">The speaker's Playing State.</font></p>
+<p><font color="#666">The speaker's Playing State.</p>
 <h5 id="enum-members-v2">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplayingstate_playing_inline"></a>PLAYING</font></td><td><font color="#666">The speaker is playing the voice.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplayingstate_stopped_inline"></a>STOPPED</font></td><td><font color="#666">The speaker is stopped and playing nothing.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplayingstate_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplayingstate_playing_inline"></a>PLAYING</td><td><font color="#666">The speaker is playing the voice.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplayingstate_stopped_inline"></a>STOPPED</td><td><font color="#666">The speaker is stopped and playing nothing.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerplayingstate_unknown_inline"></a>UNKNOWN</td><td><font color="#666">Unknown.</td></tr></table></html>
 <h5 id="class-members-v3">Class Members:</h5>
 </div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_inline">SpeakerDataTransmissionState</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">enum </font>SpeakerDataTransmissionState</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> SpeakerDataTransmissionState</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.accessory</font></td></tr></table></html>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_inline">SpeakerDataTransmissionState</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">enum </font>SpeakerDataTransmissionState</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> SpeakerDataTransmissionState</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.common.accessory</td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
-<p><font color="#666">Data transmission state of the speaker.</font></p>
+<p><font color="#666">Data transmission state of the speaker.</p>
 <h5 id="enum-members-v3">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_idle_inline"></a>IDLE</font></td><td><font color="#666">The speaker is in idle state and is ready for receiving data from the mobile device.  Call <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_starttransmission">startTransmission</a></code> to start the data transmission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_readytotransmit_inline"></a>READY_TO_TRANSMIT</font></td><td><font color="#666">The data transmission from the mobile device to the speaker is started.  Call <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_pacedata">paceData</a></code> to transmit data.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_transmitting_inline"></a>TRANSMITING</font></td><td><font color="#666">The mobile device is transmitting data to the speaker.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown state, either the speaker is disconnected or not recognized.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_idle_inline"></a>IDLE</td><td><font color="#666">The speaker is in idle state and is ready for receiving data from the mobile device.  Call <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_starttransmission">startTransmission</a></code> to start the data transmission.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_readytotransmit_inline"></a>READY_TO_TRANSMIT</td><td><font color="#666">The data transmission from the mobile device to the speaker is started.  Call <code><a href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpeaker.html#djiaccessoryaggregation_djispeaker_pacedata">paceData</a></code> to transmit data.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_transmitting_inline"></a>TRANSMITING</td><td><font color="#666">The mobile device is transmitting data to the speaker.</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccessoryaggregation_djispeaker_djispeakerdatatransmissionstate_unknown_inline"></a>UNKNOWN</td><td><font color="#666">Unknown state, either the speaker is disconnected or not recognized.</td></tr></table></html>
 <h5 id="class-members-v4">Class Members:</h5>
 </div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_inline">TransmissionListener</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">interface </font>TransmissionListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">TransmissionListener</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_inline">TransmissionListener</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">interface </font>TransmissionListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">TransmissionListener</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
-<p><font color="#666">The listener will be notified when the transmission for the audio file starts.</font></p>
+<p><font color="#666">The listener will be notified when the transmission for the audio file starts.</p>
 <h5 id="interface-methods">Interface Methods:</h5>
 <h4 id="callback-method">Callback Method</h4>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onstart"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onstart_inline">onStart</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onstart_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onStart</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onstart"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onstart_inline">onStart</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onstart_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onStart</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
-<p><font color="#666">Called when the transmission starts and the aircraft is ready to receive data of  the audio file from the mobile device.</font></p>
+<p><font color="#666">Called when the transmission starts and the aircraft is ready to receive data of  the audio file from the mobile device.</p>
 </div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onprogress_inline">onProgress</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onprogress_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onProgress</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onProgress</span><span class="params">(<span class="keyword">int</span> dataSize)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onprogress_inline">onProgress</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onprogress_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onProgress</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onProgress</span><span class="params">(<span class="keyword">int</span> dataSize)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
-<p><font color="#666">Called to update the transmission progress. The progress is updated when a chunk  of data is received successfully by the aircraft.</font></p>
+<p><font color="#666">Called to update the transmission progress. The progress is updated when a chunk  of data is received successfully by the aircraft.</p>
 <h5 id="input-parameters-v13">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">dataSize</font></font></td><td><font color="#666"><i>The accumulated data size of the audio file received by the aircraft.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfinish"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfinish_inline">onFinish</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfinish_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onFinish</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onFinish</span><span class="params">(<span class="keyword">int</span> index)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">dataSize</td><td><font color="#666"><i>The accumulated data size of the audio file received by the aircraft.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfinish"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfinish_inline">onFinish</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfinish_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onFinish</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onFinish</span><span class="params">(<span class="keyword">int</span> index)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
-<p><font color="#666">Called when the transmission finishes successfully.</font></p>
+<p><font color="#666">Called when the transmission finishes successfully.</p>
 <h5 id="input-parameters-v14">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</font></font></td><td><font color="#666"><i>The index assigned by the aircraft for the new audio file.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfailure"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfailure_inline">onFailure</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfailure_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onFailure</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(DJIError error)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.accessory.speaker</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</td><td><font color="#666"><i>The index assigned by the aircraft for the new audio file.</i></td></tr></table></html></div>
+<div class="api-row" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfailure"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfailure_inline">onFailure</a></div></div><div class="inline-doc" id="djiaccessoryaggregation_djispeaker_transmissionlistenerinterface_onfailure_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onFailure</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(DJIError error)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.accessory.speaker</td></tr></table></html>
 <h5 id="description-v26">Description:</h5>
-<p><font color="#666">Called when the transmission is interrupted by an error.</font></p>
+<p><font color="#666">Called when the transmission is interrupted by an error.</p>
 <h5 id="input-parameters-v15">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>The possible error during the transmission.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</td><td><font color="#666"><i>The possible error during the transmission.</i></td></tr></table></html></div>
 </div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
-<div class="api-row" id="djibasecomponent_setdjicomponentlistener"><div class="api-col left">dji.sdk.base.BaseComponent</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_setdjicomponentlistener_inline">setComponentListener</a></div></div><div class="inline-doc" id="djibasecomponent_setdjicomponentlistener_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setComponentListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setComponentListener</span><span class="params">(ComponentListener listener)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<div class="api-row" id="djibasecomponent_setdjicomponentlistener"><div class="api-col left">dji.sdk.base.BaseComponent</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_setdjicomponentlistener_inline">setComponentListener</a></div></div><div class="inline-doc" id="djibasecomponent_setdjicomponentlistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setComponentListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setComponentListener</span><span class="params">(ComponentListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v27">Description:</h5>
-<p><font color="#666">Sets the listener for the DJI component.</font></p>
+<p><font color="#666">Sets the listener for the DJI component.</p>
 <h5 id="input-parameters-v16">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The callback of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_index"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_index_inline">getIndex</a></div></div><div class="inline-doc" id="djibasecomponent_index_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getIndex</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a> <font color="#000">listener</td><td><font color="#666"><i>The callback of <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_djicomponentlistenerinterface">ComponentListener</a></code>.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_index"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_index_inline">getIndex</a></div></div><div class="inline-doc" id="djibasecomponent_index_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getIndex</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v28">Description:</h5>
-<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210 and M210 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft.</font></p>
+<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210 and M210 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft.</p>
 <h5 id="return-v6">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of index.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_connected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_connected_inline">isConnected</a></div></div><div class="inline-doc" id="djibasecomponent_connected_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>isConnected</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isConnected</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</td><td><font color="#666"><i>An int value of index.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_connected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_connected_inline">isConnected</a></div></div><div class="inline-doc" id="djibasecomponent_connected_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>isConnected</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isConnected</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v29">Description:</h5>
-<p><font color="#666"><code>true</code> if the component is connected.</font></p>
+<p><font color="#666"><code>true</code> if the component is connected.</p>
 <h5 id="return-v7">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the component is connected.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_getserialnumber"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getserialnumber_inline">getSerialNumber</a></div></div><div class="inline-doc" id="djibasecomponent_getserialnumber_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getSerialNumber</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSerialNumber</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</td><td><font color="#666"><i><code>true</code> if the component is connected.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_getserialnumber"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getserialnumber_inline">getSerialNumber</a></div></div><div class="inline-doc" id="djibasecomponent_getserialnumber_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getSerialNumber</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getSerialNumber</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v30">Description:</h5>
-<p><font color="#666">Gets the serial number of the component. Depending on the component, this serial number might not match the serial number found  on the physical component.</font></p>
+<p><font color="#666">Gets the serial number of the component. Depending on the component, this serial number might not match the serial number found  on the physical component.</p>
 <h5 id="input-parameters-v17">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value returned.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djibasecomponent_getfirmwareversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getfirmwareversion_inline">getFirmwareVersion</a></div></div><div class="inline-doc" id="djibasecomponent_getfirmwareversion_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>getFirmwareVersion</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFirmwareVersion</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the value returned.</i></td></tr></table></html></div>
+<div class="api-row" id="djibasecomponent_getfirmwareversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_getfirmwareversion_inline">getFirmwareVersion</a></div></div><div class="inline-doc" id="djibasecomponent_getfirmwareversion_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getFirmwareVersion</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFirmwareVersion</span><span class="params">(@NonNull CompletionCallbackWith&lt;String&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.base</td></tr></table></html>
 <h5 id="description-v31">Description:</h5>
-<p><font color="#666">Returns the firmware version of the component. Each component will  have a different firmware version, the combination of which will  form the package firmware version <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_getfirmwarepackageversion">getFirmwarePackageVersion</a></code> found in <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</font></p>
+<p><font color="#666">Returns the firmware version of the component. Each component will  have a different firmware version, the combination of which will  form the package firmware version <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_getfirmwarepackageversion">getFirmwarePackageVersion</a></code> found in <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">BaseProduct</a></code>.</p>
 <h5 id="input-parameters-v18">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks_completioncallbackwith_interface">CompletionCallbackWith</a>&lt;String&gt; <font color="#000">callback</td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></td></tr></table></html></div>
 
         </div>
       </div>

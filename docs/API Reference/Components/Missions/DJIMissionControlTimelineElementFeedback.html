@@ -1,12 +1,16 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
   <title>DJI Mobile SDK Documentation
-  </title><link rel="stylesheet" href="../../stylesheets/doc-vendor.css"><link rel="stylesheet" href="../../stylesheets/doc-app.css">
-</head>
+  </title>
+<link rel="stylesheet" href="../../stylesheets/doc-vendor.css">
+
+<link rel="stylesheet" href="../../stylesheets/doc-app.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
@@ -117,6 +121,12 @@
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">LDMManager</a>
+                  </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">UTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">UTMISSParam</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">FlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -402,6 +412,10 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">RemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
+                            </dd>
                             <dd><a data-href="../RemoteController/DJIRemoteController_DJIRCHardwareState.html" class="sub-toggle">HardwareState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../RemoteController/DJIRemoteController_DJIRCHardwareRightWheel.html">RightDial</a>
@@ -461,10 +475,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">MultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">GimbalMapping</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalStickMapping.html">GimbalStickMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -736,6 +746,8 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIAccessLockerError.html">DJIAccessLockerError</a>
                             </dd>
+                            <dd><a href="../SDKError/DJIError_DJIUTMISSError.html">DJIUTMISSError</a>
+                            </dd>
                             <dd><a href="../SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
@@ -768,94 +780,103 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">interface </font>TimelineElementFeedback</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">TimelineElementFeedback</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline</font></td></tr></table></html>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>TimelineElementFeedback</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimelineElementFeedback</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission.timeline</td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">This protocol defines how the timeline element may contact mission control  to notify it of its own execution. This protocol is not intended to be  implemented by any other object and the use of a protocol is primarily  organizational.</font></p>
+<p><font color="#666">This protocol defines how the timeline element may contact mission control  to notify it of its own execution. This protocol is not intended to be  implemented by any other object and the use of a protocol is primarily  organizational.</p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="callback-method">Callback Method</h4>
-<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidstartrunning"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidstartrunning_inline">onStart</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidstartrunning_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onStart</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStart</span><span class="params">(TimelineElement element)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidstartrunning"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidstartrunning_inline">onStart</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidstartrunning_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onStart</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onStart</span><span class="params">(TimelineElement element)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission</td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">Used by elements to notify Mission Control of their successful start.</font></p>
+<p><font color="#666">Used by elements to notify Mission Control of their successful start.</p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedstartingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedstartingwitherror_inline">onStartWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedstartingwitherror_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onStartWithError</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStartWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></td></tr></table></html></div>
+<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedstartingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedstartingwitherror_inline">onStartWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedstartingwitherror_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onStartWithError</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onStartWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission</td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">Used by elements to notify Mission Control of a failure preventing to start.</font></p>
+<p><font color="#666">Used by elements to notify Mission Control of a failure preventing to start.</p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>A valid error object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementprogressedwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementprogressedwitherror_inline">onProgressWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementprogressedwitherror_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onProgressWithError</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onProgressWithError</span><span class="params">(TimelineElement element, @Nullable DJIError error)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</td><td><font color="#666"><i>A valid error object.</i></td></tr></table></html></div>
+<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementprogressedwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementprogressedwitherror_inline">onProgressWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementprogressedwitherror_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onProgressWithError</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onProgressWithError</span><span class="params">(TimelineElement element, @Nullable DJIError error)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission</td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Used by elements to notify Mission Control of a progress in the execution. Additional information may be pulled by mission control depending on the element. Calling this method with an error means the element is still running  and the error did not cause it to stop.</font></p>
+<p><font color="#666">Used by elements to notify Mission Control of a progress in the execution. Additional information may be pulled by mission control depending on the element. Calling this method with an error means the element is still running  and the error did not cause it to stop.</p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>An optional error if something went wrong.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidpause"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidpause_inline">onPause</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidpause_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onPause</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onPause</span><span class="params">(TimelineElement element)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</td><td><font color="#666"><i>An optional error if something went wrong.</i></td></tr></table></html></div>
+<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidpause"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidpause_inline">onPause</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidpause_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onPause</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onPause</span><span class="params">(TimelineElement element)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission</td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Used by elements to notify Mission Control of a successful pausing.</font></p>
+<p><font color="#666">Used by elements to notify Mission Control of a successful pausing.</p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedpausingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedpausingwitherror_inline">onPauseWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedpausingwitherror_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onPauseWithError</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onPauseWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></td></tr></table></html></div>
+<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedpausingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedpausingwitherror_inline">onPauseWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedpausingwitherror_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onPauseWithError</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onPauseWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission</td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">Used by elements to notify Mission Control of a failure to pause. The element is expected to be still running.</font></p>
+<p><font color="#666">Used by elements to notify Mission Control of a failure to pause. The element is expected to be still running.</p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>A valid error object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidresume"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidresume_inline">onResume</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidresume_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onResume</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onResume</span><span class="params">(TimelineElement element)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</td><td><font color="#666"><i>A valid error object.</i></td></tr></table></html></div>
+<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidresume"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidresume_inline">onResume</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidresume_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onResume</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onResume</span><span class="params">(TimelineElement element)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission</td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">Used by elements to notify Mission Control of a successful resuming of a previously paused element.</font></p>
+<p><font color="#666">Used by elements to notify Mission Control of a successful resuming of a previously paused element.</p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedresumingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedresumingwitherror_inline">onResumeWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedresumingwitherror_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onResumeWithError</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onResumeWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></td></tr></table></html></div>
+<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedresumingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedresumingwitherror_inline">onResumeWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedresumingwitherror_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onResumeWithError</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onResumeWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission</td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Used by elements to notify Mission Control of a failure to resume. The element is expected to be still paused.</font></p>
+<p><font color="#666">Used by elements to notify Mission Control of a failure to resume. The element is expected to be still paused.</p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>A valid error object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidfinishrunningwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidfinishrunningwitherror_inline">onFinishWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidfinishrunningwitherror_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onFinishWithError</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onFinishWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</td><td><font color="#666"><i>A valid error object.</i></td></tr></table></html></div>
+<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementdidfinishrunningwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementdidfinishrunningwitherror_inline">onFinishWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementdidfinishrunningwitherror_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onFinishWithError</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onFinishWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission</td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">Used by elements to notify Mission Control of the end of the execution of it.</font></p>
+<p><font color="#666">Used by elements to notify Mission Control of the end of the execution of it.</p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>An optional error if the execution end was the result of it.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedstoppingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedstoppingwitherror_inline">onStopWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedstoppingwitherror_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>onStopWithError</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStopWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</td><td><font color="#666"><i>An optional error if the execution end was the result of it.</i></td></tr></table></html></div>
+<div class="api-row" id="djimissioncontroltimelineelementfeedback_elementfailedstoppingwitherror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelementfeedback_elementfailedstoppingwitherror_inline">onStopWithError</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelementfeedback_elementfailedstoppingwitherror_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onStopWithError</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onStopWithError</span><span class="params">(TimelineElement element, DJIError error)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.mission</td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Used by elements to notify Mission Control of a failure to stop the execution of the element. This should only be used to handle error after stopRun is called.</font></p>
+<p><font color="#666">Used by elements to notify Mission Control of a failure to stop the execution of the element. This should only be used to handle error after stopRun is called.</p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</font></font></td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>A valid error object.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIMissionControlTimelineElement.html#djimissioncontroltimelineelement">TimelineElement</a> <font color="#000">element</td><td><font color="#666"><i>A previously scheduled element. Should also be the element running.</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</td><td><font color="#666"><i>A valid error object.</i></td></tr></table></html></div>
 
         </div>
       </div>
