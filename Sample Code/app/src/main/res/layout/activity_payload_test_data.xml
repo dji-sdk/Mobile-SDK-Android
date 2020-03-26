@@ -9,9 +9,11 @@
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:baselineAligned="false"
         android:orientation="horizontal"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true">
+
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -30,10 +32,11 @@
                 android:id="@+id/payload_name"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:maxLines="1"
+
                 android:ellipsize="marquee"
+                android:layout_height="wrap_content"
                 android:text="Payload: MyPayload"
-                android:layout_height="wrap_content"/>
+                android:singleLine="true" />
             <TextView
                 android:layout_alignLeft="@+id/payload_name"
                 android:layout_below="@+id/payload_name"
