@@ -11,6 +11,7 @@ repositories {
 android {
     compileSdkVersion 'android-R'
     buildToolsVersion '30.0.0 rc2'
+    ndkVersion '21.1.6273396'
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
@@ -66,8 +67,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     dependenciesInfo {
-        includeInApk true
-        includeInBundle true
+        includeInApk false
+        includeInBundle false
     }
 }
 
@@ -99,5 +100,5 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     implementation "androidx.core:core-ktx:1.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4-M1'
 }
