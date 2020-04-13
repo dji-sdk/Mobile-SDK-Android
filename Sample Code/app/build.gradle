@@ -9,8 +9,8 @@ repositories {
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '29.0.3'
+    compileSdkVersion 'android-R'
+    buildToolsVersion '30.0.0 rc2'
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
@@ -65,6 +65,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    dependenciesInfo {
+        includeInApk true
+        includeInBundle true
+    }
 }
 
 
@@ -90,7 +94,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'com.jakewharton:butterknife:10.2.1'
-    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     implementation "androidx.core:core-ktx:1.2.0"
