@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'com.google.gms.google-services'
+
 
 repositories {
     mavenLocal()
@@ -66,7 +68,7 @@ android {
         exclude 'META-INF/rxjava.properties'
     }
 
-    compileOptions {
+        compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -91,8 +93,8 @@ dependencies {
         exclude module: 'fly-safe-database'
     })
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.0'
     compileOnly 'com.dji:dji-sdk-provided:4.11.2'
-
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
@@ -105,7 +107,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     implementation "androidx.core:core-ktx:1.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-   // implementation 'com.google.android.gms:play-services:12.0.1'
-  //  implementation 'org.gradle:gradle-core:2.2'
+   //implementation 'com.google.android.gms:play-services:12.0.1'
+    implementation 'org.gradle:gradle-core:2.2'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4-M1'
 }
