@@ -17,7 +17,6 @@ repositories {
 android {
     compileSdkVersion 'android-R'
     buildToolsVersion '30.0.0 rc2'
-    android.ndkVersion '21.1.6273396'
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
@@ -29,6 +28,7 @@ android {
             // On x86 devices that run Android API 23 or above, if the application is targeted with API 23 or
             // above, FFmpeg lib might lead to runtime crashes or warnings.
             abiFilters 'armeabi-v7a', 'x86', 'arm64-v8a'
+            android.ndkVersion '21.1.6273396'
         }
     }
 
