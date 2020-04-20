@@ -121,20 +121,20 @@ public class VirtualStickView extends RelativeLayout
     }
 
     private void initUI() {
-        btnEnableVirtualStick = findViewById(R.id.btn_enable_virtual_stick);
-        btnDisableVirtualStick = findViewById(R.id.btn_disable_virtual_stick);
-        btnHorizontalCoordinate = findViewById(R.id.btn_horizontal_coordinate);
-        btnSetYawControlMode = findViewById(R.id.btn_yaw_control_mode);
-        btnSetVerticalControlMode = findViewById(R.id.btn_vertical_control_mode);
-        btnSetRollPitchControlMode = findViewById(R.id.btn_roll_pitch_control_mode);
-        btnTakeOff = findViewById(R.id.btn_take_off);
+        btnEnableVirtualStick = (Button) findViewById(R.id.btn_enable_virtual_stick);
+        btnDisableVirtualStick = (Button) findViewById(R.id.btn_disable_virtual_stick);
+        btnHorizontalCoordinate = (Button) findViewById(R.id.btn_horizontal_coordinate);
+        btnSetYawControlMode = (Button) findViewById(R.id.btn_yaw_control_mode);
+        btnSetVerticalControlMode = (Button) findViewById(R.id.btn_vertical_control_mode);
+        btnSetRollPitchControlMode = (Button) findViewById(R.id.btn_roll_pitch_control_mode);
+        btnTakeOff = (Button) findViewById(R.id.btn_take_off);
 
-        btnSimulator = findViewById(R.id.btn_start_simulator);
+        btnSimulator = (ToggleButton) findViewById(R.id.btn_start_simulator);
 
-        textView = findViewById(R.id.textview_simulator);
+        textView = (TextView) findViewById(R.id.textview_simulator);
 
-        screenJoystickRight = findViewById(R.id.directionJoystickRight);
-        screenJoystickLeft = findViewById(R.id.directionJoystickLeft);
+        screenJoystickRight = (OnScreenJoystick) findViewById(R.id.directionJoystickRight);
+        screenJoystickLeft = (OnScreenJoystick) findViewById(R.id.directionJoystickLeft);
 
         btnEnableVirtualStick.setOnClickListener(this);
         btnDisableVirtualStick.setOnClickListener(this);
@@ -192,13 +192,13 @@ public class VirtualStickView extends RelativeLayout
 
                 if (horizontalCoordinateFlag) {
                     if (rollPitchControlModeFlag) {
-                        pitch = pitchJoyControlMaxSpeed * pX;
+                        pitch = (float) (pitchJoyControlMaxSpeed * pX);
 
-                        roll = rollJoyControlMaxSpeed * pY;
+                        roll = (float) (rollJoyControlMaxSpeed * pY);
                     } else {
-                        pitch = -(pitchJoyControlMaxSpeed * pY);
+                        pitch = -(float) (pitchJoyControlMaxSpeed * pY);
 
-                        roll = rollJoyControlMaxSpeed * pX;
+                        roll = (float) (rollJoyControlMaxSpeed * pX);
                     }
                 }
 
@@ -280,7 +280,7 @@ public class VirtualStickView extends RelativeLayout
                 }
                 try {
                     ToastUtils.setResultToToast(flightController.getRollPitchControlMode().name());
-                } catch (Exception ignored) {
+                } catch (Exception ex) {
                 }
                 break;
 
@@ -294,7 +294,7 @@ public class VirtualStickView extends RelativeLayout
                 }
                 try {
                     ToastUtils.setResultToToast(flightController.getYawControlMode().name());
-                } catch (Exception ignored) {
+                } catch (Exception ex) {
                 }
                 break;
 
@@ -308,7 +308,7 @@ public class VirtualStickView extends RelativeLayout
                 }
                 try {
                     ToastUtils.setResultToToast(flightController.getVerticalControlMode().name());
-                } catch (Exception ignored) {
+                } catch (Exception ex) {
                 }
                 break;
 
@@ -322,7 +322,7 @@ public class VirtualStickView extends RelativeLayout
                 }
                 try {
                     ToastUtils.setResultToToast(flightController.getRollPitchCoordinateSystem().name());
-                } catch (Exception ignored) {
+                } catch (Exception ex) {
                 }
                 break;
 

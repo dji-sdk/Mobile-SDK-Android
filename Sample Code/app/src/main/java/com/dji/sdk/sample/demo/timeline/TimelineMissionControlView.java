@@ -65,7 +65,6 @@ import dji.sdk.products.Aircraft;
 /**
  * Class for Timeline MissionControl.
  */
-@SuppressWarnings("ALL")
 public class TimelineMissionControlView extends LinearLayout implements OnClickListener, PresentableView {
 
     private MissionControl missionControl;

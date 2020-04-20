@@ -1,7 +1,6 @@
 package com.dji.sdk.sample.demo.keymanager;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -270,7 +269,7 @@ public class KeyManagerUtils {
 
                 ArrayList<Integer> cameraIndexList = new ArrayList<>();
                 cameraIndexList.clear();
-                List<Camera> cameraList = product.getCameras();
+                List<Camera> cameraList = ((Aircraft) product).getCameras();
                 for (Camera camera : cameraList) {
                     cameraIndexList.add(camera.getIndex());
                 }
@@ -286,7 +285,7 @@ public class KeyManagerUtils {
 
                 ArrayList<Integer> batteryIndexList = new ArrayList<>();
                 batteryIndexList.clear();
-                List<Battery> batteryList = product.getBatteries();
+                List<Battery> batteryList = ((Aircraft) product).getBatteries();
                 for (Battery battery : batteryList) {
                     batteryIndexList.add(battery.getIndex());
                 }
@@ -476,7 +475,9 @@ public class KeyManagerUtils {
 
     protected static ArrayList<Enum> makeList(Enum[] enums) {
         ArrayList<Enum> list = new ArrayList<>();
-        list.addAll(Arrays.asList(enums));
+        for (Enum element : enums) {
+            list.add(element);
+        }
         return list;
     }
 }

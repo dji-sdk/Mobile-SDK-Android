@@ -83,7 +83,7 @@ public class PushCameraDataView extends BasePushDataView {
                             .setThermalTemperatureCallback(null);
                 }
             }
-        } catch (Exception ignored) {
+        } catch (Exception exception) {
 
         }
     }

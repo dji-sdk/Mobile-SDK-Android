@@ -142,7 +142,9 @@ public class MediaPlaybackView extends LinearLayout
                         if (DJIMediaList != null) {
                             DJIMediaList.clear();
                         }
-                        DJIMediaList.addAll(medias);
+                        for (MediaFile media : medias) {
+                            DJIMediaList.add(media);
+                        }
                         handler.sendMessage(handler.obtainMessage(NEED_REFRESH_FILE_LIST, null));
                         handler.removeMessages(GET_THUMBNAILS);
                     } else {
@@ -161,18 +163,18 @@ public class MediaPlaybackView extends LinearLayout
 
         layoutInflater.inflate(R.layout.media_playback, this, true);
 
-        ListView listView = findViewById(R.id.filelistView);
+        ListView listView = (ListView) findViewById(R.id.filelistView);
         listAdapter = new FileListAdapter();
         listView.setAdapter(listAdapter);
 
         createProgressDialog();
 
-        tv_playbackInfo = findViewById(R.id.tv_mediaPushInfo);
-        btnResume = findViewById(R.id.btnResume);
-        btnPause = findViewById(R.id.btnPause);
-        btnStop = findViewById(R.id.btnStop);
-        btnSkip = findViewById(R.id.btnSeek);
-        btnStatus = findViewById(R.id.btnStatus);
+        tv_playbackInfo = (TextView) findViewById(R.id.tv_mediaPushInfo);
+        btnResume = (Button) findViewById(R.id.btnResume);
+        btnPause = (Button) findViewById(R.id.btnPause);
+        btnStop = (Button) findViewById(R.id.btnStop);
+        btnSkip = (Button) findViewById(R.id.btnSeek);
+        btnStatus = (Button) findViewById(R.id.btnStatus);
 
         btnResume.setOnClickListener(new OnClickListener() {
             @Override
@@ -249,7 +251,7 @@ public class MediaPlaybackView extends LinearLayout
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
                 alertDialogBuilder.setView(promptsView);
 
-                final EditText userInput = promptsView.findViewById(R.id.editTextDialogUserInput);
+                final EditText userInput = (EditText) promptsView.findViewById(R.id.editTextDialogUserInput);
 
                 // set dialog message
                 alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -456,8 +458,8 @@ public class MediaPlaybackView extends LinearLayout
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.media_info_item, null);
 
                 mItemHolder = new ItemHolder();
-                mItemHolder.file_name = convertView.findViewById(R.id.filename);
-                mItemHolder.btnPlayVideo = convertView.findViewById(R.id.btn_PlayVideo);
+                mItemHolder.file_name = (TextView) convertView.findViewById(R.id.filename);
+                mItemHolder.btnPlayVideo = (Button) convertView.findViewById(R.id.btn_PlayVideo);
                 convertView.setTag(mItemHolder);
             } else {
                 mItemHolder = (ItemHolder) convertView.getTag();

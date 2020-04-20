@@ -133,11 +133,11 @@ public class OnScreenJoystick extends SurfaceView implements
 
 		while (retry) {
 			try {
-				// code to kill Thread
-				mThread.join();
-				retry = false;
-			} catch (InterruptedException ignored) {
-			}
+                // code to kill Thread
+                mThread.join();
+                retry = false;
+            } catch (InterruptedException e) {
+            }
 		}
 
 	}
@@ -227,20 +227,20 @@ public class OnScreenJoystick extends SurfaceView implements
 			while (running) {
 				// draw everything to the canvas
 				Canvas canvas = null;
-				try {
-					canvas = mHolder.lockCanvas(null);
-					synchronized (mHolder) {
-						// reset canvas
-						canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
-						doDraw(canvas);
-					}
-				} catch (Exception ignored) {
-				} finally {
-					if (canvas != null) {
-						mHolder.unlockCanvasAndPost(canvas);
-					}
-				}
-
+                try {
+                    canvas = mHolder.lockCanvas(null);
+                    synchronized (mHolder) {
+                        // reset canvas
+                        canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+                        doDraw(canvas);
+                    }
+                } catch (Exception e) {
+                } finally {
+                    if (canvas != null) {
+                        mHolder.unlockCanvasAndPost(canvas);
+                    }
+                }
+				
 //				pushTouchEvent();
 
 //				try 

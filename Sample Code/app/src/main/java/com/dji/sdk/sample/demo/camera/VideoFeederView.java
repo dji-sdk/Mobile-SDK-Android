@@ -94,37 +94,37 @@ public class VideoFeederView extends LinearLayout
     }
 
     private void initUI() {
-        enableSingle = findViewById(R.id.single_toggle_button);
+        enableSingle = (Switch) findViewById(R.id.single_toggle_button);
         enableSingle.setOnCheckedChangeListener(this);
-        enableDual = findViewById(R.id.dual_toggle_button);
+        enableDual = (Switch) findViewById(R.id.dual_toggle_button);
         enableDual.setOnCheckedChangeListener(this);
 
-        lbOnlyBtn = findViewById(R.id.video_feeder_lb_only);
+        lbOnlyBtn = (Button) findViewById(R.id.video_feeder_lb_only);
         lbOnlyBtn.setOnClickListener(this);
-        extOnlyBtn = findViewById(R.id.video_feeder_ext_only);
+        extOnlyBtn = (Button) findViewById(R.id.video_feeder_ext_only);
         extOnlyBtn.setOnClickListener(this);
-        lbAndExtBtn = findViewById(R.id.video_feeder_both_lb_ext);
+        lbAndExtBtn = (Button) findViewById(R.id.video_feeder_both_lb_ext);
         lbAndExtBtn.setOnClickListener(this);
 
-        hdmiOnlyBtn = findViewById(R.id.video_feeder_hdmi_only);
+        hdmiOnlyBtn = (Button) findViewById(R.id.video_feeder_hdmi_only);
         hdmiOnlyBtn.setOnClickListener(this);
-        avOnlyBtn = findViewById(R.id.video_feeder_av_only);
+        avOnlyBtn = (Button) findViewById(R.id.video_feeder_av_only);
         avOnlyBtn.setOnClickListener(this);
-        hdmiAndAvBtn = findViewById(R.id.video_feeder_both_hdmi_av);
+        hdmiAndAvBtn = (Button) findViewById(R.id.video_feeder_both_hdmi_av);
         hdmiAndAvBtn.setOnClickListener(this);
 
-        leftAndFpvBtn = findViewById(R.id.video_feeder_left_fpv);
+        leftAndFpvBtn = (Button) findViewById(R.id.video_feeder_left_fpv);
         leftAndFpvBtn.setOnClickListener(this);
-        rightAndFpvBtn = findViewById(R.id.video_feeder_right_fpv);
+        rightAndFpvBtn = (Button) findViewById(R.id.video_feeder_right_fpv);
         rightAndFpvBtn.setOnClickListener(this);
-        leftAndRightBtn = findViewById(R.id.video_feeder_left_right);
+        leftAndRightBtn = (Button) findViewById(R.id.video_feeder_left_right);
         leftAndRightBtn.setOnClickListener(this);
 
-        cameraListTitle = findViewById(R.id.camera_index_title);
-        primaryVideoFeedTitle = findViewById(R.id.primary_video_feed_title);
-        fpvVideoFeedTitle = findViewById(R.id.fpv_video_feed_title);
-        primaryVideoFeed = findViewById(R.id.primary_video_feed);
-        fpvVideoFeed = findViewById(R.id.fpv_video_feed);
+        cameraListTitle = (TextView) findViewById(R.id.camera_index_title);
+        primaryVideoFeedTitle = (TextView) findViewById(R.id.primary_video_feed_title);
+        fpvVideoFeedTitle = (TextView) findViewById(R.id.fpv_video_feed_title);
+        primaryVideoFeed = (VideoFeedView) findViewById(R.id.primary_video_feed);
+        fpvVideoFeed = (VideoFeedView) findViewById(R.id.fpv_video_feed);
         primaryCoverView = findViewById(R.id.primary_cover_view);
         primaryVideoFeed.setCoverView(primaryCoverView);
         fpvCoverView = findViewById(R.id.fpv_cover_view);
@@ -444,7 +444,7 @@ public class VideoFeederView extends LinearLayout
         if (model != null) {
             BaseProduct product = DJISDKManager.getInstance().getProduct();
             if (product != null && (product instanceof Aircraft)) {
-                List<Camera> cameraList = product.getCameras();
+                List<Camera> cameraList = ((Aircraft) product).getCameras();
                 if (cameraList != null) {
                     if (cameraListStr == null) {
                         cameraListStr = "";

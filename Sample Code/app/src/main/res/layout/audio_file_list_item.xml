@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -9,8 +8,7 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/iv_file_thumbnail"
         android:layout_width="250dp"
-        android:layout_height="150dp"
-        android:contentDescription="@string/todo" />
+        android:layout_height="150dp" />
 
     <TextView
         android:layout_above="@+id/tv_file_storage_location"
@@ -23,13 +21,12 @@
         android:textColor="@color/black"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
-        android:layout_alignEnd="@+id/iv_file_thumbnail"
-        android:text="@string/file_name" />
+        android:text="file name" />
     <TextView
         android:layout_above="@+id/tv_file_duration"
         android:layout_alignRight="@+id/iv_file_thumbnail"
         android:id="@+id/tv_file_storage_location"
-        android:layout_alignEnd="@+id/iv_file_thumbnail"
+        android:gravity="right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
@@ -37,9 +34,7 @@
         android:textColor="@color/black"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
-        android:gravity="end"
-        android:text="@string/storage_location"
-        tools:ignore="RtlHardcoded" />
+        android:text="Storage Location" />
     <TextView
         android:layout_above="@+id/tv_file_index"
         android:layout_alignRight="@+id/iv_file_thumbnail"
@@ -51,8 +46,7 @@
         android:layout_marginTop="3dp"
         android:textColor="@color/black"
         android:layout_marginBottom="3dp"
-        android:layout_alignEnd="@+id/iv_file_thumbnail"
-        android:text="@string/file_duration" />
+        android:text="File Duration" />
     <TextView
         android:layout_alignBottom="@+id/iv_file_thumbnail"
         android:layout_alignRight="@+id/iv_file_thumbnail"
@@ -64,8 +58,7 @@
         android:layout_marginTop="3dp"
         android:textColor="@color/black"
         android:layout_marginBottom="3dp"
-        android:layout_alignEnd="@+id/iv_file_thumbnail"
-        android:text="@string/file_index" />
+        android:text="file index" />
 
     <LinearLayout
         android:layout_below="@+id/iv_file_thumbnail"
@@ -74,9 +67,7 @@
         android:id="@+id/common_btn"
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/iv_file_thumbnail"
-        android:layout_alignEnd="@+id/iv_file_thumbnail">
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/btn_rename"
@@ -84,23 +75,26 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/common_button"
+            android:layout_centerVertical="true"
             android:gravity="center"
-            android:text="@string/rename" />
+            android:text="Rename" />
 
         <Button
             android:id="@+id/btn_delete"
+            android:layout_centerVertical="true"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/delete"
+            android:text="Delete"
             style="@style/common_button"/>
 
         <Button
             android:id="@+id/btn_PlayAudio"
+            android:layout_centerVertical="true"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/play"
+            android:text="Play"
             style="@style/common_button"/>
 
     </LinearLayout>

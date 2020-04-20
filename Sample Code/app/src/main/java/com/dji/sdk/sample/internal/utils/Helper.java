@@ -1,6 +1,5 @@
 package com.dji.sdk.sample.internal.utils;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -152,7 +151,7 @@ public class Helper {
         if (format == null || format.isEmpty()) {
             format = "yyyy-MM-dd-HH-mm-ss";
         }
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat(format);
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
         long time = System.currentTimeMillis();
         return sdf.format(new Date(time));
     }

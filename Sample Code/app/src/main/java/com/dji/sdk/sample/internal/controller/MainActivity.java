@@ -104,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
         DJISampleApplication.getEventBus().register(this);
         setContentView(R.layout.activity_main);
         setupActionBar();
-        contentFrameLayout = findViewById(R.id.framelayout_content);
-        progressBar = findViewById(R.id.progress_bar);
+        contentFrameLayout = (FrameLayout) findViewById(R.id.framelayout_content);
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         initParams();
     }
 
@@ -188,8 +188,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(@NonNull Intent intent) {
-        super.onNewIntent(intent);
-        super.onNewIntent(intent);
         String action = intent.getAction();
         if (UsbManager.ACTION_USB_ACCESSORY_ATTACHED.equals(action)) {
             Intent attachedIntent = new Intent();
@@ -356,7 +354,7 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
             actionBar.setCustomView(R.layout.actionbar_custom);
 
-            titleTextView = actionBar.getCustomView().findViewById(R.id.title_tv);
+            titleTextView = (TextView) (actionBar.getCustomView().findViewById(R.id.title_tv));
         }
     }
 

@@ -1,6 +1,5 @@
 package com.dji.sdk.sample.demo.camera;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 
 import com.dji.sdk.sample.R;
@@ -102,7 +101,6 @@ public class RecordVideoView extends BaseThreeBtnView {
                                 ToastUtils.setResultToToast("Start record");
                                 timer = new Timer();
                                 timer.schedule(new TimerTask() {
-                                    @SuppressLint("DefaultLocale")
                                     @Override
                                     public void run() {
                                         timeCounter = timeCounter + 1;

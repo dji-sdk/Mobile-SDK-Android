@@ -115,10 +115,10 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
 
         layoutInflater.inflate(R.layout.view_playback_commands, this, true);
 
-        btnPrevious = findViewById(R.id.btn_previous);
-        btnNext = findViewById(R.id.btn_next);
-        btnMultiple = findViewById(R.id.btn_multiple);
-        btnSingle = findViewById(R.id.btn_single);
+        btnPrevious = (Button) findViewById(R.id.btn_previous);
+        btnNext = (Button) findViewById(R.id.btn_next);
+        btnMultiple = (Button) findViewById(R.id.btn_multiple);
+        btnSingle = (Button) findViewById(R.id.btn_single);
 
         btnMultiple.setOnClickListener(this);
         btnNext.setOnClickListener(this);

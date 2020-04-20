@@ -119,7 +119,7 @@ public class AudioDecoder {
             while (!codeOver) {
                 try {
                     decodeAudioMediaFileToPCMStream();
-                } catch (Exception ignored) {
+                } catch (Exception e) {
 
                 }
             }

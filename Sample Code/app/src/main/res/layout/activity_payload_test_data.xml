@@ -1,6 +1,4 @@
-<!--suppress ALL -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_content_view"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -14,8 +12,7 @@
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        tools:ignore="UselessParent">
+        android:layout_alignParentBottom="true">
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -25,8 +22,7 @@
             android:layout_marginLeft="4dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="2dp">
+            android:layout_alignParentLeft="true">
 
             <TextView
                 android:layout_marginTop="10dp"
@@ -40,10 +36,8 @@
 
                 android:ellipsize="marquee"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
                 android:singleLine="true"
-                android:text="@string/payload_mypayload" />
+                android:text="Payload: MyPayload" />
 
             <TextView
                 android:layout_alignLeft="@+id/payload_name"
@@ -53,11 +47,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-
-                android:layout_alignStart="@+id/payload_name"
-                android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/tx" />
+                android:text="TX: " />
 
             <TextView
                 android:layout_toRightOf="@+id/send_total"
@@ -66,8 +57,7 @@
                 android:layout_gravity="center"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/send_total"
-                android:text="@string/_500" />
+                android:text="500" />
 
             <TextView
                 android:layout_toRightOf="@+id/send_total_size"
@@ -78,11 +68,7 @@
                 android:paddingLeft="5dp"
                 android:gravity="center"
                 android:layout_marginRight="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toEndOf="@+id/send_total_size"
-                android:paddingStart="5dp"
-                android:text="@string/bytes"
-                tools:ignore="RtlSymmetry" />
+                android:text="Bytes" />
 
             <EditText
                 android:id="@+id/sending_data"
@@ -90,20 +76,18 @@
                 android:layout_height="match_parent"
                 android:layout_above="@+id/repeat_send_checkbox"
                 android:layout_below="@+id/send_total"
-                android:layout_alignStart="@+id/payload_name"
                 android:layout_alignLeft="@+id/payload_name"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="start|top"
-                android:hint="@string/input_datas_here" />
+                android:gravity="left|top"
+                android:hint="Input Datas Here" />
 
             <CheckBox
                 android:layout_above="@+id/send_data_button"
                 android:layout_alignLeft="@+id/payload_name"
                 android:id="@+id/repeat_send_checkbox"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/payload_name" />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_toRightOf="@+id/repeat_send_checkbox"
@@ -116,29 +100,22 @@
                 android:gravity="center"
                 android:textSize="18sp"
                 android:maxLines="1"
-                android:layout_toEndOf="@+id/repeat_send_checkbox"
-                android:paddingStart="5dp"
-                android:text="@string/repeat_cycle"
-                tools:ignore="RtlSymmetry" />
+                android:text="Repeat Cycle:" />
 
             <EditText
                 android:id="@+id/period_value"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/repeat_send_checkbox"
-                android:layout_toEndOf="@+id/repeat_hint"
                 android:layout_toRightOf="@+id/repeat_hint"
-                android:autofillHints=""
                 android:gravity="center"
-                android:hint="@string/_10"
-                android:inputType="TODO"
+                android:hint="10"
                 android:shadowColor="@android:color/black"
                 android:shadowDx="1.2"
                 android:shadowDy="1.2"
                 android:shadowRadius="1.5"
-                android:text="@string/_10"
-                android:textSize="16sp"
-                tools:ignore="TextFields" />
+                android:text="10"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_toRightOf="@+id/period_value"
@@ -148,8 +125,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="18sp"
-                android:layout_toEndOf="@+id/period_value"
-                android:text="@string/hz" />
+                android:text="Hz" />
 
             <TextView
                 android:layout_marginTop="5dp"
@@ -162,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@android:color/white"
-                android:text="@string/send"
+                android:text="Send"
                 android:padding="10dp"
                 android:textSize="18sp"
                 android:background="@drawable/round_btn"
@@ -177,8 +153,7 @@
             android:background="@drawable/card_bg"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="4dp">
+            android:layout_alignParentRight="true">
 
             <TextView
                 android:layout_alignParentLeft="true"
@@ -191,10 +166,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginRight="10dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="10dp"
-                android:text="@string/rx" />
+                android:text="RX: " />
 
             <TextView
                 android:layout_marginTop="10dp"
@@ -203,8 +175,7 @@
                 android:layout_gravity="center"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/receive_total"
-                android:text="@string/_0" />
+                android:text="0" />
 
             <TextView
                 android:layout_marginTop="10dp"
@@ -215,12 +186,7 @@
                 android:paddingLeft="5dp"
                 android:gravity="center"
                 android:layout_marginRight="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toEndOf="@+id/receive_total_size"
-                android:paddingStart="5dp"
-                android:text="@string/bytes"
-                tools:ignore="RtlSymmetry" />
-
+                android:text="Bytes" />
             <TextView
                 android:id="@+id/push_info_text"
                 android:layout_below="@+id/receive_total"
@@ -233,9 +199,8 @@
                 android:shadowDx="1.2"
                 android:shadowDy="1.2"
                 android:textSize="16sp"
-                android:layout_alignStart="@+id/receive_total"
                 android:scrollbars="vertical"
-                android:text="@string/reveive_datas" />
+                android:text="Reveive Datas" />
 
         </RelativeLayout>
 
