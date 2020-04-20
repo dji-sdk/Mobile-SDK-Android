@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
     <ImageView
         android:layout_centerHorizontal="true"
         android:id="@+id/iv_file_thumbnail"
-        android:layout_width = "250dp"
-        android:layout_height = "150dp"/>
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:layout_above="@+id/tv_file_storage_location"
@@ -21,12 +23,13 @@
         android:textColor="@color/black"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
-        android:text="file name" />
+        android:layout_alignEnd="@+id/iv_file_thumbnail"
+        android:text="@string/file_name" />
     <TextView
         android:layout_above="@+id/tv_file_duration"
         android:layout_alignRight="@+id/iv_file_thumbnail"
         android:id="@+id/tv_file_storage_location"
-        android:gravity="right"
+        android:layout_alignEnd="@+id/iv_file_thumbnail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
@@ -34,7 +37,9 @@
         android:textColor="@color/black"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
-        android:text="Storage Location" />
+        android:gravity="end"
+        android:text="@string/storage_location"
+        tools:ignore="RtlHardcoded" />
     <TextView
         android:layout_above="@+id/tv_file_index"
         android:layout_alignRight="@+id/iv_file_thumbnail"
@@ -46,7 +51,8 @@
         android:layout_marginTop="3dp"
         android:textColor="@color/black"
         android:layout_marginBottom="3dp"
-        android:text="File Duration" />
+        android:layout_alignEnd="@+id/iv_file_thumbnail"
+        android:text="@string/file_duration" />
     <TextView
         android:layout_alignBottom="@+id/iv_file_thumbnail"
         android:layout_alignRight="@+id/iv_file_thumbnail"
@@ -58,7 +64,9 @@
         android:layout_marginTop="3dp"
         android:textColor="@color/black"
         android:layout_marginBottom="3dp"
-        android:text="file index" />
+        android:layout_alignEnd="@+id/iv_file_thumbnail"
+        android:text="@string/file_index" />
+
     <LinearLayout
         android:layout_below="@+id/iv_file_thumbnail"
         android:layout_alignRight="@+id/iv_file_thumbnail"
@@ -66,33 +74,33 @@
         android:id="@+id/common_btn"
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/iv_file_thumbnail"
+        android:layout_alignEnd="@+id/iv_file_thumbnail">
+
         <Button
             android:id="@+id/btn_rename"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text ="Rename"
+            style="@style/common_button"
             android:gravity="center"
-            style="@style/common_button"/>
+            android:text="@string/rename" />
 
         <Button
             android:id="@+id/btn_delete"
-            android:layout_centerVertical="true"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text ="Delete"
+            android:text="@string/delete"
             style="@style/common_button"/>
 
         <Button
             android:id="@+id/btn_PlayAudio"
-            android:layout_centerVertical="true"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text ="Play"
+            android:text="@string/play"
             style="@style/common_button"/>
 
     </LinearLayout>

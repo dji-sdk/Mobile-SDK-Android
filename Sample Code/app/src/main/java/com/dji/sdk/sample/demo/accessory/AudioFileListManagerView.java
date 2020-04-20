@@ -1,5 +1,6 @@
 package com.dji.sdk.sample.demo.accessory;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.app.Service;
@@ -129,15 +130,15 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         setClickable(true);
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_audio_file_list, this, true);
-        transmittingStateTV = (TextView) findViewById(R.id.tv_transmitting_state);
-        speakerStateTV = (TextView) findViewById(R.id.tv_speaker_state);
-        recordingStateTV = (TextView) findViewById(R.id.tv_recording_state);
-        uploadLocalFileBtn = (Button) findViewById(R.id.btn_upload_local_file);
-        cancelTransmittingBtn = (Button) findViewById(R.id.btn_cancel_transmitting);
-        refreshPlaylistBtn = (Button) findViewById(R.id.btn_fetch_playlist);
-        startRecordBtn = (Button) findViewById(R.id.btn_start_record);
-        stopRecordBtn = (Button) findViewById(R.id.btn_stop_record);
-        stopPlayBtn = (Button) findViewById(R.id.btn_stop_playing);
+        transmittingStateTV = findViewById(R.id.tv_transmitting_state);
+        speakerStateTV = findViewById(R.id.tv_speaker_state);
+        recordingStateTV = findViewById(R.id.tv_recording_state);
+        uploadLocalFileBtn = findViewById(R.id.btn_upload_local_file);
+        cancelTransmittingBtn = findViewById(R.id.btn_cancel_transmitting);
+        refreshPlaylistBtn = findViewById(R.id.btn_fetch_playlist);
+        startRecordBtn = findViewById(R.id.btn_start_record);
+        stopRecordBtn = findViewById(R.id.btn_stop_record);
+        stopPlayBtn = findViewById(R.id.btn_stop_playing);
 
         uploadLocalFileBtn.setOnClickListener(this);
         cancelTransmittingBtn.setOnClickListener(this);
@@ -149,9 +150,9 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
     }
 
     private void initAudioFileListView() {
-        listView = (RecyclerView) findViewById(R.id.filelistView);
-        LinearLayoutManager
-            layoutManager = new LinearLayoutManager(getContext(), OrientationHelper.VERTICAL, false);
+        listView = findViewById(R.id.filelistView);
+        @SuppressLint("WrongConstant") LinearLayoutManager
+                layoutManager = new LinearLayoutManager(getContext(), OrientationHelper.VERTICAL, false);
         listView.setLayoutManager(layoutManager);
         mListAdapter = new FileListAdapter();
         listView.setAdapter(mListAdapter);
@@ -556,7 +557,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         }
     }
 
-    private class ItemHolder extends RecyclerView.ViewHolder {
+    private static class ItemHolder extends RecyclerView.ViewHolder {
         ImageView thumbnailImgIV;
         TextView fileNameTV;
         TextView fileDurationTV;
@@ -568,14 +569,14 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
 
         public ItemHolder(View convertView) {
             super(convertView);
-            this.thumbnailImgIV = (ImageView) convertView.findViewById(R.id.iv_file_thumbnail);
-            this.fileNameTV = (TextView) convertView.findViewById(R.id.tv_file_name);
-            this.fileDurationTV = (TextView) convertView.findViewById(R.id.tv_file_duration);
-            this.fileStorageLocationTV = (TextView) convertView.findViewById(R.id.tv_file_storage_location);
-            this.fileIndexTV = (TextView) convertView.findViewById(R.id.tv_file_index);
-            this.renameBtn = (Button) convertView.findViewById(R.id.btn_rename);
-            this.deleteBtn = (Button) convertView.findViewById(R.id.btn_delete);
-            this.playAudioBtn = (Button) convertView.findViewById(R.id.btn_PlayAudio);
+            this.thumbnailImgIV = convertView.findViewById(R.id.iv_file_thumbnail);
+            this.fileNameTV = convertView.findViewById(R.id.tv_file_name);
+            this.fileDurationTV = convertView.findViewById(R.id.tv_file_duration);
+            this.fileStorageLocationTV = convertView.findViewById(R.id.tv_file_storage_location);
+            this.fileIndexTV = convertView.findViewById(R.id.tv_file_index);
+            this.renameBtn = convertView.findViewById(R.id.btn_rename);
+            this.deleteBtn = convertView.findViewById(R.id.btn_delete);
+            this.playAudioBtn = convertView.findViewById(R.id.btn_PlayAudio);
         }
     }
 

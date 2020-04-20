@@ -212,23 +212,23 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
 
         layoutInflater.inflate(R.layout.view_gimbal_capability, this, true);
 
-        mSpinnerSet = (Spinner) findViewById(R.id.spinner_set);
-        mBtnSet = (Button) findViewById(R.id.btn_set);
-        pitchMinBtn = (Button) findViewById(R.id.btn_pitchMin);
-        pitchMaxBtn = (Button) findViewById(R.id.btn_pitchMax);
-        yawMinBtn = (Button) findViewById(R.id.btn_yawMin);
-        yawMaxBtn = (Button) findViewById(R.id.btn_yawMax);
-        rollMinBtn = (Button) findViewById(R.id.btn_rollMin);
-        rollMaxBtn = (Button) findViewById(R.id.btn_rollMax);
-        Button resetBtn = (Button) findViewById(R.id.btn_reset);
-        leftAndFpvBtn = (Button) findViewById(R.id.video_feeder_left_fpv);
-        rightAndFpvBtn = (Button) findViewById(R.id.video_feeder_right_fpv);
-        leftAndRightBtn = (Button) findViewById(R.id.video_feeder_left_right);
-        cameraListTitle = (TextView) findViewById(R.id.camera_index_title);
-        primaryVideoFeedTitle = (TextView) findViewById(R.id.primary_video_feed_title);
-        fpvVideoFeedTitle = (TextView) findViewById(R.id.fpv_video_feed_title);
-        primaryVideoFeed = (VideoFeedView) findViewById(R.id.primary_video_feed);
-        fpvVideoFeed = (VideoFeedView) findViewById(R.id.fpv_video_feed);
+        mSpinnerSet = findViewById(R.id.spinner_set);
+        mBtnSet = findViewById(R.id.btn_set);
+        pitchMinBtn = findViewById(R.id.btn_pitchMin);
+        pitchMaxBtn = findViewById(R.id.btn_pitchMax);
+        yawMinBtn = findViewById(R.id.btn_yawMin);
+        yawMaxBtn = findViewById(R.id.btn_yawMax);
+        rollMinBtn = findViewById(R.id.btn_rollMin);
+        rollMaxBtn = findViewById(R.id.btn_rollMax);
+        Button resetBtn = findViewById(R.id.btn_reset);
+        leftAndFpvBtn = findViewById(R.id.video_feeder_left_fpv);
+        rightAndFpvBtn = findViewById(R.id.video_feeder_right_fpv);
+        leftAndRightBtn = findViewById(R.id.video_feeder_left_right);
+        cameraListTitle = findViewById(R.id.camera_index_title);
+        primaryVideoFeedTitle = findViewById(R.id.primary_video_feed_title);
+        fpvVideoFeedTitle = findViewById(R.id.fpv_video_feed_title);
+        primaryVideoFeed = findViewById(R.id.primary_video_feed);
+        fpvVideoFeed = findViewById(R.id.fpv_video_feed);
         primaryCoverView = findViewById(R.id.primary_cover_view);
         primaryVideoFeed.setCoverView(primaryCoverView);
         fpvCoverView = findViewById(R.id.fpv_cover_view);
@@ -494,10 +494,10 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         if (model != null) {
             BaseProduct product = DJISDKManager.getInstance().getProduct();
             if (product != null && (product instanceof Aircraft)) {
-                List<Camera> cameraList = ((Aircraft) product).getCameras();
+                List<Camera> cameraList = product.getCameras();
                 if (cameraList != null) {
                     if (cameraListStr == null) {
-                        cameraListStr = new String();
+                        cameraListStr = "";
                     }
                     cameraListStr = "";
                     for (int i = 0; i < cameraList.size(); i++) {

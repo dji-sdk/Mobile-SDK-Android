@@ -65,6 +65,7 @@ import dji.sdk.products.Aircraft;
 /**
  * Class for Timeline MissionControl.
  */
+@SuppressWarnings("ALL")
 public class TimelineMissionControlView extends LinearLayout implements OnClickListener, PresentableView {
 
     private MissionControl missionControl;
@@ -342,17 +343,17 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         }
 
         WaypointMission.Builder waypointMissionBuilder = new WaypointMission.Builder().autoFlightSpeed(5f)
-                                                                                      .maxFlightSpeed(10f)
-                                                                                      .setExitMissionOnRCSignalLostEnabled(false)
-                                                                                      .finishedAction(
-                                                                                          WaypointMissionFinishedAction.NO_ACTION)
-                                                                                      .flightPathMode(
-                                                                                          WaypointMissionFlightPathMode.NORMAL)
-                                                                                      .gotoFirstWaypointMode(
-                                                                                          WaypointMissionGotoWaypointMode.SAFELY)
-                                                                                      .headingMode(
-                                                                                          WaypointMissionHeadingMode.AUTO)
-                                                                                      .repeatTimes(1);;
+                .maxFlightSpeed(10f)
+                .setExitMissionOnRCSignalLostEnabled(false)
+                .finishedAction(
+                        WaypointMissionFinishedAction.NO_ACTION)
+                .flightPathMode(
+                        WaypointMissionFlightPathMode.NORMAL)
+                .gotoFirstWaypointMode(
+                        WaypointMissionGotoWaypointMode.SAFELY)
+                .headingMode(
+                        WaypointMissionHeadingMode.AUTO)
+                .repeatTimes(1);
         List<Waypoint> waypoints = new LinkedList<>();
 
         Waypoint northPoint = new Waypoint(homeLatitude + 10 * GeneralUtils.ONE_METER_OFFSET, homeLongitude, 10f);

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ScrollView
         android:id="@+id/vidoe_feeder_btns"
@@ -12,12 +13,12 @@
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/vidoe_feeder_btns"
+        android:layout_marginStart="20dp"
         android:scrollbars="vertical">
 
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:orientation="vertical">
 
             <TextView
@@ -33,17 +34,17 @@
                 style="@style/test_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_below="@+id/single_camera_products"
+                android:layout_gravity="start"
                 android:text="@string/video_feeder_m600_lb2_title"/>
 
             <Switch
                 android:id="@+id/single_toggle_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:layout_gravity="start"
                 android:textAlignment="viewStart"
-                android:text="@string/video_feeder_enable_single"/>
+                android:text="@string/video_feeder_enable_single"
+                tools:ignore="RtlCompat" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -59,20 +60,22 @@
                     android:id="@+id/video_feeder_ext_only"
                     android:layout_marginLeft="10dp"
                     style="@style/common_button"
-                    android:text="@string/video_feeder_ext_only"/>
+                    android:layout_marginStart="10dp"
+                    android:text="@string/video_feeder_ext_only" />
 
                 <Button
                     android:id="@+id/video_feeder_both_lb_ext"
                     android:layout_marginLeft="10dp"
                     style="@style/common_button"
-                    android:text="@string/video_feeder_both_lb_ext"/>
+                    android:layout_marginStart="10dp"
+                    android:text="@string/video_feeder_both_lb_ext" />
             </LinearLayout>
 
             <Switch
                 android:id="@+id/dual_toggle_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:layout_gravity="start"
                 android:textAlignment="viewStart"
                 android:text="@string/video_feeder_disable_single"/>
 
@@ -90,13 +93,15 @@
                     android:id="@+id/video_feeder_av_only"
                     android:layout_marginLeft="10dp"
                     style="@style/common_button"
-                    android:text="@string/video_feeder_av_only"/>
+                    android:layout_marginStart="10dp"
+                    android:text="@string/video_feeder_av_only" />
 
                 <Button
                     android:id="@+id/video_feeder_both_hdmi_av"
                     android:layout_marginLeft="10dp"
                     style="@style/common_button"
-                    android:text="@string/video_feeder_both_hdmi_av"/>
+                    android:layout_marginStart="10dp"
+                    android:text="@string/video_feeder_both_hdmi_av" />
             </LinearLayout>
 
             <TextView
@@ -120,13 +125,15 @@
                     android:id="@+id/video_feeder_right_fpv"
                     android:layout_marginLeft="10dp"
                     style="@style/common_button"
-                    android:text="@string/video_feeder_right_fpv"/>
+                    android:layout_marginStart="10dp"
+                    android:text="@string/video_feeder_right_fpv" />
 
                 <Button
                     android:id="@+id/video_feeder_left_right"
                     android:layout_marginLeft="10dp"
                     style="@style/common_button"
-                    android:text="@string/video_feeder_left_right"/>
+                    android:layout_marginStart="10dp"
+                    android:text="@string/video_feeder_left_right" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -136,6 +143,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:scrollbars="vertical">
 
         <LinearLayout
@@ -148,14 +156,14 @@
                 style="@style/test_text"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Camera List"/>
+                android:text="@string/camera_list" />
 
             <TextView
                 android:id="@+id/primary_video_feed_title"
                 style="@style/test_text"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Primary Camera"/>
+                android:text="@string/primary_camera" />
 
             <FrameLayout
                 android:layout_width="240dp"
@@ -181,7 +189,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Fpv camera source"/>
+                android:text="@string/fpv_camera_source" />
 
             <FrameLayout
                 android:layout_width="240dp"

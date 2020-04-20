@@ -136,7 +136,7 @@ public class OnScreenJoystick extends SurfaceView implements
 				// code to kill Thread
 				mThread.join();
 				retry = false;
-			} catch (InterruptedException e) {
+			} catch (InterruptedException ignored) {
 			}
 		}
 
@@ -234,16 +234,15 @@ public class OnScreenJoystick extends SurfaceView implements
 						canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
 						doDraw(canvas);
 					}
-				} 
-				catch(Exception e){}
-				finally {
+				} catch (Exception ignored) {
+				} finally {
 					if (canvas != null) {
 						mHolder.unlockCanvasAndPost(canvas);
 					}
 				}
-				
+
 //				pushTouchEvent();
-				
+
 //				try 
 //                {
 //                    Thread.sleep(100);

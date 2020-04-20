@@ -5,7 +5,7 @@ import android.media.MediaExtractor;
 import android.media.MediaFormat;
 import android.os.Build;
 import android.util.Log;
-import java.io.File;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
@@ -119,7 +119,7 @@ public class AudioDecoder {
             while (!codeOver) {
                 try {
                     decodeAudioMediaFileToPCMStream();
-                } catch (Exception e) {
+                } catch (Exception ignored) {
 
                 }
             }

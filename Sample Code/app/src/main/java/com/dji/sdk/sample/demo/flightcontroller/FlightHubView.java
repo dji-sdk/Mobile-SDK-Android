@@ -1,5 +1,6 @@
 package com.dji.sdk.sample.demo.flightcontroller;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -123,27 +124,27 @@ public class FlightHubView extends LinearLayout implements PresentableView, View
         setOrientation(VERTICAL);
         inflate(getContext(), R.layout.view_flight_hub, this);
 
-        authService = (Button) findViewById(R.id.fh_auth);
-        bindAircraft = (Button) findViewById(R.id.fh_bind_aircraft);
-        unbindAircraft = (Button) findViewById(R.id.fh_unbind_aircraft);
-        getTeamInfo = (Button) findViewById(R.id.fh_get_team_info);
-        checkLiveStreamStability = (Button) findViewById(R.id.fh_check_live_stream_stability);
-        getFlightStatistics = (Button) findViewById(R.id.fh_get_flight_statistics);
-        getStreamSources = (Button) findViewById(R.id.fh_get_stream_source);
-        getStreamDestination = (Button) findViewById(R.id.fh_get_stream_destination);
-        getStreamingDevices = (Button) findViewById(R.id.fh_get_streaming_devices);
-        getOnlineDevices = (Button) findViewById(R.id.fh_get_online_devices);
-        getRealTimeData = (Button) findViewById(R.id.fh_get_real_time_data);
-        getFlightPath = (Button) findViewById(R.id.fh_get_flight_path);
-        startUploadFlightData = (Button) findViewById(R.id.fh_start_upload_flight_data);
-        stopUploadFlightData = (Button) findViewById(R.id.fh_stop_upload_flight_data);
-        getUploadInterval = (Button) findViewById(R.id.fh_get_upload_interval);
-        setUploadInterval = (Button) findViewById(R.id.fh_set_upload_interval);
-        etxTeamId = (EditText) findViewById(R.id.fh_team_id);
-        etxAccount = (EditText) findViewById(R.id.fh_account);
-        tvFlighthubInfo = (TextView) findViewById(R.id.flight_hub_info_tv);
-        tvUploadStatus = (TextView) findViewById(R.id.tv_upload_status);
-        tvAuthStatus = (TextView) findViewById(R.id.tv_auth_status);
+        authService = findViewById(R.id.fh_auth);
+        bindAircraft = findViewById(R.id.fh_bind_aircraft);
+        unbindAircraft = findViewById(R.id.fh_unbind_aircraft);
+        getTeamInfo = findViewById(R.id.fh_get_team_info);
+        checkLiveStreamStability = findViewById(R.id.fh_check_live_stream_stability);
+        getFlightStatistics = findViewById(R.id.fh_get_flight_statistics);
+        getStreamSources = findViewById(R.id.fh_get_stream_source);
+        getStreamDestination = findViewById(R.id.fh_get_stream_destination);
+        getStreamingDevices = findViewById(R.id.fh_get_streaming_devices);
+        getOnlineDevices = findViewById(R.id.fh_get_online_devices);
+        getRealTimeData = findViewById(R.id.fh_get_real_time_data);
+        getFlightPath = findViewById(R.id.fh_get_flight_path);
+        startUploadFlightData = findViewById(R.id.fh_start_upload_flight_data);
+        stopUploadFlightData = findViewById(R.id.fh_stop_upload_flight_data);
+        getUploadInterval = findViewById(R.id.fh_get_upload_interval);
+        setUploadInterval = findViewById(R.id.fh_set_upload_interval);
+        etxTeamId = findViewById(R.id.fh_team_id);
+        etxAccount = findViewById(R.id.fh_account);
+        tvFlighthubInfo = findViewById(R.id.flight_hub_info_tv);
+        tvUploadStatus = findViewById(R.id.tv_upload_status);
+        tvAuthStatus = findViewById(R.id.tv_auth_status);
 
         authService.setOnClickListener(this);
         bindAircraft.setOnClickListener(this);
@@ -344,7 +345,7 @@ public class FlightHubView extends LinearLayout implements PresentableView, View
 
             //find records from 01/01/2017
             String dateStr = "01/01/2017";
-            Date date = new SimpleDateFormat("MM/dd/yyyy").parse(dateStr);
+            @SuppressLint("SimpleDateFormat") Date date = new SimpleDateFormat("MM/dd/yyyy").parse(dateStr);
             long startTime = date.getTime();
             final long endTime = System.currentTimeMillis();
 
