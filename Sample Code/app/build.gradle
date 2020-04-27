@@ -38,6 +38,7 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            renderscriptOptimLevel 3
         }
         debug {
             shrinkResources true
@@ -95,7 +96,7 @@ dependencies {
         exclude module: 'fly-safe-database'
     })
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
-    implementation 'com.google.firebase:firebase-auth:19.3.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
     compileOnly 'com.dji:dji-sdk-provided:4.11.2'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core:1.2.0'
