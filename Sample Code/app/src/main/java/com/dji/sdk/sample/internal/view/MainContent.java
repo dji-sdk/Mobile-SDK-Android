@@ -39,6 +39,7 @@ import dji.keysdk.DJIKey;
 import dji.keysdk.KeyManager;
 import dji.keysdk.ProductKey;
 import dji.keysdk.callback.KeyListener;
+import dji.log.GlobalConfig;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.products.Aircraft;
 import dji.sdk.realname.AppActivationManager;
@@ -73,7 +74,7 @@ public class MainContent extends RelativeLayout {
     private AtomicBoolean hasAppActivationListenerStarted = new AtomicBoolean(false);
     private static final int MSG_UPDATE_BLUETOOTH_CONNECTOR = 0;
     private static final int MSG_INFORM_ACTIVATION = 1;
-    private static final int ACTIVATION_DALAY_TIME = 1000;
+    private static final int ACTIVATION_DALAY_TIME = 3000;
     private AppActivationState.AppActivationStateListener appActivationStateListener;
     public MainContent(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -161,8 +162,13 @@ public class MainContent extends RelativeLayout {
             }
         });
         ((TextView) findViewById(R.id.text_version)).setText(getResources().getString(R.string.sdk_version,
-                DJISDKManager.getInstance()
-                        .getSDKVersion()));
+                DJISDKManager.getInstance().getSDKVersion()
+                        +
+                        " "
+                        +
+                        DJISDKManager.getInstance().getSdkBetaVersion()
+                        + " Debug:"
+                        + GlobalConfig.DEBUG));
     }
 
     private void handleBridgeIPTextChange() {
@@ -216,7 +222,11 @@ public class MainContent extends RelativeLayout {
     }
 
     private void sendDelayMsg(int msg, long delayMillis) {
-        if (mHandler != null) {
+        if (mHandler == null){
+            return;
+        }
+
+        if (!mHandler.hasMessages(msg)) {
             mHandler.sendEmptyMessageDelayed(msg, delayMillis);
         }
     }

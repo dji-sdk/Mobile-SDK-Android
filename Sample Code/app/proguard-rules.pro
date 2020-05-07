@@ -111,9 +111,3 @@
 -keepclassmembers class android.arch.** { *; }
 -keep class android.arch.** { *; }
 -dontwarn android.arch.**
-
-
-#<------------ utmiss config start------------>
--keep class dji.sdk.utmiss.** { *; }
--keep class utmisslib.** { *; }
-#<------------ utmiss config end------------>
