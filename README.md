@@ -71,7 +71,7 @@ DJI Mobile UX SDK is a suite of product agnostic UI objects that fast tracks the
 
 ## Device Health Information Json File
 
-You can find the **hms.json** file in this repo's root folder.
+You can find the **hms.json** and **`hms_match_sdkerror.json`** files in this repo's root folder.
 
 It contains error code and detailed description for device components. Only supported by some components of Matrice 300 RTK and Zenmuse H20 series.
 
