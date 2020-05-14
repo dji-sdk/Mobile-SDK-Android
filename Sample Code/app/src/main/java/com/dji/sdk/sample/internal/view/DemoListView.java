@@ -80,6 +80,9 @@ public class DemoListView extends FrameLayout {
 
         // Build model for ListView
         ListBuilder builder = new ListBuilder();
+        builder.addGroup(R.string.component_listview_sdk_4_12,
+                false,
+                new GroupItem(R.string.component_listview_health_information, HealthInformationView.class));
         builder.addGroup(R.string.component_listview_sdk_4_11,
                 false,
                 new GroupItem(R.string.component_listview_firmware_upgrade, FirmwareUpgradeView.class));

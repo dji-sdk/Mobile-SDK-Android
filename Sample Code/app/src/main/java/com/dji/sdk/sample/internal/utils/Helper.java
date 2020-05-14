@@ -1,9 +1,18 @@
 package com.dji.sdk.sample.internal.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dji.sdk.sample.internal.view.HealthInformationView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Type;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,14 +24,14 @@ import dji.common.product.Model;
 import dji.sdk.sdkmanager.DJISDKManager;
 
 public class Helper {
-	
+
 	public Helper() {
-		
+
 	}
-	
+
 	/**
 	 * Shows message on current activity.
-	 * 
+	 *
 	 * @param activity The activity the user want to show toast.
 	 * @param msg The String that the user want to put in the message.
 	 */
@@ -46,10 +55,10 @@ public class Helper {
             }
         });
     }
-	
+
 	/**
 	 * Transfers to list from enum array.
-	 * 
+	 *
 	 * @param o An object array
 	 * @return An ArrayList object of String for enum.
 	 */
@@ -169,5 +178,72 @@ public class Helper {
                 || model == Model.MATRICE_600_PRO
                 || model == Model.A3
                 || model == Model.N3);
+    }
+
+    private static List<HealthInformationView.HealthInfo> hmsJson;
+
+    public static List<HealthInformationView.HealthInfo> getHmsInfo(Context context) {
+        if (hmsJson == null) {
+            synchronized (Helper.class) {
+                if (hmsJson == null) {
+                    // the newest json file , can find by github
+                    hmsJson = getObjFromJsonFile(context, "hms.json", new TypeToken<List<HealthInformationView.HealthInfo>>() {
+                    }.getType());
+                }
+            }
+        }
+        return hmsJson;
+    }
+
+    private static List<HealthInformationView.HealthInfoMatchSDKError> hmsMatchSDKError;
+
+    public static List<HealthInformationView.HealthInfoMatchSDKError> getHmsMatchSDKError(Context context) {
+        if (hmsMatchSDKError == null) {
+            synchronized (Helper.class){
+                if (hmsMatchSDKError == null) {
+                    // the newest json file , can find by github
+                    hmsMatchSDKError = getObjFromJsonFile(context, "hms_match_sdkerror.json", new TypeToken<List<HealthInformationView.HealthInfoMatchSDKError>>() {
+                    }.getType());
+                }
+            }
+        }
+        return hmsMatchSDKError;
+    }
+
+    private static <T> T getObjFromJsonFile(Context context, String file, Type type) {
+        InputStream in = null;
+        ByteArrayOutputStream out = null;
+        try {
+            in = context.getAssets().open(file);
+            out = new ByteArrayOutputStream();
+            byte[] bytes = new byte[1024];
+            int length;
+            while ((length = in.read(bytes, 0, 1024)) > -1) {
+                out.write(bytes, 0, length);
+            }
+            out.flush();
+            String json = out.toString();
+            Gson gson = new Gson();
+            return gson.fromJson(json, type);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (out != null) {
+                try {
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return null;
     }
 }
