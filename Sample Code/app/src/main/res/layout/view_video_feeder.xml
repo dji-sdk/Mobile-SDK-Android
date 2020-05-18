@@ -4,14 +4,14 @@
        android:layout_height="match_parent">
 
     <ScrollView
-        android:id="@+id/vidoe_feeder_btns"
+        android:id="@+id/video_feeder_btns"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
-        android:layout_below="@+id/vidoe_feeder_btns"
+        android:layout_below="@+id/video_feeder_btns"
         android:scrollbars="vertical">
 
         <LinearLayout
@@ -127,6 +127,36 @@
                     android:layout_marginLeft="10dp"
                     style="@style/common_button"
                     android:text="@string/video_feeder_left_right"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/m300_products"
+                style="@style/test_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/video_feeder_m300_camera_title" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/video_feeder_set_video_source"
+                    style="@style/common_button"
+                    android:text="@string/video_feeder_set_video_source" />
+
+                <Button
+                    android:id="@+id/video_feeder_set_primary_priority"
+                    style="@style/common_button"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/video_feeder_set_primary_priority" />
+
+                <Button
+                    android:id="@+id/video_feeder_get_primary_priority"
+                    style="@style/common_button"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/video_feeder_get_primary_priority" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

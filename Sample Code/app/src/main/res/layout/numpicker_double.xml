@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/picker_black_bg">
+
+        <android.kankan.wheel.widget.WheelView
+            android:id="@+id/id_number_picker1"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:clickable="false"
+            android:dividerPadding="2dp" />
+
+        <android.kankan.wheel.widget.WheelView
+            android:id="@+id/id_number_picker2"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@id/id_number_picker1"
+            android:clickable="false"
+            android:dividerPadding="2dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/picker_ok_bg">
+
+        <ImageButton
+            android:id="@+id/id_select_imageButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="-10dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_picker_btn" />
+
+    </RelativeLayout>
+
+</LinearLayout>

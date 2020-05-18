@@ -37,6 +37,7 @@ public class Helper {
 	 */
 	public static void showToast(final Activity activity, final String msg) {
 		activity.runOnUiThread(new Runnable() {
+            @Override
             public void run() {
                 Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show();
             }
@@ -62,14 +63,15 @@ public class Helper {
 	 * @param o An object array
 	 * @return An ArrayList object of String for enum.
 	 */
-	public ArrayList<String> makeList(Object[] o) {
+	public static ArrayList<String> makeList(Object[] o) {
         ArrayList<String> list = new ArrayList<String>();
         for (int i = 0; i < o.length; i++) {
             list.add(o[i].toString());
         }
         return list;
     }
-    public ArrayList<String> makeList(int[] o) {
+
+    public static ArrayList<String> makeList(int[] o) {
         ArrayList<String> list = new ArrayList<String>();
         for (int i = 0; i < o.length; i++) {
             list.add(Integer.valueOf(o[i]).toString());
@@ -77,7 +79,7 @@ public class Helper {
         return list;
     }
 
-    public ArrayList<String> makeList(List o) {
+    public static ArrayList<String> makeList(List o) {
         ArrayList<String> list = new ArrayList<String>();
         Iterator iterator = o.iterator();
         while (iterator.hasNext()) {
@@ -85,6 +87,7 @@ public class Helper {
         }
         return list;
     }
+
     public static String getString(byte[] bytes) {
         if (null == bytes) {
             return "";

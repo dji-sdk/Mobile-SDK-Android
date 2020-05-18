@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:id="@+id/select_imageButton1_rl"
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <ImageButton
+                android:id="@+id/id_select_imageButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="3dp"
+                android:background="@drawable/selector_picker_bg"
+                android:scaleType="centerInside"
+                android:src="@drawable/selector_picker_btn" />
+
+            <Button
+                android:id="@+id/id_select_otherActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/id_select_imageButton1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_picker_bg"
+                android:gravity="center_vertical|left"
+                android:text="@string/popup_picker_trigger"
+                android:textAlignment="gravity"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+        <android.kankan.wheel.widget.WheelView
+            android:id="@+id/id_number_picker1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toLeftOf="@id/select_imageButton1_rl"
+            android:background="@drawable/picker_black_bg"
+            android:clickable="false"
+            android:dividerPadding="2dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -16,6 +16,7 @@ import com.dji.sdk.sample.demo.battery.SetGetDischargeDayView;
 import com.dji.sdk.sample.demo.camera.FetchMediaView;
 import com.dji.sdk.sample.demo.camera.LiveStreamView;
 import com.dji.sdk.sample.demo.camera.MediaPlaybackView;
+import com.dji.sdk.sample.demo.camera.MultipleLensCameraView;
 import com.dji.sdk.sample.demo.camera.PlaybackCommandsView;
 import com.dji.sdk.sample.demo.camera.PlaybackDownloadView;
 import com.dji.sdk.sample.demo.camera.PlaybackPushInfoView;
@@ -82,6 +83,7 @@ public class DemoListView extends FrameLayout {
         ListBuilder builder = new ListBuilder();
         builder.addGroup(R.string.component_listview_sdk_4_12,
                 false,
+                new GroupItem(R.string.component_listview_multiple_lens_camera, MultipleLensCameraView.class),
                 new GroupItem(R.string.component_listview_health_information, HealthInformationView.class));
         builder.addGroup(R.string.component_listview_sdk_4_11,
                 false,
