@@ -102,7 +102,7 @@ If you're planning on optimizing your app with [ProGuard](https://developer.andr
 "-libraryjars ./PATH_TO_THIS_FILE/dji_android_sdk.aar"
 ~~~
 
-- For **API Library** folder, please use the rules in [proguard-project](https://github.com/dji-sdk/Mobile-SDK-Android/blob/master/Sample Code/app/proguard-rules.pro) file. 
+- For **API Library** folder, please use the rules in [proguard-project](<https://github.com/dji-sdk/Mobile-SDK-Android/blob/master/Sample Code/app/proguard-rules.pro>) file. 
 
 > **Note**: There are two types of DJI Android SDK: **AAR** and **API Library folder**, you can download them from DJI Developer Website: <http://developer.dji.com/mobile-sdk/downloads/>.
 
