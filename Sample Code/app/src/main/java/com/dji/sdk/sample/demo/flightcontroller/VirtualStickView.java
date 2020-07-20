@@ -52,14 +52,7 @@ public class VirtualStickView extends RelativeLayout
     private boolean verticalControlModeFlag = true;
     private boolean horizontalCoordinateFlag = true;
 
-    private Button btnEnableVirtualStick;
-    private Button btnDisableVirtualStick;
-    private Button btnHorizontalCoordinate;
-    private Button btnSetYawControlMode;
-    private Button btnSetVerticalControlMode;
-    private Button btnSetRollPitchControlMode;
     private ToggleButton btnSimulator;
-    private Button btnTakeOff;
 
     private TextView textView;
 
@@ -121,13 +114,13 @@ public class VirtualStickView extends RelativeLayout
     }
 
     private void initUI() {
-        btnEnableVirtualStick = (Button) findViewById(R.id.btn_enable_virtual_stick);
-        btnDisableVirtualStick = (Button) findViewById(R.id.btn_disable_virtual_stick);
-        btnHorizontalCoordinate = (Button) findViewById(R.id.btn_horizontal_coordinate);
-        btnSetYawControlMode = (Button) findViewById(R.id.btn_yaw_control_mode);
-        btnSetVerticalControlMode = (Button) findViewById(R.id.btn_vertical_control_mode);
-        btnSetRollPitchControlMode = (Button) findViewById(R.id.btn_roll_pitch_control_mode);
-        btnTakeOff = (Button) findViewById(R.id.btn_take_off);
+        Button btnEnableVirtualStick = (Button) findViewById(R.id.btn_enable_virtual_stick);
+        Button btnDisableVirtualStick = (Button) findViewById(R.id.btn_disable_virtual_stick);
+        Button btnHorizontalCoordinate = (Button) findViewById(R.id.btn_horizontal_coordinate);
+        Button btnSetYawControlMode = (Button) findViewById(R.id.btn_yaw_control_mode);
+        Button btnSetVerticalControlMode = (Button) findViewById(R.id.btn_vertical_control_mode);
+        Button btnSetRollPitchControlMode = (Button) findViewById(R.id.btn_roll_pitch_control_mode);
+        Button btnTakeOff = (Button) findViewById(R.id.btn_take_off);
 
         btnSimulator = (ToggleButton) findViewById(R.id.btn_start_simulator);
 

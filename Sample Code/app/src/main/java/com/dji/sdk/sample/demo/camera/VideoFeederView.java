@@ -69,8 +69,6 @@ public class VideoFeederView extends LinearLayout
     private SetCallback setExtEnableCallback;
     private ActionCallback allocSourceCallback;
     private AirLink airLink;
-    private View primaryCoverView;
-    private View fpvCoverView;
     private TextView cameraListTitle;
     private String cameraListStr;
 
@@ -125,9 +123,9 @@ public class VideoFeederView extends LinearLayout
         fpvVideoFeedTitle = (TextView) findViewById(R.id.fpv_video_feed_title);
         primaryVideoFeed = (VideoFeedView) findViewById(R.id.primary_video_feed);
         fpvVideoFeed = (VideoFeedView) findViewById(R.id.fpv_video_feed);
-        primaryCoverView = findViewById(R.id.primary_cover_view);
+        View primaryCoverView = findViewById(R.id.primary_cover_view);
         primaryVideoFeed.setCoverView(primaryCoverView);
-        fpvCoverView = findViewById(R.id.fpv_cover_view);
+        View fpvCoverView = findViewById(R.id.fpv_cover_view);
         fpvVideoFeed.setCoverView(fpvCoverView);
         disableAllButtons();
         initEXTSwitch();

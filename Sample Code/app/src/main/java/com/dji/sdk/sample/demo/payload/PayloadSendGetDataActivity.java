@@ -49,9 +49,7 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
     private EditText sendDataEditView;
     private EditText periodView;
     private CheckBox repeatCheckbox;
-    private DJIKey getDataKey;
     private DJIKey sendDataKey;
-    private DJIKey payloadNameKey;
     private String payloadName = "";
     private ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
     private ScheduledFuture<?> scheduledFuture;
@@ -134,9 +132,9 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
     private void initListener() {
         View sendButton = findViewById(R.id.send_data_button);
         sendButton.setOnClickListener(this);
-        getDataKey = PayloadKey.create(PayloadKey.GET_DATA_FROM_PAYLOAD);
+        DJIKey getDataKey = PayloadKey.create(PayloadKey.GET_DATA_FROM_PAYLOAD);
         sendDataKey = PayloadKey.create(PayloadKey.SEND_DATA_TO_PAYLOAD);
-        payloadNameKey = PayloadKey.create(PayloadKey.PAYLOAD_PRODUCT_NAME);
+        DJIKey payloadNameKey = PayloadKey.create(PayloadKey.PAYLOAD_PRODUCT_NAME);
         if (KeyManager.getInstance() != null) {
             KeyManager.getInstance().addListener(getDataKey, getDataListener);
             KeyManager.getInstance().addListener(payloadNameKey, getNameListener);

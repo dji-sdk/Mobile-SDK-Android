@@ -56,13 +56,10 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
     private Button yawMaxBtn;
     private Button rollMinBtn;
     private Button rollMaxBtn;
-    private Button mBtnSet;
     private Button leftAndRightBtn;
     private Button leftAndFpvBtn;
     private Button rightAndFpvBtn;
     private Spinner mSpinnerSet;
-    private View primaryCoverView;
-    private View fpvCoverView;
     private TextView cameraListTitle;
     private TextView primaryVideoFeedTitle;
     private TextView fpvVideoFeedTitle;
@@ -213,7 +210,7 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         layoutInflater.inflate(R.layout.view_gimbal_capability, this, true);
 
         mSpinnerSet = (Spinner) findViewById(R.id.spinner_set);
-        mBtnSet = (Button) findViewById(R.id.btn_set);
+        Button mBtnSet = (Button) findViewById(R.id.btn_set);
         pitchMinBtn = (Button) findViewById(R.id.btn_pitchMin);
         pitchMaxBtn = (Button) findViewById(R.id.btn_pitchMax);
         yawMinBtn = (Button) findViewById(R.id.btn_yawMin);
@@ -229,9 +226,9 @@ public class GimbalCapabilityView extends LinearLayout implements View.OnClickLi
         fpvVideoFeedTitle = (TextView) findViewById(R.id.fpv_video_feed_title);
         primaryVideoFeed = (VideoFeedView) findViewById(R.id.primary_video_feed);
         fpvVideoFeed = (VideoFeedView) findViewById(R.id.fpv_video_feed);
-        primaryCoverView = findViewById(R.id.primary_cover_view);
+        View primaryCoverView = findViewById(R.id.primary_cover_view);
         primaryVideoFeed.setCoverView(primaryCoverView);
-        fpvCoverView = findViewById(R.id.fpv_cover_view);
+        View fpvCoverView = findViewById(R.id.fpv_cover_view);
         fpvVideoFeed.setCoverView(fpvCoverView);
 
         mBtnSet.setOnClickListener(this);

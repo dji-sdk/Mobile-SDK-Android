@@ -17,20 +17,17 @@ import com.dji.sdk.sample.internal.utils.DensityUtil;
 public class PopupSeekBar extends PopupWindow {
 
     private static int MIN_VALUE = -1;
-    private static int MAX_VALUE = -1;
     private static int selectedValue = -1;
     private static String TAG = "";
-    private SeekBarValueChangeListener onCallBack = null;
-    private TextView currentValueTextView;
-    private Button submitButton;
-    private SeekBar seekBar;
+    private final SeekBarValueChangeListener onCallBack;
+    private final TextView currentValueTextView;
+    private final SeekBar seekBar;
 
     public PopupSeekBar(Context context, int minValue, int maxValue, String tag,
-                        SeekBarValueChangeListener itemClickEvent, int w, int h, int pos) {
+                        SeekBarValueChangeListener itemClickEvent, int w, int h) {
         super(context);
 
         MIN_VALUE = minValue;
-        MAX_VALUE = maxValue;
         TAG = tag;
         onCallBack = itemClickEvent;
 
@@ -42,20 +39,14 @@ public class PopupSeekBar extends PopupWindow {
         this.setFocusable(true);//
 
         currentValueTextView = (TextView) view.findViewById(R.id.tv_progress);
-        submitButton = (Button) view.findViewById(R.id.btn_submitValue);
+        Button submitButton = (Button) view.findViewById(R.id.btn_submitValue);
         seekBar = (SeekBar) view.findViewById(R.id.seekBar_continuousValue);
         seekBar.setProgress(MIN_VALUE);
-        seekBar.setMax(MAX_VALUE);
+        seekBar.setMax(maxValue);
         seekBar.setOnSeekBarChangeListener(new OnDJISeekBarChangeListener());
 
 
-        submitButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                onCallBack.onValueChange(selectedValue, -1);
-            }
-        });
+        submitButton.setOnClickListener(v -> onCallBack.onValueChange(selectedValue, -1));
 
     }
 
@@ -74,10 +65,10 @@ public class PopupSeekBar extends PopupWindow {
                 PopupSeekBar.this.seekBar.setProgress(MIN_VALUE);
                 PopupSeekBar.this.seekBar.refreshDrawableState();
                 selectedValue = MIN_VALUE;
-                currentValueTextView.setText(TAG + " minimum value: " + MIN_VALUE);
+                currentValueTextView.setText(String.format("%s minimum value: %d", TAG, MIN_VALUE));
             } else {
                 selectedValue = progress;
-                currentValueTextView.setText(TAG + " selected value: " + progress);
+                currentValueTextView.setText(String.format("%s selected value: %d", TAG, progress));
             }
 
         }

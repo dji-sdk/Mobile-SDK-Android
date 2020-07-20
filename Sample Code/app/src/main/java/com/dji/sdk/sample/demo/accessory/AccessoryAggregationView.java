@@ -617,7 +617,7 @@ public class AccessoryAggregationView extends LinearLayout implements View.OnCli
     }
 
     private void initSeekBar(String tag, SeekBarValueChangeListener listener) {
-        popupSeekBar = new PopupSeekBar(getContext(), 0, 100, tag, listener, 300, 150, 0);
+        popupSeekBar = new PopupSeekBar(getContext(), 0, 100, tag, listener, 300, 150);
     }
 
     private CommonCallbacks.CompletionCallback getCommonCompletionCallback(final boolean shouldUpdateUI) {

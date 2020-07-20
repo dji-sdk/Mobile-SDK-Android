@@ -67,7 +67,6 @@ public class MainContent extends RelativeLayout {
     private HandlerThread mHandlerThread = new HandlerThread("Bluetooth");
 
     private BaseProduct mProduct;
-    private DJIKey firmwareKey;
     private KeyListener firmwareVersionUpdater;
     private boolean hasStartedFirmVersionListener = false;
     private AtomicBoolean hasAppActivationListenerStarted = new AtomicBoolean(false);
@@ -311,7 +310,7 @@ public class MainContent extends RelativeLayout {
                     });
                 }
             };
-            firmwareKey = ProductKey.create(ProductKey.FIRMWARE_PACKAGE_VERSION);
+            DJIKey firmwareKey = ProductKey.create(ProductKey.FIRMWARE_PACKAGE_VERSION);
             if (KeyManager.getInstance() != null) {
                 KeyManager.getInstance().addListener(firmwareKey, firmwareVersionUpdater );
             }

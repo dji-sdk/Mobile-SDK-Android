@@ -44,7 +44,6 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     private static final String KEY_INTERFACE = "Key: ";
     private static final String VALUE = "Value: ";
 
-    private Spinner mComponenetSpinner;
     private Spinner mSubComponentSpinner;
     private Spinner mComponentIndexSpinner;
     private Spinner mKeyInterfaceSpinner;
@@ -52,10 +51,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     private TextView mListenKeyTv;
     private TextView mKeyValueTv;
     private Spinner mSetValueSpinner;
-    private Button mGetValueBtn;
-    private Button mSetValueBtn;
     private Button mListenKeyBtn;
-    private ArrayAdapter mComponentAdapter;
     private ArrayAdapter mSubComponentAdapter;
     private ArrayAdapter mComponentIndexAdapter;
     private ArrayAdapter mKeyInterfaceAdapter;
@@ -76,7 +72,6 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     private DJIKey currentKey;
     private String currentKeyStr;
     private Object newValue;
-    private StringBuilder reslutInfo = null;
 
     private KeyListener keyListener;
     private boolean isKeyListened = false;
@@ -93,7 +88,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_key_manager, this, true);
 
-        mComponenetSpinner = (Spinner) findViewById(R.id.component_spinner);
+        Spinner mComponenetSpinner = (Spinner) findViewById(R.id.component_spinner);
         mSubComponentSpinner = (Spinner) findViewById(R.id.sub_component_spinner);
         mComponentIndexSpinner = (Spinner) findViewById(R.id.component_index_spinner);
         mKeyInterfaceSpinner = (Spinner) findViewById(R.id.key_interface_spinner);
@@ -101,12 +96,12 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         mListenKeyTv = (TextView) findViewById(R.id.listen_key_tv);
         mKeyValueTv = (TextView) findViewById(R.id.key_vaule_tv);
         mSetValueSpinner = (Spinner) findViewById(R.id.set_value_spinner);
-        mGetValueBtn = (Button) findViewById(R.id.get_value_btn);
-        mSetValueBtn = (Button) findViewById(R.id.set_value_btn);
+        Button mGetValueBtn = (Button) findViewById(R.id.get_value_btn);
+        Button mSetValueBtn = (Button) findViewById(R.id.set_value_btn);
         mListenKeyBtn = (Button) findViewById(R.id.listen_key_btn);
 
         mComponentKeyList = KeyManagerUtils.getComponentList();
-        mComponentAdapter = getArrayAdapter();
+        ArrayAdapter mComponentAdapter = getArrayAdapter();
         mComponentAdapter.addAll(KeyManagerUtils.getNameList(mComponentKeyList));
         mComponenetSpinner.setAdapter(mComponentAdapter);
         mComponenetSpinner.setSelection(0);
@@ -454,7 +449,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     }
 
     private void sendMessageToTV(final String type, final Object value) {
-        reslutInfo = new StringBuilder();
+        StringBuilder reslutInfo = new StringBuilder();
         reslutInfo.append(COMPONENT);
         reslutInfo.append(currentComponentKey);
         reslutInfo.append("\n");

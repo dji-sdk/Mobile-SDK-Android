@@ -17,11 +17,8 @@ import dji.common.util.CommonCallbacks;
  */
 public class ShootSinglePhotoView extends BaseThreeBtnView {
 
-    private Context context;
-
     public ShootSinglePhotoView(Context context) {
         super(context);
-        this.context = context;
     }
 
     /**

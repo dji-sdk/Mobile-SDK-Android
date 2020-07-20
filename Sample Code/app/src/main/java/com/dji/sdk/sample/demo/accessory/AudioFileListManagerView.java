@@ -63,7 +63,6 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
     protected TextView transmittingStateTV;
     protected TextView speakerStateTV;
     protected TextView recordingStateTV;
-    private RecyclerView listView;
     private Bitmap defaultThumb;
     private ProgressDialog mDialog;
     private List<AudioMediaFile> audioMediaFiles = new ArrayList<AudioMediaFile>();
@@ -71,7 +70,6 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
 
     private Speaker speaker;
     private SpeakerState speakerState;
-    private String savePath;
     private MediaRecorderHandler mediaRecorderHandler;
     private AudioDecoder audioDecoder;
     private String transmitMessage="";
@@ -90,7 +88,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
     public AudioFileListManagerView(Context context) {
         super(context);
         initUI(context);
-        savePath = Environment.getExternalStorageDirectory().getPath() + "/DJI/" + context.getPackageName() + "/voice";
+        String savePath = Environment.getExternalStorageDirectory().getPath() + "/DJI/" + context.getPackageName() + "/voice";
         mediaRecorderHandler = new MediaRecorderHandler(savePath, new MediaRecorderOptions.Builder().build());
         audioDecoder = new AudioDecoder();
     }
@@ -149,7 +147,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
     }
 
     private void initAudioFileListView() {
-        listView = (RecyclerView) findViewById(R.id.filelistView);
+        RecyclerView listView = (RecyclerView) findViewById(R.id.filelistView);
         LinearLayoutManager
                 layoutManager = new LinearLayoutManager(getContext(), OrientationHelper.VERTICAL, false);
         listView.setLayoutManager(layoutManager);
