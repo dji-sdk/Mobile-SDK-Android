@@ -9,7 +9,7 @@ import java.io.File;
 
 public class AudioRecorderHandler {
 
-    private static int MAX_DATA_LENGTH = 160;
+    private static final int MAX_DATA_LENGTH = 160;
     private AudioRecord audioRecord;
     private boolean isRecording = false;
     private short[] buffer = null;

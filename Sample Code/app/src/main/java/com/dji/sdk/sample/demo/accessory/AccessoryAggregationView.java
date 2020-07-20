@@ -72,8 +72,8 @@ public class AccessoryAggregationView extends LinearLayout implements View.OnCli
     private Spotlight spotlight;
     private SpeakerState speakerState;
     private AudioRecorderHandler audioRecoderHandler;
-    private CopyOnWriteArrayList<Integer> playingIndexs = new CopyOnWriteArrayList<>();
-    private CopyOnWriteArrayList<Integer> fileToDelele = new CopyOnWriteArrayList<>();
+    private final CopyOnWriteArrayList<Integer> playingIndexs = new CopyOnWriteArrayList<>();
+    private final CopyOnWriteArrayList<Integer> fileToDelele = new CopyOnWriteArrayList<>();
 
     private static final int MSG_ADD_VOICE = 1;
     private static final int MSG_TAKE_VOICE = MSG_ADD_VOICE + 1;
@@ -391,11 +391,7 @@ public class AccessoryAggregationView extends LinearLayout implements View.OnCli
         final Beacon beacon = ModuleVerificationUtil.getBeacon();
         if (beacon != null) {
             Boolean isBeaconEnabled = (Boolean) KeyManager.getInstance().getValue(beaconEnabledKey);
-            if (isBeaconEnabled != null && isBeaconEnabled) {
-                beacon.setEnabled(false, getCommonCompletionCallback(true));
-            } else {
-                beacon.setEnabled(true, getCommonCompletionCallback(true));
-            }
+            beacon.setEnabled(isBeaconEnabled == null || !isBeaconEnabled, getCommonCompletionCallback(true));
         } else {
             ToastUtils.setResultToToast("Beacon disconnected!");
         }
@@ -404,11 +400,7 @@ public class AccessoryAggregationView extends LinearLayout implements View.OnCli
     private void enableSpotlight() {
         if (spotlight != null) {
             Boolean isSpotlightEnabled = (Boolean) KeyManager.getInstance().getValue(spotlightEnabledKey);
-            if (isSpotlightEnabled != null && isSpotlightEnabled) {
-                spotlight.setEnabled(false, getCommonCompletionCallback(true));
-            } else {
-                spotlight.setEnabled(true, getCommonCompletionCallback(true));
-            }
+            spotlight.setEnabled(isSpotlightEnabled == null || !isSpotlightEnabled, getCommonCompletionCallback(true));
         } else {
             ToastUtils.setResultToToast("Spotlight disconnected!");
         }
@@ -572,7 +564,7 @@ public class AccessoryAggregationView extends LinearLayout implements View.OnCli
         handler.sendEmptyMessageDelayed(MSG_TAKE_VOICE, TAKE_VOICE_INTERVAL);
     }
 
-    private Handler handler = new Handler(new Handler.Callback() {
+    private final Handler handler = new Handler(new Handler.Callback() {
 
         @Override
         public boolean handleMessage(Message msg) {

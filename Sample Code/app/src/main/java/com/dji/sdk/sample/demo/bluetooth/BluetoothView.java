@@ -24,11 +24,11 @@ public class BluetoothView extends LinearLayout implements View.OnClickListener 
 
     private Spinner mSpinnerSelection;
     private TextView mTextDevicesInformation;
-    private List<String> strDevicesList = new ArrayList<String>();
+    private final List<String> strDevicesList = new ArrayList<String>();
     private ArrayAdapter<String> adapter;
     private BluetoothProductConnector connector = null;
     private List<BluetoothDevice> devicesList = null;
-    private BluetoothProductConnector.BluetoothDevicesListCallback bluetoothProductCallback =
+    private final BluetoothProductConnector.BluetoothDevicesListCallback bluetoothProductCallback =
         new BluetoothProductConnector.BluetoothDevicesListCallback() {
 
             @Override

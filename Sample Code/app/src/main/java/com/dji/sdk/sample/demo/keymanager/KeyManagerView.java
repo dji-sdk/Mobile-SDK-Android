@@ -1,5 +1,6 @@
 package com.dji.sdk.sample.demo.keymanager;
 
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.os.Handler;
@@ -52,9 +53,9 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     private TextView mKeyValueTv;
     private Spinner mSetValueSpinner;
     private Button mListenKeyBtn;
-    private ArrayAdapter mSubComponentAdapter;
+    private ArrayAdapter<String> mSubComponentAdapter;
     private ArrayAdapter mComponentIndexAdapter;
-    private ArrayAdapter mKeyInterfaceAdapter;
+    private ArrayAdapter<String> mKeyInterfaceAdapter;
     private ArrayAdapter mSetValueAdapter;
 
     private List<BaseProduct.ComponentKey> mComponentKeyList = new ArrayList<>();
@@ -77,7 +78,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     private boolean isKeyListened = false;
     private boolean isFirstGetValue = false;
 
-    private Handler handler = new Handler();
+    private final Handler handler = new Handler();
 
     public KeyManagerView(Context context) {
         super(context);
@@ -101,7 +102,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         mListenKeyBtn = (Button) findViewById(R.id.listen_key_btn);
 
         mComponentKeyList = KeyManagerUtils.getComponentList();
-        ArrayAdapter mComponentAdapter = getArrayAdapter();
+        ArrayAdapter<String> mComponentAdapter = getArrayAdapter();
         mComponentAdapter.addAll(KeyManagerUtils.getNameList(mComponentKeyList));
         mComponenetSpinner.setAdapter(mComponentAdapter);
         mComponenetSpinner.setSelection(0);
@@ -150,7 +151,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     }
 
 
-    private Runnable runUpdateSubComponent = new Runnable() {
+    private final Runnable runUpdateSubComponent = new Runnable() {
         @Override
         public void run() {
             mSubComponentSpinner.setEnabled(true);
@@ -158,7 +159,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         }
     };
 
-    private Runnable runUpdateComponentIndex = new Runnable() {
+    private final Runnable runUpdateComponentIndex = new Runnable() {
         @Override
         public void run() {
             mComponentIndexSpinner.setEnabled(true);
@@ -166,7 +167,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         }
     };
 
-    private Runnable runUpdateKeyInterface = new Runnable() {
+    private final Runnable runUpdateKeyInterface = new Runnable() {
         @Override
         public void run() {
             mKeyInterfaceSpinner.setEnabled(true);
@@ -174,7 +175,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         }
     };
 
-    private Runnable runUpdateSetValue = new Runnable() {
+    private final Runnable runUpdateSetValue = new Runnable() {
         @Override
         public void run() {
             mSetValueSpinner.setEnabled(true);
@@ -289,22 +290,14 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
             return;
         }
         sendMessageToTV("Listen");
-        keyListener = new KeyListener() {
-            @Override
-            public void onValueChange(@Nullable Object oldValue, @Nullable Object newValue) {
-                if (newValue != null) {
-                    sendMessageToTV("Listen", newValue);
-                    postReslutToToast("Listen key: " + currentKeyStr + ", oldValue: " + oldValue.toString() + ", newValue: " + newValue.toString());
-                }
+        keyListener = (oldValue, newValue) -> {
+            if (newValue != null) {
+                sendMessageToTV("Listen", newValue);
+                postReslutToToast("Listen key: " + currentKeyStr + ", oldValue: " + oldValue.toString() + ", newValue: " + newValue.toString());
             }
         };
 
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                mListenKeyBtn.setText("UnListen");
-            }
-        });
+        handler.post(() -> mListenKeyBtn.setText("UnListen"));
         KeyManager.getInstance().addListener(currentKey, keyListener);
     }
 
@@ -314,12 +307,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         }
 
         if (keyListener != null) {
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    mListenKeyBtn.setText("Listen");
-                }
-            });
+            handler.post(() -> mListenKeyBtn.setText("Listen"));
             KeyManager.getInstance().removeListener(keyListener);
         }
     }
@@ -351,12 +339,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
             handler.post(runUpdateComponentIndex);
         } else {
             currentComponetIndex = -1;
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    mComponentIndexSpinner.setEnabled(false);
-                }
-            });
+            handler.post(() -> mComponentIndexSpinner.setEnabled(false));
         }
 
         mKeyInterfaceAdapter.clear();
@@ -487,7 +470,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     }
 
     private ArrayAdapter<String> getArrayAdapter() {
-        ArrayAdapter<String> adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return adapter;
     }

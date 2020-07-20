@@ -47,6 +47,7 @@ import dji.sdk.sdkmanager.DJISDKManager;
 /**
  * The class for rotating the gimbal, also give an example of the product with multiple gimbals.
  */
+@SuppressWarnings("ALL")
 public class GimbalCapabilityView extends LinearLayout implements View.OnClickListener, PresentableView {
 
     private Gimbal gimbal = null;

@@ -4,8 +4,8 @@ import android.view.View;
 
 public class ViewWrapper {
 
-    private int titleId;
-    private View view;
+    private final int titleId;
+    private final View view;
 
     public ViewWrapper(View layoutView, int titleId) {
         view = layoutView;

@@ -1,5 +1,6 @@
 package com.dji.sdk.sample.demo.timeline;
 
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -167,7 +168,7 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         addTrigger(trigger, triggerTarget, "");
     }
 
-    private Trigger.Listener triggerListener = new Trigger.Listener() {
+    private final Trigger.Listener triggerListener = new Trigger.Listener() {
         @Override
         public void onEvent(Trigger trigger, TriggerEvent event, @Nullable DJIError error) {
             setRunningResultToText("Trigger " + trigger.getClass().getSimpleName() + " event is " + event.name() + (error==null? " ":error.getDescription()));
@@ -176,12 +177,7 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
 
     private void initTrigger(final Trigger trigger) {
         trigger.addListener(triggerListener);
-        trigger.setAction(new Trigger.Action() {
-            @Override
-            public void onCall() {
-                setRunningResultToText("Trigger " + trigger.getClass().getSimpleName() + " Action method onCall() is invoked");
-            }
-        });
+        trigger.setAction(() -> setRunningResultToText("Trigger " + trigger.getClass().getSimpleName() + " Action method onCall() is invoked"));
     }
 
     private void addTrigger(Trigger trigger, Triggerable triggerTarget, String additionalComment) {
@@ -216,12 +212,7 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
 
         missionControl = MissionControl.getInstance();
         final TimelineEvent preEvent = null;
-        MissionControl.Listener listener = new MissionControl.Listener() {
-            @Override
-            public void onEvent(@Nullable TimelineElement element, TimelineEvent event, DJIError error) {
-                updateTimelineStatus(element, event, error);
-            }
-        };
+        MissionControl.Listener listener = (element, event, error) -> updateTimelineStatus(element, event, error);
 
         //Step 1: takeoff from the ground
         setTimelinePlanToText("Step 1: takeoff from the ground");
@@ -414,7 +405,6 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         if (product == null || !product.isConnected()) {
             ToastUtils.setResultToToast("Disconnect");
             missionControl = null;
-            return;
         } else {
             missionControl = MissionControl.getInstance();
             if (product instanceof Aircraft) {
@@ -456,6 +446,7 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         cleanBtn.setOnClickListener(this);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
 

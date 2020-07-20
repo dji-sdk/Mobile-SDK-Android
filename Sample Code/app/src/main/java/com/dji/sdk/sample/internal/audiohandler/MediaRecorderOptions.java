@@ -2,7 +2,7 @@ package com.dji.sdk.sample.internal.audiohandler;
 
 public class MediaRecorderOptions {
 
-    private Builder mBuilder;
+    private final Builder mBuilder;
     private MediaRecorderOptions(Builder builder) {
         mBuilder = builder;
     }

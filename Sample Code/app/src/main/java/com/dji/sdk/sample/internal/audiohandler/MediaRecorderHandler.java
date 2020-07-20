@@ -10,10 +10,10 @@ import java.io.File;
 public class MediaRecorderHandler {
 
     private MediaRecorder mediaRecorder;
-    private String fileSavePath;
+    private final String fileSavePath;
     private String fileName;
     private String fileAbsolutePath;
-    private MediaRecorderOptions options;
+    private final MediaRecorderOptions options;
     private boolean isRecording;
 
 

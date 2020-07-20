@@ -51,10 +51,10 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
     private CheckBox repeatCheckbox;
     private DJIKey sendDataKey;
     private String payloadName = "";
-    private ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
+    private final ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
     private ScheduledFuture<?> scheduledFuture;
 
-    private KeyListener getDataListener = new KeyListener() {
+    private final KeyListener getDataListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
             if (receivedDataView != null) {
@@ -86,7 +86,7 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
             }
         });
     }
-    private KeyListener getNameListener = new KeyListener() {
+    private final KeyListener getNameListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
             if (payloadName != null) {
@@ -162,7 +162,7 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
         super.onDestroy();
     }
 
-    private Runnable repeatRunnable = new Runnable() {
+    private final Runnable repeatRunnable = new Runnable() {
         @Override
         public void run() {
             sendData();

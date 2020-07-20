@@ -130,7 +130,7 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
         }
     }
 
-    private UpgradeFirmwareListener remoteControllerUpgradeListener = new UpgradeFirmwareListener() {
+    private final UpgradeFirmwareListener remoteControllerUpgradeListener = new UpgradeFirmwareListener() {
 
         @Override
         public void onUpgradeFirmwareStateUpdated(@NonNull UpgradeFirmwareState state) {
@@ -158,7 +158,7 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
         }
     };
 
-    private UpgradeFirmwareListener aircraftUpgradeListener = new UpgradeFirmwareListener() {
+    private final UpgradeFirmwareListener aircraftUpgradeListener = new UpgradeFirmwareListener() {
 
         @Override
         public void onUpgradeFirmwareStateUpdated(@NonNull UpgradeFirmwareState state) {

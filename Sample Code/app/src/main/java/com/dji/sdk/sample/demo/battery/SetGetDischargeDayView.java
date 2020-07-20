@@ -21,7 +21,7 @@ import dji.common.util.CommonCallbacks;
 public class SetGetDischargeDayView extends BaseSetGetView {
 
     private static final int SHOW_GET_RESULT = 0;
-    private Handler mHandler = new Handler(new Handler.Callback() {
+    private final Handler mHandler = new Handler(new Handler.Callback() {
 
         @Override
         public boolean handleMessage(Message msg) {

@@ -23,7 +23,7 @@ public class AudioDecoder {
     private DecodeProgressListener decodeProgressListener;
     private long decodeSize;
     private boolean codeOver = false;
-    private int currentSDKVersion = Build.VERSION.SDK_INT;
+    private final int currentSDKVersion = Build.VERSION.SDK_INT;
 
     public AudioDecoder() {
     }

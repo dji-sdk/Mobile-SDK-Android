@@ -38,7 +38,7 @@ public class PayloadActivity extends AppCompatActivity implements View.OnClickLi
     private TextView pushTextViewFromUsb;
     private String payloadName = "";
 
-    private KeyListener getDataListener = new KeyListener() {
+    private final KeyListener getDataListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
             if (pushTextView != null) {
@@ -55,7 +55,7 @@ public class PayloadActivity extends AppCompatActivity implements View.OnClickLi
             }
         }
     };
-    private KeyListener getNameListener = new KeyListener() {
+    private final KeyListener getNameListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
             if (pushTextView != null) {

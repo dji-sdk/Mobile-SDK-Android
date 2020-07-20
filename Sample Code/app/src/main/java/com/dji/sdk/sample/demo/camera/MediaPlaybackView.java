@@ -55,11 +55,11 @@ public class MediaPlaybackView extends LinearLayout
     public Button btnSkip;
     public Button btnStatus;
     private MediaManager mediaManager;
-    private List<MediaFile> DJIMediaList = new ArrayList<>();
+    private final List<MediaFile> DJIMediaList = new ArrayList<>();
     private boolean isDialogAllowable = false;
     private FileListAdapter listAdapter;
     private ProgressDialog dialog;
-    private Handler handler = new Handler(new Handler.Callback() {
+    private final Handler handler = new Handler(new Handler.Callback() {
 
         @Override
         public boolean handleMessage(Message msg) {

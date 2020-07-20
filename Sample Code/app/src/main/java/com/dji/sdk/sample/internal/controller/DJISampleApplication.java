@@ -21,7 +21,7 @@ public class DJISampleApplication extends Application {
 
     public static final String TAG = DJISampleApplication.class.getName();
 
-    private static Bus bus = new Bus(ThreadEnforcer.ANY);
+    private static final Bus bus = new Bus(ThreadEnforcer.ANY);
     private static Application app = null;
 
     /**

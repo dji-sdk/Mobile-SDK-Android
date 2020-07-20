@@ -58,18 +58,18 @@ public class MainContent extends RelativeLayout {
     private TextView mTextModelAvailable;
     private Button mBtnOpen;
     private Button mBtnBluetooth;
-    private ViewWrapper componentList =
+    private final ViewWrapper componentList =
             new ViewWrapper(new DemoListView(getContext()), R.string.activity_component_list);
     private ViewWrapper bluetoothView;
     private EditText mBridgeModeEditText;
     private Handler mHandler;
     private Handler mHandlerUI;
-    private HandlerThread mHandlerThread = new HandlerThread("Bluetooth");
+    private final HandlerThread mHandlerThread = new HandlerThread("Bluetooth");
 
     private BaseProduct mProduct;
     private KeyListener firmwareVersionUpdater;
     private boolean hasStartedFirmVersionListener = false;
-    private AtomicBoolean hasAppActivationListenerStarted = new AtomicBoolean(false);
+    private final AtomicBoolean hasAppActivationListenerStarted = new AtomicBoolean(false);
     private static final int MSG_UPDATE_BLUETOOTH_CONNECTOR = 0;
     private static final int MSG_INFORM_ACTIVATION = 1;
     private static final int ACTIVATION_DALAY_TIME = 1000;

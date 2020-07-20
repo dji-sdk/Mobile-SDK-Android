@@ -31,8 +31,8 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     private final List<GroupHeader> backupList;
     private final Context context;
-    private List<GroupHeader> itemList;
-    private LayoutInflater layoutInflater;
+    private final List<GroupHeader> itemList;
+    private final LayoutInflater layoutInflater;
 
     public ExpandableListAdapter(@NonNull Context context, @NonNull List<GroupHeader> itemList) {
         this.itemList = itemList;

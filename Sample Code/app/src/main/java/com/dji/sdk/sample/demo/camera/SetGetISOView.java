@@ -26,7 +26,7 @@ public class SetGetISOView extends BaseSetGetView {
             setCameraISO();
         }
     };
-    private Handler mHandler = new Handler(new Handler.Callback() {
+    private final Handler mHandler = new Handler(new Handler.Callback() {
 
         @Override
         public boolean handleMessage(Message msg) {
