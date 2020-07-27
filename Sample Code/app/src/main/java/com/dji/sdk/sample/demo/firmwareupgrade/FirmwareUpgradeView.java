@@ -18,13 +18,13 @@ import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
 
 import dji.sdk.sdkmanager.DJISDKManager;
-import dji.upgrade.UpgradeManager;
-import dji.upgrade.component.firmware.UpgradeComponent;
-import dji.upgrade.component.firmware.UpgradeFirmwareListener;
-import dji.upgrade.component.firmware.model.FirmwareInformation;
-import dji.upgrade.component.firmware.model.FirmwareUpgradeProgress;
-import dji.upgrade.component.firmware.model.UpgradeComponentType;
-import dji.upgrade.component.firmware.model.UpgradeFirmwareState;
+import dji.sdk.upgrade.UpgradeManager;
+import dji.sdk.upgrade.component.UpgradeComponent;
+import dji.sdk.upgrade.component.UpgradeFirmwareListener;
+import dji.sdk.upgrade.component.model.FirmwareInformation;
+import dji.sdk.upgrade.component.model.FirmwareUpgradeProgress;
+import dji.sdk.upgrade.component.model.UpgradeComponentType;
+import dji.sdk.upgrade.component.model.UpgradeFirmwareState;
 
 /**
  * Class for live stream demo.
@@ -133,47 +133,46 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
     private UpgradeFirmwareListener remoteControllerUpgradeListener = new UpgradeFirmwareListener() {
 
         @Override
-        public void onUpgradeFirmwareStateUpdated(@NonNull UpgradeFirmwareState state) {
-            showUpgradeFirmwareState(mRcUpgradeStateTV, "RC: " + state);
+        public void onUpgradeFirmwareStateUpdated(@NonNull UpgradeComponent upgradeComponent, @NonNull dji.sdk.upgrade.component.model.UpgradeFirmwareState upgradeFirmwareState) {
+            showUpgradeFirmwareState(mRcUpgradeStateTV, "RC: " + upgradeFirmwareState);
         }
 
         @Override
-        public void onFirmwareUpgradeProgressUpdated(FirmwareUpgradeProgress progress) {
+        public void onFirmwareUpgradeProgressUpdated(@NonNull UpgradeComponent upgradeComponent, @NonNull FirmwareUpgradeProgress progress) {
             showFirmwareUpgradeProgress(mRcUpgradeProgressTV, progress, "Remote Controller:\n");
         }
 
         @Override
-        public void onConsistencyUpgradeRequestReceived() {
+        public void onConsistencyUpgradeRequestReceived(@NonNull UpgradeComponent upgradeComponent) {
             boolean canCancelConsistencyUpgrade = false;
-            UpgradeComponent upgradeComponent = getRemoteControllerComponent();
             if (upgradeComponent != null) {
                 canCancelConsistencyUpgrade = upgradeComponent.canCancelConsistencyUpgrade();
             }
             showUpgradeConsistentUpdated(mRcConsistentStateTV, canCancelConsistencyUpgrade, "Remote Controller:\n");
         }
+
         @Override
-        public void onLatestFirmwareInformationUpdated(FirmwareInformation firmwareInformation) {
-            UpgradeComponent upgradeComponent = getRemoteControllerComponent();
+        public void onLatestFirmwareInformationUpdated(@NonNull UpgradeComponent upgradeComponent, FirmwareInformation firmwareInformation) {
             showUpgradeFirmwareInfo(upgradeComponent, firmwareInformation);
         }
+
     };
 
     private UpgradeFirmwareListener aircraftUpgradeListener = new UpgradeFirmwareListener() {
 
         @Override
-        public void onUpgradeFirmwareStateUpdated(@NonNull UpgradeFirmwareState state) {
+        public void onUpgradeFirmwareStateUpdated(@NonNull UpgradeComponent upgradeComponent, @NonNull dji.sdk.upgrade.component.model.UpgradeFirmwareState state) {
             showUpgradeFirmwareState(mAcUpgradeStateTV, "AC: " + state);
         }
 
         @Override
-        public void onFirmwareUpgradeProgressUpdated(FirmwareUpgradeProgress progress) {
+        public void onFirmwareUpgradeProgressUpdated(@NonNull UpgradeComponent upgradeComponent, @NonNull FirmwareUpgradeProgress progress) {
             showFirmwareUpgradeProgress(mAcUpgradeProgressTV, progress, "Aircraft:\n");
         }
 
         @Override
-        public void onConsistencyUpgradeRequestReceived() {
+        public void onConsistencyUpgradeRequestReceived(@NonNull UpgradeComponent upgradeComponent) {
             boolean canCancelConsistencyUpgrade = false;
-            UpgradeComponent upgradeComponent = getAircraftUpgradeComponent();
             if (upgradeComponent != null) {
                 canCancelConsistencyUpgrade = upgradeComponent.canCancelConsistencyUpgrade();
             }
@@ -181,8 +180,7 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
         }
 
         @Override
-        public void onLatestFirmwareInformationUpdated(FirmwareInformation firmwareInformation) {
-            UpgradeComponent upgradeComponent = getAircraftUpgradeComponent();
+        public void onLatestFirmwareInformationUpdated(@NonNull UpgradeComponent upgradeComponent, FirmwareInformation firmwareInformation) {
             showUpgradeFirmwareInfo(upgradeComponent, firmwareInformation);
         }
     };

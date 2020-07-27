@@ -262,6 +262,12 @@ public class MainActivity extends AppCompatActivity {
                             Log.d(TAG, String.format("onProductConnect newProduct:%s", baseProduct));
                             notifyStatusChange();
                         }
+
+                        @Override
+                        public void onProductChanged(BaseProduct baseProduct) {
+                            notifyStatusChange();
+                        }
+
                         @Override
                         public void onComponentChange(BaseProduct.ComponentKey componentKey,
                                                       BaseComponent oldComponent,

@@ -103,7 +103,7 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
                 streamSources = tempStreamSources ?: arrayOfNulls(0)
                 val runSetCameraStreamSource = Runnable {
                     if (INDEX_CHOSEN[0] != -1) {
-                        setVideoStreamSource(streamSources[INDEX_CHOSEN[0]])
+                        streamSources[INDEX_CHOSEN[0]]?.let { setVideoStreamSource(it) }
                         resetIndex()
                     }
                 }
@@ -131,7 +131,7 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
                 flatCameraModes = tempFlatCameraModes ?: arrayOfNulls(0)
                 val runSetFlatCameraMode = Runnable {
                     if (INDEX_CHOSEN[0] != -1) {
-                        setFlatCameraMode(flatCameraModes[INDEX_CHOSEN[0]])
+                        flatCameraModes[INDEX_CHOSEN[0]]?.let { setFlatCameraMode(it) }
                         resetIndex()
                     }
                 }
@@ -147,12 +147,12 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
                 // The camera index is 0 in here. The lens index could get the value by the method of 'getLensIndex'
                 val lensIndex: Int = CommonUtil.getLensIndex(0, SettingsDefinitions.LensType.ZOOM)
                 KeyManager.getInstance().getValue(CameraKey.createLensKey(CameraKey.HYBRID_ZOOM_SPEC, 0, lensIndex), object : GetCallback {
-                    override fun onSuccess(any: Any?) {
+                    override fun onSuccess(any: Any) {
                         val hybridZoomSpec = any as SettingsDefinitions.HybridZoomSpec
                         Helper.showToast(context as Activity?, "Get Hybrid Zoom Spec: $hybridZoomSpec")
                     }
 
-                    override fun onFailure(error: DJIError?) {
+                    override fun onFailure(error: DJIError) {
                         Helper.showToast(context as Activity?, "Get Hybrid Zoom Spec failed: ${error?.description}")
                     }
                 })
@@ -167,8 +167,8 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
                         Helper.showToast(context as Activity?, "Set Infrared Thermal Camera Shutter Enabled Success!")
                     }
 
-                    override fun onFailure(error: DJIError?) {
-                        Helper.showToast(context as Activity?, "Set Infrared Thermal Camera Shutter Enabled failed: ${error?.description}")
+                    override fun onFailure(error: DJIError) {
+                        Helper.showToast(context as Activity?, "Set Infrared Thermal Camera Shutter Enabled failed: ${error.description}")
                     }
                 })
             }
@@ -182,26 +182,26 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
         } else (KeyManager.getInstance().getValue(key) as Array<CameraVideoStreamSource?>?)
     }
 
-    private fun setVideoStreamSource(videoStreamSource: CameraVideoStreamSource?) {
+    private fun setVideoStreamSource(videoStreamSource: CameraVideoStreamSource) {
         KeyManager.getInstance().setValue(CameraKey.create(CameraKey.CAMERA_VIDEO_STREAM_SOURCE, 0), videoStreamSource, object : SetCallback {
             override fun onSuccess() {
                 Helper.showToast(context as Activity?, "Set Video Stream Source: $videoStreamSource Success!")
             }
 
-            override fun onFailure(error: DJIError?) {
-                Helper.showToast(context as Activity?, "Set Video Stream Source failed: ${error?.description}")
+            override fun onFailure(error: DJIError) {
+                Helper.showToast(context as Activity?, "Set Video Stream Source failed: ${error.description}")
             }
         })
     }
 
-    private fun setLaserEnabled(enabled: Boolean?) {
+    private fun setLaserEnabled(enabled: Boolean) {
         KeyManager.getInstance().setValue(CameraKey.create(CameraKey.LASER_ENABLED, 0), enabled, object : SetCallback {
             override fun onSuccess() {
                 Helper.showToast(context as Activity?, "Set Laser Enabled: $enabled Success!")
             }
 
-            override fun onFailure(error: DJIError?) {
-                Helper.showToast(context as Activity?, "Set Laser Enabled failed: ${error?.description}")
+            override fun onFailure(error: DJIError) {
+                Helper.showToast(context as Activity?, "Set Laser Enabled failed: ${error.description}")
             }
         })
     }
@@ -213,14 +213,14 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
         } else (KeyManager.getInstance().getValue(key) as Array<SettingsDefinitions.FlatCameraMode?>?)
     }
 
-    private fun setFlatCameraMode(flatCameraMode: SettingsDefinitions.FlatCameraMode?) {
+    private fun setFlatCameraMode(flatCameraMode: SettingsDefinitions.FlatCameraMode) {
         KeyManager.getInstance().setValue(CameraKey.create(CameraKey.FLAT_CAMERA_MODE, 0), flatCameraMode, object : SetCallback {
             override fun onSuccess() {
                 Helper.showToast(context as Activity?, "Set Flat Camera Mode: $flatCameraMode Success!")
             }
 
-            override fun onFailure(error: DJIError?) {
-                Helper.showToast(context as Activity?, "Set Flat Camera Mode failed: ${error?.description}")
+            override fun onFailure(error: DJIError) {
+                Helper.showToast(context as Activity?, "Set Flat Camera Mode failed: ${error.description}")
             }
         })
     }
