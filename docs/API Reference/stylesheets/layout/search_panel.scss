@@ -1,0 +1,429 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+.searcher{
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, font, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+    /* remember to highlight inserts somehow! */
+    ins {
+        text-decoration: none;
+    }
+    del {
+        text-decoration: line-through;
+    }
+
+    /* tables still need 'cellspacing="0"' in the markup */
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}
+
+/* Panel (begin) */
+.searcher{
+    .panel {
+        height: 0px;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        // height: 100%;
+        background: #FFF;
+        font-family: "Helvetica Neue", "Arial", sans-serif;
+        //zoom: 1;
+    }
+    h1{
+        font-family: "Helvetica Neue", "Arial", sans-serif;
+        text-transform: initial;
+    }
+
+    .panel_tree .results,
+        .panel_results .tree {
+        display: none;
+    }
+
+        /* Header with search box (begin) */
+    .panel .header {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid #666;
+        background: #e8e8e8;
+
+        .search-con{
+            position: relative;
+            .search-icon{
+                position: absolute;
+                left: 13px;
+                top: 8px;
+                color: #b4b4b4;
+                font-family: FontAwesome;
+
+                &:before {
+                    content: "\f002";
+                }
+            }
+            .clean-search{
+                position: absolute;
+                right: 7px;
+                top: 13px;
+                cursor: pointer;
+                display: none;
+            }
+        }
+
+        #search{
+            padding: 9px 21px 9px 36px;;
+            width: 100%;
+            display: block;
+            height: auto;
+            border: 1px solid #E5E5E5;
+            border-radius: 0px;
+            box-shadow: none;
+            font-size: 13px;
+            line-height: 1.6
+        }
+    }
+
+    .panel .header div {
+        // margin: 0 7px;
+    }
+
+    .panel .header table {
+        width: 100%;
+        height: 29px;
+    }
+
+    .panel .header table td {
+        vertical-align: middle;
+        text-align: middle;
+    }
+
+    .panel .header label {
+        position: absolute;
+        margin-left: 3px;
+        color: #777;
+        font-size: 12px;
+        line-height: 29px;
+        cursor: text;
+    }
+
+    .panel .header table input {
+        display: inline-block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        height: 22px;
+        -webkit-appearance: searchfield;
+        //height: auto;
+    }
+
+        /* Header with search box (end) */
+
+
+        /* Results (begin) */
+    .panel .result {
+        position: absolute;
+        top: 40px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        //height: expression((this.parentNode.offsetHeight - 31));
+        overflow-y: scroll;
+        overflow-x: hidden;
+        -overflow-y: hidden;
+        background: #EEE url(../images/results_bg.png);
+        z-index: 2;
+        box-shadow: -3px 5px 13px 0px black;
+        overflow-y: scroll;
+        max-height: 700px;
+        //zoom: 1;
+    }
+
+    .panel .result ul {
+        font-size: 0.8em;
+        width: 100%;
+        background: #EEE url(../images/results_bg.png);
+        //zoom: 1;
+    }
+
+    .panel .result ul li {
+        height: 50px;
+        -height: 50px;
+        //display: inline;
+        //width: 100%;
+        //zoom: 1;
+        overflow: hidden;
+        padding: 4px 10px 0 10px;
+        cursor: pointer;
+    }
+
+    .panel .result ul li h1 {
+        font-size: 13px;
+        font-weight: normal;
+        color: #333;
+        margin-bottom: 2px;
+        white-space: nowrap;
+    }
+
+    .panel .result ul li p {
+        font-size: 11px;
+        color: #333;
+        margin-bottom: 2px;
+        white-space: nowrap;
+    }
+
+    .panel .result ul li h1 i,
+            .panel .result ul li p.snippet {
+        color: #777;
+    }
+
+    .panel .result ul li b {
+        color: #000;
+    }
+
+    .panel .result ul li.current {
+        background: #3477a9;
+    }
+
+    .panel .result ul li.current h1,
+            .panel .result ul li.current p {
+        color: #D9D9D9;
+    }
+
+    .panel .result ul li.current h1 i,
+            .panel .result ul li.current p.snippet {
+        color: #ACACAC;
+    }
+
+    .panel .result ul li.current b {
+        color: #FFF;
+    }
+
+    .panel .result ul li:hover,
+            .panel .result ul li.selected {
+        background: #d0d0d0;
+    }
+
+    .panel .result ul li.current:hover {
+        background: #3477a9;
+    }
+
+    .panel .result ul li .badge {
+        margin-right: 0.4em;
+        margin-left: -0.2em;
+        padding: 0 0.2em;
+        color: #000;
+        border-radius: 3px;
+    }
+
+    .panel .result ul li .badge_1 {
+        background: #ACDBF4;
+    }
+
+    .panel .result ul li.current .badge_1 {
+        background: #97BFD7;
+    }
+
+    .panel .result ul li .badge_2 {
+        background: #ACF3C3;
+    }
+
+    .panel .result ul li.current .badge_2 {
+        background: #98D7AC;
+    }
+
+    .panel .result ul li .badge_3 {
+        background: #E0F3AC;
+    }
+
+    .panel .result ul li.current .badge_3 {
+        background: #C4D798;
+    }
+
+    .panel .result ul li .badge_4 {
+        background: #D7CA98;
+    }
+
+    .panel .result ul li.current .badge_4 {
+        background: #A6B0AC;
+    }
+
+    .panel .result ul li .badge_5 {
+        background: #F3C8AC;
+    }
+
+    .panel .result ul li.current .badge_5 {
+        background: #D7B198;
+    }
+
+    .panel .result ul li .badge_6 {
+        background: #F3ACC3;
+    }
+
+    .panel .result ul li.current .badge_6 {
+        background: #D798AB;
+    }
+
+        /* Results (end) */
+
+        /* Tree (begin) */ /**/
+    .panel .tree {
+        display: none;
+        position: absolute;
+        position: absolute;
+        top: 40px;
+        top: 8px;
+        bottom: 0;
+        left: 0;
+        left: 1px;
+        width: 100%;
+        background-position: 0 -9px;
+        cursor: default;
+        //zoom: 1;
+        //height: expression((this.parentNode.offsetHeight - 31));
+        overflow-y: scroll;
+        overflow-x: hidden;
+        -overflow-y: hidden;
+        // background: #EEE url(../i/tree_bg.png);
+        z-index: 30;
+    }
+
+    .panel .tree ul {
+        // background: #EEE url(../i/tree_bg.png);
+    }
+
+    .panel .tree li {
+        cursor: pointer;
+        overflow: hidden;
+        //height: 23px;
+        //display: inline;
+        //zoom: 1;
+        //width: 100%;
+    }
+
+    .panel .tree li .content {
+        padding-left: 18px;
+        padding-top: 5px;
+        height: 18px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .panel .tree li .icon {
+        width: 10px;
+        height: 9px;
+        background: url(../i/arrows.png);
+    }
+
+    .panel .tree li.closed .icon {
+        background-position: 0 0;
+    }
+
+    .panel .tree ul li h1 {
+        margin-bottom: 2px;
+        color: #000;
+        white-space: nowrap;
+        font-weight: normal;
+        font-size: 13px;
+    }
+
+    .panel .tree ul li p {
+        margin-bottom: 2px;
+        color: #666;
+        white-space: nowrap;
+        font-size: 11px;
+    }
+
+    .panel .tree ul li h1 i {
+        color: #999;
+        font-style: normal;
+    }
+
+    .panel .tree ul li.current h1 i {
+        color: #CCC;
+    }
+
+    .panel .tree ul li.empty {
+        cursor: text;
+    }
+
+    .panel .tree ul li.empty h1,
+            .panel .tree ul li.empty p {
+        color: #666;
+        font-style: italic;
+    }
+
+    .panel .tree ul li.current {
+        background: #3477a9;
+    }
+
+    .panel .tree ul li.current .icon {
+        background-position: -10px -9px;
+    }
+
+    .panel .tree ul li.current.closed .icon {
+        background-position: -10px 0;
+    }
+
+    .panel .tree ul li.current h1 {
+        color: #FFF;
+    }
+
+    .panel .tree ul li.current p {
+        color: #CCC;
+    }
+
+    .panel .tree ul li.current.empty h1,
+            .panel .tree ul li.current.empty p {
+        color: #999;
+    }
+
+    .panel .tree ul li:hover {
+        background: #d0d0d0;
+    }
+
+    .panel .tree ul li.current:hover {
+        background: #3477a9;
+    }
+
+    .panel .tree .stopper {
+        display: none;
+    }
+}
+/* Tree (end) */ /**/
+
+/* Panel (end) */
