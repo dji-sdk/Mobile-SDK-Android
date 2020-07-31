@@ -36,11 +36,9 @@ public class PayloadActivity extends AppCompatActivity implements View.OnClickLi
     private TextView pushTextView;
     private TextView payloadNameView;
     private TextView pushTextViewFromUsb;
-    private DJIKey getDataKey;
-    private DJIKey payloadNameKey;
     private String payloadName = "";
 
-    private KeyListener getDataListener = new KeyListener() {
+    private final KeyListener getDataListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
             if (pushTextView != null) {
@@ -57,7 +55,7 @@ public class PayloadActivity extends AppCompatActivity implements View.OnClickLi
             }
         }
     };
-    private KeyListener getNameListener = new KeyListener() {
+    private final KeyListener getNameListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
             if (pushTextView != null) {
@@ -97,8 +95,8 @@ public class PayloadActivity extends AppCompatActivity implements View.OnClickLi
     private void initListener() {
         findViewById(R.id.sent_data).setOnClickListener(this);
         findViewById(R.id.login_sdk).setOnClickListener(this);
-        getDataKey = PayloadKey.create(PayloadKey.GET_DATA_FROM_PAYLOAD);
-        payloadNameKey = PayloadKey.create(PayloadKey.PAYLOAD_PRODUCT_NAME);
+        DJIKey getDataKey = PayloadKey.create(PayloadKey.GET_DATA_FROM_PAYLOAD);
+        DJIKey payloadNameKey = PayloadKey.create(PayloadKey.PAYLOAD_PRODUCT_NAME);
         if (KeyManager.getInstance() != null) {
             KeyManager.getInstance().addListener(getDataKey, getDataListener);
             KeyManager.getInstance().addListener(payloadNameKey, getNameListener);

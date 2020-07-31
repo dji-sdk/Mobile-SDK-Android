@@ -134,11 +134,7 @@ public class KeyManagerUtils {
             default:
                 break;
         }
-        if (result instanceof Boolean && ((Boolean) result)) {
-            return true;
-        }
-
-        return false;
+        return result instanceof Boolean && ((Boolean) result);
     }
 
     protected static HashMap<BaseProduct.ComponentKey, ArrayList<String>> getSubComponentMap() {
@@ -255,10 +251,7 @@ public class KeyManagerUtils {
                 break;
         }
 
-        if (result instanceof Boolean && ((Boolean) result)) {
-            return true;
-        }
-        return false;
+        return result instanceof Boolean && ((Boolean) result);
     }
 
     protected static HashMap<BaseProduct.ComponentKey, ArrayList<Integer>> getComponentIndexMap() {

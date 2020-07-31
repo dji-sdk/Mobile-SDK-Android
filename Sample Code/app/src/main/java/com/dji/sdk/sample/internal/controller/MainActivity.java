@@ -80,14 +80,13 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private Stack<ViewWrapper> stack;
     private TextView titleTextView;
-    private SearchView searchView;
     private MenuItem searchViewItem;
     private MenuItem hintItem;
-    private List<String> missingPermission = new ArrayList<>();
-    private AtomicBoolean isRegistrationInProgress = new AtomicBoolean(false);
+    private final List<String> missingPermission = new ArrayList<>();
+    private final AtomicBoolean isRegistrationInProgress = new AtomicBoolean(false);
     private int lastProcess = -1;
-    private Handler mHander = new Handler();
-    private BaseComponent.ComponentListener mDJIComponentListener = new BaseComponent.ComponentListener() {
+    private final Handler mHander = new Handler();
+    private final BaseComponent.ComponentListener mDJIComponentListener = new BaseComponent.ComponentListener() {
 
         @Override
         public void onConnectivityChange(boolean isConnected) {
@@ -150,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchViewItem = menu.findItem(R.id.action_search);
         hintItem = menu.findItem(R.id.action_hint);
-        searchView = (SearchView) searchViewItem.getActionView();
+        SearchView searchView = (SearchView) searchViewItem.getActionView();
         // Assumes current activity is the searchable activity
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
@@ -188,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(@NonNull Intent intent) {
+        super.onNewIntent(intent);
         String action = intent.getAction();
         if (UsbManager.ACTION_USB_ACCESSORY_ATTACHED.equals(action)) {
             Intent attachedIntent = new Intent();
@@ -459,11 +459,7 @@ public class MainActivity extends AppCompatActivity {
             searchViewItem.setVisible(false);
             searchViewItem.collapseActionView();
         }
-        if (stack.size() == 3 && stack.peek().getView() instanceof PresentableView) {
-            hintItem.setVisible(true);
-        } else {
-            hintItem.setVisible(false);
-        }
+        hintItem.setVisible(stack.size() == 3 && stack.peek().getView() instanceof PresentableView);
     }
 
 

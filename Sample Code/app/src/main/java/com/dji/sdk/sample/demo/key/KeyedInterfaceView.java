@@ -33,7 +33,7 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
 
     //region Battery
     // Example of creating a BatteryKey
-    private BatteryKey batteryKey = BatteryKey.create(BatteryKey.CHARGE_REMAINING_IN_PERCENT);
+    private final BatteryKey batteryKey = BatteryKey.create(BatteryKey.CHARGE_REMAINING_IN_PERCENT);
     private Button getBatteryBtn;
     private TextView batteryTV;
     //endregion
@@ -41,11 +41,11 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
     //region Camera
     private SettingsDefinitions.CameraMode cameraMode;
     // Example of creating a CameraKey
-    private CameraKey cameraKey = CameraKey.create(CameraKey.MODE);
+    private final CameraKey cameraKey = CameraKey.create(CameraKey.MODE);
     private Button cameraBtn;
     private TextView cameraTV;
     // Example of handling a listener
-    private KeyListener cameraModeListener = new KeyListener() {
+    private final KeyListener cameraModeListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object o, @Nullable Object o1) {
             if (o1 instanceof SettingsDefinitions.CameraMode) {
@@ -57,12 +57,12 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
 
     //region Gimbal
     // Example of creating a GimbalKey
-    private GimbalKey startCalibrationKey = GimbalKey.create(GimbalKey.START_CALIBRATION);
-    private GimbalKey calibrationProgress = GimbalKey.create(GimbalKey.CALIBRATION_PROGRESS);
+    private final GimbalKey startCalibrationKey = GimbalKey.create(GimbalKey.START_CALIBRATION);
+    private final GimbalKey calibrationProgress = GimbalKey.create(GimbalKey.CALIBRATION_PROGRESS);
     private Button calibrateBtn;
     private TextView calibrationTV;
     // Example of handling a listener
-    private KeyListener calibrationListener = new KeyListener() {
+    private final KeyListener calibrationListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object o, @Nullable Object o1) {
             if (o1 instanceof Integer) {
@@ -75,11 +75,11 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
     //region Storage
     private SettingsDefinitions.StorageLocation storageLocation;
     // Example of changing the storage location for supported products
-    private CameraKey storageLocationKey = CameraKey.create(CameraKey.CAMERA_STORAGE_LOCATION);
-    private CameraKey isInternalStorageSupportedKey = CameraKey.create(CameraKey.IS_INTERNAL_STORAGE_SUPPORTED);
+    private final CameraKey storageLocationKey = CameraKey.create(CameraKey.CAMERA_STORAGE_LOCATION);
+    private final CameraKey isInternalStorageSupportedKey = CameraKey.create(CameraKey.IS_INTERNAL_STORAGE_SUPPORTED);
     private Button storageLocationBtn;
     private TextView storageLocationTV;
-    private KeyListener isInternalStorageSupportedListener = new KeyListener() {
+    private final KeyListener isInternalStorageSupportedListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object o, @Nullable Object o1) {
             if (o1 instanceof Boolean) {

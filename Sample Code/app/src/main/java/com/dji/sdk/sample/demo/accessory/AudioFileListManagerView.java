@@ -52,6 +52,8 @@ import dji.sdk.media.AudioMediaFile;
 import dji.sdk.media.MediaManager;
 import dji.sdk.media.MediaManager.FileListState;
 
+import static androidx.recyclerview.widget.OrientationHelper.VERTICAL;
+
 public class AudioFileListManagerView extends LinearLayout implements View.OnClickListener, PresentableView {
 
     protected Button uploadLocalFileBtn;
@@ -63,7 +65,6 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
     protected TextView transmittingStateTV;
     protected TextView speakerStateTV;
     protected TextView recordingStateTV;
-    private RecyclerView listView;
     private Bitmap defaultThumb;
     private ProgressDialog mDialog;
     private List<AudioMediaFile> audioMediaFiles = new ArrayList<AudioMediaFile>();
@@ -71,9 +72,8 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
 
     private Speaker speaker;
     private SpeakerState speakerState;
-    private String savePath;
-    private MediaRecorderHandler mediaRecorderHandler;
-    private AudioDecoder audioDecoder;
+    private final MediaRecorderHandler mediaRecorderHandler;
+    private final AudioDecoder audioDecoder;
     private String transmitMessage="";
 
     private static final int MSG_SHOW_PROGRESS_DIALOG = 1;
@@ -90,7 +90,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
     public AudioFileListManagerView(Context context) {
         super(context);
         initUI(context);
-        savePath = Environment.getExternalStorageDirectory().getPath() + "/DJI/" + context.getPackageName() + "/voice";
+        String savePath = Environment.getExternalStorageDirectory().getPath() + "/DJI/" + context.getPackageName() + "/voice";
         mediaRecorderHandler = new MediaRecorderHandler(savePath, new MediaRecorderOptions.Builder().build());
         audioDecoder = new AudioDecoder();
     }
@@ -149,9 +149,9 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
     }
 
     private void initAudioFileListView() {
-        listView = (RecyclerView) findViewById(R.id.filelistView);
+        RecyclerView listView = (RecyclerView) findViewById(R.id.filelistView);
         LinearLayoutManager
-            layoutManager = new LinearLayoutManager(getContext(), OrientationHelper.VERTICAL, false);
+                layoutManager = new LinearLayoutManager(getContext(), OrientationHelper.VERTICAL, false);
         listView.setLayoutManager(layoutManager);
         mListAdapter = new FileListAdapter();
         listView.setAdapter(mListAdapter);
@@ -312,7 +312,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         }
     }
 
-    private TransmissionListener transmissionListener = new TransmissionListener() {
+    private final TransmissionListener transmissionListener = new TransmissionListener() {
         @Override
         public void onStart() {
             transmitMessage = "Transmit started";
@@ -348,7 +348,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         }
     };
 
-    private AudioDecoder.DecodeProgressListener decodeProgressListener = new AudioDecoder.DecodeProgressListener() {
+    private final AudioDecoder.DecodeProgressListener decodeProgressListener = new AudioDecoder.DecodeProgressListener() {
         @Override
         public void onStarted() {
 
@@ -414,7 +414,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         handler.sendMessageDelayed(handler.obtainMessage(MSG_FETCH_FILE_LIST, null), MSG_DELAY_MILLIS);
     }
 
-    private Handler handler = new Handler(new Handler.Callback() {
+    private final Handler handler = new Handler(new Handler.Callback() {
 
         @Override
         public boolean handleMessage(Message msg) {
@@ -469,7 +469,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         }
     }
 
-    private MediaManager.FileListStateListener fileListStateListener = new MediaManager.FileListStateListener() {
+    private final MediaManager.FileListStateListener fileListStateListener = new MediaManager.FileListStateListener() {
 
         @Override
         public void onFileListStateChange(FileListState playlistState) {
@@ -579,7 +579,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         }
     }
 
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
+    private final View.OnClickListener onClickListener = new View.OnClickListener() {
 
         @Override
         public void onClick(View v) {

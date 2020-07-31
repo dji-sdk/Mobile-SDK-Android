@@ -26,7 +26,7 @@ public class SetGetISOView extends BaseSetGetView {
             setCameraISO();
         }
     };
-    private Handler mHandler = new Handler(new Handler.Callback() {
+    private final Handler mHandler = new Handler(new Handler.Callback() {
 
         @Override
         public boolean handleMessage(Message msg) {
@@ -96,7 +96,7 @@ public class SetGetISOView extends BaseSetGetView {
     }
 
     private void setCameraISO() {
-        SettingsDefinitions.ISO isoArray[] = removeUnknowntype();
+        SettingsDefinitions.ISO[] isoArray = removeUnknowntype();
         SettingsDefinitions.ISO cameraISO = SettingsDefinitions.ISO.AUTO;
         if (mSpinnerSet.getSelectedItemPosition() != 0) {
             cameraISO = isoArray[mSpinnerSet.getSelectedItemPosition()];
@@ -135,8 +135,8 @@ public class SetGetISOView extends BaseSetGetView {
     }
 
     private SettingsDefinitions.ISO[] removeUnknowntype() {
-        SettingsDefinitions.ISO items[] = SettingsDefinitions.ISO.values();
-        SettingsDefinitions.ISO result[] = new SettingsDefinitions.ISO[items.length - 2];
+        SettingsDefinitions.ISO[] items = SettingsDefinitions.ISO.values();
+        SettingsDefinitions.ISO[] result = new SettingsDefinitions.ISO[items.length - 2];
         int j = 0;
         for (int i = 0; i < items.length; i++) {
             if (items[i] != SettingsDefinitions.ISO.UNKNOWN && items[i] != SettingsDefinitions.ISO.AUTO) {

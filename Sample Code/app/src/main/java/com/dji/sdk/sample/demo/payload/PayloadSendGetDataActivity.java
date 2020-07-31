@@ -49,14 +49,12 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
     private EditText sendDataEditView;
     private EditText periodView;
     private CheckBox repeatCheckbox;
-    private DJIKey getDataKey;
     private DJIKey sendDataKey;
-    private DJIKey payloadNameKey;
     private String payloadName = "";
-    private ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
+    private final ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
     private ScheduledFuture<?> scheduledFuture;
 
-    private KeyListener getDataListener = new KeyListener() {
+    private final KeyListener getDataListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
             if (receivedDataView != null) {
@@ -88,7 +86,7 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
             }
         });
     }
-    private KeyListener getNameListener = new KeyListener() {
+    private final KeyListener getNameListener = new KeyListener() {
         @Override
         public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
             if (payloadName != null) {
@@ -134,9 +132,9 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
     private void initListener() {
         View sendButton = findViewById(R.id.send_data_button);
         sendButton.setOnClickListener(this);
-        getDataKey = PayloadKey.create(PayloadKey.GET_DATA_FROM_PAYLOAD);
+        DJIKey getDataKey = PayloadKey.create(PayloadKey.GET_DATA_FROM_PAYLOAD);
         sendDataKey = PayloadKey.create(PayloadKey.SEND_DATA_TO_PAYLOAD);
-        payloadNameKey = PayloadKey.create(PayloadKey.PAYLOAD_PRODUCT_NAME);
+        DJIKey payloadNameKey = PayloadKey.create(PayloadKey.PAYLOAD_PRODUCT_NAME);
         if (KeyManager.getInstance() != null) {
             KeyManager.getInstance().addListener(getDataKey, getDataListener);
             KeyManager.getInstance().addListener(payloadNameKey, getNameListener);
@@ -164,7 +162,7 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
         super.onDestroy();
     }
 
-    private Runnable repeatRunnable = new Runnable() {
+    private final Runnable repeatRunnable = new Runnable() {
         @Override
         public void run() {
             sendData();

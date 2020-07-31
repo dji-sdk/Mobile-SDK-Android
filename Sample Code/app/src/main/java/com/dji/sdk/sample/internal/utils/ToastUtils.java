@@ -16,7 +16,7 @@ import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 public class ToastUtils {
     private static final int MESSAGE_UPDATE = 1;
     private static final int MESSAGE_TOAST = 2;
-    private static Handler mUIHandler = new Handler(Looper.getMainLooper()) {
+    private static final Handler mUIHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
             //Get the message string

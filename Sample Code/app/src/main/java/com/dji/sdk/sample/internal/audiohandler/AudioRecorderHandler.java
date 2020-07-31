@@ -9,12 +9,9 @@ import java.io.File;
 
 public class AudioRecorderHandler {
 
-    private static int MAX_DATA_LENGTH = 160;
+    private static final int MAX_DATA_LENGTH = 160;
     private AudioRecord audioRecord;
     private boolean isRecording = false;
-    private int frequence = 44100;
-    private int channelInConfig = AudioFormat.CHANNEL_IN_MONO;
-    private int audioEncoding = AudioFormat.ENCODING_PCM_16BIT;
     private short[] buffer = null;
     private File lastCacheFile = null;
 
@@ -54,8 +51,11 @@ public class AudioRecorderHandler {
 
         @Override
         protected void onPreExecute() {
+            int audioEncoding = AudioFormat.ENCODING_PCM_16BIT;
+            int channelInConfig = AudioFormat.CHANNEL_IN_MONO;
+            int frequence = 44100;
             int bufferSize = AudioRecord.getMinBufferSize(frequence,
-                                                          channelInConfig, audioEncoding);
+                    channelInConfig, audioEncoding);
             if (audioRecord == null) {
                 audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC,
                         frequence, channelInConfig, audioEncoding, bufferSize);

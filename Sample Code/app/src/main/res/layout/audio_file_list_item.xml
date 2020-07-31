@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
     <ImageView
         android:layout_centerHorizontal="true"
         android:id="@+id/iv_file_thumbnail"
-        android:layout_width = "250dp"
-        android:layout_height = "150dp"/>
+        android:layout_width="250dp"
+        android:layout_height="150dp" />
 
     <TextView
         android:layout_above="@+id/tv_file_storage_location"
@@ -59,6 +59,7 @@
         android:textColor="@color/black"
         android:layout_marginBottom="3dp"
         android:text="file index" />
+
     <LinearLayout
         android:layout_below="@+id/iv_file_thumbnail"
         android:layout_alignRight="@+id/iv_file_thumbnail"
@@ -67,15 +68,16 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <Button
             android:id="@+id/btn_rename"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            style="@style/common_button"
             android:layout_centerVertical="true"
-            android:text ="Rename"
             android:gravity="center"
-            style="@style/common_button"/>
+            android:text="Rename" />
 
         <Button
             android:id="@+id/btn_delete"
@@ -83,7 +85,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text ="Delete"
+            android:text="Delete"
             style="@style/common_button"/>
 
         <Button
@@ -92,7 +94,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text ="Play"
+            android:text="Play"
             style="@style/common_button"/>
 
     </LinearLayout>

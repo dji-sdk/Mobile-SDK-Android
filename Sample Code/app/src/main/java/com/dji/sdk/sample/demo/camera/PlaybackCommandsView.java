@@ -26,13 +26,6 @@ import dji.sdk.camera.PlaybackManager;
  */
 public class PlaybackCommandsView extends RelativeLayout implements View.OnClickListener, PresentableView {
 
-    private Button btnPrevious;
-    private Button btnNext;
-    private Button btnMultiple;
-    private Button btnSingle;
-
-    private Camera camera;
-
     private boolean isSinglePreview = true;
 
     public PlaybackCommandsView(Context context) {
@@ -45,7 +38,7 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
         super.onAttachedToWindow();
         if (ModuleVerificationUtil.isPlaybackAvailable()) {
 
-            camera = DJISampleApplication.getAircraftInstance().getCamera();
+            Camera camera = DJISampleApplication.getAircraftInstance().getCamera();
 
             camera.setMode(SettingsDefinitions.CameraMode.PLAYBACK, new CommonCallbacks.CompletionCallback() {
                 @Override
@@ -58,16 +51,12 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
                     getCamera().getPlaybackManager().setPlaybackStateCallback(new PlaybackManager.PlaybackState.CallBack() {
                 @Override
                 public void onUpdate(PlaybackManager.PlaybackState playbackState) {
-                    if (playbackState.getPlaybackMode().equals(SettingsDefinitions.
-                            PlaybackMode.MULTIPLE_MEDIA_FILE_PREVIEW) ||
-                            playbackState.getPlaybackMode().equals(SettingsDefinitions.
-                                    PlaybackMode.MEDIA_FILE_DOWNLOAD) ||
-                            playbackState.getPlaybackMode().equals(SettingsDefinitions.
-                                    PlaybackMode.MULTIPLE_FILES_EDIT)) {
-                        isSinglePreview = false;
-                    } else {
-                        isSinglePreview = true;
-                    }
+                    isSinglePreview = !playbackState.getPlaybackMode().equals(SettingsDefinitions.
+                            PlaybackMode.MULTIPLE_MEDIA_FILE_PREVIEW) &&
+                            !playbackState.getPlaybackMode().equals(SettingsDefinitions.
+                                    PlaybackMode.MEDIA_FILE_DOWNLOAD) &&
+                            !playbackState.getPlaybackMode().equals(SettingsDefinitions.
+                                    PlaybackMode.MULTIPLE_FILES_EDIT);
                 }
             });
 
@@ -119,10 +108,10 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
 
         layoutInflater.inflate(R.layout.view_playback_commands, this, true);
 
-        btnPrevious = (Button) findViewById(R.id.btn_previous);
-        btnNext = (Button) findViewById(R.id.btn_next);
-        btnMultiple = (Button) findViewById(R.id.btn_multiple);
-        btnSingle = (Button) findViewById(R.id.btn_single);
+        Button btnPrevious = (Button) findViewById(R.id.btn_previous);
+        Button btnNext = (Button) findViewById(R.id.btn_next);
+        Button btnMultiple = (Button) findViewById(R.id.btn_multiple);
+        Button btnSingle = (Button) findViewById(R.id.btn_single);
 
         btnMultiple.setOnClickListener(this);
         btnNext.setOnClickListener(this);

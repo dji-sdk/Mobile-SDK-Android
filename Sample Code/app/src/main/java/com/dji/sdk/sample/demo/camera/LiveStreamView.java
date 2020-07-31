@@ -40,21 +40,7 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
 
     private String liveShowUrl = "please input your live show url here";
 
-    private VideoFeedView primaryVideoFeedView;
-    private VideoFeedView fpvVideoFeedView;
     private EditText showUrlInputEdit;
-
-    private Button startLiveShowBtn;
-    private Button enableVideoEncodingBtn;
-    private Button disableVideoEncodingBtn;
-    private Button stopLiveShowBtn;
-    private Button soundOnBtn;
-    private Button soundOffBtn;
-    private Button isLiveShowOnBtn;
-    private Button showInfoBtn;
-    private Button showLiveStartTimeBtn;
-    private Button showCurrentVideoSourceBtn;
-    private Button changeVideoSourceBtn;
 
     private LiveStreamManager.OnLiveChangeListener listener;
     private LiveStreamManager.LiveStreamVideoSource currentVideoSource = LiveStreamManager.LiveStreamVideoSource.Primary;
@@ -71,10 +57,10 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_live_stream, this, true);
 
-        primaryVideoFeedView = (VideoFeedView) findViewById(R.id.video_view_primary_video_feed);
+        VideoFeedView primaryVideoFeedView = (VideoFeedView) findViewById(R.id.video_view_primary_video_feed);
         primaryVideoFeedView.registerLiveVideo(VideoFeeder.getInstance().getPrimaryVideoFeed(), true);
 
-        fpvVideoFeedView = (VideoFeedView) findViewById(R.id.video_view_fpv_video_feed);
+        VideoFeedView fpvVideoFeedView = (VideoFeedView) findViewById(R.id.video_view_fpv_video_feed);
         fpvVideoFeedView.registerLiveVideo(VideoFeeder.getInstance().getSecondaryVideoFeed(), false);
         if (Helper.isMultiStreamPlatform()){
             fpvVideoFeedView.setVisibility(VISIBLE);
@@ -83,17 +69,17 @@ public class LiveStreamView extends LinearLayout implements PresentableView, Vie
         showUrlInputEdit = (EditText) findViewById(R.id.edit_live_show_url_input);
         showUrlInputEdit.setText(liveShowUrl);
 
-        startLiveShowBtn = (Button) findViewById(R.id.btn_start_live_show);
-        enableVideoEncodingBtn = (Button) findViewById(R.id.btn_enable_video_encode);
-        disableVideoEncodingBtn = (Button) findViewById(R.id.btn_disable_video_encode);
-        stopLiveShowBtn = (Button) findViewById(R.id.btn_stop_live_show);
-        soundOnBtn = (Button) findViewById(R.id.btn_sound_on);
-        soundOffBtn = (Button) findViewById(R.id.btn_sound_off);
-        isLiveShowOnBtn = (Button) findViewById(R.id.btn_is_live_show_on);
-        showInfoBtn = (Button) findViewById(R.id.btn_show_info);
-        showLiveStartTimeBtn = (Button) findViewById(R.id.btn_show_live_start_time);
-        showCurrentVideoSourceBtn = (Button) findViewById(R.id.btn_show_current_video_source);
-        changeVideoSourceBtn = (Button) findViewById(R.id.btn_change_video_source);
+        Button startLiveShowBtn = (Button) findViewById(R.id.btn_start_live_show);
+        Button enableVideoEncodingBtn = (Button) findViewById(R.id.btn_enable_video_encode);
+        Button disableVideoEncodingBtn = (Button) findViewById(R.id.btn_disable_video_encode);
+        Button stopLiveShowBtn = (Button) findViewById(R.id.btn_stop_live_show);
+        Button soundOnBtn = (Button) findViewById(R.id.btn_sound_on);
+        Button soundOffBtn = (Button) findViewById(R.id.btn_sound_off);
+        Button isLiveShowOnBtn = (Button) findViewById(R.id.btn_is_live_show_on);
+        Button showInfoBtn = (Button) findViewById(R.id.btn_show_info);
+        Button showLiveStartTimeBtn = (Button) findViewById(R.id.btn_show_live_start_time);
+        Button showCurrentVideoSourceBtn = (Button) findViewById(R.id.btn_show_current_video_source);
+        Button changeVideoSourceBtn = (Button) findViewById(R.id.btn_change_video_source);
 
         startLiveShowBtn.setOnClickListener(this);
         enableVideoEncodingBtn.setOnClickListener(this);

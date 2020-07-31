@@ -1,5 +1,6 @@
 package com.dji.sdk.sample.demo.keymanager;
 
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.os.Handler;
@@ -44,7 +45,6 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     private static final String KEY_INTERFACE = "Key: ";
     private static final String VALUE = "Value: ";
 
-    private Spinner mComponenetSpinner;
     private Spinner mSubComponentSpinner;
     private Spinner mComponentIndexSpinner;
     private Spinner mKeyInterfaceSpinner;
@@ -52,13 +52,10 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     private TextView mListenKeyTv;
     private TextView mKeyValueTv;
     private Spinner mSetValueSpinner;
-    private Button mGetValueBtn;
-    private Button mSetValueBtn;
     private Button mListenKeyBtn;
-    private ArrayAdapter mComponentAdapter;
-    private ArrayAdapter mSubComponentAdapter;
+    private ArrayAdapter<String> mSubComponentAdapter;
     private ArrayAdapter mComponentIndexAdapter;
-    private ArrayAdapter mKeyInterfaceAdapter;
+    private ArrayAdapter<String> mKeyInterfaceAdapter;
     private ArrayAdapter mSetValueAdapter;
 
     private List<BaseProduct.ComponentKey> mComponentKeyList = new ArrayList<>();
@@ -76,13 +73,12 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     private DJIKey currentKey;
     private String currentKeyStr;
     private Object newValue;
-    private StringBuilder reslutInfo = null;
 
     private KeyListener keyListener;
     private boolean isKeyListened = false;
     private boolean isFirstGetValue = false;
 
-    private Handler handler = new Handler();
+    private final Handler handler = new Handler();
 
     public KeyManagerView(Context context) {
         super(context);
@@ -93,7 +89,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_key_manager, this, true);
 
-        mComponenetSpinner = (Spinner) findViewById(R.id.component_spinner);
+        Spinner mComponenetSpinner = (Spinner) findViewById(R.id.component_spinner);
         mSubComponentSpinner = (Spinner) findViewById(R.id.sub_component_spinner);
         mComponentIndexSpinner = (Spinner) findViewById(R.id.component_index_spinner);
         mKeyInterfaceSpinner = (Spinner) findViewById(R.id.key_interface_spinner);
@@ -101,12 +97,12 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         mListenKeyTv = (TextView) findViewById(R.id.listen_key_tv);
         mKeyValueTv = (TextView) findViewById(R.id.key_vaule_tv);
         mSetValueSpinner = (Spinner) findViewById(R.id.set_value_spinner);
-        mGetValueBtn = (Button) findViewById(R.id.get_value_btn);
-        mSetValueBtn = (Button) findViewById(R.id.set_value_btn);
+        Button mGetValueBtn = (Button) findViewById(R.id.get_value_btn);
+        Button mSetValueBtn = (Button) findViewById(R.id.set_value_btn);
         mListenKeyBtn = (Button) findViewById(R.id.listen_key_btn);
 
         mComponentKeyList = KeyManagerUtils.getComponentList();
-        mComponentAdapter = getArrayAdapter();
+        ArrayAdapter<String> mComponentAdapter = getArrayAdapter();
         mComponentAdapter.addAll(KeyManagerUtils.getNameList(mComponentKeyList));
         mComponenetSpinner.setAdapter(mComponentAdapter);
         mComponenetSpinner.setSelection(0);
@@ -155,7 +151,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     }
 
 
-    private Runnable runUpdateSubComponent = new Runnable() {
+    private final Runnable runUpdateSubComponent = new Runnable() {
         @Override
         public void run() {
             mSubComponentSpinner.setEnabled(true);
@@ -163,7 +159,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         }
     };
 
-    private Runnable runUpdateComponentIndex = new Runnable() {
+    private final Runnable runUpdateComponentIndex = new Runnable() {
         @Override
         public void run() {
             mComponentIndexSpinner.setEnabled(true);
@@ -171,7 +167,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         }
     };
 
-    private Runnable runUpdateKeyInterface = new Runnable() {
+    private final Runnable runUpdateKeyInterface = new Runnable() {
         @Override
         public void run() {
             mKeyInterfaceSpinner.setEnabled(true);
@@ -179,7 +175,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         }
     };
 
-    private Runnable runUpdateSetValue = new Runnable() {
+    private final Runnable runUpdateSetValue = new Runnable() {
         @Override
         public void run() {
             mSetValueSpinner.setEnabled(true);
@@ -294,22 +290,14 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
             return;
         }
         sendMessageToTV("Listen");
-        keyListener = new KeyListener() {
-            @Override
-            public void onValueChange(@Nullable Object oldValue, @Nullable Object newValue) {
-                if (newValue != null) {
-                    sendMessageToTV("Listen", newValue);
-                    postReslutToToast("Listen key: " + currentKeyStr + ", oldValue: " + oldValue.toString() + ", newValue: " + newValue.toString());
-                }
+        keyListener = (oldValue, newValue) -> {
+            if (newValue != null) {
+                sendMessageToTV("Listen", newValue);
+                postReslutToToast("Listen key: " + currentKeyStr + ", oldValue: " + oldValue.toString() + ", newValue: " + newValue.toString());
             }
         };
 
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                mListenKeyBtn.setText("UnListen");
-            }
-        });
+        handler.post(() -> mListenKeyBtn.setText("UnListen"));
         KeyManager.getInstance().addListener(currentKey, keyListener);
     }
 
@@ -319,12 +307,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         }
 
         if (keyListener != null) {
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    mListenKeyBtn.setText("Listen");
-                }
-            });
+            handler.post(() -> mListenKeyBtn.setText("Listen"));
             KeyManager.getInstance().removeListener(keyListener);
         }
     }
@@ -356,12 +339,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
             handler.post(runUpdateComponentIndex);
         } else {
             currentComponetIndex = -1;
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    mComponentIndexSpinner.setEnabled(false);
-                }
-            });
+            handler.post(() -> mComponentIndexSpinner.setEnabled(false));
         }
 
         mKeyInterfaceAdapter.clear();
@@ -454,7 +432,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     }
 
     private void sendMessageToTV(final String type, final Object value) {
-        reslutInfo = new StringBuilder();
+        StringBuilder reslutInfo = new StringBuilder();
         reslutInfo.append(COMPONENT);
         reslutInfo.append(currentComponentKey);
         reslutInfo.append("\n");
@@ -492,7 +470,7 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
     }
 
     private ArrayAdapter<String> getArrayAdapter() {
-        ArrayAdapter<String> adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return adapter;
     }

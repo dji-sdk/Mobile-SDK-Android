@@ -14,6 +14,7 @@ import java.util.List;
  */
 public abstract class ListItem {
     private @StringRes
+    final
     int titleStringId;
 
     public ListItem(@StringRes int titleStringId) {

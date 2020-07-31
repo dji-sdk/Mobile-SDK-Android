@@ -66,7 +66,6 @@ public class FlightHubView extends LinearLayout implements PresentableView, View
     TextView tvUploadStatus;
     TextView tvAuthStatus;
 
-    private FlightController flightController;
     private String serialNumber;
     private String cacheOrderId = "";
 
@@ -97,6 +96,7 @@ public class FlightHubView extends LinearLayout implements PresentableView, View
     }
 
     private void initFC() {
+        FlightController flightController;
         if (DJISampleApplication.getProductInstance() == null) {
             flightController = null;
             ToastUtils.setResultToToast(getResources().getString(R.string.playback_disconnected));

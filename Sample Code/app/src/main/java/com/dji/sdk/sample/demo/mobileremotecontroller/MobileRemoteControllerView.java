@@ -40,9 +40,6 @@ public class MobileRemoteControllerView extends RelativeLayout
     implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, PresentableView {
 
     private ToggleButton btnSimulator;
-    private Button btnTakeOff;
-    private Button autoLand;
-    private Button forceLand;
 
     private TextView textView;
 
@@ -87,10 +84,10 @@ public class MobileRemoteControllerView extends RelativeLayout
     }
 
     private void initUI() {
-        btnTakeOff = (Button) findViewById(R.id.btn_take_off);
-        autoLand = (Button) findViewById(R.id.btn_auto_land);
+        Button btnTakeOff = (Button) findViewById(R.id.btn_take_off);
+        Button autoLand = (Button) findViewById(R.id.btn_auto_land);
         autoLand.setOnClickListener(this);
-        forceLand = (Button) findViewById(R.id.btn_force_land);
+        Button forceLand = (Button) findViewById(R.id.btn_force_land);
         forceLand.setOnClickListener(this);
         btnSimulator = (ToggleButton) findViewById(R.id.btn_start_simulator);
 

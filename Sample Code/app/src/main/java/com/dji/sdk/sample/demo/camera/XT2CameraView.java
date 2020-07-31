@@ -56,7 +56,6 @@ public class XT2CameraView extends LinearLayout implements View.OnClickListener,
     private PopupSeekBar popupSeekBar;
     private TextView primaryVideoFeedTitle;
     private VideoFeedView primaryVideoFeed;
-    private VideoFeeder.PhysicalSourceListener sourceListener;
 
 
     public XT2CameraView(Context context) {
@@ -92,7 +91,7 @@ public class XT2CameraView extends LinearLayout implements View.OnClickListener,
                 setCameraMSXLevel(val1);
                 popupSeekBar.dismiss();
             }
-        }, 300, 150, 0);
+        }, 300, 150);
 
     }
 
@@ -139,7 +138,7 @@ public class XT2CameraView extends LinearLayout implements View.OnClickListener,
 
 
     private void setUpListeners() {
-        sourceListener = new VideoFeeder.PhysicalSourceListener() {
+        VideoFeeder.PhysicalSourceListener sourceListener = new VideoFeeder.PhysicalSourceListener() {
             @Override
             public void onChange(VideoFeeder.VideoFeed videoFeed, PhysicalSource newPhysicalSource) {
                 if (videoFeed == VideoFeeder.getInstance().getPrimaryVideoFeed()) {

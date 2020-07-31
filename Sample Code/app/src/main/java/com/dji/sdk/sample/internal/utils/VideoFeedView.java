@@ -23,8 +23,6 @@ import dji.thirdparty.rx.functions.Action1;
  * VideoView will show the live video for the given video feed.
  */
 public class VideoFeedView extends TextureView implements SurfaceTextureListener {
-    //region Properties
-    private final static String TAG = "DULFpvWidget";
     private DJICodecManager codecManager = null;
     private VideoFeeder.VideoDataListener videoDataListener = null;
     private int videoWidth;
@@ -32,8 +30,8 @@ public class VideoFeedView extends TextureView implements SurfaceTextureListener
     private boolean isPrimaryVideoFeed;
     private View coverView;
     private final long WAIT_TIME = 500; // Half of a second
-    private AtomicLong lastReceivedFrameTime = new AtomicLong(0);
-    private Observable timer =
+    private final AtomicLong lastReceivedFrameTime = new AtomicLong(0);
+    private final Observable<Long> timer =
         Observable.timer(100, TimeUnit.MICROSECONDS).observeOn(AndroidSchedulers.mainThread()).repeat();
     private Subscription subscription;
 
@@ -64,37 +62,30 @@ public class VideoFeedView extends TextureView implements SurfaceTextureListener
         }
 
         setSurfaceTextureListener(this);
-        videoDataListener = new VideoFeeder.VideoDataListener() {
+        videoDataListener = (videoBuffer, size) -> {
 
-            @Override
-            public void onReceive(byte[] videoBuffer, int size) {
+            lastReceivedFrameTime.set(System.currentTimeMillis());
 
-                lastReceivedFrameTime.set(System.currentTimeMillis());
-
-                if (codecManager != null) {
-                    codecManager.sendDataToDecoder(videoBuffer,
-                                                   size,
-                                                   isPrimaryVideoFeed
-                                                   ? UsbAccessoryService.VideoStreamSource.Camera.getIndex()
-                                                   : UsbAccessoryService.VideoStreamSource.Fpv.getIndex());
-                }
+            if (codecManager != null) {
+                codecManager.sendDataToDecoder(videoBuffer,
+                                               size,
+                                               isPrimaryVideoFeed
+                                               ? UsbAccessoryService.VideoStreamSource.Camera.getIndex()
+                                               : UsbAccessoryService.VideoStreamSource.Fpv.getIndex());
             }
         };
 
-        subscription = timer.subscribe(new Action1() {
-            @Override
-            public void call(Object o) {
-                final long now = System.currentTimeMillis();
-                final long ellapsedTime = now - lastReceivedFrameTime.get();
-                if (coverView != null) {
-                    if (ellapsedTime > WAIT_TIME && !ModuleVerificationUtil.isMavic2Product()) {
-                        if (coverView.getVisibility() == INVISIBLE) {
-                            coverView.setVisibility(VISIBLE);
-                        }
-                    } else {
-                        if (coverView.getVisibility() == VISIBLE) {
-                            coverView.setVisibility(INVISIBLE);
-                        }
+        subscription = timer.subscribe((Action1) o -> {
+            final long now = System.currentTimeMillis();
+            final long ellapsedTime = now - lastReceivedFrameTime.get();
+            if (coverView != null) {
+                if (ellapsedTime > WAIT_TIME && !ModuleVerificationUtil.isMavic2Product()) {
+                    if (coverView.getVisibility() == INVISIBLE) {
+                        coverView.setVisibility(VISIBLE);
+                    }
+                } else {
+                    if (coverView.getVisibility() == VISIBLE) {
+                        coverView.setVisibility(INVISIBLE);
                     }
                 }
             }

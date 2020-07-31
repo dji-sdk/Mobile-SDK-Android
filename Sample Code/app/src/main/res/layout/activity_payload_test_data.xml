@@ -9,9 +9,11 @@
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:baselineAligned="false"
         android:orientation="horizontal"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true">
+
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -21,6 +23,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_alignParentLeft="true">
+
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
@@ -30,88 +33,100 @@
                 android:id="@+id/payload_name"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:maxLines="1"
+
                 android:ellipsize="marquee"
-                android:text="Payload: MyPayload"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="Payload: MyPayload" />
+
             <TextView
                 android:layout_alignLeft="@+id/payload_name"
                 android:layout_below="@+id/payload_name"
                 android:id="@+id/send_total"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:text="TX: "
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginRight="10dp"
-                android:layout_height="wrap_content"/>
+                android:text="TX: " />
+
             <TextView
                 android:layout_toRightOf="@+id/send_total"
                 android:layout_below="@+id/payload_name"
                 android:id="@+id/send_total_size"
                 android:layout_gravity="center"
                 android:layout_width="100dp"
-                android:text="500"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="500" />
+
             <TextView
                 android:layout_toRightOf="@+id/send_total_size"
                 android:layout_below="@+id/payload_name"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:text="Bytes"
+                android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:gravity="center"
                 android:layout_marginRight="10dp"
-                android:layout_height="wrap_content"/>
-            <EditText android:layout_width="match_parent"
-                      android:layout_alignLeft="@+id/payload_name"
-                      android:layout_above="@+id/repeat_send_checkbox"
-                      android:layout_below="@+id/send_total"
-                      android:hint="Input Datas Here"
-                      android:layout_marginBottom="10dp"
-                      android:layout_marginTop="10dp"
-                      android:gravity="left|top"
-                      android:id="@+id/sending_data"
-                      android:layout_height="match_parent"/>
+                android:text="Bytes" />
+
+            <EditText
+                android:id="@+id/sending_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/repeat_send_checkbox"
+                android:layout_below="@+id/send_total"
+                android:layout_alignLeft="@+id/payload_name"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="left|top"
+                android:hint="Input Datas Here" />
+
             <CheckBox
                 android:layout_above="@+id/send_data_button"
                 android:layout_alignLeft="@+id/payload_name"
                 android:id="@+id/repeat_send_checkbox"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
+
             <TextView
                 android:layout_toRightOf="@+id/repeat_send_checkbox"
                 android:layout_alignTop="@+id/repeat_send_checkbox"
                 android:layout_alignBottom="@+id/repeat_send_checkbox"
                 android:layout_width="wrap_content"
                 android:id="@+id/repeat_hint"
-                android:text="Repeat Cycle:"
+                android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:gravity="center"
                 android:textSize="18sp"
                 android:maxLines="1"
-                android:layout_height="wrap_content"/>
-            <EditText android:layout_width="80dp"
-                      android:layout_toRightOf="@+id/repeat_hint"
-                      android:layout_alignBottom="@+id/repeat_send_checkbox"
-                      android:hint="10"
-                      android:text="10"
-                      android:textSize="16sp"
-                      android:shadowColor="@android:color/black"
-                      android:shadowRadius="1.5"
-                      android:shadowDx="1.2"
-                      android:shadowDy="1.2"
-                      android:gravity="center"
-                      android:id="@+id/period_value"
-                      android:layout_height="wrap_content"/>
+                android:text="Repeat Cycle:" />
+
+            <EditText
+                android:id="@+id/period_value"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/repeat_send_checkbox"
+                android:layout_toRightOf="@+id/repeat_hint"
+                android:gravity="center"
+                android:hint="10"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="1.2"
+                android:shadowDy="1.2"
+                android:shadowRadius="1.5"
+                android:text="10"
+                android:textSize="16sp" />
+
             <TextView
                 android:layout_toRightOf="@+id/period_value"
                 android:layout_alignTop="@+id/repeat_send_checkbox"
                 android:layout_alignBottom="@+id/repeat_send_checkbox"
                 android:layout_width="wrap_content"
-                android:text="Hz"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="18sp"
-                android:layout_height="wrap_content"/>
+                android:text="Hz" />
+
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="15dp"
@@ -139,6 +154,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true">
+
             <TextView
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="20dp"
@@ -147,28 +163,30 @@
                 android:id="@+id/receive_total"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:text="RX: "
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginRight="10dp"
-                android:layout_height="wrap_content"/>
+                android:text="RX: " />
+
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/receive_total"
                 android:id="@+id/receive_total_size"
                 android:layout_gravity="center"
                 android:layout_width="100dp"
-                android:text="0"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="0" />
+
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/receive_total_size"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:text="Bytes"
+                android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:gravity="center"
                 android:layout_marginRight="10dp"
-                android:layout_height="wrap_content"/>
+                android:text="Bytes" />
             <TextView
                 android:id="@+id/push_info_text"
                 android:layout_below="@+id/receive_total"
@@ -181,8 +199,8 @@
                 android:shadowDx="1.2"
                 android:shadowDy="1.2"
                 android:textSize="16sp"
-                android:text="Reveive Datas"
-                android:scrollbars="vertical"/>
+                android:scrollbars="vertical"
+                android:text="Reveive Datas" />
 
         </RelativeLayout>
 

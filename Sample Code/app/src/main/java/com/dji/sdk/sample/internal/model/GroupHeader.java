@@ -11,7 +11,7 @@ import androidx.annotation.StringRes;
 
 public class GroupHeader extends ListItem {
     private final GroupItem[] groupItemList;
-    private boolean shouldCollapseByDefault;
+    private final boolean shouldCollapseByDefault;
 
     public GroupHeader(@StringRes int titleStringId, @NonNull GroupItem[] groupItemList) {
         this(titleStringId, groupItemList, false);

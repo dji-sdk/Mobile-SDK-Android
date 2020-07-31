@@ -21,9 +21,7 @@ public class DJISampleApplication extends Application {
 
     public static final String TAG = DJISampleApplication.class.getName();
 
-    private static BaseProduct product;
-    private static BluetoothProductConnector bluetoothConnector = null;
-    private static Bus bus = new Bus(ThreadEnforcer.ANY);
+    private static final Bus bus = new Bus(ThreadEnforcer.ANY);
     private static Application app = null;
 
     /**
@@ -32,12 +30,12 @@ public class DJISampleApplication extends Application {
      * API_KEY has been added in the Manifest
      */
     public static synchronized BaseProduct getProductInstance() {
-        product = DJISDKManager.getInstance().getProduct();
+        BaseProduct product = DJISDKManager.getInstance().getProduct();
         return product;
     }
 
     public static synchronized BluetoothProductConnector getBluetoothProductConnector() {
-        bluetoothConnector = DJISDKManager.getInstance().getBluetoothProductConnector();
+        BluetoothProductConnector bluetoothConnector = DJISDKManager.getInstance().getBluetoothProductConnector();
         return bluetoothConnector;
     }
 

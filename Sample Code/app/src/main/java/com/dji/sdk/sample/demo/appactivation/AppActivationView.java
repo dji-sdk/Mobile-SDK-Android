@@ -24,7 +24,7 @@ import dji.sdk.sdkmanager.DJISDKManager;
 public class AppActivationView extends BaseAppActivationView {
 
     private static final String TAG = AppActivationView.class.getSimpleName();
-    private AppActivationManager appActivationManager= DJISDKManager.getInstance().getAppActivationManager();
+    private final AppActivationManager appActivationManager= DJISDKManager.getInstance().getAppActivationManager();
     private AppActivationStateListener activationStatelistener;
     private AircraftBindingStateListener bindingStateListener;
 
