@@ -15,7 +15,6 @@ import com.dji.sdk.sample.internal.controller.MainActivity.RequestStartFullScree
 import com.dji.sdk.sample.internal.utils.Helper
 import com.dji.sdk.sample.internal.utils.ToastUtils
 import com.dji.sdk.sample.internal.utils.VideoFeedView
-import com.dji.sdk.sample.internal.PickerValueChangeListener
 import com.dji.sdk.sample.internal.view.PopupNumberPicker
 import com.dji.sdk.sample.internal.view.PresentableView
 import dji.common.camera.CameraVideoStreamSource
@@ -153,7 +152,7 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
                     }
 
                     override fun onFailure(error: DJIError) {
-                        Helper.showToast(context as Activity?, "Get Hybrid Zoom Spec failed: ${error?.description}")
+                        Helper.showToast(context as Activity?, "Get Hybrid Zoom Spec failed: ${error.description}")
                     }
                 })
             }
@@ -179,7 +178,10 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
         val key: DJIKey = CameraKey.create(CameraKey.CAMERA_VIDEO_STREAM_SOURCE_RANGE, 0)
         return if (KeyManager.getInstance().getValue(key) == null) {
             null
-        } else (KeyManager.getInstance().getValue(key) as Array<CameraVideoStreamSource?>?)
+        } else {
+            val arrayOfCameraVideoStreamSources = KeyManager.getInstance().getValue(key) as Array<CameraVideoStreamSource?>?
+            arrayOfCameraVideoStreamSources
+        }
     }
 
     private fun setVideoStreamSource(videoStreamSource: CameraVideoStreamSource) {
@@ -210,7 +212,9 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
         val key: DJIKey = CameraKey.create(CameraKey.FLAT_CAMERA_MODE_RANGE, 0)
         return if (KeyManager.getInstance().getValue(key) == null) {
             null
-        } else (KeyManager.getInstance().getValue(key) as Array<SettingsDefinitions.FlatCameraMode?>?)
+        } else {
+            (KeyManager.getInstance().getValue(key) as Array<SettingsDefinitions.FlatCameraMode?>?)
+        }
     }
 
     private fun setFlatCameraMode(flatCameraMode: SettingsDefinitions.FlatCameraMode) {
@@ -260,7 +264,7 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
     }
 
     private fun initPopupNumberPicker(list: ArrayList<String>, r: Runnable) {
-        popupNumberPicker = PopupNumberPicker(context, list, PickerValueChangeListener { pos1, pos2 ->
+        popupNumberPicker = PopupNumberPicker(context, list, { pos1, pos2 ->
             popupNumberPicker?.dismiss()
             popupNumberPicker = null
             INDEX_CHOSEN[0] = pos1
