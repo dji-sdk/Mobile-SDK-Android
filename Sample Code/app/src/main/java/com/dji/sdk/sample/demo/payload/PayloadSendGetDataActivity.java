@@ -9,22 +9,14 @@ import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.utils.GeneralUtils;
 import com.dji.sdk.sample.internal.utils.Helper;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
-
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
 import dji.common.error.DJIError;
 import dji.keysdk.DJIKey;
 import dji.keysdk.KeyManager;
@@ -32,11 +24,16 @@ import dji.keysdk.PayloadKey;
 import dji.keysdk.callback.ActionCallback;
 import dji.keysdk.callback.KeyListener;
 
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by Michael on 17/11/6.
  */
 
-public class PayloadSendGetDataActivity extends AppCompatActivity implements View.OnClickListener{
+public class PayloadSendGetDataActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "PayloadSendGetData";
     private TextView receivedDataView;
     private TextView payloadNameView;
@@ -110,20 +107,20 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
         super.onCreate(savedInstanceState);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-        payloadNameView = (TextView) findViewById(R.id.payload_name);
-        receivedDataView = (TextView) findViewById(R.id.push_info_text);
-        sendTotal = (TextView) findViewById(R.id.send_total_size);
+        payloadNameView = findViewById(R.id.payload_name);
+        receivedDataView = findViewById(R.id.push_info_text);
+        sendTotal = findViewById(R.id.send_total_size);
         sendTotal.setText("0");
-        receiveTotal = (TextView) findViewById(R.id.receive_total_size);
+        receiveTotal = findViewById(R.id.receive_total_size);
         receiveTotal.setText("0");
         receivedDataView.setMovementMethod(new ScrollingMovementMethod());
-        sendDataEditView = (EditText) findViewById(R.id.sending_data);
-        periodView = (EditText) findViewById(R.id.period_value);
-        repeatCheckbox = (CheckBox) findViewById(R.id.repeat_send_checkbox);
+        sendDataEditView = findViewById(R.id.sending_data);
+        periodView = findViewById(R.id.period_value);
+        repeatCheckbox = findViewById(R.id.repeat_send_checkbox);
         repeatCheckbox.setOnClickListener(this);
         initListener();
     }

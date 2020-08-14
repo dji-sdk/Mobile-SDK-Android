@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.SeekBar;
 import android.widget.TextView;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.SeekBarValueChangeListener;
 import com.dji.sdk.sample.internal.utils.DensityUtil;
@@ -38,9 +37,9 @@ public class PopupSeekBar extends PopupWindow {
         this.setHeight(DensityUtil.dip2px(context, h));
         this.setFocusable(true);//
 
-        currentValueTextView = (TextView) view.findViewById(R.id.tv_progress);
-        Button submitButton = (Button) view.findViewById(R.id.btn_submitValue);
-        seekBar = (SeekBar) view.findViewById(R.id.seekBar_continuousValue);
+        currentValueTextView = view.findViewById(R.id.tv_progress);
+        Button submitButton = view.findViewById(R.id.btn_submitValue);
+        seekBar = view.findViewById(R.id.seekBar_continuousValue);
         seekBar.setProgress(MIN_VALUE);
         seekBar.setMax(maxValue);
         seekBar.setOnSeekBarChangeListener(new OnDJISeekBarChangeListener());

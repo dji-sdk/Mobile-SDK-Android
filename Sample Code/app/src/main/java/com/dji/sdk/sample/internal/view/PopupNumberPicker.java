@@ -14,7 +14,6 @@ import android.wheel.wheel.adapter.AbstractWheelTextAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.PickerValueChangeListener;
 import com.dji.sdk.sample.internal.utils.DensityUtil;
@@ -69,12 +68,11 @@ public class PopupNumberPicker extends PopupWindow {
 		ColorDrawable dw = new ColorDrawable(Color.TRANSPARENT);
 		this.setBackgroundDrawable(dw);
 		strItemValue = new String[item_texts.size()];
-		for (int i = 0; i < item_texts.size(); i++) 
-		{
+		for (int i = 0; i < item_texts.size(); i++) {
 			strItemValue[i] = item_texts.get(i);
 		}
 
-		wheelPicker = (WheelView) view.findViewById(R.id.id_number_picker1);
+		wheelPicker = view.findViewById(R.id.id_number_picker1);
 		wheelPicker.addScrollingListener(onWheelScrollListener);
 		wheelPicker.addClickingListener(onWheelClickedListener);
 
@@ -88,14 +86,14 @@ public class PopupNumberPicker extends PopupWindow {
 		wheelPicker.setViewAdapter(typeTextAdapter);
 		//called after setViewAdapter
 		wheelPicker.setCurrentItem(pos);
-		
 
-		ImageButton select_button = (ImageButton) view.findViewById(R.id.id_select_imageButton1);
-		
+
+		ImageButton select_button = view.findViewById(R.id.id_select_imageButton1);
+
 		pickerToSelectPos = pos;
-		
+
 		select_button.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				onCallBack.onValueChange(pickerToSelectPos, -1);
@@ -118,7 +116,7 @@ public class PopupNumberPicker extends PopupWindow {
                              PickerValueChangeListener itemClickEvent, int otherActionName, PickerOtherActionListener otherAction, int w, int h, int pos) {
 		this(context, item_strings, itemClickEvent, w, h, pos, true, true);
 		this.otherAction = otherAction;
-		final Button other_button = (Button) view.findViewById(R.id.id_select_otherActionButton);
+		final Button other_button = view.findViewById(R.id.id_select_otherActionButton);
 		other_button.setText(otherActionName);
 		other_button.setVisibility(View.VISIBLE);
 		other_button.setOnClickListener(new View.OnClickListener() {
@@ -134,7 +132,7 @@ public class PopupNumberPicker extends PopupWindow {
                              PickerValueChangeListener itemClickEvent, int otherActionName, PickerOtherActionListener otherAction, int w, int h, int pos, boolean isSingle) {
 		this(context, item_strings, itemClickEvent, w, h, pos, true, isSingle);
 		this.otherAction = otherAction;
-		final Button other_button = (Button) view.findViewById(R.id.id_select_otherActionButton);
+		final Button other_button = view.findViewById(R.id.id_select_otherActionButton);
 		other_button.setText(otherActionName);
 		other_button.setVisibility(View.VISIBLE);
 		other_button.setOnClickListener(new View.OnClickListener() {
@@ -163,7 +161,7 @@ public class PopupNumberPicker extends PopupWindow {
 
 		@Override
 		protected CharSequence getItemText(int index) {
-			return strItemValue[index].toString();
+			return strItemValue[index];
 		}
 
 		@Override

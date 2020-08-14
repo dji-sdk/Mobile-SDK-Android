@@ -7,14 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
-
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.keysdk.BatteryKey;
@@ -226,14 +223,14 @@ public class KeyedInterfaceView extends LinearLayout implements PresentableView 
 
         layoutInflater.inflate(R.layout.view_keyed_interface, this, true);
 
-        batteryTV = (TextView) findViewById(R.id.tv_batter_level_value);
-        getBatteryBtn = (Button) findViewById(R.id.tv_batter_level_title);
-        cameraBtn = (Button) findViewById(R.id.tv_camera_title);
-        cameraTV = (TextView) findViewById(R.id.tv_camera_value);
-        calibrateBtn = (Button) findViewById(R.id.tv_calibrate_title);
-        calibrationTV = (TextView) findViewById(R.id.tv_calibrate_value);
-        storageLocationBtn = (Button) findViewById(R.id.tv_storage_location_title);
-        storageLocationTV = (TextView) findViewById(R.id.tv_storage_location_value);
+        batteryTV = findViewById(R.id.tv_batter_level_value);
+        getBatteryBtn = findViewById(R.id.tv_batter_level_title);
+        cameraBtn = findViewById(R.id.tv_camera_title);
+        cameraTV = findViewById(R.id.tv_camera_value);
+        calibrateBtn = findViewById(R.id.tv_calibrate_title);
+        calibrationTV = findViewById(R.id.tv_calibrate_value);
+        storageLocationBtn = findViewById(R.id.tv_storage_location_title);
+        storageLocationTV = findViewById(R.id.tv_storage_location_value);
 
         // Example of getting a value using Async interface
         KeyManager.getInstance().getValue(isInternalStorageSupportedKey, new GetCallback() {

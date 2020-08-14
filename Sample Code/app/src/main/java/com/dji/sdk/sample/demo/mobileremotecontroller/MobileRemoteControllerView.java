@@ -4,14 +4,8 @@ import android.app.Service;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.ToggleButton;
-
+import android.widget.*;
 import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.OnScreenJoystickListener;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
@@ -20,7 +14,6 @@ import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.OnScreenJoystick;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
-
 import dji.common.error.DJIError;
 import dji.common.flightcontroller.simulator.InitializationData;
 import dji.common.flightcontroller.simulator.SimulatorState;
@@ -31,7 +24,6 @@ import dji.keysdk.KeyManager;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.flightcontroller.Simulator;
 import dji.sdk.mobilerc.MobileRemoteController;
-import dji.sdk.products.Aircraft;
 
 /**
  * Class for mobile remote controller.
@@ -84,17 +76,17 @@ public class MobileRemoteControllerView extends RelativeLayout
     }
 
     private void initUI() {
-        Button btnTakeOff = (Button) findViewById(R.id.btn_take_off);
-        Button autoLand = (Button) findViewById(R.id.btn_auto_land);
+        Button btnTakeOff = findViewById(R.id.btn_take_off);
+        Button autoLand = findViewById(R.id.btn_auto_land);
         autoLand.setOnClickListener(this);
-        Button forceLand = (Button) findViewById(R.id.btn_force_land);
+        Button forceLand = findViewById(R.id.btn_force_land);
         forceLand.setOnClickListener(this);
-        btnSimulator = (ToggleButton) findViewById(R.id.btn_start_simulator);
+        btnSimulator = findViewById(R.id.btn_start_simulator);
 
-        textView = (TextView) findViewById(R.id.textview_simulator);
+        textView = findViewById(R.id.textview_simulator);
 
-        screenJoystickRight = (OnScreenJoystick) findViewById(R.id.directionJoystickRight);
-        screenJoystickLeft = (OnScreenJoystick) findViewById(R.id.directionJoystickLeft);
+        screenJoystickRight = findViewById(R.id.directionJoystickRight);
+        screenJoystickLeft = findViewById(R.id.directionJoystickLeft);
 
         btnTakeOff.setOnClickListener(this);
         btnSimulator.setOnCheckedChangeListener(MobileRemoteControllerView.this);
@@ -131,7 +123,7 @@ public class MobileRemoteControllerView extends RelativeLayout
         }
         try {
             mobileRemoteController =
-                ((Aircraft) DJISampleApplication.getAircraftInstance()).getMobileRemoteController();
+                    DJISampleApplication.getAircraftInstance().getMobileRemoteController();
         } catch (Exception exception) {
             exception.printStackTrace();
         }

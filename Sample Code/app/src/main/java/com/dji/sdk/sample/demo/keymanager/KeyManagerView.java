@@ -1,29 +1,14 @@
 package com.dji.sdk.sample.demo.keymanager;
 
-import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.view.PresentableView;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import dji.common.error.DJIError;
 import dji.keysdk.DJIKey;
 import dji.keysdk.KeyManager;
@@ -31,6 +16,10 @@ import dji.keysdk.callback.GetCallback;
 import dji.keysdk.callback.KeyListener;
 import dji.keysdk.callback.SetCallback;
 import dji.sdk.base.BaseProduct;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -89,17 +78,17 @@ public class KeyManagerView extends RelativeLayout implements PresentableView, V
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_key_manager, this, true);
 
-        Spinner mComponenetSpinner = (Spinner) findViewById(R.id.component_spinner);
-        mSubComponentSpinner = (Spinner) findViewById(R.id.sub_component_spinner);
-        mComponentIndexSpinner = (Spinner) findViewById(R.id.component_index_spinner);
-        mKeyInterfaceSpinner = (Spinner) findViewById(R.id.key_interface_spinner);
-        mGetValueTv = (TextView) findViewById(R.id.get_value_tv);
-        mListenKeyTv = (TextView) findViewById(R.id.listen_key_tv);
-        mKeyValueTv = (TextView) findViewById(R.id.key_vaule_tv);
-        mSetValueSpinner = (Spinner) findViewById(R.id.set_value_spinner);
-        Button mGetValueBtn = (Button) findViewById(R.id.get_value_btn);
-        Button mSetValueBtn = (Button) findViewById(R.id.set_value_btn);
-        mListenKeyBtn = (Button) findViewById(R.id.listen_key_btn);
+        Spinner mComponenetSpinner = findViewById(R.id.component_spinner);
+        mSubComponentSpinner = findViewById(R.id.sub_component_spinner);
+        mComponentIndexSpinner = findViewById(R.id.component_index_spinner);
+        mKeyInterfaceSpinner = findViewById(R.id.key_interface_spinner);
+        mGetValueTv = findViewById(R.id.get_value_tv);
+        mListenKeyTv = findViewById(R.id.listen_key_tv);
+        mKeyValueTv = findViewById(R.id.key_vaule_tv);
+        mSetValueSpinner = findViewById(R.id.set_value_spinner);
+        Button mGetValueBtn = findViewById(R.id.get_value_btn);
+        Button mSetValueBtn = findViewById(R.id.set_value_btn);
+        mListenKeyBtn = findViewById(R.id.listen_key_btn);
 
         mComponentKeyList = KeyManagerUtils.getComponentList();
         ArrayAdapter<String> mComponentAdapter = getArrayAdapter();

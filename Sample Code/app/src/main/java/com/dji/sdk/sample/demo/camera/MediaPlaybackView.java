@@ -13,31 +13,23 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-
+import android.widget.*;
 import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.controller.MainActivity;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.media.MediaFile;
 import dji.sdk.media.MediaManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MediaPlaybackView extends LinearLayout
         implements MediaManager.VideoPlaybackStateListener, PresentableView {
@@ -163,18 +155,18 @@ public class MediaPlaybackView extends LinearLayout
 
         layoutInflater.inflate(R.layout.media_playback, this, true);
 
-        ListView listView = (ListView) findViewById(R.id.filelistView);
+        ListView listView = findViewById(R.id.filelistView);
         listAdapter = new FileListAdapter();
         listView.setAdapter(listAdapter);
 
         createProgressDialog();
 
-        tv_playbackInfo = (TextView) findViewById(R.id.tv_mediaPushInfo);
-        btnResume = (Button) findViewById(R.id.btnResume);
-        btnPause = (Button) findViewById(R.id.btnPause);
-        btnStop = (Button) findViewById(R.id.btnStop);
-        btnSkip = (Button) findViewById(R.id.btnSeek);
-        btnStatus = (Button) findViewById(R.id.btnStatus);
+        tv_playbackInfo = findViewById(R.id.tv_mediaPushInfo);
+        btnResume = findViewById(R.id.btnResume);
+        btnPause = findViewById(R.id.btnPause);
+        btnStop = findViewById(R.id.btnStop);
+        btnSkip = findViewById(R.id.btnSeek);
+        btnStatus = findViewById(R.id.btnStatus);
 
         btnResume.setOnClickListener(new OnClickListener() {
             @Override
@@ -251,7 +243,7 @@ public class MediaPlaybackView extends LinearLayout
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
                 alertDialogBuilder.setView(promptsView);
 
-                final EditText userInput = (EditText) promptsView.findViewById(R.id.editTextDialogUserInput);
+                final EditText userInput = promptsView.findViewById(R.id.editTextDialogUserInput);
 
                 // set dialog message
                 alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -458,8 +450,8 @@ public class MediaPlaybackView extends LinearLayout
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.media_info_item, null);
 
                 mItemHolder = new ItemHolder();
-                mItemHolder.file_name = (TextView) convertView.findViewById(R.id.filename);
-                mItemHolder.btnPlayVideo = (Button) convertView.findViewById(R.id.btn_PlayVideo);
+                mItemHolder.file_name = convertView.findViewById(R.id.filename);
+                mItemHolder.btnPlayVideo = convertView.findViewById(R.id.btn_PlayVideo);
                 convertView.setTag(mItemHolder);
             } else {
                 mItemHolder = (ItemHolder) convertView.getTag();

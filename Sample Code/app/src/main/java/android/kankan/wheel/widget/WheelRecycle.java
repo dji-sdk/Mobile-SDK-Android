@@ -37,7 +37,7 @@ public class WheelRecycle
 	private List<View> emptyItems;
 
 	// Wheel view
-	private WheelView wheel;
+    private final WheelView wheel;
 
 	/**
 	 * Constructor

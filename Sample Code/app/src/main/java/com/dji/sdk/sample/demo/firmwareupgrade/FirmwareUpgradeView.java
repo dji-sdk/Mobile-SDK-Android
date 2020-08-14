@@ -9,14 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
-
 import dji.sdk.sdkmanager.DJISDKManager;
 import dji.sdk.upgrade.UpgradeManager;
 import dji.sdk.upgrade.component.UpgradeComponent;
@@ -81,19 +78,19 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_firmware_upgrade, this, true);
 
-        startConsistentUpgradeBtn = (Button) findViewById(R.id.btn_start_consistent_upgrade);
-        stopConsistentUpgradeBtn = (Button) findViewById(R.id.btn_stop_consistent_upgrade);
-        getUpgradeStateBtn = (Button) findViewById(R.id.btn_get_upgrade_state);
-        getCurrentFirmwareInfoBtn = (Button) findViewById(R.id.btn_get_current_firmware_info);
+        startConsistentUpgradeBtn = findViewById(R.id.btn_start_consistent_upgrade);
+        stopConsistentUpgradeBtn = findViewById(R.id.btn_stop_consistent_upgrade);
+        getUpgradeStateBtn = findViewById(R.id.btn_get_upgrade_state);
+        getCurrentFirmwareInfoBtn = findViewById(R.id.btn_get_current_firmware_info);
 
-        mAcUpgradeStateTV = (TextView) findViewById(R.id.tv_ac_upgrade_state);
-        mAcUpgradeProgressTV = (TextView) findViewById(R.id.tv_ac_upgrade_progress);
-        mAcConsistentStateTV = (TextView) findViewById(R.id.tv_ac_consistent_state);
-        mAcFirmwareInfoTV = (TextView) findViewById(R.id.tv_ac_firmware_info);
-        mRcUpgradeStateTV = (TextView) findViewById(R.id.tv_rc_upgrade_state);
-        mRcUpgradeProgressTV = (TextView) findViewById(R.id.tv_rc_upgrade_progress);
-        mRcConsistentStateTV = (TextView) findViewById(R.id.tv_rc_consistent_state);
-        mRcFirmwareInfoTV = (TextView) findViewById(R.id.tv_rc_firmware_info);
+        mAcUpgradeStateTV = findViewById(R.id.tv_ac_upgrade_state);
+        mAcUpgradeProgressTV = findViewById(R.id.tv_ac_upgrade_progress);
+        mAcConsistentStateTV = findViewById(R.id.tv_ac_consistent_state);
+        mAcFirmwareInfoTV = findViewById(R.id.tv_ac_firmware_info);
+        mRcUpgradeStateTV = findViewById(R.id.tv_rc_upgrade_state);
+        mRcUpgradeProgressTV = findViewById(R.id.tv_rc_upgrade_progress);
+        mRcConsistentStateTV = findViewById(R.id.tv_rc_consistent_state);
+        mRcFirmwareInfoTV = findViewById(R.id.tv_rc_firmware_info);
 
         startConsistentUpgradeBtn.setOnClickListener(this);
         stopConsistentUpgradeBtn.setOnClickListener(this);

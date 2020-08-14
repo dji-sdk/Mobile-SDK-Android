@@ -7,10 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
-
 import com.dji.sdk.sample.R;
 
 /**
@@ -43,12 +41,12 @@ public abstract class BaseThreeBtnView extends LinearLayout implements View.OnCl
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_three_btn, this, true);
 
-        infoText = (TextView) findViewById(R.id.text_info);
+        infoText = findViewById(R.id.text_info);
 
-        middleBtn = (Button) findViewById(R.id.btn_middle);
+        middleBtn = findViewById(R.id.btn_middle);
 
-        leftBtn = (Button) findViewById(R.id.btn_left);
-        rightBtn = (Button) findViewById(R.id.btn_right);
+        leftBtn = findViewById(R.id.btn_left);
+        rightBtn = findViewById(R.id.btn_right);
 
         if (getMiddleBtnTextResourceId() == DISABLE) {
             middleBtn.setVisibility(INVISIBLE);

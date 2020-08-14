@@ -9,20 +9,13 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
-
 import dji.common.error.DJIError;
 import dji.common.flightcontroller.accesslocker.AccessLockerState;
 import dji.common.flightcontroller.accesslocker.FormattingState;
@@ -68,15 +61,15 @@ public class AccessLockerView extends LinearLayout implements View.OnClickListen
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_access_locker, this, true);
 
-        accessLockerStateTV = (TextView) findViewById(R.id.tv_access_locker_state);
-        accessFormattingStateTV = (TextView) findViewById(R.id.tv_access_formatting_state);
-        setUpUserAccountBtn = (Button) findViewById(R.id.btn_set_up_user_account);
-        loginBtn = (Button) findViewById(R.id.btn_login);
-        resetUserAccountBtn = (Button) findViewById(R.id.btn_reset_user_account);
-        modifyUserAccountBtn = (Button) findViewById(R.id.btn_modify_user_account);
-        formatBtn = (Button) findViewById(R.id.btn_format);
-        getUserAccountBtn = (Button) findViewById(R.id.btn_get_user_account);
-        getVersionBtn = (Button) findViewById(R.id.btn_get_version);
+        accessLockerStateTV = findViewById(R.id.tv_access_locker_state);
+        accessFormattingStateTV = findViewById(R.id.tv_access_formatting_state);
+        setUpUserAccountBtn = findViewById(R.id.btn_set_up_user_account);
+        loginBtn = findViewById(R.id.btn_login);
+        resetUserAccountBtn = findViewById(R.id.btn_reset_user_account);
+        modifyUserAccountBtn = findViewById(R.id.btn_modify_user_account);
+        formatBtn = findViewById(R.id.btn_format);
+        getUserAccountBtn = findViewById(R.id.btn_get_user_account);
+        getVersionBtn = findViewById(R.id.btn_get_version);
 
         setUpUserAccountBtn.setOnClickListener(this);
         loginBtn.setOnClickListener(this);
@@ -349,12 +342,12 @@ public class AccessLockerView extends LinearLayout implements View.OnClickListen
     private void createDialog(final AccessLockerSettingsListener listener, final boolean isModifyUserAccount) {
         LayoutInflater layoutInflater = LayoutInflater.from(getContext());
         View longinDialogView = layoutInflater.inflate(R.layout.dialog_username_password, null);
-        final EditText usernameET = (EditText) longinDialogView.findViewById(R.id.et_username);
-        final EditText securityCodeET = (EditText) longinDialogView.findViewById(R.id.et_security_code);
-        TextView newSecurityCodeTV = (TextView) longinDialogView.findViewById(R.id.tv_new_security_code);
-        final EditText newSecurityCodeET = (EditText) longinDialogView.findViewById(R.id.et_new_security_code);
-        TextView newAccountTV = (TextView) longinDialogView.findViewById(R.id.tv_new_account);
-        final EditText newAccountET = (EditText) longinDialogView.findViewById(R.id.et_new_account);
+        final EditText usernameET = longinDialogView.findViewById(R.id.et_username);
+        final EditText securityCodeET = longinDialogView.findViewById(R.id.et_security_code);
+        TextView newSecurityCodeTV = longinDialogView.findViewById(R.id.tv_new_security_code);
+        final EditText newSecurityCodeET = longinDialogView.findViewById(R.id.et_new_security_code);
+        TextView newAccountTV = longinDialogView.findViewById(R.id.tv_new_account);
+        final EditText newAccountET = longinDialogView.findViewById(R.id.et_new_account);
         usernameET.setInputType(InputType.TYPE_CLASS_TEXT);
         securityCodeET.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
         securityCodeET.setTransformationMethod(PasswordTransformationMethod.getInstance());

@@ -65,13 +65,13 @@ public class WheelScroller {
     public static final int MIN_DELTA_FOR_SCROLLING = 1;
 
     // Listener
-    private ScrollingListener listener;
-    
+    private final ScrollingListener listener;
+
     // Context
-    private Context context;
-    
+    private final Context context;
+
     // Scrolling
-    private GestureDetector gestureDetector;
+    private final GestureDetector gestureDetector;
     private Scroller scroller;
     private int lastScrollY;
     private float lastTouchedY;
@@ -154,9 +154,58 @@ public class WheelScroller {
 
         return true;
     }
-    
+
+    // animation handler
+    private final Handler animationHandler = new Handler() {
+        public void handleMessage(Message msg) {
+            scroller.computeScrollOffset();
+            int currY = scroller.getCurrY();
+            int delta = lastScrollY - currY;
+            lastScrollY = currY;
+            if (delta != 0) {
+                listener.onScroll(delta);
+            }
+
+            // scrolling is not finished when it comes to final Y
+            // so, finish it manually
+            if (Math.abs(currY - scroller.getFinalY()) < MIN_DELTA_FOR_SCROLLING) {
+                currY = scroller.getFinalY();
+                scroller.forceFinished(true);
+            }
+            if (!scroller.isFinished()) {
+                animationHandler.sendEmptyMessage(msg.what);
+            } else if (msg.what == MESSAGE_SCROLL) {
+                justify();
+            } else {
+                finishScrolling();
+            }
+        }
+    };
+
+    // Messages
+    private final int MESSAGE_SCROLL = 0;
+    private final int MESSAGE_JUSTIFY = 1;
+
+    /**
+     * Set next message to queue. Clears queue before.
+     *
+     * @param message the message to set
+     */
+    private void setNextMessage(int message) {
+        clearMessages();
+        animationHandler.sendEmptyMessage(message);
+    }
+
+    /**
+     * Clears messages from queue
+     */
+    private void clearMessages() {
+        animationHandler.removeMessages(MESSAGE_SCROLL);
+        animationHandler.removeMessages(MESSAGE_JUSTIFY);
+    }
+
     // gesture listener
-    private SimpleOnGestureListener gestureListener = new SimpleOnGestureListener() {
+    private final SimpleOnGestureListener gestureListener = new SimpleOnGestureListener() {
         @Override
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
             // Do scrolling in onTouchEvent() since onScroll() are not call immediately
@@ -175,55 +224,6 @@ public class WheelScroller {
         }
     };
 
-    // Messages
-    private final int MESSAGE_SCROLL = 0;
-    private final int MESSAGE_JUSTIFY = 1;
-    
-    /**
-     * Set next message to queue. Clears queue before.
-     * 
-     * @param message the message to set
-     */
-    private void setNextMessage(int message) {
-        clearMessages();
-        animationHandler.sendEmptyMessage(message);
-    }
-
-    /**
-     * Clears messages from queue
-     */
-    private void clearMessages() {
-        animationHandler.removeMessages(MESSAGE_SCROLL);
-        animationHandler.removeMessages(MESSAGE_JUSTIFY);
-    }
-    
-    // animation handler
-    private Handler animationHandler = new Handler() {
-        public void handleMessage(Message msg) {
-            scroller.computeScrollOffset();
-            int currY = scroller.getCurrY();
-            int delta = lastScrollY - currY;
-            lastScrollY = currY;
-            if (delta != 0) {
-                listener.onScroll(delta);
-            }
-            
-            // scrolling is not finished when it comes to final Y
-            // so, finish it manually 
-            if (Math.abs(currY - scroller.getFinalY()) < MIN_DELTA_FOR_SCROLLING) {
-                currY = scroller.getFinalY();
-                scroller.forceFinished(true);
-            }
-            if (!scroller.isFinished()) {
-                animationHandler.sendEmptyMessage(msg.what);
-            } else if (msg.what == MESSAGE_SCROLL) {
-                justify();
-            } else {
-                finishScrolling();
-            }
-        }
-    };
-    
     /**
      * Justifies wheel
      */

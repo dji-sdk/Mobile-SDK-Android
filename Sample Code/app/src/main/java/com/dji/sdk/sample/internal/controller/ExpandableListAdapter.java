@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.model.GroupHeader;
 import com.dji.sdk.sample.internal.model.GroupItem;
@@ -88,9 +86,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             convertView = layoutInflater.inflate(R.layout.expandable_first_level_item, parent, false);
         }
 
-        final TextView titleText = (TextView) convertView.findViewById(R.id.expandable_item_title);
-        TextView rightArrowText = (TextView) convertView.findViewById(R.id.expandable_item_right_arrow);
-        TextView arrowText = (TextView) convertView.findViewById(R.id.expandable_item_down_arrow);
+        final TextView titleText = convertView.findViewById(R.id.expandable_item_title);
+        TextView rightArrowText = convertView.findViewById(R.id.expandable_item_right_arrow);
+        TextView arrowText = convertView.findViewById(R.id.expandable_item_down_arrow);
         titleText.setText(context.getResources().getString(item.getTitleStringId()));
 
         if (isSingleItem(groupPosition)) {
@@ -143,7 +141,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             if (convertView == null) {
                 convertView = layoutInflater.inflate(R.layout.expandable_second_level_item, parent, false);
             }
-            final TextView titleText = (TextView) convertView.findViewById(R.id.expandable_item_title);
+            final TextView titleText = convertView.findViewById(R.id.expandable_item_title);
             titleText.setText(context.getResources().getString(item.getTitleStringId()));
 
             convertView.setOnClickListener(v -> {

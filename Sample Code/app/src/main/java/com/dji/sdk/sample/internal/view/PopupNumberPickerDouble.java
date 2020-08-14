@@ -1,7 +1,5 @@
 package com.dji.sdk.sample.internal.view;
 
-import java.util.List;
-import java.util.Map;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -16,19 +14,21 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.PickerValueChangeListener;
 import com.dji.sdk.sample.internal.utils.DensityUtil;
 
+import java.util.List;
+import java.util.Map;
+
 public class PopupNumberPickerDouble extends PopupWindow {
-	
+
 	private List<String> item_texts1 = null;
 	Map<Integer, List<Integer>> item_image1;
-	
+
 	private List<String> item_texts2 = null;
 	Map<Integer, List<Integer>> item_image2;
-	
+
 	String[] strItemValue1;
 	String[] strItemValue2;
 	
@@ -74,35 +74,34 @@ public class PopupNumberPickerDouble extends PopupWindow {
 		{
 			strItemValue1[i] = item_texts1.get(i);
 
-		}  
-		
+		}
+
 		strItemValue2 = new String[item_texts2.size()];
-		for (int i = 0; i < item_texts2.size(); i++) 
-		{
+		for (int i = 0; i < item_texts2.size(); i++) {
 			strItemValue2[i] = item_texts2.get(i);
-		}  
-		  
-		Wheelpicker1 = (WheelView) view.findViewById(R.id.id_number_picker1);
+		}
+
+		Wheelpicker1 = view.findViewById(R.id.id_number_picker1);
 		Wheelpicker1.addScrollingListener(onWheelScrollListener1);
 		Wheelpicker1.addClickingListener(onWheelClickedListener1);
-		Wheelpicker1.setViewAdapter(new TypeTextAdapter(context, Wheelpicker1,strItemValue1));
-		
+		Wheelpicker1.setViewAdapter(new TypeTextAdapter(context, Wheelpicker1, strItemValue1));
+
 		Wheelpicker1.setCurrentItem(pos);
 
-		Wheelpicker2 = (WheelView) view.findViewById(R.id.id_number_picker2);
+		Wheelpicker2 = view.findViewById(R.id.id_number_picker2);
 		Wheelpicker2.addScrollingListener(onWheelScrollListener2);
 		Wheelpicker2.addClickingListener(onWheelClickedListener2);
-		Wheelpicker2.setViewAdapter(new TypeTextAdapter(context, Wheelpicker2,strItemValue2));
-		
+		Wheelpicker2.setViewAdapter(new TypeTextAdapter(context, Wheelpicker2, strItemValue2));
+
 		Wheelpicker2.setCurrentItem(pos);
-		
-		ImageButton select_button = (ImageButton) view.findViewById(R.id.id_select_imageButton1);
+
+		ImageButton select_button = view.findViewById(R.id.id_select_imageButton1);
 		select_button.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				valueChangeListen.onValueChange(picker_currentPos1, picker_currentPos2);
-				
+
 			}
 		});
 
@@ -124,7 +123,7 @@ public class PopupNumberPickerDouble extends PopupWindow {
 
 		@Override
 		protected CharSequence getItemText(int index) {
-			return strItemValue[index].toString();
+			return strItemValue[index];
 		}
 
 		@Override
@@ -158,10 +157,10 @@ public class PopupNumberPickerDouble extends PopupWindow {
 		public View getItem(int index, View convertView, ViewGroup parent) {
 
 			View view = super.getItem(index, convertView, parent);
-			TextView tv = (TextView) view.findViewById(R.id.type_name);
+			TextView tv = view.findViewById(R.id.type_name);
 			tv.setVisibility(View.GONE);
 			tv.setText("fff 0");
-			ImageView image = (ImageView) view.findViewById(R.id.flag);
+			ImageView image = view.findViewById(R.id.flag);
 			image.setVisibility(View.VISIBLE);
 			image.setImageResource(imagelist.get(index));
 			tv.setText("fff 1");
@@ -192,10 +191,10 @@ public class PopupNumberPickerDouble extends PopupWindow {
 		public View getItem(int index, View convertView, ViewGroup parent) {
 
 			View view = super.getItem(index, convertView, parent);
-			TextView tv = (TextView) view.findViewById(R.id.type_name);
+			TextView tv = view.findViewById(R.id.type_name);
 			tv.setVisibility(View.GONE);
 			tv.setText("fff 0");
-			ImageView image = (ImageView) view.findViewById(R.id.flag);
+			ImageView image = view.findViewById(R.id.flag);
 			image.setVisibility(View.VISIBLE);
 			image.setImageResource(imagelist.get(index));
 			tv.setText("fff 1");

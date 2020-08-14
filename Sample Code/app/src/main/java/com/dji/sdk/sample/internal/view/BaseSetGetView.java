@@ -6,14 +6,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
-
+import android.widget.*;
 import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 
 /**
@@ -69,13 +63,13 @@ public abstract class BaseSetGetView extends LinearLayout implements View.OnClic
 
         layoutInflater.inflate(R.layout.view_set_get, this, true);
 
-        mTextViewGet = (TextView) findViewById(R.id.text_get);
-        mTextViewInfo = (TextView) findViewById(R.id.text_info);
+        mTextViewGet = findViewById(R.id.text_get);
+        mTextViewInfo = findViewById(R.id.text_info);
 
-        mBtnGet = (Button) findViewById(R.id.btn_get);
-        mBtnSet = (Button) findViewById(R.id.btn_set);
+        mBtnGet = findViewById(R.id.btn_get);
+        mBtnSet = findViewById(R.id.btn_set);
 
-        mSpinnerSet = (Spinner) findViewById(R.id.spinner_set);
+        mSpinnerSet = findViewById(R.id.spinner_set);
 
         mTextViewInfo.setText(context.getString(getDescription()));
 

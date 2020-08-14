@@ -5,9 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 
 /**
@@ -42,7 +40,7 @@ public abstract class BasePushDataView extends RelativeLayout implements Present
 
         layoutInflater.inflate(R.layout.view_show_osd, this, true);
 
-        textViewOSD = (TextView) findViewById(R.id.text_show_osd);
+        textViewOSD = findViewById(R.id.text_show_osd);
 
         textViewOSD.setText(context.getString(getDescription()));
     }

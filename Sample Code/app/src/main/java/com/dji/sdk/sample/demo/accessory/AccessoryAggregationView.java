@@ -10,9 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.SeekBarValueChangeListener;
 import com.dji.sdk.sample.internal.audiohandler.AudioRecorderHandler;
@@ -23,12 +21,6 @@ import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PopupSeekBar;
 import com.dji.sdk.sample.internal.view.PresentableView;
 import com.squareup.otto.Subscribe;
-
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import dji.common.accessory.AccessoryAggregationState;
 import dji.common.accessory.SettingsDefinitions;
 import dji.common.accessory.SettingsDefinitions.PlayMode;
@@ -46,6 +38,11 @@ import dji.sdk.accessory.speaker.Speaker;
 import dji.sdk.accessory.speaker.TransmissionListener;
 import dji.sdk.accessory.spotlight.Spotlight;
 import dji.sdk.products.Aircraft;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class AccessoryAggregationView extends LinearLayout implements View.OnClickListener, PresentableView {
 
@@ -134,18 +131,18 @@ public class AccessoryAggregationView extends LinearLayout implements View.OnCli
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_accessory_aggregation, this, true);
 
-        accessoryAggregationStateTV = (TextView) findViewById(R.id.tv_accessory_aggregation_state);
-        spotlightStateTV = (TextView) findViewById(R.id.tv_spot_light_state);
-        transmittingStateTV = (TextView) findViewById(R.id.tv_transmitting_state);
-        speakerStateTV = (TextView) findViewById(R.id.tv_speaker_state);
-        beaconEnabledBtn = (Button) findViewById(R.id.btn_beacon_enabled);
-        spotLightEnabledBtn = (Button) findViewById(R.id.btn_spotlight_enabled);
-        setSpotLightBrightnessBtn = (Button) findViewById(R.id.btn_set_spotlight_brightness);
-        setSpeakerVolumeBtn = (Button) findViewById(R.id.btn_set_speaker_volume);
-        setPlayModeBtn = (Button) findViewById(R.id.btn_set_speaker_play_mode);
-        stopPlayingBtn = (Button) findViewById(R.id.btn_stop_playing);
-        startRecordBtn = (Button) findViewById(R.id.btn_start_record);
-        stopRecordBtn = (Button) findViewById(R.id.btn_stop_record);
+        accessoryAggregationStateTV = findViewById(R.id.tv_accessory_aggregation_state);
+        spotlightStateTV = findViewById(R.id.tv_spot_light_state);
+        transmittingStateTV = findViewById(R.id.tv_transmitting_state);
+        speakerStateTV = findViewById(R.id.tv_speaker_state);
+        beaconEnabledBtn = findViewById(R.id.btn_beacon_enabled);
+        spotLightEnabledBtn = findViewById(R.id.btn_spotlight_enabled);
+        setSpotLightBrightnessBtn = findViewById(R.id.btn_set_spotlight_brightness);
+        setSpeakerVolumeBtn = findViewById(R.id.btn_set_speaker_volume);
+        setPlayModeBtn = findViewById(R.id.btn_set_speaker_play_mode);
+        stopPlayingBtn = findViewById(R.id.btn_stop_playing);
+        startRecordBtn = findViewById(R.id.btn_start_record);
+        stopRecordBtn = findViewById(R.id.btn_stop_record);
 
 
         beaconEnabledBtn.setOnClickListener(this);
