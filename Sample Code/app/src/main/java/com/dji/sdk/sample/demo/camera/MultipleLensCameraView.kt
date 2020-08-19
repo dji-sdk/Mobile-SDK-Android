@@ -32,6 +32,7 @@ import dji.sdk.camera.VideoFeeder
 import dji.sdk.camera.VideoFeeder.PhysicalSourceListener
 import java.util.*
 
+@Suppress("UNCHECKED_CAST", "UNUSED_ANONYMOUS_PARAMETER")
 class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnClickListener, PresentableView {
 
     private var popupNumberPicker: PopupNumberPicker? = null
