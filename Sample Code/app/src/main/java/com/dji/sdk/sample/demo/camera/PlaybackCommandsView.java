@@ -6,15 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-
 import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
-
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
@@ -108,10 +105,10 @@ public class PlaybackCommandsView extends RelativeLayout implements View.OnClick
 
         layoutInflater.inflate(R.layout.view_playback_commands, this, true);
 
-        Button btnPrevious = (Button) findViewById(R.id.btn_previous);
-        Button btnNext = (Button) findViewById(R.id.btn_next);
-        Button btnMultiple = (Button) findViewById(R.id.btn_multiple);
-        Button btnSingle = (Button) findViewById(R.id.btn_single);
+        Button btnPrevious = findViewById(R.id.btn_previous);
+        Button btnNext = findViewById(R.id.btn_next);
+        Button btnMultiple = findViewById(R.id.btn_multiple);
+        Button btnSingle = findViewById(R.id.btn_single);
 
         btnMultiple.setOnClickListener(this);
         btnNext.setOnClickListener(this);

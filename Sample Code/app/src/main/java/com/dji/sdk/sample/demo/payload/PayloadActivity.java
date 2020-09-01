@@ -7,15 +7,12 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.utils.Helper;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
-
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.useraccount.UserAccountState;
@@ -80,13 +77,13 @@ public class PayloadActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-        pushTextView = (TextView) findViewById(R.id.push_info_text);
-        payloadNameView = (TextView) findViewById(R.id.payload_name);
-        pushTextViewFromUsb = (TextView) findViewById(R.id.push_info_text_usb);
+        pushTextView = findViewById(R.id.push_info_text);
+        payloadNameView = findViewById(R.id.payload_name);
+        pushTextViewFromUsb = findViewById(R.id.push_info_text_usb);
         pushTextView.setMovementMethod(new ScrollingMovementMethod());
         initListener();
     }

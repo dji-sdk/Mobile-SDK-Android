@@ -33,7 +33,6 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.animation.Interpolator;
 import android.wheel.wheel.adapter.WheelViewAdapter;
 import android.widget.LinearLayout;
-
 import com.dji.sdk.sample.R;
 
 import java.util.LinkedList;
@@ -95,18 +94,17 @@ public class WheelView extends View
 	private WheelViewAdapter viewAdapter;
 
 	// Recycle
-	private WheelRecycle recycle = new WheelRecycle(this);
+	private final WheelRecycle recycle = new WheelRecycle(this);
 
 	// Listeners
-	private List<OnWheelChangedListener> changingListeners = new LinkedList<OnWheelChangedListener>();
-	private List<OnWheelScrollListener> scrollingListeners = new LinkedList<OnWheelScrollListener>();
-	private List<OnWheelClickedListener> clickingListeners = new LinkedList<OnWheelClickedListener>();
+	private final List<OnWheelChangedListener> changingListeners = new LinkedList<OnWheelChangedListener>();
+	private final List<OnWheelScrollListener> scrollingListeners = new LinkedList<OnWheelScrollListener>();
+	private final List<OnWheelClickedListener> clickingListeners = new LinkedList<OnWheelClickedListener>();
 
 	/**
 	 * Constructor
 	 */
-	public WheelView(Context context, AttributeSet attrs, int defStyle)
-	{
+	public WheelView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		initData(context);
 	}
@@ -235,11 +233,9 @@ public class WheelView extends View
 	}
 
 	// Adapter listener
-	private DataSetObserver dataObserver = new DataSetObserver()
-	{
+	private final DataSetObserver dataObserver = new DataSetObserver() {
 		@Override
-		public void onChanged()
-		{
+		public void onChanged() {
 			invalidateWheel(false);
 		}
 
@@ -851,8 +847,6 @@ public class WheelView extends View
 	/**
 	 * Scroll the wheel
 	 * 
-	 * @param itemsToSkip
-	 *            items to scroll
 	 * @param time
 	 *            scrolling duration
 	 */

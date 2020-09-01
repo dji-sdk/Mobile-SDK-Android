@@ -5,9 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 
 public abstract class BaseAppActivationView extends FrameLayout implements PresentableView{
@@ -38,9 +36,9 @@ public abstract class BaseAppActivationView extends FrameLayout implements Prese
 
         layoutInflater.inflate(R.layout.view_app_activation, this, true);
 
-        appActivationStateTV = (TextView) findViewById(R.id.tv_activation_state_info);
-        bindingStateTV = (TextView) findViewById(R.id.tv_binding_state_info);
-        adsbStateTV = (TextView) findViewById(R.id.tv_adsb_info);
+        appActivationStateTV = findViewById(R.id.tv_activation_state_info);
+        bindingStateTV = findViewById(R.id.tv_binding_state_info);
+        adsbStateTV = findViewById(R.id.tv_adsb_info);
     }
 
 }

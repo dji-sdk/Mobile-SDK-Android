@@ -8,13 +8,10 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
-
 import dji.common.flightcontroller.FlightMode;
 import dji.sdk.flightcontroller.FlightController;
 
@@ -73,19 +70,19 @@ public abstract class MissionBaseView extends RelativeLayout implements View.OnC
 
         layoutInflater.inflate(R.layout.view_mission, this, true);
 
-        missionPushInfoTV = (TextView) findViewById(R.id.tv_mission_info);
-        FCPushInfoTV = (TextView) findViewById(R.id.tv_fc_info);
-        loadBtn = (Button) findViewById(R.id.btn_load);
-        uploadBtn = (Button) findViewById(R.id.btn_upload);
-        startBtn = (Button) findViewById(R.id.btn_start);
-        stopBtn = (Button) findViewById(R.id.btn_stop);
-        pauseBtn = (Button) findViewById(R.id.btn_pause);
-        resumeBtn = (Button) findViewById(R.id.btn_resume);
-        downloadBtn = (Button) findViewById(R.id.btn_download);
-        progressBar = (ProgressBar) findViewById(R.id.pb_mission);
-        simulatorBtn = (Button) findViewById(R.id.btn_simulator);
-        maxAltitudeBtn = (Button) findViewById(R.id.btn_set_maximum_altitude);
-        maxRadiusBtn = (Button) findViewById(R.id.btn_set_maximum_radius);
+        missionPushInfoTV = findViewById(R.id.tv_mission_info);
+        FCPushInfoTV = findViewById(R.id.tv_fc_info);
+        loadBtn = findViewById(R.id.btn_load);
+        uploadBtn = findViewById(R.id.btn_upload);
+        startBtn = findViewById(R.id.btn_start);
+        stopBtn = findViewById(R.id.btn_stop);
+        pauseBtn = findViewById(R.id.btn_pause);
+        resumeBtn = findViewById(R.id.btn_resume);
+        downloadBtn = findViewById(R.id.btn_download);
+        progressBar = findViewById(R.id.pb_mission);
+        simulatorBtn = findViewById(R.id.btn_simulator);
+        maxAltitudeBtn = findViewById(R.id.btn_set_maximum_altitude);
+        maxRadiusBtn = findViewById(R.id.btn_set_maximum_radius);
 
         loadBtn.setOnClickListener(this);
         uploadBtn.setOnClickListener(this);

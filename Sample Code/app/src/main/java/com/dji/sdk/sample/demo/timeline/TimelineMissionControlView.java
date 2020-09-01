@@ -7,39 +7,21 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.GeneralUtils;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 import dji.common.error.DJIError;
 import dji.common.gimbal.Attitude;
 import dji.common.gimbal.Rotation;
 import dji.common.mission.hotpoint.HotpointHeading;
 import dji.common.mission.hotpoint.HotpointMission;
 import dji.common.mission.hotpoint.HotpointStartPoint;
-import dji.common.mission.waypoint.Waypoint;
-import dji.common.mission.waypoint.WaypointAction;
-import dji.common.mission.waypoint.WaypointActionType;
-import dji.common.mission.waypoint.WaypointMission;
-import dji.common.mission.waypoint.WaypointMissionFinishedAction;
-import dji.common.mission.waypoint.WaypointMissionFlightPathMode;
-import dji.common.mission.waypoint.WaypointMissionGotoWaypointMode;
-import dji.common.mission.waypoint.WaypointMissionHeadingMode;
+import dji.common.mission.waypoint.*;
 import dji.common.model.LocationCoordinate2D;
 import dji.common.util.CommonCallbacks;
 import dji.sdk.base.BaseProduct;
@@ -49,19 +31,13 @@ import dji.sdk.mission.Triggerable;
 import dji.sdk.mission.timeline.TimelineElement;
 import dji.sdk.mission.timeline.TimelineEvent;
 import dji.sdk.mission.timeline.TimelineMission;
-import dji.sdk.mission.timeline.actions.GimbalAttitudeAction;
-import dji.sdk.mission.timeline.actions.GoHomeAction;
-import dji.sdk.mission.timeline.actions.GoToAction;
-import dji.sdk.mission.timeline.actions.HotpointAction;
-import dji.sdk.mission.timeline.actions.RecordVideoAction;
-import dji.sdk.mission.timeline.actions.ShootPhotoAction;
-import dji.sdk.mission.timeline.actions.TakeOffAction;
-import dji.sdk.mission.timeline.triggers.AircraftLandedTrigger;
-import dji.sdk.mission.timeline.triggers.BatteryPowerLevelTrigger;
-import dji.sdk.mission.timeline.triggers.Trigger;
-import dji.sdk.mission.timeline.triggers.TriggerEvent;
-import dji.sdk.mission.timeline.triggers.WaypointReachedTrigger;
+import dji.sdk.mission.timeline.actions.*;
+import dji.sdk.mission.timeline.triggers.*;
 import dji.sdk.products.Aircraft;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Class for Timeline MissionControl.
@@ -427,15 +403,15 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_timeline, this, true);
 
-        timelineInfoTV = (TextView) findViewById(R.id.tv_timeline_info);
-        runningInfoTV = (TextView) findViewById(R.id.tv_running_info);
-        getHomeBtn = (Button) findViewById(R.id.btn_get_homepoint);
-        prepareBtn = (Button) findViewById(R.id.btn_timeline_init);
-        startBtn = (Button) findViewById(R.id.btn_timeline_start);
-        stopBtn = (Button) findViewById(R.id.btn_timeline_stop);
-        pauseBtn = (Button) findViewById(R.id.btn_timeline_pause);
-        resumeBtn = (Button) findViewById(R.id.btn_timeline_resume);
-        cleanBtn = (Button) findViewById(R.id.btn_timeline_clean);
+        timelineInfoTV = findViewById(R.id.tv_timeline_info);
+        runningInfoTV = findViewById(R.id.tv_running_info);
+        getHomeBtn = findViewById(R.id.btn_get_homepoint);
+        prepareBtn = findViewById(R.id.btn_timeline_init);
+        startBtn = findViewById(R.id.btn_timeline_start);
+        stopBtn = findViewById(R.id.btn_timeline_stop);
+        pauseBtn = findViewById(R.id.btn_timeline_pause);
+        resumeBtn = findViewById(R.id.btn_timeline_resume);
+        cleanBtn = findViewById(R.id.btn_timeline_clean);
 
         getHomeBtn.setOnClickListener(this);
         prepareBtn.setOnClickListener(this);

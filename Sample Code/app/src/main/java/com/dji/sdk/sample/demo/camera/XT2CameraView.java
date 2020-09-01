@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.SeekBarValueChangeListener;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
@@ -18,9 +16,6 @@ import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.utils.VideoFeedView;
 import com.dji.sdk.sample.internal.view.PopupSeekBar;
 import com.dji.sdk.sample.internal.view.PresentableView;
-
-import java.util.Random;
-
 import dji.common.airlink.PhysicalSource;
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
@@ -34,6 +29,8 @@ import dji.sdk.base.BaseProduct;
 import dji.sdk.camera.Camera;
 import dji.sdk.camera.VideoFeeder;
 import dji.sdk.sdkmanager.DJISDKManager;
+
+import java.util.Random;
 
 /**
  * This View will demo some of the functionality of XT2 Camera
@@ -83,8 +80,8 @@ public class XT2CameraView extends LinearLayout implements View.OnClickListener,
         findViewById(R.id.btn_shoot_photo).setOnClickListener(this);
         findViewById(R.id.btn_get_storage_location).setOnClickListener(this);
         findViewById(R.id.btn_get_remaining_photo_count).setOnClickListener(this);
-        primaryVideoFeedTitle = (TextView) findViewById(R.id.video_feed_title);
-        primaryVideoFeed = (VideoFeedView) findViewById(R.id.primary_video_feed);
+        primaryVideoFeedTitle = findViewById(R.id.video_feed_title);
+        primaryVideoFeed = findViewById(R.id.primary_video_feed);
         popupSeekBar = new PopupSeekBar(getContext(), 0, 100, "MSX Level", new SeekBarValueChangeListener() {
             @Override
             public void onValueChange(int val1, int val2) {

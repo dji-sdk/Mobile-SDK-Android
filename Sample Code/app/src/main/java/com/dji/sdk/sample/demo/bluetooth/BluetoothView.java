@@ -4,19 +4,15 @@ import android.app.Service;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.*;
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
-import com.dji.sdk.sample.internal.utils.DialogUtils;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
 import dji.sdk.sdkmanager.BluetoothDevice;
 import dji.sdk.sdkmanager.BluetoothProductConnector;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,11 +62,11 @@ public class BluetoothView extends LinearLayout implements View.OnClickListener 
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
 
         layoutInflater.inflate(R.layout.content_bluetooth, this, true);
-        Button mBtnSearchBluetooth = (Button) findViewById(R.id.btn_SearchBluetooth);
-        mSpinnerSelection = (Spinner) findViewById(R.id.spin_Connect);
-        Button mBtnDisconnect = (Button) findViewById(R.id.btn_Disconnect);
-        Button mBtnConnect = (Button) findViewById(R.id.btn_Connect);
-        mTextDevicesInformation = (TextView) findViewById(R.id.text_DevicesInformation);
+        Button mBtnSearchBluetooth = findViewById(R.id.btn_SearchBluetooth);
+        mSpinnerSelection = findViewById(R.id.spin_Connect);
+        Button mBtnDisconnect = findViewById(R.id.btn_Disconnect);
+        Button mBtnConnect = findViewById(R.id.btn_Connect);
+        mTextDevicesInformation = findViewById(R.id.text_DevicesInformation);
         mBtnSearchBluetooth.setOnClickListener(this);
         mBtnDisconnect.setOnClickListener(this);
         mBtnConnect.setOnClickListener(this);

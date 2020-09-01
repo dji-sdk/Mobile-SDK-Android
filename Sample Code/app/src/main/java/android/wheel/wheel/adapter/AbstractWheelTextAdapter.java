@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.dji.sdk.sample.R;
 
 /**
@@ -216,12 +215,12 @@ public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
 			if (convertView == null) {
 				convertView = getView(itemResourceId, parent);
 				//TextView textview = (TextView) convertView.findViewById(R.id.type_name);
-				
-			
+
+
 			}
 			TextView textView = getTextView(convertView, itemTextResourceId);
 			//用于多选的时候 改变选中状态
-			ImageView imageView = (ImageView) convertView.findViewById(R.id.flag);
+			ImageView imageView = convertView.findViewById(R.id.flag);
 			//DJILog.d("LWF", "Text at index " + index + " is " + textView.getText() + " itemTextResourceId " + itemTextResourceId);
 			if (isSelected != null && index < isSelected.length) {
 				if (isSelected[index]) {
@@ -301,7 +300,7 @@ public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
 			if (textResource == NO_RESOURCE && view instanceof TextView) {
 				text = (TextView) view;
 			} else if (textResource != NO_RESOURCE) {
-				text = (TextView) view.findViewById(textResource);
+				text = view.findViewById(textResource);
 			}
 		} catch (ClassCastException e) {
 			//DJILog.e("AbstractWheelAdapter", "You must supply a resource ID for a TextView");

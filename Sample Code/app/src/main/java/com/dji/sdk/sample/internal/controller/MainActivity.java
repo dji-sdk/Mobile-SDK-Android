@@ -15,35 +15,23 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.model.ViewWrapper;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.DemoListView;
 import com.dji.sdk.sample.internal.view.PresentableView;
 import com.squareup.otto.Subscribe;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import dji.common.error.DJIError;
 import dji.common.error.DJISDKError;
 import dji.common.util.CommonCallbacks;
@@ -53,15 +41,20 @@ import dji.sdk.base.BaseProduct;
 import dji.sdk.sdkmanager.DJISDKInitEvent;
 import dji.sdk.sdkmanager.DJISDKManager;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    private static final String[] REQUIRED_PERMISSION_LIST = new String[] {
-        Manifest.permission.VIBRATE, // Gimbal rotation
-        Manifest.permission.INTERNET, // API requests
-        Manifest.permission.ACCESS_WIFI_STATE, // WIFI connected products
-        Manifest.permission.ACCESS_COARSE_LOCATION, // Maps
-        Manifest.permission.ACCESS_NETWORK_STATE, // WIFI connected products
+    private static final String[] REQUIRED_PERMISSION_LIST = new String[]{
+            Manifest.permission.VIBRATE, // Gimbal rotation
+            Manifest.permission.INTERNET, // API requests
+            Manifest.permission.ACCESS_WIFI_STATE, // WIFI connected products
+            Manifest.permission.ACCESS_COARSE_LOCATION, // Maps
+            Manifest.permission.ACCESS_NETWORK_STATE, // WIFI connected products
         Manifest.permission.ACCESS_FINE_LOCATION, // Maps
         Manifest.permission.CHANGE_WIFI_STATE, // Changing between WIFI and USB connection
         Manifest.permission.WRITE_EXTERNAL_STORAGE, // Log files
@@ -103,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
         DJISampleApplication.getEventBus().register(this);
         setContentView(R.layout.activity_main);
         setupActionBar();
-        contentFrameLayout = (FrameLayout) findViewById(R.id.framelayout_content);
-        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        contentFrameLayout = findViewById(R.id.framelayout_content);
+        progressBar = findViewById(R.id.progress_bar);
         initParams();
     }
 
@@ -360,7 +353,7 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
             actionBar.setCustomView(R.layout.actionbar_custom);
 
-            titleTextView = (TextView) (actionBar.getCustomView().findViewById(R.id.title_tv));
+            titleTextView = actionBar.getCustomView().findViewById(R.id.title_tv);
         }
     }
 

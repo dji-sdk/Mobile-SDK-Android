@@ -32,6 +32,7 @@ import dji.sdk.camera.VideoFeeder
 import dji.sdk.camera.VideoFeeder.PhysicalSourceListener
 import java.util.*
 
+@Suppress("UNCHECKED_CAST", "UNUSED_ANONYMOUS_PARAMETER")
 class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnClickListener, PresentableView {
 
     private var popupNumberPicker: PopupNumberPicker? = null
@@ -97,7 +98,7 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_video_stream_source -> {
-                val tempStreamSources: Array<CameraVideoStreamSource?>? = updateCameraVideoStreamSourceRange()
+                val tempStreamSources: Array<CameraVideoStreamSource?>? = updateCameraVideoStreamSourceRange() as Array<CameraVideoStreamSource?>?
                 val streamSources: Array<CameraVideoStreamSource?>?
                 streamSources = tempStreamSources ?: arrayOfNulls(0)
                 val runSetCameraStreamSource = Runnable {
@@ -174,12 +175,12 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
         }
     }
 
-    private fun updateCameraVideoStreamSourceRange(): Array<CameraVideoStreamSource?>? {
+    private fun updateCameraVideoStreamSourceRange(): Array<*>? {
         val key: DJIKey = CameraKey.create(CameraKey.CAMERA_VIDEO_STREAM_SOURCE_RANGE, 0)
         return if (KeyManager.getInstance().getValue(key) == null) {
             null
         } else {
-            val arrayOfCameraVideoStreamSources = KeyManager.getInstance().getValue(key) as Array<CameraVideoStreamSource?>?
+            val arrayOfCameraVideoStreamSources = KeyManager.getInstance().getValue(key) as Array<*>?
             arrayOfCameraVideoStreamSources
         }
     }
@@ -213,7 +214,8 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
         return if (KeyManager.getInstance().getValue(key) == null) {
             null
         } else {
-            (KeyManager.getInstance().getValue(key) as Array<SettingsDefinitions.FlatCameraMode?>?)
+            val arrayOfAnys = KeyManager.getInstance().getValue(key) as Array<*>?
+            arrayOfAnys as Array<SettingsDefinitions.FlatCameraMode?>?
         }
     }
 

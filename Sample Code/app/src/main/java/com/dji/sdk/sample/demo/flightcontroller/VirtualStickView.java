@@ -4,14 +4,8 @@ import android.app.Service;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.ToggleButton;
-
+import android.widget.*;
 import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.OnScreenJoystickListener;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
@@ -20,24 +14,19 @@ import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.OnScreenJoystick;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
-
-import java.util.Timer;
-import java.util.TimerTask;
-
 import dji.common.error.DJIError;
 import dji.common.flightcontroller.simulator.InitializationData;
 import dji.common.flightcontroller.simulator.SimulatorState;
-import dji.common.flightcontroller.virtualstick.FlightControlData;
-import dji.common.flightcontroller.virtualstick.FlightCoordinateSystem;
-import dji.common.flightcontroller.virtualstick.RollPitchControlMode;
-import dji.common.flightcontroller.virtualstick.VerticalControlMode;
-import dji.common.flightcontroller.virtualstick.YawControlMode;
+import dji.common.flightcontroller.virtualstick.*;
 import dji.common.model.LocationCoordinate2D;
 import dji.common.util.CommonCallbacks;
 import dji.keysdk.FlightControllerKey;
 import dji.keysdk.KeyManager;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.flightcontroller.Simulator;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 //TODO: Refactor needed
 
@@ -114,20 +103,20 @@ public class VirtualStickView extends RelativeLayout
     }
 
     private void initUI() {
-        Button btnEnableVirtualStick = (Button) findViewById(R.id.btn_enable_virtual_stick);
-        Button btnDisableVirtualStick = (Button) findViewById(R.id.btn_disable_virtual_stick);
-        Button btnHorizontalCoordinate = (Button) findViewById(R.id.btn_horizontal_coordinate);
-        Button btnSetYawControlMode = (Button) findViewById(R.id.btn_yaw_control_mode);
-        Button btnSetVerticalControlMode = (Button) findViewById(R.id.btn_vertical_control_mode);
-        Button btnSetRollPitchControlMode = (Button) findViewById(R.id.btn_roll_pitch_control_mode);
-        Button btnTakeOff = (Button) findViewById(R.id.btn_take_off);
+        Button btnEnableVirtualStick = findViewById(R.id.btn_enable_virtual_stick);
+        Button btnDisableVirtualStick = findViewById(R.id.btn_disable_virtual_stick);
+        Button btnHorizontalCoordinate = findViewById(R.id.btn_horizontal_coordinate);
+        Button btnSetYawControlMode = findViewById(R.id.btn_yaw_control_mode);
+        Button btnSetVerticalControlMode = findViewById(R.id.btn_vertical_control_mode);
+        Button btnSetRollPitchControlMode = findViewById(R.id.btn_roll_pitch_control_mode);
+        Button btnTakeOff = findViewById(R.id.btn_take_off);
 
-        btnSimulator = (ToggleButton) findViewById(R.id.btn_start_simulator);
+        btnSimulator = findViewById(R.id.btn_start_simulator);
 
-        textView = (TextView) findViewById(R.id.textview_simulator);
+        textView = findViewById(R.id.textview_simulator);
 
-        screenJoystickRight = (OnScreenJoystick) findViewById(R.id.directionJoystickRight);
-        screenJoystickLeft = (OnScreenJoystick) findViewById(R.id.directionJoystickLeft);
+        screenJoystickRight = findViewById(R.id.directionJoystickRight);
+        screenJoystickLeft = findViewById(R.id.directionJoystickLeft);
 
         btnEnableVirtualStick.setOnClickListener(this);
         btnDisableVirtualStick.setOnClickListener(this);
@@ -185,13 +174,13 @@ public class VirtualStickView extends RelativeLayout
 
                 if (horizontalCoordinateFlag) {
                     if (rollPitchControlModeFlag) {
-                        pitch = (float) (pitchJoyControlMaxSpeed * pX);
+                        pitch = pitchJoyControlMaxSpeed * pX;
 
-                        roll = (float) (rollJoyControlMaxSpeed * pY);
+                        roll = rollJoyControlMaxSpeed * pY;
                     } else {
                         pitch = -(float) (pitchJoyControlMaxSpeed * pY);
 
-                        roll = (float) (rollJoyControlMaxSpeed * pX);
+                        roll = rollJoyControlMaxSpeed * pX;
                     }
                 }
 

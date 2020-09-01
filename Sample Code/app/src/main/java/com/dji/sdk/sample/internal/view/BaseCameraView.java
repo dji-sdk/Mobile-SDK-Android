@@ -33,7 +33,7 @@ public class BaseCameraView extends FrameLayout implements TextureView.SurfaceTe
 
         Log.v("TAG", "Start to test");
 
-        TextureView mVideoSurface = (TextureView) findViewById(R.id.texture_video_previewer_surface);
+        TextureView mVideoSurface = findViewById(R.id.texture_video_previewer_surface);
 
         if (null != mVideoSurface) {
             mVideoSurface.setSurfaceTextureListener(this);

@@ -30,7 +30,7 @@ public class BaseFpvView extends FrameLayout implements TextureView.SurfaceTextu
 
         layoutInflater.inflate(R.layout.view_fpv_and_camera_display, this, true);
 
-        TextureView mVideoSurface = (TextureView) findViewById(R.id.texture_video_previewer_surface);
+        TextureView mVideoSurface = findViewById(R.id.texture_video_previewer_surface);
 
         if (null != mVideoSurface) {
             mVideoSurface.setSurfaceTextureListener(this);

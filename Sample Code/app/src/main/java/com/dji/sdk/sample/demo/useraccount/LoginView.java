@@ -102,10 +102,10 @@ public class LoginView extends LinearLayout implements View.OnClickListener {
         setOrientation(VERTICAL);
         inflate(getContext(), R.layout.view_login, this);
 
-        loginBtn = (Button) findViewById(R.id.btn_login);
-        logoutBtn = (Button) findViewById(R.id.btn_login_out);
+        loginBtn = findViewById(R.id.btn_login);
+        logoutBtn = findViewById(R.id.btn_login_out);
         loginBtn.setOnClickListener(this);
         logoutBtn.setOnClickListener(this);
-        accountStateTV = (TextView) findViewById(R.id.tv_account_state_info);
+        accountStateTV = findViewById(R.id.tv_account_state_info);
     }
 }

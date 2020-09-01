@@ -24,10 +24,10 @@ package android.kankan.wheel.widget;
  */
 public class ItemsRange {
 	// First item number
-	private int first;
-	
-	// Items count
-	private int count;
+    private final int first;
+
+    // Items count
+    private final int count;
 
 	/**
 	 * Default constructor. Creates an empty range

@@ -1,29 +1,18 @@
 package com.dji.sdk.sample.demo.keymanager;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import dji.common.camera.SettingsDefinitions;
 import dji.common.handheldcontroller.ControllerMode;
-import dji.keysdk.AccessoryAggregationKey;
-import dji.keysdk.AirLinkKey;
-import dji.keysdk.BatteryKey;
-import dji.keysdk.CameraKey;
-import dji.keysdk.DJIKey;
-import dji.keysdk.FlightControllerKey;
-import dji.keysdk.GimbalKey;
-import dji.keysdk.HandheldControllerKey;
-import dji.keysdk.KeyManager;
-import dji.keysdk.PayloadKey;
-import dji.keysdk.ProductKey;
-import dji.keysdk.RemoteControllerKey;
+import dji.keysdk.*;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.battery.Battery;
 import dji.sdk.camera.Camera;
 import dji.sdk.gimbal.Gimbal;
 import dji.sdk.products.Aircraft;
 import dji.sdk.sdkmanager.DJISDKManager;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author dji
@@ -269,7 +258,7 @@ public class KeyManagerUtils {
 
                 ArrayList<Integer> cameraIndexList = new ArrayList<>();
                 cameraIndexList.clear();
-                List<Camera> cameraList = ((Aircraft) product).getCameras();
+                List<Camera> cameraList = product.getCameras();
                 for (Camera camera : cameraList) {
                     cameraIndexList.add(camera.getIndex());
                 }
@@ -285,7 +274,7 @@ public class KeyManagerUtils {
 
                 ArrayList<Integer> batteryIndexList = new ArrayList<>();
                 batteryIndexList.clear();
-                List<Battery> batteryList = ((Aircraft) product).getBatteries();
+                List<Battery> batteryList = product.getBatteries();
                 for (Battery battery : batteryList) {
                     batteryIndexList.add(battery.getIndex());
                 }

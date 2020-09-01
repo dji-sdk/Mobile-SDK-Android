@@ -1,11 +1,7 @@
 package com.dji.sdk.sample.internal.view;
 
 import android.content.Context;
-import android.os.Build;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Looper;
-import android.os.Message;
+import android.os.*;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -18,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.demo.bluetooth.BluetoothView;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
@@ -28,9 +23,6 @@ import com.dji.sdk.sample.internal.utils.DialogUtils;
 import com.dji.sdk.sample.internal.utils.GeneralUtils;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.squareup.otto.Subscribe;
-
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import dji.common.error.DJIError;
 import dji.common.realname.AppActivationState;
 import dji.common.useraccount.UserAccountState;
@@ -46,6 +38,8 @@ import dji.sdk.realname.AppActivationManager;
 import dji.sdk.sdkmanager.BluetoothProductConnector;
 import dji.sdk.sdkmanager.DJISDKManager;
 import dji.sdk.useraccount.UserAccountManager;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Created by dji on 15/12/18.
@@ -89,12 +83,12 @@ public class MainContent extends RelativeLayout {
     private void initUI() {
         Log.v(TAG, "initUI");
 
-        mTextConnectionStatus = (TextView) findViewById(R.id.text_connection_status);
-        mTextModelAvailable = (TextView) findViewById(R.id.text_model_available);
-        mTextProduct = (TextView) findViewById(R.id.text_product_info);
-        mBtnOpen = (Button) findViewById(R.id.btn_open);
-        mBridgeModeEditText = (EditText) findViewById(R.id.edittext_bridge_ip);
-        mBtnBluetooth = (Button) findViewById(R.id.btn_bluetooth);
+        mTextConnectionStatus = findViewById(R.id.text_connection_status);
+        mTextModelAvailable = findViewById(R.id.text_model_available);
+        mTextProduct = findViewById(R.id.text_product_info);
+        mBtnOpen = findViewById(R.id.btn_open);
+        mBridgeModeEditText = findViewById(R.id.edittext_bridge_ip);
+        mBtnBluetooth = findViewById(R.id.btn_bluetooth);
         //mBtnBluetooth.setEnabled(false);
 
         mBtnOpen.setOnClickListener(new OnClickListener() {
