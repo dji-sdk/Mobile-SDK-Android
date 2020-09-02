@@ -39,6 +39,7 @@ import com.dji.sdk.sample.demo.gimbal.PushGimbalDataView;
 import com.dji.sdk.sample.demo.key.KeyedInterfaceView;
 import com.dji.sdk.sample.demo.keymanager.KeyManagerView;
 import com.dji.sdk.sample.demo.missionoperator.WaypointMissionOperatorView;
+import com.dji.sdk.sample.demo.missionoperator.WaypointV2MissionOperatorView;
 import com.dji.sdk.sample.demo.mobileremotecontroller.MobileRemoteControllerView;
 import com.dji.sdk.sample.demo.appactivation.AppActivationView;
 import com.dji.sdk.sample.demo.remotecontroller.PushRemoteControllerDataView;
@@ -84,7 +85,8 @@ public class DemoListView extends FrameLayout {
         builder.addGroup(R.string.component_listview_sdk_4_12,
                 false,
                 new GroupItem(R.string.component_listview_multiple_lens_camera, MultipleLensCameraView.class),
-                new GroupItem(R.string.component_listview_health_information, HealthInformationView.class));
+                new GroupItem(R.string.component_listview_health_information, HealthInformationView.class),
+                new GroupItem(R.string.component_listview_waypointv2, WaypointV2MissionOperatorView.class));
         builder.addGroup(R.string.component_listview_sdk_4_11,
                 false,
                 new GroupItem(R.string.component_listview_firmware_upgrade, FirmwareUpgradeView.class));
