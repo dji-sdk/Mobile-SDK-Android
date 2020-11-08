@@ -40,12 +40,9 @@ public class BaseCameraView extends FrameLayout implements TextureView.SurfaceTe
 
             // This callback is for
 
-            videoDataListener = new VideoFeeder.VideoDataListener() {
-                @Override
-                public void onReceive(byte[] bytes, int size) {
-                    if (null != codecManager) {
-                        codecManager.sendDataToDecoder(bytes, size);
-                    }
+            videoDataListener = (bytes, size) -> {
+                if (null != codecManager) {
+                    codecManager.sendDataToDecoder(bytes, size);
                 }
             };
         }
