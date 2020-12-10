@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -63,6 +63,8 @@
                                       <dd><a href="../KeyManager/DJICameraKey.html">CameraKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">RadarKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
@@ -352,6 +354,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">Radar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">Simulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorInitializationData.html">InitializationData</a>
@@ -570,6 +574,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">ResolutionAndFrameRate</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraStreamSettings.html">CameraStreamSettings</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_ColorWaveformSettings.html">ColorWaveformSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_StabilizationState.html">StabilizationState</a>
@@ -586,6 +592,8 @@
                                       </dd>
                                       <dd><a data-href="../Camera/DJICamera_DJILens_LensCapabilities.html" class="sub-toggle">LensCapabilities<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJILens_DJILensParameters_ListenerInterface.html">DJILensParametersListener</a>
+                                                </dd>
                                                 <dd><a href="../Camera/DJICamera_DJILens_ThermalGainModeTemperatureRangeCallback.html">ThermalGainModeTemperatureRangeCallback</a>
                                                 </dd>
                                         </ul>
@@ -1074,6 +1082,12 @@
                                                                     </dd>
                                                             </ul>
                                                           </dd>
+                                                          <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html" class="sub-toggle">WaypointCameraCustomNameParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                   </ul>
                                                 </dd>
                                                 <dd><a href="../Missions/DJIWaypointV2Action_DJIWaypointV2Actuator_Builder.html">Builder</a>
@@ -1333,12 +1347,12 @@
 <div class="api-row" id="djisdkmanager_registerapp"><div class="api-col left">App Registration</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_registerapp_inline">registerApp</a></div></div><div class="inline-doc" id="djisdkmanager_registerapp_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>registerApp</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">registerApp</span><span class="params">(<span class="keyword">final</span> Context context, SDKManagerCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">registerApp</span><span class="params">(<span class="keyword">final</span> Context inContext, SDKManagerCallback callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The first time the app is initialized after installation, the app connects to a DJI  Server through the internet to verify the Application Key. The request will include  the following information: <br><br> - App key <br> - Bundle ID <br> - Device UUID  generated from hashed mobile device ID (<code>getDeviceID</code>), hashed SIM serial number (<code>getSIMSerialNumber</code>)  and hashed ANDROID ID (<code>Secure.ANDROID_ID</code>). If <code>READ_PHONE_STATE</code> permission is not permitted,  a random UUID is generated. <br> - System platform, version and name <br> - UUID generated by  platform's API (<code>[UIDevice</code>) <br> - Mobile device  model <br> Subsequent app starts will use locally cached verification information to  register the app when the cached information is still valid.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final Context <font color="#000">context</font></font></td><td><font color="#666"><i>Android context.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/DJISDKManager_DJISDKManagerCallbackInterface.html#djisdkmanager_djisdkmanagercallbackinterface">SDKManagerCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Callback used for both the registration result, and when the products changes.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">SOURCE_DIFFERENT <font color="#000">context</font></font></td><td><font color="#666"><i>Android context.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/DJISDKManager_DJISDKManagerCallbackInterface.html#djisdkmanager_djisdkmanagercallbackinterface">SDKManagerCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Callback used for both the registration result, and when the products changes.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djisdkmanager_hassdkregistered"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_hassdkregistered_inline">hasSDKRegistered</a></div></div><div class="inline-doc" id="djisdkmanager_hassdkregistered_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>hasSDKRegistered</h6></div>
 

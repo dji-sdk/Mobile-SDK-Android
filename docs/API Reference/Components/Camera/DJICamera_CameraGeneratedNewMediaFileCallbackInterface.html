@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -63,6 +63,8 @@
                                       <dd><a href="../KeyManager/DJICameraKey.html">CameraKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">RadarKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
@@ -352,6 +354,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">Radar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">Simulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorInitializationData.html">InitializationData</a>
@@ -570,6 +574,8 @@
                             </dd>
                             <dd><a href="DJICamera_DJICameraVideoResolutionAndFrameRate.html">ResolutionAndFrameRate</a>
                             </dd>
+                            <dd><a href="DJICamera_DJICameraStreamSettings.html">CameraStreamSettings</a>
+                            </dd>
                             <dd><a href="DJICamera_ColorWaveformSettings.html">ColorWaveformSettings</a>
                             </dd>
                             <dd><a href="DJICamera_StabilizationState.html">StabilizationState</a>
@@ -586,6 +592,8 @@
                                       </dd>
                                       <dd><a data-href="DJICamera_DJILens_LensCapabilities.html" class="sub-toggle">LensCapabilities<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="DJILens_DJILensParameters_ListenerInterface.html">DJILensParametersListener</a>
+                                                </dd>
                                                 <dd><a href="DJICamera_DJILens_ThermalGainModeTemperatureRangeCallback.html">ThermalGainModeTemperatureRangeCallback</a>
                                                 </dd>
                                         </ul>
@@ -1074,6 +1082,12 @@
                                                                     </dd>
                                                             </ul>
                                                           </dd>
+                                                          <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html" class="sub-toggle">WaypointCameraCustomNameParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                   </ul>
                                                 </dd>
                                                 <dd><a href="../Missions/DJIWaypointV2Action_DJIWaypointV2Actuator_Builder.html">Builder</a>
@@ -1327,7 +1341,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onNewFile</span><span class="params">(@NonNull MediaFile mediaFile)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.media</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">Called when a new media file (photo or video) has been generated. <br> In this callback method, the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a></code> instance properties  <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_durationinseconds">getDurationInSeconds</a></code> and <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_videoorientation">getVideoOrientation</a></code> require special consideration.  The thumbnail property normally has a pointer to a UIImage of the thumbnail, but this is only available when the camera is in <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameramode_djicameramodemediadownload">MEDIA_DOWNLOAD</a></code> work mode. Additionally, for this instance of <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a></code>, the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_durationinseconds">getDurationInSeconds</a></code> property is 0 and the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_videoorientation">getVideoOrientation</a></code> property is <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraorientation_landscape">LANDSCAPE</a></code>.</font></p>
+<p><font color="#666">Called when a new media file (photo or video) has been generated. <br> In this callback method, the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a></code> instance properties  <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_durationinseconds">getDurationInSeconds</a></code> and <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_videoorientation">getVideoOrientation</a></code> require special consideration.  The thumbnail property normally has a pointer to a UIImage of the thumbnail, but this is only available when the camera is in <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameramode_djicameramodemediadownload">MEDIA_DOWNLOAD</a></code> work mode. Additionally, for this instance of <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a></code>, the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_durationinseconds">getDurationInSeconds</a></code> property is 0 and the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_videoorientation">getVideoOrientation</a></code> property is <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraorientation_landscape">LANDSCAPE</a></code>. Not supported by Zenmuse Z30 and Zenmuse XT2.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">MediaFile</a> <font color="#000">mediaFile</font></font></td><td><font color="#666"><i>The new media file.</i></font></td></tr></table></html></div>
 

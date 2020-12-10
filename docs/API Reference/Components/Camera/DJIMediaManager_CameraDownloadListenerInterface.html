@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -63,6 +63,8 @@
                                       <dd><a href="../KeyManager/DJICameraKey.html">CameraKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">RadarKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
@@ -352,6 +354,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">Radar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">Simulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorInitializationData.html">InitializationData</a>
@@ -570,6 +574,8 @@
                             </dd>
                             <dd><a href="DJICamera_DJICameraVideoResolutionAndFrameRate.html">ResolutionAndFrameRate</a>
                             </dd>
+                            <dd><a href="DJICamera_DJICameraStreamSettings.html">CameraStreamSettings</a>
+                            </dd>
                             <dd><a href="DJICamera_ColorWaveformSettings.html">ColorWaveformSettings</a>
                             </dd>
                             <dd><a href="DJICamera_StabilizationState.html">StabilizationState</a>
@@ -586,6 +592,8 @@
                                       </dd>
                                       <dd><a data-href="DJICamera_DJILens_LensCapabilities.html" class="sub-toggle">LensCapabilities<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="DJILens_DJILensParameters_ListenerInterface.html">DJILensParametersListener</a>
+                                                </dd>
                                                 <dd><a href="DJICamera_DJILens_ThermalGainModeTemperatureRangeCallback.html">ThermalGainModeTemperatureRangeCallback</a>
                                                 </dd>
                                         </ul>
@@ -1074,6 +1082,12 @@
                                                                     </dd>
                                                             </ul>
                                                           </dd>
+                                                          <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html" class="sub-toggle">WaypointCameraCustomNameParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                   </ul>
                                                 </dd>
                                                 <dd><a href="../Missions/DJIWaypointV2Action_DJIWaypointV2Actuator_Builder.html">Builder</a>
@@ -1338,32 +1352,41 @@
 <p><font color="#666">Called to show the download rate. It is called every 1 second. Hence, the persize which is the download size among two calls is the download rate.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long <font color="#000">total</font></font></td><td><font color="#666"><i>The total size.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">long <font color="#000">current</font></font></td><td><font color="#666"><i>The current download size.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">long <font color="#000">persize</font></font></td><td><font color="#666"><i>The download size between two calls.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimediamanager_cameradownloadonrealtimedataupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_cameradownloadonrealtimedataupdate_inline">onRealtimeDataUpdate</a></div></div><div class="inline-doc" id="djimediamanager_cameradownloadonrealtimedataupdate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onRealtimeDataUpdate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onRealtimeDataUpdate</span><span class="params">(<span class="keyword">byte</span>[] data, <span class="keyword">long</span> position, <span class="keyword">boolean</span> isLastPack)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.media</font></td></tr></table></html>
+<h5 id="description-v4">Description:</h5>
+<p><font color="#666">Called to get the media file data download from camera by byte in real time.</font></p>
+<h5 id="input-parameters-v2">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">data</font></font></td><td><font color="#666"><i>The media file data download from camera by byte.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">long <font color="#000">position</font></font></td><td><font color="#666"><i>The byte offset into the meida file at which the data starts.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isLastPack</font></font></td><td><font color="#666"><i><code>true</code> if the pack is the last one.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_cameradownloadonprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_cameradownloadonprogress_inline">onProgress</a></div></div><div class="inline-doc" id="djimediamanager_cameradownloadonprogress_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>onProgress</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onProgress</span><span class="params">(<span class="keyword">long</span> total, <span class="keyword">long</span> current)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.media</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v5">Description:</h5>
 <p><font color="#666">Called to update the download progress. It is called every time there is data received.</font></p>
-<h5 id="input-parameters-v2">Input Parameters:</h5>
+<h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long <font color="#000">total</font></font></td><td><font color="#666"><i>The total size of the file being downloaded.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">long <font color="#000">current</font></font></td><td><font color="#666"><i>The current download data size.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_cameradownloadonsuccess"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_cameradownloadonsuccess_inline">onSuccess</a></div></div><div class="inline-doc" id="djimediamanager_cameradownloadonsuccess_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>onSuccess</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(E data)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.media</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v6">Description:</h5>
 <p><font color="#666">Called when the media download is completed.</font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
+<h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">E <font color="#000">data</font></font></td><td><font color="#666"><i>The media that was successfully downloaded</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_cameradownloadonfailure"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_cameradownloadonfailure_inline">onFailure</a></div></div><div class="inline-doc" id="djimediamanager_cameradownloadonfailure_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>onFailure</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(DJIError error)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.media</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v7">Description:</h5>
 <p><font color="#666">Called when the media download failed.</font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a> <font color="#000">error</font></font></td><td><font color="#666"><i>The error information.</i></font></td></tr></table></html></div>
 
         </div>

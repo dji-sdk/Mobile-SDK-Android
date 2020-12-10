@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -63,6 +63,8 @@
                                       <dd><a href="../KeyManager/DJICameraKey.html">CameraKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">RadarKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
@@ -352,6 +354,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">Radar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">Simulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorInitializationData.html">InitializationData</a>
@@ -570,6 +574,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">ResolutionAndFrameRate</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraStreamSettings.html">CameraStreamSettings</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_ColorWaveformSettings.html">ColorWaveformSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_StabilizationState.html">StabilizationState</a>
@@ -586,6 +592,8 @@
                                       </dd>
                                       <dd><a data-href="../Camera/DJICamera_DJILens_LensCapabilities.html" class="sub-toggle">LensCapabilities<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJILens_DJILensParameters_ListenerInterface.html">DJILensParametersListener</a>
+                                                </dd>
                                                 <dd><a href="../Camera/DJICamera_DJILens_ThermalGainModeTemperatureRangeCallback.html">ThermalGainModeTemperatureRangeCallback</a>
                                                 </dd>
                                         </ul>
@@ -1074,6 +1082,12 @@
                                                                     </dd>
                                                             </ul>
                                                           </dd>
+                                                          <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html" class="sub-toggle">WaypointCameraCustomNameParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                   </ul>
                                                 </dd>
                                                 <dd><a href="DJIWaypointV2Action_DJIWaypointV2Actuator_Builder.html">Builder</a>
@@ -1400,7 +1414,7 @@
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Possible types of camera actuator operation.</font></p>
 <h5 id="enum-members-v5">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2actionactuatorcameraoperationtype_takephoto_inline"></a>SHOOT_SINGLE_PHOTO</font></td><td><font color="#666">Starts to shoot a photo.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2actionactuatorcameraoperationtype_startrecordvideo_inline"></a>START_RECORD_VIDEO</font></td><td><font color="#666">Starts to record a video.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2actionactuatorcameraoperationtype_stoprecordvideo_inline"></a>STOP_RECORD_VIDEO</font></td><td><font color="#666">Stops to record a video.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2actionactuatorcameraoperationtype_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2actionactuatorcameraoperationtype_takephoto_inline"></a>SHOOT_SINGLE_PHOTO</font></td><td><font color="#666">Starts to shoot a photo.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2actionactuatorcameraoperationtype_startrecordvideo_inline"></a>START_RECORD_VIDEO</font></td><td><font color="#666">Starts to record a video.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2actionactuatorcameraoperationtype_stoprecordvideo_inline"></a>STOP_RECORD_VIDEO</font></td><td><font color="#666">Stops to record a video.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2actionactuatorcameraoperationtype_customname_inline"></a>CUSTOM_NAME</font></td><td><font color="#666">Custom Expand File or directory name. You can use this actuator type to customize the file name and folder name of photos during the flight route,  it is convenient for users to manage the files after exporting media files from camera. This type should be set in <code><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam_Builder.html#djiwaypointv2actuator_djiwaypointv2cameraactuatorparam_builder_setcameraoperationtype">setCameraOperationType</a></code>. meanwhile you should set the param for <code><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html#djiwaypointv2actuator_djiwaypointv2cameraactuatorparam_builder_setcustomnameparam">setCustomNameParam</a></code> which used to determine whether you need to customize the file name or folder.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2actionactuatorcameraoperationtype_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
 <h5 id="class-members-v6">Class Members:</h5>
 </div>
 <div class="api-row" id="djiwaypointv2actionactuatoraircraftcontroloperationtype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2actionactuatoraircraftcontroloperationtype_inline">AircraftControlType</a></div></div><div class="inline-doc" id="djiwaypointv2actionactuatoraircraftcontroloperationtype_inline" <blockquote>
@@ -1413,6 +1427,17 @@
 <h5 id="enum-members-v6">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2actionactuatoraircraftcontroloperationtype_rotateyaw_inline"></a>ROTATE_YAW</font></td><td><font color="#666">Rotates the aircraft's yaw.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2actionactuatoraircraftcontroloperationtype_flyingcontrol_inline"></a>START_STOP_FLY</font></td><td><font color="#666">Keeps the aircraft stop flying or start flying.</font></td></tr></table></html>
 <h5 id="class-members-v7">Class Members:</h5>
+</div>
+<div class="api-row" id="djiwaypointv2action_actiontypes_cameracustomnametype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2action_actiontypes_cameracustomnametype_inline">CameraCustomNameType</a></div></div><div class="inline-doc" id="djiwaypointv2action_actiontypes_cameracustomnametype_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">enum </font>CameraCustomNameType</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> CameraCustomNameType</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.waypointv2.Action</font></td></tr></table></html>
+<h5 id="description-v11">Description:</h5>
+<p><font color="#666">Possible types of custom expand name actuator operation.</font></p>
+<h5 id="enum-members-v7">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2action_actiontypes_cameracustomnametype_file_inline"></a>FILE</font></td><td><font color="#666">Custom expand file name. When your set this type in waypoint action, after aircraft trigger the action,  the name of next media file (video or photo) which would be stored in camera will be appended by the custom file name you set. For example, the default photo name is "DJI_2020012091415_999_WIDE.JPG", you could append "Waypoint1" after the default photo name, so the new photo's name will be "DJI_2020012091415_999_WIDE_Waypoint1.JPG". This action will only take effect once, if you want to append the same name for all photos in one mission,  you need to set this action before taking each photo. Only Supported by Zenmuse H20 and Zenmuse H20T.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2action_actiontypes_cameracustomnametype_dir_inline"></a>DIR</font></td><td><font color="#666">Custom expand directory name. When your set this type in waypoint action, after aircraft trigger the action, the newly generated media files (videos or photos) will be stored in the new folder when taking photo or record video,  this new folder's name will be appended by your custom directory name. for example by default, the default folder name is "DJI_202001012359_01",  you could append "Mission1" after it, so the new folder's name will be "DJI_202001012359_01_Mission1".  Please notice that the default folder's name also would be updated automatically when the drone completes the landing,  the camera will update the last two digits in "DJI_202001012359_01" to "DJI_202001012359_02", so before your drone taking off again,  if you need to append the same custom folder name, you need to set the same name with the action again. This type is only Supported by Zenmuse H20 and Zenmuse H20T.</font></td></tr></table></html>
+<h5 id="class-members-v8">Class Members:</h5>
 </div>
 
         </div>
