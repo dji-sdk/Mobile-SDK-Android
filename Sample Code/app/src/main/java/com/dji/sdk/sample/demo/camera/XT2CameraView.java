@@ -306,11 +306,17 @@ public class XT2CameraView extends LinearLayout implements View.OnClickListener,
     private boolean isValidProduct() {
         if (DJISDKManager.getInstance() != null
                 && DJISDKManager.getInstance().getProduct() != null
-                && (DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_210
-                || DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_200
-                || DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_600))
+                && (DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_200
+                || DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_200_V2
+                || DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_210
+                || DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_210_RTK
+                || DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_210_V2
+                || DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_210_RTK_V2
+                || DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_300_RTK
+                || DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_600
+                || DJISDKManager.getInstance().getProduct().getModel() == Model.MATRICE_600_PRO))
             return true;
-        ToastUtils.setResultToToast("XT2 can be used with M600, M200 and M210 only.");
+        ToastUtils.setResultToToast("XT2 can be used with M200 series, M210 series, M300RTK and M600 series only.");
         return false;
     }
 }

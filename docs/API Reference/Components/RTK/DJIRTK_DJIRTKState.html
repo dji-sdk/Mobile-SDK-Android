@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -63,6 +63,8 @@
                                       <dd><a href="../KeyManager/DJICameraKey.html">CameraKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">RadarKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
@@ -352,6 +354,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">Radar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">Simulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorInitializationData.html">InitializationData</a>
@@ -570,6 +574,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">ResolutionAndFrameRate</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraStreamSettings.html">CameraStreamSettings</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_ColorWaveformSettings.html">ColorWaveformSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_StabilizationState.html">StabilizationState</a>
@@ -586,6 +592,8 @@
                                       </dd>
                                       <dd><a data-href="../Camera/DJICamera_DJILens_LensCapabilities.html" class="sub-toggle">LensCapabilities<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJILens_DJILensParameters_ListenerInterface.html">DJILensParametersListener</a>
+                                                </dd>
                                                 <dd><a href="../Camera/DJICamera_DJILens_ThermalGainModeTemperatureRangeCallback.html">ThermalGainModeTemperatureRangeCallback</a>
                                                 </dd>
                                         </ul>
@@ -1074,6 +1082,12 @@
                                                                     </dd>
                                                             </ul>
                                                           </dd>
+                                                          <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html" class="sub-toggle">WaypointCameraCustomNameParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                   </ul>
                                                 </dd>
                                                 <dd><a href="../Missions/DJIWaypointV2Action_DJIWaypointV2Actuator_Builder.html">Builder</a>
@@ -1321,12 +1335,20 @@
 <p><font color="#666">This class holds the state of the RTK system, including position, positioning solution, and receiver information.  Receiver 1 is used for positioning. Receiver 2 is used for orienteering.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="use-and-position">Use and Position</h4>
+<div class="api-row" id="djirtk_djirtkstate_ismaintainingpositionaccuracy"><div class="api-col left">Maintain Position Accuracy</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_ismaintainingpositionaccuracy_inline">isMaintainingPositionAccuracy</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_ismaintainingpositionaccuracy_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>isMaintainingPositionAccuracy</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isMaintainingPositionAccuracy</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
+<h5 id="description-v2">Description:</h5>
+<p><font color="#666">Whether aircraft is maintaining position accuracy after losing RTK signal. If return <code>true</code>, the aircraft will maintain position accuracy about 10 minutes after losing RTK signal.</font></p>
+</div>
 <div class="api-row" id="djirtk_djirtkstate_isrtkbeingused"><div class="api-col left">Use</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_isrtkbeingused_inline">isRTKBeingUsed</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_isrtkbeingused_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isRTKBeingUsed</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isRTKBeingUsed</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
+<h5 id="description-v3">Description:</h5>
 <p><font color="#666">Whether the RTK is being used.</font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
@@ -1335,7 +1357,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getMobileStation1SatelliteCount</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v4">Description:</h5>
 <p><font color="#666">Get the total number of satellites from Mobile station (aircraft) receiver 1.</font></p>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value.</i></font></td></tr></table></html></div>
@@ -1344,7 +1366,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getMobileStation2SatelliteCount</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v5">Description:</h5>
 <p><font color="#666">Get the total number of satellites from Mobile station (aircraft) receiver 2.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value.</i></font></td></tr></table></html></div>
@@ -1353,7 +1375,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span> <span class="function"><span class="keyword">public</span> DataSource <span class="title">getDistanceToHomePointDataSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> distanceToHomePointDataSource</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v6">Description:</h5>
 <p><font color="#666">Distance to home point data source. Only Supported by Phantom 4 RTK.</font></p>
 </div>
 <div class="api-row" id="djirtk_djirtkstate_istakeoffaltituderecorded"><div class="api-col left">Recorded</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_istakeoffaltituderecorded_inline">isTakeoffAltitudeRecorded</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_istakeoffaltituderecorded_inline" <blockquote>
@@ -1361,7 +1383,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isTakeoffAltitudeRecorded</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v7">Description:</h5>
 <p><font color="#666"><code>true</code> if the altitude is recorded by the flight controller when the aircraft takes off. Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value to check if take off altitude has been recorded.</i></font></td></tr></table></html></div>
@@ -1370,7 +1392,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span> <span class="function"><span class="keyword">public</span> DataSource <span class="title">getHomePointDataSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> homePointDataSource</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666">Home point data source. Only Supported by Phantom 4 RTK.</font></p>
 </div>
 <div class="api-row" id="djirtk_djirtkstate_satellitecount"><div class="api-col left">Satellite Count</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_satellitecount_inline">getSatelliteCount</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_satellitecount_inline" <blockquote>
@@ -1378,7 +1400,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSatelliteCount</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Gps or RTK satellite count. Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="return-v5">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Satellite count.</i></font></td></tr></table></html></div>
@@ -1387,7 +1409,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span> <span class="function"><span class="keyword">public</span> LocationCoordinate2D <span class="title">getHomePointLocation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> homePointLocation</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Home point location. Only Supported by Phantom 4 RTK.</font></p>
 </div>
 <div class="api-row" id="djirtk_djirtkstate_takeoffaltitude"><div class="api-col left">Take Off Altitude</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_takeoffaltitude_inline">getTakeOffAltitude</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_takeoffaltitude_inline" <blockquote>
@@ -1395,7 +1417,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getTakeOffAltitude</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Takeoff altitude. Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="return-v6">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value of the takeoff altitude.</i></font></td></tr></table></html></div>
@@ -1404,7 +1426,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getDistanceToHomePoint</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Distance to home point. Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="return-v7">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value of the distance to home point.</i></font></td></tr></table></html></div>
@@ -1413,7 +1435,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getEllipsoidHeight</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Ellipsoid height. Only Supported by Matrice 300 RTK.</font></p>
 <h5 id="return-v8">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value of the ellipsoid height.</i></font></td></tr></table></html></div>
@@ -1422,7 +1444,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getAircraftAltitude</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Aircraft altitude. Supported by Matrice 300 RTK, Phantom 4 RTK and P4 Multispectral.</font></p>
 <h5 id="return-v9">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value of the aircraft altitude.</i></font></td></tr></table></html></div>
@@ -1431,7 +1453,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">PositioningSolution <span class="title">getPositioningSolution</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">The positioning solution describes the method used to determine positioning. The solutions vary in accuracy, from <code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkpositioningsolution_none">NONE</a></code> (no positioning) to <code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkpositioningsolution_fixedpoint">FIXED_POINT</a></code>.</font></p>
 <h5 id="return-v10">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkpositioningsolution">PositioningSolution</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkpositioningsolution">PositioningSolution</a></code></i></font></td></tr></table></html></div>
@@ -1440,7 +1462,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIError <span class="title">getError</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666">Gets RTK errors, if any. Returns <code>null</code> when RTK is normal.</font></p>
 <h5 id="return-v11">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a></code>.</i></font></td></tr></table></html></div>
@@ -1449,7 +1471,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isHeadingValid</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666"><code>true</code> if heading value is valid. Heading is invalid when a satellite fix hasn't been obtained.</font></p>
 <h5 id="return-v12">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
@@ -1458,7 +1480,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getHeading</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">Heading relative to True North as defined by the vector formed from Antenna 2 to Antenna 1 on the mobile station. Unit is degrees.</font></p>
 <h5 id="return-v13">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value.</i></font></td></tr></table></html></div>
@@ -1467,7 +1489,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">HeadingSolution <span class="title">getHeadingSolution</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">The heading solution describes the method used to determine heading. The solutions vary in accuracy,  from <code><a href="../../Components/RTK/DJIRTK.html#djirtk_djirtkheadingsolution_none">NONE</a></code> (no heading) to <code><a href="../../Components/RTK/DJIRTK.html#djirtk_djirtkheadingsolution_fixedpoint">FIXED_POINT</a></code>. It's supported by Matrice  200 series V2 and Phantom 4 RTK.</font></p>
 <h5 id="return-v14">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK.html#djirtk_djirtkheadingsolution">HeadingSolution</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_headingsolution">getHeadingSolution</a></code>.</i></font></td></tr></table></html></div>
@@ -1476,7 +1498,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">LocationCoordinate2D <span class="title">getMobileStationLocation</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">Always indicate RTK location data. Location information of the mobile station's receiver 1 antenna. This location  information is relative to the base station's location and is in degrees when <code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_positioningsolution">getPositioningSolution</a></code>  is <code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkpositioningsolution_fixedpoint">FIXED_POINT</a></code>.</font></p>
 <h5 id="return-v15">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></code>.</i></font></td></tr></table></html></div>
@@ -1485,7 +1507,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getMobileStationAltitude</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">Altitude of the mobile station's receiver 1 antenna relative, to the ground system location. Units are meters.</font></p>
 <h5 id="return-v16">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value.</i></font></td></tr></table></html></div>
@@ -1494,7 +1516,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">LocationStandardDeviation <span class="title">getMobileStationStandardDeviation</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">Standard deviation of location accuracy in meters. Returns <code>null</code> when the aircraft receives no signal.  Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="return-v17">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJILocationStandardDeviation.html#djirtk_djilocationstandarddeviation">LocationStandardDeviation</a></font></td><td><font color="#666"><i>A <code><a href="../../Components/RTK/DJIRTK_DJILocationStandardDeviation.html#djirtk_djilocationstandarddeviation">LocationStandardDeviation</a></code> object of the mobile station standard deviation.</i></font></td></tr></table></html></div>
@@ -1503,7 +1525,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">LocationCoordinate2D <span class="title">getFusionMobileStationLocation</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">The fusion location of the mobile station (in degrees). It is the combination of GPS and RTK. The flight controller uses this location for navigation (e.g. waypoint mission) when RTK is available.</font></p>
 <h5 id="return-v18">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></code>.</i></font></td></tr></table></html></div>
@@ -1512,7 +1534,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getFusionMobileStationAltitude</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">The fusion altitude of the mobile station. The flight controller fuses the data from GPS, RTK and the barometer.  The flight controller uses this altitude for navigation (e.g. waypoint mission) when RTK is available.</font></p>
 <h5 id="return-v19">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value.</i></font></td></tr></table></html></div>
@@ -1521,7 +1543,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getFusionHeading</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666">The fusion heading of the mobile station. It is the combination of RTK and the compass. The flight controller uses this heading for navigation (e.g. waypoint mission) when RTK is available.</font></p>
 <h5 id="return-v20">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value.</i></font></td></tr></table></html></div>
@@ -1530,7 +1552,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">LocationCoordinate2D <span class="title">getBaseStationLocation</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666">Base station's location coordinates, in degrees.</font></p>
 <h5 id="return-v21">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></code>.</i></font></td></tr></table></html></div>
@@ -1539,7 +1561,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getBaseStationAltitude</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666">Altitude of the base station above sea level, in meters.</font></p>
 <h5 id="return-v22">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value.</i></font></td></tr></table></html></div>
@@ -1550,7 +1572,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getMobileStationReceiver1GPSInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 1 GPS info.</font></p>
 <h5 id="return-v23">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code></i></font></td></tr></table></html></div>
@@ -1559,7 +1581,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getMobileStationReceiver1BeiDouInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
+<h5 id="description-v29">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 1 BeiDou info.</font></p>
 <h5 id="return-v24">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code></i></font></td></tr></table></html></div>
@@ -1568,7 +1590,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getMobileStationReceiver1GLONASSInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
+<h5 id="description-v30">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 1 GLONASS info.</font></p>
 <h5 id="return-v25">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code></i></font></td></tr></table></html></div>
@@ -1577,7 +1599,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getMobileStationReceiver1GalileoInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
+<h5 id="description-v31">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 1 Galileo info. Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="return-v26">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code></i></font></td></tr></table></html></div>
@@ -1586,7 +1608,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getMobileStationReceiver2GPSInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
+<h5 id="description-v32">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 2 GPS info.</font></p>
 <h5 id="return-v27">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code></i></font></td></tr></table></html></div>
@@ -1595,7 +1617,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getMobileStationReceiver2BeiDouInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
+<h5 id="description-v33">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 2 BeiDou info.</font></p>
 <h5 id="return-v28">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code>.</i></font></td></tr></table></html></div>
@@ -1604,7 +1626,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getMobileStationReceiver2GLONASSInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
+<h5 id="description-v34">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 2 GLONASS info.</font></p>
 <h5 id="return-v29">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code>.</i></font></td></tr></table></html></div>
@@ -1613,7 +1635,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getMobileStationReceiver2GalileoInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v34">Description:</h5>
+<h5 id="description-v35">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 2 Galileo info. Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="return-v30">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code>.</i></font></td></tr></table></html></div>
@@ -1622,7 +1644,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getBaseStationReceiverGPSInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v35">Description:</h5>
+<h5 id="description-v36">Description:</h5>
 <p><font color="#666">Base station receiver GPS info.</font></p>
 <h5 id="return-v31">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code></i></font></td></tr></table></html></div>
@@ -1631,7 +1653,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getBaseStationReceiverBeiDouInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v36">Description:</h5>
+<h5 id="description-v37">Description:</h5>
 <p><font color="#666">Base station receiver BeiDou info.</font></p>
 <h5 id="return-v32">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code>.</i></font></td></tr></table></html></div>
@@ -1640,7 +1662,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getBaseStationReceiverGLONASSInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v37">Description:</h5>
+<h5 id="description-v38">Description:</h5>
 <p><font color="#666">Base station receiver GLONASS info.</font></p>
 <h5 id="return-v33">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code>.</i></font></td></tr></table></html></div>
@@ -1649,7 +1671,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ReceiverInfo <span class="title">getBaseStationReceiverGalileoInfo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v38">Description:</h5>
+<h5 id="description-v39">Description:</h5>
 <p><font color="#666">Base station receiver Galileo info. Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="return-v34">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">ReceiverInfo</a></code>.</i></font></td></tr></table></html></div>
@@ -1660,7 +1682,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EXClassNullAway</span></span><br><span class="line"> <span class="keyword">enum</span> PositioningSolution</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v39">Description:</h5>
+<h5 id="description-v40">Description:</h5>
 <p><font color="#666">This enum defines the positioning solution currently being used.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_none_inline"></a>NONE</font></td><td><font color="#666">No positioning solution. This can be caused by an insufficient number of  satellites in view, insufficient time to lock onto the satellites, or a  loss in communication link between the mobile station and base station.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_singlepoint_inline"></a>SINGLE_POINT</font></td><td><font color="#666">RTK point positioning.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_float_inline"></a>FLOAT</font></td><td><font color="#666">Float solution positioning.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_fixedpoint_inline"></a>FIXED_POINT</font></td><td><font color="#666">Fixed-point solution positioning (most accurate).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>

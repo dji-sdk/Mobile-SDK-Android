@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_enable_ldm"
+                style="@style/common_button"
+                android:layout_below="@id/ldm_info"
+                android:layout_toLeftOf="@+id/btn_disable_ldm"
+                android:text="Enable LDM" />
+
+            <Button
+                android:id="@+id/btn_disable_ldm"
+                style="@style/common_button"
+                android:layout_below="@id/ldm_info"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Disable LDM" />
+
+            <Button
+                android:id="@+id/btn_enable_rtk_network"
+                style="@style/common_button"
+                android:layout_below="@id/ldm_info"
+                android:layout_toRightOf="@+id/btn_disable_ldm"
+                android:text="Enable RTK Network" />
+
+            <Button
+                android:id="@+id/btn_disable_rtk_network"
+                style="@style/common_button"
+                android:layout_below="@id/btn_enable_ldm"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Disable RTK Network" />
+
+            <Button
+                android:id="@+id/btn_is_rtk_network_enabled"
+                style="@style/common_button"
+                android:layout_below="@id/btn_enable_ldm"
+                android:layout_toLeftOf="@+id/btn_disable_rtk_network"
+                android:text="Is RTK Network Enabled" />
+
+            <Button
+                android:id="@+id/btn_get_ldm_license"
+                style="@style/common_button"
+                android:layout_below="@id/btn_enable_ldm"
+                android:layout_toRightOf="@+id/btn_disable_rtk_network"
+                android:text="Get LDM License" />
+
+            <TextView
+                android:id="@+id/ldm_info"
+                style="@style/main_camera_view"
+                android:layout_alignParentBottom="false"
+                android:layout_marginTop="10dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+</merge>

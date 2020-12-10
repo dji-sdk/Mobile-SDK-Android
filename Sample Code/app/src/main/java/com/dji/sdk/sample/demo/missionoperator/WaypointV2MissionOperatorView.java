@@ -30,6 +30,7 @@ import dji.common.mission.waypointv2.Action.WaypointActuator;
 import dji.common.mission.waypointv2.Action.WaypointAircraftControlParam;
 import dji.common.mission.waypointv2.Action.WaypointAircraftControlStartStopFlyParam;
 import dji.common.mission.waypointv2.Action.WaypointCameraActuatorParam;
+import dji.common.mission.waypointv2.Action.WaypointCameraCustomNameParam;
 import dji.common.mission.waypointv2.Action.WaypointGimbalActuatorParam;
 import dji.common.mission.waypointv2.Action.WaypointIntervalTriggerParam;
 import dji.common.mission.waypointv2.Action.WaypointReachPointTriggerParam;
@@ -302,14 +303,32 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
         waypointV2List.add(waypoint4);
 
-        // Waypoint 5: (0,0)
+        // Waypoint 5: (90,30)
         WaypointV2 waypoint5 = new WaypointV2.Builder()
-                .setCoordinate(new LocationCoordinate2D(baseLatitude, baseLongitude))
+                .setCoordinate(new LocationCoordinate2D(baseLatitude + HORIZONTAL_DISTANCE * ONE_METER_OFFSET * 3, baseLongitude + VERTICAL_DISTANCE * ONE_METER_OFFSET))
                 .setAltitude(baseAltitude)
                 .setFlightPathMode(WaypointV2MissionTypes.WaypointV2FlightPathMode.GOTO_POINT_STRAIGHT_LINE_AND_STOP)
                 .setHeadingMode(WaypointV2MissionTypes.WaypointV2HeadingMode.AUTO)
                 .build();
         waypointV2List.add(waypoint5);
+
+        // Waypoint 6: (90,0)
+        WaypointV2 waypoint6 = new WaypointV2.Builder()
+                .setCoordinate(new LocationCoordinate2D(baseLatitude + HORIZONTAL_DISTANCE * ONE_METER_OFFSET * 3, baseLongitude))
+                .setAltitude(baseAltitude)
+                .setFlightPathMode(WaypointV2MissionTypes.WaypointV2FlightPathMode.GOTO_POINT_STRAIGHT_LINE_AND_STOP)
+                .setHeadingMode(WaypointV2MissionTypes.WaypointV2HeadingMode.AUTO)
+                .build();
+        waypointV2List.add(waypoint6);
+
+        // Waypoint 7: (0,0)
+        WaypointV2 waypoint7 = new WaypointV2.Builder()
+                .setCoordinate(new LocationCoordinate2D(baseLatitude, baseLongitude))
+                .setAltitude(baseAltitude)
+                .setFlightPathMode(WaypointV2MissionTypes.WaypointV2FlightPathMode.GOTO_POINT_STRAIGHT_LINE_AND_STOP)
+                .setHeadingMode(WaypointV2MissionTypes.WaypointV2HeadingMode.AUTO)
+                .build();
+        waypointV2List.add(waypoint7);
 
         waypointV2MissionBuilder = new WaypointV2Mission.Builder();
         waypointV2MissionBuilder.setMissionID(new Random().nextInt(65535))
@@ -327,8 +346,9 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
     private void uploadWaypointAction(List<WaypointV2Action> waypointV2ActionList) {
 
         /*
-         *  Action combo 1 - Stop and rotate the camera to 60 degrees and shoot a photo at waypoint0
-         *  Reset the camera to its original position and start flying to waypoint1
+         * Action combo 1 - Creat a folder with "testFolder" at the end of folder name
+         * Stop and rotate the camera to 60 degrees and shoot a photo at waypoint0
+         * Reset the camera to its original position and start flying to waypoint1
          */
 
         WaypointTrigger waypointAction0Trigger = new WaypointTrigger.Builder()
@@ -340,11 +360,12 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointActuator waypointAction0Actuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.AIRCRAFT_CONTROL)
-                .setAircraftControlActuatorParam(new WaypointAircraftControlParam.Builder()
-                        .setAircraftControlType(ActionTypes.AircraftControlType.START_STOP_FLY)
-                        .setFlyControlParam(new WaypointAircraftControlStartStopFlyParam.Builder()
-                                .setStartFly(false)
+                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
+                .setCameraActuatorParam(new WaypointCameraActuatorParam.Builder()
+                        .setCameraOperationType(ActionTypes.CameraOperationType.CUSTOM_NAME)
+                        .setCustomNameParam(new WaypointCameraCustomNameParam.Builder()
+                                .type(ActionTypes.CameraCustomNameType.DIR)
+                                .customName("testFolder")
                                 .build())
                         .build())
                 .build();
@@ -366,15 +387,11 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointActuator waypointAction1Actuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.GIMBAL)
-                .setGimbalActuatorParam(new WaypointGimbalActuatorParam.Builder()
-                        .operationType(ActionTypes.GimbalOperationType.ROTATE_GIMBAL)
-                        .rotation(new Rotation.Builder()
-                                .mode(RotationMode.ABSOLUTE_ANGLE)
-                                .pitch(0)
-                                .roll(0)
-                                .yaw(-60.0f)
-                                .time(3)
+                .setActuatorType(ActionTypes.ActionActuatorType.AIRCRAFT_CONTROL)
+                .setAircraftControlActuatorParam(new WaypointAircraftControlParam.Builder()
+                        .setAircraftControlType(ActionTypes.AircraftControlType.START_STOP_FLY)
+                        .setFlyControlParam(new WaypointAircraftControlStartStopFlyParam.Builder()
+                                .setStartFly(false)
                                 .build())
                         .build())
                 .build();
@@ -396,9 +413,16 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointActuator waypointAction2Actuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
-                .setCameraActuatorParam(new WaypointCameraActuatorParam.Builder()
-                        .setCameraOperationType(ActionTypes.CameraOperationType.SHOOT_SINGLE_PHOTO)
+                .setActuatorType(ActionTypes.ActionActuatorType.GIMBAL)
+                .setGimbalActuatorParam(new WaypointGimbalActuatorParam.Builder()
+                        .operationType(ActionTypes.GimbalOperationType.ROTATE_GIMBAL)
+                        .rotation(new Rotation.Builder()
+                                .mode(RotationMode.ABSOLUTE_ANGLE)
+                                .pitch(0)
+                                .roll(0)
+                                .yaw(-60.0f)
+                                .time(3)
+                                .build())
                         .build())
                 .build();
 
@@ -419,16 +443,9 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointActuator waypointAction3Actuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.GIMBAL)
-                .setGimbalActuatorParam(new WaypointGimbalActuatorParam.Builder()
-                        .operationType(ActionTypes.GimbalOperationType.ROTATE_GIMBAL)
-                        .rotation(new Rotation.Builder()
-                                .mode(RotationMode.ABSOLUTE_ANGLE)
-                                .pitch(0)
-                                .roll(0)
-                                .yaw(0)
-                                .time(3)
-                                .build())
+                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
+                .setCameraActuatorParam(new WaypointCameraActuatorParam.Builder()
+                        .setCameraOperationType(ActionTypes.CameraOperationType.SHOOT_SINGLE_PHOTO)
                         .build())
                 .build();
 
@@ -449,11 +466,15 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointActuator waypointAction4Actuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.AIRCRAFT_CONTROL)
-                .setAircraftControlActuatorParam(new WaypointAircraftControlParam.Builder()
-                        .setAircraftControlType(ActionTypes.AircraftControlType.START_STOP_FLY)
-                        .setFlyControlParam(new WaypointAircraftControlStartStopFlyParam.Builder()
-                                .setStartFly(true)
+                .setActuatorType(ActionTypes.ActionActuatorType.GIMBAL)
+                .setGimbalActuatorParam(new WaypointGimbalActuatorParam.Builder()
+                        .operationType(ActionTypes.GimbalOperationType.ROTATE_GIMBAL)
+                        .rotation(new Rotation.Builder()
+                                .mode(RotationMode.ABSOLUTE_ANGLE)
+                                .pitch(0)
+                                .roll(0)
+                                .yaw(0)
+                                .time(3)
                                 .build())
                         .build())
                 .build();
@@ -465,25 +486,22 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
         waypointV2ActionList.add(waypointAction4);
 
-        /*
-         *  Action combo 2 - Start recording video at waypoint1 and fly to waypoint2
-         *  From waypoint1 to waypoint2, the camera will gradually rotate toward to the ground
-         *  From waypoint2 to waypoint3, the camera will gradually rotate back to the original position
-         *  The video recording will be stopped at waypoint3
-         */
-
         WaypointTrigger waypointAction5Trigger = new WaypointTrigger.Builder()
-                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
-                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
-                        .setStartIndex(1)
-                        .setAutoTerminateCount(1)
+                .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
+                .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
+                        .setAssociateActionID(4)
+                        .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
+                        .setWaitingTime(0)
                         .build())
                 .build();
 
         WaypointActuator waypointAction5Actuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
-                .setCameraActuatorParam(new WaypointCameraActuatorParam.Builder()
-                        .setCameraOperationType(ActionTypes.CameraOperationType.START_RECORD_VIDEO)
+                .setActuatorType(ActionTypes.ActionActuatorType.AIRCRAFT_CONTROL)
+                .setAircraftControlActuatorParam(new WaypointAircraftControlParam.Builder()
+                        .setAircraftControlType(ActionTypes.AircraftControlType.START_STOP_FLY)
+                        .setFlyControlParam(new WaypointAircraftControlStartStopFlyParam.Builder()
+                                .setStartFly(true)
+                                .build())
                         .build())
                 .build();
 
@@ -494,25 +512,25 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
         waypointV2ActionList.add(waypointAction5);
 
+        /*
+         *  Action combo 2 - Start recording video at waypoint1 and fly to waypoint2
+         *  From waypoint1 to waypoint2, the camera will gradually rotate toward to the ground
+         *  From waypoint2 to waypoint3, the camera will gradually rotate back to the original position
+         *  The video recording will be stopped at waypoint3
+         */
+
         WaypointTrigger waypointAction6Trigger = new WaypointTrigger.Builder()
-                .setTriggerType(ActionTypes.ActionTriggerType.TRAJECTORY)
-                .setTrajectoryParam(new WaypointTrajectoryTriggerParam.Builder()
+                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
+                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
                         .setStartIndex(1)
-                        .setEndIndex(2)
+                        .setAutoTerminateCount(1)
                         .build())
                 .build();
 
         WaypointActuator waypointAction6Actuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.GIMBAL)
-                .setGimbalActuatorParam(new WaypointGimbalActuatorParam.Builder()
-                        .operationType(ActionTypes.GimbalOperationType.AIRCRAFT_CONTROL_GIMBAL)
-                        .rotation(new Rotation.Builder()
-                                .mode(RotationMode.ABSOLUTE_ANGLE)
-                                .pitch(-90.0f)
-                                .roll(0)
-                                .yaw(0)
-                                .time(5)
-                                .build())
+                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
+                .setCameraActuatorParam(new WaypointCameraActuatorParam.Builder()
+                        .setCameraOperationType(ActionTypes.CameraOperationType.START_RECORD_VIDEO)
                         .build())
                 .build();
 
@@ -526,8 +544,8 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction7Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.TRAJECTORY)
                 .setTrajectoryParam(new WaypointTrajectoryTriggerParam.Builder()
-                        .setStartIndex(2)
-                        .setEndIndex(3)
+                        .setStartIndex(1)
+                        .setEndIndex(2)
                         .build())
                 .build();
 
@@ -537,7 +555,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                         .operationType(ActionTypes.GimbalOperationType.AIRCRAFT_CONTROL_GIMBAL)
                         .rotation(new Rotation.Builder()
                                 .mode(RotationMode.ABSOLUTE_ANGLE)
-                                .pitch(0)
+                                .pitch(-90.0f)
                                 .roll(0)
                                 .yaw(0)
                                 .time(5)
@@ -553,17 +571,24 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         waypointV2ActionList.add(waypointAction7);
 
         WaypointTrigger waypointAction8Trigger = new WaypointTrigger.Builder()
-                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
-                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
-                        .setStartIndex(3)
-                        .setAutoTerminateCount(3)
+                .setTriggerType(ActionTypes.ActionTriggerType.TRAJECTORY)
+                .setTrajectoryParam(new WaypointTrajectoryTriggerParam.Builder()
+                        .setStartIndex(2)
+                        .setEndIndex(3)
                         .build())
                 .build();
 
         WaypointActuator waypointAction8Actuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
-                .setCameraActuatorParam(new WaypointCameraActuatorParam.Builder()
-                        .setCameraOperationType(ActionTypes.CameraOperationType.STOP_RECORD_VIDEO)
+                .setActuatorType(ActionTypes.ActionActuatorType.GIMBAL)
+                .setGimbalActuatorParam(new WaypointGimbalActuatorParam.Builder()
+                        .operationType(ActionTypes.GimbalOperationType.AIRCRAFT_CONTROL_GIMBAL)
+                        .rotation(new Rotation.Builder()
+                                .mode(RotationMode.ABSOLUTE_ANGLE)
+                                .pitch(0)
+                                .roll(0)
+                                .yaw(0)
+                                .time(5)
+                                .build())
                         .build())
                 .build();
 
@@ -574,23 +599,18 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
         waypointV2ActionList.add(waypointAction8);
 
-        /*
-         *  Action combo 3 - The aircraft will start shooting photos every 2 seconds from waypoint4 to finish
-         */
-
         WaypointTrigger waypointAction9Trigger = new WaypointTrigger.Builder()
-                .setTriggerType(ActionTypes.ActionTriggerType.SIMPLE_INTERVAL)
-                .setIntervalTriggerParam(new WaypointIntervalTriggerParam.Builder()
-                        .setType(ActionTypes.ActionIntervalType.TIME)
-                        .setStartIndex(4)
-                        .setInterval(2)
+                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
+                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
+                        .setStartIndex(3)
+                        .setAutoTerminateCount(3)
                         .build())
                 .build();
 
         WaypointActuator waypointAction9Actuator = new WaypointActuator.Builder()
                 .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
                 .setCameraActuatorParam(new WaypointCameraActuatorParam.Builder()
-                        .setCameraOperationType(ActionTypes.CameraOperationType.SHOOT_SINGLE_PHOTO)
+                        .setCameraOperationType(ActionTypes.CameraOperationType.STOP_RECORD_VIDEO)
                         .build())
                 .build();
 
@@ -600,6 +620,62 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .setActuator(waypointAction9Actuator)
                 .build();
         waypointV2ActionList.add(waypointAction9);
+
+        /*
+         *  Action combo 3 - The aircraft will start shooting photos every 2 seconds from waypoint5 to finish, and all photos will have "testfile" at the end of their name
+         *
+         */
+
+        WaypointTrigger waypointAction10Trigger = new WaypointTrigger.Builder()
+                .setTriggerType(ActionTypes.ActionTriggerType.SIMPLE_INTERVAL)
+                .setIntervalTriggerParam(new WaypointIntervalTriggerParam.Builder()
+                        .setType(ActionTypes.ActionIntervalType.TIME)
+                        .setStartIndex(4)
+                        .setInterval(2)
+                        .build())
+                .build();
+
+        WaypointActuator waypointAction10Actuator = new WaypointActuator.Builder()
+                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
+                .setCameraActuatorParam(new WaypointCameraActuatorParam.Builder()
+                        .setCameraOperationType(ActionTypes.CameraOperationType.CUSTOM_NAME)
+                        .setCustomNameParam(new WaypointCameraCustomNameParam.Builder()
+                                .type(ActionTypes.CameraCustomNameType.FILE)
+                                .customName("testFile")
+                                .build())
+                        .build())
+                .build();
+
+        WaypointV2Action waypointAction10 = new WaypointV2Action.Builder()
+                .setActionID(10)
+                .setTrigger(waypointAction10Trigger)
+                .setActuator(waypointAction10Actuator)
+                .build();
+        waypointV2ActionList.add(waypointAction10);
+
+        WaypointTrigger waypointAction11Trigger = new WaypointTrigger.Builder()
+                .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
+                .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
+                        .setAssociateActionID(10)
+                        .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
+                        // Because set file name and shoot photo is the same module, it is better to set a waiting time.
+                        .setWaitingTime(0.5f)
+                        .build())
+                .build();
+
+        WaypointActuator waypointAction11Actuator = new WaypointActuator.Builder()
+                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
+                .setCameraActuatorParam(new WaypointCameraActuatorParam.Builder()
+                        .setCameraOperationType(ActionTypes.CameraOperationType.SHOOT_SINGLE_PHOTO)
+                        .build())
+                .build();
+
+        WaypointV2Action waypointAction11 = new WaypointV2Action.Builder()
+                .setActionID(11)
+                .setTrigger(waypointAction11Trigger)
+                .setActuator(waypointAction11Actuator)
+                .build();
+        waypointV2ActionList.add(waypointAction11);
 
         waypointV2MissionOperator.uploadWaypointActions(waypointV2ActionList, new CommonCallbacks.CompletionCallback<DJIWaypointV2Error>() {
             @Override
@@ -668,11 +744,13 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
             }
 
             @Override
-            public void onExecutionStart() {
+            public void onExecutionStart(int i) {
+
             }
 
             @Override
-            public void onExecutionFinish(DJIWaypointV2Error djiWaypointV2Error) {
+            public void onExecutionFinish(int i, DJIWaypointV2Error djiWaypointV2Error) {
+
             }
         };
 

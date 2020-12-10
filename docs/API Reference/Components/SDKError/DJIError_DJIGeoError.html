@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -63,6 +63,8 @@
                                       <dd><a href="../KeyManager/DJICameraKey.html">CameraKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">RadarKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
@@ -352,6 +354,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">Radar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">Simulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorInitializationData.html">InitializationData</a>
@@ -570,6 +574,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">ResolutionAndFrameRate</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraStreamSettings.html">CameraStreamSettings</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_ColorWaveformSettings.html">ColorWaveformSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_StabilizationState.html">StabilizationState</a>
@@ -586,6 +592,8 @@
                                       </dd>
                                       <dd><a data-href="../Camera/DJICamera_DJILens_LensCapabilities.html" class="sub-toggle">LensCapabilities<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJILens_DJILensParameters_ListenerInterface.html">DJILensParametersListener</a>
+                                                </dd>
                                                 <dd><a href="../Camera/DJICamera_DJILens_ThermalGainModeTemperatureRangeCallback.html">ThermalGainModeTemperatureRangeCallback</a>
                                                 </dd>
                                         </ul>
@@ -1074,6 +1082,12 @@
                                                                     </dd>
                                                             </ul>
                                                           </dd>
+                                                          <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html" class="sub-toggle">WaypointCameraCustomNameParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                   </ul>
                                                 </dd>
                                                 <dd><a href="../Missions/DJIWaypointV2Action_DJIWaypointV2Actuator_Builder.html">Builder</a>
@@ -1367,10 +1381,10 @@
 <div class="api-row" id="djierror_djigeoerror_account_not_log_in_or_not_authorized"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djigeoerror_account_not_log_in_or_not_authorized_inline">ACCOUNT_NOT_LOGGED_IN_OR_NOT_AUTHORIZED</a></div></div><div class="inline-doc" id="djierror_djigeoerror_account_not_log_in_or_not_authorized_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ACCOUNT_NOT_LOGGED_IN_OR_NOT_AUTHORIZED</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError</span><br><span class="line">       ACCOUNT_NOT_LOGGED_IN_OR_NOT_AUTHORIZED = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"No logged in account or account did not get authorization."</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError ACCOUNT_NOT_LOGGED_IN_OR_NOT_AUTHORIZED = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Not logged into the account or the account is not authorized."</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">No logged in account or account did not get authorization.</font></p>
+<p><font color="#666">Not logged in account or account did not get authorization.</font></p>
 </div>
 <div class="api-row" id="djierror_djigeoerror_flight_controller_serial_number_is_not_ready"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djigeoerror_flight_controller_serial_number_is_not_ready_inline">FLIGHT_CONTROLLER_SERIAL_NUMBER_IS_NOT_READY</a></div></div><div class="inline-doc" id="djierror_djigeoerror_flight_controller_serial_number_is_not_ready_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FLIGHT_CONTROLLER_SERIAL_NUMBER_IS_NOT_READY</h6></div>
@@ -1404,13 +1418,389 @@
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666"> The simulated aircraft location is not valid. During the simulation, a location is valid if it is within 50km of (37.460484, -122.115312).</font></p>
 </div>
+<div class="api-row" id="djierror_djisdkgeoerror_nomcsn"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_nomcsn_inline">NO_MCSN</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_nomcsn_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>NO_MCSN</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError NO_MCSN = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"No MCSN"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v12">Description:</h5>
+<p><font color="#666">No MCSN Error.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_fcqueryfailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_fcqueryfailed_inline">FC_QUERY_FAILED</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_fcqueryfailed_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>FC_QUERY_FAILED</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError FC_QUERY_FAILED = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Query Flight Control License Failed"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v13">Description:</h5>
+<p><font color="#666">Unlock error, can't get license from the drone.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_fcsetenablefailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_fcsetenablefailed_inline">FC_SET_ENABLE_FAILED</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_fcsetenablefailed_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>FC_SET_ENABLE_FAILED</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError FC_SET_ENABLE_FAILED = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Set Flight Control License Failed"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v14">Description:</h5>
+<p><font color="#666">Unlock error, can't enable license.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_setenablewithinvaliduserid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_setenablewithinvaliduserid_inline">INVALID_USER_ID</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_setenablewithinvaliduserid_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>INVALID_USER_ID</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError INVALID_USER_ID = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Set Enable With Invalid User Id."</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v15">Description:</h5>
+<p><font color="#666">Set enabled with invalid user id.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_setenablewithnoexistlicense"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_setenablewithnoexistlicense_inline">NO_SUCH_LICENSE</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_setenablewithnoexistlicense_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>NO_SUCH_LICENSE</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError NO_SUCH_LICENSE = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Set enable with no exist license"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v16">Description:</h5>
+<p><font color="#666">License error, can't find the correct license.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_setenableversionnotmatch"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_setenableversionnotmatch_inline">VERSION_MISMATCH</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_setenableversionnotmatch_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>VERSION_MISMATCH</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError VERSION_MISMATCH = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Set Enable Version Not Match"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v17">Description:</h5>
+<p><font color="#666">License error, incorrect length of request data.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_setenableparamerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_setenableparamerror_inline">REQUEST_PARAM_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_setenableparamerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>REQUEST_PARAM_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError REQUEST_PARAM_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Set Enable Param Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v18">Description:</h5>
+<p><font color="#666">License error, incorrect value of request data.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_setenabledroneinsky"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_setenabledroneinsky_inline">SET_CERTIFICATE_NOT_ALLOWED_WHEN_DRONE_IN_SKY</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_setenabledroneinsky_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>SET_CERTIFICATE_NOT_ALLOWED_WHEN_DRONE_IN_SKY</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError SET_CERTIFICATE_NOT_ALLOWED_WHEN_DRONE_IN_SKY = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Set Enable DroneIn Sky"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v19">Description:</h5>
+<p><font color="#666">License error, can't set license when the drone is flying.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_uploadlicensedatauseriderror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_uploadlicensedatauseriderror_inline">USER_ID_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_uploadlicensedatauseriderror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>USER_ID_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError USER_ID_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Upload License Data User Id Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v20">Description:</h5>
+<p><font color="#666">License error, incorrect checksum.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_uploadlicensedataindexerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_uploadlicensedataindexerror_inline">LICENSE_DATA_INDEX_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_uploadlicensedataindexerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>LICENSE_DATA_INDEX_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError LICENSE_DATA_INDEX_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Upload License Data Index Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v21">Description:</h5>
+<p><font color="#666">License error, wrong index please retry.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_uploadlicensedataerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_uploadlicensedataerror_inline">LICENSE_DATA_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_uploadlicensedataerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>LICENSE_DATA_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError LICENSE_DATA_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Upload License Data Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v22">Description:</h5>
+<p><font color="#666">Upload license data with error data.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_uploadlicensedatacrccheckfailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_uploadlicensedatacrccheckfailed_inline">CRC_CHECK_FAILED</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_uploadlicensedatacrccheckfailed_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>CRC_CHECK_FAILED</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError CRC_CHECK_FAILED = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Upload License Data Crc Check Failed"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v23">Description:</h5>
+<p><font color="#666">License error, incorrect crc.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_uploadlicensedatasncheckfailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_uploadlicensedatasncheckfailed_inline">SN_CHECK_FAILED</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_uploadlicensedatasncheckfailed_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>SN_CHECK_FAILED</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError SN_CHECK_FAILED = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Upload License Data SN Check Failed"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v24">Description:</h5>
+<p><font color="#666">SLicense error, incorrect serial number.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_uploadlicensedataversioncheckerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_uploadlicensedataversioncheckerror_inline">VERSION_CHECKE_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_uploadlicensedataversioncheckerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>VERSION_CHECKE_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError VERSION_CHECKE_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Version Check Error,The current flight control version is too low and needs to be upgraded"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v25">Description:</h5>
+<p><font color="#666">License error, wrong version, please try to update the firmware of the drone.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_uploadlicensedatadroneinsky"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_uploadlicensedatadroneinsky_inline">RENEW_CERTIFICATE_NOT_ALLOWED_WHEN_DRONE_IN_SKY</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_uploadlicensedatadroneinsky_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>RENEW_CERTIFICATE_NOT_ALLOWED_WHEN_DRONE_IN_SKY</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError RENEW_CERTIFICATE_NOT_ALLOWED_WHEN_DRONE_IN_SKY = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Certificate Renewal Not Allowed When Drone In Sky"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v26">Description:</h5>
+<p><font color="#666">License error, can't update license when the drone is flying.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_licenseunlocknotsupported"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_licenseunlocknotsupported_inline">LICENSE_UNLOCK_NOT_SUPPORTED</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_licenseunlocknotsupported_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>LICENSE_UNLOCK_NOT_SUPPORTED</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError LICENSE_UNLOCK_NOT_SUPPORTED = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"License Unlock Not Supported"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v27">Description:</h5>
+<p><font color="#666">Unlock error, not supported by the drone.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_removelicensesfailedforaircraftinair"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_removelicensesfailedforaircraftinair_inline">REMOVE_LICENSES_NOT_ALLOWED_WHEN_DRONE_IN_SKY</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_removelicensesfailedforaircraftinair_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>REMOVE_LICENSES_NOT_ALLOWED_WHEN_DRONE_IN_SKY</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError REMOVE_LICENSES_NOT_ALLOWED_WHEN_DRONE_IN_SKY = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Remove Licenses Not Allowed When Drone In Sky"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v28">Description:</h5>
+<p><font color="#666">License error, can't delete license when the drone is flying.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_removelicensesnotsupport"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_removelicensesnotsupport_inline">REMOVE_LICENSES_NOT_SUPPORTED</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_removelicensesnotsupport_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>REMOVE_LICENSES_NOT_SUPPORTED</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError REMOVE_LICENSES_NOT_SUPPORTED = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Remove Licenses Not Support"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v29">Description:</h5>
+<p><font color="#666">License error, not supported by the drone.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_nodataerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_nodataerror_inline">LICENSE_DATA_NO_DATA_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_nodataerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>LICENSE_DATA_NO_DATA_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError LICENSE_DATA_NO_DATA_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"License Data No Data Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v30">Description:</h5>
+<p><font color="#666">License error, no data.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_lowfirmwareversionerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_lowfirmwareversionerror_inline">LOW_FIRMWARE_VERSION_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_lowfirmwareversionerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>LOW_FIRMWARE_VERSION_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError LOW_FIRMWARE_VERSION_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Low Firmware Version Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v31">Description:</h5>
+<p><font color="#666">License error, please update the firmware of the drone.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_unlockversionerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_unlockversionerror_inline">UNLOCK_VERSION_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_unlockversionerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>UNLOCK_VERSION_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError UNLOCK_VERSION_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Unlock Version Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v32">Description:</h5>
+<p><font color="#666">Unlock error, incorrect unlock version.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_olddataerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_olddataerror_inline">OLD_DATA_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_olddataerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>OLD_DATA_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError OLD_DATA_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Old Data Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v33">Description:</h5>
+<p><font color="#666">License error, local data is obsolete.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_invalidkeyversionerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_invalidkeyversionerror_inline">INVALID_KEY_VERSION_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_invalidkeyversionerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>INVALID_KEY_VERSION_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError INVALID_KEY_VERSION_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Invalid Key Version Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v34">Description:</h5>
+<p><font color="#666">License error, invalid key version.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_queryareaidnoexistlicenseerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_queryareaidnoexistlicenseerror_inline">QUERY_AREA_ID_NO_EXIST_LICENSE_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_queryareaidnoexistlicenseerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>QUERY_AREA_ID_NO_EXIST_LICENSE_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError QUERY_AREA_ID_NO_EXIST_LICENSE_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Query Area Id No Exist License Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v35">Description:</h5>
+<p><font color="#666">License error, license ID is not exist.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_invalidtokenonservererror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_invalidtokenonservererror_inline">SERVER_INVALID_TOKEN_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_invalidtokenonservererror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>SERVER_INVALID_TOKEN_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError SERVER_INVALID_TOKEN_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Invalid Token On Server Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v36">Description:</h5>
+<p><font color="#666">Server error, invalid token.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_unidentifiedphone"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_unidentifiedphone_inline">SERVER_UNIDENTIFIED_PHONE_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_unidentifiedphone_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>SERVER_UNIDENTIFIED_PHONE_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError SERVER_UNIDENTIFIED_PHONE_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Unidentified Phone"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v37">Description:</h5>
+<p><font color="#666">Server error, unknown phone.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_unlocknotunlockablearea"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_unlocknotunlockablearea_inline">SERVER_NOT_UNLOCKABLE_AREA_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_unlocknotunlockablearea_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>SERVER_NOT_UNLOCKABLE_AREA_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError SERVER_NOT_UNLOCKABLE_AREA_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Unlock Not Unlockable Area"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v38">Description:</h5>
+<p><font color="#666">Server error, invalid area.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_unlocktoomanyareas"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_unlocktoomanyareas_inline">SERVER_UNLOCK_TOO_MANY_AREAS_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_unlocktoomanyareas_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>SERVER_UNLOCK_TOO_MANY_AREAS_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError SERVER_UNLOCK_TOO_MANY_AREAS_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Unlock Too Many Areas"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v39">Description:</h5>
+<p><font color="#666">Server error, too many areas.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_toomuchlicense"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_toomuchlicense_inline">SERVER_TOO_MUCH_LICENSE_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_toomuchlicense_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>SERVER_TOO_MUCH_LICENSE_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError SERVER_TOO_MUCH_LICENSE_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Too Much License"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v40">Description:</h5>
+<p><font color="#666">Server error, too many licenses.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_nonetwork"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_nonetwork_inline">NO_NETWORK</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_nonetwork_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>NO_NETWORK</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError NO_NETWORK = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"No Network"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v41">Description:</h5>
+<p><font color="#666">Network error, invalid network.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_networkserverdataerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_networkserverdataerror_inline">NETWORK_SERVER_DATA_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_networkserverdataerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>NETWORK_SERVER_DATA_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError NETWORK_SERVER_DATA_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Network Server Data Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v42">Description:</h5>
+<p><font color="#666">Network error, data parsing failed in server.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_localusertokenisinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_localusertokenisinvalid_inline">LOCAL_USER_TOKEN_IS_INVALID</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_localusertokenisinvalid_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>LOCAL_USER_TOKEN_IS_INVALID</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError LOCAL_USER_TOKEN_IS_INVALID = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Local User Token Is Invalid"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v43">Description:</h5>
+<p><font color="#666">Network error, invalid token.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_networkpagenotfound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_networkpagenotfound_inline">NETWORK_PAGE_NOT_FOUND</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_networkpagenotfound_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>NETWORK_PAGE_NOT_FOUND</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError NETWORK_PAGE_NOT_FOUND = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Network Page Not Found"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v44">Description:</h5>
+<p><font color="#666">Network error, page not found(deprecated).</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_packmanagerwrongserialnumber"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_packmanagerwrongserialnumber_inline">PM_WRONG_SERIAL_NUMBER</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_packmanagerwrongserialnumber_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>PM_WRONG_SERIAL_NUMBER</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError PM_WRONG_SERIAL_NUMBER = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Pack Manager Wrong Serial Number"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v45">Description:</h5>
+<p><font color="#666">Package error, wrong serial number of the drone.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_databasefileerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_databasefileerror_inline">DB_FILE_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_databasefileerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>DB_FILE_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError DB_FILE_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Data Base File Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v46">Description:</h5>
+<p><font color="#666">Database error, can't unzip the database.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_databaseinvalidparams"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_databaseinvalidparams_inline">DB_INVALID_PARAMS</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_databaseinvalidparams_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>DB_INVALID_PARAMS</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError DB_INVALID_PARAMS = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Data Base Invalid Params"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v47">Description:</h5>
+<p><font color="#666">Database error, invalid parameters when updating database.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_databasenotready"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_databasenotready_inline">DB_NOT_READY</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_databasenotready_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>DB_NOT_READY</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError DB_NOT_READY = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Data Base Not Ready"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v48">Description:</h5>
+<p><font color="#666">Database error, load database fail.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_serverjsondataparseerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_serverjsondataparseerror_inline">SERVER_JSON_DATA_PARSE_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_serverjsondataparseerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>SERVER_JSON_DATA_PARSE_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError SERVER_JSON_DATA_PARSE_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Server Json Data Parse Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v49">Description:</h5>
+<p><font color="#666">Server error, incorrect Json data.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_networksignatureerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_networksignatureerror_inline">NETWORK_SIGNATURE_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_networksignatureerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>NETWORK_SIGNATURE_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError NETWORK_SIGNATURE_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Network Signature Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v50">Description:</h5>
+<p><font color="#666">Network error, invalid signature.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_networkcheckserversignatureerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_networkcheckserversignatureerror_inline">NETWORK_CHECK_SIGNATURE_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_networkcheckserversignatureerror_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>NETWORK_CHECK_SIGNATURE_ERROR</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError NETWORK_CHECK_SIGNATURE_ERROR = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Network Check Server Signature Error"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v51">Description:</h5>
+<p><font color="#666">Network error, invalid signature (deprecated).</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_networkinvalidrequeset"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_networkinvalidrequeset_inline">NETWORK_INVALID_REQUESET</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_networkinvalidrequeset_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>NETWORK_INVALID_REQUESET</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError NETWORK_INVALID_REQUESET = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Network Invalid Request"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v52">Description:</h5>
+<p><font color="#666">Network error, invalid request.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_networkuserisnotlogin"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_networkuserisnotlogin_inline">NETWORK_USER_IS_NOT_LOGIN</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_networkuserisnotlogin_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>NETWORK_USER_IS_NOT_LOGIN</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError NETWORK_USER_IS_NOT_LOGIN = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Network User Is Not Login"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v53">Description:</h5>
+<p><font color="#666">Network error, user is not login.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_networkoperationcancelbyuser"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_networkoperationcancelbyuser_inline">NETWORK_OPERATION_CANCEL_BY_USER</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_networkoperationcancelbyuser_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>NETWORK_OPERATION_CANCEL_BY_USER</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError NETWORK_OPERATION_CANCEL_BY_USER = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Network Operation Cancel By User"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v54">Description:</h5>
+<p><font color="#666">Network error, canceled by user(deprecated).</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_packmanagertimeout"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_packmanagertimeout_inline">PM_TIMEOUT</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_packmanagertimeout_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>PM_TIMEOUT</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError PM_TIMEOUT = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Pack Manager Timeout"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v55">Description:</h5>
+<p><font color="#666">Package error, time out when waiting for the Ack package from the drone.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_packmanagerwrongunlockversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_packmanagerwrongunlockversion_inline">PM_WRONG_UNLOCK_VERSION</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_packmanagerwrongunlockversion_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>PM_WRONG_UNLOCK_VERSION</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError PM_WRONG_UNLOCK_VERSION = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Pack Manager Wrong Unlock Version"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v56">Description:</h5>
+<p><font color="#666">Unlock error, unlock version from the drone should be &quot;0, 1, or 2&quot;.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_packmanagerwrongdeviceid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_packmanagerwrongdeviceid_inline">PM_WRONG_DEVICE_ID</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_packmanagerwrongdeviceid_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>PM_WRONG_DEVICE_ID</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError PM_WRONG_DEVICE_ID = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Pack Manager Wrong Device Id"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v57">Description:</h5>
+<p><font color="#666">Package error, wrong device ID.</font></p>
+</div>
+<div class="api-row" id="djierror_djisdkgeoerror_invalidareaids"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_invalidareaids_inline">INVALID_AREA_IDS</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_invalidareaids_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>INVALID_AREA_IDS</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError INVALID_AREA_IDS = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"Invalid Area IDs"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v58">Description:</h5>
+<p><font color="#666">Unlock error, area ID is not exist in the license.</font></p>
+</div>
 <div class="api-row" id="djierror_djisdkgeoerror_usermismatch"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkgeoerror_usermismatch_inline">USER_MISMATCH</a></div></div><div class="inline-doc" id="djierror_djisdkgeoerror_usermismatch_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>USER_MISMATCH</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlySafeError USER_MISMATCH = <span class="keyword">new</span> DJIFlySafeError(<span class="string">"User mismatch."</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
-<p><font color="#666">User mismatch.</font></p>
+<h5 id="description-v59">Description:</h5>
+<p><font color="#666">License error, the user is not matching.</font></p>
 </div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
 <div class="api-row" id="djierror_djisdkflighthuberrorforcode"><div class="api-col left">dji.common.error.DJIError</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberrorforcode_inline">getDJIError</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberrorforcode_inline" <blockquote>
@@ -1418,7 +1808,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(<span class="keyword">int</span> errorCode)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v60">Description:</h5>
 <p><font color="#666">Returns the specific error in the <code><a href="../../Components/SDKError/DJIError_DJISDKFlightHubError.html#djierror_djisdkflighthuberror">DJIFlightHubError</a></code> according to the error code.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">errorCode</font></font></td><td><font color="#666"><i>errorCode for <code><a href="../../Components/SDKError/DJIError_DJISDKFlightHubError.html#djierror_djisdkflighthuberror">DJIFlightHubError</a></code>.</i></font></td></tr></table></html>
@@ -1429,7 +1819,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(<span class="keyword">int</span> errorCode)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.utmiss</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v61">Description:</h5>
 <p><font color="#666">Get DJIUTMISSError.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">errorCode</font></font></td><td><font color="#666"><i>An int value of error code.</i></font></td></tr></table></html>
@@ -1440,7 +1830,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getDescription</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<h5 id="description-v62">Description:</h5>
 <p><font color="#666">Returns the description of the error code.</font></p>
 <h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>The description of the error code.</i></font></td></tr></table></html></div>
@@ -1449,7 +1839,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String desc)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v63">Description:</h5>
 <p><font color="#666">Sets the description for the error code.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">desc</font></font></td><td><font color="#666"><i>Description string.</i></font></td></tr></table></html></div>

@@ -3,7 +3,6 @@ package com.dji.sdk.sample.demo.camera
 import android.app.Activity
 import android.app.Service
 import android.content.Context
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
@@ -13,11 +12,11 @@ import com.dji.sdk.sample.internal.controller.DJISampleApplication
 import com.dji.sdk.sample.internal.controller.MainActivity.RequestEndFullScreenEvent
 import com.dji.sdk.sample.internal.controller.MainActivity.RequestStartFullScreenEvent
 import com.dji.sdk.sample.internal.utils.Helper
+import com.dji.sdk.sample.internal.utils.PopupUtils
 import com.dji.sdk.sample.internal.utils.ToastUtils
 import com.dji.sdk.sample.internal.utils.VideoFeedView
-import com.dji.sdk.sample.internal.PickerValueChangeListener
-import com.dji.sdk.sample.internal.view.PopupNumberPicker
 import com.dji.sdk.sample.internal.view.PresentableView
+import dji.common.airlink.PhysicalSource
 import dji.common.camera.CameraVideoStreamSource
 import dji.common.camera.LaserMeasureInformation
 import dji.common.camera.SettingsDefinitions
@@ -31,11 +30,10 @@ import dji.keysdk.callback.GetCallback
 import dji.keysdk.callback.SetCallback
 import dji.sdk.camera.VideoFeeder
 import dji.sdk.camera.VideoFeeder.PhysicalSourceListener
-import java.util.*
+import dji.sdk.sdkmanager.DJISDKManager
 
 class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnClickListener, PresentableView {
 
-    private var popupNumberPicker: PopupNumberPicker? = null
     private lateinit var primaryVideoFeedTitle: TextView
     private lateinit var primaryVideoFeed: VideoFeedView
     private lateinit var sourceListener: PhysicalSourceListener
@@ -66,12 +64,24 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
     }
 
     private fun setUpListeners() {
+        if (Helper.isM300Product()) {
+            val product = DJISDKManager.getInstance().product
+            // If your MutltipleLensCamera is set at right or top, you need to change the PhysicalSource to RIGHT_CAM or TOP_CAM.
+            product.airLink.ocuSyncLink.assignSourceToPrimaryChannel(PhysicalSource.LEFT_CAM, PhysicalSource.FPV_CAM) { error ->
+                val assignResult = error?.let {
+                    "assignSourceToPrimaryChannel fail, reason: ${error.description}."
+                } ?: "assignSourceToPrimaryChannel success."
+                Helper.showToast(context as Activity?, assignResult)
+            }
+        }
+
         sourceListener = PhysicalSourceListener { videoFeed, newPhysicalSource ->
             if (videoFeed === VideoFeeder.getInstance().primaryVideoFeed) {
                 val newText = "Primary Source: $newPhysicalSource"
                 ToastUtils.setResultToText(primaryVideoFeedTitle, newText)
             }
         }
+
         primaryVideoFeed.registerLiveVideo(VideoFeeder.getInstance().primaryVideoFeed, true)
         val newText = "Primary Source: ${VideoFeeder.getInstance().primaryVideoFeed.videoSource.name}"
         ToastUtils.setResultToText(primaryVideoFeedTitle, newText)
@@ -102,13 +112,13 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
                 val streamSources: Array<CameraVideoStreamSource?>?
                 streamSources = tempStreamSources ?: arrayOfNulls(0)
                 val runSetCameraStreamSource = Runnable {
-                    if (INDEX_CHOSEN[0] != -1) {
-                        streamSources[INDEX_CHOSEN[0]]?.let { setVideoStreamSource(it) }
-                        resetIndex()
+                    if (PopupUtils.index[0] != -1) {
+                        streamSources[PopupUtils.index[0]]?.let { setVideoStreamSource(it) }
+                        PopupUtils.resetIndex()
                     }
                 }
                 if (streamSources.isNotEmpty()) {
-                    initPopupNumberPicker(Helper.makeList(streamSources), runSetCameraStreamSource)
+                    PopupUtils.initPopupNumberPicker(Helper.makeList(streamSources), runSetCameraStreamSource, this)
                 } else {
                     Helper.showToast(context as Activity?, "Cannot load camera video stream source range.")
                 }
@@ -116,13 +126,13 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
             R.id.btn_laser_enabled -> {
                 val laserEnabledArray = arrayOf(true, false)
                 val runSetLaserEnabled = Runnable {
-                    if (INDEX_CHOSEN[0] != -1) {
-                        setLaserEnabled(laserEnabledArray[INDEX_CHOSEN[0]])
-                        resetIndex()
+                    if (PopupUtils.index[0] != -1) {
+                        setLaserEnabled(laserEnabledArray[PopupUtils.index[0]])
+                        PopupUtils.resetIndex()
                     }
                 }
                 if (laserEnabledArray.isNotEmpty()) {
-                    initPopupNumberPicker(Helper.makeList(laserEnabledArray), runSetLaserEnabled)
+                    PopupUtils.initPopupNumberPicker(Helper.makeList(laserEnabledArray), runSetLaserEnabled, this)
                 }
             }
             R.id.btn_flat_camera_mode -> {
@@ -130,13 +140,13 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
                 val flatCameraModes: Array<SettingsDefinitions.FlatCameraMode?>?
                 flatCameraModes = tempFlatCameraModes ?: arrayOfNulls(0)
                 val runSetFlatCameraMode = Runnable {
-                    if (INDEX_CHOSEN[0] != -1) {
-                        flatCameraModes[INDEX_CHOSEN[0]]?.let { setFlatCameraMode(it) }
-                        resetIndex()
+                    if (PopupUtils.index[0] != -1) {
+                        flatCameraModes[PopupUtils.index[0]]?.let { setFlatCameraMode(it) }
+                        PopupUtils.resetIndex()
                     }
                 }
                 if (flatCameraModes.isNotEmpty()) {
-                    initPopupNumberPicker(Helper.makeList(flatCameraModes), runSetFlatCameraMode)
+                    PopupUtils.initPopupNumberPicker(Helper.makeList(flatCameraModes), runSetFlatCameraMode, this)
                 } else {
                     Helper.showToast(context as Activity?, "Cannot load flat camera mode.")
                 }
@@ -250,26 +260,5 @@ class MultipleLensCameraView(context: Context) : LinearLayout(context), View.OnC
 
     override fun getHint(): String {
         return this@MultipleLensCameraView::class.simpleName + ".java"
-    }
-
-    private fun resetIndex() {
-        INDEX_CHOSEN = IntArray(3)
-        INDEX_CHOSEN[0] = -1
-        INDEX_CHOSEN[1] = -1
-        INDEX_CHOSEN[2] = -1
-    }
-
-    private fun initPopupNumberPicker(list: ArrayList<String>, r: Runnable) {
-        popupNumberPicker = PopupNumberPicker(context, list, PickerValueChangeListener { pos1, pos2 ->
-            popupNumberPicker?.dismiss()
-            popupNumberPicker = null
-            INDEX_CHOSEN[0] = pos1
-            handler.post(r)
-        }, 300, 200, 0)
-        popupNumberPicker?.showAtLocation(this, Gravity.CENTER, 0, 0)
-    }
-
-    companion object {
-        private var INDEX_CHOSEN = intArrayOf(-1, -1, -1)
     }
 }

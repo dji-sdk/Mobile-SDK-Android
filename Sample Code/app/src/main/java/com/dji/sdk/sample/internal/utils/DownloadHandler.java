@@ -35,4 +35,9 @@ public class DownloadHandler<B> implements DownloadListener<B> {
     public void onFailure(DJIError djiError) {
 
     }
+
+    @Override
+    public void onRealtimeDataUpdate(byte[] bytes, long l, boolean b) {
+
+    }
 }

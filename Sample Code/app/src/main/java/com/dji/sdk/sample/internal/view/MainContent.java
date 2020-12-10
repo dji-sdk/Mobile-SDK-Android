@@ -162,11 +162,7 @@ public class MainContent extends RelativeLayout {
             }
         });
         ((TextView) findViewById(R.id.text_version)).setText(getResources().getString(R.string.sdk_version,
-                DJISDKManager.getInstance().getSDKVersion()
-                        +
-                        " "
-                        +
-                        DJISDKManager.getInstance().getSdkBetaVersion()
+                DJISDKManager.getInstance().getRegistrationSDKVersion()
                         + " Debug:"
                         + GlobalConfig.DEBUG));
     }

@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -63,6 +63,8 @@
                                       <dd><a href="../KeyManager/DJICameraKey.html">CameraKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">RadarKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
@@ -352,6 +354,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">Radar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">Simulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorInitializationData.html">InitializationData</a>
@@ -570,6 +574,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">ResolutionAndFrameRate</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraStreamSettings.html">CameraStreamSettings</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_ColorWaveformSettings.html">ColorWaveformSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_StabilizationState.html">StabilizationState</a>
@@ -586,6 +592,8 @@
                                       </dd>
                                       <dd><a data-href="../Camera/DJICamera_DJILens_LensCapabilities.html" class="sub-toggle">LensCapabilities<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJILens_DJILensParameters_ListenerInterface.html">DJILensParametersListener</a>
+                                                </dd>
                                                 <dd><a href="../Camera/DJICamera_DJILens_ThermalGainModeTemperatureRangeCallback.html">ThermalGainModeTemperatureRangeCallback</a>
                                                 </dd>
                                         </ul>
@@ -1074,6 +1082,12 @@
                                                                     </dd>
                                                             </ul>
                                                           </dd>
+                                                          <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html" class="sub-toggle">WaypointCameraCustomNameParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                   </ul>
                                                 </dd>
                                                 <dd><a href="../Missions/DJIWaypointV2Action_DJIWaypointV2Actuator_Builder.html">Builder</a>
@@ -1427,23 +1441,14 @@ supported by flight controller firmware 3.2.0.0 or above.</font></p>
 <p><font color="#666">Flight controller flight mode. For more info, see  https://developer.dji.com/mobile-sdk/documentation/introduction/component-guide-remotecontroller.html#flight-mode</font></p>
 <h5 id="return-v11">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState.html#djiflightcontroller_djiflightcontrollerflightmode">FlightMode</a></font></td><td><font color="#666"><i>An enum value of the <code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState.html#djiflightcontroller_djiflightcontrollerflightmode">FlightMode</a></code>.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_flightmodestring"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_flightmodestring_inline">getFlightModeString</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_flightmodestring_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getFlightModeString</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getFlightModeString</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_flight_mode_string_key">FlightControllerKey.FLIGHT_MODE_STRING</a></font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
-<p><font color="#666">Gets the flight mode as a string.</font></p>
-<h5 id="return-v12">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>The flight mode as a string. For example, "P-GPS" or "P-Atti".</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_ismultiplemodeopen"><div class="api-col left">Multi Mode</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_ismultiplemodeopen_inline">isMultipleModeOpen</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_ismultiplemodeopen_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isMultipleModeOpen</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isMultipleModeOpen</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_multi_mode_open_key">FlightControllerKey.MULTI_MODE_OPEN</a></font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Determines whether multiple flight modes are open. This will reflect whether navigation mode (ground  station) is enabled.</font></p>
-<h5 id="return-v13">Return:</h5>
+<h5 id="return-v12">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the navigation mode is enabled.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="sensors">Sensors</h4>
@@ -1452,63 +1457,63 @@ supported by flight controller firmware 3.2.0.0 or above.</font></p>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSatelliteCount</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_satellite_count_key">FlightControllerKey.SATELLITE_COUNT</a></font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Returns the GPS satellite count.</font></p>
-<h5 id="return-v14">Return:</h5>
+<h5 id="return-v13">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>The double value of the GPS satellite count.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_gpssignalstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_gpssignalstatus_inline">getGPSSignalLevel</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_gpssignalstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getGPSSignalLevel</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">GPSSignalLevel <span class="title">getGPSSignalLevel</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_gps_signal_level_key">FlightControllerKey.GPS_SIGNAL_LEVEL</a></font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">Gets the aircraft's current GPS signal quality.</font></p>
-<h5 id="return-v15">Return:</h5>
+<h5 id="return-v14">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState.html#djiflightcontroller_djigpssignalstatus">GPSSignalLevel</a></font></td><td><font color="#666"><i>The aircraft's current GPS signal quality.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_isimupreheating"><div class="api-col left">IMU</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_isimupreheating_inline">isIMUPreheating</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_isimupreheating_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isIMUPreheating</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isIMUPreheating</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_imu_preheating_key">FlightControllerKey.IS_IMU_PREHEATING</a></font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666"><code>true</code> if IMU is preheating.</font></p>
-<h5 id="return-v16">Return:</h5>
+<h5 id="return-v15">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_isultrasonicbeingused"><div class="api-col left">Ultrasonic Sensor</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_isultrasonicbeingused_inline">isUltrasonicBeingUsed</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_isultrasonicbeingused_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isUltrasonicBeingUsed</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isUltrasonicBeingUsed</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_ultrasonic_being_used_key">FlightControllerKey.IS_ULTRASONIC_BEING_USED</a></font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666"><code>true</code> if the ultrasonic sensor is being used. Variables that can impact the quality  of the ultrasound measurement, or whether it's being used, are height above ground and the type of ground  (if it reflects sound waves well). Usually, the ultrasonic sensor works when the aircraft is less than 8m  above ground.</font></p>
-<h5 id="return-v17">Return:</h5>
+<h5 id="return-v16">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_ultrasonicheight"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_ultrasonicheight_inline">getUltrasonicHeightInMeters</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_ultrasonicheight_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getUltrasonicHeightInMeters</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getUltrasonicHeightInMeters</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_ultrasonic_height_in_meters_key">FlightControllerKey.ULTRASONIC_HEIGHT_IN_METERS</a></font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">Height of aircraft measured by the ultrasonic sensor in meters. The data will only be available  if <code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState.html#djiflightcontroller_djiflightcontrollercurrentstate_isultrasonicbeingused">isUltrasonicBeingUsed</a></code> returns <code>true</code>. Height has a precision of 0.1m. This value has reference significance when the height  is below 5 meters.</font></p>
-<h5 id="return-v18">Return:</h5>
+<h5 id="return-v17">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value of the height of the aircraft measured by the ultrasonic sensor in meters.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_isultrasonicerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_isultrasonicerror_inline">doesUltrasonicHaveError</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_isultrasonicerror_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>doesUltrasonicHaveError</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">doesUltrasonicHaveError</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_ultrasonic_error_key">FlightControllerKey.ULTRASONIC_ERROR</a></font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666"><code>true</code> if ultrasonic sensor has error.</font></p>
-<h5 id="return-v19">Return:</h5>
+<h5 id="return-v18">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if ultrasonic sensor has error.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_isvisionsensorbeingused"><div class="api-col left">Vision Sensor</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_isvisionsensorbeingused_inline">isVisionPositioningSensorBeingUsed</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_isvisionsensorbeingused_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isVisionPositioningSensorBeingUsed</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isVisionPositioningSensorBeingUsed</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_vision_positioning_sensor_being_used_key">FlightControllerKey.IS_VISION_POSITIONING_SENSOR_BEING_USED</a></font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666"><code>true</code> if a vision sensor is being used. Variables that can impact the quality of the  vision measurement, or whether it's being used, are height above ground and the type of ground (if it has  sufficiently rich texture). Usually, the vision sensor works when the aircraft is less than 3m above ground.</font></p>
-<h5 id="return-v20">Return:</h5>
+<h5 id="return-v19">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="flight-assistance">Flight Assistance</h4>
@@ -1517,81 +1522,81 @@ supported by flight controller firmware 3.2.0.0 or above.</font></p>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">FlightOrientationMode <span class="title">getOrientationMode</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_orientation_mode_key">FlightControllerKey.ORIENTATION_MODE</a></font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">The aircraft's current orientation mode.</font></p>
-<h5 id="return-v21">Return:</h5>
+<h5 id="return-v20">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightorientationmode">FlightOrientationMode</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightorientationmode">FlightOrientationMode</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_isfailsafe"><div class="api-col left">Connection Fail Safe</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_isfailsafe_inline">isFailsafeEnabled</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_isfailsafe_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isFailsafeEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isFailsafeEnabled</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_fail_safe_key">FlightControllerKey.IS_FAIL_SAFE</a></font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666"><code>true</code> if the signal is lost between remote controller and aircraft, and FailSafe is enabled.</font></p>
-<h5 id="return-v22">Return:</h5>
+<h5 id="return-v21">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_remainingbattery"><div class="api-col left">Remaining Battery</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_remainingbattery_inline">getBatteryThresholdBehavior</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_remainingbattery_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getBatteryThresholdBehavior</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">BatteryThresholdBehavior <span class="title">getBatteryThresholdBehavior</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_battery_threshold_behavior_key">FlightControllerKey.BATTERY_THRESHOLD_BEHAVIOR</a></font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
-<p><font color="#666">Recommended action based on remaining battery life.</font></p>
-<h5 id="return-v23">Return:</h5>
+<h5 id="description-v23">Description:</h5>
+<p><font color="#666">Recommended action based on remaining battery life. Not supported by Mavic Air 2.</font></p>
+<h5 id="return-v22">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState.html#djiflightcontroller_djiflightcontrollercurrentstate_djiaircraftremainingbatterystate">BatteryThresholdBehavior</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState.html#djiflightcontroller_djiflightcontrollercurrentstate_djiaircraftremainingbatterystate">BatteryThresholdBehavior</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_islowerthanbatterywarningthreshold"><div class="api-col left">Battery Warning Threshold</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_islowerthanbatterywarningthreshold_inline">isLowerThanBatteryWarningThreshold</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_islowerthanbatterywarningthreshold_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isLowerThanBatteryWarningThreshold</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLowerThanBatteryWarningThreshold</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666"><code>true</code> if the battery is lower than the low battery warning threshold.</font></p>
-<h5 id="return-v24">Return:</h5>
+<h5 id="return-v23">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_islowerthanseriousbatterywarningthreshold"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_islowerthanseriousbatterywarningthreshold_inline">isLowerThanSeriousBatteryWarningThreshold</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_islowerthanseriousbatterywarningthreshold_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isLowerThanSeriousBatteryWarningThreshold</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLowerThanSeriousBatteryWarningThreshold</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666"><code>true</code> if the battery is lower than the serious low battery warning threshold.</font></p>
-<h5 id="return-v25">Return:</h5>
+<h5 id="return-v24">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_windwarning"><div class="api-col left">Wind Warning</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_windwarning_inline">getFlightWindWarning</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_windwarning_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getFlightWindWarning</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">FlightWindWarning <span class="title">getFlightWindWarning</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666">Warning related to high winds.</font></p>
-<h5 id="return-v26">Return:</h5>
+<h5 id="return-v25">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightwindwarning">FlightWindWarning</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightwindwarning">FlightWindWarning</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_countofflights"><div class="api-col left">Count of Flights</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_countofflights_inline">getFlightCount</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_countofflights_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getFlightCount</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getFlightCount</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666">The count of flights within the battery life cycle. Cleared when power-on.</font></p>
-<h5 id="return-v27">Return:</h5>
+<h5 id="return-v26">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of flight count.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_flightlogindex"><div class="api-col left">Flight Log Index</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_flightlogindex_inline">getFlightLogIndex</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_flightlogindex_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getFlightLogIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getFlightLogIndex</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666">The current index of the flight log on the aircraft. It is useful to find the corresponding flight log.</font></p>
-<h5 id="return-v28">Return:</h5>
+<h5 id="return-v27">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of the flight log index.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_isactivebrakeengaged"><div class="api-col left">Check Active Brake Engaged</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_isactivebrakeengaged_inline">isActiveBrakeEngaged</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_isactivebrakeengaged_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isActiveBrakeEngaged</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isActiveBrakeEngaged</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
+<h5 id="description-v29">Description:</h5>
 <p><font color="#666"><code>true</code> when Active Brake is enaged to avoid obstacles. It is supported only by Matrice 300 RTK.</font></p>
-<h5 id="return-v29">Return:</h5>
+<h5 id="return-v28">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if Active Brake is engaged.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="home">Home</h4>
@@ -1600,54 +1605,54 @@ supported by flight controller firmware 3.2.0.0 or above.</font></p>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isHomeLocationSet</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_home_location_set_key">FlightControllerKey.IS_HOME_LOCATION_SET</a></font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
+<h5 id="description-v30">Description:</h5>
 <p><font color="#666"><code>true</code> if the home point has been set.</font></p>
-<h5 id="return-v30">Return:</h5>
+<h5 id="return-v29">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_homelocation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_homelocation_inline">getHomeLocation</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_homelocation_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getHomeLocation</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">LocationCoordinate2D <span class="title">getHomeLocation</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_home_location_key">FlightControllerKey.HOME_LOCATION</a>, <a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_home_location_latitude_key">FlightControllerKey.HOME_LOCATION_LATITUDE</a>, <a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_home_location_longitude_key">FlightControllerKey.HOME_LOCATION_LONGITUDE</a></font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
+<h5 id="description-v31">Description:</h5>
 <p><font color="#666">Returns the home location of the aircraft as a coordinate.</font></p>
-<h5 id="return-v31">Return:</h5>
+<h5 id="return-v30">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlightController/DJIFlightController_DJILocationCoordinate2D.html#djiflightcontroller_djilocationcoordinate2d">LocationCoordinate2D</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_smartgohomestatus"><div class="api-col left">Go Home Assessment</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_smartgohomestatus_inline">getGoHomeAssessment</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_smartgohomestatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getGoHomeAssessment</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">GoHomeAssessment <span class="title">getGoHomeAssessment</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
+<h5 id="description-v32">Description:</h5>
 <p><font color="#666">Gets the aircraft's smart go home data. If smart go home is enabled, all the  smart go home data will be available  in <code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrentstate_djiflightcontrollersmartgohomestatus">GoHomeAssessment</a></code>.</font></p>
-<h5 id="return-v32">Return:</h5>
+<h5 id="return-v31">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrentstate_djiflightcontrollersmartgohomestatus">GoHomeAssessment</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrentstate_djiflightcontrollersmartgohomestatus">GoHomeAssessment</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_gohomeexecutionstatus"><div class="api-col left">Go Home State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_gohomeexecutionstatus_inline">getGoHomeExecutionState</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_gohomeexecutionstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getGoHomeExecutionState</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">GoHomeExecutionState <span class="title">getGoHomeExecutionState</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_status_key">FlightControllerKey.GO_HOME_STATUS</a></font></td></tr></table></html>
-<h5 id="description-v34">Description:</h5>
+<h5 id="description-v33">Description:</h5>
 <p><font color="#666">The current status of go-home execution.</font></p>
-<h5 id="return-v33">Return:</h5>
+<h5 id="return-v32">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState.html#djiflightcontroller_djiflightcontrollergohomeexecutionstatus">GoHomeExecutionState</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState.html#djiflightcontroller_djiflightcontrollergohomeexecutionstatus">GoHomeExecutionState</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_isgoinghome"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_isgoinghome_inline">isGoingHome</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_isgoinghome_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isGoingHome</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isGoingHome</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_is_going_home_key">FlightControllerKey.IS_GOING_HOME</a></font></td></tr></table></html>
-<h5 id="description-v35">Description:</h5>
+<h5 id="description-v34">Description:</h5>
 <p><font color="#666"><code>true</code> if the aircraft is going home.</font></p>
-<h5 id="return-v34">Return:</h5>
+<h5 id="return-v33">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_getgohomeheight"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_getgohomeheight_inline">getGoHomeHeight</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_getgohomeheight_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getGoHomeHeight</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getGoHomeHeight</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_height_in_meters_key">FlightControllerKey.GO_HOME_HEIGHT_IN_METERS</a></font></td></tr></table></html>
-<h5 id="description-v36">Description:</h5>
+<h5 id="description-v35">Description:</h5>
 <p><font color="#666">Gets the height when the aircraft is going home in meters.</font></p>
-<h5 id="return-v35">Return:</h5>
+<h5 id="return-v34">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of the height when the aircraft is going home.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
@@ -1656,7 +1661,7 @@ supported by flight controller firmware 3.2.0.0 or above.</font></p>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EXClassNullAway</span></span><br><span class="line"> <span class="keyword">enum</span> BatteryThresholdBehavior</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_battery_threshold_behavior_key">FlightControllerKey.BATTERY_THRESHOLD_BEHAVIOR</a></font></td></tr></table></html>
-<h5 id="description-v37">Description:</h5>
+<h5 id="description-v36">Description:</h5>
 <p><font color="#666">Remaining battery life state. This state describes the recommended action based on remaining battery life.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollercurrentstate_djiaircraftremainingbatterystate_normal_inline"></a>FLY_NORMALLY</font></td><td><font color="#666">Remaining battery life sufficient for normal flying.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollercurrentstate_djiaircraftremainingbatterystate_low_inline"></a>GO_HOME</font></td><td><font color="#666">Remaining battery life sufficient to go home.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollercurrentstate_djiaircraftremainingbatterystate_verylow_inline"></a>LAND_IMMEDIATELY</font></td><td><font color="#666">Remaining battery life sufficient to land immediately.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollercurrentstate_djiaircraftremainingbatterystate_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
@@ -1667,7 +1672,7 @@ supported by flight controller firmware 3.2.0.0 or above.</font></p>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EXClassNullAway</span></span><br><span class="line"> <span class="keyword">enum</span> GoHomeExecutionState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_status_key">FlightControllerKey.GO_HOME_STATUS</a></font></td></tr></table></html>
-<h5 id="description-v38">Description:</h5>
+<h5 id="description-v37">Description:</h5>
 <p><font color="#666">An enum used to identify the different stages of the go-home command.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollergohomeexecutionstatus_notexecuting_inline"></a>NOT_EXECUTING</font></td><td><font color="#666">The aircraft is not executing a Go-Home command.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollergohomeexecutionstatus_turndirectiontohomepoint_inline"></a>TURN_DIRECTION_TO_HOME_POINT</font></td><td><font color="#666">The aircraft is turning the heading direction to the home point.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollergohomeexecutionstatus_gouptoheight_inline"></a>GO_UP_TO_HEIGHT</font></td><td><font color="#666">The aircraft is going up to the height for go-home command.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollergohomeexecutionstatus_autoflytohomepoint_inline"></a>AUTO_FLY_TO_HOME_POINT</font></td><td><font color="#666">The aircraft is flying horizontally to home point.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollergohomeexecutionstatus_godowntoground_inline"></a>GO_DOWN_TO_GROUND</font></td><td><font color="#666">The aircraft is going down after arriving at the home point.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollergohomeexecutionstatus_braking_inline"></a>BRAKING</font></td><td><font color="#666">The aircraft is braking to avoid collision.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollergohomeexecutionstatus_bypassing_inline"></a>BYPASSING</font></td><td><font color="#666">The aircraft is bypassing over the obstacle.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollergohomeexecutionstatus_completed_inline"></a>COMPLETED</font></td><td><font color="#666">The go-home command is completed.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollergohomeexecutionstatus_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The go-home status is unknown.</font></td></tr></table></html>
@@ -1678,7 +1683,7 @@ supported by flight controller firmware 3.2.0.0 or above.</font></p>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EXClassNullAway</span></span><br><span class="line"> <span class="keyword">enum</span> GPSSignalLevel</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_gps_signal_level_key">FlightControllerKey.GPS_SIGNAL_LEVEL</a></font></td></tr></table></html>
-<h5 id="description-v39">Description:</h5>
+<h5 id="description-v38">Description:</h5>
 <p><font color="#666">A enum class representing GPS signal levels, which are used to measure the signal quality.</font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djigpssignalstatus_level0_inline"></a>LEVEL_0</font></td><td><font color="#666">The GPS has almost no signal, which is very bad.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djigpssignalstatus_level1_inline"></a>LEVEL_1</font></td><td><font color="#666">The GPS signal is very weak.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djigpssignalstatus_level2_inline"></a>LEVEL_2</font></td><td><font color="#666">The GPS signal is weak. At this level, the aircraft's go home functionality will still work.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djigpssignalstatus_level3_inline"></a>LEVEL_3</font></td><td><font color="#666">The GPS signal is good. At this level, the aircraft can hover in the air.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djigpssignalstatus_level4_inline"></a>LEVEL_4</font></td><td><font color="#666">The GPS signal is very good. At this level, the aircraft can record the home point.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djigpssignalstatus_level5_inline"></a>LEVEL_5</font></td><td><font color="#666">The GPS signal is very strong.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djigpssignalstatus_none_inline"></a>NONE</font></td><td><font color="#666">There is no GPS signal.</font></td></tr></table></html>
@@ -1689,7 +1694,7 @@ supported by flight controller firmware 3.2.0.0 or above.</font></p>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EXClassNullAway</span></span><br><span class="line"> <span class="keyword">enum</span> FlightMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_flight_mode_key">FlightControllerKey.FLIGHT_MODE</a></font></td></tr></table></html>
-<h5 id="description-v40">Description:</h5>
+<h5 id="description-v39">Description:</h5>
 <p><font color="#666">Flight controller flight modes. For more information, see http://wiki.dji.com/en/index.php/Phantom_3_Professional-Aircraft.</font></p>
 <h5 id="enum-members-v4">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_manual_inline"></a>MANUAL</font></td><td><font color="#666">Manual mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_atti_inline"></a>ATTI</font></td><td><font color="#666">Attitude mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_atticourselock_inline"></a>ATTI_COURSE_LOCK</font></td><td><font color="#666">Attitude course lock mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_attihover_inline"></a>ATTI_HOVER</font></td><td><font color="#666">Attitude hover mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_gpsatti_inline"></a>GPS_ATTI</font></td><td><font color="#666">GPS Attitude mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_gpscourselock_inline"></a>GPS_COURSE_LOCK</font></td><td><font color="#666">GPS course lock mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_gpshomelock_inline"></a>GPS_HOME_LOCK</font></td><td><font color="#666">GPS Home mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_gpshotpoint_inline"></a>GPS_HOT_POINT</font></td><td><font color="#666">GPS hotpoint mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_assistedtakeoff_inline"></a>ASSISTED_TAKEOFF</font></td><td><font color="#666">Assisted takeoff mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_autotakeoff_inline"></a>AUTO_TAKEOFF</font></td><td><font color="#666">Auto takeoff mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_autolanding_inline"></a>AUTO_LANDING</font></td><td><font color="#666">Auto landing mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_attilanding_inline"></a>ATTI_LANDING</font></td><td><font color="#666">Attitude landing mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_gpswaypoint_inline"></a>GPS_WAYPOINT</font></td><td><font color="#666">GPS waypoint mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_gohome_inline"></a>GO_HOME</font></td><td><font color="#666">Go home mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_joystick_inline"></a>JOYSTICK</font></td><td><font color="#666">Joystick mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_attilimited_inline"></a>ATTI_LIMITED</font></td><td><font color="#666">Attitude limited mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_draw_inline"></a>DRAW</font></td><td><font color="#666">Draw mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_gpsattilimited_inline"></a>GPS_ATTI_WRISTBAND</font></td><td><font color="#666">GPS attitude limited mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_gpsfollowme_inline"></a>GPS_FOLLOW_ME</font></td><td><font color="#666">GPS follow me mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_activetrack_inline"></a>ACTIVE_TRACK</font></td><td><font color="#666">ActiveTrack mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_tapfly_inline"></a>TAP_FLY</font></td><td><font color="#666">TapFly mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_sport_inline"></a>GPS_SPORT</font></td><td><font color="#666">Sport mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_gpsnoive_inline"></a>GPS_NOVICE</font></td><td><font color="#666">GPS Novice mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The main controller flight mode is unknown.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_confirmlanding_inline"></a>CONFIRM_LANDING</font></td><td><font color="#666">Confirm landing mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_terrainfollow_inline"></a>TERRAIN_FOLLOW</font></td><td><font color="#666">The aircraft should move following the terrain.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_tripod_inline"></a>TRIPOD</font></td><td><font color="#666">Tripod mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_activetrackspotlight_inline"></a>TRACK_SPOTLIGHT</font></td><td><font color="#666">Active track mode, corresponds to Spotlight active track mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflightcontroller_djiflightcontrollerflightmode_motorsjuststarted_inline"></a>MOTORS_JUST_STARTED</font></td><td><font color="#666">The motors are just started.</font></td></tr></table></html>

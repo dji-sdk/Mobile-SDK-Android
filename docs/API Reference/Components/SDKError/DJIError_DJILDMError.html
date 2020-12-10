@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -63,6 +63,8 @@
                                       <dd><a href="../KeyManager/DJICameraKey.html">CameraKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">FlightControllerKey</a>
+                                      </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">RadarKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">PayloadKey</a>
                                       </dd>
@@ -352,6 +354,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">Radar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">Simulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorInitializationData.html">InitializationData</a>
@@ -570,6 +574,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">ResolutionAndFrameRate</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraStreamSettings.html">CameraStreamSettings</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_ColorWaveformSettings.html">ColorWaveformSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_StabilizationState.html">StabilizationState</a>
@@ -586,6 +592,8 @@
                                       </dd>
                                       <dd><a data-href="../Camera/DJICamera_DJILens_LensCapabilities.html" class="sub-toggle">LensCapabilities<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJILens_DJILensParameters_ListenerInterface.html">DJILensParametersListener</a>
+                                                </dd>
                                                 <dd><a href="../Camera/DJICamera_DJILens_ThermalGainModeTemperatureRangeCallback.html">ThermalGainModeTemperatureRangeCallback</a>
                                                 </dd>
                                         </ul>
@@ -1074,6 +1082,12 @@
                                                                     </dd>
                                                             </ul>
                                                           </dd>
+                                                          <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html" class="sub-toggle">WaypointCameraCustomNameParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                   </ul>
                                                 </dd>
                                                 <dd><a href="../Missions/DJIWaypointV2Action_DJIWaypointV2Actuator_Builder.html">Builder</a>
@@ -1321,20 +1335,12 @@
 <p><font color="#666">Errors related to the LDM.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="members">Members</h4>
-<div class="api-row" id="djierror_djildmerror_productnotconnected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djildmerror_productnotconnected_inline">PRODUCT_NOT_CONNECTED</a></div></div><div class="inline-doc" id="djierror_djildmerror_productnotconnected_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>PRODUCT_NOT_CONNECTED</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJILDMError PRODUCT_NOT_CONNECTED = <span class="keyword">new</span> DJILDMError(<span class="string">"Please connect your product first!"</span>)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
-<p><font color="#666">Product not connected.</font></p>
-</div>
 <div class="api-row" id="djierror_djildmerror_networkaccessfailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djildmerror_networkaccessfailed_inline">NETWORK_ACCESS_FAILED</a></div></div><div class="inline-doc" id="djierror_djildmerror_networkaccessfailed_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NETWORK_ACCESS_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJILDMError NETWORK_ACCESS_FAILED = <span class="keyword">new</span> DJILDMError(<span class="string">"Network access failed!"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v2">Description:</h5>
 <p><font color="#666">Network access failed.</font></p>
 </div>
 <div class="api-row" id="djierror_djildmerror_signerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djildmerror_signerror_inline">SIGN_ERROR</a></div></div><div class="inline-doc" id="djierror_djildmerror_signerror_inline" <blockquote>
@@ -1342,7 +1348,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJILDMError SIGN_ERROR = <span class="keyword">new</span> DJILDMError(<span class="string">"Signature error"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v3">Description:</h5>
 <p><font color="#666">Signature error.</font></p>
 </div>
 <div class="api-row" id="djierror_djildmerror_areacoderestricted"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djildmerror_areacoderestricted_inline">AREA_CODE_RESTRICTED</a></div></div><div class="inline-doc" id="djierror_djildmerror_areacoderestricted_inline" <blockquote>
@@ -1350,7 +1356,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJILDMError AREA_CODE_RESTRICTED = <span class="keyword">new</span> DJILDMError(<span class="string">"LDM is not supported in the current area"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v4">Description:</h5>
 <p><font color="#666">LDM is not supported in the current area.</font></p>
 </div>
 <div class="api-row" id="djierror_djildmerror_appnotfound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djildmerror_appnotfound_inline">APP_NOT_FOUND</a></div></div><div class="inline-doc" id="djierror_djildmerror_appnotfound_inline" <blockquote>
@@ -1358,7 +1364,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJILDMError APP_NOT_FOUND = <span class="keyword">new</span> DJILDMError(<span class="string">"App does not exist"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v5">Description:</h5>
 <p><font color="#666">App does not exist.</font></p>
 </div>
 <div class="api-row" id="djierror_djildmerror_ldmlicensenotvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djildmerror_ldmlicensenotvalid_inline">LDM_LICENSE_NOT_VALID</a></div></div><div class="inline-doc" id="djierror_djildmerror_ldmlicensenotvalid_inline" <blockquote>
@@ -1366,7 +1372,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJILDMError LDM_LICENSE_NOT_VALID = <span class="keyword">new</span> DJILDMError(<span class="string">"No valid LDM certificate exists"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v6">Description:</h5>
 <p><font color="#666">No valid LDM certificate exists.</font></p>
 </div>
 <div class="api-row" id="djierror_djildmerror_clienttimenotvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djildmerror_clienttimenotvalid_inline">CLIENT_TIME_NOT_VALID</a></div></div><div class="inline-doc" id="djierror_djildmerror_clienttimenotvalid_inline" <blockquote>
@@ -1374,7 +1380,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJILDMError CLIENT_TIME_NOT_VALID = <span class="keyword">new</span> DJILDMError(<span class="string">"Client's current time is invalid"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v7">Description:</h5>
 <p><font color="#666">Client's current time is invalid.</font></p>
 </div>
 <div class="api-row" id="djierror_djildmerror_licenseoutdated"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djildmerror_licenseoutdated_inline">LICENSE_OUTDATED</a></div></div><div class="inline-doc" id="djierror_djildmerror_licenseoutdated_inline" <blockquote>
@@ -1382,15 +1388,31 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJILDMError LICENSE_OUTDATED = <span class="keyword">new</span> DJILDMError(<span class="string">"License has expired!"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666">License has expired.</font></p>
+</div>
+<div class="api-row" id="djierror_djildmerror_unavailable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djildmerror_unavailable_inline">UNAVAILABLE</a></div></div><div class="inline-doc" id="djierror_djildmerror_unavailable_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>UNAVAILABLE</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJILDMError UNAVAILABLE = <span class="keyword">new</span> DJILDMError(<span class="string">"Only available when the Local Data Mode is enabled."</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v9">Description:</h5>
+<p><font color="#666">Only available when the Local Data Mode is enabled.</font></p>
+</div>
+<div class="api-row" id="djierror_djildmerror_ldmnetworkaccessfailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djildmerror_ldmnetworkaccessfailed_inline">LDM_NETWORK_ACCESS_FAILED</a></div></div><div class="inline-doc" id="djierror_djildmerror_ldmnetworkaccessfailed_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>LDM_NETWORK_ACCESS_FAILED</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJILDMError LDM_NETWORK_ACCESS_FAILED = <span class="keyword">new</span> DJILDMError(<span class="string">"In Local Data Mode. Network access failed!"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v10">Description:</h5>
+<p><font color="#666">In Local Data Mode. Network access failed!</font></p>
 </div>
 <div class="api-row" id="djierror_djildmerror_ldmunknownerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djildmerror_ldmunknownerror_inline">LDM_UNKNOWN_ERROR</a></div></div><div class="inline-doc" id="djierror_djildmerror_ldmunknownerror_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>LDM_UNKNOWN_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJILDMError LDM_UNKNOWN_ERROR = <span class="keyword">new</span> DJILDMError(<span class="string">"LDM unknown error"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">LDM unknown error.</font></p>
 </div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
@@ -1399,7 +1421,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(<span class="keyword">int</span> errorCode)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Returns the specific error in the <code><a href="../../Components/SDKError/DJIError_DJISDKFlightHubError.html#djierror_djisdkflighthuberror">DJIFlightHubError</a></code> according to the error code.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">errorCode</font></font></td><td><font color="#666"><i>errorCode for <code><a href="../../Components/SDKError/DJIError_DJISDKFlightHubError.html#djierror_djisdkflighthuberror">DJIFlightHubError</a></code>.</i></font></td></tr></table></html>
@@ -1410,7 +1432,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(<span class="keyword">int</span> errorCode)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.utmiss</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Get DJIUTMISSError.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">errorCode</font></font></td><td><font color="#666"><i>An int value of error code.</i></font></td></tr></table></html>
@@ -1421,7 +1443,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getDescription</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Returns the description of the error code.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>The description of the error code.</i></font></td></tr></table></html></div>
@@ -1430,7 +1452,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String desc)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">Sets the description for the error code.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">desc</font></font></td><td><font color="#666"><i>Description string.</i></font></td></tr></table></html></div>

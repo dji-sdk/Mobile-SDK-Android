@@ -13,14 +13,13 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
+import com.dji.sdk.sample.internal.PickerValueChangeListener;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.controller.MainActivity;
+import com.dji.sdk.sample.internal.utils.Helper;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.utils.VideoFeedView;
-import com.dji.sdk.sample.internal.PickerValueChangeListener;
 import com.dji.sdk.sample.internal.view.PopupNumberPicker;
 import com.dji.sdk.sample.internal.view.PopupNumberPickerDouble;
 import com.dji.sdk.sample.internal.view.PresentableView;
@@ -29,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import dji.common.airlink.PhysicalSource;
 import dji.common.airlink.VideoFeedPriority;
 import dji.common.error.DJIError;
@@ -327,7 +327,7 @@ public class VideoFeederView extends LinearLayout
                 String newText =
                     "Primary Source: " + VideoFeeder.getInstance().getPrimaryVideoFeed().getVideoSource().name();
                 ToastUtils.setResultToText(primaryVideoFeedTitle, newText);
-                if (isMultiStreamPlatform()) {
+                if (Helper.isMultiStreamPlatform()) {
                     String newTextFpv = "Secondary Source: " + VideoFeeder.getInstance()
                                                                           .getSecondaryVideoFeed()
                                                                           .getVideoSource()
@@ -338,7 +338,7 @@ public class VideoFeederView extends LinearLayout
             } else {
                 VideoFeeder.getInstance().removePhysicalSourceListener(sourceListener);
                 VideoFeeder.getInstance().getPrimaryVideoFeed().removeVideoDataListener(primaryVideoDataListener);
-                if (isMultiStreamPlatform()) {
+                if (Helper.isMultiStreamPlatform()) {
                     VideoFeeder.getInstance()
                                .getSecondaryVideoFeed()
                                .removeVideoDataListener(secondaryVideoDataListener);
@@ -363,7 +363,7 @@ public class VideoFeederView extends LinearLayout
     }
 
     private void updateM300Buttons() {
-        if (isM300Product()) {
+        if (Helper.isM300Product()) {
             VideoFeederView.this.post(new Runnable() {
                 @Override
                 public void run() {
@@ -488,7 +488,7 @@ public class VideoFeederView extends LinearLayout
     }
 
     private void onClickSetVideoSourceBtn() {
-        if (isM300Product()) {
+        if (Helper.isM300Product()) {
            if (airLink != null) {
                OcuSyncLink ocuSyncLink = airLink.getOcuSyncLink();
                if (ocuSyncLink != null) {
@@ -528,7 +528,7 @@ public class VideoFeederView extends LinearLayout
     }
 
     private void onClickSetPrimaryPriorityBtn() {
-        if (isM300Product()) {
+        if (Helper.isM300Product()) {
             VideoFeeder.VideoFeed videoFeed = VideoFeeder.getInstance().getPrimaryVideoFeed();
             VideoFeedPriority[] priorityIndex = new VideoFeedPriority[]{
                     VideoFeedPriority.HIGH,
@@ -559,7 +559,7 @@ public class VideoFeederView extends LinearLayout
     }
 
     private void onClickGetPrimaryPriorityBtn() {
-        if (isM300Product()) {
+        if (Helper.isM300Product()) {
             VideoFeeder.VideoFeed videoFeed = VideoFeeder.getInstance().getPrimaryVideoFeed();
             videoFeed.getPriority(new CommonCallbacks.CompletionCallbackWith<VideoFeedPriority>() {
                 @Override
@@ -617,31 +617,6 @@ public class VideoFeederView extends LinearLayout
         }
 
         return false;
-    }
-
-
-    private boolean isM300Product() {
-        if (DJISDKManager.getInstance().getProduct() == null) {
-            return false;
-        }
-        Model model = DJISDKManager.getInstance().getProduct().getModel();
-        return model == Model.MATRICE_300_RTK;
-    }
-
-    private boolean isMultiStreamPlatform() {
-        Model model = DJISDKManager.getInstance().getProduct().getModel();
-        return model != null && (model == Model.INSPIRE_2
-            || model == Model.MATRICE_200
-            || model == Model.MATRICE_210
-            || model == Model.MATRICE_210_RTK
-            || model == Model.MATRICE_200_V2
-            || model == Model.MATRICE_210_V2
-            || model == Model.MATRICE_210_RTK_V2
-            || model == Model.MATRICE_300_RTK
-            || model == Model.MATRICE_600
-            || model == Model.MATRICE_600_PRO
-            || model == Model.A3
-            || model == Model.N3);
     }
 
     @Override

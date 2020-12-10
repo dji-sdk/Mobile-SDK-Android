@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/radar_info"
+                style="@style/main_camera_view"
+                android:layout_alignParentBottom="false"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:id="@+id/btn_get_upward_avoidance"
+                style="@style/common_button"
+                android:layout_below="@id/radar_info"
+                android:layout_toLeftOf="@+id/btn_set_upward_avoidance"
+                android:text="Get Upward Obstacle Avoidance" />
+
+            <Button
+                android:id="@+id/btn_set_upward_avoidance"
+                style="@style/common_button"
+                android:layout_below="@id/radar_info"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Set Upward Obstacle Avoidance" />
+
+            <Button
+                android:id="@+id/btn_get_horizontal_avoidance"
+                style="@style/common_button"
+                android:layout_below="@id/radar_info"
+                android:layout_toRightOf="@+id/btn_set_upward_avoidance"
+                android:text="Get Horizontal Obstacle Avoidance" />
+
+            <Button
+                android:id="@+id/btn_set_horizontal_avoidance"
+                style="@style/common_button"
+                android:layout_below="@id/btn_get_upward_avoidance"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Set Horizontal Obstacle Avoidance" />
+
+        </RelativeLayout>
+    </ScrollView>
+</merge>
