@@ -371,7 +371,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction0 = new WaypointV2Action.Builder()
-                .setActionID(0)
+                .setActionID(1)
                 .setTrigger(waypointAction0Trigger)
                 .setActuator(waypointAction0Actuator)
                 .build();
@@ -380,7 +380,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction1Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(0)
+                        .setAssociateActionID(1)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -397,7 +397,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction1 = new WaypointV2Action.Builder()
-                .setActionID(1)
+                .setActionID(2)
                 .setTrigger(waypointAction1Trigger)
                 .setActuator(waypointAction1Actuator)
                 .build();
@@ -406,7 +406,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction2Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(1)
+                        .setAssociateActionID(2)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -427,7 +427,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction2 = new WaypointV2Action.Builder()
-                .setActionID(2)
+                .setActionID(3)
                 .setTrigger(waypointAction2Trigger)
                 .setActuator(waypointAction2Actuator)
                 .build();
@@ -436,7 +436,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction3Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(2)
+                        .setAssociateActionID(3)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -450,7 +450,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction3 = new WaypointV2Action.Builder()
-                .setActionID(3)
+                .setActionID(4)
                 .setTrigger(waypointAction3Trigger)
                 .setActuator(waypointAction3Actuator)
                 .build();
@@ -459,7 +459,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction4Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(3)
+                        .setAssociateActionID(4)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -480,7 +480,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction4 = new WaypointV2Action.Builder()
-                .setActionID(4)
+                .setActionID(5)
                 .setTrigger(waypointAction4Trigger)
                 .setActuator(waypointAction4Actuator)
                 .build();
@@ -489,7 +489,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction5Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(4)
+                        .setAssociateActionID(5)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -506,7 +506,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction5 = new WaypointV2Action.Builder()
-                .setActionID(5)
+                .setActionID(6)
                 .setTrigger(waypointAction5Trigger)
                 .setActuator(waypointAction5Actuator)
                 .build();
@@ -535,7 +535,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction6 = new WaypointV2Action.Builder()
-                .setActionID(6)
+                .setActionID(7)
                 .setTrigger(waypointAction6Trigger)
                 .setActuator(waypointAction6Actuator)
                 .build();
@@ -564,7 +564,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction7 = new WaypointV2Action.Builder()
-                .setActionID(7)
+                .setActionID(8)
                 .setTrigger(waypointAction7Trigger)
                 .setActuator(waypointAction7Actuator)
                 .build();
@@ -593,7 +593,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction8 = new WaypointV2Action.Builder()
-                .setActionID(8)
+                .setActionID(9)
                 .setTrigger(waypointAction8Trigger)
                 .setActuator(waypointAction8Actuator)
                 .build();
@@ -615,7 +615,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction9 = new WaypointV2Action.Builder()
-                .setActionID(9)
+                .setActionID(10)
                 .setTrigger(waypointAction9Trigger)
                 .setActuator(waypointAction9Actuator)
                 .build();
@@ -647,7 +647,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction10 = new WaypointV2Action.Builder()
-                .setActionID(10)
+                .setActionID(11)
                 .setTrigger(waypointAction10Trigger)
                 .setActuator(waypointAction10Actuator)
                 .build();
@@ -656,7 +656,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction11Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(10)
+                        .setAssociateActionID(11)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         // Because set file name and shoot photo is the same module, it is better to set a waiting time.
                         .setWaitingTime(0.5f)
@@ -671,7 +671,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
 
         WaypointV2Action waypointAction11 = new WaypointV2Action.Builder()
-                .setActionID(11)
+                .setActionID(12)
                 .setTrigger(waypointAction11Trigger)
                 .setActuator(waypointAction11Actuator)
                 .build();

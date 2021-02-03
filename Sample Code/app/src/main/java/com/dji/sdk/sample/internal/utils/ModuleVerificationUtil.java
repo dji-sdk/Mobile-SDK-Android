@@ -1,10 +1,9 @@
 package com.dji.sdk.sample.internal.utils;
 
 
-import androidx.annotation.Nullable;
-
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 
+import androidx.annotation.Nullable;
 import dji.common.product.Model;
 import dji.sdk.accessory.AccessoryAggregation;
 import dji.sdk.accessory.beacon.Beacon;
@@ -148,6 +147,14 @@ public class ModuleVerificationUtil {
         BaseProduct baseProduct = DJISampleApplication.getProductInstance();
         if (baseProduct != null) {
             return baseProduct.getModel() == Model.MAVIC_2_PRO || baseProduct.getModel() == Model.MAVIC_2_ZOOM;
+        }
+        return false;
+    }
+
+    public static boolean isMavicAir2(){
+        BaseProduct baseProduct = DJISampleApplication.getProductInstance();
+        if (baseProduct != null) {
+            return baseProduct.getModel() == Model.MAVIC_AIR_2;
         }
         return false;
     }

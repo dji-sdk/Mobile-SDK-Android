@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
+import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
 
@@ -32,18 +33,16 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         Log.v("Attached To Window", "onAttachedToWindow");
-
         if (isModuleAvailable()) {
-
+            if (ModuleVerificationUtil.isMavicAir2()){
+                DJISampleApplication.getProductInstance()
+                        .getCamera()
+                        .setFlatMode(SettingsDefinitions.FlatCameraMode.PHOTO_SINGLE, djiError -> ToastUtils.setResultToToast("SetCameraMode to shootPhoto"));
+                return;
+            }
             DJISampleApplication.getProductInstance()
                     .getCamera()
-                    .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO,
-                            new CommonCallbacks.CompletionCallback() {
-                                @Override
-                                public void onResult(DJIError djiError) {
-
-                                }
-                            });
+                    .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO, djiError -> ToastUtils.setResultToToast("SetCameraMode to shootPhoto"));
         }
     }
 

@@ -36,17 +36,18 @@ public class RecordVideoView extends BaseThreeBtnView {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        if (ModuleVerificationUtil.isCameraModuleAvailable()) {
+        if (!ModuleVerificationUtil.isCameraModuleAvailable()) {
+            return;
+        }
+        if (ModuleVerificationUtil.isMavicAir2()){
             DJISampleApplication.getProductInstance()
                     .getCamera()
-                    .setMode(SettingsDefinitions.CameraMode.RECORD_VIDEO,
-                            new CommonCallbacks.CompletionCallback() {
-                                @Override
-                                public void onResult(DJIError djiError) {
-                                    ToastUtils.setResultToToast("SetCameraMode to recordVideo");
-                                }
-                            });
+                    .setFlatMode(SettingsDefinitions.FlatCameraMode.VIDEO_NORMAL, djiError -> ToastUtils.setResultToToast("SetCameraMode to recordVideo"));
+            return;
         }
+        DJISampleApplication.getProductInstance()
+                .getCamera()
+                .setMode(SettingsDefinitions.CameraMode.RECORD_VIDEO, djiError -> ToastUtils.setResultToToast("SetCameraMode to recordVideo"));
     }
 
     @Override
@@ -54,16 +55,19 @@ public class RecordVideoView extends BaseThreeBtnView {
         super.onDetachedFromWindow();
 
         if (ModuleVerificationUtil.isCameraModuleAvailable()) {
+            return;
+        }
+
+        if (ModuleVerificationUtil.isMavicAir2()){
             DJISampleApplication.getProductInstance()
                     .getCamera()
-                    .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO,
-                            new CommonCallbacks.CompletionCallback() {
-                                @Override
-                                public void onResult(DJIError djiError) {
-                                    ToastUtils.setResultToToast("SetCameraMode to shootPhoto");
-                                }
-                            });
+                    .setFlatMode(SettingsDefinitions.FlatCameraMode.PHOTO_SINGLE, djiError -> ToastUtils.setResultToToast("SetCameraMode to shootPhoto"));
+            return;
         }
+        DJISampleApplication.getProductInstance()
+                .getCamera()
+                .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO, djiError -> ToastUtils.setResultToToast("SetCameraMode to shootPhoto"));
+
     }
 
     @Override
@@ -93,28 +97,25 @@ public class RecordVideoView extends BaseThreeBtnView {
         if (ModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance()
                     .getCamera()
-                    .startRecordVideo(new CommonCallbacks.CompletionCallback() {
-                        @Override
-                        public void onResult(DJIError djiError) {
-                            //success so, start recording
-                            if (null == djiError) {
-                                ToastUtils.setResultToToast("Start record");
-                                timer = new Timer();
-                                timer.schedule(new TimerTask() {
-                                    @Override
-                                    public void run() {
-                                        timeCounter = timeCounter + 1;
-                                        hours = TimeUnit.MILLISECONDS.toHours(timeCounter);
-                                        minutes =
-                                                TimeUnit.MILLISECONDS.toMinutes(timeCounter) - (hours * 60);
-                                        seconds = TimeUnit.MILLISECONDS.toSeconds(timeCounter) - ((hours
-                                                * 60
-                                                * 60) + (minutes * 60));
-                                        time = String.format("%02d:%02d:%02d", hours, minutes, seconds);
-                                        changeDescription(time);
-                                    }
-                                }, 0, 1);
-                            }
+                    .startRecordVideo(djiError -> {
+                        //success so, start recording
+                        if (null == djiError) {
+                            ToastUtils.setResultToToast("Start record");
+                            timer = new Timer();
+                            timer.schedule(new TimerTask() {
+                                @Override
+                                public void run() {
+                                    timeCounter = timeCounter + 1;
+                                    hours = TimeUnit.MILLISECONDS.toHours(timeCounter);
+                                    minutes =
+                                            TimeUnit.MILLISECONDS.toMinutes(timeCounter) - (hours * 60);
+                                    seconds = TimeUnit.MILLISECONDS.toSeconds(timeCounter) - ((hours
+                                            * 60
+                                            * 60) + (minutes * 60));
+                                    time = String.format("%02d:%02d:%02d", hours, minutes, seconds);
+                                    changeDescription(time);
+                                }
+                            }, 0, 1);
                         }
                     });
         }
@@ -126,14 +127,11 @@ public class RecordVideoView extends BaseThreeBtnView {
         if (ModuleVerificationUtil.isCameraModuleAvailable()) {
             DJISampleApplication.getProductInstance()
                     .getCamera()
-                    .stopRecordVideo(new CommonCallbacks.CompletionCallback() {
-                        @Override
-                        public void onResult(DJIError djiError) {
-                            ToastUtils.setResultToToast("StopRecord");
-                            changeDescription("00:00:00");
-                            timer.cancel();
-                            timeCounter = 0;
-                        }
+                    .stopRecordVideo(djiError -> {
+                        ToastUtils.setResultToToast("StopRecord");
+                        changeDescription("00:00:00");
+                        timer.cancel();
+                        timeCounter = 0;
                     });
         }
     }

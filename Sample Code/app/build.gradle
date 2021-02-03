@@ -84,8 +84,10 @@ dependencies {
          * Both will greatly reducing the size of the APK.
          */
         exclude module: 'library-anti-distortion'
+        exclude module: 'utmiss'
         //exclude module: 'fly-safe-database'
     })
+    implementation 'com.dji:utmiss:1.0.8'
     compileOnly 'com.dji:dji-sdk-provided:4.14-trial1'
 
     implementation 'androidx.appcompat:appcompat:1.0.0'
