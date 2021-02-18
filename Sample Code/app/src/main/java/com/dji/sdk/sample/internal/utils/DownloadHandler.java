@@ -17,6 +17,11 @@ public class DownloadHandler<B> implements DownloadListener<B> {
     }
 
     @Override
+    public void onRealtimeDataUpdate(byte[] bytes, long l, boolean b) {
+
+    }
+
+    @Override
     public void onProgress(long total, long current) {
 
     }
