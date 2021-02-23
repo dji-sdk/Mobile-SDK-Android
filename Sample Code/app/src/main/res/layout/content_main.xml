@@ -8,6 +8,15 @@
                                               android:orientation="vertical"
                                               tools:context=".internal.controller.MainActivity">
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:visibility="gone"
+        android:max="100"
+        android:progress="0" />
+
     <TextView
         android:id="@+id/text_connection_status"
         android:layout_width="wrap_content"
@@ -71,9 +80,35 @@
         android:layout_height="55dp"
         android:layout_below="@+id/edittext_bridge_ip"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/round_btn"
         android:text="Bluetooth"
+        android:textAllCaps="false"
+        android:textColor="@color/common_text_color"
+        android:textSize="15dp"/>
+
+    <Button
+        android:id="@+id/btn_registerApp"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/btn_bluetooth"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/round_btn"
+        android:text="Register APP"
+        android:textAllCaps="false"
+        android:textColor="@color/common_text_color"
+        android:textSize="15dp"/>
+
+    <Button
+        android:id="@+id/btn_registerAppForLDM"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/btn_registerApp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/round_btn"
+        android:text="Register APP for LDM"
         android:textAllCaps="false"
         android:textColor="@color/common_text_color"
         android:textSize="15dp"/>
@@ -82,9 +117,9 @@
         android:id="@+id/btn_open"
         android:layout_width="150dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/btn_bluetooth"
+        android:layout_below="@+id/btn_registerAppForLDM"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/round_btn"
         android:text="Open"
         android:textAllCaps="false"
@@ -97,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_open"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:text="@string/sdk_version"
         android:textColor="@color/gray"
         android:textSize="15dp"/>

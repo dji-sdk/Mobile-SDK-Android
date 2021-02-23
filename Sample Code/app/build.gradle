@@ -76,7 +76,7 @@ android {
 dependencies {
     implementation 'androidx.multidex:multidex:2.0.0'
     implementation 'com.squareup:otto:1.3.8'
-    implementation('com.dji:dji-sdk:4.14-trial1', {
+    implementation('com.dji:dji-sdk:4.14', {
         /**
          * Uncomment the "library-anti-distortion" if your app does not need Anti Distortion for Mavic 2 Pro and Mavic 2 Zoom.
          * Uncomment the "fly-safe-database" if you need database for release, or we will download it when DJISDKManager.getInstance().registerApp
@@ -84,11 +84,9 @@ dependencies {
          * Both will greatly reducing the size of the APK.
          */
         exclude module: 'library-anti-distortion'
-        exclude module: 'utmiss'
         //exclude module: 'fly-safe-database'
     })
-    implementation 'com.dji:utmiss:1.0.8'
-    compileOnly 'com.dji:dji-sdk-provided:4.14-trial1'
+    compileOnly 'com.dji:dji-sdk-provided:4.14'
 
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.core:core:1.0.0'
