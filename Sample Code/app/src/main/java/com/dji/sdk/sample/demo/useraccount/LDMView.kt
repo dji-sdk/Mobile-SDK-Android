@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
-import butterknife.OnClick
 import com.dji.sdk.sample.R
 import com.dji.sdk.sample.internal.utils.ToastUtils
 import com.dji.sdk.sample.internal.view.PresentableView
@@ -14,12 +13,14 @@ import dji.common.error.DJIError
 import dji.common.util.CommonCallbacks.CompletionCallbackWith
 import dji.sdk.sdkmanager.DJISDKManager
 import dji.sdk.sdkmanager.LDMManager.LDMCallback
+import dji.sdk.sdkmanager.LDMModule
+import dji.sdk.sdkmanager.LDMModuleType
 
 class LDMView(context: Context?) : LinearLayout(context), PresentableView, View.OnClickListener {
 
     private lateinit var ldmInfoText: TextView
-    private var isLDMEnable: Boolean = false
-    private var isLDMSupport: Boolean = false
+    private var isLDMSupported: Boolean = false
+    private var isLDMEnabled: Boolean = false
 
     init {
         initUI(context)
@@ -36,19 +37,20 @@ class LDMView(context: Context?) : LinearLayout(context), PresentableView, View.
         findViewById<View>(R.id.btn_disable_ldm).setOnClickListener(this)
         findViewById<View>(R.id.btn_enable_rtk_network).setOnClickListener(this)
         findViewById<View>(R.id.btn_disable_rtk_network).setOnClickListener(this)
-        findViewById<View>(R.id.btn_is_rtk_network_enabled).setOnClickListener(this)
+        findViewById<View>(R.id.btn_is_enable_user_account).setOnClickListener(this)
+        findViewById<View>(R.id.btn_is_disable_user_account).setOnClickListener(this)
         findViewById<View>(R.id.btn_get_ldm_license).setOnClickListener(this)
     }
 
     private fun initListener() {
         DJISDKManager.getInstance().ldmManager.setCallback(object : LDMCallback {
             override fun onLDMEnabledChange(isEnabled: Boolean) {
-                isLDMEnable = isEnabled;
+                isLDMEnabled = isEnabled;
                 handler.post { updateLdmInfo() }
             }
 
             override fun onLDMSupportedChange(isSupported: Boolean) {
-                isLDMSupport = isSupported;
+                isLDMSupported = isSupported;
                 handler.post { updateLdmInfo() }
             }
         })
@@ -68,18 +70,40 @@ class LDMView(context: Context?) : LinearLayout(context), PresentableView, View.
         }
     }
 
-    fun enableRTKNetwork() {
-        val error = DJISDKManager.getInstance().ldmManager.setRTKNetworkServiceEnabled(true)
-        ToastUtils.setResultToToast("enableRTKNetwork " + if (error == null) "success" else "error=" + error.description)
+    fun setRTKEnabled() {
+        var error = DJISDKManager.getInstance().ldmManager.setModuleNetworkServiceEnabled(LDMModule.Builder()
+                .enabled(true)
+                .moduleType(LDMModuleType.RTK)
+                .build())
+        ToastUtils.setResultToToast("setRTKEnabled " + if (error == null) "success" else "error=" + error.description)
+        updateLdmInfo()
     }
 
-    fun disableRTKNetwork() {
-        val error = DJISDKManager.getInstance().ldmManager.setRTKNetworkServiceEnabled(false)
-        ToastUtils.setResultToToast("disableRTKNetwork " + if (error == null) "success" else "error=" + error.description)
+    fun setRTKDisabled() {
+        var error = DJISDKManager.getInstance().ldmManager.setModuleNetworkServiceEnabled(LDMModule.Builder()
+                .enabled(false)
+                .moduleType(LDMModuleType.RTK)
+                .build())
+        ToastUtils.setResultToToast("setRTKDisabled " + if (error == null) "success" else "error=" + error.description)
+        updateLdmInfo()
     }
 
-    fun isRTKNetworkEnabled() {
-        ToastUtils.setResultToToast("isRTKNetworkServiceEnabled: " + DJISDKManager.getInstance().ldmManager.isRTKNetworkServiceEnabled)
+    fun setUserAccountEnabled() {
+        var error = DJISDKManager.getInstance().ldmManager.setModuleNetworkServiceEnabled(LDMModule.Builder()
+                .enabled(true)
+                .moduleType(LDMModuleType.USER_ACCOUNT)
+                .build())
+        ToastUtils.setResultToToast("setUserAccountEnabled " + if (error == null) "success" else "error=" + error.description)
+        updateLdmInfo()
+    }
+
+    fun setUserAccountDisabled() {
+        var error = DJISDKManager.getInstance().ldmManager.setModuleNetworkServiceEnabled(LDMModule.Builder()
+                .enabled(false)
+                .moduleType(LDMModuleType.USER_ACCOUNT)
+                .build())
+        ToastUtils.setResultToToast("setUserAccountDisabled " + if (error == null) "success" else "error=" + error.description)
+        updateLdmInfo()
     }
 
     fun getLdmLicense() {
@@ -92,10 +116,18 @@ class LDMView(context: Context?) : LinearLayout(context), PresentableView, View.
                 ToastUtils.setResultToToast("getLdmLicense error=" + error.description)
             }
         })
+        updateLdmInfo()
     }
 
     private fun updateLdmInfo() {
-        ldmInfoText.text = "LDM enabled:$isLDMEnable,LDM supported:$isLDMSupport"
+        isLDMEnabled =  DJISDKManager.getInstance().ldmManager.isLDMEnabled
+        var isRTKEnabled = DJISDKManager.getInstance().ldmManager.isModuleNetworkServiceEnabled(LDMModuleType.RTK)
+        var isUserAccountEnabled = DJISDKManager.getInstance().ldmManager.isModuleNetworkServiceEnabled(LDMModuleType.USER_ACCOUNT)
+
+        ldmInfoText.text = "LDM enabled: $isLDMEnabled\n" +
+                "LDM supported: $isLDMSupported\n" +
+                "isRTKEnabled: $isRTKEnabled\n" +
+                "isUserAccountEnabled: $isUserAccountEnabled\n"
     }
 
     override fun getDescription(): Int = R.string.component_listview_ldm
@@ -106,9 +138,10 @@ class LDMView(context: Context?) : LinearLayout(context), PresentableView, View.
         when (v?.id) {
             R.id.btn_enable_ldm -> enableLDM()
             R.id.btn_disable_ldm -> disableLDM()
-            R.id.btn_enable_rtk_network -> enableRTKNetwork()
-            R.id.btn_disable_rtk_network -> disableRTKNetwork()
-            R.id.btn_is_rtk_network_enabled -> isRTKNetworkEnabled()
+            R.id.btn_enable_rtk_network -> setRTKEnabled()
+            R.id.btn_disable_rtk_network -> setRTKDisabled()
+            R.id.btn_is_enable_user_account -> setUserAccountEnabled()
+            R.id.btn_is_disable_user_account -> setUserAccountDisabled()
             R.id.btn_get_ldm_license -> getLdmLicense()
         }
     }

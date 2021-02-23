@@ -13,50 +13,57 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_get_ldm_license"
+                style="@style/common_button"
+                android:layout_below="@id/ldm_info"
+                android:layout_toLeftOf="@+id/btn_enable_ldm"
+                android:text="Get LDM License" />
+
+            <Button
                 android:id="@+id/btn_enable_ldm"
                 style="@style/common_button"
                 android:layout_below="@id/ldm_info"
-                android:layout_toLeftOf="@+id/btn_disable_ldm"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:text="Enable LDM" />
 
             <Button
                 android:id="@+id/btn_disable_ldm"
                 style="@style/common_button"
                 android:layout_below="@id/ldm_info"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/btn_enable_ldm"
                 android:text="Disable LDM" />
 
             <Button
                 android:id="@+id/btn_enable_rtk_network"
                 style="@style/common_button"
-                android:layout_below="@id/ldm_info"
-                android:layout_toRightOf="@+id/btn_disable_ldm"
+                android:layout_below="@id/btn_enable_ldm"
+                android:layout_toLeftOf="@+id/btn_disable_rtk_network"
                 android:text="Enable RTK Network" />
 
             <Button
                 android:id="@+id/btn_disable_rtk_network"
                 style="@style/common_button"
-                android:layout_below="@id/btn_enable_ldm"
+                android:layout_below="@id/btn_disable_ldm"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:text="Disable RTK Network" />
 
             <Button
-                android:id="@+id/btn_is_rtk_network_enabled"
+                android:id="@+id/btn_is_enable_user_account"
                 style="@style/common_button"
-                android:layout_below="@id/btn_enable_ldm"
-                android:layout_toLeftOf="@+id/btn_disable_rtk_network"
-                android:text="Is RTK Network Enabled" />
+                android:layout_below="@id/btn_disable_ldm"
+                android:layout_toRightOf="@+id/btn_disable_rtk_network"
+                android:text="Enable User Account" />
 
             <Button
-                android:id="@+id/btn_get_ldm_license"
+                android:id="@+id/btn_is_disable_user_account"
                 style="@style/common_button"
-                android:layout_below="@id/btn_enable_ldm"
-                android:layout_toRightOf="@+id/btn_disable_rtk_network"
-                android:text="Get LDM License" />
+                android:layout_below="@id/btn_enable_rtk_network"
+                android:layout_marginLeft="20dp"
+                android:text="Disable User Account" />
 
             <TextView
                 android:id="@+id/ldm_info"

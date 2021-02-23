@@ -13,8 +13,6 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 import dji.common.camera.SettingsDefinitions;
-import dji.common.error.DJIError;
-import dji.common.util.CommonCallbacks;
 
 /**
  * Created by dji on 16/1/6.

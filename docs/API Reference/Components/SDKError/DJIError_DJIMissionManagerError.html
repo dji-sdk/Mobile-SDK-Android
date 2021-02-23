@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -148,6 +148,12 @@
                   </dd>
                   <dd><a data-href="../LDMManager/DJILDMManager.html" class="sub-toggle">LDMManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../LDMManager/DJILDMManager_LDMModule.html" class="sub-toggle">LDMModule<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../LDMManager/DJILDMManager_LDMModule_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../LDMManager/DJILDMManager_LDMCallbackInterface.html">LDMCallback</a>
                             </dd>
                     </ul>
@@ -1381,7 +1387,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError WAYPOINT_COUNT_NOT_VALID = <span class="keyword">new</span> DJIMissionError(<span class="string">"Waypoint count is invalid"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">Waypoint count is invalid.</font></p>
+<p><font color="#666">Waypoint count exceeds the maximum limit.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkmissionerror_waypointmissionerrorwaypointlistsize"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkmissionerror_waypointmissionerrorwaypointlistsize_inline">WAYPOINT_LIST_SIZE_NOT_VALID</a></div></div><div class="inline-doc" id="djierror_djisdkmissionerror_waypointmissionerrorwaypointlistsize_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>WAYPOINT_LIST_SIZE_NOT_VALID</h6></div>
@@ -1948,7 +1954,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError ALTITUDE_TOO_HIGH = <span class="keyword">new</span> DJIMissionError(<span class="string">"The altitude is too high"</span>, <span class="number">0xC0</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v77">Description:</h5>
-<p><font color="#666">The altitude is too high.</font></p>
+<p><font color="#666">The altitude is too high. The range of the altitude should be [-200,500].</font></p>
 </div>
 <div class="api-row" id="djierror_djimissionmanagererror_mission_result_altitude_too_low"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djimissionmanagererror_mission_result_altitude_too_low_inline">ALTITUDE_TOO_LOW</a></div></div><div class="inline-doc" id="djierror_djimissionmanagererror_mission_result_altitude_too_low_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ALTITUDE_TOO_LOW</h6></div>
@@ -1956,7 +1962,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIMissionError ALTITUDE_TOO_LOW = <span class="keyword">new</span> DJIMissionError(<span class="string">"The altitude is too low"</span>, <span class="number">0xC1</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v78">Description:</h5>
-<p><font color="#666">The altitude is too low.</font></p>
+<p><font color="#666">The altitude is too low. The range of the altitude should be [-200,500].</font></p>
 </div>
 <div class="api-row" id="djierror_djimissionmanagererror_mission_result_mission_radius_invalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djimissionmanagererror_mission_result_mission_radius_invalid_inline">MISSION_RADIUS_INVALID</a></div></div><div class="inline-doc" id="djierror_djimissionmanagererror_mission_result_mission_radius_invalid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>MISSION_RADIUS_INVALID</h6></div>
