@@ -484,7 +484,6 @@ public class MainContent extends RelativeLayout {
                                     DJISDKManager.getInstance().startConnectionToProduct();
                                     ToastUtils.setResultToToast(mContext.getString(R.string.sdk_registration_success_message));
                                     showDBVersion();
-                                    notifyStatusChange();
                                 } else {
                                     ToastUtils.setResultToToast(mContext.getString(R.string.sdk_registration_message) + djiError.getDescription());
                                 }
@@ -553,7 +552,6 @@ public class MainContent extends RelativeLayout {
                                     DJISDKManager.getInstance().startConnectionToProduct();
                                     ToastUtils.setResultToToast(mContext.getString(R.string.sdk_registration_success_message));
                                     showDBVersion();
-                                    notifyStatusChange();
                                 } else {
                                     ToastUtils.setResultToToast(mContext.getString(R.string.sdk_registration_message) + djiError.getDescription());
                                 }

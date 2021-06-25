@@ -8,73 +8,27 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dji.sdk.sample.R;
-import com.dji.sdk.sample.internal.utils.Helper;
+import com.dji.sdk.sample.internal.controller.DJISampleApplication;
+import com.dji.sdk.sample.internal.utils.ViewHelper;
+import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 
-import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.useraccount.UserAccountState;
 import dji.common.util.CommonCallbacks;
-import dji.keysdk.CameraKey;
-import dji.keysdk.DJIKey;
-import dji.keysdk.KeyManager;
-import dji.keysdk.PayloadKey;
-import dji.keysdk.callback.KeyListener;
-import dji.midware.data.manager.P3.DJIPayloadUsbDataManager;
+import dji.sdk.payload.Payload;
 import dji.sdk.useraccount.UserAccountManager;
 
-/**
- * Created by Michael on 17/11/6.
- */
-
 public class PayloadActivity extends AppCompatActivity implements View.OnClickListener{
-    private TextView pushTextView;
+    private TextView pushUARTTextView;
     private TextView payloadNameView;
-    private TextView pushTextViewFromUsb;
-    private DJIKey getDataKey;
-    private DJIKey payloadNameKey;
+    private TextView pushUDPTextView;
+    private Payload payload = null;
     private String payloadName = "";
-
-    private KeyListener getDataListener = new KeyListener() {
-        @Override
-        public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
-            if (pushTextView != null) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (newValue instanceof byte[]) {
-                            String str = Helper.getString((byte[]) newValue);
-                            pushTextView.setText(str + "\n");
-                            pushTextView.invalidate();
-                        }
-                    }
-                });
-            }
-        }
-    };
-    private KeyListener getNameListener = new KeyListener() {
-        @Override
-        public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
-            if (pushTextView != null) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (newValue instanceof String) {
-                            payloadName = newValue.toString();
-                            payloadNameView.setText("Payload Name:"
-                                                        + (TextUtils.isEmpty(payloadName)?"N/A":payloadName));
-                            payloadNameView.invalidate();
-                        }
-                    }
-                });
-            }
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,66 +40,82 @@ public class PayloadActivity extends AppCompatActivity implements View.OnClickLi
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-        pushTextView = (TextView) findViewById(R.id.push_info_text);
         payloadNameView = (TextView) findViewById(R.id.payload_name);
-        pushTextViewFromUsb = (TextView) findViewById(R.id.push_info_text_usb);
-        pushTextView.setMovementMethod(new ScrollingMovementMethod());
+        pushUARTTextView = (TextView) findViewById(R.id.push_info_text_UART);
+        pushUDPTextView = (TextView) findViewById(R.id.push_info_text_UDP);
+        pushUARTTextView.setMovementMethod(new ScrollingMovementMethod());
         initListener();
     }
-
 
     private void initListener() {
         findViewById(R.id.sent_data).setOnClickListener(this);
         findViewById(R.id.login_sdk).setOnClickListener(this);
-        getDataKey = PayloadKey.create(PayloadKey.GET_DATA_FROM_PAYLOAD);
-        payloadNameKey = PayloadKey.create(PayloadKey.PAYLOAD_PRODUCT_NAME);
-        if (KeyManager.getInstance() != null) {
-            KeyManager.getInstance().addListener(getDataKey, getDataListener);
-            KeyManager.getInstance().addListener(payloadNameKey, getNameListener);
-            KeyManager.getInstance().setValue(CameraKey.create(CameraKey.MODE),
-                                              SettingsDefinitions.CameraMode.SHOOT_PHOTO, null);
-        }
-        Object name = KeyManager.getInstance().getValue(payloadNameKey);
-        if (name != null) {
-            payloadName = name.toString();
-            payloadNameView.setText("Payload Name:" + (TextUtils.isEmpty(payloadName)?"N/A":payloadName));
+        if (ModuleVerificationUtil.isPayloadAvailable()) {
+            payload = DJISampleApplication.getAircraftInstance().getPayload();
+
+            /**
+             *  Gets the product name defined by the manufacturer of the payload device.
+             */
+            payloadName = payload.getPayloadProductName();
+            payloadNameView.setText("Payload Name:" + (TextUtils.isEmpty(payloadName) ? "N/A" : payloadName));
             payloadNameView.invalidate();
-        }
-        DJIPayloadUsbDataManager.getInstance().setDataListener(new DJIPayloadUsbDataManager.PayloadUsbDataListener() {
-            @Override
-            public void onDataInput(byte[] data, int len) {
-                String str = Helper.getStringUTF8(data, 0, len);
-                updateUsbPushData(str);
-            }
-            @Override
-            public void isBlocking() {
-                ToastUtils.showToast("blocking when getting data from usb channel!");
-            }
-        });
-    }
 
-
-
-    private void updateUsbPushData(final String str) {
-        if (pushTextViewFromUsb != null) {
-            runOnUiThread(new Runnable() {
+            /**
+             *  Set the command data callback, the command data typically sent by payload in UART/CAN channel, the max bandwidth of this channel is 3KBytes/s on M200.
+             */
+            payload.setCommandDataCallback(new Payload.CommandDataCallback() {
                 @Override
-                public void run() {
-                    pushTextViewFromUsb.setText(str + "\n");
-                    pushTextViewFromUsb.invalidate();
+                public void onGetCommandData(byte[] bytes) {
+                    String str = ViewHelper.getStringUTF8(bytes, 0, bytes.length);
+                    updateUARTPushData(str);
+                }
+            });
+
+            /**
+             *  Set the UDP data callback, this callback is for receiving the Non-Video data in UDP channel, the max bandwidth of this channel is 8Mbps in M200, 4Mbps in M210
+             */
+            payload.setStreamDataCallback(new Payload.StreamDataCallback() {
+                @Override
+                public void onGetStreamData(byte[] bytes, int i) {
+                    String str = ViewHelper.getStringUTF8(bytes, 0, i);
+                    updateUDPPushData(str);
                 }
             });
         }
     }
-    private void unInitListener() {
-        KeyManager.getInstance().removeListener(getDataListener);
-        KeyManager.getInstance().removeListener(getNameListener);
+
+    private void updateUARTPushData(final String str) {
+        if (pushUARTTextView != null) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    pushUARTTextView.setText(str + "\n");
+                    pushUARTTextView.invalidate();
+                }
+            });
+        }
+    }
+
+    private void updateUDPPushData(final String str) {
+        if (pushUDPTextView != null) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    pushUDPTextView.setText(str + "\n");
+                    pushUDPTextView.invalidate();
+                }
+            });
+        }
     }
 
     @Override
     protected void onDestroy() {
-        DJIPayloadUsbDataManager.getInstance().setDataListener(null);
-        unInitListener();
+        if (ModuleVerificationUtil.isPayloadAvailable()) {
+            if (null != payload) {
+                payload.setCommandDataCallback(null);
+                payload.setStreamDataCallback(null);
+            }
+        }
         super.onDestroy();
     }
 
@@ -158,18 +128,17 @@ public class PayloadActivity extends AppCompatActivity implements View.OnClickLi
                 finish();
                 break;
             case R.id.login_sdk:
-                UserAccountManager.getInstance()
-                                  .logIntoDJIUserAccount(this, new CommonCallbacks.CompletionCallbackWith<UserAccountState>() {
-                                      @Override
-                                      public void onSuccess(final UserAccountState userAccountState) {
-                                          ToastUtils.showToast("login success! status=" + userAccountState.name());
-                                      }
+                UserAccountManager.getInstance().logIntoDJIUserAccount(this, new CommonCallbacks.CompletionCallbackWith<UserAccountState>() {
+                      @Override
+                      public void onSuccess(final UserAccountState userAccountState) {
+                          ToastUtils.showToast("login success! status=" + userAccountState.name());
+                      }
 
-                                      @Override
-                                      public void onFailure(DJIError error) {
-                                          ToastUtils.showToast(error.getDescription());
-                                      }
-                                  });
+                      @Override
+                      public void onFailure(DJIError error) {
+                          ToastUtils.showToast(error.getDescription());
+                      }
+                });
                 break;
             default:
         }

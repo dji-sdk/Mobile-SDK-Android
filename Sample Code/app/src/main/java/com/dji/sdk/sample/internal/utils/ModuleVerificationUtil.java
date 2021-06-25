@@ -85,6 +85,16 @@ public class ModuleVerificationUtil {
                 .getLightbridgeLink());
     }
 
+    public static boolean isPayloadAvailable() {
+        return isProductModuleAvailable() && isAircraft() && (null != DJISampleApplication.getAircraftInstance()
+                .getPayload());
+    }
+
+    public static boolean isRTKAvailable() {
+        return isProductModuleAvailable() && isAircraft() && (null != DJISampleApplication.getAircraftInstance()
+                .getFlightController().getRTK());
+    }
+
     public static AccessoryAggregation getAccessoryAggregation() {
         Aircraft aircraft = (Aircraft) DJISampleApplication.getProductInstance();
 
@@ -147,6 +157,14 @@ public class ModuleVerificationUtil {
         BaseProduct baseProduct = DJISampleApplication.getProductInstance();
         if (baseProduct != null) {
             return baseProduct.getModel() == Model.MAVIC_2_PRO || baseProduct.getModel() == Model.MAVIC_2_ZOOM;
+        }
+        return false;
+    }
+
+    public static boolean isMatrice300RTK(){
+        BaseProduct baseProduct = DJISampleApplication.getProductInstance();
+        if (baseProduct != null) {
+            return baseProduct.getModel() == Model.MATRICE_300_RTK;
         }
         return false;
     }

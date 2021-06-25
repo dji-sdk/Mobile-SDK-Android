@@ -118,12 +118,10 @@ public class Helper {
         return getBytes(data, "GBK");
     }
 
-
     private static byte[] getBytes(String data, String charsetName) {
         Charset charset = Charset.forName(charsetName);
         return data.getBytes(charset);
     }
-
 
     public static String getStringUTF8(byte[] bytes, int start, int length) {
         if (null == bytes || bytes.length == 0) {

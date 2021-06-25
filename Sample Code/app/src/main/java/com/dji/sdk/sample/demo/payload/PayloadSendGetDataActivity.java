@@ -10,14 +10,14 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dji.sdk.sample.R;
+import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.GeneralUtils;
-import com.dji.sdk.sample.internal.utils.Helper;
+import com.dji.sdk.sample.internal.utils.ViewHelper;
+import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 
 import java.util.concurrent.ScheduledExecutorService;
@@ -26,11 +26,8 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import dji.common.error.DJIError;
-import dji.keysdk.DJIKey;
-import dji.keysdk.KeyManager;
-import dji.keysdk.PayloadKey;
-import dji.keysdk.callback.ActionCallback;
-import dji.keysdk.callback.KeyListener;
+import dji.common.util.CommonCallbacks;
+import dji.sdk.payload.Payload;
 
 /**
  * Created by Michael on 17/11/6.
@@ -43,41 +40,16 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
     private TextView sendTotal;
     private TextView receiveTotal;
 
-    private int sendSizeTotal;
-    private int receiveSizeTotal;
+    private int sendSizeTotal = 0;
+    private int receiveSizeTotal = 0;
 
     private EditText sendDataEditView;
     private EditText periodView;
     private CheckBox repeatCheckbox;
-    private DJIKey getDataKey;
-    private DJIKey sendDataKey;
-    private DJIKey payloadNameKey;
+    private Payload payload = null;
     private String payloadName = "";
     private ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
     private ScheduledFuture<?> scheduledFuture;
-
-    private KeyListener getDataListener = new KeyListener() {
-        @Override
-        public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
-            if (receivedDataView != null) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (newValue instanceof byte[]) {
-                            //String str = BytesUtil.byte2hex((byte[]) newValue);
-                            byte[] data = (byte[]) newValue;
-                            Log.e(TAG, "receiving data size:" + data.length);
-                            String str = Helper.getString(data);
-                            receiveSizeTotal = data.length + receiveSizeTotal;
-                            receiveTotal.setText(String.valueOf(receiveSizeTotal));
-                            receivedDataView.setText(str);
-                            receivedDataView.invalidate();
-                        }
-                    }
-                });
-            }
-        }
-    };
 
     private void updateTXView (final int size) {
         runOnUiThread(new Runnable() {
@@ -88,23 +60,6 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
             }
         });
     }
-    private KeyListener getNameListener = new KeyListener() {
-        @Override
-        public void onValueChange(@Nullable Object oldValue, @Nullable final Object newValue) {
-            if (payloadName != null) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (newValue instanceof String) {
-                            payloadName = newValue.toString();
-                            payloadNameView.setText("Payload Name:" + (TextUtils.isEmpty(payloadName) ? "N/A" : payloadName) + "\n");
-                            payloadNameView.invalidate();
-                        }
-                    }
-                });
-            }
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,29 +89,46 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
     private void initListener() {
         View sendButton = findViewById(R.id.send_data_button);
         sendButton.setOnClickListener(this);
-        getDataKey = PayloadKey.create(PayloadKey.GET_DATA_FROM_PAYLOAD);
-        sendDataKey = PayloadKey.create(PayloadKey.SEND_DATA_TO_PAYLOAD);
-        payloadNameKey = PayloadKey.create(PayloadKey.PAYLOAD_PRODUCT_NAME);
-        if (KeyManager.getInstance() != null) {
-            KeyManager.getInstance().addListener(getDataKey, getDataListener);
-            KeyManager.getInstance().addListener(payloadNameKey, getNameListener);
-        }
-        Object name = KeyManager.getInstance().getValue(payloadNameKey);
-        if (name != null) {
-            payloadName = name.toString();
-            payloadNameView.setText("Payload Name:" + (TextUtils.isEmpty(payloadName) ? "N/A" : payloadName) + "\n");
-            payloadNameView.invalidate();
-        }
-    }
+        if (ModuleVerificationUtil.isPayloadAvailable()) {
+            payload = DJISampleApplication.getAircraftInstance().getPayload();
 
-    private void unInitListener() {
-        KeyManager.getInstance().removeListener(getDataListener);
-        KeyManager.getInstance().removeListener(getNameListener);
+            /**
+             *  Gets the product name defined by the manufacturer of the payload device.
+             */
+            payloadName = payload.getPayloadProductName();
+            payloadNameView.setText("Payload Name:" + (TextUtils.isEmpty(payloadName) ? "N/A" : payloadName));
+            payloadNameView.invalidate();
+
+            /**
+             *  Set the command data callback, the command data typically sent by payload in UART/CAN channel, the max bandwidth of this channel is 3KBytes/s on M200.
+             */
+            payload.setCommandDataCallback(new Payload.CommandDataCallback() {
+                @Override
+                public void onGetCommandData(byte[] bytes) {
+                    if (receivedDataView != null) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Log.e(TAG, "receiving data size:" + bytes.length);
+                                String str = ViewHelper.getString(bytes);
+                                receiveSizeTotal = bytes.length + receiveSizeTotal;
+                                receiveTotal.setText(String.valueOf(receiveSizeTotal));
+                                receivedDataView.setText(str);
+                                receivedDataView.invalidate();
+                            }
+                        });
+                    }
+                }
+            });
+        }
     }
 
     @Override
     protected void onDestroy() {
-        unInitListener();
+        if (ModuleVerificationUtil.isPayloadAvailable() && null != payload) {
+                payload.setCommandDataCallback(null);
+                payload.setStreamDataCallback(null);
+        }
         if (scheduledFuture != null && !scheduledFuture.isCancelled() && !scheduledFuture.isDone()) {
             scheduledFuture.cancel(true);
         }
@@ -164,63 +136,58 @@ public class PayloadSendGetDataActivity extends AppCompatActivity implements Vie
         super.onDestroy();
     }
 
-    private Runnable repeatRunnable = new Runnable() {
-        @Override
-        public void run() {
-            sendData();
-        }
-    };
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.send_data_button:
                 if (repeatCheckbox.isChecked()) {
                     if (GeneralUtils.isFastDoubleClick()) {
-                        ToastUtils.showToast("don't press too frequently!");
+                        ToastUtils.showToast("Don't press too frequently!");
                         return;
                     }
                     if (scheduledFuture != null && !scheduledFuture.isDone()) {
-                        ToastUtils.showToast("already in sending status!");
+                        ToastUtils.showToast("Already in sending status!");
                         return;
                     }
                     if (!TextUtils.isDigitsOnly(periodView.getText().toString())) {
-                        ToastUtils.showToast("pls set right frequency");
+                        ToastUtils.showToast("Please set the correct frequency");
                         return;
                     }
                     int frequency = Integer.valueOf(periodView.getText().toString());
                     scheduledFuture = executorService.scheduleAtFixedRate(repeatRunnable, 100, 1000/frequency, TimeUnit.MILLISECONDS);
-                    //ToastUtils.showToast("start send date frequently");
+                    ToastUtils.setResultToToast("set send data repeatably");
                 } else {
-                    //ToastUtils.showToast("start send date normally");
-                    sendData();
+                    sendDataToPayload();
                 }
                 break;
             case R.id.repeat_send_checkbox:
                 if (scheduledFuture != null && !scheduledFuture.isCancelled() && !scheduledFuture.isDone()) {
                     scheduledFuture.cancel(true);
-                    ToastUtils.showToast("stop repeat sending");
+                    ToastUtils.setResultToToast("stop sending data repeatably");
                 }
                 break;
             default:
         }
     }
 
-
-    private void sendData() {
+    private void sendDataToPayload() {
         String sendingDataStr = sendDataEditView.getText().toString();
         Log.e(TAG, "sending:" + sendingDataStr);
-        final byte[] data = Helper.getBytes(sendingDataStr);
-        KeyManager.getInstance().performAction(sendDataKey, new ActionCallback() {
-            @Override
-            public void onSuccess() {
-                //ToastUtils.showToast("send data success! " + Helper.byte2hex(data));
-                updateTXView(data.length);
-            }
-            @Override
-            public void onFailure(@NonNull DJIError error) {
-                //ToastUtils.showToast("send data failed");
-            }
-        }, data);
+        final byte[] data = ViewHelper.getBytes(sendingDataStr);
+        if(ModuleVerificationUtil.isPayloadAvailable() && null != payload) {
+            payload.sendDataToPayload(data, new CommonCallbacks.CompletionCallback() {
+                @Override
+                public void onResult(DJIError djiError) {
+                    ToastUtils.setResultToToast(djiError == null ? "Send data successfully" : djiError.getDescription());
+                }
+            });
+        }
     }
+
+    private Runnable repeatRunnable = new Runnable() {
+        @Override
+        public void run() {
+            sendDataToPayload();
+        }
+    };
 }

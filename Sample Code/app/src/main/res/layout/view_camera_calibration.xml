@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:id="@+id/btn_start_calibration"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            style="@style/common_button"
+            android:text="Start Calibration" />
+
+        <Button
+            android:id="@+id/btn_stop_calibration"
+            android:text="Stop Calibration"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            style="@style/common_button" />
+
+        <Button
+            android:id="@+id/btn_calibration_infinity_focus"
+            android:text="Calibration Infinity Focus"
+            android:layout_toRightOf="@id/btn_next"
+            android:layout_marginLeft="10dp"
+            style="@style/common_button"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_camera_calibration_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AAA"
+        android:gravity="center"
+        android:layout_marginTop="110dp" />
+    <TextView
+        android:id="@+id/tv_camera_calibration_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AAA"
+        android:gravity="center"
+        android:layout_marginTop="130dp" />
+
+    <com.dji.sdk.sample.internal.view.BaseCameraView
+        style="@style/main_camera_view"
+        android:layout_centerHorizontal="true"/>
+
+</merge>

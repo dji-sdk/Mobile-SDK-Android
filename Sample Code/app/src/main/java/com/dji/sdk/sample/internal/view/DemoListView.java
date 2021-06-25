@@ -15,6 +15,7 @@ import com.dji.sdk.sample.demo.airlink.SetGetWiFiLinkSSIDView;
 import com.dji.sdk.sample.demo.appactivation.AppActivationView;
 import com.dji.sdk.sample.demo.battery.PushBatteryDataView;
 import com.dji.sdk.sample.demo.battery.SetGetDischargeDayView;
+import com.dji.sdk.sample.demo.camera.CameraCalibration;
 import com.dji.sdk.sample.demo.camera.FetchMediaView;
 import com.dji.sdk.sample.demo.camera.LiveStreamView;
 import com.dji.sdk.sample.demo.camera.MediaPlaybackView;
@@ -34,6 +35,7 @@ import com.dji.sdk.sample.demo.flightcontroller.CompassCalibrationView;
 import com.dji.sdk.sample.demo.flightcontroller.FlightAssistantPushDataView;
 import com.dji.sdk.sample.demo.flightcontroller.FlightHubView;
 import com.dji.sdk.sample.demo.flightcontroller.FlightLimitationView;
+import com.dji.sdk.sample.demo.flightcontroller.NetworkRTKView;
 import com.dji.sdk.sample.demo.flightcontroller.OrientationModeView;
 import com.dji.sdk.sample.demo.flightcontroller.VirtualStickView;
 import com.dji.sdk.sample.demo.gimbal.GimbalCapabilityView;
@@ -41,14 +43,13 @@ import com.dji.sdk.sample.demo.gimbal.MoveGimbalWithSpeedView;
 import com.dji.sdk.sample.demo.gimbal.PushGimbalDataView;
 import com.dji.sdk.sample.demo.key.KeyedInterfaceView;
 import com.dji.sdk.sample.demo.keymanager.KeyManagerView;
+import com.dji.sdk.sample.demo.lidar.LidarView;
 import com.dji.sdk.sample.demo.missionoperator.WaypointMissionOperatorView;
 import com.dji.sdk.sample.demo.missionoperator.WaypointV2MissionOperatorView;
 import com.dji.sdk.sample.demo.mobileremotecontroller.MobileRemoteControllerView;
-import com.dji.sdk.sample.demo.appactivation.AppActivationView;
 import com.dji.sdk.sample.demo.radar.RadarView;
 import com.dji.sdk.sample.demo.remotecontroller.PushRemoteControllerDataView;
 import com.dji.sdk.sample.demo.timeline.TimelineMissionControlView;
-import com.dji.sdk.sample.demo.firmwareupgrade.FirmwareUpgradeView;
 import com.dji.sdk.sample.demo.useraccount.LDMView;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.controller.ExpandableListAdapter;
@@ -87,6 +88,9 @@ public class DemoListView extends FrameLayout {
 
         // Build model for ListView
         ListBuilder builder = new ListBuilder();
+        builder.addGroup(R.string.component_listview_sdk_4_15,
+                false,
+                new GroupItem(R.string.component_listview_lidar_view, LidarView.class));
         builder.addGroup(R.string.component_listview_sdk_4_14,
                 false,
                 new GroupItem(R.string.component_listview_radar, RadarView.class),
@@ -150,7 +154,8 @@ public class DemoListView extends FrameLayout {
                 new GroupItem(R.string.camera_listview_download_media, FetchMediaView.class),
                 new GroupItem(R.string.camera_listview_media_playback, MediaPlaybackView.class),
                 new GroupItem(R.string.component_listview_video_feeder, VideoFeederView.class),
-                new GroupItem(R.string.component_xt2_camera_view, XT2CameraView.class));
+                new GroupItem(R.string.component_xt2_camera_view, XT2CameraView.class),
+                new GroupItem(R.string.camera_calibration, CameraCalibration.class));
 
         builder.addGroup(R.string.component_listview_gimbal,
                 false,
@@ -178,7 +183,8 @@ public class DemoListView extends FrameLayout {
                 new GroupItem(R.string.flight_controller_listview_orientation_mode, OrientationModeView.class),
                 new GroupItem(R.string.flight_controller_listview_virtual_stick, VirtualStickView.class),
                 new GroupItem(R.string.flight_controller_listview_intelligent_flight_assistant,
-                        FlightAssistantPushDataView.class));
+                        FlightAssistantPushDataView.class),
+                new GroupItem(R.string.flight_controller_listview_networkRTK, NetworkRTKView.class));
 
         builder.addGroup(R.string.component_listview_remote_controller,
                 false,

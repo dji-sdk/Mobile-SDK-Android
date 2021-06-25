@@ -1,6 +1,7 @@
 package com.dji.sdk.sample.demo.camera;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.util.Log;
 
 import com.dji.sdk.sample.R;
@@ -9,9 +10,12 @@ import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
 
+import androidx.annotation.NonNull;
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
+import dji.sdk.camera.Camera;
+import dji.sdk.media.MediaFile;
 
 /**
  * Class for shooting single photo.
@@ -19,6 +23,7 @@ import dji.common.util.CommonCallbacks;
 public class ShootSinglePhotoView extends BaseThreeBtnView {
 
     private Context context;
+    private Camera camera;
 
     public ShootSinglePhotoView(Context context) {
         super(context);
@@ -33,16 +38,20 @@ public class ShootSinglePhotoView extends BaseThreeBtnView {
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         Log.v("Attached To Window", "onAttachedToWindow");
-        if (isModuleAvailable()) {
-            if (ModuleVerificationUtil.isMavicAir2()){
-                DJISampleApplication.getProductInstance()
-                        .getCamera()
-                        .setFlatMode(SettingsDefinitions.FlatCameraMode.PHOTO_SINGLE, djiError -> ToastUtils.setResultToToast("SetCameraMode to shootPhoto"));
-                return;
+
+        if (ModuleVerificationUtil.isCameraModuleAvailable()) {
+            camera = DJISampleApplication.getAircraftInstance().getCamera();
+            if (ModuleVerificationUtil.isMatrice300RTK() || ModuleVerificationUtil.isMavicAir2()) {
+                camera.setFlatMode(SettingsDefinitions.FlatCameraMode.PHOTO_SINGLE, djiError -> ToastUtils.setResultToToast("setFlatMode to PHOTO_SINGLE"));
+            } else {
+                camera.setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO, djiError -> ToastUtils.setResultToToast("setMode to shoot_PHOTO"));
             }
-            DJISampleApplication.getProductInstance()
-                    .getCamera()
-                    .setMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO, djiError -> ToastUtils.setResultToToast("SetCameraMode to shootPhoto"));
+            camera.setMediaFileCallback(new MediaFile.Callback() {
+                @Override
+                public void onNewFile(@NonNull MediaFile mediaFile) {
+                    ToastUtils.setResultToToast("New photo generated");
+                }
+            });
         }
     }
 
