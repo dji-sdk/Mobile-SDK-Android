@@ -271,11 +271,11 @@ class LidarView(context: Context) : LinearLayout(context), PresentableView, View
             ToastUtils.setResultToToast("Lidar Disconnect")
             return
         }
+        val lidars = (mProduct as Aircraft).lidars
         if (lidars == null) {
             ToastUtils.setResultToToast("Lidar Disconnect")
             return
         }
-        val lidars = (mProduct as Aircraft).lidars
         for (l in lidars) {
             if (l.index == index && l.isConnected) {
                 currentLidar = l
