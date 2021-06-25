@@ -58,6 +58,8 @@
 
 -keep class org.greenrobot.eventbus.**{*;}
 
+-keep class it.sauronsoftware.ftp4j.**{*;}
+
 -keepclasseswithmembers,allowshrinking class * {
     native <methods>;
 }
@@ -111,6 +113,8 @@
 -keepclassmembers class android.arch.** { *; }
 -keep class android.arch.** { *; }
 -dontwarn android.arch.**
+
+-keep class org.apache.commons.** {*;}
 
 
 #<------------ utmiss config start------------>

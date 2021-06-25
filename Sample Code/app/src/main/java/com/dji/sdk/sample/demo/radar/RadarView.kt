@@ -9,19 +9,16 @@ import android.widget.TextView
 import com.dji.frame.util.V_JsonUtil
 import com.dji.sdk.sample.R
 import com.dji.sdk.sample.internal.controller.DJISampleApplication
-import com.dji.sdk.sample.internal.utils.Helper
+import com.dji.sdk.sample.internal.utils.ViewHelper
 import com.dji.sdk.sample.internal.utils.PopupUtils
 import com.dji.sdk.sample.internal.utils.ToastUtils
 import com.dji.sdk.sample.internal.view.PresentableView
 import dji.common.error.DJIError
 import dji.common.flightcontroller.flightassistant.PerceptionInformation
-import dji.common.util.CommonCallbacks
 import dji.common.util.CommonCallbacks.CompletionCallbackWith
 import dji.sdk.products.Aircraft
 import dji.sdk.radar.Radar
-import kotlinx.coroutines.*
 import java.lang.Runnable
-import java.util.*
 
 /**
  * class for radar sample
@@ -78,7 +75,7 @@ class RadarView(context: Context?) : LinearLayout(context), PresentableView, Vie
 
     private fun setUpwardRadarObstacleAvoidanceEnabled() {
         val enableList = listOf(true, false)
-        PopupUtils.initPopupNumberPicker(Helper.makeList(enableList), Runnable {
+        PopupUtils.initPopupNumberPicker(ViewHelper.makeList(enableList), Runnable {
             if (PopupUtils.index[0] != -1) {
                 enableList[PopupUtils.index[0]].apply {
                     mRadar?.setUpwardRadarObstacleAvoidanceEnabled(this) {
@@ -107,7 +104,7 @@ class RadarView(context: Context?) : LinearLayout(context), PresentableView, Vie
 
     private fun setHorizontalRadarObstacleAvoidanceEnabled() {
         val enableList = listOf(true, false)
-        PopupUtils.initPopupNumberPicker(Helper.makeList(enableList), Runnable {
+        PopupUtils.initPopupNumberPicker(ViewHelper.makeList(enableList), Runnable {
             if (PopupUtils.index[0] != -1) {
                 enableList[PopupUtils.index[0]].apply {
                     mRadar?.setHorizontalRadarObstacleAvoidanceEnabled(this) {

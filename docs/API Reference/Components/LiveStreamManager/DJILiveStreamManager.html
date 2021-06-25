@@ -80,6 +80,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIAccessoryKey.html">AccessoryAggregationKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJILidarKey.html">LidarKey</a>
+                                      </dd>
                                       <dd><a href="../KeyManager/DJIRTKBaseStationKey.html">BaseStationKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIDiagnosticsKey.html">DiagnosticsKey</a>
@@ -196,7 +198,13 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a href class="active">LiveStreamManager</a>
+                  <dd><a data-href class="sub-toggle">LiveStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="DJILiveStreamManager_OnLiveErrorStatusListener.html">OnLiveErrorStatusListener</a>
+                            </dd>
+                            <dd><a href="DJILiveStreamManager_LiveVideoResolution.html">LiveVideoResolution</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">UpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -306,7 +314,11 @@
                                                           </dd>
                                                   </ul>
                                                 </dd>
-                                                <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServiceSettings.html">NetworkServiceSettings</a>
+                                                <dd><a data-href="../RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServiceSettings.html" class="sub-toggle">NetworkServiceSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                  <ul class="sub-menu">
+                                                          <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServiceSettings_Builder.html">Builder</a>
+                                                          </dd>
+                                                  </ul>
                                                 </dd>
                                         </ul>
                                       </dd>
@@ -430,6 +442,8 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraReceivedVideoDataCallbackInterface.html">VideoDataCallback</a>
@@ -892,6 +906,26 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../Lidar/DJILidar.html" class="sub-toggle">Lidar<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Lidar/DJILidar_PointCloud_RecordStatus_ListenerInterface.html">DJIPointCloudStatusListener</a>
+                            </dd>
+                            <dd><a href="../Lidar/DJILidar_DJIPointCloudLiveDataListener.html">DJIPointCloudLiveDataListener</a>
+                            </dd>
+                            <dd><a href="../Lidar/DJILidarLiveViewDataProcessor.html">IDJILidarLiveViewDataProcessor</a>
+                            </dd>
+                            <dd><a data-href="../Lidar/DJILidar_DJILidarCapabilities.html" class="sub-toggle">Capabilities<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Lidar/DJILidar_DJILidarParametersListener_Interface.html">DJILidarParametersListener</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Lidar/DJILidar_pointCloudLiveViewData.html">PointCloudLiveViewData</a>
+                            </dd>
+                            <dd><a href="../Lidar/DJILidarPointCloudView.html">PointCloudView</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Mission Classes
@@ -1050,6 +1084,30 @@
                                         <ul class="sub-menu">
                                                 <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam.html" class="sub-toggle">WaypointGimbalActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                                   <ul class="sub-menu">
+                                                          <dd><a data-href="../Missions/DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalPathShootingParam.html" class="sub-toggle">WaypointGimbalPathShooting<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a data-href="../Missions/DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalPathPointInfo.html" class="sub-toggle">WaypointGimbalPathPointInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                                      <ul class="sub-menu">
+                                                                              <dd><a href="../Missions/DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalPathPointInfo_Builder.html">Builder</a>
+                                                                              </dd>
+                                                                      </ul>
+                                                                    </dd>
+                                                                    <dd><a data-href="../Missions/DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalStartPathShootingParam.html" class="sub-toggle">WaypointGimbalStartPathShootingParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                                      <ul class="sub-menu">
+                                                                              <dd><a href="../Missions/DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalStartPathShootingParam_Builder.html">Builder</a>
+                                                                              </dd>
+                                                                      </ul>
+                                                                    </dd>
+                                                                    <dd><a data-href="../Missions/DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalStopPathShootingParam.html" class="sub-toggle">WaypointGimbalStopPathShootingParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                                      <ul class="sub-menu">
+                                                                              <dd><a href="../Missions/DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalStopPathShootingParam_Builder.html">Builder</a>
+                                                                              </dd>
+                                                                      </ul>
+                                                                    </dd>
+                                                                    <dd><a href="../Missions/DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalPathShootingParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                           <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam_Builder.html">Builder</a>
                                                           </dd>
                                                   </ul>
@@ -1072,6 +1130,18 @@
                                                           </dd>
                                                   </ul>
                                                 </dd>
+                                                <dd><a href="../Missions/DJIWaypointV2Actuator_PointCloudRecordActuatorParam.html">WaypointPointCloudRecordActuatorParam</a>
+                                                </dd>
+                                                <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2LidarActuatorParam.html" class="sub-toggle">WaypointLidarActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                  <ul class="sub-menu">
+                                                          <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2LidarActuatorParam_Builder.html" class="sub-toggle">Builder<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="../Missions/DJIWaypointV2Actuator_PointCloudRecordActuatorParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
+                                                  </ul>
+                                                </dd>
                                                 <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html" class="sub-toggle">WaypointCameraActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                                   <ul class="sub-menu">
                                                           <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam_Builder.html">Builder</a>
@@ -1082,11 +1152,37 @@
                                                                     </dd>
                                                             </ul>
                                                           </dd>
+                                                          <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraFocusModeParam.html" class="sub-toggle">WaypointCameraFocusModeParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraFocusModeParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                           <dd><a data-href="../Missions/DJIWaypointV2CameraActuatorParam_DJIWaypointV2CameraFocusParam.html" class="sub-toggle">WaypointCameraFocusParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                                             <ul class="sub-menu">
+                                                                    <dd><a data-href="../Missions/DJIWaypointV2ActionActuatorParam_DJIWaypointV2CameraFocus_RectangleTargetParam.html" class="sub-toggle">WaypointCameraFocusRectangleTargetParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                                      <ul class="sub-menu">
+                                                                              <dd><a href="../Missions/DJIWaypointV2ActionActuatorParam_DJIWaypointV2CameraFocus_RectangleTargetParam_Builder.html">Builder</a>
+                                                                              </dd>
+                                                                      </ul>
+                                                                    </dd>
+                                                                    <dd><a data-href="../Missions/DJIWaypointV2ActionActuatorParam_DJIWaypointV2CameraFocus_PointTargetParam.html" class="sub-toggle">WaypointCameraFocusPointTargetParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                                      <ul class="sub-menu">
+                                                                              <dd><a href="../Missions/DJIWaypointV2ActionActuatorParam_DJIWaypointV2CameraFocus_PointTargetParam_Builder.html">Builder</a>
+                                                                              </dd>
+                                                                      </ul>
+                                                                    </dd>
                                                                     <dd><a href="../Missions/DJIWaypointV2CameraActuatorParam_DJIWaypointV2CameraFocusParam_Builder.html">Builder</a>
                                                                     </dd>
                                                             </ul>
+                                                          </dd>
+                                                          <dd><a data-href="../Missions/DJIWaypointV2CameraActuatorParam_DJIWaypointV2CameraStartIntervalShootParam.html" class="sub-toggle">WaypointCameraStartIntervalShootParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="../Missions/DJIWaypointV2CameraActuatorParam_DJIWaypointV2CameraStartIntervalShootParam_Builder.html">Builder</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
+                                                          <dd><a href="../Missions/DJIWaypointV2CameraActuatorParam_DJIWaypointV2CameraStopIntervalShootParam.html">WaypointCameraStopIntervalShootParam</a>
                                                           </dd>
                                                           <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html" class="sub-toggle">WaypointCameraCustomNameParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                                             <ul class="sub-menu">
@@ -1335,17 +1431,38 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>LiveStreamManager</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LiveStreamManager</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LiveStreamManager</span> <span class="keyword">implements</span> <span class="title">DJILiveStatusCallback</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The manager is used to stream the video to a RTMP server to do live streaming with DJI products.</font></p>
 <h5 id="class-members">Class Members:</h5>
+<h4 id="state-updates">State Updates</h4>
+<div class="api-row" id="djilivestreammanager_onliveerrorstatuslistener"><div class="api-col left">Listener</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/LiveStreamManager/DJILiveStreamManager_OnLiveErrorStatusListener.html">OnLiveErrorStatusListener</a></div></div><div class="api-row" id="djilivestreammanager_addliveerrorstatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_addliveerrorstatuslistener_inline">addLiveErrorStatusListener</a></div></div><div class="inline-doc" id="djilivestreammanager_addliveerrorstatuslistener_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>addLiveErrorStatusListener</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">addLiveErrorStatusListener</span><span class="params">(OnLiveErrorStatusListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<h5 id="description-v2">Description:</h5>
+<p><font color="#666">Adds the listener for the live video status change events.</font></p>
+<h5 id="input-parameters">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LiveStreamManager/DJILiveStreamManager_OnLiveErrorStatusListener.html#djilivestreammanager_onliveerrorstatuslistener">OnLiveErrorStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>live video status change listener.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djilivestreammanager_removeliveerrorstatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_removeliveerrorstatuslistener_inline">removeLiveErrorStatusListener</a></div></div><div class="inline-doc" id="djilivestreammanager_removeliveerrorstatuslistener_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>removeLiveErrorStatusListener</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">removeLiveErrorStatusListener</span><span class="params">(OnLiveErrorStatusListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">Remove the listener for the live video status change events.</font></p>
+<h5 id="input-parameters-v2">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LiveStreamManager/DJILiveStreamManager_OnLiveErrorStatusListener.html#djilivestreammanager_onliveerrorstatuslistener">OnLiveErrorStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>live video status change listener.</i></font></td></tr></table></html></div>
+<html><p><br></p></html>
+<h4 id="live-stream-operation">Live Stream Operation</h4>
 <div class="api-row" id="djilivestreammanager_isstreaming"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_isstreaming_inline">isStreaming</a></div></div><div class="inline-doc" id="djilivestreammanager_isstreaming_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isStreaming</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isStreaming</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
+<h5 id="description-v4">Description:</h5>
 <p><font color="#666">Determines if the live streaming starts or not. After starting this flag will not be affected by the RTMP server status.</font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the live stream manager is streaming.</i></font></td></tr></table></html></div>
@@ -1354,16 +1471,16 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setLiveUrl</span> <span class="params">(String url)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v5">Description:</h5>
 <p><font color="#666">Sets the URL address of the RTMP Server. This method should be called before the calling of <code><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager_startstream">startStream</a></code>.</font></p>
-<h5 id="input-parameters">Input Parameters:</h5>
+<h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">url</font></font></td><td><font color="#666"><i>The URL address string of the RTMP Server.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilivestreammanager_getliveurl"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_getliveurl_inline">getLiveUrl</a></div></div><div class="inline-doc" id="djilivestreammanager_getliveurl_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLiveUrl</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getLiveUrl</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v6">Description:</h5>
 <p><font color="#666">Gets the current URL address of the RTMP Server.</font></p>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>A string of the URL address.</i></font></td></tr></table></html></div>
@@ -1372,16 +1489,16 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">startStream</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v7">Description:</h5>
 <p><font color="#666">Starts the live streaming. If the manager starts successfully, <code><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager_isstreaming">isStreaming</a></code> will return <code>true</code>. The  encoder will start to encoding the video frame if it is needed. The video will be streamed to the RTMP server if the server  is available. The audio can be streamed along with the video if the audio setting is enabled.</font></p>
 <h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of the error code.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of the error code. 0 means success. 254 means initialization error. -3 means failure to obtain sps/pps.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilivestreammanager_stopstream"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_stopstream_inline">stopStream</a></div></div><div class="inline-doc" id="djilivestreammanager_stopstream_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>stopStream</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">stopStream</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666">Stop the live streaming. The operation is asynchronous  and <code><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager_isstreaming">isStreaming</a></code> will return <code>false</code>  when the operation is complete.</font></p>
 </div>
 <div class="api-row" id="djilivestreammanager_getstarttime"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_getstarttime_inline">getStartTime</a></div></div><div class="inline-doc" id="djilivestreammanager_getstarttime_inline" <blockquote>
@@ -1389,7 +1506,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">getStartTime</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Returns the start time of the live streaming. The start time is  updated when <code><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager_startstream">startStream</a></code> is successful.</font></p>
 <h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</font></td><td><font color="#666"><i>A long value of the start time.</i></font></td></tr></table></html></div>
@@ -1398,25 +1515,25 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAudioStreamingEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Enables/disables the audio streaming. When it is enabled, the audio received by the mobile device's microphone will be streamed  to the RTMP server along with the video. This setting will take effect before <code><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager_startstream">startStream</a></code> is called.  Changing this setting after <code><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager_startstream">startStream</a></code> is called requires restarting the streaming. The audio can be  muted during the streaming by calling <code><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager_setaudiomuted">setAudioMuted</a></code>.</font></p>
-<h5 id="input-parameters-v2">Input Parameters:</h5>
+<h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i>Pass <code>true</code> to enable the audio streaming, <code>false</code> to disable the audio streaming.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilivestreammanager_setaudiomuted"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_setaudiomuted_inline">setAudioMuted</a></div></div><div class="inline-doc" id="djilivestreammanager_setaudiomuted_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setAudioMuted</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAudioMuted</span><span class="params">(<span class="keyword">boolean</span> enable)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Mutes the audio or unmutes the audio. <br> Notes: this method only works when audio function is enabled ( <code><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager_isliveaudioenabled">isLiveAudioEnabled</a></code> returns <code>true</code>).</font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enable</font></font></td><td><font color="#666"><i>Pass <code>true</code> to mute the audio, <code>false</code> to unmute the audio.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilivestreammanager_isliveaudioenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_isliveaudioenabled_inline">isLiveAudioEnabled</a></div></div><div class="inline-doc" id="djilivestreammanager_isliveaudioenabled_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isLiveAudioEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLiveAudioEnabled</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Returns <code>true</code> if the audio function is enabled, vice versa.</font></p>
 <h5 id="return-v5">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value to check if the audio function is enabled.</i></font></td></tr></table></html></div>
@@ -1425,7 +1542,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isAudioMuted</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Returns <code>true</code> if the audio is muted, vice versa.</font></p>
 <h5 id="return-v6">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value to check if the audio is muted.</i></font></td></tr></table></html></div>
@@ -1434,16 +1551,16 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVideoEncodingEnabled</span><span class="params">(<span class="keyword">boolean</span> enable)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Enables/disables the video encoding by force for the live streaming. The basic workflow to process  the video feed from the aircraft is to decode first and then encode again with a specific bit rate  into H.264 stream. Therefore, video encoding is required in default. For some drones like Mavic Pro,  the original video feed from Mavic Pro remote controller can be streamed to a RTMP server directly,  so the video encoding is disabled for Mavic Pro, however, the bit-rate of the original video is very  high, by enabling this flag, the original video will be decoded and encoded to a lower speed video stream.</font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enable</font></font></td><td><font color="#666"><i>Pass <code>true</code> to enable the Video Encoding, <code>false</code> to disable the Video Encoding.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilivestreammanager_isvideoencodingenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_isvideoencodingenabled_inline">isVideoEncodingEnabled</a></div></div><div class="inline-doc" id="djilivestreammanager_isvideoencodingenabled_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isVideoEncodingEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isVideoEncodingEnabled</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">Returns <code>true</code> if video encoding is enabled, vice versa.</font></p>
 <h5 id="return-v7">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the force encoding flag is enabled.</i></font></td></tr></table></html></div>
@@ -1452,37 +1569,86 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getLiveVideoFps</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666">Returns the real-time live video fps.</font></p>
 <h5 id="return-v8">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value of the live video fps.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djilivestreammanager_setlivevideoresolution"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_setlivevideoresolution_inline">setLiveVideoResolution</a></div></div><div class="inline-doc" id="djilivestreammanager_setlivevideoresolution_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>setLiveVideoResolution</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setLiveVideoResolution</span><span class="params">(LiveVideoResolution videoResolution)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<h5 id="description-v17">Description:</h5>
+<p><font color="#666">Sets the live video resolution.</font></p>
+<h5 id="input-parameters-v7">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LiveStreamManager/DJILiveStreamManager_LiveVideoResolution.html#djilivestreammanager_livevideoresolution">LiveVideoResolution</a> <font color="#000">videoResolution</font></font></td><td><font color="#666"><i>An emun value of the live video resolution.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djilivestreammanager_getlivevideoresolution"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_getlivevideoresolution_inline">getLiveVideoResolution</a></div></div><div class="inline-doc" id="djilivestreammanager_getlivevideoresolution_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>getLiveVideoResolution</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">LiveVideoResolution <span class="title">getLiveVideoResolution</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<h5 id="description-v18">Description:</h5>
+<p><font color="#666">Returns the live video resolution.</font></p>
+<h5 id="return-v9">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LiveStreamManager/DJILiveStreamManager_LiveVideoResolution.html#djilivestreammanager_livevideoresolution">LiveVideoResolution</a></font></td><td><font color="#666"><i>An emun value of the live video resolution.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djilivestreammanager_setlivevideobitratemode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_setlivevideobitratemode_inline">setLiveVideoBitRateMode</a></div></div><div class="inline-doc" id="djilivestreammanager_setlivevideobitratemode_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>setLiveVideoBitRateMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setLiveVideoBitRateMode</span><span class="params">(LiveVideoBitRateMode bitRateMode)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<h5 id="description-v19">Description:</h5>
+<p><font color="#666">Sets the live video bit rate mode.</font></p>
+<h5 id="input-parameters-v8">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager_livevideobitratemode">LiveVideoBitRateMode</a> <font color="#000">bitRateMode</font></font></td><td><font color="#666"><i>An emun value of the live video bit rate mode.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djilivestreammanager_getlivevideobitratemode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_getlivevideobitratemode_inline">getLiveVideoBitRateMode</a></div></div><div class="inline-doc" id="djilivestreammanager_getlivevideobitratemode_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>getLiveVideoBitRateMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">LiveVideoBitRateMode <span class="title">getLiveVideoBitRateMode</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<h5 id="description-v20">Description:</h5>
+<p><font color="#666">Returns the live video bit rate mode.</font></p>
+<h5 id="return-v10">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LiveStreamManager/DJILiveStreamManager.html#djilivestreammanager_livevideobitratemode">LiveVideoBitRateMode</a></font></td><td><font color="#666"><i>An emun value of the live video bit rate mode.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilivestreammanager_getlivevideobitrate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_getlivevideobitrate_inline">getLiveVideoBitRate</a></div></div><div class="inline-doc" id="djilivestreammanager_getlivevideobitrate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLiveVideoBitRate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getLiveVideoBitRate</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">Returns the real-time video stream bit rate in kpbs.</font></p>
-<h5 id="return-v9">Return:</h5>
+<h5 id="return-v11">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of the live video bit rate.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilivestreammanager_getliveaudiobitrate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_getliveaudiobitrate_inline">getLiveAudioBitRate</a></div></div><div class="inline-doc" id="djilivestreammanager_getliveaudiobitrate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLiveAudioBitRate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getLiveAudioBitRate</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">Returns the real-time audio stream bit rate in kpbs.</font></p>
-<h5 id="return-v10">Return:</h5>
+<h5 id="return-v12">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of the live audio bit rate.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilivestreammanager_getlivevideocachesize"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_getlivevideocachesize_inline">getLiveVideoCacheSize</a></div></div><div class="inline-doc" id="djilivestreammanager_getlivevideocachesize_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLiveVideoCacheSize</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getLiveVideoCacheSize</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">Returns the real-time video cache list size, unit: frame.</font></p>
-<h5 id="return-v11">Return:</h5>
+<h5 id="return-v13">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of the live video cache list size.</i></font></td></tr></table></html></div>
+<html><p><br></p></html>
+<h5 id="related">Related:</h5>
+<div class="api-row" id="djilivestreammanager_livevideoresolution"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/LiveStreamManager/DJILiveStreamManager_LiveVideoResolution.html">LiveVideoResolution</a></div></div><div class="api-row" id="djilivestreammanager_livevideobitratemode"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djilivestreammanager_livevideobitratemode_inline">LiveVideoBitRateMode</a></div></div><div class="inline-doc" id="djilivestreammanager_livevideobitratemode_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">enum </font>LiveVideoBitRateMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> LiveVideoBitRateMode</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.sdkmanager</font></td></tr></table></html>
+<h5 id="description-v24">Description:</h5>
+<p><font color="#666">Enums represent the live video bit rate mode.</font></p>
+<h5 id="enum-members">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djilivestreammanager_livevideobitratemode_auto_inline"></a>AUTO</font></td><td><font color="#666">The live video bit rate mode is auto. In this mode, the live video bit rate will change as the network changes, and smoothness is preferred.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djilivestreammanager_livevideobitratemode_manual_inline"></a>MANUAL</font></td><td><font color="#666">The live video bit rate mode is manual. This is the initialization mode of live video. Initial live video bit rate is 2*1024 kbps.</font></td></tr></table></html>
+<h5 id="class-members-v2">Class Members:</h5>
+</div>
 
         </div>
       </div>

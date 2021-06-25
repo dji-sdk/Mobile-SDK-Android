@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/point_cloud_view_surface">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_set_video_source"
+                    style="@style/common_button"
+                    android:layout_below="@id/lidar_info_view"
+                    android:layout_toLeftOf="@+id/btn_send_command_to_remote"
+                    android:text="Set Video Source" />
+
+                <Button
+                    android:id="@+id/btn_send_command_to_remote"
+                    style="@style/common_button"
+                    android:layout_below="@id/lidar_info_view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Point Cloud Record" />
+
+                <Button
+                    android:id="@+id/btn_disable_video_encode"
+                    style="@style/common_button"
+                    android:layout_below="@id/lidar_info_view"
+                    android:layout_toRightOf="@+id/btn_send_command_to_remote"
+                    android:text="Init" />
+
+                <Button
+                    android:id="@+id/btn_start_read_point_cloud_live_view_data"
+                    style="@style/common_button"
+                    android:layout_below="@id/btn_set_video_source"
+                    android:layout_toLeftOf="@+id/btn_stop_read_point_cloud_live_view_data"
+                    android:text="Start Read Point Cloud Live View Data" />
+
+                <Button
+                    android:id="@+id/btn_stop_read_point_cloud_live_view_data"
+                    style="@style/common_button"
+                    android:layout_below="@id/btn_set_video_source"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Stop Read Point Cloud Live View Data" />
+
+                <Button
+                    android:id="@+id/btn_set_point_cloud_live_view_display_mode"
+                    style="@style/common_button"
+                    android:layout_below="@id/btn_set_video_source"
+                    android:layout_toRightOf="@+id/btn_stop_read_point_cloud_live_view_data"
+                    android:text="Set Point Cloud Live View Display Mode" />
+
+                <Button
+                    android:id="@+id/btn_update_lidar"
+                    style="@style/common_button"
+                    android:layout_below="@id/btn_stop_read_point_cloud_live_view_data"
+                    android:layout_toLeftOf="@+id/btn_fresh_point_cloud_live_view_data_processed_buffers"
+                    android:text="Update Lidar" />
+
+                <Button
+                    android:id="@+id/btn_fresh_point_cloud_live_view_data_processed_buffers"
+                    style="@style/common_button"
+                    android:layout_below="@id/btn_stop_read_point_cloud_live_view_data"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Fresh Point Cloud Live View Data Processed Buffers" />
+
+                <Button
+                    android:id="@+id/btn_clear_point_cloud_live_view_data_processed_buffers"
+                    style="@style/common_button"
+                    android:layout_below="@id/btn_stop_read_point_cloud_live_view_data"
+                    android:layout_toRightOf="@+id/btn_fresh_point_cloud_live_view_data_processed_buffers"
+                    android:text="Clear Point Cloud Live View Data Processed Buffers" />
+
+                <Button
+                    android:id="@+id/btn_set_point_cloud_visible_light_pixel_btn"
+                    style="@style/common_button"
+                    android:layout_below="@id/btn_fresh_point_cloud_live_view_data_processed_buffers"
+                    android:layout_toLeftOf="@+id/btn_set_point_cloud_color_mode"
+                    android:text="Set Point Cloud Visible Light Pixel" />
+
+                <Button
+                    android:id="@+id/btn_set_point_cloud_color_mode"
+                    style="@style/common_button"
+                    android:layout_below="@id/btn_fresh_point_cloud_live_view_data_processed_buffers"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Set Point Cloud Color Mode" />
+
+                <TextView
+                    android:id="@+id/lidar_info_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/video_view_primary_video_feed"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Lidar Info"
+                    android:textSize="13dp" />
+
+                <com.dji.sdk.sample.internal.utils.VideoFeedView
+                    android:id="@+id/video_view_primary_video_feed"
+                    style="@style/main_camera_view"
+                    android:layout_alignParentBottom="false"
+                    android:layout_marginTop="30dp" />
+            </RelativeLayout>
+        </ScrollView>
+
+        <dji.lidar_map.views.PointCloudView
+            android:id="@+id/point_cloud_view_surface"
+            style="@style/main_camera_view"
+            android:layout_alignParentBottom="false"
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
+</merge>

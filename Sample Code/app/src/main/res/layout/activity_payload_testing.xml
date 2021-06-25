@@ -19,9 +19,9 @@
         android:ellipsize="marquee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLines="1"
         android:text="Payload Name: N/A"
-        android:scrollbars="vertical"/>
+        android:scrollbars="vertical"
+        android:singleLine="true" />
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +34,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:visibility="visible">
-
 
             <Button
                 style="@style/button_style"
@@ -88,16 +87,18 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             style="@style/test_text"
-            android:textSize="14sp"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:maxLines="1"
+            android:scrollbars="vertical"
             android:text="UART/CAN Channel: "
-            android:scrollbars="vertical"/>
+            android:textSize="14sp" />
+
         <TextView
-            android:id="@+id/push_info_text"
+            android:id="@+id/push_info_text_UART"
             style="@style/test_text"
             android:layout_width="200dp"
             android:layout_height="0dp"
@@ -110,10 +111,10 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:textSize="14sp"
-            android:text="Network Channel: "
+            android:text="UDP Channel: "
             android:scrollbars="vertical"/>
         <TextView
-            android:id="@+id/push_info_text_usb"
+            android:id="@+id/push_info_text_UDP"
             style="@style/test_text"
             android:layout_width="200dp"
             android:layout_height="0dp"

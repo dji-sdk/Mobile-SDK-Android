@@ -10,8 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.controller.MainActivity;
@@ -24,6 +22,7 @@ import com.dji.sdk.sample.internal.view.PresentableView;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import dji.common.airlink.PhysicalSource;
 import dji.common.error.DJIError;
 import dji.common.gimbal.CapabilityKey;

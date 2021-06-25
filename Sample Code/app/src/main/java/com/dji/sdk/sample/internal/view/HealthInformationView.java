@@ -7,15 +7,14 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.utils.Helper;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import dji.common.product.Model;
 import dji.sdk.base.DJIDiagnostics;
 import dji.sdk.sdkmanager.DJISDKManager;
