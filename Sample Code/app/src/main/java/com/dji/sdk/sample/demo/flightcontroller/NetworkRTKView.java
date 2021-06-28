@@ -29,6 +29,7 @@ public class NetworkRTKView extends RelativeLayout implements View.OnClickListen
     private Button networkRTKBtn;
     private Button coordinateSystemBtn;
     private Button enableRTKBtn;
+    private Button startNetworkServiceBtn;
 
     private RTK rtk = null;
     private boolean isNetowrkRTKSet = false;
@@ -77,9 +78,11 @@ public class NetworkRTKView extends RelativeLayout implements View.OnClickListen
         networkRTKBtn = (Button) findViewById(R.id.btn_set_network_rtk);
         coordinateSystemBtn = (Button) findViewById(R.id.btn_set_coordinate_system);
         enableRTKBtn = (Button) findViewById(R.id.btn_enable_rtk);
+        startNetworkServiceBtn = (Button) findViewById(R.id.btn_start_network_service);
         networkRTKBtn.setOnClickListener(this);
         coordinateSystemBtn.setOnClickListener(this);
         enableRTKBtn.setOnClickListener(this);
+        startNetworkServiceBtn.setOnClickListener(this);
     }
 
     private void initRTK() {
@@ -127,6 +130,16 @@ public class NetworkRTKView extends RelativeLayout implements View.OnClickListen
                         @Override
                         public void onResult(DJIError djiError) {
                             ToastUtils.setResultToToast(djiError == null ? "setRtkEnabled ok" : "setRtkEnabled failed: " + djiError.getDescription());
+                        }
+                    });
+                }
+                break;
+            case R.id.btn_start_network_service:
+                if (rtk != null) {
+                    RTKNetworkServiceProvider.getInstance().startNetworkService(new CommonCallbacks.CompletionCallback() {
+                        @Override
+                        public void onResult(DJIError djiError) {
+                            ToastUtils.setResultToToast(djiError == null ? "startNetworkService ok" : "startNetworkService failed: " + djiError.getDescription());
                         }
                     });
                 }
