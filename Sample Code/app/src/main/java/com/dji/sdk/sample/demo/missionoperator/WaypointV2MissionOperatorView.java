@@ -37,8 +37,6 @@ import dji.common.mission.waypointv2.Action.WaypointCameraActuatorParam;
 import dji.common.mission.waypointv2.Action.WaypointCameraCustomNameParam;
 import dji.common.mission.waypointv2.Action.WaypointCameraFocusParam;
 import dji.common.mission.waypointv2.Action.WaypointCameraFocusPointTargetParam;
-import dji.common.mission.waypointv2.Action.WaypointCameraStartIntervalShootParam;
-import dji.common.mission.waypointv2.Action.WaypointCameraStopIntervalShootParam;
 import dji.common.mission.waypointv2.Action.WaypointCameraZoomParam;
 import dji.common.mission.waypointv2.Action.WaypointGimbalActuatorParam;
 import dji.common.mission.waypointv2.Action.WaypointIntervalTriggerParam;
@@ -65,6 +63,8 @@ import dji.sdk.mission.MissionControl;
 import dji.sdk.mission.waypoint.WaypointV2ActionListener;
 import dji.sdk.mission.waypoint.WaypointV2MissionOperator;
 import dji.sdk.mission.waypoint.WaypointV2MissionOperatorListener;
+import dji.sdk.products.Aircraft;
+import dji.sdk.sdkmanager.DJISDKManager;
 
 import static dji.keysdk.FlightControllerKey.HOME_LOCATION_LATITUDE;
 import static dji.keysdk.FlightControllerKey.HOME_LOCATION_LONGITUDE;
@@ -86,6 +86,8 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
     private static final double VERTICAL_DISTANCE = 30;
     private static final String TAG = WaypointV2MissionOperatorView.class.getSimpleName();
     private FlightController flightController = null;
+
+    private DJISDKManager djisdkManager = DJISDKManager.getInstance();
 
     // Global variables for waypointV2Mission
     private WaypointV2MissionOperator waypointV2MissionOperator = null;
@@ -378,6 +380,60 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
         waypointV2List.add(waypoint10);
 
+        // Waypoint 11: (180,30)
+        WaypointV2 waypoint11 = new WaypointV2.Builder()
+                .setCoordinate(new LocationCoordinate2D(baseLatitude + HORIZONTAL_DISTANCE * ONE_METER_OFFSET * 6, baseLongitude + VERTICAL_DISTANCE * ONE_METER_OFFSET))
+                .setAltitude(baseAltitude)
+                .setFlightPathMode(WaypointV2MissionTypes.WaypointV2FlightPathMode.GOTO_POINT_STRAIGHT_LINE_AND_STOP)
+                .setHeadingMode(WaypointV2MissionTypes.WaypointV2HeadingMode.AUTO)
+                .build();
+        waypointV2List.add(waypoint11);
+
+        // Waypoint 12: (180,0)
+        WaypointV2 waypoint12 = new WaypointV2.Builder()
+                .setCoordinate(new LocationCoordinate2D(baseLatitude + HORIZONTAL_DISTANCE * ONE_METER_OFFSET * 6, baseLongitude))
+                .setAltitude(baseAltitude)
+                .setFlightPathMode(WaypointV2MissionTypes.WaypointV2FlightPathMode.GOTO_POINT_STRAIGHT_LINE_AND_STOP)
+                .setHeadingMode(WaypointV2MissionTypes.WaypointV2HeadingMode.AUTO)
+                .build();
+        waypointV2List.add(waypoint12);
+
+        // Waypoint 13: (210,30)
+        WaypointV2 waypoint13 = new WaypointV2.Builder()
+                .setCoordinate(new LocationCoordinate2D(baseLatitude + HORIZONTAL_DISTANCE * ONE_METER_OFFSET * 7, baseLongitude + VERTICAL_DISTANCE * ONE_METER_OFFSET))
+                .setAltitude(baseAltitude)
+                .setFlightPathMode(WaypointV2MissionTypes.WaypointV2FlightPathMode.GOTO_POINT_STRAIGHT_LINE_AND_STOP)
+                .setHeadingMode(WaypointV2MissionTypes.WaypointV2HeadingMode.AUTO)
+                .build();
+        waypointV2List.add(waypoint13);
+
+        // Waypoint 14: (210,0)
+        WaypointV2 waypoint14 = new WaypointV2.Builder()
+                .setCoordinate(new LocationCoordinate2D(baseLatitude + HORIZONTAL_DISTANCE * ONE_METER_OFFSET * 7, baseLongitude))
+                .setAltitude(baseAltitude)
+                .setFlightPathMode(WaypointV2MissionTypes.WaypointV2FlightPathMode.GOTO_POINT_STRAIGHT_LINE_AND_STOP)
+                .setHeadingMode(WaypointV2MissionTypes.WaypointV2HeadingMode.AUTO)
+                .build();
+        waypointV2List.add(waypoint14);
+
+        // Waypoint 15: (240,30)
+        WaypointV2 waypoint15 = new WaypointV2.Builder()
+                .setCoordinate(new LocationCoordinate2D(baseLatitude + HORIZONTAL_DISTANCE * ONE_METER_OFFSET * 8, baseLongitude + VERTICAL_DISTANCE * ONE_METER_OFFSET))
+                .setAltitude(baseAltitude)
+                .setFlightPathMode(WaypointV2MissionTypes.WaypointV2FlightPathMode.GOTO_POINT_STRAIGHT_LINE_AND_STOP)
+                .setHeadingMode(WaypointV2MissionTypes.WaypointV2HeadingMode.AUTO)
+                .build();
+        waypointV2List.add(waypoint15);
+
+        // Waypoint 16: (240,0)
+        WaypointV2 waypoint16 = new WaypointV2.Builder()
+                .setCoordinate(new LocationCoordinate2D(baseLatitude + HORIZONTAL_DISTANCE * ONE_METER_OFFSET * 8, baseLongitude))
+                .setAltitude(baseAltitude)
+                .setFlightPathMode(WaypointV2MissionTypes.WaypointV2FlightPathMode.GOTO_POINT_STRAIGHT_LINE_AND_STOP)
+                .setHeadingMode(WaypointV2MissionTypes.WaypointV2HeadingMode.AUTO)
+                .build();
+        waypointV2List.add(waypoint16);
+
 
         waypointV2MissionBuilder = new WaypointV2Mission.Builder();
         waypointV2MissionBuilder.setMissionID(new Random().nextInt(65535))
@@ -395,10 +451,15 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
     private void uploadWaypointAction(List<WaypointV2Action> waypointV2ActionList) {
         int actionId = 0;
         int startIndex = 1;
-        //Autofocus function at the first waypoint for Zenmuse P1
-        waypointV2ActionList.addAll(WaypointV2Factory.addActiveFocusAction(0,actionId,0f));
+        int associateActionId = 1;
+        if(djisdkManager.getProduct() instanceof Aircraft && ((Aircraft) djisdkManager.getProduct()).getCamera() != null && ((Aircraft)djisdkManager.getProduct()).getCamera().getDisplayName().equals("Zenmuse P1")){
+            //Autofocus function at the first waypoint for Zenmuse P1
+            waypointV2ActionList.addAll(WaypointV2Factory.addActiveFocusAction(0,actionId,0f));
 
-        actionId=8;
+            actionId = 8;
+            associateActionId = 8;
+            startIndex++;
+        }
 
         // Create a folder with "testFolder" at the end of folder name
         WaypointTrigger waypointAction1Trigger = new WaypointTrigger.Builder()
@@ -431,7 +492,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction2Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(8)
+                        .setAssociateActionID(associateActionId)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -458,7 +519,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction3Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(9)
+                        .setAssociateActionID(associateActionId+1)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -489,7 +550,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction4Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(10)
+                        .setAssociateActionID(associateActionId+2)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -514,7 +575,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction5Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(10)
+                        .setAssociateActionID(associateActionId+2)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -544,7 +605,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction6Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(12)
+                        .setAssociateActionID(associateActionId+4)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -568,7 +629,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction7Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(13)
+                        .setAssociateActionID(associateActionId+5)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -599,7 +660,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction8Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(14)
+                        .setAssociateActionID(associateActionId+6)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         .setWaitingTime(0)
                         .build())
@@ -626,7 +687,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction9Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
                 .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
-                        .setStartIndex(1)
+                        .setStartIndex(startIndex++)
                         .setAutoTerminateCount(1)
                         .build())
                 .build();
@@ -649,8 +710,8 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction10Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.TRAJECTORY)
                 .setTrajectoryParam(new WaypointTrajectoryTriggerParam.Builder()
-                        .setStartIndex(1)
-                        .setEndIndex(2)
+                        .setStartIndex(startIndex++)
+                        .setEndIndex(startIndex++)
                         .build())
                 .build();
 
@@ -679,8 +740,8 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction11Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.TRAJECTORY)
                 .setTrajectoryParam(new WaypointTrajectoryTriggerParam.Builder()
-                        .setStartIndex(2)
-                        .setEndIndex(3)
+                        .setStartIndex(startIndex++)
+                        .setEndIndex(startIndex++)
                         .build())
                 .build();
 
@@ -709,8 +770,8 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction12Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
                 .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
-                        .setStartIndex(3)
-                        .setAutoTerminateCount(3)
+                        .setStartIndex(startIndex++)
+                        .setAutoTerminateCount(startIndex++)
                         .build())
                 .build();
 
@@ -733,7 +794,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .setTriggerType(ActionTypes.ActionTriggerType.SIMPLE_INTERVAL)
                 .setIntervalTriggerParam(new WaypointIntervalTriggerParam.Builder()
                         .setType(ActionTypes.ActionIntervalType.TIME)
-                        .setStartIndex(4)
+                        .setStartIndex(startIndex++)
                         .setInterval(2)
                         .build())
                 .build();
@@ -760,7 +821,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
         WaypointTrigger waypointAction14Trigger = new WaypointTrigger.Builder()
                 .setTriggerType(ActionTypes.ActionTriggerType.ASSOCIATE)
                 .setAssociateParam(new WaypointV2AssociateTriggerParam.Builder()
-                        .setAssociateActionID(13)
+                        .setAssociateActionID(associateActionId+5)
                         .setAssociateType(ActionTypes.AssociatedTimingType.AFTER_FINISHED)
                         // Because set file name and shoot photo is the same module, it is better to set a waiting time.
                         .setWaitingTime(0.5f)
@@ -781,144 +842,151 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
                 .build();
         waypointV2ActionList.add(waypointAction14);
 
-        //Start Path Shooting for Zenmuse P1
-        WaypointTrigger startPathShootingTriger = new WaypointTrigger.Builder()
-                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
-                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
-                        .setStartIndex(startIndex++)
-                        .setAutoTerminateCount(0)
-                        .build())
-                .build();
-        WaypointActuator startPathShootingActuator = ActionUtils.getStartPathShootingActuator(0,0, ActionTypes.GimbalPathCycleMode.UNLIMITED);
-        WaypointV2Action startPathShootingAction = new WaypointV2Action.Builder()
-                .setActionID(++actionId)
-                .setActuator(startPathShootingActuator)
-                .setTrigger(startPathShootingTriger)
-                .build();
-        waypointV2ActionList.add(startPathShootingAction);
+        if(djisdkManager.getProduct() instanceof Aircraft && ((Aircraft) djisdkManager.getProduct()).getCamera() != null && ((Aircraft)djisdkManager.getProduct()).getCamera().getDisplayName().equals("Zenmuse P1")){
+            //Start Path Shooting for Zenmuse P1
+            WaypointTrigger startPathShootingTriger = new WaypointTrigger.Builder()
+                    .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
+                    .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
+                            .setStartIndex(startIndex++)
+                            .setAutoTerminateCount(0)
+                            .build())
+                    .build();
+            WaypointActuator startPathShootingActuator = ActionUtils.getStartPathShootingActuator(0,0, ActionTypes.GimbalPathCycleMode.UNLIMITED);
+            WaypointV2Action startPathShootingAction = new WaypointV2Action.Builder()
+                    .setActionID(++actionId)
+                    .setActuator(startPathShootingActuator)
+                    .setTrigger(startPathShootingTriger)
+                    .build();
+            waypointV2ActionList.add(startPathShootingAction);
 
-        //Stop Path Shooting for Zenmuse P1
-        WaypointTrigger stopPathShootingTriger = new WaypointTrigger.Builder()
-                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
-                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
-                        .setStartIndex(startIndex++)
-                        .setAutoTerminateCount(0)
-                        .build())
-                .build();
-        WaypointActuator stopPathShootingActuator = ActionUtils.getStopPathShootingActuator(0, ActionTypes.GimbalPathCycleMode.UNLIMITED);
-        WaypointV2Action stopPathShootingAction = new WaypointV2Action.Builder()
-                .setActionID(++actionId)
-                .setActuator(stopPathShootingActuator)
-                .setTrigger(stopPathShootingTriger)
-                .build();
-        waypointV2ActionList.add(stopPathShootingAction);
+            //Stop Path Shooting for Zenmuse P1
+            WaypointTrigger stopPathShootingTriger = new WaypointTrigger.Builder()
+                    .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
+                    .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
+                            .setStartIndex(startIndex++)
+                            .setAutoTerminateCount(0)
+                            .build())
+                    .build();
+            WaypointActuator stopPathShootingActuator = ActionUtils.getStopPathShootingActuator(0, ActionTypes.GimbalPathCycleMode.UNLIMITED);
+            WaypointV2Action stopPathShootingAction = new WaypointV2Action.Builder()
+                    .setActionID(++actionId)
+                    .setActuator(stopPathShootingActuator)
+                    .setTrigger(stopPathShootingTriger)
+                    .build();
+            waypointV2ActionList.add(stopPathShootingAction);
+        }
 
+        /**
+         * Because the firmware that supports the Interval Shoot is not online yet, this code is first commented
+         */
         //Start Interval Shoot
-        WaypointCameraStartIntervalShootParam cameraStartIntervalShootParam = WaypointCameraStartIntervalShootParam.Builder.aWaypointCameraStartIntervalShootParam()
-                .shootCount(20)
-                .shootIntervalTime(1.2)
-                .build();
-        WaypointCameraActuatorParam cameraStartIntervalShot = new WaypointCameraActuatorParam.Builder()
-                .setCameraOperationType(ActionTypes.CameraOperationType.START_INTERVAL_SHOOT)
-                .setStartIntervalShootParam(cameraStartIntervalShootParam)
-                .setRetryTime(1)
-                .build();
-        WaypointTrigger cameraStartIntervalShootTrigger = new WaypointTrigger.Builder()
-                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
-                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
-                        .setStartIndex(startIndex++)
-                        .setAutoTerminateCount(2)
-                        .build())
-                .build();
-        WaypointActuator cameraStartIntervalShootActuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
-                .setCameraActuatorParam(cameraStartIntervalShot)
-                .build();
-        WaypointV2Action cameraStartIntervalShotAction = new WaypointV2Action.Builder()
-                .setActionID(++actionId)
-                .setTrigger(cameraStartIntervalShootTrigger)
-                .setActuator(cameraStartIntervalShootActuator)
-                .build();
-        waypointV2ActionList.add(cameraStartIntervalShotAction);
+//        WaypointCameraStartIntervalShootParam cameraStartIntervalShootParam = WaypointCameraStartIntervalShootParam.Builder.aWaypointCameraStartIntervalShootParam()
+//                .shootCount(20)
+//                .shootIntervalTime(1.2)
+//                .build();
+//        WaypointCameraActuatorParam cameraStartIntervalShot = new WaypointCameraActuatorParam.Builder()
+//                .setCameraOperationType(ActionTypes.CameraOperationType.START_INTERVAL_SHOOT)
+//                .setStartIntervalShootParam(cameraStartIntervalShootParam)
+//                .setRetryTime(1)
+//                .build();
+//        WaypointTrigger cameraStartIntervalShootTrigger = new WaypointTrigger.Builder()
+//                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
+//                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
+//                        .setStartIndex(startIndex++)
+//                        .setAutoTerminateCount(2)
+//                        .build())
+//                .build();
+//        WaypointActuator cameraStartIntervalShootActuator = new WaypointActuator.Builder()
+//                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
+//                .setCameraActuatorParam(cameraStartIntervalShot)
+//                .build();
+//        WaypointV2Action cameraStartIntervalShotAction = new WaypointV2Action.Builder()
+//                .setActionID(++actionId)
+//                .setTrigger(cameraStartIntervalShootTrigger)
+//                .setActuator(cameraStartIntervalShootActuator)
+//                .build();
+//        waypointV2ActionList.add(cameraStartIntervalShotAction);
 
 
         //Stop Interval Shoot
-        WaypointCameraStopIntervalShootParam cameraStopIntervalShootParam = new WaypointCameraStopIntervalShootParam();
-        WaypointCameraActuatorParam cameraStopIntervalShoot = new WaypointCameraActuatorParam.Builder()
-                .setCameraOperationType(ActionTypes.CameraOperationType.STOP_INTERVAL_SHOOT)
-                .setStopIntervalShootParam(cameraStopIntervalShootParam)
-                .setRetryTime(1)
-                .build();
-        WaypointTrigger cameraStopIntervalShootTrigger = new WaypointTrigger.Builder()
-                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
-                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
-                        .setStartIndex(startIndex++)
-                        .setAutoTerminateCount(0)
-                        .build())
-                .build();
-        WaypointActuator cameraStopIntervalShootActuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
-                .setCameraActuatorParam(cameraStopIntervalShoot)
-                .build();
-        WaypointV2Action cameraStopIntervalShootAction = new WaypointV2Action.Builder()
-                .setActionID(++actionId)
-                .setTrigger(cameraStopIntervalShootTrigger)
-                .setActuator(cameraStopIntervalShootActuator)
-                .build();
-        waypointV2ActionList.add(cameraStopIntervalShootAction);
+//        WaypointCameraStopIntervalShootParam cameraStopIntervalShootParam = new WaypointCameraStopIntervalShootParam();
+//        WaypointCameraActuatorParam cameraStopIntervalShoot = new WaypointCameraActuatorParam.Builder()
+//                .setCameraOperationType(ActionTypes.CameraOperationType.STOP_INTERVAL_SHOOT)
+//                .setStopIntervalShootParam(cameraStopIntervalShootParam)
+//                .setRetryTime(1)
+//                .build();
+//        WaypointTrigger cameraStopIntervalShootTrigger = new WaypointTrigger.Builder()
+//                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
+//                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
+//                        .setStartIndex(startIndex++)
+//                        .setAutoTerminateCount(0)
+//                        .build())
+//                .build();
+//        WaypointActuator cameraStopIntervalShootActuator = new WaypointActuator.Builder()
+//                .setActuatorType(ActionTypes.ActionActuatorType.CAMERA)
+//                .setCameraActuatorParam(cameraStopIntervalShoot)
+//                .build();
+//        WaypointV2Action cameraStopIntervalShootAction = new WaypointV2Action.Builder()
+//                .setActionID(++actionId)
+//                .setTrigger(cameraStopIntervalShootTrigger)
+//                .setActuator(cameraStopIntervalShootActuator)
+//                .build();
+//        waypointV2ActionList.add(cameraStopIntervalShootAction);
 
 
         //Point cloud recording for Zenmuse L1
-        WaypointPointCloudRecordActuatorParam waypointStartPointCloudRecordActuatorParam = new WaypointPointCloudRecordActuatorParam.Builder()
-                .type(ActionTypes.PointCloudRecordType.START_RECORD_POINT_CLOUD)
-                .build();
-        WaypointLidarActuatorParam waypointStartLidarActuatorParam = new WaypointLidarActuatorParam.Builder()
-                .lidarOperationType(ActionTypes.LidarOperationType.RECORD_POINT_CLOUD)
-                .pointCloudRecordParam(waypointStartPointCloudRecordActuatorParam)
-                .build();
-        WaypointTrigger waypointStartPointCloudRecordTrigger = new WaypointTrigger.Builder()
-                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
-                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
-                        .setStartIndex(startIndex++)
-                        .setAutoTerminateCount(0)
-                        .build())
-                .build();
-        WaypointActuator waypointStartPointCloudRecordActuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.LIDAR)
-                .setLidarActuatorParam(waypointStartLidarActuatorParam)
-                .build();
-        WaypointV2Action waypointStartPointCloudRecordAction = new WaypointV2Action.Builder()
-                .setActionID(++actionId)
-                .setTrigger(waypointStartPointCloudRecordTrigger)
-                .setActuator(waypointStartPointCloudRecordActuator)
-                .build();
-        waypointV2ActionList.add(waypointStartPointCloudRecordAction);
+        if (djisdkManager.getProduct() instanceof Aircraft && ((Aircraft) djisdkManager.getProduct()).getLidars() != null) {
+            WaypointPointCloudRecordActuatorParam waypointStartPointCloudRecordActuatorParam = new WaypointPointCloudRecordActuatorParam.Builder()
+                    .type(ActionTypes.PointCloudRecordType.START_RECORD_POINT_CLOUD)
+                    .build();
+            WaypointLidarActuatorParam waypointStartLidarActuatorParam = new WaypointLidarActuatorParam.Builder()
+                    .lidarOperationType(ActionTypes.LidarOperationType.RECORD_POINT_CLOUD)
+                    .pointCloudRecordParam(waypointStartPointCloudRecordActuatorParam)
+                    .build();
+            WaypointTrigger waypointStartPointCloudRecordTrigger = new WaypointTrigger.Builder()
+                    .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
+                    .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
+                            .setStartIndex(startIndex++)
+                            .setAutoTerminateCount(0)
+                            .build())
+                    .build();
+            WaypointActuator waypointStartPointCloudRecordActuator = new WaypointActuator.Builder()
+                    .setActuatorType(ActionTypes.ActionActuatorType.LIDAR)
+                    .setLidarActuatorParam(waypointStartLidarActuatorParam)
+                    .build();
+            WaypointV2Action waypointStartPointCloudRecordAction = new WaypointV2Action.Builder()
+                    .setActionID(++actionId)
+                    .setTrigger(waypointStartPointCloudRecordTrigger)
+                    .setActuator(waypointStartPointCloudRecordActuator)
+                    .build();
+            waypointV2ActionList.add(waypointStartPointCloudRecordAction);
 
 
-        WaypointPointCloudRecordActuatorParam waypointStopPointCloudRecordActuatorParam = new WaypointPointCloudRecordActuatorParam.Builder()
-                .type(ActionTypes.PointCloudRecordType.STOP_RECORD_POINT_CLOUD)
-                .build();
-        WaypointLidarActuatorParam waypointStopLidarActuatorParam = new WaypointLidarActuatorParam.Builder()
-                .lidarOperationType(ActionTypes.LidarOperationType.RECORD_POINT_CLOUD)
-                .pointCloudRecordParam(waypointStopPointCloudRecordActuatorParam)
-                .build();
-        WaypointTrigger waypointStopPointCloudRecordTrigger = new WaypointTrigger.Builder()
-                .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
-                .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
-                        .setStartIndex(startIndex++)
-                        .setAutoTerminateCount(0)
-                        .build())
-                .build();
-        WaypointActuator waypointStopPointCloudRecordActuator = new WaypointActuator.Builder()
-                .setActuatorType(ActionTypes.ActionActuatorType.LIDAR)
-                .setLidarActuatorParam(waypointStopLidarActuatorParam)
-                .build();
-        WaypointV2Action waypointStopPointCloudRecordAction = new WaypointV2Action.Builder()
-                .setActionID(++actionId)
-                .setTrigger(waypointStopPointCloudRecordTrigger)
-                .setActuator(waypointStopPointCloudRecordActuator)
-                .build();
-        waypointV2ActionList.add(waypointStopPointCloudRecordAction);
+            WaypointPointCloudRecordActuatorParam waypointStopPointCloudRecordActuatorParam = new WaypointPointCloudRecordActuatorParam.Builder()
+                    .type(ActionTypes.PointCloudRecordType.STOP_RECORD_POINT_CLOUD)
+                    .build();
+            WaypointLidarActuatorParam waypointStopLidarActuatorParam = new WaypointLidarActuatorParam.Builder()
+                    .lidarOperationType(ActionTypes.LidarOperationType.RECORD_POINT_CLOUD)
+                    .pointCloudRecordParam(waypointStopPointCloudRecordActuatorParam)
+                    .build();
+            WaypointTrigger waypointStopPointCloudRecordTrigger = new WaypointTrigger.Builder()
+                    .setTriggerType(ActionTypes.ActionTriggerType.REACH_POINT)
+                    .setReachPointParam(new WaypointReachPointTriggerParam.Builder()
+                            .setStartIndex(startIndex++)
+                            .setAutoTerminateCount(0)
+                            .build())
+                    .build();
+            WaypointActuator waypointStopPointCloudRecordActuator = new WaypointActuator.Builder()
+                    .setActuatorType(ActionTypes.ActionActuatorType.LIDAR)
+                    .setLidarActuatorParam(waypointStopLidarActuatorParam)
+                    .build();
+            WaypointV2Action waypointStopPointCloudRecordAction = new WaypointV2Action.Builder()
+                    .setActionID(++actionId)
+                    .setTrigger(waypointStopPointCloudRecordTrigger)
+                    .setActuator(waypointStopPointCloudRecordActuator)
+                    .build();
+            waypointV2ActionList.add(waypointStopPointCloudRecordAction);
+        }
 
         waypointV2MissionOperator.uploadWaypointActions(waypointV2ActionList, new CommonCallbacks.CompletionCallback<DJIWaypointV2Error>() {
             @Override
