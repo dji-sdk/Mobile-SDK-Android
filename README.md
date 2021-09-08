@@ -135,10 +135,8 @@ The DJI Android SDK is dynamically linked with unmodified libraries of <a href=h
 You can get support from DJI with the following methods:
 
 - Post questions in DJI Developer Forums:
-[**Chinese Forum**](https://bbs.dji.com/forum-79-1.html?from=developer)
-, [**English Forum**](https://forum.dji.com/forum-139-1.html?from=developer)
-- dev@dji.com
-
+[**Chinese Forum**](https://djisdksupport.zendesk.com/hc/zh-cn/community/topics)
+, [**English Forum**](https://djisdksupport.zendesk.com/hc/en-us/community/topics)
 
 ## Join Us
 
