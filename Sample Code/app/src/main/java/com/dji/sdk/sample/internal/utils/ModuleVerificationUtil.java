@@ -85,6 +85,12 @@ public class ModuleVerificationUtil {
                 .getLightbridgeLink());
     }
 
+    public static boolean isOcuSyncLinkAvailable() {
+        return isAirlinkAvailable() && (null != DJISampleApplication.getProductInstance()
+                .getAirLink()
+                .getOcuSyncLink());
+    }
+
     public static boolean isPayloadAvailable() {
         return isProductModuleAvailable() && isAircraft() && (null != DJISampleApplication.getAircraftInstance()
                 .getPayload());

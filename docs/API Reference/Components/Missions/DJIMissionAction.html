@@ -492,6 +492,12 @@
                                                 </dd>
                                         </ul>
                                       </dd>
+                                      <dd><a data-href="../Camera/DJIMediaManager_DJIMediaInfo.html" class="sub-toggle">MediaFileInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJICamera_CamerNewGeneratedMediaFileInfoCallbackInterface.html">NewFileInfoCallback</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
                                       <dd><a href="../Camera/DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">VideoPlaybackState</a>
                                       </dd>
                                       <dd><a data-href="../Camera/DJIMediaManager_FetchMediaTaskScheduler.html" class="sub-toggle">FetchMediaTaskScheduler<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -1522,6 +1528,24 @@
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Called after element execution, regardless of whether or not it was successful.</font></p>
 </div>
+<div class="api-row" id="djimissioncontroltimelineelement_setdelaytime"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelement_setdelaytime_inline">setDelayTime</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelement_setdelaytime_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>setDelayTime</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDelayTime</span><span class="params">(<span class="keyword">long</span> delayTime)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline</font></td></tr></table></html>
+<h5 id="description-v13">Description:</h5>
+<p><font color="#666">Sets the time you want to delay before element execution which is used for asynchronous processing scenarios. For example, if you want to execute <code><a href="../../Components/Missions/DJIGimbalAttitudeAction.html#djigimbalattitudeaction">GimbalAttitudeAction</a></code> after <code><a href="../../Components/Missions/DJIShootPhotoAction.html#djishootphotoaction">ShootPhotoAction</a></code>, you should set delay time in <code><a href="../../Components/Missions/DJIGimbalAttitudeAction.html#djigimbalattitudeaction">GimbalAttitudeAction</a></code>. Because it takes 1 to 2 seconds to take a photo, the gimbal's commands will not be responded during this period,  so we need to delay 2 seconds before turning the gimbal to ensure that the gimbal movement is executed correctly.</font></p>
+<h5 id="input-parameters-v2">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long <font color="#000">delayTime</font></font></td><td><font color="#666"><i>The time you want to delay before element execution, unit:second.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimissioncontroltimelineelement_getdelaytime"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimissioncontroltimelineelement_getdelaytime_inline">getDelayTime</a></div></div><div class="inline-doc" id="djimissioncontroltimelineelement_getdelaytime_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>getDelayTime</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">getDelayTime</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.timeline</font></td></tr></table></html>
+<h5 id="description-v14">Description:</h5>
+<p><font color="#666">Gets the time you want to delay before element execution.</font></p>
+<h5 id="return-v5">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</font></td><td><font color="#666"><i>The time you set to delay before element execution.</i></font></td></tr></table></html></div>
 
         </div>
       </div>

@@ -110,7 +110,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                     } catch (Exception e) {
                         throw new RuntimeException("Class "
                                 + ((SingleItem) item).getLinkedViewClass().getSimpleName()
-                                + " is missing a constructor that takes Context");
+                                + " is missing a constructor that takes Context" , e.getCause());
                     }
                 }
             });

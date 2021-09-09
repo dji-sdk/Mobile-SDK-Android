@@ -58,12 +58,14 @@ public class WaypointMissionOperatorView extends MissionBaseView {
     private static final double ONE_METER_OFFSET = 0.00000899322;
     private static final double HORIZONTAL_DISTANCE = 30;
     private static final double VERTICAL_DISTANCE = 30;
+    private static final int WAYPOINT_COUNT = 4;
 
     private WaypointMissionOperator waypointMissionOperator = null;
     private FlightController flightController = null;
     private WaypointMission mission = null;
     private WaypointMissionOperatorListener listener;
-    private static final int WAYPOINT_COUNT = 4;
+    private float calculateTotalTime = 0.0f;
+
 
     public WaypointMissionOperatorView(Context context) {
         super(context);
@@ -100,7 +102,7 @@ public class WaypointMissionOperatorView extends MissionBaseView {
                 mission = createRectangleWaypointMission();
                 DJIError djiError = waypointMissionOperator.loadMission(mission);
                 if (djiError == null) {
-                    ToastUtils.setResultToToast("Mission is loaded successfully");
+                    ToastUtils.setResultToToast("Mission is loaded successfully, estimated execution time is " + calculateTotalTime + " seconds.");
                 } else {
                     ToastUtils.setResultToToast(djiError.getDescription());
                 }
@@ -282,6 +284,7 @@ public class WaypointMissionOperatorView extends MissionBaseView {
         waypointList.add(waypoint3);
 
         builder.waypointList(waypointList).waypointCount(waypointList.size());
+        calculateTotalTime = builder.calculateTotalTime();
         return builder.build();
     }
 
