@@ -492,6 +492,12 @@
                                                 </dd>
                                         </ul>
                                       </dd>
+                                      <dd><a data-href="../Camera/DJIMediaManager_DJIMediaInfo.html" class="sub-toggle">MediaFileInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJICamera_CamerNewGeneratedMediaFileInfoCallbackInterface.html">NewFileInfoCallback</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
                                       <dd><a href="../Camera/DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">VideoPlaybackState</a>
                                       </dd>
                                       <dd><a data-href="../Camera/DJIMediaManager_FetchMediaTaskScheduler.html" class="sub-toggle">FetchMediaTaskScheduler<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -1621,7 +1627,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAdvancedPilotAssistanceSystemEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, @Nullable CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
-<p><font color="#666">Enables the Advanced Pilot Assistance System (APAS). When APAS is enabled, the aircraft  continues to respond to user commands and plans its path according to both control stick  inputs and the flight environment. APAS makes it easier to avoid obstacles and obtain  smoother footage, and gives a better fly experiences. It is only valid when the aircraft  is in P-mode. It is supported by Mavic Air and Mavic 2 Series.</font></p>
+<p><font color="#666">Enables the Advanced Pilot Assistance System (APAS). When APAS is enabled, the aircraft  continues to respond to user commands and plans its path according to both control stick  inputs and the flight environment. APAS makes it easier to avoid obstacles and obtain  smoother footage, and gives a better fly experiences. It is only valid when the aircraft  is in P-mode. It is only supported by Mavic Air, Mavic 2 Pro, Mavic 2 Zoom, Mavic 2 Enterprise.</font></p>
 <h5 id="input-parameters-v21">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> to enable APAS.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable CompletionCallback <font color="#000">callback</font></font></td><td><font color="#666"><i>The completion callback with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiintelligentflightassistant_getadvancedpilotassistancesystemenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_getadvancedpilotassistancesystemenabled_inline">getAdvancedPilotAssistanceSystemEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_getadvancedpilotassistancesystemenabled_inline" <blockquote>
@@ -1630,7 +1636,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getAdvancedPilotAssistanceSystemEnabled</span><span class="params">(@NonNull CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
-<p><font color="#666">Determines whether the Advanced Pilot Assistance System (APAS) is enabled or not. When  APAS is enabled, the aircraft continues to respond to user commands and plans its path  according to both control stick inputs and the flight environment. APAS makes it easier  to avoid obstacles and obtain smoother footage, and gives a better fly experiences. It  is only supported by Mavic Air.</font></p>
+<p><font color="#666">Determines whether the Advanced Pilot Assistance System (APAS) is enabled or not. When  APAS is enabled, the aircraft continues to respond to user commands and plans its path  according to both control stick inputs and the flight environment. APAS makes it easier  to avoid obstacles and obtain smoother footage, and gives a better fly experiences. It  It is only supported by Mavic Air, Mavic 2 Pro, Mavic 2 Zoom, Mavic 2 Enterprise.</font></p>
 <h5 id="input-parameters-v22">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull CompletionCallbackWith&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The completion callback with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiintelligentflightassistant_setrthobstacleavoidanceenabled"><div class="api-col left">RTH Obstacle Avoidance</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_setrthobstacleavoidanceenabled_inline">setRTHObstacleAvoidanceEnabled</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_setrthobstacleavoidanceenabled_inline" <blockquote>

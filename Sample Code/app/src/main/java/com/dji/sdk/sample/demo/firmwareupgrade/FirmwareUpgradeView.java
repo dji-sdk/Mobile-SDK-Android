@@ -4,26 +4,32 @@ import android.app.Service;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-
 import com.dji.sdk.sample.R;
+import com.dji.sdk.sample.internal.utils.Helper;
+import com.dji.sdk.sample.internal.utils.PopupUtils;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.dji.sdk.sample.internal.view.PresentableView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.annotation.NonNull;
+import dji.common.product.Model;
+import dji.sdk.base.BaseProduct;
 import dji.sdk.sdkmanager.DJISDKManager;
+import dji.sdk.upgrade.UpgradeComponentChangeListener;
 import dji.sdk.upgrade.UpgradeManager;
 import dji.sdk.upgrade.component.UpgradeComponent;
 import dji.sdk.upgrade.component.UpgradeFirmwareListener;
 import dji.sdk.upgrade.component.model.FirmwareInformation;
 import dji.sdk.upgrade.component.model.FirmwareUpgradeProgress;
-import dji.sdk.upgrade.component.model.UpgradeComponentType;
 import dji.sdk.upgrade.component.model.UpgradeFirmwareState;
 
 /**
@@ -45,18 +51,16 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
     protected TextView mAcUpgradeProgressTV;
     protected TextView mAcConsistentStateTV;
     protected TextView mAcFirmwareInfoTV;
-    protected TextView mRcUpgradeStateTV;
-    protected TextView mRcUpgradeProgressTV;
-    protected TextView mRcConsistentStateTV;
-    protected TextView mRcFirmwareInfoTV;
-
-    protected AlertDialog dlg;
+    private TextView mComponentListTV;
 
     private UpgradeComponent remoteControllerComponent;
     private UpgradeComponent aircraftUpgradeComponent;
     private UpgradeManager upgradeManager;
 
     protected Handler handler = new Handler(Looper.getMainLooper());
+
+    private static final int MSG_REFRESH_CONSISTENT_UPGRADE_INFO = 0x01;
+    private static final int TIME_AFTER_LAST_CONSISTENT_PUSH = 5000; //5s
 
     public FirmwareUpgradeView(Context context) {
         super(context);
@@ -67,7 +71,7 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         initUpgradeData();
-        bindData();
+        initHandle();
     }
 
     @Override
@@ -90,10 +94,7 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
         mAcUpgradeProgressTV = (TextView) findViewById(R.id.tv_ac_upgrade_progress);
         mAcConsistentStateTV = (TextView) findViewById(R.id.tv_ac_consistent_state);
         mAcFirmwareInfoTV = (TextView) findViewById(R.id.tv_ac_firmware_info);
-        mRcUpgradeStateTV = (TextView) findViewById(R.id.tv_rc_upgrade_state);
-        mRcUpgradeProgressTV = (TextView) findViewById(R.id.tv_rc_upgrade_progress);
-        mRcConsistentStateTV = (TextView) findViewById(R.id.tv_rc_consistent_state);
-        mRcFirmwareInfoTV = (TextView) findViewById(R.id.tv_rc_firmware_info);
+        mComponentListTV = (TextView) findViewById(R.id.tv_component_list);
 
         startConsistentUpgradeBtn.setOnClickListener(this);
         stopConsistentUpgradeBtn.setOnClickListener(this);
@@ -101,89 +102,109 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
         getCurrentFirmwareInfoBtn.setOnClickListener(this);
     }
 
-    private void initUpgradeData() {
-        remoteControllerComponent = getRemoteControllerComponent();
-        aircraftUpgradeComponent = getAircraftUpgradeComponent();
-        if (remoteControllerComponent != null) {
-            showUpgradeFirmwareState(mRcUpgradeStateTV, "RC: " + remoteControllerComponent.getUpgradeState());
-        }
-        if (aircraftUpgradeComponent != null) {
-            showUpgradeFirmwareState(mAcUpgradeStateTV, "AC: " + aircraftUpgradeComponent.getUpgradeState());
-        }
+    private void initHandle() {
+        handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case MSG_REFRESH_CONSISTENT_UPGRADE_INFO:
+                        UpgradeComponent component = (UpgradeComponent) msg.obj;
+                        showUpgradeConsistentUpdated(mAcConsistentStateTV, component);
+                        closeInfoShow(mAcConsistentStateTV, "isCancelUpgrade");
+                        break;
+                }
+            }
+        };
     }
 
-    private void bindData() {
-        if (remoteControllerComponent != null) {
-            remoteControllerComponent.addUpgradeFirmwareListener(remoteControllerUpgradeListener);
+    private void initUpgradeData() {
+        showUpgradeFirmwareState(mAcUpgradeStateTV);
+        showUpgradeFirmwareInfo(mAcFirmwareInfoTV);
+        updateComponent();
+        if (upgradeManager == null) {
+            upgradeManager = DJISDKManager.getInstance().getUpgradeManager();
         }
-        if (aircraftUpgradeComponent != null) {
-            aircraftUpgradeComponent.addUpgradeFirmwareListener(aircraftUpgradeListener);
-        }
+        upgradeManager.addUpgradeComponentChangeListener(upgradeComponentChangeListener);
     }
 
     private void unBindData() {
-        if (remoteControllerComponent != null) {
-            remoteControllerComponent.removeUpgradeFirmwareListener(remoteControllerUpgradeListener);
+        if (upgradeManager == null) {
+            upgradeManager = DJISDKManager.getInstance().getUpgradeManager();
         }
-        if (aircraftUpgradeComponent != null) {
-            aircraftUpgradeComponent.removeUpgradeFirmwareListener(aircraftUpgradeListener);
+        upgradeManager.removeUpgradeComponentChangeListener(upgradeComponentChangeListener);
+        List<UpgradeComponent> components = getDynamicUpgradeComponents();
+        if (components != null) {
+            for (UpgradeComponent component : components) {
+                component.removeUpgradeFirmwareListener(UpgradeFirmwareListener);
+            }
         }
     }
 
-    private UpgradeFirmwareListener remoteControllerUpgradeListener = new UpgradeFirmwareListener() {
-
-        @Override
-        public void onUpgradeFirmwareStateUpdated(@NonNull UpgradeComponent upgradeComponent, @NonNull dji.sdk.upgrade.component.model.UpgradeFirmwareState upgradeFirmwareState) {
-            showUpgradeFirmwareState(mRcUpgradeStateTV, "RC: " + upgradeFirmwareState);
-        }
-
-        @Override
-        public void onFirmwareUpgradeProgressUpdated(@NonNull UpgradeComponent upgradeComponent, @NonNull FirmwareUpgradeProgress progress) {
-            showFirmwareUpgradeProgress(mRcUpgradeProgressTV, progress, "Remote Controller:\n");
-        }
-
-        @Override
-        public void onConsistencyUpgradeRequestReceived(@NonNull UpgradeComponent upgradeComponent) {
-            boolean canCancelConsistencyUpgrade = false;
-            if (upgradeComponent != null) {
-                canCancelConsistencyUpgrade = upgradeComponent.canCancelConsistencyUpgrade();
-            }
-            showUpgradeConsistentUpdated(mRcConsistentStateTV, canCancelConsistencyUpgrade, "Remote Controller:\n");
-        }
-
-        @Override
-        public void onLatestFirmwareInformationUpdated(@NonNull UpgradeComponent upgradeComponent, FirmwareInformation firmwareInformation) {
-            showUpgradeFirmwareInfo(upgradeComponent, firmwareInformation);
-        }
-
+    private UpgradeComponentChangeListener upgradeComponentChangeListener = (type, component, isConnected) -> {
+        updateComponent();
+        updateDynamicState(component, isConnected);
     };
 
-    private UpgradeFirmwareListener aircraftUpgradeListener = new UpgradeFirmwareListener() {
+    private UpgradeFirmwareListener UpgradeFirmwareListener = new UpgradeFirmwareListener() {
 
         @Override
-        public void onUpgradeFirmwareStateUpdated(@NonNull UpgradeComponent upgradeComponent, @NonNull dji.sdk.upgrade.component.model.UpgradeFirmwareState state) {
-            showUpgradeFirmwareState(mAcUpgradeStateTV, "AC: " + state);
+        public void onUpgradeFirmwareStateUpdated(@NonNull UpgradeComponent component,
+                                                  @NonNull UpgradeFirmwareState state) {
+            showUpgradeFirmwareState(mAcUpgradeStateTV);
         }
 
         @Override
-        public void onFirmwareUpgradeProgressUpdated(@NonNull UpgradeComponent upgradeComponent, @NonNull FirmwareUpgradeProgress progress) {
-            showFirmwareUpgradeProgress(mAcUpgradeProgressTV, progress, "Aircraft:\n");
+        public void onFirmwareUpgradeProgressUpdated(UpgradeComponent component, FirmwareUpgradeProgress progress) {
+            showFirmwareUpgradeProgress(mAcUpgradeProgressTV, component, progress);
         }
 
         @Override
-        public void onConsistencyUpgradeRequestReceived(@NonNull UpgradeComponent upgradeComponent) {
-            boolean canCancelConsistencyUpgrade = false;
-            if (upgradeComponent != null) {
-                canCancelConsistencyUpgrade = upgradeComponent.canCancelConsistencyUpgrade();
+        public void onConsistencyUpgradeRequestReceived(UpgradeComponent component) {
+            if (handler != null) {
+                if (handler.hasMessages(MSG_REFRESH_CONSISTENT_UPGRADE_INFO)) {
+                    handler.removeMessages(MSG_REFRESH_CONSISTENT_UPGRADE_INFO);
+                }
+                Message info = new Message();
+                info.what = MSG_REFRESH_CONSISTENT_UPGRADE_INFO;
+                info.obj = component;
+                handler.sendMessageDelayed(info, TIME_AFTER_LAST_CONSISTENT_PUSH);
             }
-            showUpgradeConsistentUpdated(mAcConsistentStateTV, canCancelConsistencyUpgrade, "Aircraft:\n");
+
+            showUpgradeConsistentUpdated(mAcConsistentStateTV, component);
         }
 
         @Override
-        public void onLatestFirmwareInformationUpdated(@NonNull UpgradeComponent upgradeComponent, FirmwareInformation firmwareInformation) {
-            showUpgradeFirmwareInfo(upgradeComponent, firmwareInformation);
+        public void onLatestFirmwareInformationUpdated(UpgradeComponent component, FirmwareInformation firmwareInformation) {
+            showUpgradeFirmwareInfo(mAcFirmwareInfoTV);
         }
     };
+
+    private void updateDynamicState(UpgradeComponent component, boolean isConnected) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Component Connecting State:" + "\n")
+                .append("Component type:"
+                        + component.getComponentType()
+                        + "  Component index:"
+                        + component.getIndex()
+                        + "\n")
+                .append("isConnected:" + isConnected + "\n");
+        ToastUtils.setResultToText(mComponentListTV, builder.toString());
+    }
+
+    private void showFirmwareUpgradeProgress(final TextView tv,
+                                             UpgradeComponent component,
+                                             FirmwareUpgradeProgress progress) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Upgrade Progress:" + "\n")
+                .append("Component type:"
+                        + component.getComponentType()
+                        + "  Component index:"
+                        + component.getIndex()
+                        + "\n")
+                .append("Process State:" + progress.getState() + "\n")
+                .append("Current Progress" + progress.getProgress() + "\n");
+        ToastUtils.setResultToText(tv, builder.toString());
+    }
 
     @Override
     public void onClick(View v) {
@@ -206,21 +227,21 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
     }
 
     private void startFirmwareConsistencyUpgradeWithCompletion() {
-        final UpgradeComponentType[] componentTypes = UpgradeComponentType.values();
-        dlg = new AlertDialog.Builder(getContext())
-                .setTitle("Choose a component")
-                .setSingleChoiceItems(new String[]{"Remote Controller", "Aircraft"}, 0, (dialog, which) -> {
-                    UpgradeComponent selectedComponent = null;
-                    if (componentTypes[which] == UpgradeComponentType.REMOTE_CONTROLLER) {
-                        selectedComponent = remoteControllerComponent;
-                    }
-                    if (componentTypes[which] == UpgradeComponentType.AIRCRAFT) {
-                        selectedComponent = aircraftUpgradeComponent;
-                    }
-                    startFirmwareConsistencyUpgradeWithCompletion(selectedComponent);
-                    dialog.dismiss();
-                }).create();
-        dlg.show();
+        final List<UpgradeComponent> components = getDynamicUpgradeComponents();
+        if (components == null || components.size() < 1) {
+            ToastUtils.showToast("failed: No components connected!");
+            return;
+        }
+        String[] componentName = new String[components.size()];
+        for (int i = 0; i < components.size(); i++) {
+            UpgradeComponent tempComponent = components.get(i);
+            componentName[i] = tempComponent.getComponentType() + "[" + tempComponent.getIndex() + "]";
+        }
+        final Runnable runSetComponentType = () -> {
+            startFirmwareConsistencyUpgradeWithCompletion(components.get(PopupUtils.INSTANCE.getIndex()[0]));
+            PopupUtils.INSTANCE.resetIndex();
+        };
+        PopupUtils.INSTANCE.initPopupNumberPicker(Helper.makeList(componentName), runSetComponentType, this);
     }
 
     private void startFirmwareConsistencyUpgradeWithCompletion(UpgradeComponent upgradeComponent) {
@@ -233,21 +254,21 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
     }
 
     private void stopFirmwareConsistencyUpgradeWithCompletion() {
-        final UpgradeComponentType[] componentTypes = UpgradeComponentType.values();
-        dlg = new AlertDialog.Builder(getContext())
-                .setTitle("Choose a component")
-                .setSingleChoiceItems(new String[]{"Remote Controller", "Aircraft"}, 0, (dialog, which) -> {
-                    UpgradeComponent selectedComponent = null;
-                    if (componentTypes[which] == UpgradeComponentType.REMOTE_CONTROLLER) {
-                        selectedComponent = remoteControllerComponent;
-                    }
-                    if (componentTypes[which] == UpgradeComponentType.AIRCRAFT) {
-                        selectedComponent = aircraftUpgradeComponent;
-                    }
-                    stopFirmwareConsistencyUpgradeWithCompletion(selectedComponent);
-                    dialog.dismiss();
-                }).create();
-        dlg.show();
+        final List<UpgradeComponent> components = getDynamicUpgradeComponents();
+        if (components == null || components.size() < 1) {
+            ToastUtils.showToast("failed: No components connected!");
+            return;
+        }
+        String[] componentName = new String[components.size()];
+        for (int i = 0; i < components.size(); i++) {
+            UpgradeComponent tempComponent = components.get(i);
+            componentName[i] = tempComponent.getComponentType() + "[" + tempComponent.getIndex() + "]";
+        }
+        final Runnable runSetComponentType = () -> {
+            stopFirmwareConsistencyUpgradeWithCompletion(components.get(PopupUtils.INSTANCE.getIndex()[0]));
+            PopupUtils.INSTANCE.resetIndex();
+        };
+        PopupUtils.INSTANCE.initPopupNumberPicker(Helper.makeList(componentName), runSetComponentType, this);
     }
 
     private void stopFirmwareConsistencyUpgradeWithCompletion(UpgradeComponent upgradeComponent) {
@@ -260,39 +281,41 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
     }
 
     private void getCurrentUpgradeFirmwareState() {
-        final UpgradeComponentType[] componentTypes = UpgradeComponentType.values();
-        dlg = new AlertDialog.Builder(getContext())
-                .setTitle("Choose a component")
-                .setSingleChoiceItems(new String[]{"Remote Controller", "Aircraft"}, 0, (dialog, which) -> {
-                    UpgradeComponent selectedComponent = null;
-                    if (componentTypes[which] == UpgradeComponentType.REMOTE_CONTROLLER) {
-                        selectedComponent = remoteControllerComponent;
-                    }
-                    if (componentTypes[which] == UpgradeComponentType.AIRCRAFT) {
-                        selectedComponent = aircraftUpgradeComponent;
-                    }
-                    getCurrentUpgradeFirmwareState(selectedComponent);
-                    dialog.dismiss();
-                }).create();
-        dlg.show();
+        final List<UpgradeComponent> components = getDynamicUpgradeComponents();
+        if (components == null || components.size() < 1) {
+            ToastUtils.showToast("failed: No components connected!");
+            return;
+        }
+        String[] componentName = new String[components.size()];
+        for (int i = 0; i < components.size(); i++) {
+            UpgradeComponent tempComponent = components.get(i);
+            componentName[i] = tempComponent.getComponentType() + "[" + tempComponent.getIndex() + "]";
+        }
+        final Runnable runSetComponentType = () -> {
+            UpgradeComponent selectedComponent = components.get(PopupUtils.INSTANCE.getIndex()[0]);
+            getCurrentUpgradeFirmwareState(selectedComponent);
+            PopupUtils.INSTANCE.resetIndex();
+        };
+        PopupUtils.INSTANCE.initPopupNumberPicker(Helper.makeList(componentName), runSetComponentType, this);
     }
 
     private void getUpgradeFirmwareInformation() {
-        final UpgradeComponentType[] componentTypes = UpgradeComponentType.values();
-        dlg = new AlertDialog.Builder(getContext())
-                .setTitle("Choose a component")
-                .setSingleChoiceItems(new String[]{"Remote Controller", "Aircraft"}, 0, (dialog, which) -> {
-                    UpgradeComponent selectedComponent = null;
-                    if (componentTypes[which] == UpgradeComponentType.REMOTE_CONTROLLER) {
-                        selectedComponent = remoteControllerComponent;
-                    }
-                    if (componentTypes[which] == UpgradeComponentType.AIRCRAFT) {
-                        selectedComponent = aircraftUpgradeComponent;
-                    }
-                    getUpgradeFirmwareInformation(selectedComponent);
-                    dialog.dismiss();
-                }).create();
-        dlg.show();
+        final List<UpgradeComponent> components = getDynamicUpgradeComponents();
+        if (components == null || components.size() < 1) {
+            ToastUtils.showToast("failed: No components connected!");
+            return;
+        }
+        String[] componentName = new String[components.size()];
+        for (int i = 0; i < components.size(); i++) {
+            UpgradeComponent tempComponent = components.get(i);
+            componentName[i] = tempComponent.getComponentType() + "[" + tempComponent.getIndex() + "]";
+        }
+        final Runnable runSetComponentType = () -> {
+            UpgradeComponent selectedComponent = components.get(PopupUtils.INSTANCE.getIndex()[0]);
+            getUpgradeFirmwareInformation(selectedComponent);
+            PopupUtils.INSTANCE.resetIndex();
+        };
+        PopupUtils.INSTANCE.initPopupNumberPicker(Helper.makeList(componentName), runSetComponentType, this);
     }
 
     private UpgradeComponent getRemoteControllerComponent() {
@@ -338,24 +361,40 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
 
     private void getUpgradeFirmwareInformation(final UpgradeComponent upgradeComponent) {
         if (upgradeComponent == null) {
-            ToastUtils.setResultToToast("failed: Wrong parameters!");
+            ToastUtils.showToast("failed: Wrong parameters!");
             return;
         }
         FirmwareInformation info = upgradeComponent.getLatestFirmwareInformation();
         if (info == null) {
-            ToastUtils.setResultToToast("Can not get the firmwareupgrade firmware info now, please check the internet or invoke the checkFirmwareUpgradeState");
+            ToastUtils.showToast(
+                    "Can not get the upgrade firmware info now, please check the internet or invoke the checkFirmwareUpgradeState");
             return;
         }
-        ToastUtils.setResultToToast("Upgrade Firmware info:" + "\n"
-                + "Firmware Version:" + info.getVersion() + "\n"
-                + "file size:" + info.getFileSize() + "\n"
-                + "release time:" + info.getReleaseDate() + "\n"
-                + "release note:" + info.getReleaseNote() + "\n");
-        showUpgradeFirmwareInfo(upgradeComponent, info);
+        ToastUtils.showToast(
+                "Upgrade Firmware info:" + "\n"
+                        + "Firmware Version:" + info.getVersion() + "\n"
+                        + "file size:" + info.getFileSize() + "\n"
+                        + "release time:" + info.getReleaseDate() + "\n"
+                        + "release note:" + info.getReleaseNote() + "\n");
     }
 
-    private void showUpgradeFirmwareState(final TextView tv, String state) {
-        ToastUtils.setResultToText(tv, state);
+    private void showUpgradeFirmwareState(final TextView tv) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Upgrade State:" + "\n");
+        List<UpgradeComponent> components = getDynamicUpgradeComponents();
+        if (components != null) {
+            for (UpgradeComponent component : components) {
+                builder.append("Component type:"
+                        + component.getComponentType()
+                        + "  Component index:"
+                        + component.getIndex()
+                        + "\n");
+                builder.append("Component state:" + component.getUpgradeState() + "\n");
+                builder.append("\n");
+            }
+        }
+
+        ToastUtils.setResultToText(tv, builder.toString());
     }
 
     private void showFirmwareUpgradeProgress(final TextView tv, FirmwareUpgradeProgress progress, String component) {
@@ -366,34 +405,98 @@ public class FirmwareUpgradeView extends LinearLayout implements View.OnClickLis
         ToastUtils.setResultToText(tv, builder.toString());
     }
 
-    private void showUpgradeConsistentUpdated(final TextView tv, boolean isForceUpgrade, String component) {
+    private void showUpgradeConsistentUpdated(final TextView tv, UpgradeComponent component) {
         StringBuilder builder = new StringBuilder();
-        builder.append(component).append("canCancelUpgrade:" + isForceUpgrade + "\n");
+        builder.append("Consistent State:" + "\n")
+                .append("Component type:"
+                        + component.getComponentType()
+                        + "  Component index:"
+                        + component.getIndex()
+                        + "\n")
+                .append("canCancelUpgrade:" + component.canCancelConsistencyUpgrade() + "\n");
         ToastUtils.setResultToText(tv, builder.toString());
     }
 
-    private void showUpgradeFirmwareInfo(UpgradeComponent component, FirmwareInformation info) {
-        String title = "Remote Controller:\n";
-        TextView tv = mRcFirmwareInfoTV;
-        if (component == remoteControllerComponent) {
-            tv = mRcFirmwareInfoTV;
-            title = "Remote Controller:\n";
-        }
-        if (component == aircraftUpgradeComponent) {
-            tv = mAcFirmwareInfoTV;
-            title = "Aircraft:\n";
-        }
+    private void showUpgradeFirmwareInfo(TextView tv) {
         StringBuilder builder = new StringBuilder();
-        builder.append(title)
-                .append("Firmware Version:" + info.getVersion() + "\n")
-                .append("file size:" + info.getFileSize() + "\n")
-                .append("release time:" + info.getReleaseDate() + "\n")
-                .append("release note:" + info.getReleaseNote() + "\n");
+        builder.append("Upgrade Firmware info:" + "\n");
+        List<UpgradeComponent> components = getDynamicUpgradeComponents();
+        if (components != null) {
+            for (UpgradeComponent component : components) {
+                FirmwareInformation info = component.getLatestFirmwareInformation();
+                builder.append("Component type:"
+                        + component.getComponentType()
+                        + "  Component index:"
+                        + component.getIndex()
+                        + "\n");
+                if (info != null) {
+                    builder.append("firmware version:" + info.getVersion() + "\n")
+                            .append("file size:" + info.getFileSize() + "\n")
+                            .append("release time:" + info.getReleaseDate() + "\n")
+                            .append("release note:" + info.getReleaseNote() + "\n");
+                } else {
+                    builder.append("firmware info:" + "null" + "\n");
+                }
+
+                builder.append("\n");
+            }
+        }
+        ToastUtils.setResultToText(tv, builder.toString());
+    }
+
+    private boolean isSupportDynamicComponents() {
+        BaseProduct baseProduct = DJISDKManager.getInstance().getProduct();
+        if (baseProduct != null) {
+            Model model = baseProduct.getModel();
+            return model == Model.MATRICE_300_RTK;
+        }
+        return false;
+    }
+
+    private void updateComponent() {
+        List<UpgradeComponent> components = getDynamicUpgradeComponents();
+        if (components != null) {
+            for (UpgradeComponent component : components) {
+                component.addUpgradeFirmwareListener(UpgradeFirmwareListener);
+            }
+        }
+    }
+
+    private List<UpgradeComponent> getDynamicUpgradeComponents() {
+        List<UpgradeComponent> components;
+        if (!isSupportDynamicComponents()) {
+            UpgradeComponent rcComponent = getRemoteControllerComponent();
+            UpgradeComponent acComponent = getAircraftUpgradeComponent();
+            components = new ArrayList<>();
+            if (rcComponent != null) {
+                components.add(rcComponent);
+            }
+            if (acComponent != null) {
+                components.add(acComponent);
+            }
+            return components;
+        }
+        if (upgradeManager == null) {
+            upgradeManager = DJISDKManager.getInstance().getUpgradeManager();
+        }
+
+        if (upgradeManager != null) {
+            return upgradeManager.getDetectedComponentsToUpgrade();
+        }
+
+        return null;
+    }
+
+    private void closeInfoShow(final TextView tv, String title) {
+        StringBuilder builder = new StringBuilder();
+        builder.append(title + "\n");
         ToastUtils.setResultToText(tv, builder.toString());
     }
 
     @Override
-    public int getDescription() { return R.string.component_listview_firmware_upgrade; }
+    public int getDescription() {
+        return R.string.component_listview_firmware_upgrade;
+    }
 
     @NonNull
     @Override

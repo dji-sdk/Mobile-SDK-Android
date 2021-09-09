@@ -492,6 +492,12 @@
                                                 </dd>
                                         </ul>
                                       </dd>
+                                      <dd><a data-href="../Camera/DJIMediaManager_DJIMediaInfo.html" class="sub-toggle">MediaFileInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJICamera_CamerNewGeneratedMediaFileInfoCallbackInterface.html">NewFileInfoCallback</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
                                       <dd><a href="../Camera/DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">VideoPlaybackState</a>
                                       </dd>
                                       <dd><a data-href="../Camera/DJIMediaManager_FetchMediaTaskScheduler.html" class="sub-toggle">FetchMediaTaskScheduler<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -2254,7 +2260,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setGoHomeHeightInMeters</span><span class="params">(@IntRange(from = <span class="number">20</span>, to = <span class="number">500</span>)</span> <span class="keyword">int</span> height,</span></span><br><span class="line"><span class="function">                                                @Nullable CompletionCallback callback)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_height_in_meters_key">FlightControllerKey.GO_HOME_HEIGHT_IN_METERS</a></font></td></tr></table></html>
 <h5 id="description-v91">Description:</h5>
-<p><font color="#666">Sets the minimum altitude, relative to where the aircraft took off, at which the aircraft must be before going home. This can be useful when the user foresees obstacles in the aircraft's flight path. If the aircraft's current altitude is higher than the minimum go home altitude, it will go home at its current altitude. The valid range for the altitude is from 20m to 500m. But if the aircraft is M210 RTK V3, the limit can beyond 500m.</font></p>
+<p><font color="#666">Sets the minimum altitude, relative to where the aircraft took off, at which the aircraft must be before going home. This can be useful when the user foresees obstacles in the aircraft's flight path. If the aircraft's current altitude is higher than the minimum go home altitude, it will go home at its current altitude. The valid range for the altitude is from 20m to 500m. But if the aircraft is M300 RTK, the limit can beyond 500m.</font></p>
 <h5 id="input-parameters-v69">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@IntRange(from = 20, to = 500) int <font color="#000">height</font></font></td><td><font color="#666"><i>The aircraft's default go home altitude.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable CompletionCallback <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_getgohomealtitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_getgohomealtitude_inline">getGoHomeHeightInMeters</a></div></div><div class="inline-doc" id="djiflightcontroller_getgohomealtitude_inline" <blockquote>

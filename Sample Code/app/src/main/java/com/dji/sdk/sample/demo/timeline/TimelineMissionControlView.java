@@ -227,11 +227,12 @@ public class TimelineMissionControlView extends LinearLayout implements OnClickL
         setTimelinePlanToText("Step 1: takeoff from the ground");
         elements.add(new TakeOffAction());
 
-        //Step 2: reset the gimbal to horizontal angle in 2 seconds.
-        setTimelinePlanToText("Step 2: set the gimbal pitch -30 angle in 2 seconds");
+        //Step 2: wait for 5 seconds and then reset the gimbal to horizontal angle in 2 seconds.
+        setTimelinePlanToText("Step 2: wait for 5 seconds and then set the gimbal pitch -30 angle in 2 seconds");
         Attitude attitude = new Attitude(-30, Rotation.NO_ROTATION, Rotation.NO_ROTATION);
         GimbalAttitudeAction gimbalAction = new GimbalAttitudeAction(attitude);
         gimbalAction.setCompletionTime(2);
+        gimbalAction.setDelayTime(5000);
         elements.add(gimbalAction);
 
         //Step 3: Go 10 meters from home point

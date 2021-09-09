@@ -492,6 +492,12 @@
                                                 </dd>
                                         </ul>
                                       </dd>
+                                      <dd><a data-href="../Camera/DJIMediaManager_DJIMediaInfo.html" class="sub-toggle">MediaFileInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJICamera_CamerNewGeneratedMediaFileInfoCallbackInterface.html">NewFileInfoCallback</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
                                       <dd><a href="../Camera/DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">VideoPlaybackState</a>
                                       </dd>
                                       <dd><a data-href="../Camera/DJIMediaManager_FetchMediaTaskScheduler.html" class="sub-toggle">FetchMediaTaskScheduler<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -1504,7 +1510,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setNetworkServiceCoordinateSystem</span><span class="params">(CoordinateSystem coordinateSystem, @NonNull <span class="keyword">final</span> CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.network</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Sets coordinate system for rtk network service. Only can be used when  current <code><a href="../../Components/RTK/DJIRTK.html#djirtk_djirtkreferencestationsource">ReferenceStationSource</a></code> is <code><a href="../../Components/RTK/DJIRTK.html#djirtk_djirtkreferencestationsource_networkrtk">NETWORK_RTK</a></code>.</font></p>
+<p><font color="#666">Sets coordinate system for rtk network service. Only can be used when  current <code><a href="../../Components/RTK/DJIRTK.html#djirtk_djirtkreferencestationsource">ReferenceStationSource</a></code> is <code><a href="../../Components/RTK/DJIRTK.html#djirtk_djirtkreferencestationsource_networkrtk">NETWORK_RTK</a></code>,  and please make sure the <code><a href="../../Components/RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServiceState.html#djirtknetworkserviceprovider_djirtknetworkservicestate_channelstate">getChannelState</a></code> is <code><a href="../../Components/RTK/DJIRTKNetworkServiceProvider.html#djirtknetworkserviceprovider_djirtknetworkservicechannelstate_transmitting">TRANSMITTING</a></code>.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTK/DJIRTK.html#djirtk_djirtknetworkservicecoordinatesystem">CoordinateSystem</a> <font color="#000">coordinateSystem</font></font></td><td><font color="#666"><i>The <code>DJIRTK_DJIRTKNetworkServiceCoordinateSystem</code> to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallback <font color="#000">callback</font></font></td><td><font color="#666"><i>The completion block that receives the result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djirtknetworkserviceprovider_getcoordinatesystem"><div class="api-col left">Get Coordinate System</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtknetworkserviceprovider_getcoordinatesystem_inline">getNetworkServiceCoordinateSystem</a></div></div><div class="inline-doc" id="djirtknetworkserviceprovider_getcoordinatesystem_inline" <blockquote>

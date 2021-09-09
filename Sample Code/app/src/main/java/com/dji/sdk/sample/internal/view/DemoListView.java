@@ -11,6 +11,7 @@ import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.demo.accessory.AccessoryAggregationView;
 import com.dji.sdk.sample.demo.accessory.AudioFileListManagerView;
 import com.dji.sdk.sample.demo.airlink.RebootWiFiAirlinkView;
+import com.dji.sdk.sample.demo.airlink.SetGetOcuSyncLinkView;
 import com.dji.sdk.sample.demo.airlink.SetGetWiFiLinkSSIDView;
 import com.dji.sdk.sample.demo.appactivation.AppActivationView;
 import com.dji.sdk.sample.demo.battery.PushBatteryDataView;
@@ -172,7 +173,8 @@ public class DemoListView extends FrameLayout {
                 false,
                 new GroupItem(R.string.airlink_listview_wifi_set_get_ssid, SetGetWiFiLinkSSIDView.class),
                 new GroupItem(R.string.airlink_listview_wifi_reboot_wifi, RebootWiFiAirlinkView.class),
-                new GroupItem(R.string.airlink_listview_lb_set_get_channel, SetGetWiFiLinkSSIDView.class));
+                new GroupItem(R.string.airlink_listview_lb_set_get_channel, SetGetWiFiLinkSSIDView.class),
+                new GroupItem(R.string.airlink_listview_ocusync_set_get_channel, SetGetOcuSyncLinkView.class));
 
         builder.addGroup(R.string.component_listview_flight_controller,
                 false,

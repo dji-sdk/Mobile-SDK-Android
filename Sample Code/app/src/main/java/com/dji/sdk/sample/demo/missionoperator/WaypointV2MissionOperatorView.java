@@ -58,6 +58,7 @@ import dji.common.model.LocationCoordinate2D;
 import dji.common.util.CommonCallbacks;
 import dji.keysdk.FlightControllerKey;
 import dji.keysdk.KeyManager;
+import dji.log.DJILog;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.mission.MissionControl;
 import dji.sdk.mission.waypoint.WaypointV2ActionListener;
@@ -97,7 +98,7 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
     private boolean canUploadMission = false;
     private boolean canStartMission = false;
 
-   // Global variables for waypointV2Action
+    // Global variables for waypointV2Action
     private WaypointV2ActionListener waypointV2ActionListener = null;
 
     public WaypointV2MissionOperatorView(Context context) {
@@ -1066,8 +1067,12 @@ public class WaypointV2MissionOperatorView extends MissionBaseView {
             }
         };
 
-        waypointV2MissionOperator.addWaypointEventListener(waypointV2MissionOperatorListener);
-        waypointV2MissionOperator.addActionListener(waypointV2ActionListener);
+        if (waypointV2MissionOperator != null) {
+            waypointV2MissionOperator.addWaypointEventListener(waypointV2MissionOperatorListener);
+            waypointV2MissionOperator.addActionListener(waypointV2ActionListener);
+        } else {
+            DJILog.e("couldn't  addWaypointEventListener  , getWaypointMissionV2Operator  faled! ");
+        }
     }
 
     private void tearDownListener() {
