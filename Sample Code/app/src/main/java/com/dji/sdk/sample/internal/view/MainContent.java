@@ -19,6 +19,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -34,6 +35,8 @@ import com.dji.sdk.sample.internal.utils.GeneralUtils;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.squareup.otto.Subscribe;
 
+import dji.sdk.sdkmanager.LDMModule;
+import dji.sdk.sdkmanager.LDMModuleType;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -107,6 +110,7 @@ public class MainContent extends RelativeLayout {
             new ViewWrapper(new DemoListView(getContext()), R.string.activity_component_list);
     private ViewWrapper bluetoothView;
     private EditText mBridgeModeEditText;
+    private CheckBox mCheckboxFirmware;
     private Handler mHandler;
     private Handler mHandlerUI;
     private HandlerThread mHandlerThread = new HandlerThread("Bluetooth");
@@ -130,6 +134,9 @@ public class MainContent extends RelativeLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
+        if (isInEditMode()) {
+            return;
+        }
         DJISampleApplication.getEventBus().register(this);
         initUI();
     }
@@ -146,6 +153,8 @@ public class MainContent extends RelativeLayout {
         mBtnOpen = (Button) findViewById(R.id.btn_open);
         mBridgeModeEditText = (EditText) findViewById(R.id.edittext_bridge_ip);
         mBtnBluetooth = (Button) findViewById(R.id.btn_bluetooth);
+        mCheckboxFirmware = (CheckBox) findViewById(R.id.checkbox_firmware);
+
         //mBtnBluetooth.setEnabled(false);
 
 
@@ -244,41 +253,42 @@ public class MainContent extends RelativeLayout {
     @Override
     protected void onAttachedToWindow() {
         Log.d(TAG, "Comes into the onAttachedToWindow");
-        refreshSDKRelativeUI();
+        if (!isInEditMode()) {
+            refreshSDKRelativeUI();
+            mHandlerThread.start();
+            final long currentTime = System.currentTimeMillis();
+            mHandler = new Handler(mHandlerThread.getLooper()) {
+                @Override
+                public void handleMessage(Message msg) {
+                    switch (msg.what) {
+                        case MSG_UPDATE_BLUETOOTH_CONNECTOR:
+                            //connected = DJISampleApplication.getBluetoothConnectStatus();
+                            connector = DJISampleApplication.getBluetoothProductConnector();
 
-        mHandlerThread.start();
-        final long currentTime = System.currentTimeMillis();
-        mHandler = new Handler(mHandlerThread.getLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                switch (msg.what) {
-                    case MSG_UPDATE_BLUETOOTH_CONNECTOR:
-                        //connected = DJISampleApplication.getBluetoothConnectStatus();
-                        connector = DJISampleApplication.getBluetoothProductConnector();
-
-                        if (connector != null) {
-                            mBtnBluetooth.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    mBtnBluetooth.setEnabled(true);
-                                }
-                            });
-                            return;
-                        } else if ((System.currentTimeMillis() - currentTime) >= 5000) {
-                            DialogUtils.showDialog(getContext(),
-                                    "Fetch Connector failed, reboot if you want to connect the Bluetooth");
-                            return;
-                        } else if (connector == null) {
-                            sendDelayMsg(0, MSG_UPDATE_BLUETOOTH_CONNECTOR);
-                        }
-                        break;
-                    case MSG_INFORM_ACTIVATION:
-                        loginToActivationIfNeeded();
-                        break;
+                            if (connector != null) {
+                                mBtnBluetooth.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        mBtnBluetooth.setEnabled(true);
+                                    }
+                                });
+                                return;
+                            } else if ((System.currentTimeMillis() - currentTime) >= 5000) {
+                                DialogUtils.showDialog(getContext(),
+                                                       "Fetch Connector failed, reboot if you want to connect the Bluetooth");
+                                return;
+                            } else if (connector == null) {
+                                sendDelayMsg(0, MSG_UPDATE_BLUETOOTH_CONNECTOR);
+                            }
+                            break;
+                        case MSG_INFORM_ACTIVATION:
+                            loginToActivationIfNeeded();
+                            break;
+                    }
                 }
-            }
-        };
-        mHandlerUI = new Handler(Looper.getMainLooper());
+            };
+            mHandlerUI = new Handler(Looper.getMainLooper());
+        }
         super.onAttachedToWindow();
     }
 
@@ -294,17 +304,19 @@ public class MainContent extends RelativeLayout {
 
     @Override
     protected void onDetachedFromWindow() {
-        removeFirmwareVersionListener();
-        removeAppActivationListenerIfNeeded();
-        mHandler.removeCallbacksAndMessages(null);
-        mHandlerUI.removeCallbacksAndMessages(null);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            mHandlerThread.quitSafely();
-        } else {
-            mHandlerThread.quit();
+        if (!isInEditMode()) {
+            removeFirmwareVersionListener();
+            removeAppActivationListenerIfNeeded();
+            mHandler.removeCallbacksAndMessages(null);
+            mHandlerUI.removeCallbacksAndMessages(null);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                mHandlerThread.quitSafely();
+            } else {
+                mHandlerThread.quit();
+            }
+            mHandlerUI = null;
+            mHandler = null;
         }
-        mHandlerUI = null;
-        mHandler = null;
         super.onDetachedFromWindow();
     }
 
@@ -475,6 +487,15 @@ public class MainContent extends RelativeLayout {
                 @Override
                 public void run() {
                     ToastUtils.setResultToToast(mContext.getString(R.string.sdk_registration_doing_message));
+                    //if we hope the Firmware Upgrade module could access the network under LDM mode, we need call the setModuleNetworkServiceEnabled()
+                    //method before the registerAppForLDM() method
+                    if (mCheckboxFirmware.isChecked()) {
+                        DJISDKManager.getInstance().getLDMManager().setModuleNetworkServiceEnabled(new LDMModule.Builder().moduleType(
+                            LDMModuleType.FIRMWARE_UPGRADE).enabled(true).build());
+                    } else {
+                        DJISDKManager.getInstance().getLDMManager().setModuleNetworkServiceEnabled(new LDMModule.Builder().moduleType(
+                            LDMModuleType.FIRMWARE_UPGRADE).enabled(false).build());
+                    }
                     if(isregisterForLDM) {
                         DJISDKManager.getInstance().registerAppForLDM(mContext.getApplicationContext(), new DJISDKManager.SDKManagerCallback() {
                             @Override

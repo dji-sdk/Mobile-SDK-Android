@@ -40,6 +40,8 @@ class LDMView(context: Context?) : LinearLayout(context), PresentableView, View.
         findViewById<View>(R.id.btn_is_enable_user_account).setOnClickListener(this)
         findViewById<View>(R.id.btn_is_disable_user_account).setOnClickListener(this)
         findViewById<View>(R.id.btn_get_ldm_license).setOnClickListener(this)
+        findViewById<View>(R.id.btn_enable_live_stream).setOnClickListener(this)
+        findViewById<View>(R.id.btn_disable_live_stream).setOnClickListener(this)
     }
 
     private fun initListener() {
@@ -106,6 +108,23 @@ class LDMView(context: Context?) : LinearLayout(context), PresentableView, View.
         updateLdmInfo()
     }
 
+    fun setLiveStreamingEnabled() {
+        var error = DJISDKManager.getInstance().ldmManager.setModuleNetworkServiceEnabled(LDMModule.Builder()
+                .enabled(true)
+                .moduleType(LDMModuleType.LIVE_STREAMING)
+                .build())
+        ToastUtils.setResultToToast("setLiveStreamingEnabled " + if (error == null) "success" else "error=" + error.description)
+        updateLdmInfo()
+    }
+    fun setLiveStreamingDisabled() {
+        var error = DJISDKManager.getInstance().ldmManager.setModuleNetworkServiceEnabled(LDMModule.Builder()
+                .enabled(false)
+                .moduleType(LDMModuleType.LIVE_STREAMING)
+                .build())
+        ToastUtils.setResultToToast("setLiveStreamingDisabled " + if (error == null) "success" else "error=" + error.description)
+        updateLdmInfo()
+    }
+
     fun getLdmLicense() {
         DJISDKManager.getInstance().ldmManager.getLDMSupported(object : CompletionCallbackWith<Boolean> {
             override fun onSuccess(aBoolean: Boolean) {
@@ -123,11 +142,15 @@ class LDMView(context: Context?) : LinearLayout(context), PresentableView, View.
         isLDMEnabled =  DJISDKManager.getInstance().ldmManager.isLDMEnabled
         var isRTKEnabled = DJISDKManager.getInstance().ldmManager.isModuleNetworkServiceEnabled(LDMModuleType.RTK)
         var isUserAccountEnabled = DJISDKManager.getInstance().ldmManager.isModuleNetworkServiceEnabled(LDMModuleType.USER_ACCOUNT)
+        var isLiveStreamingEnabled = DJISDKManager.getInstance().ldmManager.isModuleNetworkServiceEnabled(LDMModuleType.LIVE_STREAMING)
+        var isFirmwareUpgradeEnabled = DJISDKManager.getInstance().ldmManager.isModuleNetworkServiceEnabled(LDMModuleType.FIRMWARE_UPGRADE)
 
         ldmInfoText.text = "LDM enabled: $isLDMEnabled\n" +
                 "LDM supported: $isLDMSupported\n" +
                 "isRTKEnabled: $isRTKEnabled\n" +
-                "isUserAccountEnabled: $isUserAccountEnabled\n"
+                "isUserAccountEnabled: $isUserAccountEnabled\n" +
+                "isLiveStreamingEnabled: $isLiveStreamingEnabled\n"+
+                "isFirmwareUpgradeEnabled: $isFirmwareUpgradeEnabled\n"
     }
 
     override fun getDescription(): Int = R.string.component_listview_ldm
@@ -143,6 +166,8 @@ class LDMView(context: Context?) : LinearLayout(context), PresentableView, View.
             R.id.btn_is_enable_user_account -> setUserAccountEnabled()
             R.id.btn_is_disable_user_account -> setUserAccountDisabled()
             R.id.btn_get_ldm_license -> getLdmLicense()
+            R.id.btn_enable_live_stream -> setLiveStreamingEnabled()
+            R.id.btn_disable_live_stream -> setLiveStreamingDisabled()
         }
     }
 }
