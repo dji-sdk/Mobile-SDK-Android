@@ -126,9 +126,11 @@ Please check this [link](https://github.com/dji-sdk/Android-Bridge-App) to downl
 
 [**Android SDK API Documentation**](http://developer.dji.com/api-reference/android-api/index.html)
 
-## FFmpeg License
+## License
 
-The DJI Android SDK is dynamically linked with unmodified libraries of <a href=http://ffmpeg.org>FFmpeg</a> licensed under the <a href=http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html>LGPLv2.1</a>. The source code of these FFmpeg libraries, the compilation instructions, and the LGPL v2.1 license are provided in [Github](https://github.com/dji-sdk/FFmpeg).
+The DJI Android SDK is dynamically linked with unmodified libraries of <a href=http://ffmpeg.org>FFmpeg</a> licensed under the <a href=https://www.gnu.org/licenses/lgpl-3.0.html.en>LGPLv3.0</a>. The source code of these FFmpeg libraries, the compilation instructions, and the LGPL v3.0 license are provided in [Github](https://github.com/dji-sdk/FFmpeg).
+
+The DJI Android SDK is dynamically linked with unmodified libraries of <a href=https://mvnrepository.com/artifact/com.vividsolutions/jts/1.8>JTS Topology Suite</a> licensed under the <a href=https://www.gnu.org/licenses/lgpl-3.0.html.en>LGPLv3.0</a>.
 
 ## Support
 
