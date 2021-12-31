@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1456,7 +1466,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"> <span class="function">RectF <span class="title">getTargetRect</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">A rectangle in the live video view image that represents the target being tracked.  The rectangle is normalized to [0,1] where (0,0) is the top left of the video  preview and (1,1) is the bottom right.</font></p>
+<p><font color="#666">A rectangle in the live video view image that represents the target being tracked. The rectangle is normalized to [0,1] where (0,0) is the top left of the video preview and (1,1) is the bottom right.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">RectF</font></td><td><font color="#666"><i>A RectF object.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiactivetracktrackingstate_cannotconfirmreason"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_cannotconfirmreason_inline">getReason</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_cannotconfirmreason_inline" <blockquote>
@@ -1465,7 +1475,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@NonNull</span></span><br><span class="line"> <span class="function">ActiveTrackCannotConfirmReason <span class="title">getReason</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Reason why the target cannot be confirmed by the user. It is useful when  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate_state">getState</a></code> is  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktargetstate_cannotconfirm">CANNOT_CONFIRM</a></code>.  Otherwise, it is  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetrackcannotconfirmreason_none">NONE</a></code>. Not supported by Mavic Air 2.</font></p>
+<p><font color="#666">Reason why the target cannot be confirmed by the user. It is useful when <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate_state">getState</a></code> is <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktargetstate_cannotconfirm">CANNOT_CONFIRM</a></code>.  Otherwise, it is <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetrackcannotconfirmreason_none">NONE</a></code>. Not supported by Mavic Air 2, DJI Air 2S.</font></p>
 <h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetrackcannotconfirmreason">ActiveTrackCannotConfirmReason</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetrackcannotconfirmreason">ActiveTrackCannotConfirmReason</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiactivetracktrackingstate_targetindex"><div class="api-col left">Target Index</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_targetindex_inline">getTargetIndex</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_targetindex_inline" <blockquote>
@@ -1483,7 +1493,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getCompletionPercentage</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">The progress of the executing QuickShot mission. Only applicable when  <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_mode">setMode</a></code> is <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode_quickshot">QUICK_SHOT</a></code>.  For other modes, it is always 0.</font></p>
+<p><font color="#666">The progress of the executing QuickShot mission. Only applicable when <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_mode">setMode</a></code> is <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode_quickshot">QUICK_SHOT</a></code>. For other modes, it is always 0.</font></p>
 <h5 id="return-v6">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of the progress.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiactivetracktrackingstate_autosensedsubjects"><div class="api-col left">Auto-sensed Subjects</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_autosensedsubjects_inline">getAutoSensedSubjects</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_autosensedsubjects_inline" <blockquote>
@@ -1526,7 +1536,7 @@
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">The state of the target being tracked by the aircraft.</font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargetstate_cannotconfirm_inline"></a>CANNOT_CONFIRM</font></td><td><font color="#666">The aircraft has recognized the target but the user is not allowed to confirm the target. Check <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate_cannotconfirmreason">getReason</a></code> to get  more information.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargetstate_waitingforconfirmation_inline"></a>WAITING_FOR_CONFIRMATION</font></td><td><font color="#666">The aircraft has recognized the target and is waiting for user's confirmation.  If this state, the aircraft will hover in the current position while the camera  is tracking the target (by rotating aircraft's yaw or gimbal's altitude). If  user confirms the target, the aircraft will start to following the movement of  the target.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargetstate_trackingwithhighconfidence_inline"></a>TRACKING_WITH_HIGH_CONFIDENCE</font></td><td><font color="#666">The aircraft has recognized the target with high confidence.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargetstate_trackingwithlowconfidence_inline"></a>TRACKING_WITH_LOW_CONFIDENCE</font></td><td><font color="#666">The ActiveTrack Mission is tracking a target with low confidence. This is only  an indication that either the aircraft will soon ask for confirmation that the  target is correct, or may loose tracking the target entirely if confidence  doesn't improve.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargetstate_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargetstate_cannotconfirm_inline"></a>CANNOT_CONFIRM</font></td><td><font color="#666">The aircraft has recognized the target but the user is not allowed to confirm the target. Check <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate_cannotconfirmreason">getReason</a></code> to get more information.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargetstate_waitingforconfirmation_inline"></a>WAITING_FOR_CONFIRMATION</font></td><td><font color="#666">The aircraft has recognized the target and is waiting for user's confirmation. If this state, the aircraft will hover in the current position while the camera is tracking the target (by rotating aircraft's yaw or gimbal's altitude). If user confirms the target, the aircraft will start to following the movement of the target.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargetstate_trackingwithhighconfidence_inline"></a>TRACKING_WITH_HIGH_CONFIDENCE</font></td><td><font color="#666">The aircraft has recognized the target with high confidence.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargetstate_trackingwithlowconfidence_inline"></a>TRACKING_WITH_LOW_CONFIDENCE</font></td><td><font color="#666">The ActiveTrack Mission is tracking a target with low confidence. This is only an indication that either the aircraft will soon ask for confirmation that the target is correct, or may loose tracking the target entirely if confidence doesn't improve.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargetstate_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
 <h5 id="class-members-v4">Class Members:</h5>
 </div>
 

@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1444,7 +1454,7 @@
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static <a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a></font></td><td><font color="#666"><i>A DJIError instance of the specific error.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djierror_djiremotecontrollererror_firmware_non_sequence"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_firmware_non_sequence_inline">FIRMWARE_NON_SEQUENCE</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_firmware_non_sequence_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_firmware_non_sequence"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_firmware_non_sequence_inline">FIRMWARE_NON_SEQUENCE</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_firmware_non_sequence_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FIRMWARE_NON_SEQUENCE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError FIRMWARE_NON_SEQUENCE = <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"Firmware not pattern"</span>)</span><br></pre></td></tr></table></figure>
@@ -1452,7 +1462,7 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The sequence number of the firmware is not continuous.</font></p>
 </div>
-<div class="api-row" id="djierror_djiremotecontrollererror_firmware_length_wrong"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_firmware_length_wrong_inline">FIRMWARE_LENGTH_WRONG</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_firmware_length_wrong_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_firmware_length_wrong"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_firmware_length_wrong_inline">FIRMWARE_LENGTH_WRONG</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_firmware_length_wrong_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FIRMWARE_LENGTH_WRONG</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError FIRMWARE_LENGTH_WRONG = <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"Firmware length invalid"</span>)</span><br></pre></td></tr></table></figure>
@@ -1460,7 +1470,7 @@
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The file size of the firmware is wrong.</font></p>
 </div>
-<div class="api-row" id="djierror_djiremotecontrollererror_firmware_crc_wrong"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_firmware_crc_wrong_inline">FIRMWARE_CRC_WRONG</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_firmware_crc_wrong_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_firmware_crc_wrong"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_firmware_crc_wrong_inline">FIRMWARE_CRC_WRONG</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_firmware_crc_wrong_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FIRMWARE_CRC_WRONG</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError FIRMWARE_CRC_WRONG = <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"Firmware CRC value invalid"</span>)</span><br></pre></td></tr></table></figure>
@@ -1468,7 +1478,7 @@
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The check number of the firmware is wrong.</font></p>
 </div>
-<div class="api-row" id="djierror_djiremotecontrollererror_flash_clear_wrong"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_flash_clear_wrong_inline">FLASH_CLEAR_WRONG</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_flash_clear_wrong_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_flash_clear_wrong"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_flash_clear_wrong_inline">FLASH_CLEAR_WRONG</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_flash_clear_wrong_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FLASH_CLEAR_WRONG</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError FLASH_CLEAR_WRONG = <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"Flash clear error"</span>)</span><br></pre></td></tr></table></figure>
@@ -1476,7 +1486,7 @@
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The clear action of the flash is wrong.</font></p>
 </div>
-<div class="api-row" id="djierror_djiremotecontrollererror_flash_write_wrong"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_flash_write_wrong_inline">FLASH_WRITE_WRONG</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_flash_write_wrong_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_flash_write_wrong"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_flash_write_wrong_inline">FLASH_WRITE_WRONG</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_flash_write_wrong_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FLASH_WRITE_WRONG</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError FLASH_WRITE_WRONG = <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"Flash write error"</span>)</span><br></pre></td></tr></table></figure>
@@ -1484,7 +1494,7 @@
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The write action of the flash is wrong.</font></p>
 </div>
-<div class="api-row" id="djierror_djiremotecontrollererror_update_wrong"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_update_wrong_inline">UPDATE_WRONG</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_update_wrong_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_update_wrong"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_update_wrong_inline">UPDATE_WRONG</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_update_wrong_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>UPDATE_WRONG</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError UPDATE_WRONG = <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"Update error"</span>)</span><br></pre></td></tr></table></figure>
@@ -1492,7 +1502,7 @@
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">The update process is wrong.</font></p>
 </div>
-<div class="api-row" id="djierror_djiremotecontrollererror_firmware_match_error"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_firmware_match_error_inline">FIRMWARE_MATCH_ERROR</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_firmware_match_error_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_firmware_match_error"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_firmware_match_error_inline">FIRMWARE_MATCH_ERROR</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_firmware_match_error_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FIRMWARE_MATCH_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError FIRMWARE_MATCH_ERROR= <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"Firmware match error"</span>)</span><br></pre></td></tr></table></figure>
@@ -1500,7 +1510,7 @@
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">The firmware does not matched.</font></p>
 </div>
-<div class="api-row" id="djierror_djiremotecontrollererror_flash_flushing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_flash_flushing_inline">FLASH_FLUSHING</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_flash_flushing_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_flash_flushing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_flash_flushing_inline">FLASH_FLUSHING</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_flash_flushing_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FLASH_FLUSHING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError FLASH_FLUSHING= <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"Firmware flushing"</span>)</span><br></pre></td></tr></table></figure>
@@ -1508,7 +1518,7 @@
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The flash is flushing.</font></p>
 </div>
-<div class="api-row" id="djierror_djiremotecontrollererror_owner_offline_error"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_owner_offline_error_inline">OWNER_OFFLINE_ERROR</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_owner_offline_error_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_owner_offline_error"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_owner_offline_error_inline">OWNER_OFFLINE_ERROR</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_owner_offline_error_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>OWNER_OFFLINE_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError OWNER_OFFLINE_ERROR = <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"The current rc is offline"</span>)</span><br></pre></td></tr></table></figure>
@@ -1516,7 +1526,7 @@
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Owner offline.</font></p>
 </div>
-<div class="api-row" id="djierror_djiremotecontrollererror_device_offline_error"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_device_offline_error_inline">DEVICE_OFFLINE_ERROR</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_device_offline_error_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_device_offline_error"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_device_offline_error_inline">DEVICE_OFFLINE_ERROR</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_device_offline_error_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>DEVICE_OFFLINE_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError DEVICE_OFFLINE_ERROR = <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"The device to get permission is offline"</span>)</span><br></pre></td></tr></table></figure>
@@ -1524,7 +1534,7 @@
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Device offline.</font></p>
 </div>
-<div class="api-row" id="djierror_djiremotecontrollererror_is_owner_error"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_is_owner_error_inline">IS_OWNER_ERROR</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_is_owner_error_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_is_owner_error"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_is_owner_error_inline">IS_OWNER_ERROR</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_is_owner_error_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>IS_OWNER_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError IS_OWNER_ERROR = <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"Already have control permissions for this device"</span>)</span><br></pre></td></tr></table></figure>
@@ -1532,7 +1542,7 @@
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Is owner.</font></p>
 </div>
-<div class="api-row" id="djierror_djiremotecontrollererror_device_locked_error"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_device_locked_error_inline">DEVICE_LOCKED_ERROR</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_device_locked_error_inline" <blockquote>
+<div class="api-row" id="djierror_djiremotecontrollererror_device_locked_error"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiremotecontrollererror_device_locked_error_inline">DEVICE_LOCKED_ERROR</a></div></div><div class="inline-doc" id="djierror_djiremotecontrollererror_device_locked_error_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>DEVICE_LOCKED_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRemoteControllerError DEVICE_LOCKED_ERROR= <span class="keyword">new</span> DJIRemoteControllerError(<span class="string">"The device to get permission is locked"</span>)</span><br></pre></td></tr></table></figure>

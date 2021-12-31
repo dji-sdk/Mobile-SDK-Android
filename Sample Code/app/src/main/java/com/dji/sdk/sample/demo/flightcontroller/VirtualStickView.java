@@ -192,12 +192,10 @@ public class VirtualStickView extends RelativeLayout
 
                 if (horizontalCoordinateFlag) {
                     if (rollPitchControlModeFlag) {
-                        pitch = (float) (pitchJoyControlMaxSpeed * pX);
-
-                        roll = (float) (rollJoyControlMaxSpeed * pY);
+                        pitch = - (float) (pitchJoyControlMaxSpeed * pY);
+                        roll = (float) (rollJoyControlMaxSpeed * pX);
                     } else {
-                        pitch = -(float) (pitchJoyControlMaxSpeed * pY);
-
+                        pitch = (float) (pitchJoyControlMaxSpeed * pY);
                         roll = (float) (rollJoyControlMaxSpeed * pX);
                     }
                 }
@@ -222,7 +220,7 @@ public class VirtualStickView extends RelativeLayout
                     pY = 0;
                 }
                 float verticalJoyControlMaxSpeed = 2;
-                float yawJoyControlMaxSpeed = 3;
+                float yawJoyControlMaxSpeed = 6;
 
                 yaw = yawJoyControlMaxSpeed * pX;
                 throttle = verticalJoyControlMaxSpeed * pY;
@@ -256,6 +254,7 @@ public class VirtualStickView extends RelativeLayout
                 flightController.setVirtualStickModeEnabled(true, new CommonCallbacks.CompletionCallback() {
                     @Override
                     public void onResult(DJIError djiError) {
+                        flightController.setVirtualStickAdvancedModeEnabled(true);
                         DialogUtils.showDialogBasedOnError(getContext(), djiError);
                     }
                 });
@@ -286,10 +285,10 @@ public class VirtualStickView extends RelativeLayout
 
             case R.id.btn_yaw_control_mode:
                 if (yawControlModeFlag) {
-                    flightController.setYawControlMode(YawControlMode.ANGLE);
+                    flightController.setYawControlMode(YawControlMode.ANGULAR_VELOCITY);
                     yawControlModeFlag = false;
                 } else {
-                    flightController.setYawControlMode(YawControlMode.ANGULAR_VELOCITY);
+                    flightController.setYawControlMode(YawControlMode.ANGLE);
                     yawControlModeFlag = true;
                 }
                 try {
@@ -300,10 +299,10 @@ public class VirtualStickView extends RelativeLayout
 
             case R.id.btn_vertical_control_mode:
                 if (verticalControlModeFlag) {
-                    flightController.setVerticalControlMode(VerticalControlMode.POSITION);
+                    flightController.setVerticalControlMode(VerticalControlMode.VELOCITY);
                     verticalControlModeFlag = false;
                 } else {
-                    flightController.setVerticalControlMode(VerticalControlMode.VELOCITY);
+                    flightController.setVerticalControlMode(VerticalControlMode.POSITION);
                     verticalControlModeFlag = true;
                 }
                 try {

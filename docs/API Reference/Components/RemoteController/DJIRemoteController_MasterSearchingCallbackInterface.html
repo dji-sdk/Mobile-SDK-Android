@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1430,7 +1440,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">MasterSearchingCallback</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.remotecontroller</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">Receives the information of available master remote controllers.  <code><a href="../../Components/RemoteController/DJIRemoteController_MasterSearchingCallbackInterface.html#djiremotecontroller_mastersearchingcallback_onmasterlistupdate">onMasterListUpdate</a></code>  will be called repeated with 1 second interval once master searching  is started successfully. It will stop when the searching is stopped  either by the remote controller itself or by calling <code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_stopmasterrcsearch">stopMasterSearching</a></code>.</font></p>
+<p><font color="#666">Receives the information of available master remote controllers. <code><a href="../../Components/RemoteController/DJIRemoteController_MasterSearchingCallbackInterface.html#djiremotecontroller_mastersearchingcallback_onmasterlistupdate">onMasterListUpdate</a></code> will be called repeated with 1 second interval once master searching is started successfully. It will stop when the searching is stopped either by the remote controller itself or by calling <code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_stopmasterrcsearch">stopMasterSearching</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="callback-method">Callback Method</h4>
 <div class="api-row" id="djiremotecontroller_mastersearchingcallback_onresult"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_mastersearchingcallback_onresult_inline">onResult</a></div></div><div class="inline-doc" id="djiremotecontroller_mastersearchingcallback_onresult_inline" <blockquote>

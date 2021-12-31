@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1465,7 +1475,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isDJIVideoStreamingChannelAvailable</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">When it returns <code>true</code>, video stream type on PSDK is set to DJI video streaming channel. Please use <code><a href="../../BaseClasses/DJIVideoFeeder_VideoDataListenerInterface.html#djivideofeeder_videodatalistenerinterface">VideoDataListener</a></code> in <code>DJIVideoFeeder</code> to receive the video data. When it returns <code>false</code>, video stream type on PSDK is set to custom video streaming channel.  Please use <code>DJIPayload_DJIPayloadDelegate_didReceiveVideoData</code> in <code>DJIPayload</code> to receive custom video data.</font></p>
+<p><font color="#666">When it returns <code>true</code>, video stream type on PSDK is set to DJI video streaming channel. Please use <code><a href="../../BaseClasses/DJIVideoFeeder_VideoDataListenerInterface.html#djivideofeeder_videodatalistenerinterface">VideoDataListener</a></code> in <code>DJIVideoFeeder</code> to receive the video data. When it returns <code>false</code>, video stream type on PSDK is set to custom video streaming channel.  Please use <code><a href="../../Components/Payload/DJIPayload_VideoDataReceivedCallbackInterface.html#djipayload_djipayloaddelegate_didreceivevideodata">onVideoDataReceived</a></code> to receive custom video data.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if DJI video streaming channel is available.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djipayload_configurewidgetvalue"><div class="api-col left">Widget Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_configurewidgetvalue_inline">configureWidgetValue</a></div></div><div class="inline-doc" id="djipayload_configurewidgetvalue_inline" <blockquote>

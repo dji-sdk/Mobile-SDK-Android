@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1555,7 +1565,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"> <span class="function">Button <span class="title">getC1Button</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.remotecontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIRemoteControllerKey.html#remotecontrollerkey_custom_button_1_key">RemoteControllerKey.CUSTOM_BUTTON_1</a></font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">Current state of custom button 1 (left Back Button). For Mavic Air 2, There is no custom button 1, we use Fn button instead, one click on Fn button represents custom button 1. It is not supported by remote controllers for Mavic Air or Spark.</font></p>
+<p><font color="#666">Current state of custom button 1 (left Back Button). For Mavic Air 2 and DJI Air 2S, There is no custom button 1, we use Fn button instead, one click on Fn button represents custom button 1. It is not supported by remote controllers for Mavic Air or Spark.</font></p>
 <h5 id="return-v14">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html#djiremotecontroller_djirchardwarestate_button">Button</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html#djiremotecontroller_djirchardwarestate_button">Button</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiremotecontroller_djirchardwarestate_custombutton2"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djirchardwarestate_custombutton2_inline">getC2Button</a></div></div><div class="inline-doc" id="djiremotecontroller_djirchardwarestate_custombutton2_inline" <blockquote>
@@ -1564,7 +1574,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"> <span class="function">Button <span class="title">getC2Button</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.remotecontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIRemoteControllerKey.html#remotecontrollerkey_custom_button_2_key">RemoteControllerKey.CUSTOM_BUTTON_2</a></font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
-<p><font color="#666">Current state of custom button 2 (right Back Button). For Mavic Air 2, There is no custom button 2, we use Fn button instead, double clicks on Fn button represents custom button 2.</font></p>
+<p><font color="#666">Current state of custom button 2 (right Back Button). For Mavic Air 2 and DJI Air 2S, There is no custom button 2, we use Fn button instead, double clicks on Fn button represents custom button 2.</font></p>
 <h5 id="return-v15">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html#djiremotecontroller_djirchardwarestate_button">Button</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCHardwareState_Button.html#djiremotecontroller_djirchardwarestate_button">Button</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiremotecontroller_djirchardwarestate_custombutton3"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djirchardwarestate_custombutton3_inline">getC3Button</a></div></div><div class="inline-doc" id="djiremotecontroller_djirchardwarestate_custombutton3_inline" <blockquote>

@@ -1,10 +1,23 @@
 package com.dji.sdk.sample.demo.camera;
 
+import android.app.Service;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import android.util.TypedValue;
+import android.view.LayoutInflater;
+import android.view.View;
+
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.dji.sdk.sample.R;
+import com.dji.sdk.sample.demo.camera.adapter.MediaFileRecyclerAdapter;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.DownloadHandler;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
@@ -21,10 +34,19 @@ import java.io.File;
 import dji.common.camera.SettingsDefinitions;
 import dji.common.error.DJIError;
 import dji.common.util.CommonCallbacks;
+import dji.sdk.media.order.MediaFilter;
+import dji.sdk.media.order.MediaOrderType;
+import dji.sdk.media.order.MediaRequest;
+import dji.sdk.media.order.MediaSizeOrder;
+import dji.sdk.media.order.MediaTimeOrder;
+
+
 import java.util.List;
 
 /**
  * Class for fetching the media.
+ *
+ * 更多功能请参考:https://github.com/DJI-Mobile-SDK-Tutorials/Android-MediaManagerDemo
  */
 public class FetchMediaView extends BaseThreeBtnView {
 
@@ -32,6 +54,17 @@ public class FetchMediaView extends BaseThreeBtnView {
     private MediaManager mediaManager;
     private FetchMediaTaskScheduler taskScheduler;
     private FetchMediaTask.Callback fetchMediaFileTaskCallback;
+
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+    private RecyclerView mRecycler;
+    private MediaFileRecyclerAdapter mAdapter;
+    private LinearLayoutManager mLinearLayoutManager;
+    private int mLastVisibleItem;
+
+    private static  int mFileBeginIndex = 1;
+    private static final int FILE_PAGE_COUNT = 100;
+    private Handler mHandler = new Handler(Looper.getMainLooper());
+
 
     public FetchMediaView(Context context) {
         super(context);
@@ -62,7 +95,22 @@ public class FetchMediaView extends BaseThreeBtnView {
                         });
                     }
                 }
+                if (DJISampleApplication.getProductInstance()
+                        .getCamera().isFlatCameraModeSupported()) {
+                    DJISampleApplication.getProductInstance()
+                            .getCamera().enterPlayback(djiError->{
+                                if (djiError != null) {
+                                    ToastUtils.setResultToToast("enter Playback failed " + djiError.getDescription());
+                                } else {
+                                    boolean isSupport = mediaManager.isPlaybackPageSupported();
+                                    Log.v("testPack" , " isSupport " + isSupport );
+                                    if (isSupport) {
+                                        post(()->{ addMedaiRequstFootView();});
 
+                                    }
+                                }
+                    });
+                } else {
                 DJISampleApplication.getProductInstance()
                         .getCamera()
                         .setMode(SettingsDefinitions.CameraMode.MEDIA_DOWNLOAD,
@@ -74,6 +122,7 @@ public class FetchMediaView extends BaseThreeBtnView {
                                         }
                                     }
                                 });
+                }
             } else {
                 changeDescription(R.string.not_support_mediadownload);
             }
@@ -91,6 +140,12 @@ public class FetchMediaView extends BaseThreeBtnView {
         if (taskScheduler != null) {
             taskScheduler.suspend(null);
         }
+        if (DJISampleApplication.getProductInstance()
+                .getCamera().isFlatCameraModeSupported()) {
+            DJISampleApplication.getProductInstance()
+                    .getCamera().exitPlayback(null);
+        }
+        mFileBeginIndex = 1;
     }
 
     @Override
@@ -211,5 +266,84 @@ public class FetchMediaView extends BaseThreeBtnView {
     @Override
     public int getDescription() {
         return R.string.camera_listview_download_media;
+    }
+
+
+    private void addMedaiRequstFootView() {
+
+        LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Service.LAYOUT_INFLATER_SERVICE);
+        View footview = layoutInflater.inflate(R.layout.media_recycler_layout, this, false);
+        addView(footview);
+
+        mSwipeRefreshLayout = (SwipeRefreshLayout)footview.findViewById(R.id.swiperefreshlayout);
+        mRecycler = (RecyclerView)footview.findViewById(R.id.recycler);
+//        mSwipeRefreshLayout.setProgressBackgroundColorSchemeResource(android.R.color.white);
+//        mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_light);
+
+        mLinearLayoutManager = new LinearLayoutManager(getContext());
+        mLinearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        mRecycler.setLayoutManager(mLinearLayoutManager);
+
+        mRecycler.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+        mRecycler.setAdapter(mAdapter = new MediaFileRecyclerAdapter(getContext()));
+        mSwipeRefreshLayout.setOnRefreshListener(()->{ mSwipeRefreshLayout.setRefreshing(false);});
+
+
+        getFileWithMediaRequest();
+
+        mRecycler.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (newState == RecyclerView.SCROLL_STATE_IDLE && mLastVisibleItem + 1 == mAdapter.getItemCount()) {
+                    getFileWithMediaRequest();
+                }
+            }
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                mLastVisibleItem = mLinearLayoutManager.findLastVisibleItemPosition();
+            }
+        });
+    }
+
+
+    private void getFileWithMediaRequest() {
+        mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.LOADING);
+        MediaRequest.Builder builder = MediaRequest.Builder.aMediaRequest();
+        builder.beginIndex(mFileBeginIndex);
+        builder.count(FILE_PAGE_COUNT);
+        builder.filter(MediaFilter.NONE);
+        builder.location(SettingsDefinitions.StorageLocation.SDCARD);
+        builder.orderType(MediaOrderType.TIME);
+        builder.timeOrder(MediaTimeOrder.NEW);
+
+        mHandler.post(() -> {
+            mediaManager.fetchFileList(builder.build(), new CommonCallbacks.CompletionCallbackWith<List<MediaFile>>() {
+                @Override
+                public void onSuccess(List<MediaFile> mediaFiles) {
+                    int count = mediaFiles != null ? mediaFiles.size():0;
+                    if (count != 0 ) {
+                        mFileBeginIndex  = mediaFiles.get(count - 1).getIndex();
+                        post(()->{
+                            mAdapter.addMoreItem(mediaFiles);
+                            mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.PULL_UP_LOADMORE);
+                        });
+                    } else {
+                        post(()->{mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.LOAD_FINISH);});
+
+                    }
+
+                }
+
+                @Override
+                public void onFailure(DJIError error) {
+                    post(()->{ mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.LOADING);});
+
+                }
+            });
+        });
+
+
     }
 }

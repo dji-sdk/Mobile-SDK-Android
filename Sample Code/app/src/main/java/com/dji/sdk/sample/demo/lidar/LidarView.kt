@@ -18,6 +18,7 @@ import com.dji.sdk.sample.internal.view.PopupNumberPickerDouble
 import com.dji.sdk.sample.internal.view.PresentableView
 import dji.common.airlink.PhysicalSource
 import dji.common.error.DJIError
+import dji.common.perception.DJILidarIMUPreheatStatus
 import dji.common.perception.DJILidarPointCloudRecord
 import dji.common.perception.DJILidarPointCloudVisibleLightPixelMode
 import dji.common.perception.RecordingStatus
@@ -302,6 +303,9 @@ class LidarView(context: Context) : LinearLayout(context), PresentableView, View
             override fun onPointCloudRecordStatusRecordingTimeChange(newRecordingTime: Long) {
                 recordingTime = newRecordingTime
                 updatePointCloudInfo()
+            }
+
+            override fun onIMUPreHeatStatusChange(p0: DJILidarIMUPreheatStatus?) {
             }
         }
         currentLidar?.addPointCloudStatusListener(pointCloudStatusListener)

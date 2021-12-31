@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1433,7 +1443,7 @@
 <p><font color="#666">Defines all MissionControl related errors.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="members">Members</h4>
-<div class="api-row" id="djimissioncontrolerror_timelineerrorcantschedulewhilerunning"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerrorcantschedulewhilerunning_inline">CANNOT_SCHEDULE_WHILE_RUNNING</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerrorcantschedulewhilerunning_inline" <blockquote>
+<div class="api-row" id="djimissioncontrolerror_timelineerrorcantschedulewhilerunning"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerrorcantschedulewhilerunning_inline">CANNOT_SCHEDULE_WHILE_RUNNING</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerrorcantschedulewhilerunning_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>CANNOT_SCHEDULE_WHILE_RUNNING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> MissionControlError</span><br><span class="line">       CANNOT_SCHEDULE_WHILE_RUNNING = <span class="keyword">new</span> MissionControlError(<span class="string">"Cannot schedule new element while the timeline was running"</span>)</span><br></pre></td></tr></table></figure>
@@ -1441,7 +1451,7 @@
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Tried to schedule new element while the Timeline was running.</font></p>
 </div>
-<div class="api-row" id="djimissioncontrolerror_timelineerrornotpausable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerrornotpausable_inline">NOT_PAUSABLE</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerrornotpausable_inline" <blockquote>
+<div class="api-row" id="djimissioncontrolerror_timelineerrornotpausable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerrornotpausable_inline">NOT_PAUSABLE</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerrornotpausable_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NOT_PAUSABLE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> MissionControlError</span><br><span class="line">       NOT_PAUSABLE = <span class="keyword">new</span> MissionControlError(<span class="string">"The action is not pausable, but timeline will pause to start next action"</span>)</span><br></pre></td></tr></table></figure>
@@ -1449,7 +1459,7 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Unsupported feature error. Where possible: This error will be returned by the function for a  special feature interface when the feature is not supported by the device.</font></p>
 </div>
-<div class="api-row" id="djimissioncontrolerror_timelineerrornotresumable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerrornotresumable_inline">NOT_RESUMABLE</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerrornotresumable_inline" <blockquote>
+<div class="api-row" id="djimissioncontrolerror_timelineerrornotresumable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerrornotresumable_inline">NOT_RESUMABLE</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerrornotresumable_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NOT_RESUMABLE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> MissionControlError</span><br><span class="line">       NOT_RESUMABLE = <span class="keyword">new</span> MissionControlError(<span class="string">"The action is not resumable, but timeline will resume to start next action"</span>)</span><br></pre></td></tr></table></figure>
@@ -1457,7 +1467,7 @@
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Unsupported feature error. Where possible: This error will be returned by the function for a  special feature interface when the feature is not supported by the device.</font></p>
 </div>
-<div class="api-row" id="djimissioncontrolerror_timelineerroroutofbounds"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerroroutofbounds_inline">TIMELINE_ELEMENT_OUT_OF_BOUNDS</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerroroutofbounds_inline" <blockquote>
+<div class="api-row" id="djimissioncontrolerror_timelineerroroutofbounds"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerroroutofbounds_inline">TIMELINE_ELEMENT_OUT_OF_BOUNDS</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerroroutofbounds_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>TIMELINE_ELEMENT_OUT_OF_BOUNDS</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> MissionControlError</span><br><span class="line">       TIMELINE_ELEMENT_OUT_OF_BOUNDS = <span class="keyword">new</span> MissionControlError(<span class="string">"The index of item to be executed is out of bounds"</span>)</span><br></pre></td></tr></table></figure>
@@ -1465,7 +1475,7 @@
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Cannot start the timeline because the index of to be executed item is out of bounds.</font></p>
 </div>
-<div class="api-row" id="djimissioncontrolerror_timelineerroralreadyrunning"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerroralreadyrunning_inline">ALREADY_RUNNING</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerroralreadyrunning_inline" <blockquote>
+<div class="api-row" id="djimissioncontrolerror_timelineerroralreadyrunning"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerroralreadyrunning_inline">ALREADY_RUNNING</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerroralreadyrunning_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ALREADY_RUNNING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> MissionControlError</span><br><span class="line">       ALREADY_RUNNING = <span class="keyword">new</span> MissionControlError(<span class="string">"The timeline is already in running"</span>)</span><br></pre></td></tr></table></figure>
@@ -1473,7 +1483,7 @@
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Cannot start the timeline while the Timeline is running.</font></p>
 </div>
-<div class="api-row" id="djimissioncontrolerror_timelineerrornotrunning"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerrornotrunning_inline">NOT_RUNNING</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerrornotrunning_inline" <blockquote>
+<div class="api-row" id="djimissioncontrolerror_timelineerrornotrunning"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_timelineerrornotrunning_inline">NOT_RUNNING</a></div></div><div class="inline-doc" id="djimissioncontrolerror_timelineerrornotrunning_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NOT_RUNNING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> MissionControlError</span><br><span class="line">       NOT_RUNNING = <span class="keyword">new</span> MissionControlError(<span class="string">"The timeline is not running"</span>)</span><br></pre></td></tr></table></figure>
@@ -1481,7 +1491,7 @@
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Timeline is not running.</font></p>
 </div>
-<div class="api-row" id="djimissioncontrolerror_triggererroractionnull"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_triggererroractionnull_inline">ACTION_IS_NULL</a></div></div><div class="inline-doc" id="djimissioncontrolerror_triggererroractionnull_inline" <blockquote>
+<div class="api-row" id="djimissioncontrolerror_triggererroractionnull"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djimissioncontrolerror_triggererroractionnull_inline">ACTION_IS_NULL</a></div></div><div class="inline-doc" id="djimissioncontrolerror_triggererroractionnull_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ACTION_IS_NULL</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> MissionControlError</span><br><span class="line">       ACTION_IS_NULL = <span class="keyword">new</span> MissionControlError(<span class="string">"The trigger action is triggered, but the action object is null"</span>)</span><br></pre></td></tr></table></figure>

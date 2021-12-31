@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.model.GroupHeader;
 import com.dji.sdk.sample.internal.model.GroupItem;
@@ -18,8 +20,6 @@ import com.dji.sdk.sample.internal.view.PresentableView;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
-
-import androidx.annotation.NonNull;
 
 /**
  * Adapter for a ListView that has expandable items.

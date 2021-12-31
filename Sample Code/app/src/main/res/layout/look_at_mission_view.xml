@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/multiple_lens_camera_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/multiple_lens_camera_btn"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_set_video_stream_source"
+                style="@style/common_button"
+                android:text="@string/set_video_stream_source" />
+
+            <Button
+                android:id="@+id/btn_laser_enable"
+                style="@style/common_button"
+                android:text="@string/laser_enable" />
+
+            <Button
+                android:id="@+id/btn_split_screen_display"
+                style="@style/common_button"
+                android:text="@string/split_screen_display" />
+
+            <Button
+                android:id="@+id/btn_add_pinpoint"
+                style="@style/common_button"
+                android:text="@string/add_pinpoint" />
+
+            <Button
+                android:id="@+id/btn_clear_pinpoint"
+                style="@style/common_button"
+                android:text="@string/clear_pinpoint" />
+
+            <Button
+                android:id="@+id/btn_do_look_at"
+                style="@style/common_button"
+                android:text="@string/do_look_at" />
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_look_at_mission_title"
+            style="@style/test_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/look_at_mission" />
+
+        <TextView
+            android:id="@+id/tv_look_at_mission_info_physical_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/look_at_mission_info" />
+
+        <TextView
+            android:id="@+id/tv_look_at_mission_info_video_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/look_at_mission_info" />
+
+        <FrameLayout
+            android:layout_width="240dp"
+            android:layout_height="140dp">
+
+            <com.dji.sdk.sample.internal.utils.VideoFeedView
+                android:id="@+id/primary_video_feed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill_vertical" />
+
+            <com.dji.sdk.sample.demo.lookat.OverLayerTopView
+                android:id="@+id/mt_over_layer_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill_vertical"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_laser_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/laser_information" />
+    </LinearLayout>
+
+</merge>

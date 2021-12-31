@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1430,7 +1440,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EXClassNullAway</span></span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">HotpointMission</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.hotpoint</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">This class represents a Hotpoint mission. In a Hotpoint mission, the aircraft will repeatedly fly circles of a constant radius around a specified point called a Hot Point. The user can control the aircraft to fly around the Hotpoint with a specific radius and altitude. During execution, the user can also use the physical remote controller to modify its radius and speed. It is not supported by Mavic Pro when using WiFi connection. It is not supported by Spark, Mavic Mini, Mavic Air 2 and Matrice 300 RTK.</font></p>
+<p><font color="#666">This class represents a Hotpoint mission. In a Hotpoint mission, the aircraft will repeatedly fly circles of a constant radius around a specified point called a Hot Point. The user can control the aircraft to fly around the Hotpoint with a specific radius and altitude. During execution, the user can also use the physical remote controller to modify its radius and speed. It is not supported by Mavic Pro when using WiFi connection. It is not supported by Spark, Mavic Mini, Mavic Air 2, DJI Air 2S and Matrice 300 RTK.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <div class="api-row" id="djihotpointmission_hotpoint"><div class="api-col left">Coordinate</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_hotpoint_inline">setHotpoint</a></div></div><div class="inline-doc" id="djihotpointmission_hotpoint_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setHotpoint</h6></div>
@@ -1577,7 +1587,7 @@
 <h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission">HotpointMission</a> <font color="#000">data</font></font></td><td><font color="#666"><i>An object of <code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission">HotpointMission</a></code>.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djihotpointmission_djihotpointmaxradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointmaxradius_inline">MAX_RADIUS</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointmaxradius_inline" <blockquote>
+<div class="api-row" id="djihotpointmission_djihotpointmaxradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointmaxradius_inline">MAX_RADIUS</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointmaxradius_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>MAX_RADIUS</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> MAX_RADIUS = <span class="number">500</span></span><br></pre></td></tr></table></figure>
@@ -1585,7 +1595,7 @@
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Maximum radius, in meters, of the circular path the aircraft will fly around the  point of interest. Currently 500m.</font></p>
 </div>
-<div class="api-row" id="djihotpointmission_djihotpointminradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointminradius_inline">MIN_RADIUS</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointminradius_inline" <blockquote>
+<div class="api-row" id="djihotpointmission_djihotpointminradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointminradius_inline">MIN_RADIUS</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointminradius_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>MIN_RADIUS</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> MIN_RADIUS = <span class="number">5</span></span><br></pre></td></tr></table></figure>
@@ -1593,7 +1603,7 @@
 <h5 id="description-v19">Description:</h5>
 <p><font color="#666">Minimum radius, in meters, of the circular path the aircraft will fly around the  point of interest.</font></p>
 </div>
-<div class="api-row" id="djihotpointmission_djihotpointmaxaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointmaxaltitude_inline">MAX_ALTITUDE</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointmaxaltitude_inline" <blockquote>
+<div class="api-row" id="djihotpointmission_djihotpointmaxaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointmaxaltitude_inline">MAX_ALTITUDE</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointmaxaltitude_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>MAX_ALTITUDE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> MAX_ALTITUDE = <span class="number">500</span></span><br></pre></td></tr></table></figure>
@@ -1601,7 +1611,7 @@
 <h5 id="description-v20">Description:</h5>
 <p><font color="#666">Maximum altitude in meters for a Hotpoint mission.</font></p>
 </div>
-<div class="api-row" id="djihotpointmission_djihotpointminaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointminaltitude_inline">MIN_ALTITUDE</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointminaltitude_inline" <blockquote>
+<div class="api-row" id="djihotpointmission_djihotpointminaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointminaltitude_inline">MIN_ALTITUDE</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointminaltitude_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>MIN_ALTITUDE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> MIN_ALTITUDE = <span class="number">5</span></span><br></pre></td></tr></table></figure>

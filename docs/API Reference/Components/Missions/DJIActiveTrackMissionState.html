@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1433,15 +1443,15 @@
 <p><font color="#666">All the possible states of <code><a href="../../Components/Missions/DJIActiveTrackMissionOperator.html#djiactivetrackmissionoperator">ActiveTrackOperator</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="members">Members</h4>
-<div class="api-row" id="djiactivetrackmissionstate_unknown"><div class="api-col left">Value</div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_unknown_inline">UNKNOWN</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_unknown_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_unknown"><div class="api-col left">Value</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_unknown_inline">UNKNOWN</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_unknown_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>UNKNOWN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState UNKNOWN = <span class="keyword">new</span> ActiveTrackState(<span class="string">"UNKNOWN"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">The state of the operator is unknown. It is the initial state when the  operator is just created.</font></p>
+<p><font color="#666">The state of the operator is unknown. It is the initial state when the operator is just created.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_disconnected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_disconnected_inline">DISCONNECTED</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_disconnected_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_disconnected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_disconnected_inline">DISCONNECTED</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_disconnected_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>DISCONNECTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState DISCONNECTED = <span class="keyword">new</span> ActiveTrackState(<span class="string">"DISCONNECTED"</span>)</span><br></pre></td></tr></table></figure>
@@ -1449,15 +1459,15 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The connection between the mobile device and aircraft is broken.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_recovering"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_recovering_inline">RECOVERING</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_recovering_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_recovering"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_recovering_inline">RECOVERING</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_recovering_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>RECOVERING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState RECOVERING = <span class="keyword">new</span> ActiveTrackState(<span class="string">"RECOVERING"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">The connection between the mobile device and aircraft is recovering.  In this state, the operator is synchronizing the state from the aircraft.</font></p>
+<p><font color="#666">The connection between the mobile device and aircraft is recovering. In this state, the operator is synchronizing the state from the aircraft.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_notsupported"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_notsupported_inline">NOT_SUPPORT</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_notsupported_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_notsupported"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_notsupported_inline">NOT_SUPPORT</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_notsupported_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NOT_SUPPORT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState NOT_SUPPORT = <span class="keyword">new</span> ActiveTrackState(<span class="string">"NOT_SUPPORT"</span>)</span><br></pre></td></tr></table></figure>
@@ -1465,7 +1475,7 @@
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The connected product does not support ActiveTrack mission.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_cannotstart"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_cannotstart_inline">CANNOT_START</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_cannotstart_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_cannotstart"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_cannotstart_inline">CANNOT_START</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_cannotstart_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>CANNOT_START</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState CANNOT_START = <span class="keyword">new</span> ActiveTrackState(<span class="string">"CANNOT_START"</span>)</span><br></pre></td></tr></table></figure>
@@ -1473,47 +1483,47 @@
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">There is existing error stopping any ActiveTrack mission to start.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_autosensing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_autosensing_inline">AUTO_SENSING</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_autosensing_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_autosensing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_autosensing_inline">AUTO_SENSING</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_autosensing_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>AUTO_SENSING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState AUTO_SENSING = <span class="keyword">new</span> ActiveTrackState(<span class="string">"AUTO_SENSING"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">The active track sensor is enabled and the aircraft is detecting the targets automatically.  If there is target found, user can choose the right tracking subject. In this state, user can  still manually draw the rectangle.</font></p>
+<p><font color="#666">The active track sensor is enabled and the aircraft is detecting the targets automatically. If there is target found, user can choose the right tracking subject. In this state, user can still manually draw the rectangle.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_autosensingforquickshot"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_autosensingforquickshot_inline">AUTO_SENSING_FOR_QUICK_SHOT</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_autosensingforquickshot_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_autosensingforquickshot"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_autosensingforquickshot_inline">AUTO_SENSING_FOR_QUICK_SHOT</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_autosensingforquickshot_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>AUTO_SENSING_FOR_QUICK_SHOT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState</span><br><span class="line">       AUTO_SENSING_FOR_QUICK_SHOT = <span class="keyword">new</span> ActiveTrackState(<span class="string">"AUTO_SENSING_FOR_QUICK_SHOT"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">The quick shot sensor is enabled. Not supported by Mavic Air 2.</font></p>
+<p><font color="#666">The quick shot sensor is enabled. Not supported by Mavic Air 2, DJI Air 2S.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_detectinghuman"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_detectinghuman_inline">DETECTING_HUMAN</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_detectinghuman_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_detectinghuman"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_detectinghuman_inline">DETECTING_HUMAN</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_detectinghuman_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>DETECTING_HUMAN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState DETECTING_HUMAN = <span class="keyword">new</span> ActiveTrackState(<span class="string">"DETECTING_HUMAN"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">Gesture mode is enabled and the aircraft is looking for a target automatically.  If a target is found, the operator will go to state <code><a href="../../Components/Missions/DJIActiveTrackMissionState.html#djiactivetrackmissionstate_waitingforconfirmation">WAITING_FOR_CONFIRMATION</a></code>  or <code><a href="../../Components/Missions/DJIActiveTrackMissionState.html#djiactivetrackmissionstate_cannotconfirm">CANNOT_CONFIRM</a></code>. Not supported by Mavic 2, Mavic 2 Pro, Mavic 2 Zoom, Mavic Air 2.</font></p>
+<p><font color="#666">Gesture mode is enabled and the aircraft is looking for a target automatically. If a target is found, the operator will go to state <code><a href="../../Components/Missions/DJIActiveTrackMissionState.html#djiactivetrackmissionstate_waitingforconfirmation">WAITING_FOR_CONFIRMATION</a></code> or <code><a href="../../Components/Missions/DJIActiveTrackMissionState.html#djiactivetrackmissionstate_cannotconfirm">CANNOT_CONFIRM</a></code>. Not supported by Mavic 2, Mavic 2 Pro, Mavic 2 Zoom, Mavic Air 2, DJI Air 2S.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_waitingforconfirmation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_waitingforconfirmation_inline">WAITING_FOR_CONFIRMATION</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_waitingforconfirmation_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_waitingforconfirmation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_waitingforconfirmation_inline">WAITING_FOR_CONFIRMATION</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_waitingforconfirmation_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>WAITING_FOR_CONFIRMATION</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState WAITING_FOR_CONFIRMATION = <span class="keyword">new</span> ActiveTrackState(<span class="string">"WAITING_FOR_CONFIRMATION"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Target is found. Camera is already tracking the target. In order to make the  aircraft follow the target, the confirmation from user is required. Once the  target is confirmed, the state will become  <code><a href="../../Components/Missions/DJIActiveTrackMissionState.html#djiactivetrackmissionstate_aircraftfollowing">AIRCRAFT_FOLLOWING</a></code>. For Mavic Air 2, only CIRCLE mode supprt this state, TRACE mode and PROFILE mode do not require confirmation.</font></p>
+<p><font color="#666">Target is found. Camera is already tracking the target. In order to make the aircraft follow the target, the confirmation from user is required. Once the target is confirmed, the state will become <code><a href="../../Components/Missions/DJIActiveTrackMissionState.html#djiactivetrackmissionstate_aircraftfollowing">AIRCRAFT_FOLLOWING</a></code>. For Mavic Air 2, DJI Air 2S, only CIRCLE mode supprt this state, TRACE mode and PROFILE mode do not require confirmation.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_cannotconfirm"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_cannotconfirm_inline">CANNOT_CONFIRM</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_cannotconfirm_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_cannotconfirm"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_cannotconfirm_inline">CANNOT_CONFIRM</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_cannotconfirm_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>CANNOT_CONFIRM</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState CANNOT_CONFIRM = <span class="keyword">new</span> ActiveTrackState(<span class="string">"CANNOT_CONFIRM"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">Target is found. Camera is already tracking the target but there is an error  stopping the aircraft to follow the target. Use <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate_cannotconfirmreason">getReason</a></code>  in <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate">ActiveTrackTrackingState</a></code> to check the reason.</font></p>
+<p><font color="#666">Target is found. Camera is already tracking the target but there is an error stopping the aircraft to follow the target. Use <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate_cannotconfirmreason">getReason</a></code> in <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate">ActiveTrackTrackingState</a></code> to check the reason.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_aircraftfollowing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_aircraftfollowing_inline">AIRCRAFT_FOLLOWING</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_aircraftfollowing_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_aircraftfollowing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_aircraftfollowing_inline">AIRCRAFT_FOLLOWING</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_aircraftfollowing_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_FOLLOWING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState AIRCRAFT_FOLLOWING = <span class="keyword">new</span> ActiveTrackState(<span class="string">"AIRCRAFT_FOLLOWING"</span>)</span><br></pre></td></tr></table></figure>
@@ -1521,31 +1531,31 @@
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Target is found. Camera is already tracking the target and the aircraft is following the target.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_onlycamerafollowing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_onlycamerafollowing_inline">ONLY_CAMERA_FOLLOWING</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_onlycamerafollowing_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_onlycamerafollowing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_onlycamerafollowing_inline">ONLY_CAMERA_FOLLOWING</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_onlycamerafollowing_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ONLY_CAMERA_FOLLOWING</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState ONLY_CAMERA_FOLLOWING = <span class="keyword">new</span> ActiveTrackState(<span class="string">"ONLY_CAMERA_FOLLOWING"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">The operator is executing an ActiveTrack mission in Splotlight mode or  Spotlight Pro mode. The target is found and camera is following the target.</font></p>
+<p><font color="#666">The operator is executing an ActiveTrack mission in Splotlight mode or Spotlight Pro mode. The target is found and camera is following the target.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_quickshot"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_quickshot_inline">PERFORMING_QUICK_SHOT</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_quickshot_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_quickshot"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_quickshot_inline">PERFORMING_QUICK_SHOT</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_quickshot_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>PERFORMING_QUICK_SHOT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState PERFORMING_QUICK_SHOT = <span class="keyword">new</span> ActiveTrackState(<span class="string">"PERFORMING_QUICK_SHOT"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
-<p><font color="#666">The operator is executing a QuickShot ActiveTrack mission. Not supported by Mavic Air 2.</font></p>
+<p><font color="#666">The operator is executing a QuickShot ActiveTrack mission. Not supported by Mavic Air 2, DJI Air 2S.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_findingtrackedtarget"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_findingtrackedtarget_inline">FINDING_TRACKED_TARGET</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_findingtrackedtarget_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_findingtrackedtarget"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_findingtrackedtarget_inline">FINDING_TRACKED_TARGET</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_findingtrackedtarget_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FINDING_TRACKED_TARGET</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState FINDING_TRACKED_TARGET = <span class="keyword">new</span> ActiveTrackState(<span class="string">"FINDING_TRACKED_TARGET"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.mission.activetrack</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">ActiveTrack is started but the target is lost. The vision system is detecting  the previously found target.</font></p>
+<p><font color="#666">ActiveTrack is started but the target is lost. The vision system is detecting the previously found target.</font></p>
 </div>
-<div class="api-row" id="djiactivetrackmissionstate_idle"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_idle_inline">IDLE</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_idle_inline" <blockquote>
+<div class="api-row" id="djiactivetrackmissionstate_idle"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djiactivetrackmissionstate_idle_inline">IDLE</a></div></div><div class="inline-doc" id="djiactivetrackmissionstate_idle_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>IDLE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> ActiveTrackState IDLE = <span class="keyword">new</span> ActiveTrackState(<span class="string">"IDLE"</span>)</span><br></pre></td></tr></table></figure>

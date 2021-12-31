@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1433,7 +1443,7 @@
 <p><font color="#666">Errors related to the access locker.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="members">Members</h4>
-<div class="api-row" id="djierror_djiaccesslockererror_invalidstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_invalidstate_inline">INVALID_STATE</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_invalidstate_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccesslockererror_invalidstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_invalidstate_inline">INVALID_STATE</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_invalidstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>INVALID_STATE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessLockerError INVALID_STATE = <span class="keyword">new</span> DJIAccessLockerError(<span class="string">"The command is not valid in current state."</span>)</span><br></pre></td></tr></table></figure>
@@ -1441,7 +1451,7 @@
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The command is not valid in current state.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccesslockererror_firmwarewrite"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_firmwarewrite_inline">FIRMWARE_WRITE_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_firmwarewrite_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccesslockererror_firmwarewrite"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_firmwarewrite_inline">FIRMWARE_WRITE_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_firmwarewrite_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FIRMWARE_WRITE_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessLockerError FIRMWARE_WRITE_ERROR = <span class="keyword">new</span> DJIAccessLockerError(<span class="string">"Write failure when updating data in the firmware."</span>)</span><br></pre></td></tr></table></figure>
@@ -1449,7 +1459,7 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Write failure when updating data in the firmware.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccesslockererror_firmwareread"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_firmwareread_inline">FIRMWARE_READ_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_firmwareread_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccesslockererror_firmwareread"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_firmwareread_inline">FIRMWARE_READ_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_firmwareread_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FIRMWARE_READ_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessLockerError FIRMWARE_READ_ERROR = <span class="keyword">new</span> DJIAccessLockerError(<span class="string">"Read failure when accessing data in the firmware."</span>)</span><br></pre></td></tr></table></figure>
@@ -1457,7 +1467,7 @@
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Read failure when accessing data in the firmware.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccesslockererror_securitycodeincorrect"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_securitycodeincorrect_inline">SECURITY_CODE_INCORRECT</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_securitycodeincorrect_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccesslockererror_securitycodeincorrect"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_securitycodeincorrect_inline">SECURITY_CODE_INCORRECT</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_securitycodeincorrect_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>SECURITY_CODE_INCORRECT</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessLockerError</span><br><span class="line">       SECURITY_CODE_INCORRECT= <span class="keyword">new</span> DJIAccessLockerError(<span class="string">"The security code is incorrect."</span>)</span><br></pre></td></tr></table></figure>
@@ -1465,7 +1475,7 @@
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The Security Code is incorrect.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccesslockererror_notsetup"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_notsetup_inline">NOT_SET_UP_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_notsetup_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccesslockererror_notsetup"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_notsetup_inline">NOT_SET_UP_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_notsetup_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NOT_SET_UP_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessLockerError NOT_SET_UP_ERROR =</span><br><span class="line">       <span class="keyword">new</span> DJIAccessLockerError(<span class="string">"The user account is not set up for the security feature yet."</span>)</span><br></pre></td></tr></table></figure>
@@ -1473,7 +1483,7 @@
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The user account is not set up for the security feature yet.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccesslockererror_alreadyunlocked"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_alreadyunlocked_inline">ALREADY_UNLOCKED</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_alreadyunlocked_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccesslockererror_alreadyunlocked"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_alreadyunlocked_inline">ALREADY_UNLOCKED</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_alreadyunlocked_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ALREADY_UNLOCKED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessLockerError ALREADY_UNLOCKED =</span><br><span class="line">       <span class="keyword">new</span> DJIAccessLockerError(<span class="string">"The aircraft is already unlocked."</span>)</span><br></pre></td></tr></table></figure>
@@ -1481,15 +1491,15 @@
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The aircraft is already unlocked.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccesslockererror_securitycodeincorrectfivetimes"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_securitycodeincorrectfivetimes_inline">SECURITY_CODE_INCORRECT_FIVE_TIMES</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_securitycodeincorrectfivetimes_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccesslockererror_securitycodeincorrectfivetimes"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_securitycodeincorrectfivetimes_inline">SECURITY_CODE_INCORRECT_FIVE_TIMES</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_securitycodeincorrectfivetimes_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>SECURITY_CODE_INCORRECT_FIVE_TIMES</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessLockerError SECURITY_CODE_INCORRECT_FIVE_TIMES =</span><br><span class="line">       <span class="keyword">new</span> DJIAccessLockerError(<span class="string">"Attempt with wrong security codes more than 5 times. The aircraft is disable and try again in 1 minute."</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Attempt with wrong Security Code more than 5 times. The aircraft is  disable and try again in 1 minute.</font></p>
+<p><font color="#666">Attempt with wrong Security Code more than 5 times. The aircraft is disable and try again in 1 minute.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccesslockererror_securitycodeincorrecttwentytimes"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_securitycodeincorrecttwentytimes_inline">SECURITY_CODE_INCORRECT_TWENTY_TIMES</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_securitycodeincorrecttwentytimes_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccesslockererror_securitycodeincorrecttwentytimes"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_securitycodeincorrecttwentytimes_inline">SECURITY_CODE_INCORRECT_TWENTY_TIMES</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_securitycodeincorrecttwentytimes_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>SECURITY_CODE_INCORRECT_TWENTY_TIMES</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessLockerError SECURITY_CODE_INCORRECT_TWENTY_TIMES =</span><br><span class="line">       <span class="keyword">new</span> DJIAccessLockerError(<span class="string">"Attempt with wrong security codes more than 20 times. The aircraft is disable and try again in 24 hours."</span>)</span><br></pre></td></tr></table></figure>
@@ -1497,7 +1507,7 @@
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Attempt with wrong Security Code more than 20 times. The aircraft is disable and try again in 24 hours.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccesslockererror_usernamenotexist"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_usernamenotexist_inline">USERNAME_NOT_EXIST</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_usernamenotexist_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccesslockererror_usernamenotexist"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_usernamenotexist_inline">USERNAME_NOT_EXIST</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_usernamenotexist_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>USERNAME_NOT_EXIST</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessLockerError USERNAME_NOT_EXIST =</span><br><span class="line">       <span class="keyword">new</span> DJIAccessLockerError(<span class="string">"The username does not exist."</span>)</span><br></pre></td></tr></table></figure>
@@ -1505,13 +1515,13 @@
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The username does not exist.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccesslockererror_securitycodeformatinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_securitycodeformatinvalid_inline">SECURITY_CODE_FORMAT_INVALID</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_securitycodeformatinvalid_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccesslockererror_securitycodeformatinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccesslockererror_securitycodeformatinvalid_inline">SECURITY_CODE_FORMAT_INVALID</a></div></div><div class="inline-doc" id="djierror_djiaccesslockererror_securitycodeformatinvalid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>SECURITY_CODE_FORMAT_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessLockerError SECURITY_CODE_FORMAT_INVALID= <span class="keyword">new</span> DJIAccessLockerError(<span class="string">"The new security code is not valid.A valid security code should contain only numbers and letters and its length is not less than 6 characters and not longer than 8 characters."</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">The new security code is not valid. A valid security code should contain only numbers and letters and  its length is not less than 4 characters and not longer than 8 characters.</font></p>
+<p><font color="#666">The new security code is not valid. A valid security code should contain only numbers and letters and its length is not less than 4 characters and not longer than 8 characters.</font></p>
 </div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
 <div class="api-row" id="djierror_djisdkflighthuberrorforcode"><div class="api-col left">dji.common.error.DJIError</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberrorforcode_inline">getDJIError</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberrorforcode_inline" <blockquote>

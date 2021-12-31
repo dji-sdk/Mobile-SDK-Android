@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1430,7 +1440,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IntelligentHotpointMissionOperator</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.intelligenthotpoint</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">The Intelligent hotpoint mission operator is the only object that controls, runs and monitors Intelligent  Hotpoint Missions. It can be accessed from <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></code>. <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator.html#djiintelligenthotpointmissionoperator">IntelligentHotpointMissionOperator</a></code>  has two ways to start an Intelligent hotpoint mission: One is to start a <code>DJIIntelligentHotpointMission</code>,  which will repeatedly around a specified point called hotpoint. The other you will target a rect in your  FPV view, and send it to Vision system to track, when the state change to <code>DJIIntelligentHotpointMissionOperator_WaitingForConfirmation</code>,  you can <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator.html#djiintelligenthotpointmissionoperator_acceptconfirmationwithcompletion">acceptConfirmation</a></code>, then the aircraft will fly around the object.  When mission executing, it will not need target object, actually track mode only help to set hotpoint at a target  object. <br> Now only supported by Mavic 2 Zoom and Mavic 2 Pro.</font></p>
+<p><font color="#666">The Intelligent hotpoint mission operator is the only object that controls, runs and monitors Intelligent Hotpoint Missions. It can be accessed from <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">MissionControl</a></code>. <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator.html#djiintelligenthotpointmissionoperator">IntelligentHotpointMissionOperator</a></code> has two ways to start an Intelligent hotpoint mission: One is to start a <code>DJIIntelligentHotpointMission</code>, which will repeatedly around a specified point called hotpoint. The other you will target a rect in your FPV view, and send it to Vision system to track, when the state change to <code>DJIIntelligentHotpointMissionOperator_WaitingForConfirmation</code>, you can <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator.html#djiintelligenthotpointmissionoperator_acceptconfirmationwithcompletion">acceptConfirmation</a></code>, then the aircraft will fly around the object. When mission executing, it will not need target object, actually track mode only help to set hotpoint at a target object. <br> Now only supported by Mavic 2 Zoom and Mavic 2 Pro.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djiintelligenthotpointmission"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIIntelligentHotpointMission.html">IntelligentHotpointMission</a></div></div><div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator_DJIIntelligentHotpointMissionState.html">IntelligentHotpointMissionState</a></div></div><div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator_DJIIntelligentHotpointMissionEvent.html">IntelligentHotpointMissionEvent</a></div></div><div class="api-row" id="djiintelligenthotpointmissionoperatorlistenerinterface"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperatorListenerInterface.html">IntelligentHotpointMissionOperatorListener</a></div></div><div class="api-row" id="djiintelligenthotpointmissionoperator_ispoimodeenabled"><div class="api-col left">POI Mode</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_ispoimodeenabled_inline">isPOIModeEnabled</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_ispoimodeenabled_inline" <blockquote>

@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1482,7 +1492,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"> SettingsDefinitions.ShutterSpeed[] shutterSpeedRange()</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">Returns the current valid range for camera's shutter speed (see <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerashutterspeed">ShutterSpeed</a></code>). Returns  <code>null</code> if current camera does not support any shutter speed value or the camera is  disconnected. @return Array of CameraShutterSpeed. Each element represents one current  supported shutter speed value.</font></p>
+<p><font color="#666">Returns the current valid range for camera's shutter speed (see <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerashutterspeed">ShutterSpeed</a></code>). Returns <code>null</code> if current camera does not support any shutter speed value or the camera is disconnected. @return Array of CameraShutterSpeed. Each element represents one current supported shutter speed value.</font></p>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerasettingsdef">SettingsDefinitions</a>.<a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerashutterspeed">ShutterSpeed</a>[]</font></td><td><font color="#666"><i>Array of <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerashutterspeed">ShutterSpeed</a></code>. Each element represents one current supported shutter speed value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilens_djilensparameters_supportedlensaperturerange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilens_djilensparameters_supportedlensaperturerange_inline">apertureRange</a></div></div><div class="inline-doc" id="djilens_djilensparameters_supportedlensaperturerange_inline" <blockquote>
@@ -1491,7 +1501,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"> SettingsDefinitions.Aperture[] apertureRange()</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Returns the current valid range for camera's aperture (see <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraaperture">Aperture</a></code>). Returns  <code>null</code> if current camera does not support any aperture value or the camera is disconnected.  @return Array of CameraAperture. Each element represents one current supported aperture  value.</font></p>
+<p><font color="#666">Returns the current valid range for camera's aperture (see <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraaperture">Aperture</a></code>). Returns <code>null</code> if current camera does not support any aperture value or the camera is disconnected. @return Array of CameraAperture. Each element represents one current supported aperture value.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerasettingsdef">SettingsDefinitions</a>.<a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraaperture">Aperture</a>[]</font></td><td><font color="#666"><i>Array of <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraaperture">Aperture</a></code>. Each element represents one current supported aperture value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilens_djilensparameters_supportedlensexposurecompensationrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilens_djilensparameters_supportedlensexposurecompensationrange_inline">exposureCompensationRange</a></div></div><div class="inline-doc" id="djilens_djilensparameters_supportedlensexposurecompensationrange_inline" <blockquote>
@@ -1500,7 +1510,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"> SettingsDefinitions.ExposureCompensation[] exposureCompensationRange()</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">Returns the current valid range for camera's exposure compensation (see <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraexposurecompensation">ExposureCompensation</a></code>).  Returns <code>null</code> if current camera does not support any exposure compensation value or the camera  is disconnected. @return Array of CameraExposureCompensation. Each element represents one  current supported exposure compensation value.</font></p>
+<p><font color="#666">Returns the current valid range for camera's exposure compensation (see <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraexposurecompensation">ExposureCompensation</a></code>). Returns <code>null</code> if current camera does not support any exposure compensation value or the camera is disconnected. @return Array of CameraExposureCompensation. Each element represents one current supported exposure compensation value.</font></p>
 <h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerasettingsdef">SettingsDefinitions</a>.<a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraexposurecompensation">ExposureCompensation</a>[]</font></td><td><font color="#666"><i>Array of <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameraexposurecompensation">ExposureCompensation</a></code>. Each element represents one current supported exposure compensation value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilens_djilensparameters_supportedlensvideoresolutionandframeraterange"><div class="api-col left">Video</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilens_djilensparameters_supportedlensvideoresolutionandframeraterange_inline">videoResolutionAndFrameRateRange</a></div></div><div class="inline-doc" id="djilens_djilensparameters_supportedlensvideoresolutionandframeraterange_inline" <blockquote>
@@ -1509,7 +1519,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"> ResolutionAndFrameRate[] videoResolutionAndFrameRateRange()</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Returns the current valid range for video resolution CameraVideoResolution  and frame rate <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoframerate">VideoFrameRate</a></code>. Returns <code>null</code> if the current camera does  not support any video resolution or frame rate setting, or if the camera is disconnected.</font></p>
+<p><font color="#666">Returns the current valid range for video resolution CameraVideoResolution and frame rate <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoframerate">VideoFrameRate</a></code>. Returns <code>null</code> if the current camera does not support any video resolution or frame rate setting, or if the camera is disconnected.</font></p>
 <h5 id="return-v5">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html#djicamera_djicameravideoresolutionandframerate">ResolutionAndFrameRate</a>[]</font></td><td><font color="#666"><i>Array of pairs. Each pair represents a valid <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoresolution">VideoResolution</a></code> value and <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoframerate">VideoFrameRate</a></code> value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilens_djilensparameters_thermalpaletterange"><div class="api-col left">Thermal Palette Range</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilens_djilensparameters_thermalpaletterange_inline">thermalPaletteRange</a></div></div><div class="inline-doc" id="djilens_djilensparameters_thermalpaletterange_inline" <blockquote>
@@ -1518,7 +1528,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span></span><br><span class="line"> SettingsDefinitions.ThermalPalette[] thermalPaletteRange()</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.camera</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">Returns the current valid range for thermal camera's palette (see <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerathermalpalette">ThermalPalette</a></code>).  Returns <code>nil</code> if  current thermal camera has not supported palette or the thermal camera is disconnected.</font></p>
+<p><font color="#666">Returns the current valid range for thermal camera's palette (see <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerathermalpalette">ThermalPalette</a></code>). Returns <code>nil</code> if  current thermal camera has not supported palette or the thermal camera is disconnected.</font></p>
 <h5 id="return-v6">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerasettingsdef">SettingsDefinitions</a>.<a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerathermalpalette">ThermalPalette</a>[]</font></td><td><font color="#666"><i>Array of <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerathermalpalette">ThermalPalette</a></code> elements. Each element represents one current palette value.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>

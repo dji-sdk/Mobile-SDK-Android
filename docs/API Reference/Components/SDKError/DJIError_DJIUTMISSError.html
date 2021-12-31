@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1433,7 +1443,7 @@
 <p><font color="#666">Errors related to the UTMISS.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="members">Members</h4>
-<div class="api-row" id="djierror_djiutmisserror_wrongfunctionorder"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_wrongfunctionorder_inline">ORDER_OF_FUNC</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_wrongfunctionorder_inline" <blockquote>
+<div class="api-row" id="djierror_djiutmisserror_wrongfunctionorder"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_wrongfunctionorder_inline">ORDER_OF_FUNC</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_wrongfunctionorder_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ORDER_OF_FUNC</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIUTMISSError ORDER_OF_FUNC = <span class="keyword">new</span> DJIUTMISSError(<span class="string">"You need to call start first!"</span>,  -<span class="number">0x01</span>)</span><br></pre></td></tr></table></figure>
@@ -1441,7 +1451,7 @@
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Wrong order of invoking functions. Failed to initialize.</font></p>
 </div>
-<div class="api-row" id="djierror_djiutmisserror_invaliddb"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_invaliddb_inline">INVALID_DB</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_invaliddb_inline" <blockquote>
+<div class="api-row" id="djierror_djiutmisserror_invaliddb"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_invaliddb_inline">INVALID_DB</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_invaliddb_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>INVALID_DB</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIUTMISSError INVALID_DB = <span class="keyword">new</span> DJIUTMISSError(<span class="string">"Db create failed!"</span>, -<span class="number">0x02</span>)</span><br></pre></td></tr></table></figure>
@@ -1449,7 +1459,7 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Failed to create database.</font></p>
 </div>
-<div class="api-row" id="djierror_djiutmisserror_cachefailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_cachefailed_inline">CACHE_FAILED</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_cachefailed_inline" <blockquote>
+<div class="api-row" id="djierror_djiutmisserror_cachefailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_cachefailed_inline">CACHE_FAILED</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_cachefailed_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>CACHE_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIUTMISSError CACHE_FAILED = <span class="keyword">new</span> DJIUTMISSError(<span class="string">"Db insert failed!"</span>, -<span class="number">0x03</span>)</span><br></pre></td></tr></table></figure>
@@ -1457,7 +1467,7 @@
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Failed to insert the data. The data has been lost.</font></p>
 </div>
-<div class="api-row" id="djierror_djiutmisserror_emptydb"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_emptydb_inline">EMPTY_DB</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_emptydb_inline" <blockquote>
+<div class="api-row" id="djierror_djiutmisserror_emptydb"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_emptydb_inline">EMPTY_DB</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_emptydb_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>EMPTY_DB</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIUTMISSError EMPTY_DB = <span class="keyword">new</span> DJIUTMISSError(<span class="string">"Db is empty!"</span>, -<span class="number">0x04</span>)</span><br></pre></td></tr></table></figure>
@@ -1465,7 +1475,7 @@
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The database is currently empty.</font></p>
 </div>
-<div class="api-row" id="djierror_djiutmisserror_uploadfailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_uploadfailed_inline">UPLOAD_FAILED</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_uploadfailed_inline" <blockquote>
+<div class="api-row" id="djierror_djiutmisserror_uploadfailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_uploadfailed_inline">UPLOAD_FAILED</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_uploadfailed_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>UPLOAD_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIUTMISSError UPLOAD_FAILED = <span class="keyword">new</span> DJIUTMISSError(<span class="string">"Upload failed!"</span>, -<span class="number">0x05</span>)</span><br></pre></td></tr></table></figure>
@@ -1473,7 +1483,7 @@
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Failed to upload. Request code is bigger than 299.</font></p>
 </div>
-<div class="api-row" id="djierror_djiutmisserror_areanotsupport"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_areanotsupport_inline">AREA_NOT_SUPPORTED</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_areanotsupport_inline" <blockquote>
+<div class="api-row" id="djierror_djiutmisserror_areanotsupport"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_areanotsupport_inline">AREA_NOT_SUPPORTED</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_areanotsupport_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>AREA_NOT_SUPPORTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIUTMISSError AREA_NOT_SUPPORTED = <span class="keyword">new</span> DJIUTMISSError(<span class="string">"Area is not supported!"</span>, -<span class="number">0xF0</span>)</span><br></pre></td></tr></table></figure>
@@ -1481,7 +1491,7 @@
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Current area does not support this function.</font></p>
 </div>
-<div class="api-row" id="djierror_djiutmisserror_utmisshadstarted"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_utmisshadstarted_inline">UTMISS_HAD_STARTED</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_utmisshadstarted_inline" <blockquote>
+<div class="api-row" id="djierror_djiutmisserror_utmisshadstarted"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiutmisserror_utmisshadstarted_inline">UTMISS_HAD_STARTED</a></div></div><div class="inline-doc" id="djierror_djiutmisserror_utmisshadstarted_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>UTMISS_HAD_STARTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIUTMISSError UTMISS_HAD_STARTED = <span class="keyword">new</span> DJIUTMISSError(<span class="string">"UTMISS had started!"</span>, -<span class="number">0xF1</span>)</span><br></pre></td></tr></table></figure>

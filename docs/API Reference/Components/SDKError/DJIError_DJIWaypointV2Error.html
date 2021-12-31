@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1858,7 +1868,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_OPERATION_TYPE_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The action actuator operation type is invalid."</span>, -<span class="number">9003</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v54">Description:</h5>
-<p><font color="#666">The action actuator operation type is invalid. See <code><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html#djiwaypointv2actuator_djiwaypointv2cameraactuatorparam_operationtype">getCameraOperationType</a></code> or <code><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2AircraftControlParam.html#djiwaypointv2actuator_djiwaypointv2aircraftcontrolparam_operationtype">getAircraftControlType</a></code>  or <code><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam.html#djiwaypointv2actuator_djiwaypointv2gimbalactuatorparam_operationtype">getOperationType</a></code>.</font></p>
+<p><font color="#666">The action actuator operation type is invalid. See <code><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html#djiwaypointv2actuator_djiwaypointv2cameraactuatorparam_operationtype">getCameraOperationType</a></code> or <code><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2AircraftControlParam.html#djiwaypointv2actuator_djiwaypointv2aircraftcontrolparam_operationtype">getAircraftControlType</a></code> or <code><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam.html#djiwaypointv2actuator_djiwaypointv2gimbalactuatorparam_operationtype">getOperationType</a></code>.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_actionactuatorgimbalparaminvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatorgimbalparaminvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatorgimbalparaminvalid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
@@ -1876,20 +1886,116 @@
 <h5 id="description-v56">Description:</h5>
 <p><font color="#666">The action actuator rotate gimbal failed.</font></p>
 </div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionstopgimbaluniformcontrol"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionstopgimbaluniformcontrol_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionstopgimbaluniformcontrol_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_STOP_GIMBAL_UNIFORM_CONTROL_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Gimbal is not mounted or unable to execute stop rotation command."</span>, -<span class="number">11005</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v57">Description:</h5>
+<p><font color="#666">Gimbal is not mounted or unable to execute stop rotation command.</font></p>
+</div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionflighttypenotsupporthover"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionflighttypenotsupporthover_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionflighttypenotsupporthover_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_FLIGHT_TYPE_NOT_SUPPORT_HOVER</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The current waypoint type(Coordinated turn or Curved route Aircraft continues) does not support setting the action when the waypoint is reached."</span>, -<span class="number">12007</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v58">Description:</h5>
+<p><font color="#666">The current waypoint type(Coordinated turn or Curved route Aircraft continues) does not support setting the action when the waypoint is reached.</font></p>
+</div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionactuatornavigatonfailtopreciseshootphoto"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatornavigatonfailtopreciseshootphoto_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatornavigatonfailtopreciseshootphoto_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_NAVIGATION_FAIL_TO_PRECISE_SHOOTPOHTO</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Take precise photo failed."</span>, -<span class="number">14001</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v59">Description:</h5>
+<p><font color="#666">Failed to take precise photos.</font></p>
+</div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionactuatornavigatonpreciseshootphototimeout"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatornavigatonpreciseshootphototimeout_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatornavigatonpreciseshootphototimeout_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_NAVIGATION_PRECISE_SHOOTPOHTO_TIMEOUT</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Take precise photo timeout."</span>, -<span class="number">14002</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v60">Description:</h5>
+<p><font color="#666">Timeout for taking precise photos.</font></p>
+</div>
 <div class="api-row" id="djierror_djiwaypointv2error_actionrotateaircraftyawparaminvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionrotateaircraftyawparaminvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionrotateaircraftyawparaminvalid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ROTATE_AIRCRAFT_YAW_PARAM_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The action of rotate aircraft yaw parameters are invalid."</span>, -<span class="number">12001</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v57">Description:</h5>
+<h5 id="description-v61">Description:</h5>
 <p><font color="#666">The action <code><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2AircraftControlParam.html#djiwaypointv2actuator_djiwaypointv2aircraftcontrolparam">WaypointAircraftControlParam</a></code> parameters are invalid.</font></p>
+</div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionactuatornavigatonexecutefailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatornavigatonexecutefailed_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatornavigatonexecutefailed_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_NAVIGATION_EXEC_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Navigation command execute failed"</span>, -<span class="number">14003</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v62">Description:</h5>
+<p><font color="#666">Failed to execute navigation command.</font></p>
+</div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionactuatorcamerasendsingleshotcmdfail"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatorcamerasendsingleshotcmdfail_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatorcamerasendsingleshotcmdfail_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_CAMERA_SEND_SINGLE_SHOT_CMD_TO_CAMERA_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Fail to send shoot photo command to camera cause of no camera or camera is busy"</span>, -<span class="number">15001</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v63">Description:</h5>
+<p><font color="#666">Failed to send shoot photo command to camera cause of no camera or camera is busy.</font></p>
+</div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionactuatorcamerasendvideostartcmdfail"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatorcamerasendvideostartcmdfail_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatorcamerasendvideostartcmdfail_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_CAMERA_SEND_VIDEO_START_CMD_TO_CAMERA_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Fail to send start record command to camera cause of no camera or camera is busy. "</span>, -<span class="number">15002</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v64">Description:</h5>
+<p><font color="#666">Failed to send start record command to camera cause of no camera or camera is busy.</font></p>
+</div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionactuatorcamerasendvideostopcmdfail"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatorcamerasendvideostopcmdfail_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatorcamerasendvideostopcmdfail_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_CAMERA_SEND_VIDEO_STOP_CMD_TO_CAMERA_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Fail to send video stop command to camera cause of no camera or camera is not busy"</span>, -<span class="number">15003</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v65">Description:</h5>
+<p><font color="#666">Failed to send video stop command to camera cause of no camera or camera is not busy.</font></p>
+</div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionactuatorcamerafocusparamxyinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatorcamerafocusparamxyinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatorcamerafocusparamxyinvalid_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_CAMERA_FOCUS_PARAM_XY_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Camera focus param xy exceed valid range [0, 1]."</span>, -<span class="number">15004</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v66">Description:</h5>
+<p><font color="#666">Camera focus param xy exceed valid range [0, 1].</font></p>
+</div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionactuatorcamerasendforcuscmdfail"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatorcamerasendforcuscmdfail_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatorcamerasendforcuscmdfail_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_CAMERA_SEND_FOCUS_CMD_TO_CAMERA_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Fail to send camera focus command cause of no camera or camera is busy."</span>, -<span class="number">15005</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v67">Description:</h5>
+<p><font color="#666">Failed to send camera focus command cause of no camera or camera is busy.</font></p>
+</div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionactuatorcamerasendfocalizecmdfail"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatorcamerasendfocalizecmdfail_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatorcamerasendfocalizecmdfail_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_CAMERA_SEND_FOCALIZE_CMD_TO_CAMERA_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Fail to send camera zoom command cause of no camera or camera is busy. "</span>, -<span class="number">15006</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v68">Description:</h5>
+<p><font color="#666">Failed to send camera zoom command cause of no camera or camera is busy.</font></p>
+</div>
+<div class="api-row" id="djierror_djiwaypointv2error_actionactuatorcamerafocaldistanceinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatorcamerafocaldistanceinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatorcamerafocaldistanceinvalid_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_CAMERA_FOCAL_DISTANCE_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Illegal zoom focal length."</span>, -<span class="number">15007</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v69">Description:</h5>
+<p><font color="#666">Illegal zoom focal length.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_actionrotateaircraftyawfailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionrotateaircraftyawfailed_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionrotateaircraftyawfailed_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ROTATE_AIRCRAFT_YAW_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The action actuator rotate aircraft yaw execute failed."</span>, -<span class="number">12002</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v58">Description:</h5>
+<h5 id="description-v70">Description:</h5>
 <p><font color="#666">The action actuator rotate aircraft yaw execute failed.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_actionaircraftstartstopflyfailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionaircraftstartstopflyfailed_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionaircraftstartstopflyfailed_inline" <blockquote>
@@ -1897,15 +2003,15 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_AIRCRAFT_START_STOP_FLY_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The action actuator aircraft start stop fly execute failed."</span>, -<span class="number">12004</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v59">Description:</h5>
-<p><font color="#666">The action actuator aircraft start or stop fly execute failed.  For example: when the aircraft is flying, an error will occur when the <code><a href="../../Components/Missions/DJIWaypointV2AircraftControlParam_DJIWaypointV2AircraftControlFlyingParam.html#djiwaypointv2aircraftcontrolparam_djiwaypointv2aircraftcontrolflyingparam_isstartflying">isStartFly</a></code>(TRUE) action is executed. You should execute <code><a href="../../Components/Missions/DJIWaypointV2AircraftControlParam_DJIWaypointV2AircraftControlFlyingParam.html#djiwaypointv2aircraftcontrolparam_djiwaypointv2aircraftcontrolflyingparam_isstartflying">isStartFly</a></code>(FALSE) first.</font></p>
+<h5 id="description-v71">Description:</h5>
+<p><font color="#666">The action actuator aircraft start or stop fly execute failed. For example: when the aircraft is flying, an error will occur when the <code><a href="../../Components/Missions/DJIWaypointV2AircraftControlParam_DJIWaypointV2AircraftControlFlyingParam.html#djiwaypointv2aircraftcontrolparam_djiwaypointv2aircraftcontrolflyingparam_isstartflying">isStartFly</a></code>(TRUE) action is executed. You should execute <code><a href="../../Components/Missions/DJIWaypointV2AircraftControlParam_DJIWaypointV2AircraftControlFlyingParam.html#djiwaypointv2aircraftcontrolparam_djiwaypointv2aircraftcontrolflyingparam_isstartflying">isStartFly</a></code>(FALSE) first.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointinterruptreasonavoid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointinterruptreasonavoid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointinterruptreasonavoid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>DJIWaypointV2Error</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_INTERRUPT_REASON_AVOID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Waypoint mission was interrupted due to obstacle avoidance."</span>, -<span class="number">13</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v60">Description:</h5>
+<h5 id="description-v72">Description:</h5>
 <p><font color="#666">The waypoint mission is interrupted by by obstacle avoidance system.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointinterruptreasonavoidradiuslimit"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointinterruptreasonavoidradiuslimit_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointinterruptreasonavoidradiuslimit_inline" <blockquote>
@@ -1913,7 +2019,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_INTERRUPT_REASON_AVOID_RADIUS_LIMIT</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Waypoint mission was interrupted due to reaching radius limit."</span>, -<span class="number">14</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v61">Description:</h5>
+<h5 id="description-v73">Description:</h5>
 <p><font color="#666">The waypoint mission is interrupted because of radius limit.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointinterruptreasonavoidheightlimit"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointinterruptreasonavoidheightlimit_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointinterruptreasonavoidheightlimit_inline" <blockquote>
@@ -1921,7 +2027,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_INTERRUPT_REASON_AVOID_HEIGHT_LIMIT</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Waypoint mission was interrupted due to height limit."</span>, -<span class="number">15</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v62">Description:</h5>
+<h5 id="description-v74">Description:</h5>
 <p><font color="#666">The waypoint mission is interrupted because of height limit.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointinterruptreasonavoidrtkunhealthy"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointinterruptreasonavoidrtkunhealthy_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointinterruptreasonavoidrtkunhealthy_inline" <blockquote>
@@ -1929,7 +2035,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_INTERRUPT_REASON_AVOID_RTK_UNHEALTHY</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Waypoint mission was interrupted due to weak RTK signal."</span>, -<span class="number">16</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v63">Description:</h5>
+<h5 id="description-v75">Description:</h5>
 <p><font color="#666">The waypoint mission is interrupted because of RTK week signal.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointinterruptreasonavoiduserreqbreak"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointinterruptreasonavoiduserreqbreak_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointinterruptreasonavoiduserreqbreak_inline" <blockquote>
@@ -1937,7 +2043,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_INTERRUPT_REASON_AVOID_USER_REQ_BREAK</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Waypoint mission was interrupted due to interrupted by user."</span>, -<span class="number">17</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v64">Description:</h5>
+<h5 id="description-v76">Description:</h5>
 <p><font color="#666">The waypoint mission is interrupted because of user request.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointcommandcannotexecute"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointcommandcannotexecute_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointcommandcannotexecute_inline" <blockquote>
@@ -1945,7 +2051,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_COMMAND_CANNOT_EXECUTE</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Command cannot execute."</span>, -<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v65">Description:</h5>
+<h5 id="description-v77">Description:</h5>
 <p><font color="#666">Command cannot execute.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointcommandexecutionfailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointcommandexecutionfailed_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointcommandexecutionfailed_inline" <blockquote>
@@ -1953,7 +2059,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_COMMAND_EXECUTION_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Command execution failed."</span>, -<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v66">Description:</h5>
+<h5 id="description-v78">Description:</h5>
 <p><font color="#666">Command execution failed.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointinvalidparameters"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointinvalidparameters_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointinvalidparameters_inline" <blockquote>
@@ -1961,7 +2067,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_INVALID_PARAMETERS</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Invalid parameters."</span>, -<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v67">Description:</h5>
+<h5 id="description-v79">Description:</h5>
 <p><font color="#666">Invalid parameters.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointcommontimeout"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointcommontimeout_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointcommontimeout_inline" <blockquote>
@@ -1969,7 +2075,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_COMMON_TIMEOUT</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Common timeout."</span>, -<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v68">Description:</h5>
+<h5 id="description-v80">Description:</h5>
 <p><font color="#666">Common timeout.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointproductconnectfailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointproductconnectfailed_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointproductconnectfailed_inline" <blockquote>
@@ -1977,7 +2083,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_PRODUCT_CONNECT_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Product connection failed."</span>, -<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v69">Description:</h5>
+<h5 id="description-v81">Description:</h5>
 <p><font color="#666">Product connection failed.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointsystembusy"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointsystembusy_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointsystembusy_inline" <blockquote>
@@ -1985,7 +2091,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_SYSTEM_BUSY</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"System busy."</span>, -<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v70">Description:</h5>
+<h5 id="description-v82">Description:</h5>
 <p><font color="#666">System busy.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointoperationcancelbyuser"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointoperationcancelbyuser_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointoperationcancelbyuser_inline" <blockquote>
@@ -1993,7 +2099,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_OPERATION_CANCEL_BY_USER</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Operation cancel by user."</span>, -<span class="number">7</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v71">Description:</h5>
+<h5 id="description-v83">Description:</h5>
 <p><font color="#666">Operation cancel by user.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointuploadmediafilefailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointuploadmediafilefailed_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointuploadmediafilefailed_inline" <blockquote>
@@ -2001,7 +2107,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_UPLOAD_MEDIA_FILE_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Upload media file failed."</span>, -<span class="number">8</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v72">Description:</h5>
+<h5 id="description-v84">Description:</h5>
 <p><font color="#666">Upload media file failed.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointsdrreservefailed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointsdrreservefailed_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointsdrreservefailed_inline" <blockquote>
@@ -2009,7 +2115,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_SDR_RESERVE_FAILED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"SDR reserve failed."</span>, -<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v73">Description:</h5>
+<h5 id="description-v85">Description:</h5>
 <p><font color="#666">SDR reserve failed.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointcheckphotostoragepackerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointcheckphotostoragepackerror_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointcheckphotostoragepackerror_inline" <blockquote>
@@ -2017,7 +2123,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_CHECK_PHOTO_STORAGE_PACK_ERROR</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Check photo storage pack error."</span>, -<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v74">Description:</h5>
+<h5 id="description-v86">Description:</h5>
 <p><font color="#666">Check photo storage pack error.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointsdrlinkreservefailedcausemotoron"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointsdrlinkreservefailedcausemotoron_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointsdrlinkreservefailedcausemotoron_inline" <blockquote>
@@ -2025,7 +2131,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_SDR_LINK_RESERVE_FAILED_CAUSE_MOTOR_ON</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"SDR link reserve failed because motor is on."</span>, -<span class="number">11</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v75">Description:</h5>
+<h5 id="description-v87">Description:</h5>
 <p><font color="#666">SDR link reserve failed because motor is on.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointactiontriggernotmatchactuator"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointactiontriggernotmatchactuator_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointactiontriggernotmatchactuator_inline" <blockquote>
@@ -2033,7 +2139,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_ACTION_TRIGGER_NOT_MATCH_ACTUATOR</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The action actuator and the trigger type do not match."</span>, -<span class="number">12</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v76">Description:</h5>
+<h5 id="description-v88">Description:</h5>
 <p><font color="#666">The action actuator and the trigger type do not match.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointtrajectoryreplayinvalidlocation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointtrajectoryreplayinvalidlocation_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointtrajectoryreplayinvalidlocation_inline" <blockquote>
@@ -2041,7 +2147,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_TRAJECTORY_REPLAY_INVALID_LOCATION</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The trajectory replay's location is invalid."</span>, -<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v77">Description:</h5>
+<h5 id="description-v89">Description:</h5>
 <p><font color="#666">The trajectory replay's location is invalid.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointtrajectoryreplaynowaypointtoremove"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointtrajectoryreplaynowaypointtoremove_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointtrajectoryreplaynowaypointtoremove_inline" <blockquote>
@@ -2049,7 +2155,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_TRAJECTORY_REPLAY_NO_WAYPOINT_TO_REMOVE</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The trajectory replay has no waypoint to remove."</span>, -<span class="number">101</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v78">Description:</h5>
+<h5 id="description-v90">Description:</h5>
 <p><font color="#666">The trajectory replay has no waypoint to remove.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointtrajectoryreplaygimbalattierror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointtrajectoryreplaygimbalattierror_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointtrajectoryreplaygimbalattierror_inline" <blockquote>
@@ -2057,7 +2163,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_TRAJECTORY_REPLAY_GIMBAL_ATTI_ERROR</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">" The trajectory replay's gimbal attitude has error."</span>, -<span class="number">102</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v79">Description:</h5>
+<h5 id="description-v91">Description:</h5>
 <p><font color="#666">The trajectory replay's gimbal attitude has error.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointinvalidinputdatafclength"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointinvalidinputdatafclength_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointinvalidinputdatafclength_inline" <blockquote>
@@ -2065,7 +2171,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_INVALID_INPUT_DATA_FC_LENGTH</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Data transmission does not match protocols."</span>, -<span class="number">1001</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v80">Description:</h5>
+<h5 id="description-v92">Description:</h5>
 <p><font color="#666">Data transmission does not match protocols.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointinvalidinputdatafloatnumber"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointinvalidinputdatafloatnumber_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointinvalidinputdatafloatnumber_inline" <blockquote>
@@ -2073,7 +2179,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_INVALID_INPUT_DATA_FLOAT_NUMBER</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">" Invalid floating number."</span>, -<span class="number">1002</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v81">Description:</h5>
+<h5 id="description-v93">Description:</h5>
 <p><font color="#666">Invalid floating number.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionendindexinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionendindexinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionendindexinvalid_inline" <blockquote>
@@ -2081,7 +2187,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_END_INDEX_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Last waypoint index is invalid."</span>, -<span class="number">2003</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v82">Description:</h5>
+<h5 id="description-v94">Description:</h5>
 <p><font color="#666">Last waypoint index is invalid.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointindexinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointindexinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointindexinvalid_inline" <blockquote>
@@ -2089,7 +2195,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_INDEX_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Invalid waypoint index, please check your waypoint index with waypoint count."</span>, -<span class="number">2011</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v83">Description:</h5>
+<h5 id="description-v95">Description:</h5>
 <p><font color="#666">Invalid waypoint index, please check your waypoint index with waypoint count.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missionwaypointstartindexnotinendoflastupload"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missionwaypointstartindexnotinendoflastupload_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missionwaypointstartindexnotinendoflastupload_inline" <blockquote>
@@ -2097,7 +2203,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_WAYPOINT_START_INDEX_NOT_IN_END_OF_LAST_UPLOAD</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The upload waypoint start index isn't in the given range."</span>, -<span class="number">2013</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v84">Description:</h5>
+<h5 id="description-v96">Description:</h5>
 <p><font color="#666">The upload waypoint start index isn't in the given range.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missioncontrolstartstopinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missioncontrolstartstopinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missioncontrolstartstopinvalid_inline" <blockquote>
@@ -2105,7 +2211,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_CONTROL_START_STOP_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The aircraft start waypoint is too far away from the stop waypoint."</span>, -<span class="number">4002</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v85">Description:</h5>
+<h5 id="description-v97">Description:</h5>
 <p><font color="#666">The aircraft start waypoint is too far away from the stop waypoint.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missioncontrolpauseresumeinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missioncontrolpauseresumeinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missioncontrolpauseresumeinvalid_inline" <blockquote>
@@ -2113,7 +2219,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_CONTROL_PAUSE_RESUME_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Invalid pause resume operation."</span>, -<span class="number">4003</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v86">Description:</h5>
+<h5 id="description-v98">Description:</h5>
 <p><font color="#666">Invalid pause resume operation.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missioncontrolinterruptrecoverinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missioncontrolinterruptrecoverinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missioncontrolinterruptrecoverinvalid_inline" <blockquote>
@@ -2121,7 +2227,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_CONTROL_INTERRUPT_RECOVER_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Invalid  interrupt recover operation."</span>, -<span class="number">4004</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v87">Description:</h5>
+<h5 id="description-v99">Description:</h5>
 <p><font color="#666">Invalid interrupt recover operation.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missioncontrolmissionalreadypaused"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missioncontrolmissionalreadypaused_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missioncontrolmissionalreadypaused_inline" <blockquote>
@@ -2129,7 +2235,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_CONTROL_MISSION_ALREADY_PAUSED</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The mission is already paused."</span>, -<span class="number">4009</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v88">Description:</h5>
+<h5 id="description-v100">Description:</h5>
 <p><font color="#666">The mission is already paused.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missioncontrolnorunningmissionforresume"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missioncontrolnorunningmissionforresume_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missioncontrolnorunningmissionforresume_inline" <blockquote>
@@ -2137,7 +2243,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_CONTROL_NO_RUNNING_MISSION_FOR_RESUME</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The mission cannot resume because it is not running."</span>, -<span class="number">4010</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v89">Description:</h5>
+<h5 id="description-v101">Description:</h5>
 <p><font color="#666">The mission cannot resume because it is not running.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missioncontrolnotsupportpauseresume"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missioncontrolnotsupportpauseresume_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missioncontrolnotsupportpauseresume_inline" <blockquote>
@@ -2145,7 +2251,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_CONTROL_NOT_SUPPORT_PAUSE_RESUME</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The mission cannot be paused or resumed now."</span>, -<span class="number">4013</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v90">Description:</h5>
+<h5 id="description-v102">Description:</h5>
 <p><font color="#666">The mission cannot be paused or resumed now.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_missioncontrolnotsupportinterruptresume"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_missioncontrolnotsupportinterruptresume_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_missioncontrolnotsupportinterruptresume_inline" <blockquote>
@@ -2153,7 +2259,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error MISSION_CONTROL_NOT_SUPPORT_INTERRUPT_RESUME</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"The mission cannot be interrupted or recovered now."</span>, -<span class="number">4014</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v91">Description:</h5>
+<h5 id="description-v103">Description:</h5>
 <p><font color="#666">The mission cannot be interrupted or recovered now.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_recovernocurrentprojectionpoint"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_recovernocurrentprojectionpoint_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_recovernocurrentprojectionpoint_inline" <blockquote>
@@ -2161,7 +2267,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error RECOVER_NO_CURRENT_PROJECTION_POINT</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"No recorded waypoint for recovery currently."</span>, -<span class="number">4016</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v92">Description:</h5>
+<h5 id="description-v104">Description:</h5>
 <p><font color="#666">No recorded waypoint for recovery currently.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_recovernonextprojectionpoint"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_recovernonextprojectionpoint_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_recovernonextprojectionpoint_inline" <blockquote>
@@ -2169,7 +2275,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error RECOVER_NO_NEXT_PROJECTION_POINT</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"No recorded waypoint for next waypoint recovery."</span>, -<span class="number">4017</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v93">Description:</h5>
+<h5 id="description-v105">Description:</h5>
 <p><font color="#666">No recorded waypoint for next waypoint recovery.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_uploadactiontriggerreachendindexlessstartindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_uploadactiontriggerreachendindexlessstartindex_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_uploadactiontriggerreachendindexlessstartindex_inline" <blockquote>
@@ -2177,7 +2283,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error UPLOAD_ACTION_TRIGGER_REACH_END_INDEX_LESS_START_INDEX</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Uploaded reach trigger invalid."</span>, -<span class="number">8002</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v94">Description:</h5>
+<h5 id="description-v106">Description:</h5>
 <p><font color="#666">Uploaded reach trigger invalid.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_uploadactiontriggerreachintervalcountinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_uploadactiontriggerreachintervalcountinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_uploadactiontriggerreachintervalcountinvalid_inline" <blockquote>
@@ -2185,7 +2291,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error UPLOAD_ACTION_TRIGGER_REACH_INTERVAL_COUNT_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Uploaded reach trigger invalid."</span>, -<span class="number">8003</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v95">Description:</h5>
+<h5 id="description-v107">Description:</h5>
 <p><font color="#666">Uploaded reach trigger invalid.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_uploadactiontriggerreachautoterminateinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_uploadactiontriggerreachautoterminateinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_uploadactiontriggerreachautoterminateinvalid_inline" <blockquote>
@@ -2193,7 +2299,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error UPLOAD_ACTION_TRIGGER_REACH_AUTO_TERMINATE_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Uploaded reach trigger invalid."</span>, -<span class="number">8004</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v96">Description:</h5>
+<h5 id="description-v108">Description:</h5>
 <p><font color="#666">Uploaded reach trigger invalid.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_uploadactionactuatorsprayexternalspraymodeinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_uploadactionactuatorsprayexternalspraymodeinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_uploadactionactuatorsprayexternalspraymodeinvalid_inline" <blockquote>
@@ -2201,7 +2307,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error UPLOAD_ACTION_ACTUATOR_SPRAY_EXTERNAL_SPRAY_MODE_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Uploaded spray actuator is invalid."</span>, -<span class="number">10001</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v97">Description:</h5>
+<h5 id="description-v109">Description:</h5>
 <p><font color="#666">Uploaded spray actuator is invalid.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_uploadactionactuatorsprayflowspeedinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_uploadactionactuatorsprayflowspeedinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_uploadactionactuatorsprayflowspeedinvalid_inline" <blockquote>
@@ -2209,7 +2315,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error UPLOAD_ACTION_ACTUATOR_SPRAY_FLOW_SPEED_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Uploaded spray actuator is invalid."</span>, -<span class="number">10002</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v98">Description:</h5>
+<h5 id="description-v110">Description:</h5>
 <p><font color="#666">Uploaded spray actuator is invalid.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_uploadactionactuatorsprayflowspeedpremuinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_uploadactionactuatorsprayflowspeedpremuinvalid_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_uploadactionactuatorsprayflowspeedpremuinvalid_inline" <blockquote>
@@ -2217,7 +2323,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error UPLOAD_ACTION_ACTUATOR_SPRAY_FLOW_SPEED_PRE_MU_INVALID</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Uploaded spray actuator is invalid."</span>, -<span class="number">10003</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v99">Description:</h5>
+<h5 id="description-v111">Description:</h5>
 <p><font color="#666">Uploaded spray actuator is invalid.</font></p>
 </div>
 <div class="api-row" id="djierror_djiwaypointv2error_actionactuatorpayloadfailtosendcmdtopayload"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djierror_djiwaypointv2error_actionactuatorpayloadfailtosendcmdtopayload_inline">DJIWaypointV2Error</a></div></div><div class="inline-doc" id="djierror_djiwaypointv2error_actionactuatorpayloadfailtosendcmdtopayload_inline" <blockquote>
@@ -2225,7 +2331,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> DJIWaypointV2Error ACTION_ACTUATOR_PAYLOAD_FAIL_TO_SEND_CMD_TO_PAYLOAD</span><br><span class="line">           = <span class="keyword">new</span> DJIWaypointV2Error(<span class="string">"Uploaded payload actuator is invalid."</span>, -<span class="number">13001</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v100">Description:</h5>
+<h5 id="description-v112">Description:</h5>
 <p><font color="#666">Uploaded payload actuator is invalid.</font></p>
 </div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
@@ -2234,7 +2340,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(<span class="keyword">int</span> errorCode)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v101">Description:</h5>
+<h5 id="description-v113">Description:</h5>
 <p><font color="#666">Returns the specific error in the <code><a href="../../Components/SDKError/DJIError_DJISDKFlightHubError.html#djierror_djisdkflighthuberror">DJIFlightHubError</a></code> according to the error code.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">errorCode</font></font></td><td><font color="#666"><i>errorCode for <code><a href="../../Components/SDKError/DJIError_DJISDKFlightHubError.html#djierror_djisdkflighthuberror">DJIFlightHubError</a></code>.</i></font></td></tr></table></html>
@@ -2245,7 +2351,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(<span class="keyword">int</span> errorCode)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.utmiss</font></td></tr></table></html>
-<h5 id="description-v102">Description:</h5>
+<h5 id="description-v114">Description:</h5>
 <p><font color="#666">Get DJIUTMISSError.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">errorCode</font></font></td><td><font color="#666"><i>An int value of error code.</i></font></td></tr></table></html>
@@ -2256,7 +2362,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getDescription</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v103">Description:</h5>
+<h5 id="description-v115">Description:</h5>
 <p><font color="#666">Returns the description of the error code.</font></p>
 <h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>The description of the error code.</i></font></td></tr></table></html></div>
@@ -2265,7 +2371,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String desc)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v104">Description:</h5>
+<h5 id="description-v116">Description:</h5>
 <p><font color="#666">Sets the description for the error code.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">desc</font></font></td><td><font color="#666"><i>Description string.</i></font></td></tr></table></html></div>
