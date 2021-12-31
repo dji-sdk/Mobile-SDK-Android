@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1433,7 +1443,7 @@
 <p><font color="#666">DJI SDK FlightHub Error.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="members">Members</h4>
-<div class="api-row" id="djierror_djisdkflighthuberror_signatureinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_signatureinvalid_inline">SIGNATURE_INVALID</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_signatureinvalid_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_signatureinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_signatureinvalid_inline">SIGNATURE_INVALID</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_signatureinvalid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>SIGNATURE_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError SIGNATURE_INVALID = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"Invalid signature."</span>)</span><br></pre></td></tr></table></figure>
@@ -1441,7 +1451,7 @@
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Server rejected the request because the signature is invalid.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_norighttoaccess"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_norighttoaccess_inline">NO_RIGHT_TO_ACCESS</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_norighttoaccess_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_norighttoaccess"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_norighttoaccess_inline">NO_RIGHT_TO_ACCESS</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_norighttoaccess_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NO_RIGHT_TO_ACCESS</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError NO_RIGHT_TO_ACCESS = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"You have no right to access the data."</span>)</span><br></pre></td></tr></table></figure>
@@ -1449,7 +1459,7 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Server rejected the request because the user does not have the permission.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_parametersinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_parametersinvalid_inline">PARAMETERS_INVALID</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_parametersinvalid_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_parametersinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_parametersinvalid_inline">PARAMETERS_INVALID</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_parametersinvalid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>PARAMETERS_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError PARAMETERS_INVALID = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"Invalid parameter(s)."</span>)</span><br></pre></td></tr></table></figure>
@@ -1457,7 +1467,7 @@
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Invalid parameter(s).</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_noauthorizationinformationfound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_noauthorizationinformationfound_inline">NO_AUTHORIZATION_INFORMATION_FOUND</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_noauthorizationinformationfound_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_noauthorizationinformationfound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_noauthorizationinformationfound_inline">NO_AUTHORIZATION_INFORMATION_FOUND</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_noauthorizationinformationfound_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NO_AUTHORIZATION_INFORMATION_FOUND</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError NO_AUTHORIZATION_INFORMATION_FOUND = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"No authorization information found."</span>)</span><br></pre></td></tr></table></figure>
@@ -1465,7 +1475,7 @@
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">No authorization information found.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_usernotfoundinusercenter"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_usernotfoundinusercenter_inline">USER_NOT_FOUND_IN_USER_CENTER</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_usernotfoundinusercenter_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_usernotfoundinusercenter"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_usernotfoundinusercenter_inline">USER_NOT_FOUND_IN_USER_CENTER</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_usernotfoundinusercenter_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>USER_NOT_FOUND_IN_USER_CENTER</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError USER_NOT_FOUND_IN_USER_CENTER = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"The account information is not found."</span>)</span><br></pre></td></tr></table></figure>
@@ -1473,7 +1483,7 @@
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The account information is not found.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_authorizationexpired"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_authorizationexpired_inline">AUTHORIZATION_EXPIRED</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_authorizationexpired_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_authorizationexpired"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_authorizationexpired_inline">AUTHORIZATION_EXPIRED</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_authorizationexpired_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>AUTHORIZATION_EXPIRED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError</span><br><span class="line">       AUTHORIZATION_EXPIRED = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"Authorization information has expired. Please authorize again."</span>)</span><br></pre></td></tr></table></figure>
@@ -1481,7 +1491,7 @@
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Authorization information has expired. Please authorize again.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_usernotfoundinflighthub"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_usernotfoundinflighthub_inline">USER_NOT_FOUND_IN_FLIGHT_HUB</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_usernotfoundinflighthub_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_usernotfoundinflighthub"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_usernotfoundinflighthub_inline">USER_NOT_FOUND_IN_FLIGHT_HUB</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_usernotfoundinflighthub_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>USER_NOT_FOUND_IN_FLIGHT_HUB</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError</span><br><span class="line">       USER_NOT_FOUND_IN_FLIGHT_HUB = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"User not found in FlightHub."</span>)</span><br></pre></td></tr></table></figure>
@@ -1489,7 +1499,7 @@
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">User not found in DJI FlightHub system.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_servicepackageexpired"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_servicepackageexpired_inline">SERVICE_PACKAGE_EXPIRED</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_servicepackageexpired_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_servicepackageexpired"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_servicepackageexpired_inline">SERVICE_PACKAGE_EXPIRED</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_servicepackageexpired_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>SERVICE_PACKAGE_EXPIRED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError SERVICE_PACKAGE_EXPIRED = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"Your service package has expired."</span>)</span><br></pre></td></tr></table></figure>
@@ -1497,7 +1507,7 @@
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">The service package has been expired.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_servicepackagelimitationreached"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_servicepackagelimitationreached_inline">SERVICE_PACKAGE_LIMITATION_REACHED</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_servicepackagelimitationreached_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_servicepackagelimitationreached"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_servicepackagelimitationreached_inline">SERVICE_PACKAGE_LIMITATION_REACHED</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_servicepackagelimitationreached_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>SERVICE_PACKAGE_LIMITATION_REACHED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError</span><br><span class="line">       SERVICE_PACKAGE_LIMITATION_REACHED = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"Your service package has reached the limit of device number. Please check if your service package has expired."</span>)</span><br></pre></td></tr></table></figure>
@@ -1505,7 +1515,7 @@
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The service package has reached the limit of device numbers.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_userhasnosdkpermissionforservicepackage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_userhasnosdkpermissionforservicepackage_inline">NO_SDK_PERMISSION_FOR_SERVICE_PACKAGE</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_userhasnosdkpermissionforservicepackage_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_userhasnosdkpermissionforservicepackage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_userhasnosdkpermissionforservicepackage_inline">NO_SDK_PERMISSION_FOR_SERVICE_PACKAGE</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_userhasnosdkpermissionforservicepackage_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NO_SDK_PERMISSION_FOR_SERVICE_PACKAGE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError</span><br><span class="line">       NO_SDK_PERMISSION_FOR_SERVICE_PACKAGE = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"Service package does not have permission to access SDK service."</span>)</span><br></pre></td></tr></table></figure>
@@ -1513,7 +1523,7 @@
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">The service package does not have permission to access SDK service.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_noteamfound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_noteamfound_inline">NO_TEAM_FOUND</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_noteamfound_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_noteamfound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_noteamfound_inline">NO_TEAM_FOUND</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_noteamfound_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NO_TEAM_FOUND</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError NO_TEAM_FOUND = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"No team found."</span>)</span><br></pre></td></tr></table></figure>
@@ -1521,7 +1531,7 @@
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">No team found.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_noaircraftfound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_noaircraftfound_inline">NO_AIRCRAFT_FOUND</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_noaircraftfound_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_noaircraftfound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_noaircraftfound_inline">NO_AIRCRAFT_FOUND</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_noaircraftfound_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NO_AIRCRAFT_FOUND</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError NO_AIRCRAFT_FOUND = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"No aircraft found."</span>)</span><br></pre></td></tr></table></figure>
@@ -1529,7 +1539,7 @@
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">No aircraft found.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_aircraftalreadyboundinteamchosen"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_aircraftalreadyboundinteamchosen_inline">AIRCRAFT_ALREADY_BOUND_IN_TEAM_CHOSEN</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_aircraftalreadyboundinteamchosen_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_aircraftalreadyboundinteamchosen"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_aircraftalreadyboundinteamchosen_inline">AIRCRAFT_ALREADY_BOUND_IN_TEAM_CHOSEN</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_aircraftalreadyboundinteamchosen_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_ALREADY_BOUND_IN_TEAM_CHOSEN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError</span><br><span class="line">       AIRCRAFT_ALREADY_BOUND_IN_TEAM_CHOSEN = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"The aircraft has already been bound in chosen team."</span>)</span><br></pre></td></tr></table></figure>
@@ -1537,7 +1547,7 @@
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">The aircraft has already been bound in the chosen team.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_norecordfound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_norecordfound_inline">NO_RECORD_FOUND</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_norecordfound_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_norecordfound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_norecordfound_inline">NO_RECORD_FOUND</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_norecordfound_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NO_RECORD_FOUND</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError NO_RECORD_FOUND = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"No record found."</span>)</span><br></pre></td></tr></table></figure>
@@ -1545,7 +1555,7 @@
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">No record found.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_notloggedin"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_notloggedin_inline">NOT_LOGGED_IN</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_notloggedin_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_notloggedin"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_notloggedin_inline">NOT_LOGGED_IN</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_notloggedin_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>NOT_LOGGED_IN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError NOT_LOGGED_IN = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"You are not logged in."</span>)</span><br></pre></td></tr></table></figure>
@@ -1553,7 +1563,7 @@
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">No user is logged in.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_aircraftserialnumbernotavailable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_aircraftserialnumbernotavailable_inline">AIRCRAFT_SERIAL_NUMBER_IS_NOT_AVAILABLE</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_aircraftserialnumbernotavailable_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_aircraftserialnumbernotavailable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_aircraftserialnumbernotavailable_inline">AIRCRAFT_SERIAL_NUMBER_IS_NOT_AVAILABLE</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_aircraftserialnumbernotavailable_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_SERIAL_NUMBER_IS_NOT_AVAILABLE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError AIRCRAFT_SERIAL_NUMBER_IS_NOT_AVAILABLE = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"Could not get serial number."</span>)</span><br></pre></td></tr></table></figure>
@@ -1561,7 +1571,7 @@
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">Aircraft's serial number is not available.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_bounddevicelimitationreached"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_bounddevicelimitationreached_inline">BOUND_DEVICE_LIMITATION_REACHED</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_bounddevicelimitationreached_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_bounddevicelimitationreached"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_bounddevicelimitationreached_inline">BOUND_DEVICE_LIMITATION_REACHED</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_bounddevicelimitationreached_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>BOUND_DEVICE_LIMITATION_REACHED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError</span><br><span class="line">       BOUND_DEVICE_LIMITATION_REACHED = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"Bound device number has reached the limit of your service package."</span>)</span><br></pre></td></tr></table></figure>
@@ -1569,7 +1579,7 @@
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Bound device number has reached the limit of your service package.</font></p>
 </div>
-<div class="api-row" id="djierror_djisdkflighthuberror_aircraftalreadyboundinteamchoseninotherteam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_aircraftalreadyboundinteamchoseninotherteam_inline">AIRCRAFT_ALREADY_BOUND_IN_OTHER_TEAM</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_aircraftalreadyboundinteamchoseninotherteam_inline" <blockquote>
+<div class="api-row" id="djierror_djisdkflighthuberror_aircraftalreadyboundinteamchoseninotherteam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkflighthuberror_aircraftalreadyboundinteamchoseninotherteam_inline">AIRCRAFT_ALREADY_BOUND_IN_OTHER_TEAM</a></div></div><div class="inline-doc" id="djierror_djisdkflighthuberror_aircraftalreadyboundinteamchoseninotherteam_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>AIRCRAFT_ALREADY_BOUND_IN_OTHER_TEAM</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIFlightHubError</span><br><span class="line">       AIRCRAFT_ALREADY_BOUND_IN_OTHER_TEAM = <span class="keyword">new</span> DJIFlightHubError(<span class="string">"The aircraft has already been bound in the other team. Please unbind it first."</span>)</span><br></pre></td></tr></table></figure>

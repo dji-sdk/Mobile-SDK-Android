@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1449,7 +1459,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Builder <span class="title">rearLEDsOn</span><span class="params">(<span class="keyword">boolean</span> rearLEDsOn)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666"><code>true</code> to turn on the LEDs on the rear arms. It is supported by Inspire 2 and  Matrice 200 series. The other products will always return <code>false</code>.</font></p>
+<p><font color="#666"><code>true</code> to turn on the LEDs on the rear arms. It is supported by Inspire 2 and Matrice 200 series. The other products will always return <code>false</code>.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">rearLEDsOn</font></font></td><td><font color="#666"><i><code>true</code> to turn on the LEDs on the rear arms.</i></font></td></tr></table></html>
 <h5 id="return-v2">Return:</h5>
@@ -1460,7 +1470,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Builder <span class="title">statusIndicatorOn</span><span class="params">(<span class="keyword">boolean</span> statusIndicatorOn)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666"><code>true</code> to turn on the LEDs on the rear arms. It is supported by Inspire 2, Matrice  200 series and Mavic 2 series. The other products will always return <code>false</code>.</font></p>
+<p><font color="#666"><code>true</code> to turn on the LEDs on the rear arms. It is supported by Inspire 2, Matrice 200 series and Mavic 2 series. The other products will always return <code>false</code>.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">statusIndicatorOn</font></font></td><td><font color="#666"><i><code>true</code> to turn on the LEDs on the rear arms.</i></font></td></tr></table></html>
 <h5 id="return-v3">Return:</h5>
@@ -1471,7 +1481,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Builder <span class="title">beaconsOn</span><span class="params">(<span class="keyword">boolean</span> beaconsOn)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666"><code>true</code> to turn on the beacons on the top and bottom of aircraft. It is supported by Matrice 300 RTK.  The other products will ignore this property.</font></p>
+<p><font color="#666"><code>true</code> to turn on the beacons on the top and bottom of aircraft. It is supported by Matrice 300 RTK. The other products will ignore this property.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">beaconsOn</font></font></td><td><font color="#666"><i><code>true</code> to turn on the beacons.</i></font></td></tr></table></html>
 <h5 id="return-v4">Return:</h5>

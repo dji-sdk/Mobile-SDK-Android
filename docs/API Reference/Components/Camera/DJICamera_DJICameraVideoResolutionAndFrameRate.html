@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1465,7 +1475,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ResolutionAndFrameRate(<span class="meta">@NonNull</span> VideoResolution resolution,</span><br><span class="line">                                 <span class="meta">@NonNull</span> VideoFrameRate frameRate)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Creates a <code>DJICameraVideoResolutionAndFrameRate</code> instance  with a preset camera video resolution and frame rate. The value  of <code><a href="../../Components/Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html#djicamera_djicameravideoresolutionandframerate_fov">getFov</a></code> is <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideofov_default">DEFAULT</a></code>.</font></p>
+<p><font color="#666">Creates a <code>DJICameraVideoResolutionAndFrameRate</code> instance with a preset camera video resolution and frame rate. The value of <code><a href="../../Components/Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html#djicamera_djicameravideoresolutionandframerate_fov">getFov</a></code> is <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideofov_default">DEFAULT</a></code>.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoresolution">VideoResolution</a> <font color="#000">resolution</font></font></td><td><font color="#666"><i>The specific resolution.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoframerate">VideoFrameRate</a> <font color="#000">frameRate</font></font></td><td><font color="#666"><i>The specific frame rate.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameravideoresolutionandframerate_initwithresolutionwithframeratefov"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameravideoresolutionandframerate_initwithresolutionwithframeratefov_inline">ResolutionAndFrameRate</a></div></div><div class="inline-doc" id="djicamera_djicameravideoresolutionandframerate_initwithresolutionwithframeratefov_inline" <blockquote>
@@ -1474,7 +1484,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ResolutionAndFrameRate(<span class="meta">@NonNull</span> VideoResolution resolution,</span><br><span class="line">                                 <span class="meta">@NonNull</span> VideoFrameRate frameRate,</span><br><span class="line">                                 <span class="meta">@NonNull</span> SettingsDefinitions.VideoFov fov)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">Creates a <code><a href="../../Components/Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html#djicamera_djicameravideoresolutionandframerate">ResolutionAndFrameRate</a></code> instance with a preset camera video  resolution, frame rate and FOV. FOV is only configurable for Mavic 2 Pro and it is only  configurable when the resolution is <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoresolution_3840x2160">RESOLUTION_3840x2160</a></code> (4K).  Use <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideofov_default">DEFAULT</a></code> when FOV is not configurable.</font></p>
+<p><font color="#666">Creates a <code><a href="../../Components/Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html#djicamera_djicameravideoresolutionandframerate">ResolutionAndFrameRate</a></code> instance with a preset camera video resolution, frame rate and FOV. FOV is only configurable for Mavic 2 Pro and it is only configurable when the resolution is <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoresolution_3840x2160">RESOLUTION_3840x2160</a></code> (4K). Use <code><a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideofov_default">DEFAULT</a></code> when FOV is not configurable.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoresolution">VideoResolution</a> <font color="#000">resolution</font></font></td><td><font color="#666"><i>The specific resolution.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideoframerate">VideoFrameRate</a> <font color="#000">frameRate</font></font></td><td><font color="#666"><i>The specific frame rate.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicamerasettingsdef">SettingsDefinitions</a>.<a href="../../Components/Camera/DJICamera_DJICameraSettingsDef.html#djicamera_djicameravideofov">VideoFov</a> <font color="#000">fov</font></font></td><td><font color="#666"><i>The specific FOV.</i></font></td></tr></table></html></div>
 

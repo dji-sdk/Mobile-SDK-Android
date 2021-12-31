@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1501,7 +1511,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFrequencyBand</span><span class="params">(WiFiFrequencyBand frequencyBand, <span class="keyword">final</span> CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_wifi_frequency_band_key">AirLinkKey.WIFI_FREQUENCY_BAND</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">It is not supported by Spark or Mavic Air. For these products, set different channel  numbers to select the frequency band. It is not supported by Mavic Mini.</font></p>
+<p><font color="#666">It is not supported by Spark, Mavic Air and DJI Mini 2. For these products, set different channel  numbers to select the frequency band.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwififrequencyband">WiFiFrequencyBand</a> <font color="#000">frequencyBand</font></font></td><td><font color="#666"><i>WiFi frequency band to change to.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">final CompletionCallback <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the value(s) returned.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_getwififrequencyband"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_getwififrequencyband_inline">getFrequencyBand</a></div></div><div class="inline-doc" id="djiwifilink_getwififrequencyband_inline" <blockquote>
@@ -1537,7 +1547,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setChannelNumber</span><span class="params">(<span class="keyword">int</span> channelNumber, <span class="keyword">final</span> CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_channel_number_key">AirLinkKey.CHANNEL_NUMBER</a></font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">Sets the WiFi channel. <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_setwifichannel">setChannelNumber</a></code>  must be used to determine which channels are possible to set. When a new channel is set,  the WiFi on the product will reboot. The channel can only be changed when the product is not flying. Supported by Mavic Pro &amp; Mavic Mini.</font></p>
+<p><font color="#666">Sets the WiFi channel. <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_setwifichannel">setChannelNumber</a></code>  must be used to determine which channels are possible to set. When a new channel is set,  the WiFi on the product will reboot. The channel can only be changed when the product is not flying. Supported by Mavic Pro, Mavic Mini, DJI Mini SE.</font></p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">channelNumber</font></font></td><td><font color="#666"><i>Index of the channel to select.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">final CompletionCallback <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_getwifichannel"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_getwifichannel_inline">getChannelNumber</a></div></div><div class="inline-doc" id="djiwifilink_getwifichannel_inline" <blockquote>
@@ -1555,7 +1565,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getAvailableChannelNumbers</span><span class="params">(<span class="keyword">final</span> CompletionCallbackWith&lt;Integer[]&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.airlink</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#airlinkkey_available_channel_numbers_key">AirLinkKey.AVAILABLE_CHANNEL_NUMBERS</a></font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">Gets the channels available for the current frequency band. When <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwififrequencyband_dualband">FREQUENCY_BAND_DUAL</a></code> is  selected, channels for both 2.4GHz and 5GHz are available. Supported only by Mavic Pro &amp; Mavic Mini.</font></p>
+<p><font color="#666">Gets the channels available for the current frequency band. When <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwififrequencyband_dualband">FREQUENCY_BAND_DUAL</a></code> is  selected, channels for both 2.4GHz and 5GHz are available. Supported only by Mavic Pro, Mavic Mini, DJI Mini SE.</font></p>
 <h5 id="input-parameters-v14">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final CompletionCallbackWith&lt;Integer[]&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The completion block with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_setdatarate"><div class="api-col left">WiFi Data Rate</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_setdatarate_inline">setDataRate</a></div></div><div class="inline-doc" id="djiwifilink_setdatarate_inline" <blockquote>

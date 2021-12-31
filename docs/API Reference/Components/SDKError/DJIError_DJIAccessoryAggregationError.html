@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1433,7 +1443,7 @@
 <p><font color="#666">Errors related to accessories on the aircraft (e.g. spotlights, speakers).</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="members">Members</h4>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_notconnected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_notconnected_inline">ACCESSORY_NOT_CONNECTED_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_notconnected_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_notconnected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_notconnected_inline">ACCESSORY_NOT_CONNECTED_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_notconnected_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ACCESSORY_NOT_CONNECTED_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError</span><br><span class="line">       ACCESSORY_NOT_CONNECTED_ERROR = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"The accessory is not connected."</span>)</span><br></pre></td></tr></table></figure>
@@ -1441,7 +1451,7 @@
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The accessory is not connected. Also update the implementation.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_filenamelengthinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_filenamelengthinvalid_inline">FILE_NAME_LENGTH_INVALID</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_filenamelengthinvalid_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_filenamelengthinvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_filenamelengthinvalid_inline">FILE_NAME_LENGTH_INVALID</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_filenamelengthinvalid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FILE_NAME_LENGTH_INVALID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError FILE_NAME_LENGTH_INVALID = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"The file name exceeds the maximum length (20 characters)."</span>)</span><br></pre></td></tr></table></figure>
@@ -1449,7 +1459,7 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The file name exceeds the maximum length (20 characters).</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_filenameduplicated"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_filenameduplicated_inline">DUPLICATION_OF_FILE_NAME</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_filenameduplicated_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_filenameduplicated"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_filenameduplicated_inline">DUPLICATION_OF_FILE_NAME</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_filenameduplicated_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>DUPLICATION_OF_FILE_NAME</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError</span><br><span class="line">       DUPLICATION_OF_FILE_NAME = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"The file name is already taken in the aircraft. Choose a different file name."</span>)</span><br></pre></td></tr></table></figure>
@@ -1457,7 +1467,7 @@
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The file name is already taken in the aircraft. Choose a different file name.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_filenameempty"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_filenameempty_inline">FILE_NAME_EMPTY_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_filenameempty_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_filenameempty"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_filenameempty_inline">FILE_NAME_EMPTY_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_filenameempty_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FILE_NAME_EMPTY_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError</span><br><span class="line">       FILE_NAME_EMPTY_ERROR = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"A file name cannot be empty."</span>)</span><br></pre></td></tr></table></figure>
@@ -1465,7 +1475,7 @@
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">A file name cannot be empty.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_filenotexist"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_filenotexist_inline">FILE_NOT_EXIST_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_filenotexist_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_filenotexist"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_filenotexist_inline">FILE_NOT_EXIST_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_filenotexist_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FILE_NOT_EXIST_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError</span><br><span class="line">       FILE_NOT_EXIST_ERROR = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"The file does not exist."</span>)</span><br></pre></td></tr></table></figure>
@@ -1473,7 +1483,7 @@
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The file does not exist in the aircraft.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_filecreated"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_filecreated_inline">FILE_CREATED_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_filecreated_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_filecreated"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_filecreated_inline">FILE_CREATED_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_filecreated_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FILE_CREATED_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError</span><br><span class="line">       FILE_CREATED_ERROR = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"An error occurs when creating the file."</span>)</span><br></pre></td></tr></table></figure>
@@ -1481,7 +1491,7 @@
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">An error occurs when creating the file.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_fileindexunavailable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_fileindexunavailable_inline">FILE_INDEX_UNAVAIABLE_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_fileindexunavailable_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_fileindexunavailable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_fileindexunavailable_inline">FILE_INDEX_UNAVAIABLE_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_fileindexunavailable_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>FILE_INDEX_UNAVAIABLE_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError</span><br><span class="line">       FILE_INDEX_UNAVAIABLE_ERROR = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"There is no more file index available for the file."</span>)</span><br></pre></td></tr></table></figure>
@@ -1489,7 +1499,7 @@
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">There is no more file index available for the file.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_renamefile"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_renamefile_inline">RENAME_FILE_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_renamefile_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_renamefile"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_renamefile_inline">RENAME_FILE_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_renamefile_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>RENAME_FILE_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError</span><br><span class="line">       RENAME_FILE_ERROR = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"Error occurs when renaming the file."</span>)</span><br></pre></td></tr></table></figure>
@@ -1497,7 +1507,7 @@
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Error occurs when renaming the file.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_datatransmissiondisconnection"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_datatransmissiondisconnection_inline">DATA_TRANSMISSION_DISCONNECTION_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_datatransmissiondisconnection_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_datatransmissiondisconnection"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_datatransmissiondisconnection_inline">DATA_TRANSMISSION_DISCONNECTION_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_datatransmissiondisconnection_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>DATA_TRANSMISSION_DISCONNECTION_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError DATA_TRANSMISSION_DISCONNECTION_ERROR = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"The connection of the speaker is broken and data transmission cannot start."</span>)</span><br></pre></td></tr></table></figure>
@@ -1505,7 +1515,7 @@
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The connection of the speaker is broken and data transmission cannot start.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_wrongdatatransmissionstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_wrongdatatransmissionstate_inline">WRONG_DATA_TRANSIMISSION_STATE</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_wrongdatatransmissionstate_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_wrongdatatransmissionstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_wrongdatatransmissionstate_inline">WRONG_DATA_TRANSIMISSION_STATE</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_wrongdatatransmissionstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>WRONG_DATA_TRANSIMISSION_STATE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError WRONG_DATA_TRANSIMISSION_STATE = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"The data transimission operation cannot be executed in the current state."</span>)</span><br></pre></td></tr></table></figure>
@@ -1513,7 +1523,7 @@
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">The data transimission operation cannot be executed in the current state.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_datacorruption"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_datacorruption_inline">DATA_CORRUPTION_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_datacorruption_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_datacorruption"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_datacorruption_inline">DATA_CORRUPTION_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_datacorruption_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>DATA_CORRUPTION_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError DATA_CORRUPTION_ERROR = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"Data validation failed. Data is corrupted during the transmission."</span>)</span><br></pre></td></tr></table></figure>
@@ -1521,7 +1531,7 @@
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Data validation failed. Data is corrupted during the transmission.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_cancelledbyuser"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_cancelledbyuser_inline">CANCELED_BY_USER</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_cancelledbyuser_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_cancelledbyuser"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_cancelledbyuser_inline">CANCELED_BY_USER</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_cancelledbyuser_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>CANCELED_BY_USER</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError</span><br><span class="line">       CANCELED_BY_USER = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"The ongoing data transmission is cancelled."</span>)</span><br></pre></td></tr></table></figure>
@@ -1529,7 +1539,7 @@
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">The ongoing data transmission is cancelled.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_interruptedbytimeout"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_interruptedbytimeout_inline">INTERRUPTED_BY_TIMEOUT_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_interruptedbytimeout_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_interruptedbytimeout"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_interruptedbytimeout_inline">INTERRUPTED_BY_TIMEOUT_ERROR</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_interruptedbytimeout_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>INTERRUPTED_BY_TIMEOUT_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError INTERRUPTED_BY_TIMEOUT_ERROR = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"The ongoing data transmission is interrupted by timeout error."</span>)</span><br></pre></td></tr></table></figure>
@@ -1537,7 +1547,7 @@
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">The ongoing data transmission is interrupted by timeout error.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_storagefull"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_storagefull_inline">STORAGE_FULL</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_storagefull_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_storagefull"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_storagefull_inline">STORAGE_FULL</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_storagefull_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>STORAGE_FULL</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError</span><br><span class="line">       STORAGE_FULL = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"The storage is full."</span>)</span><br></pre></td></tr></table></figure>
@@ -1545,7 +1555,7 @@
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">The storage is full.</font></p>
 </div>
-<div class="api-row" id="djierror_djiaccessoryaggregationerror_rejectedbyfirmware"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_rejectedbyfirmware_inline">REJECTED_BY_FIRMWARE</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_rejectedbyfirmware_inline" <blockquote>
+<div class="api-row" id="djierror_djiaccessoryaggregationerror_rejectedbyfirmware"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djiaccessoryaggregationerror_rejectedbyfirmware_inline">REJECTED_BY_FIRMWARE</a></div></div><div class="inline-doc" id="djierror_djiaccessoryaggregationerror_rejectedbyfirmware_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>REJECTED_BY_FIRMWARE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIAccessoryAggregationError</span><br><span class="line">       REJECTED_BY_FIRMWARE = <span class="keyword">new</span> DJIAccessoryAggregationError(<span class="string">"The operation is rejected by the firmware because state error."</span>)</span><br></pre></td></tr></table></figure>

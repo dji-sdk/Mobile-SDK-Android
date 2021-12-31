@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1456,7 +1466,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] getDistances()</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller.flightassistant</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Each value represents the distance in millimeters away from the obstacles detected around in 360 degrees horizontally at an interval  of angle. Please refer to <code><a href="../../Components/IntelligentFlightAssistant/DJIFlightAssistantPerceptionState.html#djiflightassistantperceptionstate_packcount">getDataPackageIndex</a></code> to get the interval of angle. 0 degree points to the aircraft's  heading. 90 degrees point to the right of the aircraft. 180 degrees point to the aircraft's tail.</font></p>
+<p><font color="#666">Each value represents the distance in millimeters away from the obstacles detected around in 360 degrees horizontally at an interval of angle. Please refer to <code><a href="../../Components/IntelligentFlightAssistant/DJIFlightAssistantPerceptionState.html#djiflightassistantperceptionstate_packcount">getDataPackageIndex</a></code> to get the interval of angle. 0 degree points to the aircraft's heading. 90 degrees point to the right of the aircraft. 180 degrees point to the aircraft's tail.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int[]</font></td><td><font color="#666"><i>An array of int values.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightassistantperceptionstate_upwardobstacledistance"><div class="api-col left">Upward Obstacle Distance</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightassistantperceptionstate_upwardobstacledistance_inline">getUpwardObstacleDistance</a></div></div><div class="inline-doc" id="djiflightassistantperceptionstate_upwardobstacledistance_inline" <blockquote>

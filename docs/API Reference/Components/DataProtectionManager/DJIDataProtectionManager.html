@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1430,7 +1440,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataProtectionManager</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.dataprotection</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">Data Protection Manager. DJI SDK will send data to DJI servers in the background in order to complete  logics, including data related to user's information. Data Protection Manager can be used to authorize  DJI server to access the user-related data. SDK will NOT send the data to DJI server in the background  before the authorization. Internet requests triggered by the user manually are not managed by <code><a href="../../Components/DataProtectionManager/DJIDataProtectionManager.html#djidataprotectionmanager">DataProtectionManager</a></code>.  Involved user-related data is listed in the documentation of the interfaces. The authorization is not persistent and each  authorization setting will be reset to the default value for each APP's life cycle. This class is accessible before  calling <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerApp</a></code>. The UTMISSManager class needs to report flight dynamic data to the UTMISS server in  accordance with the policy requirements of the Civil Aviation Administration of China. It is not in this category of management.  For details, please refer to the UTMISSManager interface document.</font></p>
+<p><font color="#666">Data Protection Manager. DJI SDK will send data to DJI servers in the background in order to complete logics, including data related to user's information. Data Protection Manager can be used to authorize DJI server to access the user-related data. SDK will NOT send the data to DJI server in the background before the authorization. Internet requests triggered by the user manually are not managed by <code><a href="../../Components/DataProtectionManager/DJIDataProtectionManager.html#djidataprotectionmanager">DataProtectionManager</a></code>. Involved user-related data is listed in the documentation of the interfaces. The authorization is not persistent and each authorization setting will be reset to the default value for each APP's life cycle. This class is accessible before calling <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerApp</a></code>. The UTMISSManager class needs to report flight dynamic data to the UTMISS server in accordance with the policy requirements of the Civil Aviation Administration of China. It is not in this category of management. For details, please refer to the UTMISSManager interface document.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <div class="api-row" id="djidataprotectionmanager_authorizeaccesstodjidevicehardwareinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djidataprotectionmanager_authorizeaccesstodjidevicehardwareinfo_inline">authorizeAccessToDJIDeviceHardwareInfo</a></div></div><div class="inline-doc" id="djidataprotectionmanager_authorizeaccesstodjidevicehardwareinfo_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>authorizeAccessToDJIDeviceHardwareInfo</h6></div>

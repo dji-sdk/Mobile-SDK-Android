@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1433,7 +1443,7 @@
 <p><font color="#666">Errors related to RTK network services.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="members">Members</h4>
-<div class="api-row" id="djierror_djirtknetworkserviceerror_authenticationfailure"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_authenticationfailure_inline">AUTHENTICATION_FAILURE</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_authenticationfailure_inline" <blockquote>
+<div class="api-row" id="djierror_djirtknetworkserviceerror_authenticationfailure"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_authenticationfailure_inline">AUTHENTICATION_FAILURE</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_authenticationfailure_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>AUTHENTICATION_FAILURE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRTKNetworkServiceError AUTHENTICATION_FAILURE =</span><br><span class="line">       <span class="keyword">new</span> DJIRTKNetworkServiceError(<span class="string">"The authentication failed when trying to access to the server."</span>)</span><br></pre></td></tr></table></figure>
@@ -1441,7 +1451,7 @@
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The authentication failed when trying to access to the server.</font></p>
 </div>
-<div class="api-row" id="djierror_djirtknetworkserviceerror_invalidsettings"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_invalidsettings_inline">INVALID_SETTINGS</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_invalidsettings_inline" <blockquote>
+<div class="api-row" id="djierror_djirtknetworkserviceerror_invalidsettings"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_invalidsettings_inline">INVALID_SETTINGS</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_invalidsettings_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>INVALID_SETTINGS</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRTKNetworkServiceError INVALID_SETTINGS =</span><br><span class="line">       <span class="keyword">new</span> DJIRTKNetworkServiceError(<span class="string">"The network service settings are invalid."</span>)</span><br></pre></td></tr></table></figure>
@@ -1449,7 +1459,7 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Network settings are not configured yet or invalid.</font></p>
 </div>
-<div class="api-row" id="djierror_djirtknetworkserviceerror_alreadystarted"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_alreadystarted_inline">ALREADY_STARTED</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_alreadystarted_inline" <blockquote>
+<div class="api-row" id="djierror_djirtknetworkserviceerror_alreadystarted"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_alreadystarted_inline">ALREADY_STARTED</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_alreadystarted_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ALREADY_STARTED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRTKNetworkServiceError ALREADY_STARTED =</span><br><span class="line">       <span class="keyword">new</span> DJIRTKNetworkServiceError(<span class="string">"The service is already started. Stop it first to re-start the service."</span>)</span><br></pre></td></tr></table></figure>
@@ -1457,15 +1467,15 @@
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The service is already started. Stop it first to re-start the service.</font></p>
 </div>
-<div class="api-row" id="djierror_djirtknetworkserviceerror_invalidgpsdata"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_invalidgpsdata_inline">INVALID_GPS_DATA</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_invalidgpsdata_inline" <blockquote>
+<div class="api-row" id="djierror_djirtknetworkserviceerror_invalidgpsdata"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_invalidgpsdata_inline">INVALID_GPS_DATA</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_invalidgpsdata_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>INVALID_GPS_DATA</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRTKNetworkServiceError INVALID_GPS_DATA = <span class="keyword">new</span> DJIRTKNetworkServiceError(</span><br><span class="line">       <span class="string">"The GPS location of the aircraft is invalid. The RTK network service requires the location of the air system."</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">The GPS location of the aircraft is invalid. The RTK network service requires  the location of the air system.</font></p>
+<p><font color="#666">The GPS location of the aircraft is invalid. The RTK network service requires the location of the air system.</font></p>
 </div>
-<div class="api-row" id="djierror_djirtknetworkserviceerror_incorrectreferencestationsource"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_incorrectreferencestationsource_inline">INCORRECT_REFERENCE_STATION_SOURCE</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_incorrectreferencestationsource_inline" <blockquote>
+<div class="api-row" id="djierror_djirtknetworkserviceerror_incorrectreferencestationsource"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_incorrectreferencestationsource_inline">INCORRECT_REFERENCE_STATION_SOURCE</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_incorrectreferencestationsource_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>INCORRECT_REFERENCE_STATION_SOURCE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRTKNetworkServiceError INCORRECT_REFERENCE_STATION_SOURCE = <span class="keyword">new</span> DJIRTKNetworkServiceError(</span><br><span class="line">       <span class="string">"Please choose correct reference station srouce."</span>)</span><br></pre></td></tr></table></figure>
@@ -1473,7 +1483,7 @@
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Please choose correct reference station srouce.</font></p>
 </div>
-<div class="api-row" id="djierror_djirtknetworkserviceerror_accountnotloginorexpired"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_accountnotloginorexpired_inline">ACCOUNT_NOT_LOGGED_IN_OR_EXPIRED</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_accountnotloginorexpired_inline" <blockquote>
+<div class="api-row" id="djierror_djirtknetworkserviceerror_accountnotloginorexpired"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_accountnotloginorexpired_inline">ACCOUNT_NOT_LOGGED_IN_OR_EXPIRED</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_accountnotloginorexpired_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ACCOUNT_NOT_LOGGED_IN_OR_EXPIRED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRTKNetworkServiceError</span><br><span class="line">       ACCOUNT_NOT_LOGGED_IN_OR_EXPIRED = <span class="keyword">new</span> DJIRTKNetworkServiceError(<span class="string">"No logged in account or the login session has expired, please login DJI Account and try again."</span>)</span><br></pre></td></tr></table></figure>
@@ -1481,23 +1491,23 @@
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">No logged in account or the login session has expired, please login DJI Account and try again.</font></p>
 </div>
-<div class="api-row" id="djierror_djirtknetworkserviceerror_accountunactivated"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_accountunactivated_inline">ACCOUNT_UNACTIVATED</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_accountunactivated_inline" <blockquote>
+<div class="api-row" id="djierror_djirtknetworkserviceerror_accountunactivated"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_accountunactivated_inline">ACCOUNT_UNACTIVATED</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_accountunactivated_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ACCOUNT_UNACTIVATED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRTKNetworkServiceError</span><br><span class="line">       ACCOUNT_UNACTIVATED = <span class="keyword">new</span> DJIRTKNetworkServiceError(<span class="string">"Account has not activated, please activate your account first."</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Account not activated, please contact DJI Support.  Use <code><a href="../../Components/RTK/DJIRTKNetworkServiceProvider.html#djirtknetworkserviceprovider_activatenetworkservice">activateNetworkService</a></code> to activate your account.</font></p>
+<p><font color="#666">Account not activated, please contact DJI Support. Use <code><a href="../../Components/RTK/DJIRTKNetworkServiceProvider.html#djirtknetworkserviceprovider_activatenetworkservice">activateNetworkService</a></code> to activate your account.</font></p>
 </div>
-<div class="api-row" id="djierror_djirtknetworkserviceerror_invalidrequest"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_invalidrequest_inline">INVALID_REQUEST</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_invalidrequest_inline" <blockquote>
+<div class="api-row" id="djierror_djirtknetworkserviceerror_invalidrequest"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_invalidrequest_inline">INVALID_REQUEST</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_invalidrequest_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>INVALID_REQUEST</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRTKNetworkServiceError INVALID_REQUEST =</span><br><span class="line">       <span class="keyword">new</span> DJIRTKNetworkServiceError(<span class="string">"Invalid request for the RTK service. Please check if the network RTK service is purchased or activated."</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">Invalid request for the RTK service. Please check if the network RTK service is purchased  or activated. After purchasing, within 3 minutes, you might also get this error.</font></p>
+<p><font color="#666">Invalid request for the RTK service. Please check if the network RTK service is purchased or activated. After purchasing, within 3 minutes, you might also get this error.</font></p>
 </div>
-<div class="api-row" id="djierror_djirtknetworkserviceerror_servernotreachable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_servernotreachable_inline">SERVER_NOT_REACHABLE</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_servernotreachable_inline" <blockquote>
+<div class="api-row" id="djierror_djirtknetworkserviceerror_servernotreachable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_servernotreachable_inline">SERVER_NOT_REACHABLE</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_servernotreachable_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>SERVER_NOT_REACHABLE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRTKNetworkServiceError SERVER_NOT_REACHABLE =</span><br><span class="line">       <span class="keyword">new</span> DJIRTKNetworkServiceError(<span class="string">"Unable to connect to server."</span>)</span><br></pre></td></tr></table></figure>
@@ -1505,7 +1515,7 @@
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Unable to connect to server.</font></p>
 </div>
-<div class="api-row" id="djierror_djirtknetworkserviceerror_accounterror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_accounterror_inline">ACCOUNT_ERROR</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_accounterror_inline" <blockquote>
+<div class="api-row" id="djierror_djirtknetworkserviceerror_accounterror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djirtknetworkserviceerror_accounterror_inline">ACCOUNT_ERROR</a></div></div><div class="inline-doc" id="djierror_djirtknetworkserviceerror_accounterror_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>ACCOUNT_ERROR</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIRTKNetworkServiceError ACCOUNT_ERROR =</span><br><span class="line">       <span class="keyword">new</span> DJIRTKNetworkServiceError(<span class="string">"Unknown account error，please contact DJI Support."</span>)</span><br></pre></td></tr></table></figure>

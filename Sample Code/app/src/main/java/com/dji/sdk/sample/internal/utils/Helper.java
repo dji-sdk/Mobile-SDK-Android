@@ -21,6 +21,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import dji.common.product.Model;
+import dji.midware.data.manager.P3.DJIProductManager;
+import dji.sdk.camera.Camera;
 import dji.sdk.sdkmanager.DJISDKManager;
 
 public class Helper {
@@ -191,6 +193,17 @@ public class Helper {
         }
         Model model = DJISDKManager.getInstance().getProduct().getModel();
         return model == Model.MATRICE_300_RTK;
+    }
+
+    public static boolean isH20Series() {
+        if (DJISDKManager.getInstance().getProduct() == null) {
+            return false;
+        }
+        if (DJISDKManager.getInstance().getProduct().getCamera() == null) {
+            return false;
+        }
+        String displayName = DJISDKManager.getInstance().getProduct().getCamera().getDisplayName();
+        return Camera.DisplayNameZenmuseH20.equals(displayName) || Camera.DisplayNameZenmuseH20T.equals(displayName);
     }
 
     private static List<HealthInformationView.HealthInfo> hmsJson;

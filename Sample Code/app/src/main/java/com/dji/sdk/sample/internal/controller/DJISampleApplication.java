@@ -3,11 +3,10 @@ package com.dji.sdk.sample.internal.controller;
 import android.app.Application;
 import android.content.Context;
 
-import androidx.multidex.MultiDex;
-
 import com.squareup.otto.Bus;
 import com.squareup.otto.ThreadEnforcer;
 
+import androidx.multidex.MultiDex;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.products.Aircraft;
 import dji.sdk.products.HandHeld;

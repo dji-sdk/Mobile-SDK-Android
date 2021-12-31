@@ -28,6 +28,7 @@ import com.dji.sdk.sample.demo.camera.PushCameraDataView;
 import com.dji.sdk.sample.demo.camera.RecordVideoView;
 import com.dji.sdk.sample.demo.camera.SetGetISOView;
 import com.dji.sdk.sample.demo.camera.ShootSinglePhotoView;
+import com.dji.sdk.sample.demo.camera.ShootSuperResolutionPhotoView;
 import com.dji.sdk.sample.demo.camera.VideoFeederView;
 import com.dji.sdk.sample.demo.camera.XT2CameraView;
 import com.dji.sdk.sample.demo.datalocker.AccessLockerView;
@@ -45,6 +46,8 @@ import com.dji.sdk.sample.demo.gimbal.PushGimbalDataView;
 import com.dji.sdk.sample.demo.key.KeyedInterfaceView;
 import com.dji.sdk.sample.demo.keymanager.KeyManagerView;
 import com.dji.sdk.sample.demo.lidar.LidarView;
+import com.dji.sdk.sample.demo.lookat.LookAtMissionView;
+import com.dji.sdk.sample.demo.missionoperator.FollowMeMissionOperatorView;
 import com.dji.sdk.sample.demo.missionoperator.WaypointMissionOperatorView;
 import com.dji.sdk.sample.demo.missionoperator.WaypointV2MissionOperatorView;
 import com.dji.sdk.sample.demo.mobileremotecontroller.MobileRemoteControllerView;
@@ -57,9 +60,8 @@ import com.dji.sdk.sample.internal.controller.ExpandableListAdapter;
 import com.dji.sdk.sample.internal.controller.MainActivity;
 import com.dji.sdk.sample.internal.model.GroupHeader;
 import com.dji.sdk.sample.internal.model.GroupItem;
+import com.dji.sdk.sample.internal.model.ListItem;
 import com.squareup.otto.Subscribe;
-
-import static com.dji.sdk.sample.internal.model.ListItem.ListBuilder;
 
 /**
  * This view is in charge of showing all the demos in a list.
@@ -88,7 +90,10 @@ public class DemoListView extends FrameLayout {
         View view = inflater.inflate(R.layout.demo_list_view, this);
 
         // Build model for ListView
-        ListBuilder builder = new ListBuilder();
+        ListItem.ListBuilder builder = new ListItem.ListBuilder();
+        builder.addGroup(R.string.component_listview_sdk_4_16,
+                false,
+                new GroupItem(R.string.look_at_mission, LookAtMissionView.class));
         builder.addGroup(R.string.component_listview_sdk_4_15,
                 false,
                 new GroupItem(R.string.component_listview_lidar_view, LidarView.class));
@@ -136,6 +141,8 @@ public class DemoListView extends FrameLayout {
                 false,
                 new GroupItem(R.string.component_listview_waypoint_mission_operator,
                         WaypointMissionOperatorView.class),
+                new GroupItem(R.string.component_listview_follwome_mission_operator,
+                        FollowMeMissionOperatorView.class),
                 new GroupItem(R.string.component_listview_keyed_interface, KeyedInterfaceView.class),
                 new GroupItem(R.string.component_listview_timeline_mission_control,
                         TimelineMissionControlView.class));
@@ -148,6 +155,7 @@ public class DemoListView extends FrameLayout {
                 new GroupItem(R.string.camera_listview_push_info, PushCameraDataView.class),
                 new GroupItem(R.string.camera_listview_iso, SetGetISOView.class),
                 new GroupItem(R.string.camera_listview_shoot_single_photo, ShootSinglePhotoView.class),
+                new GroupItem(R.string.camera_listview_shoot_super_resolutiob_photo, ShootSuperResolutionPhotoView.class),
                 new GroupItem(R.string.camera_listview_record_video, RecordVideoView.class),
                 new GroupItem(R.string.camera_listview_playback_push_info, PlaybackPushInfoView.class),
                 new GroupItem(R.string.camera_listview_playback_command, PlaybackCommandsView.class),

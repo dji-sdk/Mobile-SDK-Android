@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1433,7 +1443,7 @@
 <p><font color="#666">The error codes for the <code><a href="../../Components/Missions/DJIGoToAction.html#djigotoaction">GoToAction</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="members">Members</h4>
-<div class="api-row" id="djigotoaction_djigotoactionerror_invalidaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djigotoaction_djigotoactionerror_invalidaltitude_inline">INVALID_ALTITUDE</a></div></div><div class="inline-doc" id="djigotoaction_djigotoactionerror_invalidaltitude_inline" <blockquote>
+<div class="api-row" id="djigotoaction_djigotoactionerror_invalidaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djigotoaction_djigotoactionerror_invalidaltitude_inline">INVALID_ALTITUDE</a></div></div><div class="inline-doc" id="djigotoaction_djigotoactionerror_invalidaltitude_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>INVALID_ALTITUDE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> GoToActionError</span><br><span class="line">       INVALID_ALTITUDE = <span class="keyword">new</span> GoToActionError(<span class="string">"Altitude of the GoToAction Waypoint mission is not valid, its value should in the range [-200, 500]"</span>)</span><br></pre></td></tr></table></figure>
@@ -1441,7 +1451,7 @@
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Altitude of the <code><a href="../../Components/Missions/DJIGoToAction.html#djigotoaction">GoToAction</a></code> Waypoint mission is not valid, its value should  be in the range [-200, 500].</font></p>
 </div>
-<div class="api-row" id="djigotoaction_djigotoactionerror_invalidcoordinates"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djigotoaction_djigotoactionerror_invalidcoordinates_inline">INVALID_COORDINATE</a></div></div><div class="inline-doc" id="djigotoaction_djigotoactionerror_invalidcoordinates_inline" <blockquote>
+<div class="api-row" id="djigotoaction_djigotoactionerror_invalidcoordinates"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djigotoaction_djigotoactionerror_invalidcoordinates_inline">INVALID_COORDINATE</a></div></div><div class="inline-doc" id="djigotoaction_djigotoactionerror_invalidcoordinates_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>INVALID_COORDINATE</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> GoToActionError</span><br><span class="line">       INVALID_COORDINATE = <span class="keyword">new</span> GoToActionError(<span class="string">"GPS Coordinate of the GoToAction Waypoint is not valid. "</span></span><br><span class="line">                                                               + <span class="string">"Lattitude valud should in the range [-90f, 90f] and longitude value should in the range [-180f, 180f]"</span>)</span><br></pre></td></tr></table></figure>
@@ -1449,7 +1459,7 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">GPS Coordinates of the GoToAction Waypoint is not valid. Latitude value should be in  the range [-90f, 90f] and longitude value should be in the range [-180f, 180f].</font></p>
 </div>
-<div class="api-row" id="djigotoaction_djigotoactionerror_invalidflightspeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">final</div><div class="api-col right"><a class="trigger" href="#djigotoaction_djigotoactionerror_invalidflightspeed_inline">INVALID_FLIGHT_SPEED</a></div></div><div class="inline-doc" id="djigotoaction_djigotoactionerror_invalidflightspeed_inline" <blockquote>
+<div class="api-row" id="djigotoaction_djigotoactionerror_invalidflightspeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djigotoaction_djigotoactionerror_invalidflightspeed_inline">INVALID_FLIGHT_SPEED</a></div></div><div class="inline-doc" id="djigotoaction_djigotoactionerror_invalidflightspeed_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>INVALID_FLIGHT_SPEED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> GoToActionError</span><br><span class="line">       INVALID_FLIGHT_SPEED = <span class="keyword">new</span> GoToActionError(<span class="string">"Flight speed of the GoToAction Waypoint is not valid, its value should be in the range [2, 15]"</span>)</span><br></pre></td></tr></table></figure>

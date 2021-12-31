@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1496,7 +1506,7 @@
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">The mode of the gimbal rotation operation.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djigimbal_djigimbalrotation_djigimbalrotationmode_relativeangle_inline"></a>RELATIVE_ANGLE</font></td><td><font color="#666">The angle value, when the gimbal is rotating, relative to the current angle.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigimbal_djigimbalrotation_djigimbalrotationmode_absoluteangle_inline"></a>ABSOLUTE_ANGLE</font></td><td><font color="#666">The angle value, when the gimbal is rotating, relative to 0 degrees (aircraft heading).  <br>For Inspire 1, using X3, X3 Zoom and Z3 cameras will be relative to true north. Using X5, XT and X5R will be  relative to the aircraft heading. <br> For Inspire 2, using X4S and X5S cameras will be relative to true north.  Using X7 and Z30 will be relative to the aircraft heading. <br> For Matrice 300 RTK with H20 series and Zenmuse P1 camera, the angle rotation is relative to the aircraft heading if you rotate the gimbal directly.  The angle rotation is relative to true North if you use it in <code>WaypointV2MissionAction</code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigimbal_djigimbalrotation_djigimbalrotationmode_speed_inline"></a>SPEED</font></td><td><font color="#666">Rotate the gimbal's pitch, roll, and yaw in SPEED Mode. The direction can either be set to clockwise or counter-clockwise. <br> For Phantom 3 Professional, Phantom 3 Advanced and Phantom 3 Standard, roll and yaw rotations are not available. <br> For Inspire 1, Inspire Pro and M100, pitch, roll and yaw rotations are available. <br> For Osmo, roll rotation is not available. The yaw angleVelocity of DJIGimbalSpeedRotation range is (-120, 120). <br></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djigimbal_djigimbalrotation_djigimbalrotationmode_relativeangle_inline"></a>RELATIVE_ANGLE</font></td><td><font color="#666">The angle value, when the gimbal is rotating, relative to the current angle.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigimbal_djigimbalrotation_djigimbalrotationmode_absoluteangle_inline"></a>ABSOLUTE_ANGLE</font></td><td><font color="#666">The angle value, when the gimbal is rotating, relative to 0 degrees (aircraft heading). <br>For Inspire 1, using X3, X3 Zoom and Z3 cameras will be relative to true north. Using X5, XT and X5R will be relative to the aircraft heading. <br> For Inspire 2, using X4S and X5S cameras will be relative to true north. Using X7 and Z30 will be relative to the aircraft heading. <br> For Matrice 300 RTK with H20 series and Zenmuse P1 camera, the angle rotation is relative to the aircraft heading if you rotate the gimbal directly. The angle rotation is relative to true North if you use it in <code>WaypointV2MissionAction</code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigimbal_djigimbalrotation_djigimbalrotationmode_speed_inline"></a>SPEED</font></td><td><font color="#666">Rotate the gimbal's pitch, roll, and yaw in SPEED Mode. The direction can either be set to clockwise or counter-clockwise. <br> For Phantom 3 Professional, Phantom 3 Advanced and Phantom 3 Standard, roll and yaw rotations are not available. <br> For Inspire 1, Inspire Pro and M100, pitch, roll and yaw rotations are available. <br> For Osmo, roll rotation is not available. The yaw angleVelocity of DJIGimbalSpeedRotation range is (-120, 120). <br></font></td></tr></table></html>
 <h5 id="class-members-v2">Class Members:</h5>
 </div>
 

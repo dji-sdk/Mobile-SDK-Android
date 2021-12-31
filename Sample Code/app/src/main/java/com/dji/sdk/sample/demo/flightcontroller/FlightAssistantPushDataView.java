@@ -10,8 +10,15 @@ import com.dji.sdk.sample.internal.controller.DJISampleApplication;
 import com.dji.sdk.sample.internal.utils.ModuleVerificationUtil;
 import com.dji.sdk.sample.internal.view.BaseThreeBtnView;
 
+import org.jetbrains.annotations.NotNull;
+
+import dji.common.error.DJIError;
 import dji.common.flightcontroller.ObstacleDetectionSector;
 import dji.common.flightcontroller.VisionDetectionState;
+import dji.common.logics.warningstatuslogic.WarningStatusItem;
+import dji.keysdk.DiagnosticsKey;
+import dji.keysdk.KeyManager;
+import dji.keysdk.callback.GetCallback;
 import dji.sdk.flightcontroller.FlightAssistant;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.products.Aircraft;
@@ -37,13 +44,13 @@ public class FlightAssistantPushDataView extends BaseThreeBtnView {
 
             FlightAssistant intelligentFlightAssistant = flightController.getFlightAssistant();
 
+            StringBuilder stringBuilder = new StringBuilder();
+
             if (intelligentFlightAssistant != null) {
 
                 intelligentFlightAssistant.setVisionDetectionStateUpdatedCallback(new VisionDetectionState.Callback() {
                     @Override
                     public void onUpdate(@NonNull VisionDetectionState visionDetectionState) {
-                        StringBuilder stringBuilder = new StringBuilder();
-
                         ObstacleDetectionSector[] visionDetectionSectorArray =
                             visionDetectionState.getDetectionSectors();
 
@@ -66,11 +73,30 @@ public class FlightAssistantPushDataView extends BaseThreeBtnView {
                         stringBuilder.append("Sensor state: ")
                                     .append(visionDetectionState.isSensorBeingUsed())
                                     .append("\n");
-
-                        changeDescription(stringBuilder.toString());
                     }
                 });
             }
+
+            // Listen System status
+            KeyManager.getInstance().getValue(DiagnosticsKey.create(DiagnosticsKey.SYSTEM_STATUS), new GetCallback() {
+                @Override
+                public void onSuccess(@NonNull @NotNull Object o) {
+                    WarningStatusItem warningStatusItem = (WarningStatusItem) o;
+                    stringBuilder.append("warning level: ")
+                            .append(warningStatusItem.getWarningLevel())
+                            .append("\n");
+                    stringBuilder.append("warning message: ")
+                            .append(warningStatusItem.getMessage())
+                            .append("\n");
+                }
+
+                @Override
+                public void onFailure(@NonNull @NotNull DJIError djiError) {
+
+                }
+            });
+
+            changeDescription(stringBuilder.toString());
         } else {
             Log.i(DJISampleApplication.TAG, "onAttachedToWindow FC NOT Available");
         }

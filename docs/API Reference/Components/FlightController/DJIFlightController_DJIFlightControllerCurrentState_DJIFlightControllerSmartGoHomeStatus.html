@@ -422,17 +422,17 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">Battery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">AggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_Aggregation_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">BatteryOverview</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../Battery/DJIBattery_BatteryState.html" class="sub-toggle">BatteryState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Battery/DJIBattery_StateUpdateCallbackInterface.html">Callback</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -442,6 +442,16 @@
                   </dd>
                   <dd><a data-href="../Camera/DJICamera.html" class="sub-toggle">Camera<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Camera/DJICamera_SuperResolutionInfo.html" class="sub-toggle">SuperResolutionInfo<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Camera/DJICamera_SuperResolutionInfo_Callback.html">Callback</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPoint.html">PinPoint</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_PinPointInfo.html">PinPointInfo</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_CalibrationCallback.html">CalibrationCallback</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_CameraGeneratedTimeLapsePreviewCallbackInterface.html">TimeLapsePreviewCallback</a>
@@ -1483,7 +1493,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getMaxRadiusAircraftCanFlyAndGoHome</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_max_radius_aircraft_can_fly_and_go_home_key">FlightControllerKey.MAX_RADIUS_AIRCRAFT_CAN_FLY_AND_GO_HOME</a></font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">The maximum radius, in meters, an aircraft can fly from its home location and still make it all the way back home, based on altitude, distance, battery, etc. If the  aircraft goes out farther than the max radius, it will fly as far back home as it can and land. If the aircraft is using the simulator, this value will be 0.</font></p>
+<p><font color="#666">The maximum radius, in meters, an aircraft can fly from its home location and still make it all the way back home, based on altitude, distance, battery, etc. If the aircraft goes out farther than the max radius, it will fly as far back home as it can and land. If the aircraft is using the simulator, this value will be 0.</font></p>
 <h5 id="return-v6">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>A float value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_djiflightcontrollersmartgohomestatus_smartrthstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_djiflightcontrollersmartgohomestatus_smartrthstate_inline">getSmartRTHState</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_djiflightcontrollersmartgohomestatus_smartrthstate_inline" <blockquote>
@@ -1501,7 +1511,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSmartRTHCountdown</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">The countdown (in seconds) for the Smart Return-To-Home (RTH). Once the countdown reaches 0, the aircraft will  execute an automatic go-home procedure. It is only valid when  <code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrentstate_djiflightcontrollersmartgohomestatus_smartrthstate">getSmartRTHState</a></code>  is <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightcontrollersmartrthstate_countingdown">COUNTING_DOWN</a></code>.</font></p>
+<p><font color="#666">The countdown (in seconds) for the Smart Return-To-Home (RTH). Once the countdown reaches 0, the aircraft will execute an automatic go-home procedure. It is only valid when <code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState_DJIFlightControllerSmartGoHomeStatus.html#djiflightcontroller_djiflightcontrollercurrentstate_djiflightcontrollersmartgohomestatus_smartrthstate">getSmartRTHState</a></code> is <code><a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_djiflightcontrollersmartrthstate_countingdown">COUNTING_DOWN</a></code>.</font></p>
 <h5 id="return-v8">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>The countdown for the Smart Return-To-Home (RTH).</i></font></td></tr></table></html></div>
 
