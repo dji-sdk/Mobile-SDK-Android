@@ -192,10 +192,10 @@ public class VirtualStickView extends RelativeLayout
 
                 if (horizontalCoordinateFlag) {
                     if (rollPitchControlModeFlag) {
-                        pitch = - (float) (pitchJoyControlMaxSpeed * pY);
-                        roll = (float) (rollJoyControlMaxSpeed * pX);
+                        pitch = (float) (pitchJoyControlMaxSpeed * pX);
+                        roll = (float) (rollJoyControlMaxSpeed * pY);
                     } else {
-                        pitch = (float) (pitchJoyControlMaxSpeed * pY);
+                        pitch = - (float) (pitchJoyControlMaxSpeed * pY);
                         roll = (float) (rollJoyControlMaxSpeed * pX);
                     }
                 }
@@ -220,7 +220,7 @@ public class VirtualStickView extends RelativeLayout
                     pY = 0;
                 }
                 float verticalJoyControlMaxSpeed = 2;
-                float yawJoyControlMaxSpeed = 6;
+                float yawJoyControlMaxSpeed = 20;
 
                 yaw = yawJoyControlMaxSpeed * pX;
                 throttle = verticalJoyControlMaxSpeed * pY;
@@ -285,10 +285,10 @@ public class VirtualStickView extends RelativeLayout
 
             case R.id.btn_yaw_control_mode:
                 if (yawControlModeFlag) {
-                    flightController.setYawControlMode(YawControlMode.ANGULAR_VELOCITY);
+                    flightController.setYawControlMode(YawControlMode.ANGLE);
                     yawControlModeFlag = false;
                 } else {
-                    flightController.setYawControlMode(YawControlMode.ANGLE);
+                    flightController.setYawControlMode(YawControlMode.ANGULAR_VELOCITY);
                     yawControlModeFlag = true;
                 }
                 try {
@@ -299,10 +299,10 @@ public class VirtualStickView extends RelativeLayout
 
             case R.id.btn_vertical_control_mode:
                 if (verticalControlModeFlag) {
-                    flightController.setVerticalControlMode(VerticalControlMode.VELOCITY);
+                    flightController.setVerticalControlMode(VerticalControlMode.POSITION);
                     verticalControlModeFlag = false;
                 } else {
-                    flightController.setVerticalControlMode(VerticalControlMode.POSITION);
+                    flightController.setVerticalControlMode(VerticalControlMode.VELOCITY);
                     verticalControlModeFlag = true;
                 }
                 try {
