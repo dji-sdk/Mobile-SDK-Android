@@ -34,6 +34,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:extractNativeLibs="true"
+        tools:replace="label"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
@@ -55,7 +56,8 @@
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

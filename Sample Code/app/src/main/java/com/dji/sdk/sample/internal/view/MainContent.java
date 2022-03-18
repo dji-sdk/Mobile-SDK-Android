@@ -85,7 +85,6 @@ public class MainContent extends RelativeLayout {
             Manifest.permission.RECORD_AUDIO // Speaker accessory
     };
     private static final int REQUEST_PERMISSION_CODE = 12345;
-    private List<String> missingPermission = new ArrayList<>();
     private AtomicBoolean isRegistrationInProgress = new AtomicBoolean(false);
     private int lastProcess = -1;
     private Handler mHander = new Handler();
@@ -465,6 +464,7 @@ public class MainContent extends RelativeLayout {
      */
     private void checkAndRequestPermissions() {
         // Check for permissions
+        List<String> missingPermission = new ArrayList<>();
         for (String eachPermission : REQUIRED_PERMISSION_LIST) {
             if (ContextCompat.checkSelfPermission(mContext, eachPermission) != PackageManager.PERMISSION_GRANTED) {
                 missingPermission.add(eachPermission);
@@ -665,7 +665,7 @@ public class MainContent extends RelativeLayout {
                     }
                 });
             }
-        },1000);
+        },5000);
     }
 
     private void hideProcess(){
