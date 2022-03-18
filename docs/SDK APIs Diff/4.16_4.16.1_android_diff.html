@@ -1,0 +1,54 @@
+<html>
+<style>
+  table, th, td {
+     border: 1px solid rgb(200,200,200);
+     border-collapse: collapse;
+     }
+  table {
+     table-layout: fixed;
+     width: 1900px;
+     }
+  td {
+     overflow-x: auto;
+     }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    }
+  .comments {
+    color: #292;
+    }
+  .source-code {
+    color: #22F;
+    }
+  .interface-parent {
+    color: #AAA;
+    }
+  .interface-name {
+    color: #000;
+    }
+  .check-mark {
+    text-align: center;
+    }
+</style>
+<body>
+<br>
+
+<h1>DJI Mobile SDK 4.16 to 4.16.1 Differences</h1>
+
+<br>
+
+<h2>API changes</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">4.16 Parent and Name</font></td><td width=15%><font color="#000">4.16 Code</font></td><td width=15%><font color="#000">4.16.1 Parent and Name</font></td><td width=15%><font color="#000">4.16.1 Code</font></td><td width=3%><font color="#000">Parent</font></td><td width=3%><font color="#000">Name</font></td><td width=3%><font color="#000">Type</font></td><td width=3%><font color="#000">Param</font></td><td width=3%><font color="#000">Return</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.sdkmanager.LiveStreamManager.</span><span class="interface-name">startStream</span></td><td width=15%><span class="source-code">int startStream() </span></td><td width=15%><span class="interface-parent">dji.sdk.sdkmanager.LiveStreamManager.</span><span class="interface-name">startStream</span></td><td width=15%><span class="source-code">synchronized int startStream() </span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td></tr></table><br>
+
+<h2>APIs added to 4.16.1</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">Parent and Name</font></td><td width=15%><font color="#000">Code</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.error.DJIFlightControllerError.</span><span class="interface-name">NAVIGATION_SATELLITE_SYSTEM_CAN_NOT_SET</span></td><td width=15%><span class="source-code">static final DJIFlightControllerError NAVIGATION_SATELLITE_SYSTEM_CAN_NOT_SET = new DJIFlightControllerError("The selection of navigation satellite system is only supported when the RTK function is turned off, and cannot be modified in the air")</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.error.DJIWaypointV2Error.</span><span class="interface-name">DJIWaypointV2Error</span></td><td width=15%><span class="source-code">static DJIWaypointV2Error ACTION_ACTUATOR_CAMERA_EXEC_FAIL
+            = new DJIWaypointV2Error("Camera fail to exec coressponding command.", -15008)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.error.DJIWaypointV2Error.</span><span class="interface-name">DJIWaypointV2Error</span></td><td width=15%><span class="source-code">static DJIWaypointV2Error ACTION_ACTUATOR_OPERATION_INDEX_INVALID
+            = new DJIWaypointV2Error("The action actuator operation index is invalid.", -9005)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.error.DJIWaypointV2Error.</span><span class="interface-name">DJIWaypointV2Error</span></td><td width=15%><span class="source-code">static DJIWaypointV2Error ACTION_ACTUATOR_STATUS_NOT_MATCH_ACTION
+            = new DJIWaypointV2Error("The actuator state does not match action.", -9004)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.error.DJIWaypointV2Error.</span><span class="interface-name">DJIWaypointV2Error</span></td><td width=15%><span class="source-code">static DJIWaypointV2Error ACTION_INTERVAL_TRIGGER_WAYPOINT_INDEX_INVALID
+            = new DJIWaypointV2Error("The action trigger waypoint index is invalid.", -8007)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.flightcontroller.</span><span class="interface-name">NavigationSatelliteSystem</span></td><td width=15%><span class="source-code">enum NavigationSatelliteSystem </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.flightcontroller.NavigationSatelliteSystem.</span><span class="interface-name">BEIDOU</span></td><td width=15%><span class="source-code">    BEIDOU(1)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.flightcontroller.NavigationSatelliteSystem.</span><span class="interface-name">GPS_GLONASS</span></td><td width=15%><span class="source-code">    GPS_GLONASS(0)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.flightcontroller.NavigationSatelliteSystem.</span><span class="interface-name">UNKNOWN</span></td><td width=15%><span class="source-code">    UNKNOWN(0xFFFF)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.flightcontroller.FlightController.</span><span class="interface-name">getCoordinatedTurnEnabled</span></td><td width=15%><span class="source-code">void getCoordinatedTurnEnabled(@Nullable CompletionCallbackWith&lt;Boolean&gt; callback)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.flightcontroller.FlightController.</span><span class="interface-name">getNavigationSatelliteSystem</span></td><td width=15%><span class="source-code">void getNavigationSatelliteSystem(@Nullable CompletionCallbackWith&lt;NavigationSatelliteSystem&gt; callback)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.flightcontroller.FlightController.</span><span class="interface-name">setCoordinatedTurnEnabled</span></td><td width=15%><span class="source-code">void setCoordinatedTurnEnabled(@NonNull boolean enabled, @Nullable CompletionCallback&lt;DJIError&gt; callback)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.flightcontroller.FlightController.</span><span class="interface-name">setNavigationSatelliteSystem</span></td><td width=15%><span class="source-code">void setNavigationSatelliteSystem(@NonNull NavigationSatelliteSystem system, @Nullable CompletionCallback&lt;DJIError&gt; callback)</span></td></tr></table><p style="font-size:50%; color:white">581f068 511e425 a618c40 76a6472 15bf140 a618c40 f168c7d 61b21e1 7ae0bce 581f068 7ae0bce a1da5c9 </p></body>
+</html>
+

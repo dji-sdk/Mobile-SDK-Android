@@ -26,21 +26,13 @@ import static com.dji.sdk.sample.internal.utils.ToastUtils.showToast;
 
 public class UTMISSActivity extends AppCompatActivity {
 
-    @BindView(R.id.txt_db_path)
     TextView mTvDbPath;
-    @BindView(R.id.txt_status)
     TextView mTvStatus;
-    @BindView(R.id.txt_info)
     TextView mTvInfo;
 
-    @BindView(R.id.edt_token_key)
     EditText mEdtTokenKey;
-    @BindView(R.id.edt_manufactureId)
     EditText mEdtManufactureId;
-    @BindView(R.id.edt_uasId)
     EditText mEdtUasId;
-
-    @BindView(R.id.btn_start)
     Button mBtnInit;
 
     String dbPath;
@@ -50,6 +42,17 @@ public class UTMISSActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_utmiss);
         ButterKnife.bind(this);
+        initUI();
+    }
+
+    private void initUI(){
+        mTvDbPath = findViewById(R.id.txt_db_path);
+        mTvStatus = findViewById(R.id.txt_status);
+        mTvInfo = findViewById(R.id.txt_info);
+        mEdtTokenKey = findViewById(R.id.edt_token_key);
+        mEdtManufactureId = findViewById(R.id.edt_manufactureId);
+        mEdtUasId = findViewById(R.id.edt_uasId);
+        mBtnInit = findViewById(R.id.btn_start);
         init();
     }
 
