@@ -3,6 +3,7 @@ package com.dji.sdk.sample.internal.view;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -174,10 +175,11 @@ public class MainContent extends RelativeLayout {
         mBtnOpen.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (GeneralUtils.isFastDoubleClick()) {
-                    return;
-                }
-                DJISampleApplication.getEventBus().post(componentList);
+                    getContext().startActivity(new Intent(getContext(), LocationActivity.class));
+//                if (GeneralUtils.isFastDoubleClick()) {
+//                    return;
+//                }
+//                DJISampleApplication.getEventBus().post(componentList);
             }
         });
         mBtnBluetooth.setOnClickListener(new OnClickListener() {
