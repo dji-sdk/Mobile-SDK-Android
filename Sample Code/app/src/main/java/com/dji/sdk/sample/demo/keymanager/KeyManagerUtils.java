@@ -28,6 +28,7 @@ import dji.sdk.sdkmanager.DJISDKManager;
 /**
  * @author dji
  */
+@SuppressWarnings("WrongConstant")
 public class KeyManagerUtils {
     private static final String FLIGHT_CONTROLLER_ACCESS_LOCKER = "AccessLocker";
     private static final String FLIGHT_CONTROLLER_FLIGHT_ASSISTANT = "FlightAssistant";
