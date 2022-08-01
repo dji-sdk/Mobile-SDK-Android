@@ -39,19 +39,11 @@ import dji.keysdk.KeyManager;
 import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.flightcontroller.Simulator;
 
-//TODO: Refactor needed
 
 /**
  * Class for virtual stick.
  */
-public class VirtualStickView extends RelativeLayout
-        implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, PresentableView {
-
-    private boolean yawControlModeFlag = true;
-    private boolean rollPitchControlModeFlag = true;
-    private boolean verticalControlModeFlag = true;
-    private boolean horizontalCoordinateFlag = true;
-
+public class VirtualStickView extends RelativeLayout implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, PresentableView {
     private Button btnEnableVirtualStick;
     private Button btnDisableVirtualStick;
     private Button btnHorizontalCoordinate;
@@ -73,7 +65,9 @@ public class VirtualStickView extends RelativeLayout
     private float roll;
     private float yaw;
     private float throttle;
-    private FlightControllerKey isSimulatorActived;
+    private boolean isSimulatorActived = false;
+    private FlightController flightController = null;
+    private Simulator simulator = null;
 
     public VirtualStickView(Context context) {
         super(context);
@@ -111,13 +105,28 @@ public class VirtualStickView extends RelativeLayout
     private void init(Context context) {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_virtual_stick, this, true);
-
-        initAllKeys();
+        initParams();
         initUI();
     }
 
-    private void initAllKeys() {
-        isSimulatorActived = FlightControllerKey.create(FlightControllerKey.IS_SIMULATOR_ACTIVE);
+    private void initParams() {
+        // We recommand you use the below settings, a standard american hand style.
+        if (flightController == null) {
+            if (ModuleVerificationUtil.isFlightControllerAvailable()) {
+                flightController = DJISampleApplication.getAircraftInstance().getFlightController();
+            }
+        }
+        flightController.setVerticalControlMode(VerticalControlMode.VELOCITY);
+        flightController.setRollPitchControlMode(RollPitchControlMode.VELOCITY);
+        flightController.setYawControlMode(YawControlMode.ANGULAR_VELOCITY);
+        flightController.setRollPitchCoordinateSystem(FlightCoordinateSystem.BODY);
+
+        // Check if the simulator is activated.
+        if (simulator == null) {
+            simulator = ModuleVerificationUtil.getSimulator();
+        }
+        isSimulatorActived = simulator.isSimulatorActive();
+
     }
 
     private void initUI() {
@@ -145,15 +154,13 @@ public class VirtualStickView extends RelativeLayout
         btnTakeOff.setOnClickListener(this);
         btnSimulator.setOnCheckedChangeListener(VirtualStickView.this);
 
-        Boolean isSimulatorOn = (Boolean) KeyManager.getInstance().getValue(isSimulatorActived);
-        if (isSimulatorOn != null && isSimulatorOn) {
+        if (isSimulatorActived) {
             btnSimulator.setChecked(true);
             textView.setText("Simulator is On.");
         }
     }
 
     private void setUpListeners() {
-        Simulator simulator = ModuleVerificationUtil.getSimulator();
         if (simulator != null) {
             simulator.setStateCallback(new SimulatorState.Callback() {
                 @Override
@@ -173,7 +180,7 @@ public class VirtualStickView extends RelativeLayout
                 }
             });
         } else {
-            ToastUtils.setResultToToast("Disconnected!");
+            ToastUtils.setResultToToast("Simulator disconnected!");
         }
 
         screenJoystickLeft.setJoystickListener(new OnScreenJoystickListener() {
@@ -190,15 +197,8 @@ public class VirtualStickView extends RelativeLayout
                 float pitchJoyControlMaxSpeed = 10;
                 float rollJoyControlMaxSpeed = 10;
 
-                if (horizontalCoordinateFlag) {
-                    if (rollPitchControlModeFlag) {
-                        pitch = (float) (pitchJoyControlMaxSpeed * pX);
-                        roll = (float) (rollJoyControlMaxSpeed * pY);
-                    } else {
-                        pitch = - (float) (pitchJoyControlMaxSpeed * pY);
-                        roll = (float) (rollJoyControlMaxSpeed * pX);
-                    }
-                }
+                pitch = pitchJoyControlMaxSpeed * pY;
+                roll = rollJoyControlMaxSpeed * pX;
 
                 if (null == sendVirtualStickDataTimer) {
                     sendVirtualStickDataTask = new SendVirtualStickDataTask();
@@ -219,7 +219,7 @@ public class VirtualStickView extends RelativeLayout
                 if (Math.abs(pY) < 0.02) {
                     pY = 0;
                 }
-                float verticalJoyControlMaxSpeed = 2;
+                float verticalJoyControlMaxSpeed = 4;
                 float yawJoyControlMaxSpeed = 20;
 
                 yaw = yawJoyControlMaxSpeed * pX;
@@ -270,72 +270,45 @@ public class VirtualStickView extends RelativeLayout
                 break;
 
             case R.id.btn_roll_pitch_control_mode:
-                if (rollPitchControlModeFlag) {
+                if (flightController.getRollPitchControlMode() == RollPitchControlMode.VELOCITY) {
                     flightController.setRollPitchControlMode(RollPitchControlMode.ANGLE);
-                    rollPitchControlModeFlag = false;
                 } else {
                     flightController.setRollPitchControlMode(RollPitchControlMode.VELOCITY);
-                    rollPitchControlModeFlag = true;
                 }
-                try {
-                    ToastUtils.setResultToToast(flightController.getRollPitchControlMode().name());
-                } catch (Exception ex) {
-                }
+                ToastUtils.setResultToToast(flightController.getRollPitchControlMode().name());
                 break;
-
             case R.id.btn_yaw_control_mode:
-                if (yawControlModeFlag) {
+                if (flightController.getYawControlMode() == YawControlMode.ANGULAR_VELOCITY) {
                     flightController.setYawControlMode(YawControlMode.ANGLE);
-                    yawControlModeFlag = false;
                 } else {
                     flightController.setYawControlMode(YawControlMode.ANGULAR_VELOCITY);
-                    yawControlModeFlag = true;
                 }
-                try {
-                    ToastUtils.setResultToToast(flightController.getYawControlMode().name());
-                } catch (Exception ex) {
-                }
+                ToastUtils.setResultToToast(flightController.getYawControlMode().name());
                 break;
-
             case R.id.btn_vertical_control_mode:
-                if (verticalControlModeFlag) {
+                if (flightController.getVerticalControlMode() == VerticalControlMode.VELOCITY) {
                     flightController.setVerticalControlMode(VerticalControlMode.POSITION);
-                    verticalControlModeFlag = false;
                 } else {
                     flightController.setVerticalControlMode(VerticalControlMode.VELOCITY);
-                    verticalControlModeFlag = true;
                 }
-                try {
-                    ToastUtils.setResultToToast(flightController.getVerticalControlMode().name());
-                } catch (Exception ex) {
-                }
+                ToastUtils.setResultToToast(flightController.getVerticalControlMode().name());
                 break;
-
             case R.id.btn_horizontal_coordinate:
-                if (horizontalCoordinateFlag) {
+                if (flightController.getRollPitchCoordinateSystem() == FlightCoordinateSystem.BODY) {
                     flightController.setRollPitchCoordinateSystem(FlightCoordinateSystem.GROUND);
-                    horizontalCoordinateFlag = false;
                 } else {
                     flightController.setRollPitchCoordinateSystem(FlightCoordinateSystem.BODY);
-                    horizontalCoordinateFlag = true;
                 }
-                try {
-                    ToastUtils.setResultToToast(flightController.getRollPitchCoordinateSystem().name());
-                } catch (Exception ex) {
-                }
+                ToastUtils.setResultToToast(flightController.getRollPitchCoordinateSystem().name());
                 break;
-
             case R.id.btn_take_off:
-
                 flightController.startTakeoff(new CommonCallbacks.CompletionCallback() {
                     @Override
                     public void onResult(DJIError djiError) {
                         DialogUtils.showDialogBasedOnError(getContext(), djiError);
                     }
                 });
-
                 break;
-
             default:
                 break;
         }
@@ -349,29 +322,27 @@ public class VirtualStickView extends RelativeLayout
     }
 
     private void onClickSimulator(boolean isChecked) {
-        Simulator simulator = ModuleVerificationUtil.getSimulator();
         if (simulator == null) {
             return;
         }
         if (isChecked) {
-
             textView.setVisibility(VISIBLE);
-
-            simulator.start(InitializationData.createInstance(new LocationCoordinate2D(23, 113), 10, 10),
-                    new CommonCallbacks.CompletionCallback() {
-                        @Override
-                        public void onResult(DJIError djiError) {
-
-                        }
-                    });
+            simulator.start(InitializationData.createInstance(new LocationCoordinate2D(23, 113), 10, 10), new CommonCallbacks.CompletionCallback() {
+                @Override
+                public void onResult(DJIError djiError) {
+                    if (djiError != null) {
+                        ToastUtils.setResultToToast(djiError.getDescription());
+                    }
+                }
+            });
         } else {
-
             textView.setVisibility(INVISIBLE);
-
             simulator.stop(new CommonCallbacks.CompletionCallback() {
                 @Override
                 public void onResult(DJIError djiError) {
-
+                    if (djiError != null) {
+                        ToastUtils.setResultToToast(djiError.getDescription());
+                    }
                 }
             });
         }
@@ -383,22 +354,18 @@ public class VirtualStickView extends RelativeLayout
     }
 
     private class SendVirtualStickDataTask extends TimerTask {
-
         @Override
         public void run() {
-            if (ModuleVerificationUtil.isFlightControllerAvailable()) {
-                DJISampleApplication.getAircraftInstance()
-                        .getFlightController()
-                        .sendVirtualStickFlightControlData(new FlightControlData(pitch,
-                                        roll,
-                                        yaw,
-                                        throttle),
-                                new CommonCallbacks.CompletionCallback() {
-                                    @Override
-                                    public void onResult(DJIError djiError) {
-
-                                    }
-                                });
+            if (flightController != null) {
+                //接口写反了，setPitch()应该传入roll值，setRoll()应该传入pitch值
+                flightController.sendVirtualStickFlightControlData(new FlightControlData(roll, pitch, yaw, throttle), new CommonCallbacks.CompletionCallback() {
+                    @Override
+                    public void onResult(DJIError djiError) {
+                        if (djiError != null) {
+                            ToastUtils.setResultToToast(djiError.getDescription());
+                        }
+                    }
+                });
             }
         }
     }
