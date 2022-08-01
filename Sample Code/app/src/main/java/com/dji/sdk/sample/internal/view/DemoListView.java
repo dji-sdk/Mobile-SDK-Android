@@ -52,6 +52,7 @@ import com.dji.sdk.sample.demo.missionoperator.WaypointMissionOperatorView;
 import com.dji.sdk.sample.demo.missionoperator.WaypointV2MissionOperatorView;
 import com.dji.sdk.sample.demo.mobileremotecontroller.MobileRemoteControllerView;
 import com.dji.sdk.sample.demo.radar.RadarView;
+import com.dji.sdk.sample.demo.remotecontroller.DualRemoteControllerView;
 import com.dji.sdk.sample.demo.remotecontroller.PushRemoteControllerDataView;
 import com.dji.sdk.sample.demo.timeline.TimelineMissionControlView;
 import com.dji.sdk.sample.demo.useraccount.LDMView;
@@ -201,7 +202,9 @@ public class DemoListView extends FrameLayout {
                 new GroupItem(R.string.remote_controller_listview_push_info,
                         PushRemoteControllerDataView.class),
                 new GroupItem(R.string.component_listview_mobile_remote_controller,
-                        MobileRemoteControllerView.class));
+                        MobileRemoteControllerView.class),
+                new GroupItem(R.string.component_listview_dual_remote_controller,
+                        DualRemoteControllerView.class));
 
         // Set-up ExpandableListView
         expandableListView = (ExpandableListView) view.findViewById(R.id.expandable_list);
