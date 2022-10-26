@@ -153,5 +153,6 @@ public class VideoFeedView extends SurfaceView {
         if (subscription != null && !subscription.isUnsubscribed()) {
             subscription.unsubscribe();
         }
+        VideoFeeder.getInstance().destroy();
     }
 }

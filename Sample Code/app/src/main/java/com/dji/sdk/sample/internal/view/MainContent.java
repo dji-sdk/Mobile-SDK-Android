@@ -191,7 +191,7 @@ public class MainContent extends RelativeLayout {
                     return;
                 }
                 bluetoothView =
-                    new ViewWrapper(new BluetoothView(getContext()), R.string.component_listview_bluetooth);
+                        new ViewWrapper(new BluetoothView(getContext()), R.string.component_listview_bluetooth);
                 DJISampleApplication.getEventBus().post(bluetoothView);
             }
         });
@@ -274,7 +274,7 @@ public class MainContent extends RelativeLayout {
                                 return;
                             } else if ((System.currentTimeMillis() - currentTime) >= 5000) {
                                 DialogUtils.showDialog(getContext(),
-                                                       "Fetch Connector failed, reboot if you want to connect the Bluetooth");
+                                        "Fetch Connector failed, reboot if you want to connect the Bluetooth");
                                 return;
                             } else if (connector == null) {
                                 sendDelayMsg(0, MSG_UPDATE_BLUETOOTH_CONNECTOR);
@@ -441,18 +441,18 @@ public class MainContent extends RelativeLayout {
     private void loginToActivationIfNeeded() {
         if (AppActivationManager.getInstance().getAppActivationState() == AppActivationState.LOGIN_REQUIRED) {
             UserAccountManager.getInstance()
-                              .logIntoDJIUserAccount(getContext(),
-                                                     new CommonCallbacks.CompletionCallbackWith<UserAccountState>() {
-                                                         @Override
-                                                         public void onSuccess(UserAccountState userAccountState) {
-                                                             ToastUtils.setResultToToast("Login Successed!");
-                                                         }
+                    .logIntoDJIUserAccount(getContext(),
+                            new CommonCallbacks.CompletionCallbackWith<UserAccountState>() {
+                                @Override
+                                public void onSuccess(UserAccountState userAccountState) {
+                                    ToastUtils.setResultToToast("Login Successed!");
+                                }
 
-                                                         @Override
-                                                         public void onFailure(DJIError djiError) {
-                                                             ToastUtils.setResultToToast("Login Failed!");
-                                                         }
-                                                     });
+                                @Override
+                                public void onFailure(DJIError djiError) {
+                                    ToastUtils.setResultToToast("Login Failed!");
+                                }
+                            });
         }
     }
 
@@ -491,10 +491,10 @@ public class MainContent extends RelativeLayout {
                     //method before the registerAppForLDM() method
                     if (mCheckboxFirmware.isChecked()) {
                         DJISDKManager.getInstance().getLDMManager().setModuleNetworkServiceEnabled(new LDMModule.Builder().moduleType(
-                            LDMModuleType.FIRMWARE_UPGRADE).enabled(true).build());
+                                LDMModuleType.FIRMWARE_UPGRADE).enabled(true).build());
                     } else {
                         DJISDKManager.getInstance().getLDMManager().setModuleNetworkServiceEnabled(new LDMModule.Builder().moduleType(
-                            LDMModuleType.FIRMWARE_UPGRADE).enabled(false).build());
+                                LDMModuleType.FIRMWARE_UPGRADE).enabled(false).build());
                     }
                     if(isregisterForLDM) {
                         DJISDKManager.getInstance().registerAppForLDM(mContext.getApplicationContext(), new DJISDKManager.SDKManagerCallback() {
@@ -504,7 +504,6 @@ public class MainContent extends RelativeLayout {
                                     DJILog.e("App registration for LDM", DJISDKError.REGISTRATION_SUCCESS.getDescription());
                                     DJISDKManager.getInstance().startConnectionToProduct();
                                     ToastUtils.setResultToToast(mContext.getString(R.string.sdk_registration_success_message));
-                                    showDBVersion();
                                 } else {
                                     ToastUtils.setResultToToast(mContext.getString(R.string.sdk_registration_message) + djiError.getDescription());
                                 }
@@ -533,6 +532,11 @@ public class MainContent extends RelativeLayout {
                                                           BaseComponent newComponent) {
                                 if (newComponent != null) {
                                     newComponent.setComponentListener(mDJIComponentListener);
+
+                                    if(componentKey == BaseProduct.ComponentKey.FLIGHT_CONTROLLER)
+                                    {
+                                        showDBVersion();
+                                    }
                                 }
                                 Log.d(TAG,
                                         String.format("onComponentChange key:%s, oldComponent:%s, newComponent:%s",
@@ -572,7 +576,6 @@ public class MainContent extends RelativeLayout {
                                     DJILog.e("App registration", DJISDKError.REGISTRATION_SUCCESS.getDescription());
                                     DJISDKManager.getInstance().startConnectionToProduct();
                                     ToastUtils.setResultToToast(mContext.getString(R.string.sdk_registration_success_message));
-                                    showDBVersion();
                                 } else {
                                     ToastUtils.setResultToToast(mContext.getString(R.string.sdk_registration_message) + djiError.getDescription());
                                 }
@@ -601,6 +604,11 @@ public class MainContent extends RelativeLayout {
                                                           BaseComponent newComponent) {
                                 if (newComponent != null) {
                                     newComponent.setComponentListener(mDJIComponentListener);
+
+                                    if(componentKey == BaseProduct.ComponentKey.FLIGHT_CONTROLLER)
+                                    {
+                                        showDBVersion();
+                                    }
                                 }
                                 Log.d(TAG,
                                         String.format("onComponentChange key:%s, oldComponent:%s, newComponent:%s",
@@ -660,12 +668,12 @@ public class MainContent extends RelativeLayout {
 
                     @Override
                     public void onFailure(DJIError djiError) {
-                        ToastUtils.setResultToToast("db load success ! get version error : " + djiError.getDescription());
+                        ToastUtils.setResultToToast("db load failure ! get version error : " + djiError.getDescription());
 
                     }
                 });
             }
-        },5000);
+        },3000);
     }
 
     private void hideProcess(){

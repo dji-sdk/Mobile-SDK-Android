@@ -249,15 +249,13 @@ public class WaypointMissionOperatorView extends MissionBaseView {
         builder.setGimbalPitchRotationEnabled(true);
         builder.repeatTimes(1);
 
-        List<Waypoint> waypointList = new ArrayList<>();
-
         // Waypoint 0: (0,0)
         Waypoint waypoint0 = new Waypoint(baseLatitude, baseLongitude, baseAltitude);
         waypoint0.turnMode = WaypointTurnMode.CLOCKWISE;
         waypoint0.addAction(new WaypointAction(WaypointActionType.ROTATE_AIRCRAFT,0 + calculateTurnAngle()));
         waypoint0.addAction(new WaypointAction(WaypointActionType.START_TAKE_PHOTO, 0));
         waypoint0.addAction(new WaypointAction(WaypointActionType.GIMBAL_PITCH, 0));
-        waypointList.add(waypoint0);
+        builder.addWaypoint(waypoint0);
 
         // Waypoint 1: (0,30)
         Waypoint waypoint1 = new Waypoint(baseLatitude, baseLongitude + HORIZONTAL_DISTANCE * ONE_METER_OFFSET, baseAltitude);
@@ -265,7 +263,7 @@ public class WaypointMissionOperatorView extends MissionBaseView {
         waypoint1.addAction(new WaypointAction(WaypointActionType.ROTATE_AIRCRAFT, 0 - calculateTurnAngle()));
         waypoint1.addAction(new WaypointAction(WaypointActionType.START_TAKE_PHOTO, 0));
         waypoint1.addAction(new WaypointAction(WaypointActionType.GIMBAL_PITCH, -45));
-        waypointList.add(waypoint1);
+        builder.addWaypoint(waypoint1);
 
         // Waypoint 2: (30,30)
         Waypoint waypoint2 = new Waypoint(baseLatitude + VERTICAL_DISTANCE * ONE_METER_OFFSET, baseLongitude + HORIZONTAL_DISTANCE * ONE_METER_OFFSET, baseAltitude);
@@ -273,7 +271,7 @@ public class WaypointMissionOperatorView extends MissionBaseView {
         waypoint2.addAction(new WaypointAction(WaypointActionType.ROTATE_AIRCRAFT, -180 + calculateTurnAngle()));
         waypoint2.addAction(new WaypointAction(WaypointActionType.START_TAKE_PHOTO, 0));
         waypoint2.addAction(new WaypointAction(WaypointActionType.GIMBAL_PITCH, -90));
-        waypointList.add(waypoint2);
+        builder.addWaypoint(waypoint2);
 
         // Waypoint 3: (30,0)
         Waypoint waypoint3 = new Waypoint(baseLatitude + VERTICAL_DISTANCE * ONE_METER_OFFSET, baseLongitude, baseAltitude);
@@ -281,9 +279,8 @@ public class WaypointMissionOperatorView extends MissionBaseView {
         waypoint3.addAction(new WaypointAction(WaypointActionType.ROTATE_AIRCRAFT, 180 - calculateTurnAngle()));
         waypoint3.addAction(new WaypointAction(WaypointActionType.START_TAKE_PHOTO, 0));
         waypoint3.addAction(new WaypointAction(WaypointActionType.GIMBAL_PITCH, 0));
-        waypointList.add(waypoint3);
+        builder.addWaypoint(waypoint3);
 
-        builder.waypointList(waypointList).waypointCount(waypointList.size());
         calculateTotalTime = builder.calculateTotalTime();
         return builder.build();
     }

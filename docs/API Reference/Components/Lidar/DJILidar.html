@@ -206,6 +206,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../UASRemoteIDManager/IUASRemoteIDManager.html" class="sub-toggle">IUASRemoteIDManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatus.html">UASRemoteIDStatus</a>
+                            </dd>
+                            <dd><a href="../UASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatusListener.html">UASRemoteIDStatusListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">UpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">UpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -1553,7 +1561,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setPointCloudReturnMode</span><span class="params">(@NonNull SettingsDefinitions.DJILidarPointCloudReturnMode returnMode, @Nullable CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.lidar</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">Set point cloud scan mode.</font></p>
+<p><font color="#666">Set point cloud return mode.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">SOURCE_DIFFERENT <font color="#000">scanMode</font></font></td><td><font color="#666"><i>An enum value of the <code><a href="../../Components/Lidar/DJILidar.html#djilidar_pointcloudreturnmode">DJILidarPointCloudReturnMode</a></code></i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallback <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr></table></html></div>
 <div class="api-row" id="djilidar_getpointcloudreturnmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djilidar_getpointcloudreturnmode_inline">getPointCloudReturnMode</a></div></div><div class="inline-doc" id="djilidar_getpointcloudreturnmode_inline" <blockquote>
@@ -1671,7 +1679,7 @@
 <h5 id="description-v25">Description:</h5>
 <p><font color="#666">Enums represent the point cloud scan mode of lidar. Supports two scanning modes: traditional non-repetitive scan mode and repetitive line scan mode. Users can choose the appropriate scanning point cloud pattern according to their needs. The repetitive scan mode is a flat FOV(70.4 degree * 4.5 degree), and its scanning method is more similar to the traditional scanning lidar, which can obtain a more uniform and higher-precision scanning effect; The non-repetitive scan mode is a unique scanning method of livox, providing a complete near-circular FOV(70.4 degree *77.2 degree), which has better scanning static scanning effect and facade effect, and higher efficiency;</font></p>
 <h5 id="enum-members-v4">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djilidar_pointcloudscanmode_repeeat_inline"></a>NON_REPETITIVE</font></td><td><font color="#666">Repetitive scan mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djilidar_pointcloudscanmode_non_repetitive_inline"></a>REPETITIVE</font></td><td><font color="#666">Non-repetitive scan mode.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djilidar_pointcloudscanmode_repeeat_inline"></a>REPETITIVE</font></td><td><font color="#666">Repetitive scan mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djilidar_pointcloudscanmode_non_repetitive_inline"></a>NON_REPETITIVE</font></td><td><font color="#666">Non-repetitive scan mode.</font></td></tr></table></html>
 <h5 id="class-members-v5">Class Members:</h5>
 </div>
 <div class="api-row" id="djilidar_pointcloudreturnmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djilidar_pointcloudreturnmode_inline">DJILidarPointCloudReturnMode</a></div></div><div class="inline-doc" id="djilidar_pointcloudreturnmode_inline" <blockquote>
@@ -1680,7 +1688,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> DJILidarPointCloudReturnMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
 <h5 id="description-v26">Description:</h5>
-<p><font color="#666">Enums represent the point cloud return mode of lidar. We support 3 echoes, In single echo operation, the point cloud data rate is 24000 points/sec, In double-echo and triple-echo operations, the point cloud data rate is 480,000 points/sec.</font></p>
+<p><font color="#666">Enums represent the point cloud return mode of lidar.</font></p>
 <h5 id="enum-members-v5">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djilidar_pointcloudreturnmode_single_return_first_inline"></a>SINGLE_RETURN_FIRST</font></td><td><font color="#666">Single return first (default).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djilidar_pointcloudreturnmode_single_return_strongest_inline"></a>SINGLE_RETURN_STRONGEST</font></td><td><font color="#666">Single return strongest.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djilidar_pointcloudreturnmode_double_return_inline"></a>DUAL_RETURN</font></td><td><font color="#666">Double return.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djilidar_pointcloudreturnmode_triple_return_inline"></a>TRIPLE_RETURN</font></td><td><font color="#666">Triple return.</font></td></tr></table></html>
 <h5 id="class-members-v6">Class Members:</h5>

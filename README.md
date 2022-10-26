@@ -1,4 +1,11 @@
-# DJI Mobile SDK for Android Latest Version 4.16.2
+# [MSDK V5 Released](https://github.com/dji-sdk/Mobile-SDK-Android-V5)
+
+MSDK V5 Supported Product:
+* [DJI Mavic 3 Enterprise Series](https://www.dji.com/cn/mavic-3-enterprise)
+* [M30 Series](https://www.dji.com/matrice-30?site=brandsite&from=nav)
+* [M300 RTK](https://www.dji.com/matrice-300?site=brandsite&from=nav)
+
+# DJI Mobile SDK V4 for Android Latest Version 4.16.3
 
 ## What Is This?
 
@@ -12,21 +19,21 @@ Declare dependency via Maven:
 <dependency>
     <groupId>com.dji</groupId>
     <artifactId>dji-sdk</artifactId>
-    <version>4.16.2</version>
+    <version>4.16.3</version>
 </dependency>
 
 <dependency>
     <groupId>com.dji</groupId>
     <artifactId>dji-sdk-provided</artifactId>
-    <version>4.16.2</version>
+    <version>4.16.3</version>
 </dependency>
 ~~~
 
 or Gradle:
 
 ~~~groovy
-compile 'com.dji:dji-sdk:4.16.2'
-provided 'com.dji:dji-sdk-provided:4.16.2'
+compile 'com.dji:dji-sdk:4.16.3'
+provided 'com.dji:dji-sdk-provided:4.16.3'
 ~~~
 
 For further detail on how to integrate the DJI Android SDK into your Android Studio project, please check the [Integrate SDK into Application](http://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-integrate.html#import-maven-dependency) tutorial.
