@@ -206,6 +206,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../UASRemoteIDManager/IUASRemoteIDManager.html" class="sub-toggle">IUASRemoteIDManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatus.html">UASRemoteIDStatus</a>
+                            </dd>
+                            <dd><a href="../UASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatusListener.html">UASRemoteIDStatusListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">UpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">UpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -1582,12 +1590,28 @@
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">The camera does not support the command in the current state.<br> This error is returned when the camera is busy and the camera is unsupported for the command in the current state.<br></font></p>
 </div>
+<div class="api-row" id="djierror_djicameraerror_camera_digital_zoom_not_supported_resolution"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djicameraerror_camera_digital_zoom_not_supported_resolution_inline">DIGITAL_ZOOM_NOT_SUPPORTED_RESOLUTION</a></div></div><div class="inline-doc" id="djierror_djicameraerror_camera_digital_zoom_not_supported_resolution_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>DIGITAL_ZOOM_NOT_SUPPORTED_RESOLUTION</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError DIGITAL_ZOOM_NOT_SUPPORTED_RESOLUTION = <span class="keyword">new</span> DJICameraError(<span class="string">"Not supported when the resolution is over 4K"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v19">Description:</h5>
+<p><font color="#666">Failed to set digital zoom, because the resolution is over 4K.</font></p>
+</div>
+<div class="api-row" id="djierror_djicameraerror_camera_digital_zoom_not_supported_view_mode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djicameraerror_camera_digital_zoom_not_supported_view_mode_inline">DIGITAL_ZOOM_NOT_SUPPORTED_VIEW_MODE</a></div></div><div class="inline-doc" id="djierror_djicameraerror_camera_digital_zoom_not_supported_view_mode_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>DIGITAL_ZOOM_NOT_SUPPORTED_VIEW_MODE</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError DIGITAL_ZOOM_NOT_SUPPORTED_VIEW_MODE = <span class="keyword">new</span> DJICameraError(<span class="string">"Not supported when in app full view mode"</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
+<h5 id="description-v20">Description:</h5>
+<p><font color="#666">Failed to set digital zoom, because app is in full view mode.</font></p>
+</div>
 <div class="api-row" id="djierror_djicameraerror_camera_parameters_set_failed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djicameraerror_camera_parameters_set_failed_inline">PARAMETERS_SET_FAILED</a></div></div><div class="inline-doc" id="djierror_djicameraerror_camera_parameters_set_failed_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>PARAMETERS_SET_FAILED</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError PARAMETERS_SET_FAILED =</span><br><span class="line">       <span class="keyword">new</span> DJICameraError(<span class="string">"Camera failed to set the parameters it received"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">Failed to set the parameters.<br> This error will be returned when setting the camera parameters fails.<br></font></p>
 </div>
 <div class="api-row" id="djierror_djicameraerror_camera_parameters_get_failed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djicameraerror_camera_parameters_get_failed_inline">PARAMETERS_GET_FAILED</a></div></div><div class="inline-doc" id="djierror_djicameraerror_camera_parameters_get_failed_inline" <blockquote>
@@ -1595,7 +1619,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError PARAMETERS_GET_FAILED = <span class="keyword">new</span> DJICameraError(<span class="string">"Camera param get failed"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">Failed to get the parameters.<br> This error will be returned when getting the camera parameters fails.<br></font></p>
 </div>
 <div class="api-row" id="djierror_djicameraerror_camera_parameters_not_available"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djicameraerror_camera_parameters_not_available_inline">PARAMETERS_NOT_AVAILABLE</a></div></div><div class="inline-doc" id="djierror_djicameraerror_camera_parameters_not_available_inline" <blockquote>
@@ -1603,7 +1627,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError PARAMETERS_NOT_AVAILABLE =</span><br><span class="line">       <span class="keyword">new</span> DJICameraError(<span class="string">"Camera received invalid parameters"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">The parameters are not available. <br> This error will be returned when there are some errors with the parameters submitted to the camera.<br></font></p>
 </div>
 <div class="api-row" id="djierror_djicameraerror_camera_media_file_reset"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djicameraerror_camera_media_file_reset_inline">MEDIA_FILE_RESET</a></div></div><div class="inline-doc" id="djierror_djicameraerror_camera_media_file_reset_inline" <blockquote>
@@ -1611,7 +1635,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError MEDIA_FILE_RESET = <span class="keyword">new</span> DJICameraError(<span class="string">"Media file is reset. The operation cannot be executed."</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">Media file is reset. The operation can be executed.</font></p>
 </div>
 <div class="api-row" id="djierror_djicameraerror_custom_info_length_error"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djicameraerror_custom_info_length_error_inline">CUSTOM_INFO_LENGTH_ERROR</a></div></div><div class="inline-doc" id="djierror_djicameraerror_custom_info_length_error_inline" <blockquote>
@@ -1619,7 +1643,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError CUSTOM_INFO_LENGTH_ERROR = <span class="keyword">new</span> DJICameraError(<span class="string">"Custom info should not be null and no more than 32 bytes."</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666">Custom info should not be null and no more than 32 bytes.</font></p>
 </div>
 <div class="api-row" id="djierror_djicameraerror_cannot_set_parameters_in_super_resolution_state"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djicameraerror_cannot_set_parameters_in_super_resolution_state_inline">CANNOT_SET_PARAMETERS_IN_SUPER_RESOLUTION_STATE</a></div></div><div class="inline-doc" id="djierror_djicameraerror_cannot_set_parameters_in_super_resolution_state_inline" <blockquote>
@@ -1627,7 +1651,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError CANNOT_SET_PARAMETERS_IN_SUPER_RESOLUTION_STATE = <span class="keyword">new</span> DJICameraError(<span class="string">"Cannot set the parameters in Super Resolution state."</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666">Cannot set the parameters in Super Resolution state.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkcameraerror_sdcardnotinserted"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkcameraerror_sdcardnotinserted_inline">SD_CARD_NOT_INSERTED</a></div></div><div class="inline-doc" id="djierror_djisdkcameraerror_sdcardnotinserted_inline" <blockquote>
@@ -1635,7 +1659,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError SD_CARD_NOT_INSERTED = <span class="keyword">new</span> DJICameraError(<span class="string">"Camera has no SD Card"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666">No SD card.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkcameraerror_sdcardfull"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkcameraerror_sdcardfull_inline">SD_CARD_FULL</a></div></div><div class="inline-doc" id="djierror_djisdkcameraerror_sdcardfull_inline" <blockquote>
@@ -1643,7 +1667,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError SD_CARD_FULL = <span class="keyword">new</span> DJICameraError(<span class="string">"The Camera's SD Card is full"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666">SD card full.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkcameraerror_sdcarderror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkcameraerror_sdcarderror_inline">SD_CARD_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkcameraerror_sdcarderror_inline" <blockquote>
@@ -1651,7 +1675,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError SD_CARD_ERROR = <span class="keyword">new</span> DJICameraError(<span class="string">"Error accessing the SD Card"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
+<h5 id="description-v29">Description:</h5>
 <p><font color="#666">SD card error.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkcameraerror_sensorerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkcameraerror_sensorerror_inline">SENSOR_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkcameraerror_sensorerror_inline" <blockquote>
@@ -1659,7 +1683,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError SENSOR_ERROR = <span class="keyword">new</span> DJICameraError(<span class="string">"Camera sensor error"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
+<h5 id="description-v30">Description:</h5>
 <p><font color="#666">Camera sensor error.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkcameraerror_systemerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkcameraerror_systemerror_inline">SYSTEM_ERROR</a></div></div><div class="inline-doc" id="djierror_djisdkcameraerror_systemerror_inline" <blockquote>
@@ -1667,7 +1691,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError SYSTEM_ERROR = <span class="keyword">new</span> DJICameraError(<span class="string">"Camera system error "</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
+<h5 id="description-v31">Description:</h5>
 <p><font color="#666">Camera system error.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkcameraerror_nosuchmediafile"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkcameraerror_nosuchmediafile_inline">NO_SUCH_MEDIA_FILE</a></div></div><div class="inline-doc" id="djierror_djisdkcameraerror_nosuchmediafile_inline" <blockquote>
@@ -1675,7 +1699,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError NO_SUCH_MEDIA_FILE = <span class="keyword">new</span> DJICameraError (<span class="string">"Media download result: no such file"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
+<h5 id="description-v32">Description:</h5>
 <p><font color="#666">The media file is not found in SD card.</font></p>
 </div>
 <div class="api-row" id="djierror_djisdkcameraerror_panoramanotflying"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#djierror_djisdkcameraerror_panoramanotflying_inline">PANORAMA_NOT_FLYING</a></div></div><div class="inline-doc" id="djierror_djisdkcameraerror_panoramanotflying_inline" <blockquote>
@@ -1683,7 +1707,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJICameraError PANORAMA_NOT_FLYING = <span class="keyword">new</span> DJICameraError(<span class="string">"Panorama can not be used before takeoff"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
+<h5 id="description-v33">Description:</h5>
 <p><font color="#666">Panorama mode cannot work until the aircraft takes off.</font></p>
 </div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
@@ -1692,7 +1716,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(<span class="keyword">int</span> errorCode)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
+<h5 id="description-v34">Description:</h5>
 <p><font color="#666">Returns the specific error in the <code><a href="../../Components/SDKError/DJIError_DJISDKFlightHubError.html#djierror_djisdkflighthuberror">DJIFlightHubError</a></code> according to the error code.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">errorCode</font></font></td><td><font color="#666"><i>errorCode for <code><a href="../../Components/SDKError/DJIError_DJISDKFlightHubError.html#djierror_djisdkflighthuberror">DJIFlightHubError</a></code>.</i></font></td></tr></table></html>
@@ -1703,7 +1727,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIError <span class="title">getDJIError</span><span class="params">(<span class="keyword">int</span> errorCode)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.utmiss</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
+<h5 id="description-v35">Description:</h5>
 <p><font color="#666">Get DJIUTMISSError.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">errorCode</font></font></td><td><font color="#666"><i>An int value of error code.</i></font></td></tr></table></html>
@@ -1714,7 +1738,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getDescription</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v34">Description:</h5>
+<h5 id="description-v36">Description:</h5>
 <p><font color="#666">Returns the description of the error code.</font></p>
 <h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>The description of the error code.</i></font></td></tr></table></html></div>
@@ -1723,7 +1747,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String desc)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.error</font></td></tr></table></html>
-<h5 id="description-v35">Description:</h5>
+<h5 id="description-v37">Description:</h5>
 <p><font color="#666">Sets the description for the error code.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">desc</font></font></td><td><font color="#666"><i>Description string.</i></font></td></tr></table></html></div>

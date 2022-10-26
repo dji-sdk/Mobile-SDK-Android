@@ -314,34 +314,60 @@ public class FetchMediaView extends BaseThreeBtnView {
         builder.beginIndex(mFileBeginIndex);
         builder.count(FILE_PAGE_COUNT);
         builder.filter(MediaFilter.NONE);
-        builder.location(SettingsDefinitions.StorageLocation.SDCARD);
+        builder.location(SettingsDefinitions.StorageLocation.INTERNAL_STORAGE);
         builder.orderType(MediaOrderType.TIME);
         builder.timeOrder(MediaTimeOrder.NEW);
 
         mHandler.post(() -> {
-            mediaManager.fetchFileList(builder.build(), new CommonCallbacks.CompletionCallbackWith<List<MediaFile>>() {
-                @Override
-                public void onSuccess(List<MediaFile> mediaFiles) {
-                    int count = mediaFiles != null ? mediaFiles.size():0;
-                    if (count != 0 ) {
-                        mFileBeginIndex  = mediaFiles.get(count - 1).getIndex();
-                        post(()->{
-                            mAdapter.addMoreItem(mediaFiles);
-                            mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.PULL_UP_LOADMORE);
-                        });
-                    } else {
-                        post(()->{mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.LOAD_FINISH);});
 
+            mediaManager.refreshFileListOfStorageLocation(SettingsDefinitions.StorageLocation.INTERNAL_STORAGE, new CommonCallbacks.CompletionCallback() {
+                @Override
+                public void onResult(DJIError djiError) {
+                    if(djiError == null)
+                    {
+                        List<MediaFile> mediaFiles = mediaManager.getInternalStorageFileListSnapshot();
+                        int count = mediaFiles != null ? mediaFiles.size():0;
+                        if (count != 0 ) {
+                            mFileBeginIndex  = mediaFiles.get(count - 1).getIndex();
+                            post(()->{
+                                mAdapter.addMoreItem(mediaFiles);
+                                mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.PULL_UP_LOADMORE);
+                            });
+                        } else {
+                            post(()->{mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.LOAD_FINISH);});
+
+                        }
                     }
-
-                }
-
-                @Override
-                public void onFailure(DJIError error) {
-                    post(()->{ mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.LOADING);});
-
+                    else
+                    {
+                        post(()->{ mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.LOADING);});
+                    }
                 }
             });
+
+//            mediaManager.fetchFileList(builder.build(), new CommonCallbacks.CompletionCallbackWith<List<MediaFile>>() {
+//                @Override
+//                public void onSuccess(List<MediaFile> mediaFiles) {
+//                    int count = mediaFiles != null ? mediaFiles.size():0;
+//                    if (count != 0 ) {
+//                        mFileBeginIndex  = mediaFiles.get(count - 1).getIndex();
+//                        post(()->{
+//                            mAdapter.addMoreItem(mediaFiles);
+//                            mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.PULL_UP_LOADMORE);
+//                        });
+//                    } else {
+//                        post(()->{mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.LOAD_FINISH);});
+//
+//                    }
+//
+//                }
+//
+//                @Override
+//                public void onFailure(DJIError error) {
+//                    post(()->{ mAdapter.changeLoadStatus(MediaFileRecyclerAdapter.LOADING);});
+//
+//                }
+//            });
         });
 
 
