@@ -35,8 +35,6 @@ import com.dji.sdk.sample.internal.utils.GeneralUtils;
 import com.dji.sdk.sample.internal.utils.ToastUtils;
 import com.squareup.otto.Subscribe;
 
-import dji.sdk.sdkmanager.LDMModule;
-import dji.sdk.sdkmanager.LDMModuleType;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -61,6 +59,8 @@ import dji.sdk.realname.AppActivationManager;
 import dji.sdk.sdkmanager.BluetoothProductConnector;
 import dji.sdk.sdkmanager.DJISDKInitEvent;
 import dji.sdk.sdkmanager.DJISDKManager;
+import dji.sdk.sdkmanager.LDMModule;
+import dji.sdk.sdkmanager.LDMModuleType;
 import dji.sdk.useraccount.UserAccountManager;
 
 /**
@@ -478,7 +478,6 @@ public class MainContent extends RelativeLayout {
                     missingPermission.toArray(new String[missingPermission.size()]),
                     REQUEST_PERMISSION_CODE);
         }
-
     }
 
     private void startSDKRegistration() {
