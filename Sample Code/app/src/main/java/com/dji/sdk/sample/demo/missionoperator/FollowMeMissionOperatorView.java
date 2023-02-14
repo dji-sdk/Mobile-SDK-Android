@@ -36,8 +36,6 @@ public class FollowMeMissionOperatorView extends MissionBaseView {
     private double longitude = 0;
     private static final int REFRESH_FREQ = 10;
     private static final int SATELLITE_COUNT = 10;
-    private static final int MAX_HEIGHT = 500;
-    private static final int MAX_RADIUS = 500;
     private static final double ONE_METER_OFFSET = 0.00000899322;
 
     private FollowMeMissionOperator followMeMissionOperator = null;
@@ -52,49 +50,49 @@ public class FollowMeMissionOperatorView extends MissionBaseView {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        BaseProduct product = DJISampleApplication.getProductInstance();
-
-        if (product == null || !product.isConnected()) {
-            ToastUtils.setResultToToast("Disconnect");
-            return;
-        } else {
-            if (product instanceof Aircraft) {
-                flightController = ((Aircraft) product).getFlightController();
-            }
-            if (flightController != null) {
-                flightController.setStateCallback(new FlightControllerState.Callback() {
-                    @Override
-                    public void onUpdate(@NonNull FlightControllerState flightControllerState) {
-                        homeLatitude = flightControllerState.getHomeLocation().getLatitude();
-                        latitude = flightControllerState.getHomeLocation().getLatitude();
-                        homeLongitude = flightControllerState.getHomeLocation().getLongitude();
-                        longitude = flightControllerState.getHomeLocation().getLongitude();
-                        flightState = flightControllerState.getFlightMode();
-
-                        if (flightControllerState.isLandingConfirmationNeeded()) {
-                            flightController.confirmLanding(new CommonCallbacks.CompletionCallback() {
-                                @Override
-                                public void onResult(DJIError djiError) {
-                                    ToastUtils.setResultToToast(djiError == null ? "confirmLanding OK" : djiError.getDescription());
-                                }
-                            });
-                        }
-
-                        updateFollowMeMissionState();
-                    }
-                });
-            }
-        }
         followMeMissionOperator = MissionControl.getInstance().getFollowMeMissionOperator();
+        ToastUtils.setResultToText(missionPushInfoTV, "FollowMe mission state: " + followMeMissionOperator.getCurrentState());
         setUpListener();
+    }
+
+    private void setUpListener() {
+        // Example of Listener
+        listener = new FollowMeMissionOperatorListener() {
+
+            @Override
+            public void onExecutionUpdate(@NonNull @NotNull FollowMeMissionEvent followMeMissionEvent) {
+                // Example of Execution Listener
+                Log.d("TAG",
+                        (followMeMissionEvent.getPreviousState() == null
+                                ? ""
+                                : followMeMissionEvent.getPreviousState().getName())
+                                + ", "
+                                + followMeMissionEvent.getCurrentState().getName()
+                                + ", "
+                                + followMeMissionEvent.getDistanceToTarget()
+                                + ", "
+                                + followMeMissionEvent.getError().getDescription());
+                ToastUtils.setResultToText(missionPushInfoTV, "FollowMe mission state: " + followMeMissionOperator.getCurrentState());
+            }
+
+            @Override
+            public void onExecutionStart() {
+                ToastUtils.setResultToToast("Mission started");
+                ToastUtils.setResultToText(missionPushInfoTV, "FollowMe mission state: " + followMeMissionOperator.getCurrentState());
+            }
+
+            @Override
+            public void onExecutionFinish(@Nullable @org.jetbrains.annotations.Nullable DJIError djiError) {
+                ToastUtils.setResultToToast("Mission finished");
+                ToastUtils.setResultToText(missionPushInfoTV, "FollowMe mission state: " + followMeMissionOperator.getCurrentState());
+            }
+        };
     }
 
     @Override
     protected void onDetachedFromWindow() {
-        tearDownListener();
-        if (flightController != null) {
-            flightController.getSimulator().stop(null);
-            flightController.setStateCallback(null);
+        if (followMeMissionOperator != null && listener != null) {
+            followMeMissionOperator.removeListener(listener);
         }
         super.onDetachedFromWindow();
     }
@@ -102,36 +100,6 @@ public class FollowMeMissionOperatorView extends MissionBaseView {
     @Override
     public void onClick(View view) {
         switch(view.getId()) {
-            case R.id.btn_simulator:
-                startSimulator();
-                break;
-            case R.id.btn_set_maximum_altitude:
-                if (null != getFlightController()) {
-                    flightController.setMaxFlightHeight(MAX_HEIGHT, new CommonCallbacks.CompletionCallback() {
-                        @Override
-                        public void onResult(DJIError djiError) {
-                            ToastUtils.setResultToToast(djiError == null ? "The maximum height is set to 500m!" : djiError.getDescription());
-                        }
-                    });
-                }
-                break;
-            case R.id.btn_set_maximum_radius:
-                if (null != getFlightController()) {
-                    flightController.setMaxFlightRadius(MAX_RADIUS, new CommonCallbacks.CompletionCallback() {
-                        @Override
-                        public void onResult(DJIError djiError) {
-                            ToastUtils.setResultToToast(djiError == null ? "The maximum radius is set to 500m!" : djiError.getDescription());
-                        }
-                    });
-                }
-                break;
-            case R.id.btn_load:
-            case R.id.btn_upload:
-            case R.id.btn_pause:
-            case R.id.btn_resume:
-            case R.id.btn_download:
-                ToastUtils.setResultToToast("No use of this button, only start and stop buttons are valid.");
-                break;
             case R.id.btn_start:
                 followMeMissionOperator.startMission(new FollowMeMission(FollowMeHeading.TOWARD_FOLLOW_POSITION,
                         latitude + 5 * ONE_METER_OFFSET, longitude + 5 * ONE_METER_OFFSET, 30f
@@ -166,91 +134,6 @@ public class FollowMeMissionOperatorView extends MissionBaseView {
                 break;
             default:
                 break;
-        }
-    }
-
-    private FlightController getFlightController() {
-        if (null == flightController) {
-            if (null != DJISampleApplication.getAircraftInstance()) {
-                return DJISampleApplication.getAircraftInstance().getFlightController();
-            }
-            ToastUtils.setResultToToast("Product is disconnected!");
-        }
-        return flightController;
-    }
-
-    private void startSimulator() {
-        if (null != getFlightController()) {
-            flightController.getSimulator().start(InitializationData.createInstance(new LocationCoordinate2D(BASE_LATITUDE, BASE_LONGITUDE),REFRESH_FREQ, SATELLITE_COUNT),
-                    djiError -> ToastUtils.setResultToToast(djiError != null ?  djiError.getDescription():"Simulator started"));
-        }
-    }
-
-    private void updateFollowMeMissionState(){
-        if (followMeMissionOperator != null && followMeMissionOperator.getCurrentState() != null) {
-            ToastUtils.setResultToText(FCPushInfoTV,
-                    "home point latitude: "
-                            + homeLatitude
-                            + "\nhome point longitude: "
-                            + homeLongitude
-                            + "\nFlight state: "
-                            + flightState.name()
-                            + "\nCurrent Waypointmission state : "
-                            + followMeMissionOperator.getCurrentState().getName()
-                            + "\nGet Following Target: ("
-                            + followMeMissionOperator.getFollowingTarget().getLatitude()
-                            + ", "
-                            + followMeMissionOperator.getFollowingTarget().getLongitude()
-                            + ")");
-        } else {
-            ToastUtils.setResultToText(FCPushInfoTV,
-                    "home point latitude: "
-                            + homeLatitude
-                            + "\nhome point longitude: "
-                            + homeLongitude
-                            + "\nFlight state: "
-                            + flightState.name());
-        }
-    }
-
-    private void setUpListener() {
-        // Example of Listener
-        listener = new FollowMeMissionOperatorListener() {
-
-            @Override
-            public void onExecutionUpdate(@NonNull @NotNull FollowMeMissionEvent followMeMissionEvent) {
-                // Example of Execution Listener
-                Log.d("TAG",
-                        (followMeMissionEvent.getPreviousState() == null
-                                ? ""
-                                : followMeMissionEvent.getPreviousState().getName())
-                                + ", "
-                                + followMeMissionEvent.getCurrentState().getName()
-                                + ", "
-                                + followMeMissionEvent.getDistanceToTarget()
-                                + ", "
-                                + followMeMissionEvent.getError().getDescription());
-                updateFollowMeMissionState();
-            }
-
-            @Override
-            public void onExecutionStart() {
-                ToastUtils.setResultToToast("Mission started");
-                updateFollowMeMissionState();
-            }
-
-            @Override
-            public void onExecutionFinish(@Nullable @org.jetbrains.annotations.Nullable DJIError djiError) {
-                ToastUtils.setResultToToast("Mission finished");
-                updateFollowMeMissionState();
-            }
-        };
-    }
-
-    private void tearDownListener() {
-        if (followMeMissionOperator != null && listener != null) {
-            // Example of removing listeners
-            followMeMissionOperator.removeListener(listener);
         }
     }
 
