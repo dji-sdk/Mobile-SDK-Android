@@ -5,11 +5,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 
 import com.dji.sdk.sample.R;
 import com.dji.sdk.sample.internal.controller.DJISampleApplication;
@@ -19,16 +16,15 @@ import com.dji.sdk.sample.internal.view.PresentableView;
 
 import org.jetbrains.annotations.NotNull;
 
+import androidx.annotation.NonNull;
 import dji.common.error.DJIError;
 import dji.common.flightcontroller.FlightControllerState;
-import dji.common.flightcontroller.FlightMode;
 import dji.common.flightcontroller.ObstacleDetectionSector;
 import dji.common.flightcontroller.VisionDetectionState;
 import dji.common.flightcontroller.flightassistant.PerceptionInformation;
 import dji.common.util.CommonCallbacks;
 import dji.sdk.flightcontroller.FlightAssistant;
 import dji.sdk.flightcontroller.FlightController;
-import dji.sdk.products.Aircraft;
 
 /**
  * Class for basic manager view in mission manager
