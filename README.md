@@ -8,6 +8,22 @@
 4. All changes in the alpha version will be merged into the official version and will be strictly tested before the release.
 5. It is not suggested that developers directly merge the MSDK alpha version and released it as an official version.
 
+## Release Date
+2023.2.15
+
+## Release Notes
+- **In some scenarios, the US RID blocking flight cannot be lifted:** Fixed
+- **Cannot use the laser distance measurement function on Zenmuse H20N:** Fixed
+- **libDJIUpgradeJNI.so crash:** fixed
+- **Crash when calling `DataGetProductInfoFromPayload` interface:** Fixed
+- **The `checkParameters` interface of the waypoint cannot detect the waypoint is too close:** Fixed
+- **MSDK cannot be used on 32-bit Andoird system:** Fixed
+- **Every call to `refreshFileListOfStorageLocation` will refresh all files on Zenmuse H20T:** Fixed
+- **Getting and setting photo aspect ratio and resolution failed on Zenmuse H20T:** Fixed
+- **The absolute roll angle can only be rotated to a maximum of 15 degrees on Zenmuse H20T:** Fixed
+- **Can't take panorama photo on Zenmuse H20T:** Fixed
+- **The waypoint mission has set more than 1000 actions, and the `onExecutionUpdate` of `waypointV2ActionListener` will no longer be called back when more than 1000 actions are executed on the M300 RTK:** Fixed
+
 ## Integration
 
 Declare dependency via Maven:
