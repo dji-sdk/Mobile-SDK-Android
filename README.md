@@ -1,4 +1,4 @@
-# DJI Mobile SDK V4 for Android Latest Alpha Version 4.16.5-a1
+# DJI Mobile SDK V4 for Android Latest Alpha Version 4.17-a1
 
 ##  Alpha Version Announcement
 
@@ -9,20 +9,30 @@
 5. It is not suggested that developers directly merge the MSDK alpha version and released it as an official version.
 
 ## Release Date
-2023.2.15
+2023.7.19
 
-## Release Notes
-- **In some scenarios, the US RID blocking flight cannot be lifted:** Fixed
-- **Cannot use the laser distance measurement function on Zenmuse H20N:** Fixed
-- **libDJIUpgradeJNI.so crash:** fixed
-- **Crash when calling `DataGetProductInfoFromPayload` interface:** Fixed
-- **The `checkParameters` interface of the waypoint cannot detect the waypoint is too close:** Fixed
-- **MSDK cannot be used on 32-bit Andoird system:** Fixed
-- **Every call to `refreshFileListOfStorageLocation` will refresh all files on Zenmuse H20T:** Fixed
-- **Getting and setting photo aspect ratio and resolution failed on Zenmuse H20T:** Fixed
-- **The absolute roll angle can only be rotated to a maximum of 15 degrees on Zenmuse H20T:** Fixed
-- **Can't take panorama photo on Zenmuse H20T:** Fixed
-- **The waypoint mission has set more than 1000 actions, and the `onExecutionUpdate` of `waypointV2ActionListener` will no longer be called back when more than 1000 actions are executed on the M300 RTK:** Fixed
+## Released Function List
+- **Adapted to Android 13.**
+- **Added supported aircraft model:**
+  - ***Matrice 350 RTK***
+- **Added functions for Matric 300 RTK:**
+  - **Supports the DJI RC Plus.**
+- **Supports the CMCC RTK function.**
+- **Added functions for Zenmuse H20:**
+  - **Supports the link zoom function.**
+  - **Supports the NightScene AUTO setting function.**
+  - **Supports the getLiveviewLocationWithGPS API.**
+
+## Bug Fixes
+- **Crash of libDJISDKLOGJNI.so:** Fixed
+- **Crash of NotFoundException: String resource ID:** Fixed
+- **Crash when creates dji-guid.jpg:** Fixed
+- **Memory leaks after the live streaming function is closed:** Fixed
+- **The TapZoom function is not available by infrared camera on M2EA:** Fixed
+- **The Waypoint action callback can not be received when recovering the wayline flight on Matrice 300 RTK:** Fixed
+- **Watermark information setting failes on Zenmuse H20T:** Fixed
+- **Error message Camera restars abnormally. appears on Zenmuse P1:** Fixed
+- **Pulling photos from camera may occasionally fail on DJI Mini 2:** Fixed
 
 ## Integration
 
@@ -32,21 +42,21 @@ Declare dependency via Maven:
 <dependency>
     <groupId>com.dji</groupId>
     <artifactId>dji-sdk-alpha</artifactId>
-    <version>4.16.5-a1</version>
+    <version>4.17-a1</version>
 </dependency>
 
 <dependency>
     <groupId>com.dji</groupId>
     <artifactId>dji-sdk-provided-alpha</artifactId>
-    <version>4.16.5-a1</version>
+    <version>4.17-a1</version>
 </dependency>
 ~~~
 
 or Gradle:
 
 ~~~groovy
-compile 'com.dji:dji-sdk-alpha:4.16.5-a1'
-provided 'com.dji:dji-sdk-provided-alpha:4.16.5-a1'
+compile 'com.dji:dji-sdk-alpha:4.17-a1'
+provided 'com.dji:dji-sdk-provided-alpha:4.17-a1'
 ~~~
 
 For further detail on how to integrate the DJI Android SDK into your Android Studio project, please check the [Integrate SDK into Application](http://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-integrate.html#import-maven-dependency) tutorial.
