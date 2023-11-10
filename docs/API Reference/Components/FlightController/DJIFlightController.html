@@ -872,12 +872,6 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a data-href="../Pipeline/DJIPipeline.html" class="sub-toggle">Pipeline<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a href="../Pipeline/DJIPipelines.html">Pipelines</a>
-                            </dd>
-                    </ul>
-                  </dd>
                   <dd><a data-href="../AccessoryAggregation/DJIAccessoryAggregation.html" class="sub-toggle">AccessoryAggregation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a data-href="../AccessoryAggregation/DJIAccessoryAggregation_DJISpotlight.html" class="sub-toggle">Spotlight<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -943,8 +937,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../Lidar/DJILidar_pointCloudLiveViewData.html">PointCloudLiveViewData</a>
-                            </dd>
-                            <dd><a href="../Lidar/DJILidarPointCloudView.html">PointCloudView</a>
                             </dd>
                     </ul>
                   </dd>
@@ -1402,8 +1394,6 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIWaypointV2Error.html">DJIWaypointV2Error</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIPipelineError.html">PipelineError</a>
-                            </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKCacheError.html">DJISDKCacheError</a>
@@ -1580,7 +1570,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">savePipelinesLog</span><span class="params">(<span class="keyword">boolean</span> enabled)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">Sets true to save log for pipelines. In order to improve developer's experience on SDK interconnectivity, <code><a href="../../Components/Pipeline/DJIPipeline.html#djipipeline">Pipeline</a></code> is designed to save log files locally when files are transferred, during which the speed is 475KB per minute. Please be careful with the device storage.</font></p>
+<p><font color="#666">Sets true to save log for pipelines. In order to improve developer's experience on SDK interconnectivity, <code>DJIPipeline</code> is designed to save log files locally when files are transferred, during which the speed is 475KB per minute. Please be careful with the device storage.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> to save log files.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djionboardsdkdevice_getpipelines"><div class="api-col left">Get pipeline</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_getpipelines_inline">getPipelines</a></div></div><div class="inline-doc" id="djionboardsdkdevice_getpipelines_inline" <blockquote>
@@ -1591,7 +1581,7 @@
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">The pipelines to transmit data between onboard device and DJI mobile SDK. It's only supported by Matrice 300 RTK.</font></p>
 <h5 id="return-v6">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Pipeline/DJIPipelines.html#djipipelines">Pipelines</a></font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/Pipeline/DJIPipelines.html#djipipelines">Pipelines</a></code>.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Pipelines</font></td><td><font color="#666"><i>An instance of <code>DJIPipelines</code>.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="sub-components">Sub Components</h4>
 <div class="api-row" id="djiflightcontroller_landinggear"><div class="api-col left">Landing Gear</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_landinggear_inline">getLandingGear</a></div></div><div class="inline-doc" id="djiflightcontroller_landinggear_inline" <blockquote>
@@ -2213,7 +2203,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCoordinatedTurnEnabled</span><span class="params">(@NonNull <span class="keyword">boolean</span> enabled, @Nullable CompletionCallback&lt;DJIError&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v84">Description:</h5>
-<p><font color="#666">Enables the coordinated turn. Improves aerodynamic efficiency. The aircraft is flying in the direction of the turn, without sideslipping. Only supported by M300 RTK.</font></p>
+<p><font color="#666">Enables the coordinated turn. Improves aerodynamic efficiency. The aircraft is flying in the direction of the turn, without sideslipping. Only supported by M300 RTK and M350 RTK.</font></p>
 <h5 id="input-parameters-v62">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> to enable the coordinated turn.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable CompletionCallback&lt;<a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Callback that receives the execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_getcoordinatedturnenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_getcoordinatedturnenabled_inline">getCoordinatedTurnEnabled</a></div></div><div class="inline-doc" id="djiflightcontroller_getcoordinatedturnenabled_inline" <blockquote>
@@ -2222,7 +2212,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getCoordinatedTurnEnabled</span><span class="params">(@Nullable CompletionCallbackWith&lt;Boolean&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v85">Description:</h5>
-<p><font color="#666">Get whether the coordinated turn switch is on.  Only supported by M300 RTK.</font></p>
+<p><font color="#666">Get whether the coordinated turn switch is on.  Only supported by M300 RTK and M350 RTK.</font></p>
 <h5 id="input-parameters-v63">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable CompletionCallbackWith&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Completion block that receives the execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_setnavigationsatellitesystem"><div class="api-col left">Navigation Satellite System</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_setnavigationsatellitesystem_inline">setNavigationSatelliteSystem</a></div></div><div class="inline-doc" id="djiflightcontroller_setnavigationsatellitesystem_inline" <blockquote>
@@ -2231,7 +2221,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setNavigationSatelliteSystem</span><span class="params">(@NonNull NavigationSatelliteSystem system, @Nullable CompletionCallback&lt;DJIError&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v86">Description:</h5>
-<p><font color="#666">The selection of satellite positioning system is only supported when the RTK positioning function is turned off, and cannot be modified in the air. If RTK positioning function is turned on, aircraft uses GPS, GLONASS, Galileo, and BDS data to determine location. Only supported by M300 RTK.</font></p>
+<p><font color="#666">The selection of satellite positioning system is only supported when the RTK positioning function is turned off, and cannot be modified in the air. If RTK positioning function is turned on, aircraft uses GPS, GLONASS, Galileo, and BDS data to determine location. Only supported by M300 RTK and M350 RTK.</font></p>
 <h5 id="input-parameters-v64">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_navigationsatellitesystem">NavigationSatelliteSystem</a> <font color="#000">system</font></font></td><td><font color="#666"><i>Navigation satellite system.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable CompletionCallback&lt;<a href="../../Components/SDKError/DJIError.html#djierror">DJIError</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Callback that receives the execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_getnavigationsatellitesystem"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_getnavigationsatellitesystem_inline">getNavigationSatelliteSystem</a></div></div><div class="inline-doc" id="djiflightcontroller_getnavigationsatellitesystem_inline" <blockquote>
@@ -2240,7 +2230,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getNavigationSatelliteSystem</span><span class="params">(@Nullable CompletionCallbackWith&lt;NavigationSatelliteSystem&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr></table></html>
 <h5 id="description-v87">Description:</h5>
-<p><font color="#666">Get the navigation satellite system. Only supported by M300 RTK.</font></p>
+<p><font color="#666">Get the navigation satellite system. Only supported by M300 RTK and M350 RTK.</font></p>
 <h5 id="input-parameters-v65">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable CompletionCallbackWith&lt;<a href="../../Components/FlightController/DJIFlightController.html#djiflightcontroller_navigationsatellitesystem">NavigationSatelliteSystem</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Callback that receives the execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightlimitation_setmaxflightheight"><div class="api-col left">Flight Limitation</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightlimitation_setmaxflightheight_inline">setMaxFlightHeight</a></div></div><div class="inline-doc" id="djiflightlimitation_setmaxflightheight_inline" <blockquote>
@@ -2350,7 +2340,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setGoHomeHeightInMeters</span><span class="params">(@IntRange(from = <span class="number">20</span>, to = <span class="number">500</span>)</span> <span class="keyword">int</span> height,</span></span><br><span class="line"><span class="function">                                                @Nullable CompletionCallback callback)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.flightcontroller</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#flightcontrollerkey_go_home_height_in_meters_key">FlightControllerKey.GO_HOME_HEIGHT_IN_METERS</a></font></td></tr></table></html>
 <h5 id="description-v99">Description:</h5>
-<p><font color="#666">Sets the minimum altitude, relative to where the aircraft took off, at which the aircraft must be before going home. This can be useful when the user foresees obstacles in the aircraft's flight path. If the aircraft's current altitude is higher than the minimum go home altitude, it will go home at its current altitude. The valid range for the altitude is from 20m to 500m. But if the aircraft is M300 RTK, the limit can beyond 500m.</font></p>
+<p><font color="#666">Sets the minimum altitude, relative to where the aircraft took off, at which the aircraft must be before going home. This can be useful when the user foresees obstacles in the aircraft's flight path. If the aircraft's current altitude is higher than the minimum go home altitude, it will go home at its current altitude. The valid range for the altitude is from 20m to 500m. But if the aircraft is M300 RTK or M350 RTK, the limit can beyond 500m.</font></p>
 <h5 id="input-parameters-v77">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@IntRange(from = 20, to = 500) int <font color="#000">height</font></font></td><td><font color="#666"><i>The aircraft's default go home altitude.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable CompletionCallback <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflightcontroller_getgohomealtitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_getgohomealtitude_inline">getGoHomeHeightInMeters</a></div></div><div class="inline-doc" id="djiflightcontroller_getgohomealtitude_inline" <blockquote>
@@ -2722,7 +2712,7 @@ Only supported by flight controller firmware versions 3.1.0.0 or above.</font></
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
 <h5 id="description-v136">Description:</h5>
-<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210, M210 RTK and M300 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft. <code><a href="../../Components/Lidar/DJILidar.html#djilidar">Lidar</a></code> with index 0 corresponds to the lidar(Zenmuse L1) on the port  (left hand) side of the aircraft.</font></p>
+<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210, M210 RTK, M300 RTK and M350 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft. <code><a href="../../Components/Lidar/DJILidar.html#djilidar">Lidar</a></code> with index 0 corresponds to the lidar(Zenmuse L1) on the port  (left hand) side of the aircraft.</font></p>
 <h5 id="return-v23">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of index.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibasecomponent_connected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_connected_inline">isConnected</a></div></div><div class="inline-doc" id="djibasecomponent_connected_inline" <blockquote>

@@ -872,12 +872,6 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a data-href="../../Components/Pipeline/DJIPipeline.html" class="sub-toggle">Pipeline<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a href="../../Components/Pipeline/DJIPipelines.html">Pipelines</a>
-                            </dd>
-                    </ul>
-                  </dd>
                   <dd><a data-href="../../Components/AccessoryAggregation/DJIAccessoryAggregation.html" class="sub-toggle">AccessoryAggregation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a data-href="../../Components/AccessoryAggregation/DJIAccessoryAggregation_DJISpotlight.html" class="sub-toggle">Spotlight<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -943,8 +937,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../../Components/Lidar/DJILidar_pointCloudLiveViewData.html">PointCloudLiveViewData</a>
-                            </dd>
-                            <dd><a href="../../Components/Lidar/DJILidarPointCloudView.html">PointCloudView</a>
                             </dd>
                     </ul>
                   </dd>
@@ -1402,8 +1394,6 @@
                             </dd>
                             <dd><a href="../../Components/SDKError/DJIError_DJIWaypointV2Error.html">DJIWaypointV2Error</a>
                             </dd>
-                            <dd><a href="../../Components/SDKError/DJIError_DJIPipelineError.html">PipelineError</a>
-                            </dd>
                             <dd><a href="../../Components/SDKError/DJIError_DJISDKError.html">DJISDKError</a>
                             </dd>
                             <dd><a href="../../Components/SDKError/DJIError_DJISDKCacheError.html">DJISDKCacheError</a>
@@ -1529,7 +1519,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">synchronized</span> List&lt;Lidar&gt; <span class="title">getLidars</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.products</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Retrieves instances of the product's lidars. This is used when the aircraft has multiple DJI lidars, e.g. M300 RTK.  Note, when two Zenmuse L1 do exist, lidar order within the array will not always the same. For example: On the  M300 RTK, the port side (left) Zenmuse L1 will have an index of 0 and the starboard side (right)  Zenmuse will have an index of 1. However, the first object of <code><a href="../../Products/Aircraft/DJIAircraft.html#djiaircraft_lidars">getLidars</a></code> will not  necessarily always be the lidar with <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_index">getIndex</a></code> of 0.</font></p>
+<p><font color="#666">Retrieves instances of the product's lidars. This is used when the aircraft has multiple DJI lidars, e.g. M300 RTK and M350 RTK.  Note, when two Zenmuse L1 do exist, lidar order within the array will not always the same. For example: On the  M300 RTK and M350 RTK, the port side (left) Zenmuse L1 will have an index of 0 and the starboard side (right)  Zenmuse will have an index of 1. However, the first object of <code><a href="../../Products/Aircraft/DJIAircraft.html#djiaircraft_lidars">getLidars</a></code> will not  necessarily always be the lidar with <code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent_index">getIndex</a></code> of 0.</font></p>
 <h5 id="return-v8">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">synchronized List&lt;<a href="../../Components/Lidar/DJILidar.html#djilidar">Lidar</a>&gt;</font></td><td><font color="#666"><i>A list of the aircraft's lidars.</i></font></td></tr></table></html></div>
 <h5 id="inherited-methods">Inherited Methods:</h5>
