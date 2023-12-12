@@ -872,12 +872,6 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a data-href="../Pipeline/DJIPipeline.html" class="sub-toggle">Pipeline<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a href="../Pipeline/DJIPipelines.html">Pipelines</a>
-                            </dd>
-                    </ul>
-                  </dd>
                   <dd><a data-href="../AccessoryAggregation/DJIAccessoryAggregation.html" class="sub-toggle">AccessoryAggregation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a data-href="../AccessoryAggregation/DJIAccessoryAggregation_DJISpotlight.html" class="sub-toggle">Spotlight<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -943,8 +937,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../Lidar/DJILidar_pointCloudLiveViewData.html">PointCloudLiveViewData</a>
-                            </dd>
-                            <dd><a href="../Lidar/DJILidarPointCloudView.html">PointCloudView</a>
                             </dd>
                     </ul>
                   </dd>
@@ -1402,8 +1394,6 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIWaypointV2Error.html">DJIWaypointV2Error</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIPipelineError.html">PipelineError</a>
-                            </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKCacheError.html">DJISDKCacheError</a>
@@ -1477,7 +1467,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getPreviousInterruption</span><span class="params">(CommonCallbacks.CompletionCallbackWith&lt;WaypointMissionInterruption&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.waypoint</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Gets the interruption of the last waypoint mission. If a waypoint mission is interrupted  before the completion, the aircraft will record the interruption information. This information  is only available when the last waypoint mission is incomplete and the first waypoint of the  mission has been reached. The interruption will also be recorded if the mission is stopped by  the user. The interruption information is recorded in the aircraft and the information persists  even after the aircraft's reboot. Supported only by Phantom 4 RTK.</font></p>
+<p><font color="#666">Gets the interruption of the last waypoint mission. If a waypoint mission is interrupted before the completion, the aircraft will record the interruption information. This information is only available when the last waypoint mission is incomplete and the first waypoint of the mission has been reached. The interruption will also be recorded if the mission is stopped by the user. The interruption information is recorded in the aircraft and the information persists even after the aircraft's reboot. Supported only by Phantom 4 RTK.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Utils/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWith&lt;<a href="../../Components/Missions/DJIWaypointMission_DJIWaypointMissionInterruption.html#djiwaypointmission_djiwaypointmissioninterruption">WaypointMissionInterruption</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>The execution callback with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwaypointmissionoperator_uploadmission"><div class="api-col left">Mission Upload to Aircraft</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmissionoperator_uploadmission_inline">uploadMission</a></div></div><div class="inline-doc" id="djiwaypointmissionoperator_uploadmission_inline" <blockquote>
@@ -1551,7 +1541,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAutoFlightSpeed</span><span class="params">(@FloatRange(from = <span class="number">-15.0</span>f, to = <span class="number">15.0</span>f)</span> <span class="keyword">float</span> speed, @Nullable CompletionCallback&lt;DJIWaypointV2Error&gt; callback)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.mission.waypoint</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666">Set the flight speed while the mission is executing automatically (without manual joystick speed input). This is the only property or method in this  class that can communicate with the aircraft during a mission. All other properties and methods are used offline to prepare the mission which is then  uploaded to the aircraft.</font></p>
+<p><font color="#666">Set the flight speed while the mission is executing automatically (without manual joystick speed input). This is the only property or method in this class that can communicate with the aircraft during a mission. All other properties and methods are used offline to prepare the mission which is then uploaded to the aircraft.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@FloatRange(from = -15.0f, to = 15.0f) float <font color="#000">speed</font></font></td><td><font color="#666"><i>Auto flight speed to be set. The absolute value of the auto flight speed should be less than or equal to the <code><a href="../../Components/Missions/DJIWaypointV2Mission.html#djiwaypointv2mission_maxflightspeed">getMaxFlightSpeed</a></code>. Its range is [-<code><a href="../../Components/Missions/DJIWaypointV2Mission.html#djiwaypointv2mission_maxflightspeed">getMaxFlightSpeed</a></code>, <code><a href="../../Components/Missions/DJIWaypointV2Mission.html#djiwaypointv2mission_maxflightspeed">getMaxFlightSpeed</a></code>] m/s.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable CompletionCallback&lt;<a href="../../Components/SDKError/DJIError_DJIWaypointV2Error.html#djierror_djiwaypointv2error">DJIWaypointV2Error</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Callback.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwaypointv2missionoperator_getautoflightspeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2missionoperator_getautoflightspeed_inline">getAutoFlightSpeed</a></div></div><div class="inline-doc" id="djiwaypointv2missionoperator_getautoflightspeed_inline" <blockquote>

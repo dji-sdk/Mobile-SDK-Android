@@ -1,0 +1,46 @@
+<html>
+<style>
+  table, th, td {
+     border: 1px solid rgb(200,200,200);
+     border-collapse: collapse;
+     }
+  table {
+     table-layout: fixed;
+     width: 1900px;
+     }
+  td {
+     overflow-x: auto;
+     }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    }
+  .comments {
+    color: #292;
+    }
+  .source-code {
+    color: #22F;
+    }
+  .interface-parent {
+    color: #AAA;
+    }
+  .interface-name {
+    color: #000;
+    }
+  .check-mark {
+    text-align: center;
+    }
+</style>
+<body>
+<br>
+
+<h1>DJI Mobile SDK 4.16.4 to 4.17 Differences</h1>
+
+<br>
+
+<h2>APIs added to 4.17</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">Parent and Name</font></td><td width=15%><font color="#000">Code</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.product.Model.</span><span class="interface-name">MATRICE_350_RTK</span></td><td width=15%><span class="source-code">    MATRICE_350_RTK("Matrice 350 RTK")</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.camera.SettingsDefinitions.</span><span class="interface-name">IRFilterMode</span></td><td width=15%><span class="source-code">enum IRFilterMode </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.camera.SettingsDefinitions.IRFilterMode.</span><span class="interface-name">AUTO</span></td><td width=15%><span class="source-code">        AUTO(2)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.camera.SettingsDefinitions.IRFilterMode.</span><span class="interface-name">OFF</span></td><td width=15%><span class="source-code">        OFF(0)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.camera.SettingsDefinitions.IRFilterMode.</span><span class="interface-name">ON</span></td><td width=15%><span class="source-code">        ON(1)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.camera.Lens.</span><span class="interface-name">getIRFilterMode</span></td><td width=15%><span class="source-code">void getIRFilterMode(@NonNull final CommonCallbacks.CompletionCallbackWith&lt;SettingsDefinitions.IRFilterMode&gt; callback) </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.camera.Lens.</span><span class="interface-name">setIRFilterMode</span></td><td width=15%><span class="source-code">void setIRFilterMode(@NonNull final SettingsDefinitions.IRFilterMode irFilterMode, @NonNull final CommonCallbacks.CompletionCallback callback)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.camera.Camera.</span><span class="interface-name">getLinkZoomEnabled</span></td><td width=15%><span class="source-code">void getLinkZoomEnabled(CommonCallbacks.CompletionCallbackWith&lt;Boolean&gt; callback) </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.camera.Camera.</span><span class="interface-name">setLinkZoomEnabled</span></td><td width=15%><span class="source-code">void setLinkZoomEnabled(@NonNull boolean enabled, @NonNull CommonCallbacks.CompletionCallback callback) </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.codec.DJICodecManager.</span><span class="interface-name">setCodecName</span></td><td width=15%><span class="source-code">void setCodecName(final String codecName) </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.dataprotection.DataProtectionManager.</span><span class="interface-name">agreeToProductImprovement</span></td><td width=15%><span class="source-code">DJIError agreeToProductImprovement(boolean isAgree) </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.dataprotection.DataProtectionManager.</span><span class="interface-name">isAgreeToProductImprovement</span></td><td width=15%><span class="source-code">boolean isAgreeToProductImprovement()</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.error.DJIError.</span><span class="interface-name">COMMON_INVALID_AUTHORIZATION_ID</span></td><td width=15%><span class="source-code">static final DJIError COMMON_INVALID_AUTHORIZATION_ID = new DJIError("Invalid authorization id")</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.sdk.flightcontroller.FlyZoneManager.</span><span class="interface-name">unlockAuthorizationFlyZone</span></td><td width=15%><span class="source-code">void unlockAuthorizationFlyZone(@Size(min = 1) final int id, @Nullable final CompletionCallback&lt;DJIError&gt; callback) </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.common.flightcontroller.rtk.ReferenceStationSource.</span><span class="interface-name">NTRIP_NETWORK_SERVICE</span></td><td width=15%><span class="source-code">    NTRIP_NETWORK_SERVICE(5)</span></td></tr></table><p style="font-size:50%; color:white">b9720ca a618c40 7ae0bce 93b89cc 4991721 30758c2 2e5b653 d52c922 15bf140 4d9f664 </p></body>
+</html>
+

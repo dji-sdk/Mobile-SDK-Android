@@ -872,12 +872,6 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a data-href="../Pipeline/DJIPipeline.html" class="sub-toggle">Pipeline<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a href="../Pipeline/DJIPipelines.html">Pipelines</a>
-                            </dd>
-                    </ul>
-                  </dd>
                   <dd><a data-href="../AccessoryAggregation/DJIAccessoryAggregation.html" class="sub-toggle">AccessoryAggregation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a data-href="../AccessoryAggregation/DJIAccessoryAggregation_DJISpotlight.html" class="sub-toggle">Spotlight<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -943,8 +937,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../Lidar/DJILidar_pointCloudLiveViewData.html">PointCloudLiveViewData</a>
-                            </dd>
-                            <dd><a href="../Lidar/DJILidarPointCloudView.html">PointCloudView</a>
                             </dd>
                     </ul>
                   </dd>
@@ -1401,8 +1393,6 @@
                             <dd><a href="../SDKError/DJIError_DJIUpgradeError.html">DJIUpgradeError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIWaypointV2Error.html">DJIWaypointV2Error</a>
-                            </dd>
-                            <dd><a href="../SDKError/DJIError_DJIPipelineError.html">PipelineError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
                             </dd>
@@ -1968,148 +1958,159 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerastoragelocation_sdcard_inline"></a>SDCARD</font></td><td><font color="#666">SD card.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerastoragelocation_internalstorage_inline"></a>INTERNAL_STORAGE</font></td><td><font color="#666">The internal storage embedded in the aircraft. When it is available, the camera can shoot photos or record videos without SD card. It is only supported by Mavic Air.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerastoragelocation_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown.</font></td></tr></table></html>
 <h5 id="class-members-v48">Class Members:</h5>
 </div>
+<div class="api-row" id="djicamera_djicameralensirfiltermode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameralensirfiltermode_inline">IRFilterMode</a></div></div><div class="inline-doc" id="djicamera_djicameralensirfiltermode_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">enum </font>IRFilterMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> IRFilterMode</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
+<h5 id="description-v49">Description:</h5>
+<p><font color="#666">The IR filter mode.</font></p>
+<h5 id="enum-members-v48">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicameralensirfiltermode_off_inline"></a>OFF</font></td><td><font color="#666">Off.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicameralensirfiltermode_on_inline"></a>ON</font></td><td><font color="#666">On.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicameralensirfiltermode_auto_inline"></a>AUTO</font></td><td><font color="#666">Auto.</font></td></tr></table></html>
+<h5 id="class-members-v49">Class Members:</h5>
+</div>
 <div class="api-row" id="djicamera_djicamerathermalroi"><div class="api-col left">Thermal</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermalroi_inline">ThermalROI</a></div></div><div class="inline-doc" id="djicamera_djicamerathermalroi_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalROI</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ThermalROI</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_roi_key">CameraKey.THERMAL_ROI</a></font></td></tr></table></html>
-<h5 id="description-v49">Description:</h5>
+<h5 id="description-v50">Description:</h5>
 <p><font color="#666">Region of interest. Use this feature to manage color range distribution across the screen to maximize contrast for regions of highest interest.</font></p>
-<h5 id="enum-members-v48">Enum Members:</h5>
+<h5 id="enum-members-v49">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalroi_full_inline"></a>FULL</font></td><td><font color="#666">Causes the color spectrum to be evenly distributed across the entire image depending the default settings.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalroi_skyexluded33_inline"></a>SKY_EXCLUDED_33</font></td><td><font color="#666">Ignores areas of the sky 33% so that most of the spectrum can be allocated to remaining areas, providing higher contrast and utility for analysis.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalroi_skyexcluded50_inline"></a>SKY_EXCLUDED_50</font></td><td><font color="#666">Ignores areas of the sky 50% so that most of the spectrum can be allocated to remaining areas, providing higher contrast and utility for analysis.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalroi_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The ROI type is unknown.</font></td></tr></table></html>
-<h5 id="class-members-v49">Class Members:</h5>
+<h5 id="class-members-v50">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalpalette"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermalpalette_inline">ThermalPalette</a></div></div><div class="inline-doc" id="djicamera_djicamerathermalpalette_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalPalette</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ThermalPalette</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_palette_key">CameraKey.THERMAL_PALETTE</a></font></td></tr></table></html>
-<h5 id="description-v50">Description:</h5>
+<h5 id="description-v51">Description:</h5>
 <p><font color="#666">The different colors are used to show various temperatures in the thermal imagery image. The colors are not actually related to wavelengths of light, but rather the grayscale intensity.</font></p>
-<h5 id="enum-members-v49">Enum Members:</h5>
+<h5 id="enum-members-v50">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_whitehot_inline"></a>WHITE_HOT</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is WhiteHot. With Isotherm enabled, the Palette type is WhiteHotIso.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_blackhot_inline"></a>BLACK_HOT</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is BlackHot. With Isotherm enabled, the Palette type is BlackHotIso.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_redhot_inline"></a>RED_HOT</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is RedHot. With Isotherm enabled, the Palette type is RedHotIso. Shown as Tint in DJI Pilot.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_greenhot_inline"></a>GREEN_HOT</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is GreenHot. With Isotherm enabled, the Palette type is GreenHotIso. Shown as Medical in DJI Pilot.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_fusion_inline"></a>FUSION</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is Fusion. With Isotherm enabled, the Palette type is FusionIso.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_rainbow_inline"></a>RAINBOW</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is Rainbow. With Isotherm enabled, the Palette type is RainbowIso.  Shown as Rainbow1 in DJI Pilot.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_ironbow1_inline"></a>IRONBOW_1</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is Ironbow1. With Isotherm enabled, the Palette type is IronbowWHIso. Shown as IronRed in DJI Pilot.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_ironbow2_inline"></a>IRONBOW_2</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is Ironbow2. With Isotherm enabled, the Palette type is IronbowBHIso.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_icefire_inline"></a>ICE_FIRE</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is IceFire. With Isotherm enabled, the Palette type is IceFireIso. Shown as Arctic in DJI Pilot.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_sepia_inline"></a>SEPIA</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is Sepia. With Isotherm enabled, the Palette type is SepiaIso.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_glowbow_inline"></a>GLOWBOW</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is Glowbow. With Isotherm enabled, the Palette type is GlowbowIso.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_color1_inline"></a>COLOR_1</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is Color1. With Isotherm enabled, the Palette type is MidRangeWHIso. Shown as Fulgurite in DJI Pilot.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_color2_inline"></a>COLOR_2</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is Color2. With Isotherm enabled, the Palette type is MidRangeBHIso. Shown as HotIron in DJI Pilot.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_rain_inline"></a>RAIN</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is Rain. With Isotherm enabled, the Palette type is RainbowHCIso. Shown as Rainbow2 in DJI Pilot.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_hotspot_inline"></a>HOT_SPOT</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is HotSpot. With Isotherm enabled, the Palette type is HotSpotIso. Only supported by Mavic 2 Enterprise Dual.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_rainbow2_inline"></a>RAINBOW2</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is Rainbow2. With Isotherm enabled, the Palette type is Rainbow2Iso. Only supported by Mavic 2 Enterprise Dual.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_gray_inline"></a>GRAY</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is Gray. With Isotherm enabled, the Palette type is GrayIso. Only supported by Mavic 2 Enterprise Dual.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_hotmetal_inline"></a>HOT_METAL</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is HotMetal. With Isotherm enabled, the Palette type is HotMetalIso. Only supported by Mavic 2 Enterprise Dual.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_coldspot_inline"></a>COLD_SPOT</font></td><td><font color="#666">Without Isotherm enabled, the Palette type is ColdSpot. With Isotherm enabled, the Palette type is ColdSpotIso. Only supported by Mavic 2 Enterprise Dual.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalpalette_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The palette type is unknown.</font></td></tr></table></html>
-<h5 id="class-members-v50">Class Members:</h5>
+<h5 id="class-members-v51">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalscene"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermalscene_inline">ThermalScene</a></div></div><div class="inline-doc" id="djicamera_djicamerathermalscene_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalScene</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ThermalScene</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_scene_key">CameraKey.THERMAL_SCENE</a></font></td></tr></table></html>
-<h5 id="description-v51">Description:</h5>
+<h5 id="description-v52">Description:</h5>
 <p><font color="#666">Uses the Scene option to instantly enhance your image.</font></p>
-<h5 id="enum-members-v50">Enum Members:</h5>
+<h5 id="enum-members-v51">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalscene_linear_inline"></a>LINEAR</font></td><td><font color="#666">Linearly transforms the 14-bit sensor pixel data to 8-bit JPEG/MP4 pixel data.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalscene_default_inline"></a>DEFAULT</font></td><td><font color="#666">Automatically adjusts DDE, ACE, SSO, brightness and contrast.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalscene_seasky_inline"></a>SEA_SKY</font></td><td><font color="#666">Automatically adjusts DDE, ACE, SSO, brightness and contrast with presets optimized for scenes composed of the sea and the sky scenes.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalscene_outdoor_inline"></a>OUTDOOR</font></td><td><font color="#666">Automatically adjusts DDE, ACE, SSO, brightness and contrast with presets optimized for outdoor scenes.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalscene_indoor_inline"></a>INDOOR</font></td><td><font color="#666">Automatically adjusts DDE, ACE, SSO, brightness and contrast with presets optimized for indoor scenes.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalscene_manual_inline"></a>MANUAL</font></td><td><font color="#666">Allows manual setting of DDE, ACE, SSO, brightness and contrast.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalscene_user1_inline"></a>PROFILE_1</font></td><td><font color="#666">First saved settings of DDE, ACE, SSO, brightness and contrast.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalscene_user2_inline"></a>PROFILE_2</font></td><td><font color="#666">Second saved settings of DDE, ACE, SSO, brightness and contrast.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalscene_user3_inline"></a>PROFILE_3</font></td><td><font color="#666">Third saved settings of DDE, ACE, SSO, brightness and contrast.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalscene_inspection_inline"></a>INSPECTION</font></td><td><font color="#666">Automatically adjusts DDE, ACE, SSO, brightness and contrast with presets optimized for inspection scenes.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalscene_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The Scene type is unknown.</font></td></tr></table></html>
-<h5 id="class-members-v51">Class Members:</h5>
+<h5 id="class-members-v52">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalisothermunit"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermalisothermunit_inline">ThermalIsothermUnit</a></div></div><div class="inline-doc" id="djicamera_djicamerathermalisothermunit_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalIsothermUnit</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ThermalIsothermUnit</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_isotherm_unit_key">CameraKey.THERMAL_ISOTHERM_UNIT</a></font></td></tr></table></html>
-<h5 id="description-v52">Description:</h5>
+<h5 id="description-v53">Description:</h5>
 <p><font color="#666">The unit for Isotherm. For Zenmuse H20T and H20N, please access the value through class <code><a href="../../Components/Camera/DJICamera_DJILens.html#djicamera_djilens">Lens</a></code>.</font></p>
-<h5 id="enum-members-v51">Enum Members:</h5>
+<h5 id="enum-members-v52">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalisothermunit_percentage_inline"></a>PERCENTAGE</font></td><td><font color="#666">The unit type is percentage. The allowed range is [0, 100].</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalisothermunit_celsius_inline"></a>CELSIUS</font></td><td><font color="#666">The unit type is degrees Celsius. The allowed range is [-40, 1000].</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalisothermunit_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The unit type is unknown.</font></td></tr></table></html>
-<h5 id="class-members-v52">Class Members:</h5>
+<h5 id="class-members-v53">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalgainmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermalgainmode_inline">ThermalGainMode</a></div></div><div class="inline-doc" id="djicamera_djicamerathermalgainmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalGainMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ThermalGainMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_gain_mode_key">CameraKey.THERMAL_GAIN_MODE</a></font></td></tr></table></html>
-<h5 id="description-v53">Description:</h5>
+<h5 id="description-v54">Description:</h5>
 <p><font color="#666">The gain mode.</font></p>
-<h5 id="enum-members-v52">Enum Members:</h5>
+<h5 id="enum-members-v53">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalgainmode_auto_inline"></a>AUTO</font></td><td><font color="#666">The camera will automatically select the optimal gain mode according to the temperature range of the image.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalgainmode_low_inline"></a>LOW</font></td><td><font color="#666">The camera covers a wider temperature range but is less sensitive to temperature differences.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalgainmode_high_inline"></a>HIGH</font></td><td><font color="#666">The camera covers a smaller temperature range but is more sensitive to temperature differences.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalgainmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The gain mode is unknown.</font></td></tr></table></html>
-<h5 id="class-members-v53">Class Members:</h5>
+<h5 id="class-members-v54">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalresolution"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermalresolution_inline">ThermalResolution</a></div></div><div class="inline-doc" id="djicamera_djicamerathermalresolution_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalResolution</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ThermalResolution</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_profile_key">CameraKey.THERMAL_PROFILE</a></font></td></tr></table></html>
-<h5 id="description-v54">Description:</h5>
+<h5 id="description-v55">Description:</h5>
 <p><font color="#666">The resolution of thermal imaging camera.</font></p>
-<h5 id="enum-members-v53">Enum Members:</h5>
+<h5 id="enum-members-v54">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalresolution_336x256_inline"></a>RESOLUTION_336x256</font></td><td><font color="#666">The thermal imaging camera resolution is 336x256.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalresolution_640x512_inline"></a>RESOLUTION_640x512</font></td><td><font color="#666">The thermal imaging camera resolution is 640x512.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalresolution_384x288_inline"></a>RESOLUTION_384x288</font></td><td><font color="#666">The thermal imaging camera resolution is 384x288.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalresolution_1024x768_inline"></a>RESOLUTION_1024x768</font></td><td><font color="#666">The thermal imaging camera resolution is 1024x768.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalresolution_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The thermal imaging camera resolution is unknown.</font></td></tr></table></html>
-<h5 id="class-members-v54">Class Members:</h5>
+<h5 id="class-members-v55">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalframerateupperbound"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermalframerateupperbound_inline">ThermalFrameRateUpperBound</a></div></div><div class="inline-doc" id="djicamera_djicamerathermalframerateupperbound_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalFrameRateUpperBound</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ThermalFrameRateUpperBound</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
-<h5 id="description-v55">Description:</h5>
+<h5 id="description-v56">Description:</h5>
 <p><font color="#666">The frame rate upper bound supported by the thermal camera.</font></p>
-<h5 id="enum-members-v54">Enum Members:</h5>
+<h5 id="enum-members-v55">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalframerateupperbound_8p3hz_inline"></a>UPPER_BOUND_8_DOT_3_HZ</font></td><td><font color="#666">The thermal imaging camera frame rate upper bound is 8.3Hz.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalframerateupperbound_30hz_inline"></a>UPPER_BOUND_30_HZ</font></td><td><font color="#666">The thermal imaging camera frame rate upper bound is 30Hz.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalframerateupperbound_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The thermal imaging camera frame rate upper bound is unknown.</font></td></tr></table></html>
-<h5 id="class-members-v55">Class Members:</h5>
+<h5 id="class-members-v56">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermallensmodel"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermallensmodel_inline">ThermalLensFocalLength</a></div></div><div class="inline-doc" id="djicamera_djicamerathermallensmodel_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalLensFocalLength</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ThermalLensFocalLength</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_profile_key">CameraKey.THERMAL_PROFILE</a></font></td></tr></table></html>
-<h5 id="description-v56">Description:</h5>
+<h5 id="description-v57">Description:</h5>
 <p><font color="#666">The focal length of the thermal imaging camera.</font></p>
-<h5 id="enum-members-v55">Enum Members:</h5>
+<h5 id="enum-members-v56">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermallensmodel_6p8mm_inline"></a>LENGTH_6_DOT_8_MM</font></td><td><font color="#666">The thermal imaging camera's lens focal length is 6.8 mm.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermallensmodel_7p5mm_inline"></a>LENGTH_7_DOT_5_MM</font></td><td><font color="#666">The thermal imaging camera lens focal length is 7.5mm.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermallensmodel_9mm_inline"></a>LENGTH_9_MM</font></td><td><font color="#666">The thermal imaging camera's lens focal length is 9 mm.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermallensmodel_13mm_inline"></a>LENGTH_13_MM</font></td><td><font color="#666">The thermal imaging camera's lens focal length is 13 mm.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermallensmodel_19mm_inline"></a>LENGTH_19_MM</font></td><td><font color="#666">The thermal imaging camera's lens focal length is 19 mm.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermallensmodel_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The thermal imaging camera's lens focal length is unknown.</font></td></tr></table></html>
-<h5 id="class-members-v56">Class Members:</h5>
+<h5 id="class-members-v57">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermalversion_inline">ThermalVersion</a></div></div><div class="inline-doc" id="djicamera_djicamerathermalversion_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalVersion</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EXClassNullAway</span></span><br><span class="line"> <span class="keyword">enum</span> ThermalVersion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr></table></html>
-<h5 id="description-v57">Description:</h5>
+<h5 id="description-v58">Description:</h5>
 <p><font color="#666">There is a standard version and version with Advanced Radiometry capabilities of the Zenmuse XT thermal camera. This enum defines the versions.</font></p>
-<h5 id="enum-members-v56">Enum Members:</h5>
+<h5 id="enum-members-v57">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalversion_xtstandard_inline"></a>XT_STANDARD</font></td><td><font color="#666">The thermal camera is Zenmuse XT Standard version.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalversion_xtadvancedradiometry_inline"></a>XT_ADVANCED_RADIOMETRY_ENABLED</font></td><td><font color="#666">The thermal camera is Zenmuse XT Advanced Radiometry version.</font></td></tr></table></html>
-<h5 id="class-members-v57">Class Members:</h5>
+<h5 id="class-members-v58">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalcustomexternalscenesettings"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermalcustomexternalscenesettings_inline">ThermalCustomExternalSceneSettingsProfile</a></div></div><div class="inline-doc" id="djicamera_djicamerathermalcustomexternalscenesettings_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalCustomExternalSceneSettingsProfile</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ThermalCustomExternalSceneSettingsProfile</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_custom_external_scene_settings_profile_key">CameraKey.THERMAL_CUSTOM_EXTERNAL_SCENE_SETTINGS_PROFILE</a></font></td></tr></table></html>
-<h5 id="description-v58">Description:</h5>
+<h5 id="description-v59">Description:</h5>
 <p><font color="#666">User defined parameters.</font></p>
-<h5 id="enum-members-v57">Enum Members:</h5>
+<h5 id="enum-members-v58">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalcustomexternalscenesettings_profile1_inline"></a>PROFILE_1</font></td><td><font color="#666">Custom thermal external scene settings for user 1.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalcustomexternalscenesettings_profile2_inline"></a>PROFILE_2</font></td><td><font color="#666">Custom thermal external scene settings for user 2.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalcustomexternalscenesettings_profile3_inline"></a>PROFILE_3</font></td><td><font color="#666">Custom thermal external scene settings for user 3.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalcustomexternalscenesettings_profileunknown_inline"></a>UNKNOWN</font></td><td><font color="#666">The user is unknown.</font></td></tr></table></html>
-<h5 id="class-members-v58">Class Members:</h5>
+<h5 id="class-members-v59">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalffcmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermalffcmode_inline">ThermalFFCMode</a></div></div><div class="inline-doc" id="djicamera_djicamerathermalffcmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalFFCMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ThermalFFCMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_ffc_mode_key">CameraKey.THERMAL_FFC_MODE</a></font></td></tr></table></html>
-<h5 id="description-v59">Description:</h5>
+<h5 id="description-v60">Description:</h5>
 <p><font color="#666">Flat-field correction mods.</font></p>
-<h5 id="enum-members-v58">Enum Members:</h5>
+<h5 id="enum-members-v59">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalffcmode_auto_inline"></a>AUTO</font></td><td><font color="#666">Automatic flat-field correction mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalffcmode_manual_inline"></a>MANUAL</font></td><td><font color="#666">Manual flat-field correction mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalffcmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Unknown flat-field correction mode.</font></td></tr></table></html>
-<h5 id="class-members-v59">Class Members:</h5>
+<h5 id="class-members-v60">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalprofile"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Camera/DJICamera_DJICameraThermalProfile.html">ThermalProfile</a></div></div><div class="api-row" id="djicamera_djicamerathermaldigitalzoomscale"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermaldigitalzoomscale_inline">ThermalDigitalZoomFactor</a></div></div><div class="inline-doc" id="djicamera_djicamerathermaldigitalzoomscale_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalDigitalZoomFactor</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ThermalDigitalZoomFactor</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_digital_zoom_factor_key">CameraKey.THERMAL_DIGITAL_ZOOM_FACTOR</a></font></td></tr></table></html>
-<h5 id="description-v60">Description:</h5>
+<h5 id="description-v61">Description:</h5>
 <p><font color="#666">Thermal camera digital zoom scale. The default value is x1.</font></p>
-<h5 id="enum-members-v59">Enum Members:</h5>
+<h5 id="enum-members-v60">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermaldigitalzoomscale_x1_inline"></a>X_1</font></td><td><font color="#666">Digital zoom factor x1.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermaldigitalzoomscale_x2_inline"></a>X_2</font></td><td><font color="#666">Digital Zoom factor is x2.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermaldigitalzoomscale_x4_inline"></a>X_4</font></td><td><font color="#666">Digital Zoom factor is x4.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermaldigitalzoomscale_x8_inline"></a>X_8</font></td><td><font color="#666">Digital Zoom factor is x8. Not support by Mavic 2 Enterprise Dual Light Camera.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermaldigitalzoomscale_x16_inline"></a>X_16</font></td><td><font color="#666">Digital Zoom factor is x16. Not support by Mavic 2 Enterprise Dual Light Camera.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermaldigitalzoomscale_x32_inline"></a>X_32</font></td><td><font color="#666">Digital Zoom factor is x32. Not support by Mavic 2 Enterprise Dual Light Camera.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermaldigitalzoomscale_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Digital Zoom factor is unknown.</font></td></tr></table></html>
-<h5 id="class-members-v60">Class Members:</h5>
+<h5 id="class-members-v61">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalmeasurementmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerathermalmeasurementmode_inline">ThermalMeasurementMode</a></div></div><div class="inline-doc" id="djicamera_djicamerathermalmeasurementmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>ThermalMeasurementMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@EXClassNullAway</span></span><br><span class="line"> <span class="keyword">enum</span> ThermalMeasurementMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.common.camera</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#camerakey_thermal_measurement_mode_key">CameraKey.THERMAL_MEASUREMENT_MODE</a></font></td></tr></table></html>
-<h5 id="description-v61">Description:</h5>
+<h5 id="description-v62">Description:</h5>
 <p><font color="#666">Thermal camera temperature measurement mode. The default value is  Disabled.</font></p>
-<h5 id="enum-members-v60">Enum Members:</h5>
+<h5 id="enum-members-v61">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalmeasurementmode_disabled_inline"></a>DISABLED</font></td><td><font color="#666">Disable temperature measuring.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalmeasurementmode_spotmetering_inline"></a>SPOT_METERING</font></td><td><font color="#666">Enable temperature measurement and set mode to spot metering. Use <code><a href="../../Components/Camera/DJICamera.html#djicamera_setthermaltemperaturecallback">setThermalTemperatureCallback</a></code> to receive the updated temperature data. In this mode, the advanced radiometry version XT camera can change the metering point using <code><a href="../../Components/Camera/DJICamera.html#djicamera_thermalcamera_setthermalspotmeteringtargetpoint">setThermalSpotMeteringTargetPoint</a></code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalmeasurementmode_areametering_inline"></a>AREA_METERING</font></td><td><font color="#666">Enable temperature measurement and set mode to area metering. Use <code><a href="../../Components/Camera/DJICamera_ThermalCameraAreaTemperatureAggregationsUpdatedCallbackInterface.html#djicamera_didupdateareatemperatureaggregations">onUpdate</a></code> to receive the updated temperature data. Only supported by the advanced radiometry version XT camera.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicamera_djicamerathermalmeasurementmode_unknown_inline"></a>UNKNOWN</font></td><td><font color="#666">Thermal camera's temperature measurement mode is unknown.</font></td></tr></table></html>
-<h5 id="class-members-v61">Class Members:</h5>
+<h5 id="class-members-v62">Class Members:</h5>
 </div>
 <div class="api-row" id="djicamera_djicamerathermalareatemperatureaggregations"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Camera/DJICamera_DJICameraThermalAreaTemperatureAggregations.html">ThermalAreaTemperatureAggregations</a></div></div><div class="api-row" id="djicamera_djicamerathermalexternalscenesettings"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Camera/DJICamera_DJICameraThermalExternalSceneSettings.html">ThermalExternalSceneSettings</a></div></div>
 

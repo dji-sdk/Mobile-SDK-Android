@@ -872,12 +872,6 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a data-href="../Pipeline/DJIPipeline.html" class="sub-toggle">Pipeline<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a href="../Pipeline/DJIPipelines.html">Pipelines</a>
-                            </dd>
-                    </ul>
-                  </dd>
                   <dd><a data-href="../AccessoryAggregation/DJIAccessoryAggregation.html" class="sub-toggle">AccessoryAggregation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a data-href="../AccessoryAggregation/DJIAccessoryAggregation_DJISpotlight.html" class="sub-toggle">Spotlight<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -943,8 +937,6 @@
                               </ul>
                             </dd>
                             <dd><a href="../Lidar/DJILidar_pointCloudLiveViewData.html">PointCloudLiveViewData</a>
-                            </dd>
-                            <dd><a href="../Lidar/DJILidarPointCloudView.html">PointCloudView</a>
                             </dd>
                     </ul>
                   </dd>
@@ -1402,8 +1394,6 @@
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJIWaypointV2Error.html">DJIWaypointV2Error</a>
                             </dd>
-                            <dd><a href="../SDKError/DJIError_DJIPipelineError.html">PipelineError</a>
-                            </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKError.html">DJISDKError</a>
                             </dd>
                             <dd><a href="../SDKError/DJIError_DJISDKCacheError.html">DJISDKCacheError</a>
@@ -1448,7 +1438,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Payload</span> <span class="keyword">extends</span> <span class="title">BaseComponent</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.payload</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">BaseComponent</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">Class used to interact with the payload device mounted on DJI aircraft.</font></p>
+<p><font color="#666">Class used to interact with the payload device mounted on DJI aircraft.   <br><b>Note: In the MSDK V4 version, the PSDK payload device cannot be used with Zenmuse L1 and Zenmuse P1 at the same time. If you need to use them at the same time, please upgrade to MSDK V5.</b></font></p>
 <h5 id="class-members">Class Members:</h5>
 <div class="api-row" id="djipayload_pipelines"><div class="api-col left">Pipe Lines</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_pipelines_inline">getPipelines</a></div></div><div class="inline-doc" id="djipayload_pipelines_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getPipelines</h6></div>
@@ -1458,7 +1448,7 @@
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The pipelines to transmit data between DJI Payload device and DJI mobile SDK. This function does not support dual controllers scenarios.  It's only supported by Matrice 300 RTK.</font></p>
 <h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Pipeline/DJIPipelines.html#djipipelines">Pipelines</a></font></td><td><font color="#666"><i>The <code><a href="../../Components/Pipeline/DJIPipelines.html#djipipelines">Pipelines</a></code> objects.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Pipelines</font></td><td><font color="#666"><i>The <code>DJIPipelines</code> objects.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djipayload_getupstreambandwidth"><div class="api-col left">Upstream Bandwidth</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getupstreambandwidth_inline">getUpstreamBandwidth</a></div></div><div class="inline-doc" id="djipayload_getupstreambandwidth_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getUpstreamBandwidth</h6></div>
 
@@ -1701,7 +1691,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.base</font></td></tr></table></html>
 <h5 id="description-v28">Description:</h5>
-<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210, M210 RTK and M300 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft. <code><a href="../../Components/Lidar/DJILidar.html#djilidar">Lidar</a></code> with index 0 corresponds to the lidar(Zenmuse L1) on the port  (left hand) side of the aircraft.</font></p>
+<p><font color="#666">Returns the component index. Index is zero based. A component will have an index greater than zero when there  are multiple components of the same type on the DJI product, and one of the components already has the index 0.  For instance, M210 can have two gimbal mounted cameras, and will therefore have two gimbal components with indices  0 and 1, and two camera components with indices 0 and 1. For Matrice 600, there are printed numbers on the battery  boxes. The <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> component instance with index 0 corresponds to battery compartment number 1. For Inspire 2  and M200 series, <code><a href="../../Components/Battery/DJIBattery.html#djibattery">Battery</a></code> with index 0 corresponds to the battery on the port (left hand) side of the aircraft.  For M210, M210 RTK, M300 RTK and M350 RTK, <code><a href="../../Components/Camera/DJICamera.html#djicamera">Camera</a></code> and <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal">Gimbal</a></code> with index 0 corresponds to the camera and gimbal on the port  (left hand) side of the aircraft. <code><a href="../../Components/Lidar/DJILidar.html#djilidar">Lidar</a></code> with index 0 corresponds to the lidar(Zenmuse L1) on the port  (left hand) side of the aircraft.</font></p>
 <h5 id="return-v11">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of index.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibasecomponent_connected"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibasecomponent_connected_inline">isConnected</a></div></div><div class="inline-doc" id="djibasecomponent_connected_inline" <blockquote>
