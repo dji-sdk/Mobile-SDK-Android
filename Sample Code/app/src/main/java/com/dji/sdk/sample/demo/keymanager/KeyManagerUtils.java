@@ -28,6 +28,7 @@ import dji.sdk.sdkmanager.DJISDKManager;
 /**
  * @author dji
  */
+@SuppressWarnings("WrongConstant")
 public class KeyManagerUtils {
     private static final String FLIGHT_CONTROLLER_ACCESS_LOCKER = "AccessLocker";
     private static final String FLIGHT_CONTROLLER_FLIGHT_ASSISTANT = "FlightAssistant";
@@ -97,6 +98,7 @@ public class KeyManagerUtils {
             case CAMERA:
                 key = CameraKey.create(CameraKey.CONNECTION);
                 result = keyManager.getValue(key);
+                break;
             case GIMBAL:
                 key = GimbalKey.create(GimbalKey.CONNECTION);
                 result = keyManager.getValue(key);
@@ -134,71 +136,67 @@ public class KeyManagerUtils {
             default:
                 break;
         }
-        if (result instanceof Boolean && ((Boolean) result)) {
-            return true;
-        }
-
-        return false;
+        return result instanceof Boolean && ((Boolean) result);
     }
 
     protected static HashMap<BaseProduct.ComponentKey, ArrayList<String>> getSubComponentMap() {
         HashMap<BaseProduct.ComponentKey, ArrayList<String>> subComponentMap = new HashMap<>();
         subComponentMap.clear();
-        String subComponnetType;
+        String subComponentType;
 
         ArrayList<String> flightControllerList = new ArrayList<>();
         flightControllerList.clear();
         flightControllerList.add("");
-        subComponnetType = FLIGHT_CONTROLLER_ACCESS_LOCKER;
-        if (isSubComponentConnection(subComponnetType)) {
-            flightControllerList.add(subComponnetType);
+        subComponentType = FLIGHT_CONTROLLER_ACCESS_LOCKER;
+        if (isSubComponentConnection(subComponentType)) {
+            flightControllerList.add(subComponentType);
         }
-        subComponnetType = FLIGHT_CONTROLLER_FLIGHT_ASSISTANT;
-        if (isSubComponentConnection(subComponnetType)) {
-            flightControllerList.add(subComponnetType);
+        subComponentType = FLIGHT_CONTROLLER_FLIGHT_ASSISTANT;
+        if (isSubComponentConnection(subComponentType)) {
+            flightControllerList.add(subComponentType);
         }
         subComponentMap.put(BaseProduct.ComponentKey.FLIGHT_CONTROLLER, flightControllerList);
 
         ArrayList<String> batteryList = new ArrayList<>();
         batteryList.clear();
         batteryList.add("");
-        subComponnetType = BATTERY_BATTERY_AGGREGATION;
-        if (isSubComponentConnection(subComponnetType)) {
-            batteryList.add(subComponnetType);
+        subComponentType = BATTERY_BATTERY_AGGREGATION;
+        if (isSubComponentConnection(subComponentType)) {
+            batteryList.add(subComponentType);
         }
         subComponentMap.put(BaseProduct.ComponentKey.BATTERY, batteryList);
 
         ArrayList<String> airLinkList = new ArrayList<>();
         airLinkList.clear();
         airLinkList.add("");
-        subComponnetType = AIR_LINK_WIFI_LINK;
-        if (isSubComponentConnection(subComponnetType)) {
-            airLinkList.add(subComponnetType);
+        subComponentType = AIR_LINK_WIFI_LINK;
+        if (isSubComponentConnection(subComponentType)) {
+            airLinkList.add(subComponentType);
         }
-        subComponnetType = AIR_LINK_LIGHT_BRIDGE;
-        if (isSubComponentConnection(subComponnetType)) {
-            airLinkList.add(subComponnetType);
+        subComponentType = AIR_LINK_LIGHT_BRIDGE;
+        if (isSubComponentConnection(subComponentType)) {
+            airLinkList.add(subComponentType);
         }
-        subComponnetType = AIR_LINK_OCUSYNC_LINK;
-        if (isSubComponentConnection(subComponnetType)) {
-            airLinkList.add(subComponnetType);
+        subComponentType = AIR_LINK_OCUSYNC_LINK;
+        if (isSubComponentConnection(subComponentType)) {
+            airLinkList.add(subComponentType);
         }
         subComponentMap.put(BaseProduct.ComponentKey.AIR_LINK, airLinkList);
 
         ArrayList<String> accessoryAggreationList = new ArrayList<>();
         accessoryAggreationList.clear();
         accessoryAggreationList.add("");
-        subComponnetType = ACCESSORY_AGGREGATION_BEACON;
-        if (isSubComponentConnection(subComponnetType)) {
-            accessoryAggreationList.add(subComponnetType);
+        subComponentType = ACCESSORY_AGGREGATION_BEACON;
+        if (isSubComponentConnection(subComponentType)) {
+            accessoryAggreationList.add(subComponentType);
         }
-        subComponnetType = ACCESSORY_AGGREGATION_SPOTLIGHT;
-        if (isSubComponentConnection(subComponnetType)) {
-            accessoryAggreationList.add(subComponnetType);
+        subComponentType = ACCESSORY_AGGREGATION_SPOTLIGHT;
+        if (isSubComponentConnection(subComponentType)) {
+            accessoryAggreationList.add(subComponentType);
         }
-        subComponnetType = ACCESSORY_AGGREGATION_SPEAKER;
-        if (isSubComponentConnection(subComponnetType)) {
-            accessoryAggreationList.add(subComponnetType);
+        subComponentType = ACCESSORY_AGGREGATION_SPEAKER;
+        if (isSubComponentConnection(subComponentType)) {
+            accessoryAggreationList.add(subComponentType);
         }
         subComponentMap.put(BaseProduct.ComponentKey.ACCESSORY_AGGREGATION, accessoryAggreationList);
 
@@ -255,10 +253,7 @@ public class KeyManagerUtils {
                 break;
         }
 
-        if (result instanceof Boolean && ((Boolean) result)) {
-            return true;
-        }
-        return false;
+        return result instanceof Boolean && ((Boolean) result);
     }
 
     protected static HashMap<BaseProduct.ComponentKey, ArrayList<Integer>> getComponentIndexMap() {
@@ -276,7 +271,7 @@ public class KeyManagerUtils {
 
                 ArrayList<Integer> cameraIndexList = new ArrayList<>();
                 cameraIndexList.clear();
-                List<Camera> cameraList = ((Aircraft) product).getCameras();
+                List<Camera> cameraList = product.getCameras();
                 for (Camera camera : cameraList) {
                     cameraIndexList.add(camera.getIndex());
                 }
@@ -292,7 +287,7 @@ public class KeyManagerUtils {
 
                 ArrayList<Integer> batteryIndexList = new ArrayList<>();
                 batteryIndexList.clear();
-                List<Battery> batteryList = ((Aircraft) product).getBatteries();
+                List<Battery> batteryList = product.getBatteries();
                 for (Battery battery : batteryList) {
                     batteryIndexList.add(battery.getIndex());
                 }

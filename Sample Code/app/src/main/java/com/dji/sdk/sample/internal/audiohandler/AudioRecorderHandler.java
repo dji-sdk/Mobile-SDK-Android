@@ -1,10 +1,16 @@
 package com.dji.sdk.sample.internal.audiohandler;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
+
+import androidx.core.app.ActivityCompat;
+
 import dji.thirdparty.afinal.core.AsyncTask;
+
 import java.io.File;
 
 public class AudioRecorderHandler {
@@ -24,8 +30,8 @@ public class AudioRecorderHandler {
         }
     }
 
-    public void startRecord(AudioRecordingCallback audioRecordingCallback) {
-        RecordTask task = new RecordTask(audioRecordingCallback);
+    public void startRecord(Context context, AudioRecordingCallback audioRecordingCallback) {
+        RecordTask task = new RecordTask(context, audioRecordingCallback);
         task.execute();
     }
 
@@ -46,19 +52,22 @@ public class AudioRecorderHandler {
 
     private class RecordTask extends AsyncTask<String, Integer, String> {
 
-        private AudioRecordingCallback audioRecordingCallback = null;
+        private final Context context;
+        private AudioRecordingCallback audioRecordingCallback;
 
-        public RecordTask(AudioRecordingCallback audioRecordingCallback) {
+        public RecordTask(Context context, AudioRecordingCallback audioRecordingCallback) {
+            this.context = context;
             this.audioRecordingCallback = audioRecordingCallback;
         }
 
         @Override
         protected void onPreExecute() {
-            int bufferSize = AudioRecord.getMinBufferSize(frequence,
-                                                          channelInConfig, audioEncoding);
+            int bufferSize = AudioRecord.getMinBufferSize(frequence, channelInConfig, audioEncoding);
             if (audioRecord == null) {
-                audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC,
-                        frequence, channelInConfig, audioEncoding, bufferSize);
+                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+                    return;
+                }
+                audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, frequence, channelInConfig, audioEncoding, bufferSize);
             }
 
             buffer = new short[bufferSize];

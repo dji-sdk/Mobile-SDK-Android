@@ -71,9 +71,9 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
 
     private Speaker speaker;
     private SpeakerState speakerState;
-    private String savePath;
-    private MediaRecorderHandler mediaRecorderHandler;
-    private AudioDecoder audioDecoder;
+    private final String savePath;
+    private final MediaRecorderHandler mediaRecorderHandler;
+    private final AudioDecoder audioDecoder;
     private String transmitMessage="";
 
     private static final int MSG_SHOW_PROGRESS_DIALOG = 1;
@@ -129,15 +129,15 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         setClickable(true);
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.view_audio_file_list, this, true);
-        transmittingStateTV = (TextView) findViewById(R.id.tv_transmitting_state);
-        speakerStateTV = (TextView) findViewById(R.id.tv_speaker_state);
-        recordingStateTV = (TextView) findViewById(R.id.tv_recording_state);
-        uploadLocalFileBtn = (Button) findViewById(R.id.btn_upload_local_file);
-        cancelTransmittingBtn = (Button) findViewById(R.id.btn_cancel_transmitting);
-        refreshPlaylistBtn = (Button) findViewById(R.id.btn_fetch_playlist);
-        startRecordBtn = (Button) findViewById(R.id.btn_start_record);
-        stopRecordBtn = (Button) findViewById(R.id.btn_stop_record);
-        stopPlayBtn = (Button) findViewById(R.id.btn_stop_playing);
+        transmittingStateTV = findViewById(R.id.tv_transmitting_state);
+        speakerStateTV = findViewById(R.id.tv_speaker_state);
+        recordingStateTV = findViewById(R.id.tv_recording_state);
+        uploadLocalFileBtn = findViewById(R.id.btn_upload_local_file);
+        cancelTransmittingBtn = findViewById(R.id.btn_cancel_transmitting);
+        refreshPlaylistBtn = findViewById(R.id.btn_fetch_playlist);
+        startRecordBtn = findViewById(R.id.btn_start_record);
+        stopRecordBtn = findViewById(R.id.btn_stop_record);
+        stopPlayBtn = findViewById(R.id.btn_stop_playing);
 
         uploadLocalFileBtn.setOnClickListener(this);
         cancelTransmittingBtn.setOnClickListener(this);
@@ -149,9 +149,9 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
     }
 
     private void initAudioFileListView() {
-        listView = (RecyclerView) findViewById(R.id.filelistView);
+        listView = findViewById(R.id.filelistView);
         LinearLayoutManager
-            layoutManager = new LinearLayoutManager(getContext(), OrientationHelper.VERTICAL, false);
+            layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         listView.setLayoutManager(layoutManager);
         mListAdapter = new FileListAdapter();
         listView.setAdapter(mListAdapter);
@@ -312,7 +312,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         }
     }
 
-    private TransmissionListener transmissionListener = new TransmissionListener() {
+    private final TransmissionListener transmissionListener = new TransmissionListener() {
         @Override
         public void onStart() {
             transmitMessage = "Transmit started";
@@ -348,7 +348,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         }
     };
 
-    private AudioDecoder.DecodeProgressListener decodeProgressListener = new AudioDecoder.DecodeProgressListener() {
+    private final AudioDecoder.DecodeProgressListener decodeProgressListener = new AudioDecoder.DecodeProgressListener() {
         @Override
         public void onStarted() {
 
@@ -414,7 +414,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         handler.sendMessageDelayed(handler.obtainMessage(MSG_FETCH_FILE_LIST, null), MSG_DELAY_MILLIS);
     }
 
-    private Handler handler = new Handler(new Handler.Callback() {
+    private final Handler handler = new Handler(new Handler.Callback() {
 
         @Override
         public boolean handleMessage(Message msg) {
@@ -469,7 +469,7 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
         }
     }
 
-    private MediaManager.FileListStateListener fileListStateListener = new MediaManager.FileListStateListener() {
+    private final MediaManager.FileListStateListener fileListStateListener = new MediaManager.FileListStateListener() {
 
         @Override
         public void onFileListStateChange(FileListState playlistState) {
@@ -568,18 +568,18 @@ public class AudioFileListManagerView extends LinearLayout implements View.OnCli
 
         public ItemHolder(View convertView) {
             super(convertView);
-            this.thumbnailImgIV = (ImageView) convertView.findViewById(R.id.iv_file_thumbnail);
-            this.fileNameTV = (TextView) convertView.findViewById(R.id.tv_file_name);
-            this.fileDurationTV = (TextView) convertView.findViewById(R.id.tv_file_duration);
-            this.fileStorageLocationTV = (TextView) convertView.findViewById(R.id.tv_file_storage_location);
-            this.fileIndexTV = (TextView) convertView.findViewById(R.id.tv_file_index);
-            this.renameBtn = (Button) convertView.findViewById(R.id.btn_rename);
-            this.deleteBtn = (Button) convertView.findViewById(R.id.btn_delete);
-            this.playAudioBtn = (Button) convertView.findViewById(R.id.btn_PlayAudio);
+            this.thumbnailImgIV = convertView.findViewById(R.id.iv_file_thumbnail);
+            this.fileNameTV = convertView.findViewById(R.id.tv_file_name);
+            this.fileDurationTV = convertView.findViewById(R.id.tv_file_duration);
+            this.fileStorageLocationTV = convertView.findViewById(R.id.tv_file_storage_location);
+            this.fileIndexTV = convertView.findViewById(R.id.tv_file_index);
+            this.renameBtn = convertView.findViewById(R.id.btn_rename);
+            this.deleteBtn = convertView.findViewById(R.id.btn_delete);
+            this.playAudioBtn = convertView.findViewById(R.id.btn_PlayAudio);
         }
     }
 
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
+    private final View.OnClickListener onClickListener = new View.OnClickListener() {
 
         @Override
         public void onClick(View v) {

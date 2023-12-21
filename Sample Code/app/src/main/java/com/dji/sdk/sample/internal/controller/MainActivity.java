@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         DJISampleApplication.getEventBus().register(this);
         setContentView(R.layout.activity_main);
         setupActionBar();
-        contentFrameLayout = (FrameLayout) findViewById(R.id.framelayout_content);
+        contentFrameLayout = findViewById(R.id.framelayout_content);
         initParams();
     }
 
@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(@NonNull Intent intent) {
+        super.onNewIntent(intent);
         String action = intent.getAction();
         if (UsbManager.ACTION_USB_ACCESSORY_ATTACHED.equals(action)) {
             Intent attachedIntent = new Intent();
@@ -140,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
             actionBar.setCustomView(R.layout.actionbar_custom);
 
-            titleTextView = (TextView) (actionBar.getCustomView().findViewById(R.id.title_tv));
+            titleTextView = actionBar.getCustomView().findViewById(R.id.title_tv);
         }
     }
 
@@ -162,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
     private void initParams() {
         setupInAnimations();
 
-        stack = new Stack<ViewWrapper>();
+        stack = new Stack<>();
         View view = contentFrameLayout.getChildAt(0);
         stack.push(new ViewWrapper(view, R.string.activity_component_list));
     }
@@ -239,11 +240,7 @@ public class MainActivity extends AppCompatActivity {
             searchViewItem.setVisible(false);
             searchViewItem.collapseActionView();
         }
-        if (stack.size() == 3 && stack.peek().getView() instanceof PresentableView) {
-            hintItem.setVisible(true);
-        } else {
-            hintItem.setVisible(false);
-        }
+        hintItem.setVisible(stack.size() == 3 && stack.peek().getView() instanceof PresentableView);
     }
 
 

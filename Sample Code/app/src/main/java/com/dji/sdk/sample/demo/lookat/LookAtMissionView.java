@@ -3,6 +3,7 @@ import android.app.AlertDialog;
 import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Handler;
 import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,8 +53,6 @@ import dji.sdk.gimbal.Gimbal;
 import dji.sdk.gimbal.mode.LookAtMode;
 import dji.sdk.products.Aircraft;
 import dji.sdk.sdkmanager.DJISDKManager;
-
-import static com.google.android.gms.internal.zzahn.runOnUiThread;
 
 public class LookAtMissionView extends LinearLayout implements View.OnClickListener, PresentableView {
 
@@ -321,12 +320,12 @@ public class LookAtMissionView extends LinearLayout implements View.OnClickListe
     }
 
     private void refreshPinPointAndCameraInfo() {
-        runOnUiThread(new Runnable(){
+        new Handler().post(new Runnable(){
 
             @Override
             public void run() {
                 overLayerTopView.onPointsChanged(currentPoints);
-                StringBuffer buffer = new StringBuffer();
+                StringBuilder buffer = new StringBuilder();
                 buffer.append("currentCameraIndex:").append(index).append("\n");
                 buffer.append("currentLensIndex:").append(lensIndex).append("\n");
                 for (Point pinPoint : currentPoints) {

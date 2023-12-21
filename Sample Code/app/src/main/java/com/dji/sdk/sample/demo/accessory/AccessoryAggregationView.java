@@ -524,7 +524,7 @@ public class AccessoryAggregationView extends LinearLayout implements View.OnCli
 
     private void startRecordUsingMic(final Speaker speaker) {
         if (audioRecoderHandler != null) {
-            audioRecoderHandler.startRecord(new AudioRecorderHandler.AudioRecordingCallback() {
+            audioRecoderHandler.startRecord(getContext(), new AudioRecorderHandler.AudioRecordingCallback() {
                 @Override
                 public void onRecording(byte[] data) {
                     if (speaker != null) {
