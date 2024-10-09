@@ -24,6 +24,9 @@
 - Occasional crash of `libDJICSDKCommon.so`: **Fixed**
 - Occasional crash of `Mapbox`: **Fixed**
 
+> **Notes:**
+> **Please change "com.secneo.sdk.Helper.install(this)" in MSDK application initialization to "com.cySdkyc.clx.Helper.install(this)", otherwise MSDK will not run.**
+
 ## Integration
 
 Declare dependency via Maven:
