@@ -3,20 +3,14 @@ package com.dji.sdk.sample.demo.utmiss;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.dji.sdk.sample.R;
+import com.dji.sdk.sample.databinding.ActivityUtmissBinding;
 
 import java.io.File;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import dji.common.error.DJIError;
 import dji.sdk.utmiss.UTMISSFlightDataUploadStatus;
 import dji.sdk.utmiss.UTMISSManager;
@@ -26,30 +20,30 @@ import static com.dji.sdk.sample.internal.utils.ToastUtils.showToast;
 
 public class UTMISSActivity extends AppCompatActivity {
 
-    @BindView(R.id.txt_db_path)
-    TextView mTvDbPath;
-    @BindView(R.id.txt_status)
-    TextView mTvStatus;
-    @BindView(R.id.txt_info)
-    TextView mTvInfo;
-
-    @BindView(R.id.edt_token_key)
-    EditText mEdtTokenKey;
-    @BindView(R.id.edt_manufactureId)
-    EditText mEdtManufactureId;
-    @BindView(R.id.edt_uasId)
-    EditText mEdtUasId;
-
-    @BindView(R.id.btn_start)
-    Button mBtnInit;
-
     String dbPath;
+
+    private ActivityUtmissBinding binding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_utmiss);
-        ButterKnife.bind(this);
+        binding = ActivityUtmissBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
+        binding.btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
+
+        binding.btnStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stop();
+            }
+        });
         init();
     }
 
@@ -64,28 +58,13 @@ public class UTMISSActivity extends AppCompatActivity {
                 showToast("dbPath dir create failed!");
             }
         }
-        mTvDbPath.setText(String.format("db path->%s\nlog path->%s", dbPath, UTMISSManager.getInstance().getUtmissLogPath()));
-        mEdtManufactureId.setText("test");
-        mEdtUasId.setText("UAS-DEFAULT");
+        binding.txtDbPath.setText(String.format("db path->%s\nlog path->%s", dbPath, UTMISSManager.getInstance().getUtmissLogPath()));
+        binding.edtManufactureId.setText("test");
+        binding.edtUasId.setText("UAS-DEFAULT");
         UTMISSFlightDataUploadStatus uploadStatus = UTMISSManager.getInstance().getUploadStatus();
-        mTvStatus.setText(String.format("current status is %s", uploadStatus.toString()));
+        binding.txtStatus.setText(String.format("current status is %s", uploadStatus.toString()));
         if (uploadStatus != UTMISSFlightDataUploadStatus.UNKNOWN) {
             changeUI();
-        }
-    }
-
-
-    @OnClick({R.id.btn_start, R.id.btn_stop})
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_start:
-                start();
-                break;
-            case R.id.btn_stop:
-                stop();
-                break;
-            default:
-                throw new IllegalArgumentException("some btn click not implementation!");
         }
     }
 
@@ -94,21 +73,20 @@ public class UTMISSActivity extends AppCompatActivity {
         changeInitBtnState(true);
     }
 
-
     private void start() {
-        String tokenKey = mEdtTokenKey.getText().toString().trim();
+        String tokenKey = binding.edtTokenKey.getText().toString().trim();
         if (TextUtils.isEmpty(tokenKey)) {
             showToast("pls enter token key first");
             return;
         }
 
-        String manufactureId = mEdtManufactureId.getText().toString().trim();
+        String manufactureId = binding.edtManufactureId.getText().toString().trim();
         if (TextUtils.isEmpty(manufactureId)) {
             showToast("pls enter manufactureId first");
             return;
         }
 
-        String uasId = mEdtManufactureId.getText().toString().trim();
+        String uasId = binding.edtManufactureId.getText().toString().trim();
         if (TextUtils.isEmpty(uasId)) {
             showToast("pls enter uasId first");
             return;
@@ -125,18 +103,15 @@ public class UTMISSActivity extends AppCompatActivity {
 
     private void changeUI() {
         changeInitBtnState(false);
-        UTMISSManager.getInstance().setUTMISSFlightDataUpdatedUploadStatusCallback(status -> mTvStatus.setText(String.format("current status is %s", status.toString())));
+        UTMISSManager.getInstance().setUTMISSFlightDataUpdatedUploadStatusCallback(status -> binding.txtStatus.setText(String.format("current status is %s", status.toString())));
     }
 
     private void changeInitBtnState(boolean enable) {
-        mTvInfo.setVisibility(enable ? View.GONE : View.VISIBLE);
-        mBtnInit.setEnabled(enable);
-        mEdtTokenKey.setEnabled(enable);
-        mEdtManufactureId.setEnabled(enable);
-        mEdtUasId.setEnabled(enable);
+        binding.txtInfo.setVisibility(enable ? View.GONE : View.VISIBLE);
+        binding.btnStart.setEnabled(enable);
+        binding.edtTokenKey.setEnabled(enable);
+        binding.edtManufactureId.setEnabled(enable);
+        binding.edtUasId.setEnabled(enable);
     }
-
-
-
 
 }

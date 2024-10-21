@@ -9,8 +9,6 @@ object PopupUtils {
 
     var index = intArrayOf(-1, -1, -1)
 
-    var popupNumberPicker: PopupNumberPicker? = null
-
     fun resetIndex() {
         index[0] = -1
         index[1] = -1
@@ -18,6 +16,7 @@ object PopupUtils {
     }
 
     fun initPopupNumberPicker(list: ArrayList<String>, r: Runnable, view: View) {
+        var popupNumberPicker: PopupNumberPicker? = null
         popupNumberPicker = PopupNumberPicker(view.context, list, { pos1, pos2 ->
             popupNumberPicker?.dismiss()
             popupNumberPicker = null

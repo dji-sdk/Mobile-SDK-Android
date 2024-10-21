@@ -1,0 +1,55 @@
+name: PullRequest
+
+on:
+  pull_request:
+
+jobs:
+  Build:
+    name: Build & Test
+    runs-on: macOS-latest
+    defaults:
+      run:
+        working-directory: Sample Code
+    steps:
+      - uses: actions/checkout@v3.0.0
+        with:
+          submodules: true
+          fetch-depth: 0 # 0 indicates all history
+      - name: set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 11
+      - name: Install Android SDK
+        uses: malinskiy/action-android/install-sdk@release/0.1.2
+      - name: Build with Gradle
+        run: ./gradlew assembleDebug
+
+  Check:
+    name: Check
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Sample Code
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.0.0
+        with:
+          submodules: true
+          fetch-depth: 0
+      - name: Install JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 11
+      - name: Install Android SDK
+        uses: malinskiy/action-android/install-sdk@release/0.1.2
+      - name: Code checks
+        run: ./gradlew check
+      - name: Archive Lint report
+        uses: actions/upload-artifact@v3.1.0
+        if: ${{ always() }}
+        with:
+          name: Lint-report
+          path: "Sample Code/app/build/reports/lint-results-debug.html"
+
