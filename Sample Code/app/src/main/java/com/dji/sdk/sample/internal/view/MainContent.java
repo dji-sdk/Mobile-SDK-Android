@@ -69,21 +69,7 @@ import dji.sdk.useraccount.UserAccountManager;
 public class MainContent extends RelativeLayout {
 
     public static final String TAG = MainContent.class.getName();
-    private static final String[] REQUIRED_PERMISSION_LIST = new String[] {
-            Manifest.permission.VIBRATE, // Gimbal rotation
-            Manifest.permission.INTERNET, // API requests
-            Manifest.permission.ACCESS_WIFI_STATE, // WIFI connected products
-            Manifest.permission.ACCESS_COARSE_LOCATION, // Maps
-            Manifest.permission.ACCESS_NETWORK_STATE, // WIFI connected products
-            Manifest.permission.ACCESS_FINE_LOCATION, // Maps
-            Manifest.permission.CHANGE_WIFI_STATE, // Changing between WIFI and USB connection
-            Manifest.permission.WRITE_EXTERNAL_STORAGE, // Log files
-            Manifest.permission.BLUETOOTH, // Bluetooth connected products
-            Manifest.permission.BLUETOOTH_ADMIN, // Bluetooth connected products
-            Manifest.permission.READ_EXTERNAL_STORAGE, // Log files
-            Manifest.permission.READ_PHONE_STATE, // Device UUID accessed upon registration
-            Manifest.permission.RECORD_AUDIO // Speaker accessory
-    };
+    private String[] permissionArrays;
     private static final int REQUEST_PERMISSION_CODE = 12345;
     private AtomicBoolean isRegistrationInProgress = new AtomicBoolean(false);
     private int lastProcess = -1;
@@ -125,9 +111,42 @@ public class MainContent extends RelativeLayout {
     private AppActivationState.AppActivationStateListener appActivationStateListener;
     private boolean isregisterForLDM = false;
     private Context mContext;
+
     public MainContent(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            permissionArrays = new String[]{
+                    Manifest.permission.VIBRATE, // Gimbal rotation
+                    Manifest.permission.INTERNET, // API requests
+                    Manifest.permission.ACCESS_WIFI_STATE, // WIFI connected products
+                    Manifest.permission.ACCESS_COARSE_LOCATION, // Maps
+                    Manifest.permission.ACCESS_NETWORK_STATE, // WIFI connected products
+                    Manifest.permission.ACCESS_FINE_LOCATION, // Maps
+                    Manifest.permission.CHANGE_WIFI_STATE, // Changing between WIFI and USB connection
+                    Manifest.permission.BLUETOOTH, // Bluetooth connected products
+                    Manifest.permission.BLUETOOTH_ADMIN, // Bluetooth connected products
+                    Manifest.permission.READ_PHONE_STATE, // Device UUID accessed upon registration
+                    Manifest.permission.RECORD_AUDIO,// Speaker accessory
+            };
+        } else {//兼容Android 12
+            permissionArrays = new String[]{
+                    Manifest.permission.VIBRATE, // Gimbal rotation
+                    Manifest.permission.INTERNET, // API requests
+                    Manifest.permission.ACCESS_WIFI_STATE, // WIFI connected products
+                    Manifest.permission.ACCESS_COARSE_LOCATION, // Maps
+                    Manifest.permission.ACCESS_NETWORK_STATE, // WIFI connected products
+                    Manifest.permission.ACCESS_FINE_LOCATION, // Maps
+                    Manifest.permission.CHANGE_WIFI_STATE, // Changing between WIFI and USB connection
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE, // Log files
+                    Manifest.permission.BLUETOOTH, // Bluetooth connected products
+                    Manifest.permission.BLUETOOTH_ADMIN, // Bluetooth connected products
+                    Manifest.permission.READ_EXTERNAL_STORAGE, // Log files
+                    Manifest.permission.READ_PHONE_STATE, // Device UUID accessed upon registration
+                    Manifest.permission.RECORD_AUDIO // Speaker accessory
+            };
+        }
     }
 
     @Override
@@ -292,7 +311,7 @@ public class MainContent extends RelativeLayout {
     }
 
     private void sendDelayMsg(int msg, long delayMillis) {
-        if (mHandler == null){
+        if (mHandler == null) {
             return;
         }
 
@@ -328,7 +347,7 @@ public class MainContent extends RelativeLayout {
         if (TextUtils.isEmpty(version)) {
             mTextModelAvailable.setText("Firmware version:N/A"); //Firmware version:
         } else {
-            mTextModelAvailable.setText("Firmware version:"+version); //"Firmware version: " +
+            mTextModelAvailable.setText("Firmware version:" + version); //"Firmware version: " +
             removeFirmwareVersionListener();
         }
     }
@@ -348,7 +367,7 @@ public class MainContent extends RelativeLayout {
     private void refreshSDKRelativeUI() {
         mProduct = DJISampleApplication.getProductInstance();
         Log.d(TAG, "mProduct: " + (mProduct == null ? "null" : "unnull"));
-        if (null != mProduct ) {
+        if (null != mProduct) {
             if (mProduct.isConnected()) {
                 mBtnOpen.setEnabled(true);
                 String str = mProduct instanceof Aircraft ? "DJIAircraft" : "DJIHandHeld";
@@ -363,7 +382,7 @@ public class MainContent extends RelativeLayout {
                 } else {
                     mTextProduct.setText(R.string.product_information);
                 }
-            } else if (mProduct instanceof Aircraft){
+            } else if (mProduct instanceof Aircraft) {
                 Aircraft aircraft = (Aircraft) mProduct;
                 if (aircraft.getRemoteController() != null && aircraft.getRemoteController().isConnected()) {
                     mTextConnectionStatus.setText(R.string.connection_only_rc);
@@ -395,7 +414,7 @@ public class MainContent extends RelativeLayout {
             };
             firmwareKey = ProductKey.create(ProductKey.FIRMWARE_PACKAGE_VERSION);
             if (KeyManager.getInstance() != null) {
-                KeyManager.getInstance().addListener(firmwareKey, firmwareVersionUpdater );
+                KeyManager.getInstance().addListener(firmwareKey, firmwareVersionUpdater);
             }
             hasStartedFirmVersionListener = true;
         }
@@ -465,7 +484,7 @@ public class MainContent extends RelativeLayout {
     private void checkAndRequestPermissions() {
         // Check for permissions
         List<String> missingPermission = new ArrayList<>();
-        for (String eachPermission : REQUIRED_PERMISSION_LIST) {
+        for (String eachPermission : permissionArrays) {
             if (ContextCompat.checkSelfPermission(mContext, eachPermission) != PackageManager.PERMISSION_GRANTED) {
                 missingPermission.add(eachPermission);
             }
@@ -495,7 +514,7 @@ public class MainContent extends RelativeLayout {
                         DJISDKManager.getInstance().getLDMManager().setModuleNetworkServiceEnabled(new LDMModule.Builder().moduleType(
                                 LDMModuleType.FIRMWARE_UPGRADE).enabled(false).build());
                     }
-                    if(isregisterForLDM) {
+                    if (isregisterForLDM) {
                         DJISDKManager.getInstance().registerAppForLDM(mContext.getApplicationContext(), new DJISDKManager.SDKManagerCallback() {
                             @Override
                             public void onRegister(DJIError djiError) {
@@ -509,11 +528,13 @@ public class MainContent extends RelativeLayout {
                                 Log.v(TAG, djiError.getDescription());
                                 hideProcess();
                             }
+
                             @Override
                             public void onProductDisconnect() {
                                 Log.d(TAG, "onProductDisconnect");
                                 notifyStatusChange();
                             }
+
                             @Override
                             public void onProductConnect(BaseProduct baseProduct) {
                                 Log.d(TAG, String.format("onProductConnect newProduct:%s", baseProduct));
@@ -532,8 +553,7 @@ public class MainContent extends RelativeLayout {
                                 if (newComponent != null) {
                                     newComponent.setComponentListener(mDJIComponentListener);
 
-                                    if(componentKey == BaseProduct.ComponentKey.FLIGHT_CONTROLLER)
-                                    {
+                                    if (componentKey == BaseProduct.ComponentKey.FLIGHT_CONTROLLER) {
                                         showDBVersion();
                                     }
                                 }
@@ -559,9 +579,9 @@ public class MainContent extends RelativeLayout {
                                 }
                                 lastProcess = process;
                                 showProgress(process);
-                                if (process % 25 == 0){
+                                if (process % 25 == 0) {
                                     ToastUtils.setResultToToast("DB load process : " + process);
-                                }else if (process == 0){
+                                } else if (process == 0) {
                                     ToastUtils.setResultToToast("DB load begin");
                                 }
                             }
@@ -581,11 +601,13 @@ public class MainContent extends RelativeLayout {
                                 Log.v(TAG, djiError.getDescription());
                                 hideProcess();
                             }
+
                             @Override
                             public void onProductDisconnect() {
                                 Log.d(TAG, "onProductDisconnect");
                                 notifyStatusChange();
                             }
+
                             @Override
                             public void onProductConnect(BaseProduct baseProduct) {
                                 Log.d(TAG, String.format("onProductConnect newProduct:%s", baseProduct));
@@ -604,8 +626,7 @@ public class MainContent extends RelativeLayout {
                                 if (newComponent != null) {
                                     newComponent.setComponentListener(mDJIComponentListener);
 
-                                    if(componentKey == BaseProduct.ComponentKey.FLIGHT_CONTROLLER)
-                                    {
+                                    if (componentKey == BaseProduct.ComponentKey.FLIGHT_CONTROLLER) {
                                         showDBVersion();
                                     }
                                 }
@@ -631,9 +652,9 @@ public class MainContent extends RelativeLayout {
                                 }
                                 lastProcess = process;
                                 showProgress(process);
-                                if (process % 25 == 0){
+                                if (process % 25 == 0) {
                                     ToastUtils.setResultToToast("DB load process : " + process);
-                                }else if (process == 0){
+                                } else if (process == 0) {
                                     ToastUtils.setResultToToast("DB load begin");
                                 }
                             }
@@ -645,7 +666,7 @@ public class MainContent extends RelativeLayout {
         }
     }
 
-    private void showProgress(final int process){
+    private void showProgress(final int process) {
         mHander.post(new Runnable() {
             @Override
             public void run() {
@@ -655,7 +676,7 @@ public class MainContent extends RelativeLayout {
         });
     }
 
-    private void showDBVersion(){
+    private void showDBVersion() {
         mHander.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -672,10 +693,10 @@ public class MainContent extends RelativeLayout {
                     }
                 });
             }
-        },3000);
+        }, 3000);
     }
 
-    private void hideProcess(){
+    private void hideProcess() {
         mHander.post(new Runnable() {
             @Override
             public void run() {
