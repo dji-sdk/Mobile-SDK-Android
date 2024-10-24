@@ -74,7 +74,7 @@ public class DJISampleApplication extends Application {
     protected void attachBaseContext(Context paramContext) {
         super.attachBaseContext(paramContext);
         MultiDex.install(this);
-        com.secneo.sdk.Helper.install(this);
+        com.cySdkyc.clx.Helper.install(this);
         app = this;
     }
 }

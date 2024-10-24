@@ -54,7 +54,7 @@
 
 -keep class sun.misc.Unsafe { *; }
 
--keep class com.secneo.** { *; }
+-keep class com.cySdkyc.** { *; }
 
 -keep class org.greenrobot.eventbus.**{*;}
 
